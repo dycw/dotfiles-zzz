@@ -1,14 +1,9 @@
 - defaults:
-    clean:
-      force: true
     link:
       create: true
       relink: true
 
-- clean:
-    ~/:
-    ~/.config:
-      recursive: true
+- clean: ['~', '~/.config']
 
 - link:
     ~/.bashrc: bash/bashrc.sh
