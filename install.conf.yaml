@@ -7,6 +7,12 @@
 
 - link:
     ~/.config/starship.toml: starship.toml
+    ~/.config/direnv/direnvrc: direnvrc
+    ~/.config/fd/ignore: fd.ignore
+    ~/.config/pypoetry/config.toml: poetry.config.toml
+    ~/.config/sqlite/.sqliterc: sqliterc
+    ~/.config/wget/wgetrc: wgetrc
+    ~/.ripgreprc: ripgreprc
     ~/.tmux.conf: submodules/.tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
 
