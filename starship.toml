@@ -1,0 +1,71 @@
+add_newline = false
+format = """\
+$time\
+$directory\
+$git_branch$git_state$git_commit$git_status\
+$docker_context$elixir$elm$python\
+$line_break\
+$username$hostname$cmd_duration$jobs$memory_usage$shlvl$status\
+$character"""
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+
+[directory]
+truncation_length = 3
+
+[git_branch]
+always_show_remote = true
+format = "[$branch(@$remote_branch)]($style) "
+style = "bold yellow"
+
+[git_commit]
+format = "[$hash]($style) [$tag]($style)"
+style = "bold purple"
+tag_disabled = false
+
+[git_state]
+format = "[$state(:$progress_current/$progress_total)]($style) "
+style = "bold red"
+
+[git_status]
+format = "([$conflicted$untracked$modified$deleted$renamed$staged$stashed$ahead_behind]($style) )"
+style = "bold yellow"
+ahead = "⇡$count"
+behind = "⇣$count"
+conflicted = "=$count"
+deleted = "✘$count"
+diverged = "⇕⇡$ahead_count⇣$behind_count"
+modified = "!$count"
+renamed = "»$count"
+staged = "+$count"
+stashed = "\\$$count"
+untracked = "?$count"
+
+[hostname]
+format = "[$hostname]($style) "
+
+[python]
+format = "[$symbol$pyenv_prefix$version]($style)"
+pyenv_version_name = true
+symbol = "p:"
+
+[memory_usage]
+format = "[$symbol$ram]($style) "
+
+[shlvl]
+disabled = false
+format = "[$symbol$shlvl]($style) "
+style = "bold red"
+threshold = 3
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "bold blue"
+time_format = "%H:%M"
+
+[username]
+format = "[$user]($style) "

@@ -1,0 +1,321 @@
+[alias]
+  # add
+  a = add
+  aa = add -A
+  ai = add -i
+  aip = add -ip
+  ap = add -p
+
+  # add + commit
+  aac = !git add -A && git commit && :
+  aacm = !git add -A && git commit -m \"$1\" && :
+  ac = "!f() { \
+    for path in \"$@\"; do \
+      git add-safe \"$GIT_PREFIX\" \"$path\"; \
+    done; \
+    git commit; \
+    }; f"
+  acm = "!f() { \
+    while [ $# -gt 1 ]; do \
+      git add-safe \"$GIT_PREFIX\" \"$1\"; \
+      shift; \
+    done; \
+    git commit -m \"$1\"; \
+    }; f"
+  acn = "!f() { \
+    for path in \"$@\"; do \
+      git add-safe \"$GIT_PREFIX\" \"$path\"; \
+    done; \
+    git commit -n; \
+    }; f"
+  acnm = "!f() { \
+    while [ $# -gt 1 ]; do \
+      git add-safe \"$GIT_PREFIX\" \"$1\"; \
+      shift; \
+    done; \
+    git commit -m \"'\"\"$1\"\"'\" -n; \
+    }; f"
+  apc = "!f() { \
+    for path in \"$@\"; do \
+      git add-safe \"$GIT_PREFIX\" \"$1\" -p; \
+    done; \
+    git commit; \
+    }; f"
+  add-safe = "!f() { \
+    prefix=\"$1\"; \
+    shift; \
+    path=\"$1\"; \
+    shift; \
+    git add \"$(realpath \"$(git root)/$prefix$path\")\" \"$@\"; \
+    }; f"
+
+  # branch
+  b = branch-default
+  ba = branch-default -a
+  bd = branch-default -d
+  bdd = branch-default -D
+  bdr = branch-delete-remote
+  bm = branch -m
+  br = branch-default -r
+  bra = branch-default -ra
+  branch-default = branch -v
+  branch-delete-remote = "!git branch -r --color=never | \
+    fzf | \
+    sed -En 's/origin\\/(.*)/\\1/p' | \
+    xargs -n 1 git push -d origin"
+
+  # checkout
+  co = checkout
+  cob = checkout -b
+  cobt = !git checkout -b \"$1\" -t \"origin/$1\" && :
+  cobmom = checkout -B master origin/master
+  cocm = checkout --conflict=merge
+  com = checkout master
+  coom = checkout origin/master
+  cop = checkout -p
+
+  # checkout + pull
+  comp = !git checkout master && git pull --force && :
+  compdev = !git checkout master && git pull --force && git branch -D dev && :
+
+  # cherry-pick
+  cp = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  cps = cherry-pick --skip
+
+  # clean
+  cle = clean-default
+  clean-default = clean -d . --exclude=.venv -x
+
+  # clone
+  cl = clone-default
+  clone-default = clone --recurse-submodules
+
+  # commit
+  c = commit
+  ca = commit --amend
+  cm = !git commit -m \"$1\" && :
+  cn = commit -n
+  cmn = !git commit -m \"$1\" -n && :
+
+  # config
+  clso = config -l --show-origin
+
+  # diff
+  d = diff
+  dc = diff --cached
+  dom = diff origin/master..
+
+  # fetch
+  f = fetch-default
+  fom = fetch-default origin master
+  fetch-default = fetch -p --all
+
+  # log
+  l = log-default origin/master..HEAD
+  ll = log-default
+  log-default = log --oneline --decorate --graph
+
+  # merge
+  m = merge
+
+  # mergetool
+  mt = mergetool
+
+  # mv
+  mv = mv
+
+  # pull
+  pl = pull-default
+  plom = pull-default origin master
+  pull-default = pull --force
+
+  # push
+  p = !git push -u origin $(git current) && :
+  pd = push -d origin
+  pf = !git push -f -u origin $(git current) && :
+  pn = push -n
+  pt = !git push -u origin --tags && :
+
+  # push + gitweb
+  pw = !git push -u origin $(git current) && gitweb && :
+  pfw = !git push -f -u origin $(git current) && gitweb && :
+
+  # rebase
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase -i
+  rbih = !git rebase -i HEAD~\"$1\" && :
+  rbim = rebase -i master
+  rbiom = rebase -i origin/master
+  rbm = rebase master
+  rbom = rebase origin/master
+  rbrt = rebase -s recursive -X theirs
+  rbrtm = rebase -s recursive -X theirs master
+  rbrtom = rebase -s recursive -X theirs origin/master
+  rbs = rebase --skip
+
+  # remote
+  re =  remote
+  resu = remote set-url
+  reu = remote update
+
+  # rename
+  brn = !git branch-default -m \"$1\" && git push && git branch-delete-remote :
+
+  # reset
+  r = reset
+  rhrs = reset --hard --recurse-submodule
+  rp = reset --patch
+
+  # rev-parse
+  current = rev-parse --abbrev-ref HEAD
+  root = rev-parse --show-toplevel
+
+  # revert
+  rv = revert
+
+  # rm
+  rm = rm
+  rmca = rm --cached
+  rmco = !git rm \"$1\" && git commit && :
+
+  # stash
+  st = stash
+  sta = stash apply
+  stc = stash clear
+  std = stash drop
+  stl = stash list
+  stp = stash pop
+
+  # submodule
+  smu = !git pull --recurse-submodules && git submodule update --recursive && :
+
+  # status
+  s = status -s
+  sv = status -v
+
+  # tag
+  ta = !git tag -a \"$1\" \"$2\" -m \"$1\" && git push -u origin --tags && :
+  td = !git tag -d \"$1\" && git push -d origin \"$1\" && :
+  tl = tag -l
+
+  # dev branch
+  dev = !(git branch -D dev >/dev/null 2>&1 || true) && git checkout -b dev && :
+  ddev = branch -D dev
+  redev = !git checkout master && git pull --force && git dev && :
+
+[apply]
+  whitespace = nowarn
+
+[branch]
+  autoSetupMerge = always
+  autoSetupRebase = always
+
+[checkout]
+  defaultRemote = origin
+
+[clean]
+  requireForce = false
+
+[commit]
+  verbose = true
+
+[color]
+  ui = auto
+
+[core]
+  eol = lf
+  pager = delta
+
+[delta]
+  features = side-by-side line-numbers decorations
+  syntax-theme = Dracula
+  plus-style = syntax "#003800"
+  minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
+
+[diff]
+  colorMoved = default
+  mnemonicPrefix = true
+  tool = nvimdiff
+
+[difftool]
+  prompt = false
+
+[difftool "nvimdiff"]
+  cmd = lvim -d "$LOCAL" "$REMOTE"
+
+[fetch]
+  prune = true
+  pruneTags = true
+
+[help]
+  autoCorrect = 1
+
+[include]
+  path = ~/.config/git/config.local
+
+[init]
+  defaultBranch = master
+
+[interactive]
+  diffFilter = delta --color-only
+
+[log]
+  abbrevCommit = true
+  date = format:%Y-%m-%d %H:%M:%S (%a)
+  decorate = full
+
+[merge]
+  conflictstyle = diff3
+  ff = only
+  tool = vim_mergetool
+
+[mergetool]
+  keepBackup = false
+  prompt = false
+
+[mergetool "vim_mergetool"]
+  cmd = lvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+  trustExitCode = true
+
+[pull]
+  default = upstream
+  ff = only
+
+[push]
+  default = simple
+  followTags = true
+
+[rebase]
+  abbreviateCommands = true
+  autoSquash = true
+  stat = true
+
+[status]
+  branch = true
+
+[submodule]
+  fetchJobs = 0
+  recurse = true
+
+[tag]
+  sort = version:refname
+
+[user]
+  name = Derek Wan
+  useConfigOnly = true
