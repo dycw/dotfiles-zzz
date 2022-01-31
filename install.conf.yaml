@@ -6,6 +6,8 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.bashrc: bashrc.sh
+    ~/.bash_profile: bash_profile.sh
     ~/.config/starship.toml: starship.toml
     ~/.config/direnv/direnvrc: direnvrc
     ~/.config/fd/ignore: fd.ignore
