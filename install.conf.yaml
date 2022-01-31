@@ -1,22 +1,32 @@
 - defaults:
+    clean:
+      force: true
     link:
       create: true
       relink: true
 
-- clean: ['~', '~/.config']
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
 
 - link:
     ~/.bashrc: bash/bashrc.sh
     ~/.bash_profile: bash/bash_profile.sh
-    ~/.config/starship.toml: starship.toml
-    ~/.config/direnv/direnvrc: direnvrc
+    ~/.config/alacritty/alacritty.yml: 
+    ~/.config/starship.toml: 
+    ~/.config/direnv/direnvrc: 
     ~/.config/fd/ignore: fd.ignore
-    ~/.config/lvim: lvim
-    ~/.config/nano/nanorc: nanorc
+    ~/.config/git: 
+    ~/.config/i3/config: i3/i3.config
+    ~/.config/i3status/config: i3/i3status.config
+    ~/.config/lvim: 
+    ~/.config/nano/nanorc: 
     ~/.config/pypoetry/config.toml: poetry.config.toml
-    ~/.config/sqlite/.sqliterc: sqliterc
-    ~/.config/wget/wgetrc: wgetrc
-    ~/.ripgreprc: ripgreprc
+    ~/.config/sqlite/.sqliterc:
+    ~/.config/wget/wgetrc:
+    ~/.inputrc: 
+    ~/.ripgreprc: 
     ~/.tmux.conf: submodules/.tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
 
