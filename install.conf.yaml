@@ -30,9 +30,11 @@
     ~/.tmux.conf: submodules/.tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-
 - pipx:
     file: requirements-pipx.txt
+    stdout: false
+    stderr: true
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
 
