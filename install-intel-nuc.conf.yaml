@@ -3,3 +3,7 @@
       relink: true
 
 - clean: ['~']
+
+- link:
+    ~/.tmux.conf: submodules/.tmux/.tmux.conf
+    ~/.tmux.conf.local: tmux/.tmux.conf.local
