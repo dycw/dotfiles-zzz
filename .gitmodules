@@ -6,3 +6,6 @@
 	path = submodules/.tmux
 	url = https://github.com/gpakosz/.tmux.git
 	branch = master
+[submodule "dotbot-pip"]
+	path = dotbot-pip
+	url = https://github.com/sobolevn/dotbot-pip.git
