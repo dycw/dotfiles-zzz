@@ -3,27 +3,50 @@
       create: true
       relink: true
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
     ~/.bashrc: bash/bashrc.sh
     ~/.bash_profile: bash/bash_profile.sh
-    ~/.config/alacritty/alacritty.yml: 
-    ~/.config/starship.toml: 
-    ~/.config/direnv/direnvrc: 
+    ~/.config/alacritty/alacritty.yml:
+    ~/.config/starship.toml:
+    ~/.config/direnv/direnvrc:
     ~/.config/fd/ignore: fd.ignore
-    ~/.config/git: 
+    ~/.config/git:
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
-    ~/.config/lvim: 
-    ~/.config/nano/nanorc: 
+    ~/.config/lvim:
+    ~/.config/nano/nanorc:
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/sqlite/.sqliterc:
     ~/.config/wget/wgetrc:
-    ~/.inputrc: 
-    ~/.ripgreprc: 
+    ~/.inputrc:
+    ~/.ripgreprc:
     ~/.tmux.conf: submodules/.tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
+
+- brew:
+    - bat
+    - gcc
+    - eth-p/software/bat-extras
+    - direnv
+    - exa
+    - fd
+    - git-delta
+    - glow
+    - pipx
+    - ranger
+    - ripgrep
+    - shellcheck
+    - shfmt
+    - starship
+    - stylua
+    - tree
+    - tmux
+    - watchexec
+    - xclip
+    - zoxide
+    - zsh
 
 - pipx:
     file: requirements-pipx.txt
@@ -31,5 +54,4 @@
     stderr: true
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-
+    - [git submodule update --init --recursive, Installing submodules]
