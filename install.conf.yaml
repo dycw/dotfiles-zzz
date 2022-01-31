@@ -6,11 +6,13 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.bashrc: bashrc.sh
-    ~/.bash_profile: bash_profile.sh
+    ~/.bashrc: bash/bashrc.sh
+    ~/.bash_profile: bash/bash_profile.sh
     ~/.config/starship.toml: starship.toml
     ~/.config/direnv/direnvrc: direnvrc
     ~/.config/fd/ignore: fd.ignore
+    ~/.config/lvim: lvim
+    ~/.config/nano/nanorc: nanorc
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/sqlite/.sqliterc: sqliterc
     ~/.config/wget/wgetrc: wgetrc
