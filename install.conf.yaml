@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/starship.toml: starship.toml
+    ~/.tmux.conf: submodules/.tmux/.tmux.conf
+    ~/.tmux.conf.local: tmux.conf
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
