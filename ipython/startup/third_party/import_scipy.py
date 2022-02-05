@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import scipy  # noqa: F401
 from scipy.optimize import least_squares  # noqa: F401
 from scipy.stats import describe  # noqa: F401

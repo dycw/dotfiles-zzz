@@ -1,7 +1,4 @@
-from __future__ import annotations
-
-
-c = get_config()  # type: ignore # noqa:F821
+config = get_config()  # type: ignore # noqa:F821
 
 # ------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
@@ -10,7 +7,7 @@ c = get_config()  # type: ignore # noqa:F821
 # ------------------------------------------------------------------------------
 # JupyterApp(Application) configuration
 # ------------------------------------------------------------------------------
-c.JupyterApp.answer_yes = True
+config.JupyterApp.answer_yes = True
 
 # ------------------------------------------------------------------------------
 # ServerApp(JupyterApp) configuration

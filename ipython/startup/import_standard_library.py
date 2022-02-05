@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import abc  # type: ignore # noqa: F401
 import argparse  # type: ignore # noqa: F401
 import collections  # type: ignore # noqa: F401
@@ -18,7 +16,7 @@ import multiprocessing  # type: ignore # noqa: F401
 import operator  # type: ignore # noqa: F401
 import os  # type: ignore # noqa: F401
 import pathlib  # type: ignore # noqa: F401
-import pickle  # type: ignore # noqa: F401
+import pickle  # type: ignore # noqa: F401, S403
 import platform  # type: ignore # noqa: F401
 import random  # type: ignore # noqa: F401
 import re  # type: ignore # noqa: F401
@@ -26,7 +24,7 @@ import shutil  # type: ignore # noqa: F401
 import socket  # type: ignore # noqa: F401
 import stat  # type: ignore # noqa: F401
 import string  # type: ignore # noqa: F401
-import subprocess  # type: ignore # noqa: F401
+import subprocess  # type: ignore # noqa: F401, S404
 import sys  # type: ignore # noqa: F401
 import tempfile  # type: ignore # noqa: F401
 import time  # type: ignore # noqa: F401
@@ -86,13 +84,8 @@ from json import JSONDecoder  # type: ignore # noqa: F401
 from json import JSONEncoder  # type: ignore # noqa: F401
 from logging import DEBUG  # type: ignore # noqa: F401
 from logging import ERROR  # type: ignore # noqa: F401
-from logging import INFO
 from logging import WARNING  # type: ignore # noqa: F401
-from logging import Formatter
-from logging import Logger
-from logging import StreamHandler
 from logging import basicConfig  # type: ignore # noqa: F401
-from logging import getLogger
 from multiprocessing import Pool  # type: ignore # noqa: F401
 from multiprocessing import cpu_count  # type: ignore # noqa: F401
 from numbers import Integral  # type: ignore # noqa: F401
@@ -133,13 +126,13 @@ from stat import S_IXUSR  # type: ignore # noqa: F401
 from string import ascii_letters  # type: ignore # noqa: F401
 from string import ascii_lowercase  # type: ignore # noqa: F401
 from string import ascii_uppercase  # type: ignore # noqa: F401
-from subprocess import DEVNULL  # type: ignore # noqa: F401
-from subprocess import PIPE  # type: ignore # noqa: F401
-from subprocess import STDOUT  # type: ignore # noqa: F401
-from subprocess import CalledProcessError  # type: ignore # noqa: F401
-from subprocess import check_call  # type: ignore # noqa: F401
-from subprocess import check_output  # type: ignore # noqa: F401
-from subprocess import run  # type: ignore # noqa: F401
+from subprocess import DEVNULL  # type: ignore # noqa: F401, S404
+from subprocess import PIPE  # type: ignore # noqa: F401, S404
+from subprocess import STDOUT  # type: ignore # noqa: F401, S404
+from subprocess import CalledProcessError  # type: ignore # noqa: F401, S404
+from subprocess import check_call  # type: ignore # noqa: F401, S404
+from subprocess import check_output  # type: ignore # noqa: F401, S404
+from subprocess import run  # type: ignore # noqa: F401, S404
 from sys import stderr  # type: ignore # noqa: F401
 from sys import stdout
 from tempfile import NamedTemporaryFile  # type: ignore # noqa: F401
@@ -181,23 +174,6 @@ from urllib.request import urlretrieve  # type: ignore # noqa: F401
 from zipfile import ZipFile  # type: ignore # noqa: F401
 
 
-def _get_and_initialize_logger(name: str, *, datetime: bool) -> Logger:
-    if datetime:
-        fmt = "{asctime} {message}"
-        datefmt = "%Y-%m-%d %H:%M:%S"
-    else:
-        fmt = "{message}"
-        datefmt = None
-    formatter = Formatter(fmt=fmt, datefmt=datefmt, style="{")
-    handler = StreamHandler(stdout)
-    handler.setLevel(INFO)
-    handler.setFormatter(formatter)
-    logger = getLogger(name)
-    logger.addHandler(handler)
-    logger.setLevel(INFO)
-    return logger
-
-
 # temp dir
 
 
@@ -209,9 +185,6 @@ class TemporaryDirectoryPath(TemporaryDirectory[Any]):
 # timer
 
 
-_TIMER_LOGGER = _get_and_initialize_logger("timer", datetime=True)
-
-
 class _TimerCM:
     def __init__(self, msg: str | None = None) -> None:
         self._parts = ["{desc}"] + ([] if msg is None else [msg])
@@ -219,7 +192,7 @@ class _TimerCM:
     def __enter__(self) -> None:
         self._start = default_timer()
         msg = " ".join(self._parts).format(desc="S.")
-        _TIMER_LOGGER.info(msg)
+        stdout.write(msg + "\n")
 
     def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
         elapsed = dt.timedelta(seconds=default_timer() - self._start)
@@ -228,7 +201,7 @@ class _TimerCM:
             e_str = _match.group(1)
         parts = self._parts + [e_str]
         msg = " ".join(parts).format(desc=".F")
-        _TIMER_LOGGER.info(msg)
+        stdout.write(msg + "\n")
 
 
 class _TimerMeta(type):
@@ -244,7 +217,7 @@ class _TimerMeta(type):
         last.__exit__(exc_type, exc_val, exc_tb)
 
 
-class timer(metaclass=_TimerMeta):
+class timer(metaclass=_TimerMeta):  # noqa: N801
     def __init__(self, msg: str) -> None:
         self.msg = msg
 

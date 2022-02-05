@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from itertools import chain
 from itertools import filterfalse
 from multiprocessing import cpu_count

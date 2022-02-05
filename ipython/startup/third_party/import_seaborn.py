@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import seaborn  # noqa: F401
 import seaborn as sns  # noqa: F401
 from seaborn import catplot  # noqa: F401

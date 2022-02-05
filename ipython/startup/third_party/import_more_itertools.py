@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import more_itertools  # noqa: F401
 from more_itertools import all_equal  # noqa: F401
 from more_itertools import always_iterable  # noqa: F401

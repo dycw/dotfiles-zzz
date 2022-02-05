@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import numpy  # noqa: F401
 import numpy as np  # noqa: F401
 from numpy import arange  # noqa: F401

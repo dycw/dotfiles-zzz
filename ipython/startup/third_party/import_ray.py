@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import ray  # noqa: F401
 from ray import get  # noqa: F401
 from ray import init

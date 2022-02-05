@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import statsmodels  # noqa: F401
 import statsmodels.api as sm  # noqa: F401
 from statsmodels.regression.linear_model import OLS  # noqa: F401

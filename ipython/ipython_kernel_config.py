@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 # Configuration file for ipython-kernel.
 # ------------------------------------------------------------------------------
 # ConnectionFileMixin(LoggingConfigurable) configuration

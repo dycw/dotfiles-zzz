@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from contextlib import suppress
 from pathlib import Path
 from re import search
@@ -12,9 +10,9 @@ for path in PATH_HERE.parent.joinpath("third_party").iterdir():
         raise ValueError(f"Unable to determine name from {filename}")
     lib_name = match.group(1)
     try:
-        exec(f"import {lib_name}")
+        exec(f"import {lib_name}")  # noqa: S102
     except ModuleNotFoundError:
         pass
     else:
         with open(path) as file, suppress(ImportError):
-            exec(file.read())
+            exec(file.read())  # noqa: S102

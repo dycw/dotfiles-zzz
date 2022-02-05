@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import holoviews  # noqa: F401
 import holoviews as hv  # noqa: F401
 from holoviews import Curve  # noqa: F401

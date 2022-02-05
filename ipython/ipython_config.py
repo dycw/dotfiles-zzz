@@ -1,19 +1,16 @@
-from __future__ import annotations
-
-
-c = get_config()  # type: ignore # noqa: F821
+config = get_config()  # type: ignore # noqa: F821
 
 # ------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration
 # ------------------------------------------------------------------------------
-c.InteractiveShellApp.exec_lines = ["%autoreload 2"]
-c.InteractiveShellApp.extensions = ["autoreload"]
+config.InteractiveShellApp.exec_lines = ["%autoreload 2"]
+config.InteractiveShellApp.extensions = ["autoreload"]
 try:
     import scalene  # noqa: F401
 except ModuleNotFoundError:
     pass
 else:
-    c.InteractiveShellApp.extensions.append("scalene")
+    config.InteractiveShellApp.extensions.append("scalene")
 
 # ------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
@@ -30,19 +27,19 @@ else:
 # ------------------------------------------------------------------------------
 # InteractiveShell(SingletonConfigurable) configuration
 # ------------------------------------------------------------------------------
-c.InteractiveShell.ast_node_interactivity = "all"
-c.InteractiveShell.autocall = 1
-c.InteractiveShell.autoindent = True
-c.InteractiveShell.automagic = True
-c.InteractiveShell.show_rewritten_input = True
+config.InteractiveShell.ast_node_interactivity = "all"
+config.InteractiveShell.autocall = 1
+config.InteractiveShell.autoindent = True
+config.InteractiveShell.automagic = True
+config.InteractiveShell.show_rewritten_input = True
 
 # ------------------------------------------------------------------------------
 # TerminalInteractiveShell(InteractiveShell) configuration
 # ------------------------------------------------------------------------------
-c.TerminalInteractiveShell.confirm_exit = True
-c.TerminalInteractiveShell.editing_mode = "vi"
-c.TerminalInteractiveShell.highlight_matching_brackets = True
-c.TerminalInteractiveShell.prompt_includes_vi_mode = True
+config.TerminalInteractiveShell.confirm_exit = True
+config.TerminalInteractiveShell.editing_mode = "vi"
+config.TerminalInteractiveShell.highlight_matching_brackets = True
+config.TerminalInteractiveShell.prompt_includes_vi_mode = True
 
 # ------------------------------------------------------------------------------
 # HistoryAccessor(HistoryAccessorBase) configuration
