@@ -155,6 +155,17 @@ which_key["r"] = {
 }
 which_key["s"] = {
 	name = "...",
+	-- spectre
+	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
+	f = {
+		"<Cmd>lua require('spectre').open_file_search()<CR>",
+		"Spectre: File",
+	},
+	w = {
+		"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+		"Spectre: Word",
+	},
+	-- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 }
 which_key["t"] = {
@@ -178,15 +189,6 @@ which_key["w"] = {
 	l = { "<Cmd>set splitright<CR><Cmd>vsplit<CR>", "Window: right" },
 	-- LSP
 	s = { "<Cmd>Telescope lsp_workspace_symbols<CR>", "Workspace symbols" },
-}
-which_key["S"] = {
-	name = "Spectre",
-	f = { "viw<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
-	s = { "<Cmd>lua require('spectre').open()<CR>", "Search" },
-	w = {
-		"<Cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
-		"Word",
-	},
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want
