@@ -4,7 +4,7 @@
 _DIR_SCRIPT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 # dotfiles
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/dotfiles"
 export PATH="$DOTFILES/bin${PATH:+:$PATH}"
 export PATH="$HOME/.local/bin${PATH:+:$PATH}"
 
@@ -81,7 +81,7 @@ alias .....='cd ../../../..'
 
 alias cdcache='cd "${XDG_CACHE_HOME:-$HOME/.cache}"'
 alias cdconfig='cd "${XDG_CONFIG_HOME:-$HOME/.config}"'
-alias cddf='cd $HOME/.dotfiles'
+alias cddf='cd $HOME/dotfiles'
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
@@ -199,7 +199,7 @@ alias gitconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config"'
 alias gitconfiglocal='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config.local"'
 alias gitignore='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"'
 _ALIASES=$(
-	cd "$HOME/.dotfiles" || exit
+	cd "$DOTFILES" || exit
 	git --list-cmds=alias
 )
 for _ALIAS in $_ALIASES; do
