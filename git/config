@@ -191,7 +191,7 @@
   stp = stash pop
 
   # submodule
-  smu = !git pull --recurse-submodules && git submodule update --recursive && :
+  smu = submodule update --init --recursive --remote
 
   # status
   s = status -s

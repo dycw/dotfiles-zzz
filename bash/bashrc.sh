@@ -282,7 +282,7 @@ alias lint='autoflake -r --in-place --remove-all-unused-imports --remove-duplica
 alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 alias pyt='pytest'
 alias pytco='pytest --co'
-_FILE="$DOTFILES/bin/pytest-aliases.sh" && [ -f "$_FILE" ] && source "$_FILE"
+_FILE="$DOTFILES/bin/pytest-aliases" && [ -f "$_FILE" ] && source "$_FILE"
 
 # ranger
 [ -x "$(command -v ranger)" ] && alias r='ranger'
