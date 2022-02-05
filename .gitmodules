@@ -5,9 +5,11 @@
 [submodule "dotbot-apt"]
 	path = dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
+	branch = master
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
+	master = main
 [submodule "submodules/.tmux"]
 	path = submodules/.tmux
 	url = https://github.com/gpakosz/.tmux.git
