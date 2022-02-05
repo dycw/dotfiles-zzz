@@ -90,33 +90,51 @@ lvim.builtin.telescope.defaults.layout_strategy = "vertical"
 --------------------------------------------------------------------------------
 local which_key = lvim.builtin.which_key.mappings
 
-which_key["b"]["d"] = {
-	"<Cmd>BufferDelete<CR>",
-	"Delete",
-}
-which_key["c"] = { "<Cmd>Telescope commands<CR>", "Commands" }
-which_key["d"] = {
-
+which_key["b"] = {
 	name = "...",
-
-	j = {
-		"<Cmd>lua vim.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
-		"Diagostic: next",
-	},
-	k = {
-		"<Cmd>lua vim.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
-		"Diagnostic: previous",
-	},
-	s = {
-		"<Cmd>Telescope lsp_document_symbols<CR>",
-		"Telescope: Document symbols",
-	},
+	b = { "<Cmd>Telescope buffers<CR>", "Buffers" },
+	d = { "<Cmd>BufferDelete<CR>", "Delete" },
+	f = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy find" },
+}
+which_key["c"] = {
+	name = "...",
+	-- default
+	c = { "<Cmd>Telescope commands<CR>", "Commands" },
+	-- others
+	a = { "<Cmd>Telescope lsp_code_actions<CR>", "Code actions" },
+	h = { "<Cmd>Telescope command_history<CR>", "Command history" },
+}
+which_key["d"] = {
+	name = "...",
+	-- diagnostics
+	d = { "<Cmd>Telescope diagnostics<CR>", "Diagostics" },
+	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
+	k = { "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic" },
+	-- definitions
+	f = { "<Cmd>Telescope lsp_definitions<CR>", "Definitions" },
+	s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
 }
 which_key["f"] = {
-	name = "+Find",
+	name = "...",
 	f = { "<Cmd>Telescope find_files<CR>", "Find files" },
-	r = { "<Cmd>Telescope lsp_references<CR>", "References" },
-	s = { "<Cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
+}
+which_key["h"] = {
+	name = "...",
+	t = { "<Cmd>Telescope help_tags<CR>", "Help tags" },
+}
+which_key["i"] = {
+	name = "...",
+	m = { "<Cmd>Telescope lsp_implementations<CR>", "Implementations" },
+}
+which_key["j"] = { "<Cmd>Telescope jumplist<CR>", "Jump list" }
+which_key["k"] = {
+	name = "...",
+	m = { "<Cmd>Telescope keymaps<CR>", "Key maps" },
+}
+which_key["l"] = {
+	name = "...",
+	g = { "<Cmd>Telescope live_grep<CR>", "Live grep" },
+	l = { "<Cmd>Telescope loclist<CR>", "Location list" },
 }
 which_key["m"] = { "<Cmd>Telescope marks<CR>", "Marks" }
 which_key["o"] = {
@@ -126,17 +144,26 @@ which_key["o"] = {
 which_key["q"] = { "<Cmd>Telescope quickfix<CR>", "Quickfix" }
 which_key["r"] = {
 	name = "...",
+	-- LSP
 	f = { "<Cmd>Telescope lsp_references<CR>", "References" },
 	g = { "<Cmd>Telescope registers<CR>", "Registers" },
+	n = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+}
+which_key["s"] = {
+	name = "...",
+	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 }
 which_key["t"] = {
 	name = "+Trouble",
+
 	r = { "<Cmd>Trouble lsp_references<cr>", "References" },
 	f = { "<Cmd>Trouble lsp_definitions<cr>", "Definitions" },
 	d = { "<Cmd>Trouble document_diagnostics<cr>", "Document diagnostics" },
 	q = { "<Cmd>Trouble quickfix<cr>", "QuickFix" },
 	l = { "<Cmd>Trouble loclist<cr>", "LocationList" },
 	w = { "<Cmd>Trouble workspace_diagnostics<cr>", "Workspace diagnostics" },
+	--
+	d = { "<Cmd>Telscope lsp_type_definitions<CR>", "Type definitions" },
 }
 which_key["w"] = {
 	name = "...",
@@ -145,15 +172,8 @@ which_key["w"] = {
 	j = { "<Cmd>set splitbelow<CR><Cmd>split<CR>", "Window: down" },
 	k = { "<Cmd>set nosplitbelow<CR><Cmd>split<CR>", "Window: up" },
 	l = { "<Cmd>set splitright<CR><Cmd>vsplit<CR>", "Window: right" },
-	-- workspace diagnostics
-	-- d = {
-	-- 	"<Cmd>Telescope workspace_diagnostics<CR>",
-	-- 	"Workspace diagnostics",
-	-- },
-	s = {
-		"<Cmd>Telescope lsp_workspace_symbols<CR>",
-		"Workspace symbols",
-	},
+	-- LSP
+	s = { "<Cmd>Telescope lsp_workspace_symbols<CR>", "Workspace symbols" },
 }
 which_key["S"] = {
 	name = "Spectre",
