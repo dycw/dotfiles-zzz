@@ -166,31 +166,13 @@ which_key["r"] = {
 }
 which_key["s"] = {
 	name = "...",
-	-- spectre
-	p = {
-		name = "Spectre...",
-		-- default
-		p = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
-		-- others
-		f = { "<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
-		w = {
-			"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-			"Word",
-		},
-	},
-	-- substitute
-	u = {
-		name = "Substitute...",
-		-- default
-		u = { "<Cmd>lua require('substitute').operator()<CR>", "Operator" },
-		-- others
-		e = { "<Cmd>lua require('substitute').eol()<CR>", "EOL" },
-		l = { "<Cmd>lua require('substitute').line()<CR>", "Line" },
-		v = {
-			"<Cmd>lua require('substitute').visual()<CR>",
-			"Visual",
-			mode = "v",
-		},
+	-- default/Spectre
+	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
+	-- Spectre
+	f = { "<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
+	w = {
+		"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+		"Word",
 	},
 	-- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
@@ -297,14 +279,6 @@ lvim.plugins = {
 
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
-
-	-- editing: substitute operator
-	{
-		"gbprod/substitute.nvim",
-		config = function()
-			require("substitute").setup()
-		end,
-	},
 
 	-- git: conflict markers
 	{ "rhysd/conflict-marker.vim" },
