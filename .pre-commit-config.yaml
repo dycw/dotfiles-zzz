@@ -10,7 +10,7 @@ repos:
           - --remove-duplicate-keys
           - --remove-unused-variables
   - repo: https://github.com/psf/black
-    rev: 21.12b0
+    rev: 22.1.0
     hooks:
       - id: black
   - repo: https://github.com/PyCQA/flake8
@@ -79,7 +79,7 @@ repos:
       - id: pyupgrade
         args: [--py39-plus]
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.8.0.3
+    rev: v0.8.0.4
     hooks:
       - id: shellcheck
   - repo: https://github.com/asottile/yesqa
