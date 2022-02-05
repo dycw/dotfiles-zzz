@@ -59,7 +59,7 @@
 - shell:
     - [git submodule update --init --recursive --remote]
     - [
-        /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --update-rc --no-zsh --no-fish,
+        /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
       ]
     - [pipx install pre-commit]
     - [pre-commit install]
