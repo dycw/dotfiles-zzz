@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from functools import partial
-from pathlib import Path
 from typing import Any
 from typing import Callable
 
@@ -15,7 +14,6 @@ from pandas import Index  # noqa: F401
 from pandas import Int64Dtype  # noqa: F401
 from pandas import MultiIndex  # noqa: F401
 from pandas import RangeIndex  # noqa: F401
-from pandas import Series
 from pandas import StringDtype  # noqa: F401
 from pandas import Timedelta  # noqa: F401
 from pandas import TimedeltaIndex  # noqa: F401
@@ -25,7 +23,6 @@ from pandas import concat  # noqa: F401
 from pandas import date_range  # noqa: F401
 from pandas import option_context
 from pandas import qcut  # noqa: F401
-from pandas import read_csv
 from pandas import read_parquet  # noqa: F401
 from pandas import read_pickle  # noqa: F401
 from pandas import read_sql  # noqa: F401
@@ -86,7 +83,7 @@ else:
             last = cls._contexts.pop()
             last.__exit__(exc_type, exc_val, exc_tb)
 
-    class show(metaclass=_ShowMeta):
+    class show(metaclass=_ShowMeta):  # noqa: N801
         """Context manager which adjusts the display of NDFrames."""
 
         def __init__(
@@ -121,18 +118,3 @@ else:
 
         def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
             self._context.__exit__(exc_type, exc_val, exc_tb)
-
-    def accumulate_csv(path: Path | str, data: dict) -> None:
-        try:
-            df = read_csv(path)
-        except FileNotFoundError:
-
-            def to_csv(path: Path | str) -> None:
-                Series(data).to_frame().T.to_csv(path, index=False)
-
-        else:
-
-            def to_csv(path: Path | str) -> None:
-                df.append(data, ignore_index=True).to_csv(path, index=False)
-
-        to_csv(path)
