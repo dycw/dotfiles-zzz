@@ -166,31 +166,13 @@ which_key["r"] = {
 }
 which_key["s"] = {
 	name = "...",
-	-- spectre
-	p = {
-		name = "Spectre...",
-		-- default
-		p = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
-		-- others
-		f = { "<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
-		w = {
-			"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-			"Word",
-		},
-	},
-	-- substitute
-	u = {
-		name = "Substitute...",
-		-- default
-		u = { "<Cmd>lua require('substitute').operator()<CR>", "Operator" },
-		-- others
-		e = { "<Cmd>lua require('substitute').eol()<CR>", "EOL" },
-		l = { "<Cmd>lua require('substitute').line()<CR>", "Line" },
-		v = {
-			"<Cmd>lua require('substitute').visual()<CR>",
-			"Visual",
-			mode = "v",
-		},
+	-- default/Spectre
+	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
+	-- Spectre
+	f = { "<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
+	w = {
+		"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+		"Word",
 	},
 	-- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
@@ -215,78 +197,6 @@ which_key["w"] = {
 	s = { "<Cmd>Telescope lsp_workspace_symbols<CR>", "Workspace symbols" },
 }
 
--- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-	"bash",
-	"css",
-	"haskell",
-	"javascript",
-	"json",
-	"lua",
-	"python",
-	"rust",
-	"typescript",
-	"yaml",
-}
-
-lvim.builtin.treesitter.ignore_install = {}
-lvim.builtin.treesitter.highlight.enabled = true
-
--- generic LSP settings
-lvim.lsp.automatic_servers_installation = false
-
--- ---@usage Select which servers should be configured manually. Requires `:LvimCacheRest` to take effect.
--- See the full default list `:lua print(vim.inspect(lvim.lsp.override))`
--- vim.list_extend(lvim.lsp.override, { "pyright" })
-
--- ---@usage setup a server -- see: https://www.lunarvim.org/languages/#overriding-the-default-configuration
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pylsp", opts)
-
--- -- you can set a custom on_attach function that will be used for all the language servers
--- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(...)
---     vim.api.nvim_buf_set_option(bufnr, ...)
---   end
---   --Enable completion triggered by <c-x><c-o>
---   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
--- end
-
--- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "black", filetypes = { "python" } },
---   { command = "isort", filetypes = { "python" } },
---   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
-
--- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "shellcheck",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--severity", "warning" },
---   },
---   {
---     command = "codespell",
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "python" },
---   },
--- }
-
 --------------------------------------------------------------------------------
 -- plugins
 --------------------------------------------------------------------------------
@@ -301,14 +211,6 @@ lvim.plugins = {
 			require("better_escape").setup({
 				mapping = { "jj", "jk", "kj", "kk" },
 			})
-		end,
-	},
-
-	-- editing: cut separate from delete
-	{
-		"gbprod/cutlass.nvim",
-		config = function()
-			require("cutlass").setup({ cut_key = "m" })
 		end,
 	},
 
@@ -369,14 +271,6 @@ lvim.plugins = {
 
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
-
-	-- editing: substitute operator
-	{
-		"gbprod/substitute.nvim",
-		config = function()
-			require("substitute").setup()
-		end,
-	},
 
 	-- git: conflict markers
 	{ "rhysd/conflict-marker.vim" },
