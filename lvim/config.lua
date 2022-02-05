@@ -355,16 +355,16 @@ lvim.plugins = {
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
 
+	-- navigation: pairs of bracket mappings
+	{ "tpope/vim-unimpaired" },
+
 	-- navigation: re-open files at last edit position
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
-			require("nvim-lastplace").setup({})
+			require("nvim-lastplace").setup()
 		end,
 	},
-
-	-- navigation: pairs of bracket mappings
-	{ "tpope/vim-unimpaired" },
 
 	-- navigation: sneak motion
 	{ "ggandor/lightspeed.nvim" },
