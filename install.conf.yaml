@@ -17,6 +17,7 @@
     ~/.config/i3status/config: i3/i3status.config
     ~/.config/lvim:
     ~/.config/nano/nanorc:
+    ~/.config/ranger/rc.conf: ranger.rc.conf
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/sqlite/.sqliterc:
     ~/.config/wget/wgetrc:
@@ -48,15 +49,10 @@
     - zoxide
     - zsh
 
-- pipx:
-    file: requirements-pipx.txt
-    stdout: false
-    stderr: true
-
-- snap:
-    - signal-desktop
-    - spotify
-    - telegram-desktop
-
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive]
+    - [pipx install pre-commit]
+    - [pre-commit install]
+    - [sudo snap install signal-desktop]
+    - [sudo snap install spotify]
+    - [sudo snap install telegram-desktop]
