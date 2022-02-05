@@ -170,7 +170,6 @@ which_key["s"] = {
 }
 which_key["t"] = {
 	name = "+Trouble",
-
 	r = { "<Cmd>Trouble lsp_references<cr>", "References" },
 	f = { "<Cmd>Trouble lsp_definitions<cr>", "Definitions" },
 	d = { "<Cmd>Trouble document_diagnostics<cr>", "Document diagnostics" },
@@ -284,10 +283,41 @@ lvim.plugins = {
 	{ "terryma/vim-expand-region" },
 
 	-- editing: find and replace
-	{ "windwp/nvim-spectre" },
+	{
+		"windwp/nvim-spectre",
+		config = function()
+			require("spectre").setup({
+				live_update = true,
+				is_insert_mode = true,
+			})
+		end,
+	},
 
 	-- editing: increment/decrement
-	{ "monaqa/dial.nvim" },
+	{
+		"monaqa/dial.nvim",
+		config = function()
+			local dial = require("dial")
+			vim.cmd([[
+				nmap <C-a> <Plug>(dial-increment)
+				nmap <C-x> <Plug>(dial-decrement)
+				vmap <C-a> <Plug>(dial-increment)
+				vmap <C-x> <Plug>(dial-decrement)
+				vmap g<C-a> <Plug>(dial-increment-additional)
+				vmap g<C-x> <Plug>(dial-decrement-additional)
+			]])
+			dial.augends["custom#boolean"] = dial.common.enum_cyclic({
+				name = "boolean",
+				strlist = { "true", "false" },
+			})
+			table.insert(dial.config.searchlist.normal, "custom#boolean")
+			dial.augends["custom#Boolean"] = dial.common.enum_cyclic({
+				name = "Boolean",
+				strlist = { "True", "False" },
+			})
+			table.insert(dial.config.searchlist.normal, "custom#Boolean")
+		end,
+	},
 
 	-- editing: missing directories
 	{ "jghauser/mkdir.nvim" },
