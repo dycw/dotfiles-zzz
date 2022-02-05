@@ -22,7 +22,11 @@
     ~/.config/sqlite/.sqliterc:
     ~/.config/wget/wgetrc:
     ~/.inputrc:
+    ~/.ipython/profile_default: ipython
+    ~/.jupyter:
+    ~/.luacheckrc: lua/luacheckrc
     ~/.ripgreprc:
+    ~/.stylua.toml: lua/stylua.toml
     ~/.tmux.conf: submodules/.tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
 
