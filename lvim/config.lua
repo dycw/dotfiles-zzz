@@ -34,12 +34,12 @@ lvim.keys.insert_mode["<C-k>"] = "<Up>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
 
 -- save
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<cr>"
-lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
+lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<CR>"
+lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>"
 
 -- quit
-lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+lvim.keys.normal_mode["<C-q>"] = ":q<CR>"
 
 --------------------------------------------------------------------------------
 -- autocommands
@@ -75,18 +75,7 @@ lvim.builtin.nvimtree.show_icons.git = 0
 lvim.lsp.automatic_servers_installation = true
 
 -- treesitter
-lvim.builtin.treesitter.ensure_installed = {
-	"bash",
-	"css",
-	"json",
-	"haskell",
-	"html",
-	"lua",
-	"python",
-	"rust",
-	"toml",
-	"yaml",
-}
+lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.highlight.enabled = true
 
 --------------------------------------------------------------------------------
@@ -241,6 +230,9 @@ lvim.plugins = {
 
 	-- editing: narrow region
 	{ "chrisbra/nrrwrgn" },
+
+	-- editing: repeat plugin actions
+	{ "tpope/vim-repeat" },
 
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
