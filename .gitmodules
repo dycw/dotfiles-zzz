@@ -1,20 +1,6 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-	ignore = dirty
-[submodule "dotbot-apt"]
-	path = dotbot-apt
-	url = https://github.com/bryant1410/dotbot-apt
-[submodule "dotbot-brew"]
-	path = dotbot-brew
-	url = https://github.com/wren/dotbot-brew.git
-[submodule "submodules/.tmux"]
-	path = submodules/.tmux
-	url = https://github.com/gpakosz/.tmux.git
-	branch = master
-[submodule "submodules/python-repo-configs"]
-	path = submodules/python-repo-configs
-	url = git@github.com:dycw/python-repo-configs.git
+[submodule "submodules/dotbot"]
+	path = submodules/dotbot
+	url = https://github.com/anishathalye/dotbot.git
 	branch = master
 [submodule "submodules/dotbot-apt"]
 	path = submodules/dotbot-apt
@@ -24,7 +10,11 @@
 	path = submodules/dotbot-brewfile
 	url = https://github.com/sobolevn/dotbot-brewfile.git
 	branch = master
-[submodule "submodules/dotbot"]
-	path = submodules/dotbot
-	url = https://github.com/anishathalye/dotbot.git
+[submodule "submodules/.tmux"]
+	path = submodules/.tmux
+	url = https://github.com/gpakosz/.tmux.git
+	branch = master
+[submodule "submodules/python-repo-configs"]
+	path = submodules/python-repo-configs
+	url = git@github.com:dycw/python-repo-configs.git
 	branch = master
