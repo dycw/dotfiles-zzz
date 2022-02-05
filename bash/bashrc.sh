@@ -147,7 +147,7 @@ if [ -x "$(command -v fd)" ]; then
 fi
 
 # fzf
-_FILE="$HOME/.fzf.bash" && [ -f "$_FILE" ] && source "$_FILE"
+_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash" && [ -f "$_FILE" ] && source "$_FILE"
 if [ -x "$(command -v fzf)" ]; then
 	# https://bit.ly/2OMLMpm
 	[ -x "$(command -v fd)" ] &&
@@ -335,5 +335,3 @@ export _ZO_EXCLUDE_DIRS="/tmp/*"
 export _ZO_RESOLVE_SYMLINKS=1
 [ -x "$(command -v zoxide)" ] && [ -x "$(command -v fzf)" ] &&
 	eval "$(zoxide init bash --cmd j --hook prompt)"
-
-alias luamake=/home/derek/.lua-language-server/3rd/luamake/luamake

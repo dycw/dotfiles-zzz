@@ -8,7 +8,7 @@
 vim.opt.relativenumber = true
 
 -- scrolling
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 20
 vim.opt.sidescrolloff = 4
 
 -- substitution
@@ -117,6 +117,10 @@ which_key["d"] = {
 	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
 	s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
 }
+which_key["e"] = {
+	name = "...",
+	m = { "<Cmd>EnMasse<CR>", "EnMasse" },
+}
 which_key["f"] = {
 	name = "...",
 	-- default
@@ -163,24 +167,45 @@ which_key["r"] = {
 which_key["s"] = {
 	name = "...",
 	-- spectre
-	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
-	f = {
-		"<Cmd>lua require('spectre').open_file_search()<CR>",
-		"Spectre: File",
+	p = {
+		name = "Spectre...",
+		-- default
+		p = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
+		-- others
+		f = { "<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
+		w = {
+			"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+			"Word",
+		},
 	},
-	w = {
-		"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-		"Spectre: Word",
+	-- substitute
+	u = {
+		name = "Substitute...",
+		-- default
+		u = { "<Cmd>lua require('substitute').operator()<CR>", "Operator" },
+		-- others
+		e = { "<Cmd>lua require('substitute').eol()<CR>", "EOL" },
+		l = { "<Cmd>lua require('substitute').line()<CR>", "Line" },
+		v = {
+			"<Cmd>lua require('substitute').visual()<CR>",
+			"Visual",
+			mode = "v",
+		},
 	},
 	-- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 }
 which_key["t"] = {
 	name = "...",
+	-- default
+	t = { "<Cmd>NvimTreeToggle<CR>", "NvimTree" },
+	-- others
 	d = { "<Cmd>Telescope lsp_type_definitions<CR>", "Type definitions" },
 }
 which_key["w"] = {
 	name = "...",
+	-- default
+	w = { "<Cmd>lua require('nvim-window').pick()<CR>", "Windows" },
 	-- windows
 	h = { "<Cmd>set nosplitright<CR><Cmd>vsplit<CR>", "Window: left" },
 	j = { "<Cmd>set splitbelow<CR><Cmd>split<CR>", "Window: down" },
@@ -279,6 +304,14 @@ lvim.plugins = {
 		end,
 	},
 
+	-- editing: cut separate from delete
+	{
+		"gbprod/cutlass.nvim",
+		config = function()
+			require("cutlass").setup({ cut_key = "m" })
+		end,
+	},
+
 	-- editing: expand/shrink visual selection
 	{ "terryma/vim-expand-region" },
 
@@ -337,6 +370,14 @@ lvim.plugins = {
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
 
+	-- editing: substitute operator
+	{
+		"gbprod/substitute.nvim",
+		config = function()
+			require("substitute").setup()
+		end,
+	},
+
 	-- git: conflict markers
 	{ "rhysd/conflict-marker.vim" },
 
@@ -355,16 +396,16 @@ lvim.plugins = {
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
 
+	-- navigation: pairs of bracket mappings
+	{ "tpope/vim-unimpaired" },
+
 	-- navigation: re-open files at last edit position
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
-			require("nvim-lastplace").setup({})
+			require("nvim-lastplace").setup()
 		end,
 	},
-
-	-- navigation: pairs of bracket mappings
-	{ "tpope/vim-unimpaired" },
 
 	-- navigation: sneak motion
 	{ "ggandor/lightspeed.nvim" },
@@ -372,13 +413,16 @@ lvim.plugins = {
 	-- navigation: symbols outline
 	-- { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
+	-- navigation: windows
+	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },
+
 	-- searching: hlsearch lens
 	{ "kevinhwang91/nvim-hlslens" },
 
 	-- searching: clear hlsearch when done
 	{ "romainl/vim-cool" },
 
-	-- searching: searching from a visual selectiong
+	-- searching: searching from a visual selection
 	{ "bronson/vim-visual-star-search" },
 
 	-- text objects: lines
@@ -397,7 +441,25 @@ lvim.plugins = {
 	},
 
 	-- tmux
-	{ "christoomey/vim-tmux-navigator" },
+	{
+		"aserowy/tmux.nvim",
+		config = function()
+			require("tmux").setup({
+				copy_sync = {
+					enable = true,
+					redirect_to_clipboard = true,
+				},
+				navigation = {
+					enable_default_keybindings = true,
+				},
+				resize = {
+					enable_default_keybindings = true,
+					resize_step_x = 5,
+					resize_step_y = 5,
+				},
+			})
+		end,
+	},
 
 	-- viewing: absolute line numbers in inactive windows
 	{ "jeffkreeftmeijer/vim-numbertoggle" },
