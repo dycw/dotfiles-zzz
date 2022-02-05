@@ -4,7 +4,7 @@
 _DIR_SCRIPT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 # dotfiles
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/dotfiles"
 export PATH="$DOTFILES/bin${PATH:+:$PATH}"
 export PATH="$HOME/.local/bin${PATH:+:$PATH}"
 
@@ -81,7 +81,7 @@ alias .....='cd ../../../..'
 
 alias cdcache='cd "${XDG_CACHE_HOME:-$HOME/.cache}"'
 alias cdconfig='cd "${XDG_CONFIG_HOME:-$HOME/.config}"'
-alias cddf='cd $HOME/.dotfiles'
+alias cddf='cd $HOME/dotfiles'
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
@@ -199,7 +199,7 @@ alias gitconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config"'
 alias gitconfiglocal='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config.local"'
 alias gitignore='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"'
 _ALIASES=$(
-	cd "$HOME/.dotfiles" || exit
+	cd "$DOTFILES" || exit
 	git --list-cmds=alias
 )
 for _ALIAS in $_ALIASES; do
@@ -282,7 +282,7 @@ alias lint='autoflake -r --in-place --remove-all-unused-imports --remove-duplica
 alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 alias pyt='pytest'
 alias pytco='pytest --co'
-_FILE="$DOTFILES/bin/pytest-aliases.sh" && [ -f "$_FILE" ] && source "$_FILE"
+_FILE="$DOTFILES/bin/pytest-aliases" && [ -f "$_FILE" ] && source "$_FILE"
 
 # ranger
 [ -x "$(command -v ranger)" ] && alias r='ranger'
@@ -294,6 +294,7 @@ export REDISCLI_HISTFILE="$_DIR/history"
 export REDISCLI_RCFILE="$_DIR/redis/redisclirc"
 
 # rg
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
 [ -x "$(command -v rg)" ] && alias rg='rg -L --hidden --no-messages'
 
 # rm

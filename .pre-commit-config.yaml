@@ -79,7 +79,6 @@ repos:
     rev: 2.1.5
     hooks:
       - id: script-must-have-extension
-      #       exclude: (.bash_profile|.bashrc)
       - id: script-must-not-have-extension
   - repo: https://github.com/pycqa/flake8
     rev: 4.0.1
@@ -112,6 +111,7 @@ repos:
           - flake8-use-fstring
           - flake8-variables-names
           - pep8-naming
+        exclude: dropbox.py
   - repo: https://github.com/markdownlint/markdownlint
     rev: v0.11.0
     hooks:
@@ -149,7 +149,7 @@ repos:
         language: node
         types: [python]
         additional_dependencies: [pyright@1.1.197]
-        exclude: ipython/
+        exclude: dropbox.py|ipython/
   - repo: meta
     hooks:
       - id: check-useless-excludes

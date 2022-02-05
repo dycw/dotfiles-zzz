@@ -19,13 +19,13 @@
     ~/.config/nano/nanorc:
     ~/.config/ranger/rc.conf: ranger.rc.conf
     ~/.config/pypoetry/config.toml: poetry.config.toml
+    ~/.config/ripgreprc:
     ~/.config/sqlite/.sqliterc:
     ~/.config/wget/wgetrc:
     ~/.inputrc:
     ~/.ipython/profile_default: ipython
     ~/.jupyter:
     ~/.luacheckrc: lua/luacheckrc
-    ~/.ripgreprc:
     ~/.stylua.toml: lua/stylua.toml
     ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
