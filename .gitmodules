@@ -10,7 +10,7 @@
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
 	master = main
-[submodule "submodules/.tmux"]
+[submodule "submodules/oh-my-tmux"]
 	path = submodules/.tmux
 	url = https://github.com/gpakosz/.tmux.git
 	branch = master
