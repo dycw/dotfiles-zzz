@@ -1,8 +1,5 @@
-from typing import TypeVar
-
 import sklearn  # noqa: F401
 from sklearn.base import BaseEstimator  # noqa: F401
-from sklearn.base import TransformerMixin
 from sklearn.compose import ColumnTransformer  # noqa: F401
 from sklearn.compose import TransformedTargetRegressor  # noqa: F401
 from sklearn.compose import make_column_selector  # noqa: F401
@@ -38,53 +35,3 @@ from sklearn.tree import DecisionTreeClassifier  # noqa: F401
 from sklearn.tree import DecisionTreeRegressor  # noqa: F401
 from sklearn.utils.validation import check_random_state  # noqa: F401
 from sklearn_pandas import DataFrameMapper  # noqa: F401
-
-
-try:
-    from numpy import ndarray
-    from pandas import DataFrame
-    from pandas import Series
-except ModuleNotFoundError:
-    pass
-else:
-    ArrayLike = TypeVar("ArrayLike", ndarray, Series, DataFrame)
-
-    def apply_transform(scaler: TransformerMixin, x: ArrayLike) -> ArrayLike:
-        if isinstance(x, ndarray):
-            return scaler.transform(x)
-        elif isinstance(x, Series):
-            return Series(
-                apply_transform(scaler, x.to_numpy()), x.index, name=x.name
-            )
-        elif isinstance(x, DataFrame):
-            return DataFrame(
-                apply_transform(scaler, x.to_numpy()), x.index, x.columns
-            )
-        else:
-            raise TypeError(f"Invalid type: {type(x).__name__}")
-
-    def apply_inverse_transform(
-        scaler: TransformerMixin, x: ArrayLike
-    ) -> ArrayLike:
-        if isinstance(x, ndarray):
-            return scaler.inverse_transform(x)
-        elif isinstance(x, Series):
-            return Series(
-                apply_inverse_transform(scaler, x.to_numpy()),
-                x.index,
-                name=x.name,
-            )
-        elif isinstance(x, DataFrame):
-            return DataFrame(
-                apply_inverse_transform(scaler, x.to_numpy()),
-                x.index,
-                x.columns,
-            )
-        else:
-            raise TypeError(f"Invalid type: {type(x).__name__}")
-
-    def fit_transform_scaler(
-        scaler: TransformerMixin, x: ArrayLike
-    ) -> tuple[TransformerMixin, ArrayLike]:
-        fitted = scaler.fit(x)
-        return fitted, apply_transform(fitted, x)
