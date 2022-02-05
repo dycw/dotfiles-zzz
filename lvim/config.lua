@@ -1,87 +1,154 @@
---[[
-lvim is the global options object
+-- luacheck:ignore 112
+-- luacheck:ignore 113
 
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+--------------------------------------------------------------------------------
+-- vim
+--------------------------------------------------------------------------------
+-- relative line numbers
+vim.opt.relativenumber = true
 
--- general
-lvim.log.level = "warn"
+-- scrolling
+vim.opt.scrolloff = 4
+vim.opt.sidescrolloff = 4
+
+-- substitution
+vim.opt.gdefault = true
+
+--------------------------------------------------------------------------------
+-- key bindings
+--------------------------------------------------------------------------------
+-- leader key
+lvim.leader = "space"
+
+-- command mode
+lvim.keys.normal_mode["<CR>"] = ":"
+lvim.keys.visual_mode["<CR>"] = ":"
+
+-- disable ex-mode
+lvim.keys.normal_mode["Q"] = "<Nop>"
+
+-- insert navigation
+lvim.keys.insert_mode["<C-h>"] = "<Left>"
+lvim.keys.insert_mode["<C-j>"] = "<Down>"
+lvim.keys.insert_mode["<C-k>"] = "<Up>"
+lvim.keys.insert_mode["<C-l>"] = "<Right>"
+
+-- save
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<cr>"
+lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<cr>"
+
+-- quit
+lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+
+--------------------------------------------------------------------------------
+-- LunarVim
+--------------------------------------------------------------------------------
+-- format on save
 lvim.format_on_save = true
+
+-- logging
+lvim.log.level = "warn"
+
+-- colorscheme
 lvim.colorscheme = "onedarker"
 
--- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = false
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
-
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
-
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
--- }
-
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+-- plugins
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 
--- if you don't want all the parsers change this to a table of the ones you want
+--------------------------------------------------------------------------------
+-- LSP
+--------------------------------------------------------------------------------
+-- automatic server installation
+lvim.lsp.automatic_servers_installation = true
+
+-- treesitter
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+	"bash",
+	"css",
+	"json",
+	"haskell",
+	"html",
+	"lua",
+	"python",
+	"rust",
+	"toml",
+	"yaml",
+}
+lvim.builtin.treesitter.highlight.enabled = true
+
+--------------------------------------------------------------------------------
+-- Telescope
+--------------------------------------------------------------------------------
+lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
+lvim.builtin.telescope.defaults.layout_config.width = 0.99
+lvim.builtin.telescope.defaults.layout_strategy = "vertical"
+
+--------------------------------------------------------------------------------
+-- Which Key
+--------------------------------------------------------------------------------
+local which_key = lvim.builtin.which_key.mappings
+
+which_key["b"]["d"] = {
+	"<Cmd>BufferDelete<CR>",
+	"Delete",
+}
+which_key["c"] = { "<Cmd>Telescope commands<CR>", "Commands" }
+which_key["m"] = { "<Cmd>Telescope marks<CR>", "Marks" }
+which_key["o"] = {
+	name = "...",
+	f = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
+}
+which_key["q"] = { "<Cmd>Telescope quickfix<CR>", "Quickfix" }
+which_key["t"] = {
+	name = "+Trouble",
+	r = { "<Cmd>Trouble lsp_references<cr>", "References" },
+	f = { "<Cmd>Trouble lsp_definitions<cr>", "Definitions" },
+	d = { "<Cmd>Trouble document_diagnostics<cr>", "Document diagnostics" },
+	q = { "<Cmd>Trouble quickfix<cr>", "QuickFix" },
+	l = { "<Cmd>Trouble loclist<cr>", "LocationList" },
+	w = { "<Cmd>Trouble workspace_diagnostics<cr>", "Workspace diagnostics" },
+}
+which_key["w"] = {
+	name = "+Windows",
+	h = { "<Cmd>set nosplitright<CR><Cmd>vsplit<CR>", "Split to left" },
+	j = { "<Cmd>set splitbelow<CR><Cmd>split<CR>", "Split below" },
+	k = { "<Cmd>set nosplitbelow<CR><Cmd>split<CR>", "Split above" },
+	l = { "<Cmd>set splitright<CR><Cmd>vsplit<CR>", "Split to right" },
+}
+which_key["S"] = {
+	name = "Spectre",
+	f = { "viw<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
+	s = { "<Cmd>lua require('spectre').open()<CR>", "Search" },
+	w = {
+		"<Cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+		"Word",
+	},
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+-- if you don't want all the parsers change this to a table of the ones you want
+lvim.builtin.treesitter.ensure_installed = {
+	"bash",
+	"css",
+	"haskell",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"rust",
+	"typescript",
+	"yaml",
+}
+
+lvim.builtin.treesitter.ignore_install = {}
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
-
--- ---@usage disable automatic installation of servers
--- lvim.lsp.automatic_servers_installation = false
+lvim.lsp.automatic_servers_installation = false
 
 -- ---@usage Select which servers should be configured manually. Requires `:LvimCacheRest` to take effect.
 -- See the full default list `:lua print(vim.inspect(lvim.lsp.override))`
@@ -135,14 +202,40 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+--------------------------------------------------------------------------------
+-- plugins
+--------------------------------------------------------------------------------
+lvim.plugins = {
+
+	-- git: conflict markers
+	{ "rhysd/conflict-marker.vim" },
+
+	-- git: mergetool
+	{
+		"samoshkin/vim-mergetool",
+		config = function()
+			vim.g.mergetool_layout = "LmR"
+			vim.g.mergetool_prefer_revisionn = "unmodified"
+		end,
+	},
+
+	-- LSP: trouble
+	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
+
+	-- navigation:
+	{ "tpope/vim-unimpaired" },
+
+	-- navigation: re-open files at last edit position
+	{
+		"ethanholz/nvim-lastplace",
+		config = function()
+			require("nvim-lastplace").setup({})
+		end,
+	},
+
+	-- themes
+	{ "folke/tokyonight.nvim" },
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
