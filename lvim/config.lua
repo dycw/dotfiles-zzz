@@ -137,6 +137,13 @@ which_key["k"] = {
 }
 which_key["l"] = {
 	name = "...",
+	-- trouble
+	d = { "<Cmd>Trouble document_diagnostics<CR>", "Diagnostics" },
+	f = { "<Cmd>Trouble lsp_definitions<CR>", "Definitions" },
+	r = { "<Cmd>Trouble lsp_references<CR>", "References" },
+	q = { "<Cmd>Trouble quickfix<CR>", "Quick Fix" },
+	w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
+	-- others
 	g = { "<Cmd>Telescope live_grep<CR>", "Live grep" },
 	l = { "<Cmd>Telescope loclist<CR>", "Location list" },
 }
@@ -169,15 +176,8 @@ which_key["s"] = {
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 }
 which_key["t"] = {
-	name = "+Trouble",
-	r = { "<Cmd>Trouble lsp_references<cr>", "References" },
-	f = { "<Cmd>Trouble lsp_definitions<cr>", "Definitions" },
-	d = { "<Cmd>Trouble document_diagnostics<cr>", "Document diagnostics" },
-	q = { "<Cmd>Trouble quickfix<cr>", "QuickFix" },
-	l = { "<Cmd>Trouble loclist<cr>", "LocationList" },
-	w = { "<Cmd>Trouble workspace_diagnostics<cr>", "Workspace diagnostics" },
-	--
-	d = { "<Cmd>Telscope lsp_type_definitions<CR>", "Type definitions" },
+	name = "...",
+	d = { "<Cmd>Telescope lsp_type_definitions<CR>", "Type definitions" },
 }
 which_key["w"] = {
 	name = "...",
@@ -418,8 +418,3 @@ lvim.plugins = {
 	-- viewing: syntax highlighting
 	{ "sheerun/vim-polyglot" },
 }
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
