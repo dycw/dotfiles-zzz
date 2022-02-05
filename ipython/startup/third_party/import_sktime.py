@@ -22,8 +22,8 @@ from sktime.utils.plotting.forecasting import plot_ys  # noqa: F401
 from sktime.utils.time_series import time_series_slope  # noqa: F401
 
 
-T = TypeVar("T")
-U = TypeVar("U")
+_T = TypeVar("_T")
+_U = TypeVar("_U")
 
 
 _DEFAULT_REGEX_X = "^x_"
@@ -73,13 +73,13 @@ else:
         return tuple(roundrobin(all_train, all_valid, all_test))
 
     @dataclass
-    class TemporalSplit(Generic[T]):
-        X_train: T
-        X_valid: T
-        X_test: T
-        y_train: T
-        y_valid: T
-        y_test: T
+    class TemporalSplit(Generic[_T]):
+        X_train: _T
+        X_valid: _T
+        X_test: _T
+        y_train: _T
+        y_valid: _T
+        y_test: _T
         index_train: Index | None = None
         index_valid: Index | None = None
         index_test: Index | None = None
@@ -109,7 +109,7 @@ else:
             return _XYView(X=self.X_valid, y=self.y_valid)
 
         @property
-        def X(self) -> _TemporalView:
+        def X(self) -> _TemporalView:  # noqa: N802
             return _TemporalView(
                 train=self.X_train, valid=self.X_valid, test=self.X_test
             )
@@ -121,9 +121,9 @@ else:
             )
 
         @classmethod
-        def from_Xy(
+        def from_Xy(  # noqa: N802
             cls,
-            X: ArrayLike,
+            X: ArrayLike,  # noqa: N803
             y: ArrayLike,
             *,
             train: float = _DEFAULT_FRAC_TRAIN,
@@ -145,7 +145,7 @@ else:
             valid: float = _DEFAULT_FRAC_VALID,
             test: float = _DEFAULT_FRAC_TEST,
         ) -> TemporalSplit[DataFrame]:
-            X = df.filter(regex=regex_x)
+            X = df.filter(regex=regex_x)  # noqa: N806
             y = df.filter(regex=regex_y)
             split = cls.from_Xy(X, y, train=train, valid=valid, test=test)
             return replace(
@@ -155,15 +155,15 @@ else:
                 index_test=split.X_test.index,
             )
 
-        def map(self, func: Callable[[T], U]) -> TemporalSplit[U]:
+        def map(self, func: Callable[[_T], _U]) -> TemporalSplit[_U]:
             return self.map_x(func).map_y(func)  # type: ignore
 
-        def map_x(self, func: Callable[[T], T]) -> TemporalSplit[T]:
+        def map_x(self, func: Callable[[_T], _T]) -> TemporalSplit[_T]:
             return replace(
                 self, **{f"X_{k}": func(v) for k, v in self.X._asdict().items()}
             )
 
-        def map_y(self, func: Callable[[T], T]) -> TemporalSplit[T]:
+        def map_y(self, func: Callable[[_T], _T]) -> TemporalSplit[_T]:
             return replace(
                 self, **{f"y_{k}": func(v) for k, v in self.y._asdict().items()}
             )
