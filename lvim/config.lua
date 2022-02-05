@@ -450,9 +450,6 @@ lvim.plugins = {
 	-- diagnostics
 	{ "folke/trouble.nvim", cmd = "TroubleToggle", event = "BufRead" },
 
-	-- symbols outline
-	{ "simrat39/symbols-outline.nvim", event = "BufRead" },
-
 	-------------------
 	-- miscellaneous --
 	-------------------
@@ -678,12 +675,6 @@ lvim.plugins = {
 
 	-- treesitter text objects
 	{ "mfussenegger/nvim-ts-hint-textobject", event = "BufRead" },
-
-	---------------
-	-- utilities --
-	---------------
-	-- calendar
-	{ "itchyny/calendar.vim", event = "BufRead" },
 
 	-------------
 	-- viewing --
