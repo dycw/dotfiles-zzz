@@ -8,7 +8,7 @@
 vim.opt.relativenumber = true
 
 -- scrolling
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 20
 vim.opt.sidescrolloff = 4
 
 -- substitution
@@ -117,6 +117,10 @@ which_key["d"] = {
 	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
 	s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
 }
+which_key["e"] = {
+	name = "...",
+	m = { "<Cmd>EnMasse<CR>", "EnMasse" },
+}
 which_key["f"] = {
 	name = "...",
 	-- default
@@ -177,6 +181,9 @@ which_key["s"] = {
 }
 which_key["t"] = {
 	name = "...",
+	-- default
+	t = { "<Cmd>NvimTreeToggle<CR>", "NvimTree" },
+	-- others
 	d = { "<Cmd>Telescope lsp_type_definitions<CR>", "Type definitions" },
 }
 which_key["w"] = {
