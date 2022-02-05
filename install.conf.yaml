@@ -53,5 +53,10 @@
     stdout: false
     stderr: true
 
+- snap:
+    - signal-desktop
+    - spotify
+    - telegram-desktop
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

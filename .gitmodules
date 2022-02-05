@@ -2,13 +2,19 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "dotbot-brew"]
+	path = dotbot-brew
+	url = https://github.com/wren/dotbot-brew.git
+[submodule "dotbot-apt"]
+	path = dotbot-apt
+	url = https://github.com/bryant1410/dotbot-apt
+[submodule "dotbot-pip"]
+	path = dotbot-pip
+	url = https://github.com/sobolevn/dotbot-pip.git
+[submodule "dotbot-snap"]
+	path = dotbot-snap
+	url = https://github.com/DrDynamic/dotbot-snap
 [submodule "submodules/.tmux"]
 	path = submodules/.tmux
 	url = https://github.com/gpakosz/.tmux.git
 	branch = master
-[submodule "dotbot-pip"]
-	path = dotbot-pip
-	url = https://github.com/sobolevn/dotbot-pip.git
-[submodule "dotbot-brew"]
-	path = dotbot-brew
-	url = https://github.com/wren/dotbot-brew.git
