@@ -33,8 +33,10 @@
     - direnv
     - exa
     - fd
+    - fzf
     - git-delta
     - glow
+    - neovim
     - pipx
     - ranger
     - ripgrep
@@ -44,6 +46,7 @@
     - stylua
     - tree
     - tmux
+    - vim
     - watchexec
     - xclip
     - zoxide
