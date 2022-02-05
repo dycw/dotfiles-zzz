@@ -302,6 +302,14 @@ lvim.plugins = {
 		end,
 	},
 
+	-- editing: cut separate from delete
+	{
+		"gbprod/cutlass.nvim",
+		config = function()
+			require("cutlass").setup({ cut_key = "m" })
+		end,
+	},
+
 	-- editing: expand/shrink visual selection
 	{ "terryma/vim-expand-region" },
 
