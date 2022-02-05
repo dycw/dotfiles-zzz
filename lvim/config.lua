@@ -441,7 +441,25 @@ lvim.plugins = {
 	},
 
 	-- tmux
-	{ "christoomey/vim-tmux-navigator" },
+	{
+		"aserowy/tmux.nvim",
+		config = function()
+			require("tmux").setup({
+				copy_sync = {
+					enable = true,
+					redirect_to_clipboard = true,
+				},
+				navigation = {
+					enable_default_keybindings = true,
+				},
+				resize = {
+					enable_default_keybindings = true,
+					resize_step_x = 5,
+					resize_step_y = 5,
+				},
+			})
+		end,
+	},
 
 	-- viewing: absolute line numbers in inactive windows
 	{ "jeffkreeftmeijer/vim-numbertoggle" },
