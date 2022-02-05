@@ -119,11 +119,11 @@ which_key["d"] = {
 		"Telescope (document)",
 	},
 	j = {
-		"<Cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+		"<Cmd>lua vim.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
 		"Next",
 	},
 	k = {
-		"<Cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+		"<Cmd>lua vim.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
 		"Previous",
 	},
 	w = {
@@ -203,7 +203,7 @@ which_key["j"] = { "<Cmd>Telescope jumplist<CR>", "Jump list" }
 which_key["l"] = {
 	name = "List...",
 	d = {
-		"<Cmd>Trouble lsp_document_diagnostics<CR>",
+		"<Cmd>Trouble document_diagnostics<CR>",
 		"Diagnostics (document)",
 	},
 	f = { "<Cmd>Trouble lsp_definitions<CR>", "Definitions" },
@@ -212,7 +212,7 @@ which_key["l"] = {
 	q = { "<Cmd>Trouble quickfix<CR>", "Quickfix" },
 	r = { "<Cmd>Trouble lsp_references<CR>", "References" },
 	w = {
-		"<Cmd>Trouble lsp_workspace_diagnostics<CR>",
+		"<Cmd>Trouble workspace_diagnostics<CR>",
 		"Diagnostics (workspace)",
 	},
 }
@@ -350,22 +350,9 @@ lvim.builtin.nvimtree.active = false
 
 -- extra plugins
 lvim.plugins = {
-
-	---------------
-	-- debugging --
-	---------------
-	-- python
-	{ "mfussenegger/nvim-dap-python", event = "BufRead", ft = "python" },
-
-	-- tests
-	{ "vim-test/vim-test", event = "BufRead" },
-
 	-------------
 	-- editing --
 	-------------
-	-- alignment
-	{ "junegunn/vim-easy-align", event = "BufRead" },
-
 	-- better escape
 	{
 		"max397574/better-escape.nvim",
@@ -376,9 +363,6 @@ lvim.plugins = {
 		end,
 	},
 
-	-- close end-* structures
-	{ "tpope/vim-endwise", event = "BufRead" },
-
 	-- expand/shrink visual selection
 	{ "terryma/vim-expand-region", event = "BufRead" },
 
@@ -386,13 +370,7 @@ lvim.plugins = {
 	{ "windwp/nvim-spectre", event = "BufRead" },
 
 	-- increment/decrement
-	{
-		"monaqa/dial.nvim",
-		config = function()
-			vim.cmd("source ~/.config/lvim/user/dial.lua")
-		end,
-		event = "BufRead",
-	},
+	{ "monaqa/dial.nvim", event = "BufRead" },
 
 	-- multiple cursors
 	{ "mg979/vim-visual-multi", event = "BufRead" },
@@ -450,26 +428,11 @@ lvim.plugins = {
 	---------
 	-- git --
 	---------
-	-- commit browser
-	{ "junegunn/gv.vim", event = "BufRead" },
-
 	-- conflict markers
 	{ "rhysd/conflict-marker.vim", event = "BufRead" },
 
 	-- fugitive
 	{ "tpope/vim-fugitive", event = "BufRead" },
-
-	-- git blame
-	{
-		"f-person/git-blame.nvim",
-		event = "BufRead",
-		setup = function()
-			vim.g["gitblame_enabled"] = 0
-		end,
-	},
-
-	-- git diff in a single tabpage
-	{ "sindrets/diffview.nvim", event = "BufRead" },
 
 	-- mergetool
 	{
@@ -481,39 +444,11 @@ lvim.plugins = {
 		event = "BufRead",
 	},
 
-	-- neogit
-	{
-		"TimUntersberger/neogit",
-		config = function()
-			require("neogit").setup({ disable_commit_confirmation = true })
-		end,
-		event = "BufRead",
-		requires = "nvim-lua/plenary.nvim",
-	},
-
 	---------
 	-- LSP --
 	---------
-	-- code action lightbulb
-	{ "kosayoda/nvim-lightbulb", event = "BufRead" },
-
 	-- diagnostics
 	{ "folke/trouble.nvim", cmd = "TroubleToggle", event = "BufRead" },
-
-	-- symbols outline
-	{ "simrat39/symbols-outline.nvim", event = "BufRead" },
-
-	--------------
-	-- markdown --
-	--------------
-	-- markdown preview
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = "MarkdownPreview",
-		event = "BufRead",
-		ft = { "markdown" },
-		run = "cd app && yarn install",
-	},
 
 	-------------------
 	-- miscellaneous --
@@ -527,18 +462,6 @@ lvim.plugins = {
 	----------------
 	-- navigation --
 	----------------
-	-- accelerated up/down
-	{
-		"rhysd/accelerated-jk",
-		config = function()
-			local settings = { noremap = false, silent = true }
-			vim.api.nvim_set_keymap("n", "j", "<Plug>(accelerated_jk_gj)", settings)
-			vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", settings)
-		end,
-		event = "BufRead",
-	},
-
-	-- last place
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
@@ -752,12 +675,6 @@ lvim.plugins = {
 
 	-- treesitter text objects
 	{ "mfussenegger/nvim-ts-hint-textobject", event = "BufRead" },
-
-	---------------
-	-- utilities --
-	---------------
-	-- calendar
-	{ "itchyny/calendar.vim", event = "BufRead" },
 
 	-------------
 	-- viewing --

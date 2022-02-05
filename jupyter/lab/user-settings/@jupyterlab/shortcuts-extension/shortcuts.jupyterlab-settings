@@ -1,0 +1,9 @@
+{
+  "shortcuts": [
+    {
+      "command": "kernelmenu:restart-and-clear",
+      "keys": ["9", "9"],
+      "selector": "[data-jp-kernel-user]:focus"
+    }
+  ]
+}
