@@ -95,12 +95,40 @@ which_key["b"]["d"] = {
 	"Delete",
 }
 which_key["c"] = { "<Cmd>Telescope commands<CR>", "Commands" }
+which_key["d"] = {
+
+	name = "...",
+
+	j = {
+		"<Cmd>lua vim.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+		"Diagostic: next",
+	},
+	k = {
+		"<Cmd>lua vim.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+		"Diagnostic: previous",
+	},
+	s = {
+		"<Cmd>Telescope lsp_document_symbols<CR>",
+		"Telescope: Document symbols",
+	},
+}
+which_key["f"] = {
+	name = "+Find",
+	f = { "<Cmd>Telescope find_files<CR>", "Find files" },
+	r = { "<Cmd>Telescope lsp_references<CR>", "References" },
+	s = { "<Cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
+}
 which_key["m"] = { "<Cmd>Telescope marks<CR>", "Marks" }
 which_key["o"] = {
 	name = "...",
 	f = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
 }
 which_key["q"] = { "<Cmd>Telescope quickfix<CR>", "Quickfix" }
+which_key["r"] = {
+	name = "...",
+	f = { "<Cmd>Telescope lsp_references<CR>", "References" },
+	g = { "<Cmd>Telescope registers<CR>", "Registers" },
+}
 which_key["t"] = {
 	name = "+Trouble",
 	r = { "<Cmd>Trouble lsp_references<cr>", "References" },
@@ -111,11 +139,21 @@ which_key["t"] = {
 	w = { "<Cmd>Trouble workspace_diagnostics<cr>", "Workspace diagnostics" },
 }
 which_key["w"] = {
-	name = "+Windows",
-	h = { "<Cmd>set nosplitright<CR><Cmd>vsplit<CR>", "Split to left" },
-	j = { "<Cmd>set splitbelow<CR><Cmd>split<CR>", "Split below" },
-	k = { "<Cmd>set nosplitbelow<CR><Cmd>split<CR>", "Split above" },
-	l = { "<Cmd>set splitright<CR><Cmd>vsplit<CR>", "Split to right" },
+	name = "...",
+	-- windows
+	h = { "<Cmd>set nosplitright<CR><Cmd>vsplit<CR>", "Window: left" },
+	j = { "<Cmd>set splitbelow<CR><Cmd>split<CR>", "Window: down" },
+	k = { "<Cmd>set nosplitbelow<CR><Cmd>split<CR>", "Window: up" },
+	l = { "<Cmd>set splitright<CR><Cmd>vsplit<CR>", "Window: right" },
+	-- workspace diagnostics
+	-- d = {
+	-- 	"<Cmd>Telescope workspace_diagnostics<CR>",
+	-- 	"Workspace diagnostics",
+	-- },
+	s = {
+		"<Cmd>Telescope lsp_workspace_symbols<CR>",
+		"Workspace symbols",
+	},
 }
 which_key["S"] = {
 	name = "Spectre",
@@ -203,6 +241,9 @@ lvim.lsp.automatic_servers_installation = false
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
+	-- cosmetic: theme
+	{ "folke/tokyonight.nvim" },
+
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
@@ -234,11 +275,17 @@ lvim.plugins = {
 	-- editing: repeat plugin actions
 	{ "tpope/vim-repeat" },
 
+	-- editing: quickfix list editing
+	{ "olical/vim-enmasse" },
+
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
 
 	-- git: conflict markers
 	{ "rhysd/conflict-marker.vim" },
+
+	-- git: git diff
+	{ "sindrets/diffview.nvim" },
 
 	-- git: mergetool
 	{
@@ -266,11 +313,17 @@ lvim.plugins = {
 	-- navigation: sneak motion
 	{ "ggandor/lightspeed.nvim" },
 
+	-- navigation: symbols outline
+	-- { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
+
 	-- searching: hlsearch lens
 	{ "kevinhwang91/nvim-hlslens" },
 
 	-- searching: clear hlsearch when done
 	{ "romainl/vim-cool" },
+
+	-- searching: searching from a visual selectiong
+	{ "bronson/vim-visual-star-search" },
 
 	-- text objects: lines
 	{ "wellle/line-targets.vim" },
@@ -281,8 +334,11 @@ lvim.plugins = {
 	-- text objects: pair, quote, separator, argument, multi text
 	{ "wellle/targets.vim" },
 
-	-- themes
-	{ "folke/tokyonight.nvim" },
+	-- text objects: variable segments
+	{
+		"julian/vim-textobj-variable-segment",
+		requires = { "kana/vim-textobj-user" },
+	},
 
 	-- tmux
 	{ "christoomey/vim-tmux-navigator" },
