@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from contextlib import suppress
+from typing import Generic
 from typing import TypeVar
 
 import hypothesis  # noqa: F401
@@ -43,11 +44,13 @@ def draw(strategy: SearchStrategy[_T]) -> _T:
     return strategy.example()
 
 
-class data:
+class _Data(Generic[_T]):
     """Mimics instances of data()."""
 
-    @classmethod
-    def draw(cls, strategy: SearchStrategy[_T]) -> _T:
+    def draw(self, strategy: SearchStrategy[_T]) -> _T:
         """Draw an example from a strategy."""
 
         return draw(strategy)
+
+
+data = _Data()
