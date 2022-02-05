@@ -426,7 +426,7 @@ lvim.plugins = {
 	{ "bronson/vim-visual-star-search" },
 
 	-- text objects: lines
-	-- { "wellle/line-targets.vim" },
+	{ "wellle/line-targets.vim" },
 
 	-- text objects: matching quotes, backticks and pipe
 	{ "airblade/vim-matchquote" },
