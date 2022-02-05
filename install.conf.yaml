@@ -27,7 +27,7 @@
     ~/.luacheckrc: lua/luacheckrc
     ~/.ripgreprc:
     ~/.stylua.toml: lua/stylua.toml
-    ~/.tmux.conf: submodules/.tmux/.tmux.conf
+    ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
 
 - brew:

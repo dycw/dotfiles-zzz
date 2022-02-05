@@ -9,9 +9,9 @@
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
-	master = main
+	branch = main
 [submodule "submodules/oh-my-tmux"]
-	path = submodules/.tmux
+	path = submodules/oh-my-tmux
 	url = https://github.com/gpakosz/.tmux.git
 	branch = master
 [submodule "submodules/python-repo-configs"]
