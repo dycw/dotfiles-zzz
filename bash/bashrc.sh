@@ -294,6 +294,7 @@ export REDISCLI_HISTFILE="$_DIR/history"
 export REDISCLI_RCFILE="$_DIR/redis/redisclirc"
 
 # rg
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
 [ -x "$(command -v rg)" ] && alias rg='rg -L --hidden --no-messages'
 
 # rm
