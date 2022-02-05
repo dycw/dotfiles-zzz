@@ -42,6 +42,14 @@ lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<cr>"
 lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 --------------------------------------------------------------------------------
+-- autocommands
+--------------------------------------------------------------------------------
+lvim.autocommands.custom_groups = {
+	-- keep windows equally sized
+	{ "VimResized", "*", "wincmd =" },
+}
+
+--------------------------------------------------------------------------------
 -- LunarVim
 --------------------------------------------------------------------------------
 -- format on save
@@ -206,6 +214,36 @@ lvim.lsp.automatic_servers_installation = false
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
+	-- editing: better escape
+	{
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup({
+				mapping = { "jj", "jk", "kj", "kk" },
+			})
+		end,
+	},
+
+	-- editing: expand/shrink visual selection
+	{ "terryma/vim-expand-region" },
+
+	-- editing: find and replace
+	{ "windwp/nvim-spectre" },
+
+	-- editing: increment/decrement
+	{ "monaqa/dial.nvim" },
+
+	-- editing: missing directories
+	{ "jghauser/mkdir.nvim" },
+
+	-- editing: multiple cursors
+	{ "mg979/vim-visual-multi" },
+
+	-- editing: narrow region
+	{ "chrisbra/nrrwrgn" },
+
+	-- editing: quoting and parenthesizing
+	{ "tpope/vim-surround" },
 
 	-- git: conflict markers
 	{ "rhysd/conflict-marker.vim" },
@@ -269,6 +307,12 @@ lvim.plugins = {
 			})
 		end,
 	},
+
+	-- viewing: marks in gutter
+	{ "kshenoy/vim-signature" },
+
+	-- viewing: syntax highlighting
+	{ "sheerun/vim-polyglot" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
