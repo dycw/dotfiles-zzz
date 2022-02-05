@@ -222,9 +222,6 @@ lvim.plugins = {
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
 
-	-- navigation:
-	{ "tpope/vim-unimpaired" },
-
 	-- navigation: re-open files at last edit position
 	{
 		"ethanholz/nvim-lastplace",
@@ -233,8 +230,45 @@ lvim.plugins = {
 		end,
 	},
 
+	-- navigation: pairs of bracket mappings
+	{ "tpope/vim-unimpaired" },
+
+	-- navigation: sneak motion
+	{ "ggandor/lightspeed.nvim" },
+
+	-- searching: hlsearch lens
+	{ "kevinhwang91/nvim-hlslens" },
+
+	-- searching: clear hlsearch when done
+	{ "romainl/vim-cool" },
+
+	-- text objects: lines
+	{ "wellle/line-targets.vim" },
+
+	-- text objects: matching quotes, backticks and pipe
+	{ "airblade/vim-matchquote" },
+
+	-- text objects: pair, quote, separator, argument, multi text
+	{ "wellle/targets.vim" },
+
 	-- themes
 	{ "folke/tokyonight.nvim" },
+
+	-- tmux
+	{ "christoomey/vim-tmux-navigator" },
+
+	-- viewing: absolute line numbers in inactive windows
+	{ "jeffkreeftmeijer/vim-numbertoggle" },
+
+	-- viewing: indent guides
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("indent_blankline").setup({
+				indent_blankline_char = "▏",
+			})
+		end,
+	},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
