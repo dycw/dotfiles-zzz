@@ -204,6 +204,8 @@ which_key["t"] = {
 }
 which_key["w"] = {
 	name = "...",
+	-- default
+	w = { "<Cmd>lua require('nvim-window').pick()<CR>", "Windows" },
 	-- windows
 	h = { "<Cmd>set nosplitright<CR><Cmd>vsplit<CR>", "Window: left" },
 	j = { "<Cmd>set splitbelow<CR><Cmd>split<CR>", "Window: down" },
@@ -411,6 +413,9 @@ lvim.plugins = {
 	-- navigation: symbols outline
 	-- { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
+	-- navigation: windows
+	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },
+
 	-- searching: hlsearch lens
 	{ "kevinhwang91/nvim-hlslens" },
 
@@ -421,7 +426,7 @@ lvim.plugins = {
 	{ "bronson/vim-visual-star-search" },
 
 	-- text objects: lines
-	{ "wellle/line-targets.vim" },
+	-- { "wellle/line-targets.vim" },
 
 	-- text objects: matching quotes, backticks and pipe
 	{ "airblade/vim-matchquote" },
