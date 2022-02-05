@@ -92,7 +92,9 @@ local which_key = lvim.builtin.which_key.mappings
 
 which_key["b"] = {
 	name = "...",
+	-- default
 	b = { "<Cmd>Telescope buffers<CR>", "Buffers" },
+	-- others
 	d = { "<Cmd>BufferDelete<CR>", "Delete" },
 	f = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy find" },
 }
@@ -108,14 +110,16 @@ which_key["d"] = {
 	name = "...",
 	-- diagnostics
 	d = { "<Cmd>Telescope diagnostics<CR>", "Diagostics" },
-	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
+	-- others
 	k = { "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic" },
-	-- definitions
 	f = { "<Cmd>Telescope lsp_definitions<CR>", "Definitions" },
+	---- diagnostics
+	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
 	s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
 }
 which_key["f"] = {
 	name = "...",
+	-- default
 	f = { "<Cmd>Telescope find_files<CR>", "Find files" },
 }
 which_key["h"] = {
