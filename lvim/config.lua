@@ -115,10 +115,7 @@ which_key["d"] = {
 	-- diagnostics
 	d = { "<Cmd>Telescope diagnostics<CR>", "Diagostics" },
 	-- others
-	k = {
-		"<Cmd>lua vim.diagnostic.goto_prev()<CR>",
-		"Previous diagnostic",
-	},
+	k = { "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic" },
 	f = { "<Cmd>Telescope lsp_definitions<CR>", "Definitions" },
 	---- diagnostics
 	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
@@ -161,10 +158,7 @@ which_key["l"] = {
 	f = { "<Cmd>Trouble lsp_definitions<CR>", "Definitions" },
 	r = { "<Cmd>Trouble lsp_references<CR>", "References" },
 	q = { "<Cmd>Trouble quickfix<CR>", "Quick Fix" },
-	w = {
-		"<Cmd>Trouble workspace_diagnostics<CR>",
-		"Workspace diagnostics",
-	},
+	w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
 	-- others
 	g = { "<Cmd>Telescope live_grep<CR>", "Live grep" },
 	l = { "<Cmd>Telescope loclist<CR>", "Location list" },
@@ -195,8 +189,7 @@ which_key["s"] = {
 	f = {
 		"<Cmd>lua require('spectre').open_file_search()<CR>",
 		"Spectre: File",
-	},
-	-- others
+	}, -- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 	p = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
 }
