@@ -289,7 +289,12 @@ lvim.plugins = {
 	},
 
 	-- editing: missing directories
-	{ "jghauser/mkdir.nvim" },
+	{
+		"jghauser/mkdir.nvim",
+		config = function()
+			require("mkdir")
+		end,
+	},
 
 	-- editing: multiple cursors
 	{ "mg979/vim-visual-multi" },
