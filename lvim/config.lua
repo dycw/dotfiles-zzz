@@ -90,6 +90,10 @@ lvim.builtin.telescope.defaults.layout_strategy = "vertical"
 --------------------------------------------------------------------------------
 local which_key = lvim.builtin.which_key.mappings
 
+which_key["a"] = {
+	name = "...",
+	c = { "<Cmd>Telescope autocommands<CR>", "Autocommands" },
+}
 which_key["b"] = {
 	name = "...",
 	-- default
@@ -126,6 +130,14 @@ which_key["f"] = {
 	-- default
 	f = { "<Cmd>Telescope find_files<CR>", "Find files" },
 }
+which_key["g"] = {
+	name = "...",
+	b = { "<Cmd>Telescope git_bcommits<CR>", "Git buffer commits" },
+	c = { "<Cmd>Telescope git_commits<CR>", "Git commits" },
+	f = { "<Cmd>Telescope git_files<CR>", "Git files" },
+	r = { "<Cmd>Telescope grep_string<CR>", "Grep string" },
+	s = { "<Cmd>Telescope git_status<CR>", "Git status" },
+}
 which_key["h"] = {
 	name = "...",
 	t = { "<Cmd>Telescope help_tags<CR>", "Help tags" },
@@ -160,22 +172,28 @@ which_key["q"] = { "<Cmd>Telescope quickfix<CR>", "Quickfix" }
 which_key["r"] = {
 	name = "...",
 	-- LSP
+	c = { "<Cmd>Telescope lsp_range_code_actions<CR>", "Range code actions" },
 	f = { "<Cmd>Telescope lsp_references<CR>", "References" },
 	g = { "<Cmd>Telescope registers<CR>", "Registers" },
 	n = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
 }
 which_key["s"] = {
 	name = "...",
-	-- default/Spectre
-	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
+	-- default
+	s = { "<Cmd>Telescope symbols<CR>", "Symbols" },
 	-- Spectre
-	f = { "<Cmd>lua require('spectre').open_file_search()<CR>", "File" },
+	o = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
+	f = {
+		"<Cmd>lua require('spectre').open_file_search()<CR>",
+		"Spectre: File",
+	},
 	w = {
 		"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-		"Word",
+		"Spectre: Word",
 	},
 	-- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
+	p = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
 }
 which_key["t"] = {
 	name = "...",
@@ -183,6 +201,10 @@ which_key["t"] = {
 	t = { "<Cmd>NvimTreeToggle<CR>", "NvimTree" },
 	-- others
 	d = { "<Cmd>Telescope lsp_type_definitions<CR>", "Type definitions" },
+}
+which_key["v"] = {
+	name = "...",
+	o = { "<Cmd>Telescope vim_options<CR>", "Vim options" },
 }
 which_key["w"] = {
 	name = "...",
