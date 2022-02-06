@@ -251,6 +251,9 @@ lvim.plugins = {
 		end,
 	},
 
+	-- editing: change word casing
+	{ "arthurxavierx/vim-caser" },
+
 	-- editing: expand/shrink visual selection
 	{ "terryma/vim-expand-region" },
 
