@@ -1,8 +1,10 @@
+from collections.abc import Iterable
 from itertools import chain
 from itertools import filterfalse
 from multiprocessing import cpu_count
-from typing import Iterable
+from typing import Optional
 from typing import TypeVar
+from typing import Union
 
 import luigi  # noqa: F401
 from luigi import BoolParameter  # noqa: F401
@@ -25,8 +27,8 @@ T = TypeVar("T")
 def build_if_not_complete(
     tasks: Iterable[Task],
     local_scheduler: bool = False,
-    log_level: str | int = "INFO",
-    workers: int | None = cpu_count(),
+    log_level: Union[str, int] = "INFO",
+    workers: Optional[int] = cpu_count(),
 ) -> None:
     """Build a set of Tasks with the local scheduler."""
 

@@ -1,6 +1,8 @@
 from functools import partial
 from typing import Any
 from typing import Callable
+from typing import Optional
+from typing import Union
 
 import pandas  # noqa: F401
 import pandas as pd  # noqa: F401
@@ -87,17 +89,17 @@ else:
         def __init__(
             self,
             *,
-            dp: int | None = None,
-            rows: int | float = _DEFAULT_MIN_MAX_ROWS,
-            columns: int | float = _DEFAULT_MAX_COLUMNS,
+            dp: Optional[int] = None,
+            rows: Union[int, float] = _DEFAULT_MIN_MAX_ROWS,
+            columns: Union[int, float] = _DEFAULT_MAX_COLUMNS,
         ) -> None:
             float_format = None if dp is None else _get_float_formatter(dp)
             if isinstance(rows, int):
-                rows_use: int | None = rows
+                rows_use: Optional[int] = rows
             else:
                 rows_use = None if isinf(rows) else int(rows)
             if isinstance(columns, int):
-                columns_use: int | None = columns
+                columns_use: Optional[int] = columns
             else:
                 columns_use = None if isinf(columns) else int(columns)
             self._context = option_context(
