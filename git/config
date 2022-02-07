@@ -191,7 +191,7 @@
   stp = stash pop
 
   # submodule
-  smu = submodule update --init --recursive --remote
+  smu = submodule update --init --remote
 
   # status
   s = status -s
@@ -311,7 +311,6 @@
 
 [submodule]
   fetchJobs = 0
-  recurse = true
 
 [tag]
   sort = version:refname
