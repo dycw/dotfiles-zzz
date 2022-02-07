@@ -10,7 +10,6 @@
 
 - create:
     - ~/work/
-    - ~/.ipython/profile_default/
 
 - link:
     ~/.bashrc: bash/bashrc.sh
