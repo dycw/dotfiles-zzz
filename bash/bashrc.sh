@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-_DIR_SCRIPT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
-
 # dotfiles
 export DOTFILES="$HOME/dotfiles"
-export PATH="$DOTFILES/bin${PATH:+:$PATH}"
-export PATH="$HOME/.local/bin${PATH:+:$PATH}"
+_BIN="$DOTFILES/bin"
+if [ -d "$_BIN" ]; then
+	export PATH="$_BIN${PATH:+:$PATH}"
+fi
+_BIN="$HOME/.local/bin"
+if [ -d "$_BIN" ]; then
+	export PATH="$_BIN${PATH:+:$PATH}"
+fi
 
 # homebrew
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
@@ -15,8 +19,6 @@ export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew"
 export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH:+:$PATH}"
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH:+:$MANPATH}:"
 export INFOPATH="$HOMEBREW_PREFIX/share/info${INFOPATH:+:$INFOPATH}"
-_DIR="/home/linuxbrew_dir/.linuxbrew_dir/bin/brew_dir" && [ -f "$_DIR" ] &&
-	eval "$("$_DIR" bash)"
 
 # aliases
 function expand-alias() {
@@ -45,8 +47,14 @@ shopt -s shift_verbose
 shopt -s xpg_echo
 
 # bash-it
-export BASH_IT="$_DIR_SCRIPT/../submodules/bash-it"
-_FILE="$BASH_IT/bash_it.sh" && [ -f "$_FILE" ] && source "$_FILE"
+_DIR="$DOTFILES/submodules/bash-it"
+if [ -d "$_DIR" ]; then
+	export BASH_IT="$_DIR"
+	_FILE="$BASH_IT/bash_it.sh"
+	if [ -f "$_FILE" ]; then
+		source "$_FILE"
+	fi
+fi
 
 # bat
 if [ -x "$(command -v bat)" ]; then
@@ -86,7 +94,6 @@ alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
 alias cdw='cd $HOME/work'
-mkdir -p "$HOME/work"
 
 # cisco
 export PATH="$/opt/cisco/anyconnect/bin${PATH:+:$PATH}"
@@ -99,9 +106,6 @@ if [ -x "$(command -v direnv)" ]; then
 	alias dea='direnv allow'
 	eval "$(direnv hook bash)"
 fi
-
-# dotfiles-local
-_FILE="$HOME/.bashrc.local.sh" && [ -f "$_FILE" ] && source "$_FILE"
 
 # dropbox
 _DIR='/data/derek'
@@ -175,7 +179,7 @@ fi
 
 # fzf-tab-completion
 if [ -x "$(command -v fzf)" ]; then
-	_FILE="$_DIR_SCRIPT/../submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
+	_FILE="$DOTFILES/submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
 	if [ -f "$_FILE" ]; then
 		source "$_FILE"
 		bind -x '"\t": fzf_bash_completion'
@@ -184,9 +188,9 @@ fi
 
 # gem
 if [ -x "$(command -v gem)" ]; then
-	__bin="$(gem environment gemdir)/bin"
-	if [ -d "__bin" ]; then
-		export PATH="$__bin${PATH:+:$PATH}"
+	_BIN="$(gem environment gemdir)/bin"
+	if [ -d "$_BIN" ]; then
+		export PATH="$_BIN${PATH:+:$PATH}"
 	fi
 fi
 
@@ -218,7 +222,6 @@ fi
 
 # less
 _DIR="${XDG_CACHE_HOME:-$HOME/.cache}/less"
-mkdir -p "$_DIR"
 export LESSHISTFILE="$_DIR/history"
 export LESSKEY="$_DIR/lesskey"
 
@@ -288,10 +291,8 @@ _FILE="$DOTFILES/bin/pytest-aliases" && [ -f "$_FILE" ] && source "$_FILE"
 [ -x "$(command -v ranger)" ] && alias r='ranger'
 
 # redis
-_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/redis"
-mkdir -p "$_DIR"
-export REDISCLI_HISTFILE="$_DIR/history"
-export REDISCLI_RCFILE="$_DIR/redis/redisclirc"
+export REDISCLI_HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/redis/history"
+export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redisclirc"
 
 # rg
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
@@ -301,9 +302,7 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
 alias rmrf='rm -rf'
 
 # sqlite3
-_DIR="$XDG_CACHE_HOME/sqlite3"
-mkdir -p "$_DIR"
-export SQLITE_HISTORY="$_DIR/history"
+export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
 
 # starship
 alias starshiptoml='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"'
@@ -327,8 +326,7 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$USER}"
 
 # wget
-export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/wget"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 
 # zoxide
 export _ZO_EXCLUDE_DIRS="/tmp/*"

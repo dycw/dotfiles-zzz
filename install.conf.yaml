@@ -10,12 +10,15 @@
 
 - create:
     - ~/work/
+    - ~/.cache/less/
+    - ~/.cache/redis/
+    - ~/.cache/sqlite3/
+    - ~/.cache/wget/
 
 - link:
     ~/.bashrc: bash/bashrc.sh
     ~/.bash_profile: bash/bash_profile.sh
     ~/.config/alacritty/alacritty.yml:
-    ~/.config/starship.toml:
     ~/.config/direnv/direnvrc:
     ~/.config/fd/ignore: fd.ignore
     ~/.config/git:
@@ -27,6 +30,7 @@
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/ripgreprc:
     ~/.config/sqlite/.sqliterc:
+    ~/.config/starship.toml:
     ~/.config/wget/wgetrc:
     ~/.inputrc:
     ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
