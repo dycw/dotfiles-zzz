@@ -5,6 +5,13 @@
 
 - clean: ["~", "~/.config"]
 
+- shell:
+    - [git submodule update --init]
+
+- create:
+    - ~/work/
+    - ~/.ipython/profile_default/
+
 - link:
     ~/.bashrc: bash/bashrc.sh
     ~/.bash_profile: bash/bash_profile.sh
@@ -23,8 +30,12 @@
     ~/.config/sqlite/.sqliterc:
     ~/.config/wget/wgetrc:
     ~/.inputrc:
-    ~/.ipython/profile_default: ipython
-    ~/.jupyter:
+    ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
+    ~/.ipython/profile_default/ipython_kernel_config.py: ipython/ipython_kernel_config.py
+    ~/.ipython/profile_default/startup: ipython/startup
+    ~/.jupyter/jupyter_lab_config.py: jupyter/jupyter_lab_config.py
+    ~/.jupyter/jupyter_server_config.json: jupyter/jupyter_server_config.json
+    ~/.jupyter/lab/user-settings: jupyter/user-settings
     ~/.luacheckrc: lua/luacheckrc
     ~/.stylua.toml: lua/stylua.toml
     ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
@@ -57,7 +68,6 @@
     - zsh
 
 - shell:
-    - [git submodule update --init --recursive]
     - [
         /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
       ]

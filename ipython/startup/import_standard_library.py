@@ -1,177 +1,171 @@
-import abc  # type: ignore # noqa: F401
-import argparse  # type: ignore # noqa: F401
-import collections  # type: ignore # noqa: F401
-import contextlib  # type: ignore # noqa: F401
+import abc  # noqa: F401
+import argparse  # noqa: F401
+import collections  # noqa: F401
+import contextlib  # noqa: F401
 import datetime as dt
-import enum  # type: ignore # noqa: F401
-import functools  # type: ignore # noqa: F401
-import gzip  # type: ignore # noqa: F401
-import hashlib  # type: ignore # noqa: F401
-import importlib  # type: ignore # noqa: F401
-import inspect  # type: ignore # noqa: F401
-import itertools  # type: ignore # noqa: F401
-import json  # type: ignore # noqa: F401
-import logging  # type: ignore # noqa: F401
-import multiprocessing  # type: ignore # noqa: F401
-import operator  # type: ignore # noqa: F401
-import os  # type: ignore # noqa: F401
-import pathlib  # type: ignore # noqa: F401
-import pickle  # type: ignore # noqa: F401, S403
-import platform  # type: ignore # noqa: F401
-import random  # type: ignore # noqa: F401
-import re  # type: ignore # noqa: F401
-import shutil  # type: ignore # noqa: F401
-import socket  # type: ignore # noqa: F401
-import stat  # type: ignore # noqa: F401
-import string  # type: ignore # noqa: F401
-import subprocess  # type: ignore # noqa: F401, S404
-import sys  # type: ignore # noqa: F401
-import tempfile  # type: ignore # noqa: F401
-import time  # type: ignore # noqa: F401
-import typing  # type: ignore # noqa: F401
-import urllib  # type: ignore # noqa: F401
-from abc import ABC  # type: ignore # noqa: F401
-from abc import ABCMeta  # type: ignore # noqa: F401
-from abc import abstractmethod  # type: ignore # noqa: F401
-from argparse import ArgumentParser  # type: ignore # noqa: F401
-from collections import Counter  # type: ignore # noqa: F401
-from collections import defaultdict  # type: ignore # noqa: F401
-from collections import deque  # type: ignore # noqa: F401
+import enum  # noqa: F401
+import functools  # noqa: F401
+import gzip  # noqa: F401
+import hashlib  # noqa: F401
+import importlib  # noqa: F401
+import inspect  # noqa: F401
+import itertools  # noqa: F401
+import multiprocessing  # noqa: F401
+import operator  # noqa: F401
+import os  # noqa: F401
+import pathlib  # noqa: F401
+import pickle  # noqa: F401, S403
+import platform  # noqa: F401
+import random  # noqa: F401
+import re  # noqa: F401
+import shutil  # noqa: F401
+import socket  # noqa: F401
+import stat  # noqa: F401
+import string  # noqa: F401
+import subprocess  # noqa: F401, S404
+import sys  # noqa: F401
+import tempfile  # noqa: F401
+import time  # noqa: F401
+import typing  # noqa: F401
+import urllib  # noqa: F401
+from abc import ABC  # noqa: F401
+from abc import ABCMeta  # noqa: F401
+from abc import abstractmethod  # noqa: F401
+from argparse import ArgumentParser  # noqa: F401
+from collections import Counter  # noqa: F401
+from collections import defaultdict  # noqa: F401
+from collections import deque  # noqa: F401
+from collections.abc import Awaitable  # noqa: F401
+from collections.abc import Callable  # noqa: F401
+from collections.abc import Collection  # noqa: F401
+from collections.abc import Generator  # noqa: F401
+from collections.abc import Hashable  # noqa: F401
+from collections.abc import Iterable  # noqa: F401
+from collections.abc import Iterator
+from collections.abc import Mapping  # noqa: F401
+from collections.abc import Sized  # noqa: F401
 from contextlib import contextmanager
 from contextlib import redirect_stdout
-from contextlib import suppress  # type: ignore # noqa: F401
-from dataclasses import asdict  # type: ignore # noqa: F401
-from dataclasses import astuple  # type: ignore # noqa: F401
-from dataclasses import dataclass  # type: ignore # noqa: F401
-from dataclasses import field  # type: ignore # noqa: F401
-from dataclasses import fields  # type: ignore # noqa: F401
-from dataclasses import replace  # type: ignore # noqa: F401
-from enum import Enum  # type: ignore # noqa: F401
-from enum import auto  # type: ignore # noqa: F401
-from functools import cached_property  # type: ignore # noqa: F401
-from functools import lru_cache  # type: ignore # noqa: F401
-from functools import partial  # type: ignore # noqa: F401
-from functools import reduce  # type: ignore # noqa: F401
-from functools import update_wrapper  # type: ignore # noqa: F401
-from functools import wraps  # type: ignore # noqa: F401
-from hashlib import md5  # type: ignore # noqa: F401
-from hashlib import sha256  # type: ignore # noqa: F401
-from hashlib import sha512  # type: ignore # noqa: F401
-from importlib import reload  # type: ignore # noqa: F401
-from inspect import getattr_static  # type: ignore # noqa: F401
-from inspect import signature  # type: ignore # noqa: F401
-from io import BytesIO  # type: ignore # noqa: F401
-from io import StringIO  # type: ignore # noqa: F401
-from itertools import accumulate  # type: ignore # noqa: F401
-from itertools import chain  # type: ignore # noqa: F401
-from itertools import combinations  # type: ignore # noqa: F401
-from itertools import combinations_with_replacement  # type: ignore # noqa: F401
-from itertools import compress  # type: ignore # noqa: F401
-from itertools import count  # type: ignore # noqa: F401
-from itertools import cycle  # type: ignore # noqa: F401
-from itertools import dropwhile  # type: ignore # noqa: F401
-from itertools import filterfalse  # type: ignore # noqa: F401
-from itertools import groupby  # type: ignore # noqa: F401
-from itertools import islice  # type: ignore # noqa: F401
-from itertools import permutations  # type: ignore # noqa: F401
-from itertools import product  # type: ignore # noqa: F401
-from itertools import repeat  # type: ignore # noqa: F401
-from itertools import starmap  # type: ignore # noqa: F401
-from itertools import takewhile  # type: ignore # noqa: F401
-from itertools import tee  # type: ignore # noqa: F401
-from itertools import zip_longest  # type: ignore # noqa: F401
-from json import JSONDecoder  # type: ignore # noqa: F401
-from json import JSONEncoder  # type: ignore # noqa: F401
-from logging import DEBUG  # type: ignore # noqa: F401
-from logging import ERROR  # type: ignore # noqa: F401
-from logging import WARNING  # type: ignore # noqa: F401
-from logging import basicConfig  # type: ignore # noqa: F401
-from multiprocessing import Pool  # type: ignore # noqa: F401
-from multiprocessing import cpu_count  # type: ignore # noqa: F401
-from numbers import Integral  # type: ignore # noqa: F401
-from numbers import Number  # type: ignore # noqa: F401
-from numbers import Real  # type: ignore # noqa: F401
-from operator import add  # type: ignore # noqa: F401
-from operator import and_  # type: ignore # noqa: F401
-from operator import attrgetter  # type: ignore # noqa: F401
-from operator import itemgetter  # type: ignore # noqa: F401
-from operator import mul  # type: ignore # noqa: F401
-from operator import or_  # type: ignore # noqa: F401
-from operator import sub  # type: ignore # noqa: F401
-from operator import truediv  # type: ignore # noqa: F401
+from contextlib import suppress  # noqa: F401
+from dataclasses import asdict  # noqa: F401
+from dataclasses import astuple  # noqa: F401
+from dataclasses import dataclass  # noqa: F401
+from dataclasses import field  # noqa: F401
+from dataclasses import fields  # noqa: F401
+from dataclasses import replace  # noqa: F401
+from enum import Enum  # noqa: F401
+from enum import auto  # noqa: F401
+from functools import cached_property  # noqa: F401
+from functools import lru_cache  # noqa: F401
+from functools import partial  # noqa: F401
+from functools import reduce  # noqa: F401
+from functools import update_wrapper  # noqa: F401
+from functools import wraps  # noqa: F401
+from hashlib import md5  # noqa: F401
+from hashlib import sha256  # noqa: F401
+from hashlib import sha512  # noqa: F401
+from importlib import reload  # noqa: F401
+from inspect import getattr_static  # noqa: F401
+from inspect import signature  # noqa: F401
+from io import BytesIO  # noqa: F401
+from io import StringIO  # noqa: F401
+from itertools import accumulate  # noqa: F401
+from itertools import chain  # noqa: F401
+from itertools import combinations  # noqa: F401
+from itertools import combinations_with_replacement  # noqa: F401
+from itertools import compress  # noqa: F401
+from itertools import count  # noqa: F401
+from itertools import cycle  # noqa: F401
+from itertools import dropwhile  # noqa: F401
+from itertools import filterfalse  # noqa: F401
+from itertools import groupby  # noqa: F401
+from itertools import islice  # noqa: F401
+from itertools import permutations  # noqa: F401
+from itertools import product  # noqa: F401
+from itertools import repeat  # noqa: F401
+from itertools import starmap  # noqa: F401
+from itertools import takewhile  # noqa: F401
+from itertools import tee  # noqa: F401
+from itertools import zip_longest  # noqa: F401
+from json import JSONDecoder  # noqa: F401
+from json import JSONEncoder  # noqa: F401
+from logging import DEBUG  # noqa: F401
+from logging import ERROR  # noqa: F401
+from logging import WARNING  # noqa: F401
+from logging import basicConfig  # noqa: F401
+from multiprocessing import Pool  # noqa: F401
+from multiprocessing import cpu_count  # noqa: F401
+from numbers import Integral  # noqa: F401
+from numbers import Number  # noqa: F401
+from numbers import Real  # noqa: F401
+from operator import add  # noqa: F401
+from operator import and_  # noqa: F401
+from operator import attrgetter  # noqa: F401
+from operator import itemgetter  # noqa: F401
+from operator import mul  # noqa: F401
+from operator import or_  # noqa: F401
+from operator import sub  # noqa: F401
+from operator import truediv  # noqa: F401
 from os import devnull
-from os import environ  # type: ignore # noqa: F401
-from os import getenv  # type: ignore # noqa: F401
-from os.path import expanduser  # type: ignore # noqa: F401
-from os.path import expandvars  # type: ignore # noqa: F401
+from os import environ  # noqa: F401
+from os import getenv  # noqa: F401
+from os.path import expanduser  # noqa: F401
+from os.path import expandvars  # noqa: F401
 from pathlib import Path
-from platform import system  # type: ignore # noqa: F401
-from random import choice  # type: ignore # noqa: F401
-from random import sample  # type: ignore # noqa: F401
-from random import shuffle  # type: ignore # noqa: F401
-from re import escape  # type: ignore # noqa: F401
-from re import findall  # type: ignore # noqa: F401
-from re import fullmatch  # type: ignore # noqa: F401
-from re import match  # type: ignore # noqa: F401
+from platform import system  # noqa: F401
+from random import choice  # noqa: F401
+from random import sample  # noqa: F401
+from random import shuffle  # noqa: F401
+from re import escape  # noqa: F401
+from re import findall  # noqa: F401
+from re import fullmatch  # noqa: F401
+from re import match  # noqa: F401
 from re import search
-from shutil import copyfile  # type: ignore # noqa: F401
-from shutil import which  # type: ignore # noqa: F401
-from socket import gethostname  # type: ignore # noqa: F401
-from stat import S_IRGRP  # type: ignore # noqa: F401
-from stat import S_IRUSR  # type: ignore # noqa: F401
-from stat import S_IWGRP  # type: ignore # noqa: F401
-from stat import S_IWUSR  # type: ignore # noqa: F401
-from stat import S_IXGRP  # type: ignore # noqa: F401
-from stat import S_IXUSR  # type: ignore # noqa: F401
-from string import ascii_letters  # type: ignore # noqa: F401
-from string import ascii_lowercase  # type: ignore # noqa: F401
-from string import ascii_uppercase  # type: ignore # noqa: F401
-from subprocess import DEVNULL  # type: ignore # noqa: F401, S404
-from subprocess import PIPE  # type: ignore # noqa: F401, S404
-from subprocess import STDOUT  # type: ignore # noqa: F401, S404
-from subprocess import CalledProcessError  # type: ignore # noqa: F401, S404
-from subprocess import check_call  # type: ignore # noqa: F401, S404
-from subprocess import check_output  # type: ignore # noqa: F401, S404
-from subprocess import run  # type: ignore # noqa: F401, S404
-from sys import stderr  # type: ignore # noqa: F401
+from shutil import copyfile  # noqa: F401
+from shutil import which  # noqa: F401
+from socket import gethostname  # noqa: F401
+from stat import S_IRGRP  # noqa: F401
+from stat import S_IRUSR  # noqa: F401
+from stat import S_IWGRP  # noqa: F401
+from stat import S_IWUSR  # noqa: F401
+from stat import S_IXGRP  # noqa: F401
+from stat import S_IXUSR  # noqa: F401
+from string import ascii_letters  # noqa: F401
+from string import ascii_lowercase  # noqa: F401
+from string import ascii_uppercase  # noqa: F401
+from subprocess import DEVNULL  # noqa: F401, S404
+from subprocess import PIPE  # noqa: F401, S404
+from subprocess import STDOUT  # noqa: F401, S404
+from subprocess import CalledProcessError  # noqa: F401, S404
+from subprocess import check_call  # noqa: F401, S404
+from subprocess import check_output  # noqa: F401, S404
+from subprocess import run  # noqa: F401, S404
+from sys import stderr  # noqa: F401
 from sys import stdout
-from tempfile import NamedTemporaryFile  # type: ignore # noqa: F401
+from tempfile import NamedTemporaryFile  # noqa: F401
 from tempfile import TemporaryDirectory
-from tempfile import gettempdir  # type: ignore # noqa: F401
-from time import sleep  # type: ignore # noqa: F401
+from tempfile import gettempdir  # noqa: F401
+from time import sleep  # noqa: F401
 from timeit import default_timer
-from types import MemberDescriptorType  # type: ignore # noqa: F401
-from types import MethodDescriptorType  # type: ignore # noqa: F401
-from types import MethodType  # type: ignore # noqa: F401
-from types import MethodWrapperType  # type: ignore # noqa: F401
-from types import ModuleType  # type: ignore # noqa: F401
-from typing import Annotated  # type: ignore # noqa: F401
+from types import MemberDescriptorType  # noqa: F401
+from types import MethodDescriptorType  # noqa: F401
+from types import MethodType  # noqa: F401
+from types import MethodWrapperType  # noqa: F401
+from types import ModuleType  # noqa: F401
+from typing import Annotated  # noqa: F401
 from typing import Any
-from typing import Awaitable  # type: ignore # noqa: F401
-from typing import BinaryIO  # type: ignore # noqa: F401
-from typing import Callable  # type: ignore # noqa: F401
-from typing import ChainMap  # type: ignore # noqa: F401
-from typing import Collection  # type: ignore # noqa: F401
-from typing import Deque  # type: ignore # noqa: F401
-from typing import Dict  # type: ignore # noqa: F401
-from typing import FrozenSet  # type: ignore # noqa: F401
-from typing import Generator  # type: ignore # noqa: F401
-from typing import Generic  # type: ignore # noqa: F401
-from typing import Hashable  # type: ignore # noqa: F401
-from typing import Iterable  # type: ignore # noqa: F401
-from typing import Iterator
-from typing import Mapping  # type: ignore # noqa: F401
-from typing import NamedTuple  # type: ignore # noqa: F401
-from typing import Set  # type: ignore # noqa: F401
-from typing import Sized  # type: ignore # noqa: F401
-from typing import TextIO  # type: ignore # noqa: F401
-from typing import Tuple  # type: ignore # noqa: F401
-from typing import Type  # type: ignore # noqa: F401
-from typing import TypeVar  # type: ignore # noqa: F401
-from typing import Union  # type: ignore # noqa: F401
-from typing import cast  # type: ignore # noqa: F401
-from urllib.request import urlretrieve  # type: ignore # noqa: F401
-from zipfile import ZipFile  # type: ignore # noqa: F401
+from typing import BinaryIO  # noqa: F401
+from typing import ChainMap  # noqa: F401
+from typing import Deque  # noqa: F401
+from typing import Generic  # noqa: F401
+from typing import NamedTuple  # noqa: F401
+from typing import Optional
+from typing import TextIO  # noqa: F401
+from typing import TypeVar  # noqa: F401
+from typing import Union  # noqa: F401
+from typing import cast  # noqa: F401
+from urllib.request import urlretrieve  # noqa: F401
+from zipfile import ZipFile  # noqa: F401
 
 
 # temp dir
@@ -186,7 +180,7 @@ class TemporaryDirectoryPath(TemporaryDirectory[Any]):
 
 
 class _TimerCM:
-    def __init__(self, msg: str | None = None) -> None:
+    def __init__(self, msg: Optional[str] = None) -> None:
         self._parts = ["{desc}"] + ([] if msg is None else [msg])
 
     def __enter__(self) -> None:
