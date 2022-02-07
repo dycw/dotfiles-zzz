@@ -1,0 +1,10 @@
+{
+  // File Browser
+  // @jupyterlab/filebrowser-extension:browser
+  // File Browser setttings.
+  // *****************************************
+
+  // Show last modified column
+  // Whether to show the last modified column
+  "showLastModifiedColumn": false
+}
