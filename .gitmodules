@@ -6,10 +6,12 @@
 	path = dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
 	branch = master
+	ignore = dirty
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
 	branch = main
+	ignore = dirty
 [submodule "submodules/bash-it"]
 	path = submodules/bash-it
 	url = https://github.com/Bash-it/bash-it.git
