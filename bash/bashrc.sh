@@ -3,14 +3,15 @@
 
 # dotfiles
 export DOTFILES="$HOME/dotfiles"
-_BIN="$DOTFILES/bin"
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-_BIN="$HOME/.local/bin"
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
+
+# binaries
+_DIRS=("$DOTFILES" "$HOME/.local")
+for _DIR in "${_DIRS[@]}"; do
+	_BIN="$_DIR/bin"
+	if [ -d "$_BIN" ]; then
+		export PATH="$_BIN${PATH:+:$PATH}"
+	fi
+done
 
 # homebrew
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
@@ -65,14 +66,26 @@ if [ -x "$(command -v bat)" ]; then
 fi
 
 # batgrep
-alias bg='batgrep'
+if [ -x "$(command -v batgrep)" ]; then
+	alias bg='batgrep'
+fi
 
 # batwatch
-alias bw='batwatch'
+if [ -x "$(command -v batwatch)" ]; then
+	alias bw='batwatch'
+fi
+
+# bump2version
+if [ -x "$(command -v bump2version)" ]; then
+	alias bump='bump2version patch'
+	alias bump-minor='bump2version minor'
+	alias bump-major='bump2version major'
+fi
 
 # cargo
-if [ -d "$HOME/.cargo" ]; then
-	export PATH="$HOME/.cargo/bin${PATH:+:$PATH}"
+_BIN="$HOME/.cargo/bin"
+if [ -d "$_BIN" ]; then
+	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
 	alias wcarb='watchexec -- cargo build'
@@ -89,14 +102,17 @@ alias .....='cd ../../../..'
 
 alias cdcache='cd "${XDG_CACHE_HOME:-$HOME/.cache}"'
 alias cdconfig='cd "${XDG_CONFIG_HOME:-$HOME/.config}"'
-alias cddf='cd $HOME/dotfiles'
+alias cddf='cd $DOTFILES'
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
 alias cdw='cd $HOME/work'
 
 # cisco
-export PATH="$/opt/cisco/anyconnect/bin${PATH:+:$PATH}"
+_BIN='/opt/cisco/anyconnect/bin'
+if [ -d "$_BIN" ]; then
+	export PATH="$_BIN${PATH:+:$PATH}"
+fi
 
 # clear
 alias cl='clear'
@@ -151,11 +167,15 @@ if [ -x "$(command -v fd)" ]; then
 fi
 
 # fzf
-_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash" && [ -f "$_FILE" ] && source "$_FILE"
+_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
 if [ -x "$(command -v fzf)" ]; then
 	# https://bit.ly/2OMLMpm
-	[ -x "$(command -v fd)" ] &&
+	if [ -x "$(command -v fd)" ]; then
 		export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
+	fi
 	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
 		export FZF_DEFAULT_OPTS="
       --ansi
@@ -195,38 +215,46 @@ if [ -x "$(command -v gem)" ]; then
 fi
 
 # ghcup
-_FILE="$HOME/.ghcup/env" && [ -f "$_FILE" ] && source "$_FILE"
+_FILE="$HOME/.ghcup/env"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
 
 # git
-alias cdr='cd $(git rev-parse --show-toplevel)'
-alias gitconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config"'
-alias gitconfiglocal='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config.local"'
-alias gitignore='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"'
-_ALIASES=$(
-	cd "$DOTFILES" || exit
-	git --list-cmds=alias
-)
-for _ALIAS in $_ALIASES; do
-	# shellcheck disable=SC2139,SC2140
-	alias "g$_ALIAS"="git $_ALIAS"
-done
+if [ -x "$(command -v git)" ]; then
+	alias cdr='cd $(git rev-parse --show-toplevel)'
+	alias gitconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config"'
+	alias gitconfiglocal='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config.local"'
+	alias gitignore='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"'
+	_ALIASES=$(
+		cd "$DOTFILES" || exit
+		git --list-cmds=alias
+	)
+	for _ALIAS in $_ALIASES; do
+		# shellcheck disable=SC2139,SC2140
+		alias "g$_ALIAS"="git $_ALIAS"
+	done
+fi
 
 # gitweb
-[ -x "$(command -v gitweb)" ] && alias gw='gitweb'
+if [ -x "$(command -v gitweb)" ]; then
+	alias gw='gitweb'
+fi
 
 # go
-_DIR='/usr/local/go/bin'
-if [ -d "$_DIR" ]; then
-	export PATH="$_DIR${PATH:+:$PATH}"
+_BIN='/usr/local/go/bin'
+if [ -d "$_BIN" ]; then
+	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 
 # less
-_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/less"
-export LESSHISTFILE="$_DIR/history"
-export LESSKEY="$_DIR/lesskey"
+export LESSHISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/less/history"
+export LESSKEY="${XDG_CONFIG_HOME:-$HOME/.config}/less/lesskey"
 
 # nano
-alias nanorc='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nanorc"'
+if [ -x "$(command -v nano)" ]; then
+	alias nanorc='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nanorc"'
+fi
 
 # neovim/LunarVim
 if [ -x "$(command -v lvim)" ]; then
@@ -239,7 +267,9 @@ elif [ -x "$(command -v nvim)" ]; then
 fi
 
 # npm
-alias npmrc='$EDITOR "$HOME/.npmrc"'
+if [ -x "$(command -v npm)" ]; then
+	alias npmrc='$EDITOR "$HOME/.npmrc"'
+fi
 
 # nvm
 export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
@@ -250,9 +280,12 @@ export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 
 # poetry
-alias pi='poetry install'
-alias pu='poetry update'
-export PATH="$HOME/.poetry/bin${PATH:+:$PATH}"
+_BIN="$HOME/.poetry/bin"
+if [ -d "$_BIN" ]; then
+	alias pi='poetry install'
+	alias pu='poetry update'
+	export PATH="$_BIN${PATH:+:$PATH}"
+fi
 
 # pre-commit
 alias pca='pre-commit run -a'
@@ -266,37 +299,46 @@ alias pcui='pre-commit uninstall'
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
-[ -x "$(command -v pyenv)" ] && eval "$(pyenv init --path)"
+if [ -x "$(command -v pyenv)" ]; then
+	eval "$(pyenv init --path)"
+fi
 
 # pyright
-alias pyr='pyright'
-alias pyrw='pyright -w'
-[ -x "$(command -v watchexec)" ] && alias wpyr='watchexec -- pyright .'
+if [ -x "$(command -v pyright)" ]; then
+	alias pyr='pyright'
+	alias pyrw='pyright -w'
+	if [ -x "$(command -v watchexec)" ]; then
+		alias wpyr='watchexec -- pyright .'
+	fi
+fi
 
 # python
-alias bump='bump2version patch'
-alias bump-minor='bump2version minor'
-alias bump-major='bump2version major'
 alias hypothesis-ci='export HYPOTHESIS_PROFILE=ci'
 alias hypothesis-debug='export HYPOTHESIS_PROFILE=debug'
 alias hypothesis-default='export HYPOTHESIS_PROFILE=default'
 alias hypothesis-dev='export HYPOTHESIS_PROFILE=dev'
-alias lint='autoflake -r --in-place --remove-all-unused-imports --remove-duplicate-keys . && black .'
 alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 alias pyt='pytest'
 alias pytco='pytest --co'
-_FILE="$DOTFILES/bin/pytest-aliases" && [ -f "$_FILE" ] && source "$_FILE"
+_FILE="$DOTFILES/bin/pytest-aliases"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
 
 # ranger
-[ -x "$(command -v ranger)" ] && alias r='ranger'
+if [ -x "$(command -v ranger)" ]; then
+	alias r='ranger'
+fi
 
 # redis
 export REDISCLI_HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/redis/history"
 export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redisclirc"
 
 # rg
-export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
-[ -x "$(command -v rg)" ] && alias rg='rg -L --hidden --no-messages'
+if [ -x "$(command -v rg)" ]; then
+	alias rg='rg -L --hidden --no-messages'
+	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
+fi
 
 # rm
 alias rmrf='rm -rf'
@@ -305,8 +347,10 @@ alias rmrf='rm -rf'
 export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
 
 # starship
-alias starshiptoml='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"'
-[ -x "$(command -v starship)" ] && eval "$(starship init bash)"
+if [ -x "$(command -v starship)" ]; then
+	alias starshiptoml='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"'
+	eval "$(starship init bash)"
+fi
 
 # tmux
 if [ -x "$(command -v tmux)" ]; then
@@ -326,10 +370,15 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$USER}"
 
 # wget
-export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+if [ -x "$(command -v wget)" ]; then
+	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+fi
 
 # zoxide
-export _ZO_EXCLUDE_DIRS="/tmp/*"
-export _ZO_RESOLVE_SYMLINKS=1
-[ -x "$(command -v zoxide)" ] && [ -x "$(command -v fzf)" ] &&
-	eval "$(zoxide init bash --cmd j --hook prompt)"
+if [ -x "$(command -v zoxide)" ]; then
+	export _ZO_EXCLUDE_DIRS="/tmp/*"
+	export _ZO_RESOLVE_SYMLINKS=1
+	if [ -x "$(command -v fzf)" ]; then
+		eval "$(zoxide init bash --cmd j --hook prompt)"
+	fi
+fi
