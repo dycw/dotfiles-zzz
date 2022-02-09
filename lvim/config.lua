@@ -183,15 +183,15 @@ which_key["r"] = {
 which_key["s"] = {
 	name = "...",
 	-- default
-	s = { "<Cmd>Telescope symbols<CR>", "Symbols" },
+	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
 	-- Spectre
-	o = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
 	f = {
 		"<Cmd>lua require('spectre').open_file_search()<CR>",
 		"Spectre: File",
 	}, -- others
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 	p = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
+	y = { "<Cmd>Telescope symbols<CR>", "Symbols" },
 }
 which_key["t"] = {
 	name = "...",
@@ -214,7 +214,10 @@ which_key["w"] = {
 	k = { "<Cmd>set nosplitbelow<CR><Cmd>split<CR>", "Window: up" },
 	l = { "<Cmd>set splitright<CR><Cmd>vsplit<CR>", "Window: right" },
 	-- LSP
-	s = { "<Cmd>Telescope lsp_workspace_symbols<CR>", "Workspace symbols" },
+	s = {
+		"<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
+		"Workspace symbols",
+	},
 }
 
 local which_key_visual = lvim.builtin.which_key.vmappings

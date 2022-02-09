@@ -88,6 +88,10 @@ if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
+	alias carb='cargo build'
+	alias carn='cargo new'
+	alias carr='cargo run'
+	alias cart='cargo test'
 	alias wcarb='watchexec -- cargo build'
 	alias wcarr='watchexec -- cargo run'
 	alias wcart='watchexec -- cargo test'
