@@ -92,6 +92,8 @@ if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
 	alias carn='cargo new'
 	alias carr='cargo run'
 	alias cart='cargo test'
+	alias cartig='cargo test -- --ignored'
+	alias cartso='cargo test -- --show-output'
 	alias rbt-carr='RUST_BACKTRACE=1 cargo run'
 	alias wcarb='watchexec -- cargo build'
 	alias wcarr='watchexec -- cargo run'
