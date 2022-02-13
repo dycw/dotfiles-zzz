@@ -27,11 +27,14 @@ lvim.keys.visual_mode["<CR>"] = ":"
 -- disable ex-mode
 lvim.keys.normal_mode["Q"] = "<Nop>"
 
--- insert navigation
+-- insert mode: navigation
 lvim.keys.insert_mode["<C-h>"] = "<Left>"
 lvim.keys.insert_mode["<C-j>"] = "<Down>"
 lvim.keys.insert_mode["<C-k>"] = "<Up>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
+
+-- mouse clicks disabled
+lvim.keys.normal_mode["<LeftMouse>"] = "<Nop>"
 
 -- save
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
