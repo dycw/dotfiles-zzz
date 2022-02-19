@@ -4,6 +4,9 @@
 --------------------------------------------------------------------------------
 -- vim
 --------------------------------------------------------------------------------
+-- mouse
+vim.opt.mouse = ""
+
 -- relative line numbers
 vim.opt.relativenumber = true
 
@@ -32,14 +35,6 @@ lvim.keys.insert_mode["<C-h>"] = "<Left>"
 lvim.keys.insert_mode["<C-j>"] = "<Down>"
 lvim.keys.insert_mode["<C-k>"] = "<Up>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
-
--- mouse clicks disabled
-lvim.keys.normal_mode["<LeftMouse>"] = "<Nop>"
-lvim.keys.visual_mode["<LeftMouse>"] = "<Nop>"
-lvim.keys.insert_mode["<LeftMouse>"] = "<Nop>"
-lvim.keys.normal_mode["<RightMouse>"] = "<Nop>"
-lvim.keys.visual_mode["<RightMouse>"] = "<Nop>"
-lvim.keys.insert_mode["<RightMouse>"] = "<Nop>"
 
 -- save
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
