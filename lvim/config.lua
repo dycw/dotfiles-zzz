@@ -35,6 +35,11 @@ lvim.keys.insert_mode["<C-l>"] = "<Right>"
 
 -- mouse clicks disabled
 lvim.keys.normal_mode["<LeftMouse>"] = "<Nop>"
+lvim.keys.visual_mode["<LeftMouse>"] = "<Nop>"
+lvim.keys.insert_mode["<LeftMouse>"] = "<Nop>"
+lvim.keys.normal_mode["<RightMouse>"] = "<Nop>"
+lvim.keys.visual_mode["<RightMouse>"] = "<Nop>"
+lvim.keys.insert_mode["<RightMouse>"] = "<Nop>"
 
 -- save
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
