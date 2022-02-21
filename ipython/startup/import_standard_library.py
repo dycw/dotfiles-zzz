@@ -159,6 +159,7 @@ from typing import ChainMap  # noqa: F401
 from typing import Deque  # noqa: F401
 from typing import Generic  # noqa: F401
 from typing import NamedTuple  # noqa: F401
+from typing import NewType  # noqa: F401
 from typing import Optional
 from typing import TextIO  # noqa: F401
 from typing import TypeVar  # noqa: F401
