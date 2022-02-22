@@ -74,7 +74,7 @@
     - [
         /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
       ]
-    - [pipx install bump2version pre-commit]
+    - [pipx install --force bump2version pre-commit]
     - [pre-commit install]
     - [sudo snap install signal-desktop]
     - [sudo snap install spotify]
