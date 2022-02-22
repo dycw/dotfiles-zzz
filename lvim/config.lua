@@ -423,5 +423,5 @@ lvim.plugins = {
 	{ "kshenoy/vim-signature" },
 
 	-- viewing: syntax highlighting
-	{ "sheerun/vim-polyglot" },
+	-- { "sheerun/vim-polyglot" },
 }

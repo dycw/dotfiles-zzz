@@ -89,6 +89,7 @@ if [ -d "$_BIN" ]; then
 fi
 if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
 	alias carb='cargo build'
+	alias carc='cargo check'
 	alias carn='cargo new'
 	alias carr='cargo run'
 	alias cart='cargo test'

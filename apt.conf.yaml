@@ -1,12 +1,10 @@
 - apt:
-    - gparted
     - curl
     - git
     - gparted
-    - neovim
-    - python3-pip
+    - htop
     - pdfarranger
+    - python3-pip
     - shotwell
     - sqlitebrowser
     - texlive-xetex
-    - vim
