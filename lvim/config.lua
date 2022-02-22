@@ -421,7 +421,4 @@ lvim.plugins = {
 
 	-- viewing: marks in gutter
 	{ "kshenoy/vim-signature" },
-
-	-- viewing: syntax highlighting
-	-- { "sheerun/vim-polyglot" },
 }
