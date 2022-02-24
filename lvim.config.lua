@@ -356,7 +356,7 @@ lvim.plugins = {
 	{ "ggandor/lightspeed.nvim" },
 
 	-- navigation: symbols outline
-	-- { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
+	{ "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
 
 	-- navigation: windows
 	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },
