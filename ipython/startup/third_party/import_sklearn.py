@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestClassifier  # noqa: F401
 from sklearn.ensemble import RandomForestRegressor  # noqa: F401
 from sklearn.impute import SimpleImputer  # noqa: F401
 from sklearn.linear_model import LinearRegression  # noqa: F401
+from sklearn.linear_model import Ridge  # noqa: F401
 from sklearn.metrics import accuracy_score  # noqa: F401
 from sklearn.metrics import confusion_matrix  # noqa: F401
 from sklearn.metrics import mean_squared_error  # noqa: F401

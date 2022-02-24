@@ -38,7 +38,7 @@ repos:
           - flake8-variables-names
           - pep8-naming
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
+    rev: 2.1.6
     hooks:
       - id: shfmt
   - repo: https://github.com/myint/autoflake
@@ -76,10 +76,19 @@ repos:
       - id: trailing-whitespace
   # linters
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
+    rev: 2.1.6
     hooks:
       - id: script-must-have-extension
       - id: script-must-not-have-extension
+  - repo: https://github.com/kumaraditya303/mirrors-pyright
+    rev: v1.1.224
+    hooks:
+      - id: pyright
+        exclude: dropbox.py|ipython/
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.11.0
+    hooks:
+      - id: markdownlint
   - repo: https://github.com/pycqa/flake8
     rev: 4.0.1
     hooks:
@@ -112,10 +121,6 @@ repos:
           - flake8-variables-names
           - pep8-naming
         exclude: dropbox.py
-  - repo: https://github.com/markdownlint/markdownlint
-    rev: v0.11.0
-    hooks:
-      - id: markdownlint
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
@@ -141,15 +146,6 @@ repos:
     rev: v0.8.0.4
     hooks:
       - id: shellcheck
-  - repo: local
-    hooks:
-      - id: pyright
-        name: pyright
-        entry: pyright
-        language: node
-        types: [python]
-        additional_dependencies: [pyright@1.1.197]
-        exclude: dropbox.py|ipython/
   - repo: meta
     hooks:
       - id: check-useless-excludes
