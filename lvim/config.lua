@@ -102,8 +102,8 @@ which_key["b"] = {
 	-- default
 	b = { "<Cmd>Telescope buffers<CR>", "Buffers" },
 	-- others
-	d = { "<Cmd>BufferDelete<CR>", "Delete" },
 	f = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy find" },
+	k = { "<Cmd>BufferKill<CR>", "Buffer kill" },
 }
 which_key["c"] = {
 	name = "...",
@@ -272,30 +272,30 @@ lvim.plugins = {
 	},
 
 	-- editing: increment/decrement
-	{
-		"monaqa/dial.nvim",
-		config = function()
-			local dial = require("dial")
-			vim.cmd([[
-				nmap <C-a> <Plug>(dial-increment)
-				nmap <C-x> <Plug>(dial-decrement)
-				vmap <C-a> <Plug>(dial-increment)
-				vmap <C-x> <Plug>(dial-decrement)
-				vmap g<C-a> <Plug>(dial-increment-additional)
-				vmap g<C-x> <Plug>(dial-decrement-additional)
-			]])
-			dial.augends["custom#boolean"] = dial.common.enum_cyclic({
-				name = "boolean",
-				strlist = { "true", "false" },
-			})
-			table.insert(dial.config.searchlist.normal, "custom#boolean")
-			dial.augends["custom#Boolean"] = dial.common.enum_cyclic({
-				name = "Boolean",
-				strlist = { "True", "False" },
-			})
-			table.insert(dial.config.searchlist.normal, "custom#Boolean")
-		end,
-	},
+	-- {
+	-- 	"monaqa/dial.nvim",
+	-- 	config = function()
+	-- 		local dial = require("dial")
+	-- 		vim.cmd([[
+	-- 			nmap <C-a> <Plug>(dial-increment)
+	-- 			nmap <C-x> <Plug>(dial-decrement)
+	-- 			vmap <C-a> <Plug>(dial-increment)
+	-- 			vmap <C-x> <Plug>(dial-decrement)
+	-- 			vmap g<C-a> <Plug>(dial-increment-additional)
+	-- 			vmap g<C-x> <Plug>(dial-decrement-additional)
+	-- 		]])
+	-- 		dial.augends["custom#boolean"] = dial.common.enum_cyclic({
+	-- 			name = "boolean",
+	-- 			strlist = { "true", "false" },
+	-- 		})
+	-- 		table.insert(dial.config.searchlist.normal, "custom#boolean")
+	-- 		dial.augends["custom#Boolean"] = dial.common.enum_cyclic({
+	-- 			name = "Boolean",
+	-- 			strlist = { "True", "False" },
+	-- 		})
+	-- 		table.insert(dial.config.searchlist.normal, "custom#Boolean")
+	-- 	end,
+	-- },
 
 	-- editing: missing directories
 	{
