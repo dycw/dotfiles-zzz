@@ -4,6 +4,9 @@
 --------------------------------------------------------------------------------
 -- vim
 --------------------------------------------------------------------------------
+-- colorcolumn
+vim.opt.colorcolumn = "80"
+
 -- mouse
 vim.opt.mouse = ""
 
@@ -52,6 +55,38 @@ lvim.autocommands.custom_groups = {
 	{ "VimResized", "*", "wincmd =" },
 }
 
+--------------------------------------------------------------------------------
+-- formatters
+--------------------------------------------------------------------------------
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+	-- lua
+	{ exe = "stylua", filetypes = { "lua" } },
+	-- python
+	{ exe = "black", filetypes = { "python" } },
+	{ exe = "isort", filetypes = { "python" } },
+	-- sh
+	{ exe = "shfmt", filetypes = { "sh" } },
+	-- prettier
+	{
+		exe = "prettier",
+		args = { "-w" },
+		filetypes = { "markdown", "toml", "yaml" },
+	},
+})
+
+--------------------------------------------------------------------------------
+-- linters
+--------------------------------------------------------------------------------
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+	-- lua
+	{ exe = "luacheck", filetypes = { "lua" } },
+	-- python
+	{ exe = "flake8", filetypes = { "python" } },
+	-- sh
+	{ exe = "shellcheck", filetypes = { "sh" } },
+})
 --------------------------------------------------------------------------------
 -- LunarVim
 --------------------------------------------------------------------------------
