@@ -145,6 +145,8 @@ from sys import stdout
 from tempfile import NamedTemporaryFile  # noqa: F401
 from tempfile import TemporaryDirectory
 from tempfile import gettempdir  # noqa: F401
+from textwrap import dedent  # noqa: F401
+from textwrap import indent  # noqa: F401
 from time import sleep  # noqa: F401
 from timeit import default_timer
 from types import MemberDescriptorType  # noqa: F401
