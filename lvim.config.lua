@@ -201,7 +201,17 @@ which_key["l"] = {
 	g = { "<Cmd>Telescope live_grep<CR>", "Live grep" },
 	l = { "<Cmd>Telescope loclist<CR>", "Location list" },
 }
-which_key["m"] = { "<Cmd>Telescope marks<CR>", "Marks" }
+which_key["m"] = {
+	name = "...",
+	-- default
+	m = { "<Cmd>Telescope marks<CR>", "Marks" },
+	-- mergetool
+	j = { "<Cmd>MergetoolDiffExchangeLeft<CR>", "Exchange: left" },
+	k = { "<Cmd>MergetoolDiffExchangeLeft<CR>", "Exchange: right" },
+	l = { "<Cmd>MergetoolPreferLocal<CR>", "Prefer: local" },
+	r = { "<Cmd>MergetoolPreferRemote<CR>", "Prefer: remote" },
+	q = { "<Cmd>MergetoolStop<CR>", "Quit" },
+}
 which_key["o"] = {
 	name = "...",
 	f = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
@@ -368,7 +378,7 @@ lvim.plugins = {
 	{
 		"samoshkin/vim-mergetool",
 		config = function()
-			vim.g.mergetool_layout = "LmR"
+			vim.g.mergetool_layout = "rml,b"
 			vim.g.mergetool_prefer_revisionn = "unmodified"
 		end,
 	},

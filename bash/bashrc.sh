@@ -287,6 +287,12 @@ export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 # path
 alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 
+# pip
+alias pie='pip install --editable .'
+alias plo='pip list --outdated'
+alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
+alias pypiirc='$EDITOR "$HOME/.pypic"'
+
 # poetry
 _BIN="$HOME/.poetry/bin"
 if [ -d "$_BIN" ]; then
