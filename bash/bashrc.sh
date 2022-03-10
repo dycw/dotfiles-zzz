@@ -291,7 +291,7 @@ alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 alias pie='pip install --editable .'
 alias plo='pip list --outdated'
 alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
-alias pypiirc='$EDITOR "$HOME/.pypic"'
+alias pypirc='$EDITOR "$HOME/.pypirc"'
 
 # poetry
 _BIN="$HOME/.poetry/bin"
