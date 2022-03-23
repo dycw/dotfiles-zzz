@@ -152,6 +152,9 @@
   rbiom = rebase -i origin/master
   rbm = rebase master
   rbom = rebase origin/master
+  rbro = rebase -s recursive -X ours
+  rbrom = rebase -s recursive -X ours master
+  rbroom = rebase -s recursive -X ours origin/master
   rbrt = rebase -s recursive -X theirs
   rbrtm = rebase -s recursive -X theirs master
   rbrtom = rebase -s recursive -X theirs origin/master
