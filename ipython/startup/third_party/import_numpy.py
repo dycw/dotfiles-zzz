@@ -2,6 +2,7 @@ import numpy  # noqa: F401
 import numpy as np  # noqa: F401
 from numpy import arange  # noqa: F401
 from numpy import array  # noqa: F401
+from numpy import bool_  # noqa: F401
 from numpy import concatenate  # noqa: F401
 from numpy import corrcoef  # noqa: F401
 from numpy import cumsum  # noqa: F401
@@ -51,6 +52,7 @@ from numpy import zeros_like  # noqa: F401
 from numpy.linalg import LinAlgError  # noqa: F401
 from numpy.linalg import inv  # noqa: F401
 from numpy.random import RandomState  # noqa: F401
+from numpy.typing import NDArray  # noqa: F401
 
 
 set_printoptions(suppress=True)
