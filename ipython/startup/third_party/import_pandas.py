@@ -14,6 +14,7 @@ from pandas import Index  # noqa: F401
 from pandas import Int64Dtype  # noqa: F401
 from pandas import MultiIndex  # noqa: F401
 from pandas import RangeIndex  # noqa: F401
+from pandas import Series  # noqa: F401
 from pandas import StringDtype  # noqa: F401
 from pandas import Timedelta  # noqa: F401
 from pandas import TimedeltaIndex  # noqa: F401
