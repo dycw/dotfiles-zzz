@@ -316,6 +316,9 @@ lvim.plugins = {
 	-- editing: visual splits
 	{ "wellle/visual-split.vim" },
 
+	-- git: committia
+	{ "rhysd/committia.vim" },
+
 	-- git: conflict markers
 	{ "rhysd/conflict-marker.vim" },
 
