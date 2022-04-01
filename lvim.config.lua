@@ -10,22 +10,15 @@ vim.opt.colorcolumn = "80"
 -- mouse
 vim.opt.mouse = ""
 
--- relative line numbers
-vim.opt.relativenumber = true
-
--- scrolling
-vim.opt.scrolloff = 20
-vim.opt.sidescrolloff = 4
-
 -- substitution
 vim.opt.gdefault = true
+
+-- wrap
+vim.opt.wrap = true
 
 --------------------------------------------------------------------------------
 -- key bindings
 --------------------------------------------------------------------------------
--- leader key
-lvim.leader = "space"
-
 -- command mode
 lvim.keys.normal_mode["<CR>"] = ":"
 lvim.keys.visual_mode["<CR>"] = ":"
@@ -87,24 +80,6 @@ linters.setup({
 	-- sh
 	{ exe = "shellcheck", filetypes = { "sh" } },
 })
---------------------------------------------------------------------------------
--- LunarVim
---------------------------------------------------------------------------------
--- format on save
-lvim.format_on_save = true
-
--- logging
-lvim.log.level = "warn"
-
--- colorscheme
-lvim.colorscheme = "onedarker"
-
--- plugins
-lvim.builtin.dashboard.active = true
-lvim.builtin.notify.active = true
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
 
 --------------------------------------------------------------------------------
 -- LSP
@@ -289,9 +264,6 @@ which_key_visual["v"] = {
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
-	-- cosmetic: theme
-	{ "folke/tokyonight.nvim" },
-
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
@@ -317,30 +289,6 @@ lvim.plugins = {
 	},
 
 	-- editing: increment/decrement
-	-- {
-	-- 	"monaqa/dial.nvim",
-	-- 	config = function()
-	-- 		local dial = require("dial")
-	-- 		vim.cmd([[
-	-- 			nmap <C-a> <Plug>(dial-increment)
-	-- 			nmap <C-x> <Plug>(dial-decrement)
-	-- 			vmap <C-a> <Plug>(dial-increment)
-	-- 			vmap <C-x> <Plug>(dial-decrement)
-	-- 			vmap g<C-a> <Plug>(dial-increment-additional)
-	-- 			vmap g<C-x> <Plug>(dial-decrement-additional)
-	-- 		]])
-	-- 		dial.augends["custom#boolean"] = dial.common.enum_cyclic({
-	-- 			name = "boolean",
-	-- 			strlist = { "true", "false" },
-	-- 		})
-	-- 		table.insert(dial.config.searchlist.normal, "custom#boolean")
-	-- 		dial.augends["custom#Boolean"] = dial.common.enum_cyclic({
-	-- 			name = "Boolean",
-	-- 			strlist = { "True", "False" },
-	-- 		})
-	-- 		table.insert(dial.config.searchlist.normal, "custom#Boolean")
-	-- 	end,
-	-- },
 
 	-- editing: missing directories
 	{
@@ -450,9 +398,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-
-	-- viewing: absolute line numbers in inactive windows
-	{ "jeffkreeftmeijer/vim-numbertoggle" },
 
 	-- viewing: indent guides
 	{
