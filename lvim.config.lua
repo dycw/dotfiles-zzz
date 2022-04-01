@@ -10,6 +10,9 @@ vim.opt.colorcolumn = "80"
 -- mouse
 vim.opt.mouse = ""
 
+-- relative line numbers
+vim.opt.relativenumber = true
+
 -- substitution
 vim.opt.gdefault = true
 
@@ -401,6 +404,9 @@ lvim.plugins = {
 			})
 		end,
 	},
+
+	-- viewing: absolute line numbers in inactive windows
+	{ "jeffkreeftmeijer/vim-numbertoggle" },
 
 	-- viewing: indent guides
 	{
