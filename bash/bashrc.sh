@@ -125,6 +125,9 @@ fi
 # clear
 alias cl='clear'
 
+# crontab
+alias crontab='crontab -i'
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	alias dea='direnv allow'
