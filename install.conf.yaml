@@ -18,6 +18,7 @@
 - link:
     ~/.bashrc: bash/bashrc.sh
     ~/.bash_profile: bash/bash_profile.sh
+    ~/.cache/nvim/packer.nvim: nvim/packer
     ~/.config/alacritty/alacritty.yml:
     ~/.config/direnv/direnvrc:
     ~/.config/fd/ignore: fd.ignore
