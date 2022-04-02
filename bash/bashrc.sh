@@ -301,6 +301,7 @@ _BIN="$HOME/.poetry/bin"
 if [ -d "$_BIN" ]; then
 	alias pi='poetry install'
 	alias pu='poetry update'
+	alias pudr='poetry update --dry-run'
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 
