@@ -206,7 +206,13 @@ which_key["o"] = {
 	name = "...",
 	f = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
 }
-which_key["p"] = { "<Cmd>Telescope projects<CR>", "Projects" }
+which_key["p"] = {
+	name = "...",
+	-- packer
+	s = { "<Cmd>PackerSync<CR>", "Packer sync" },
+	-- projects
+	r = { "<Cmd>Telescope projects<CR>", "Projects" },
+}
 which_key["q"] = { "<Cmd>Telescope quickfix<CR>", "Quickfix" }
 which_key["r"] = {
 	name = "...",
