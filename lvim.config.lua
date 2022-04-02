@@ -443,9 +443,8 @@ lvim.plugins = {
 	{
 		"echasnovski/mini.nvim",
 		config = function()
-			require("mini.indentscope").setup({
-				symbol = "▏",
-			})
+			require("mini.cursorword").setup()
+			require("mini.indentscope").setup({ symbol = "▏" })
 			require("mini.trailspace").setup()
 		end,
 	},
