@@ -312,6 +312,9 @@ lvim.plugins = {
 	-- editing: expand/shrink visual selection
 	{ "terryma/vim-expand-region" },
 
+	-- editing: expand expression
+	{ "allendang/nvim-expand-expr" },
+
 	-- editing: find and replace
 	{
 		"windwp/nvim-spectre",
@@ -321,6 +324,69 @@ lvim.plugins = {
 	},
 
 	-- editing: increment/decrement
+	{
+		"monaqa/dial.nvim",
+		config = function()
+			-- lvim.keys.normal_mode["<C-a>"] = require("dial.map").inc_normal()
+			-- lvim.keys.normal_mode["<C-x>"] = require("dial.map").dec_normal()
+			-- lvim.keys.visual_mode["<C-a>"] = require("dial.map").inc_visual()
+			-- lvim.keys.visual_mode["<C-x>"] = require("dial.map").dec_visual()
+			vim.api.nvim_set_keymap(
+				"n",
+				"<C-a>",
+				require("dial.map").inc_normal(),
+				{ noremap = true }
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<C-x>",
+				require("dial.map").dec_normal(),
+				{ noremap = true }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"<C-a>",
+				require("dial.map").inc_visual(),
+				{ noremap = true }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"<C-x>",
+				require("dial.map").dec_visual(),
+				{ noremap = true }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"g<C-a>",
+				require("dial.map").inc_gvisual(),
+				{ noremap = true }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"g<C-x>",
+				require("dial.map").dec_gvisual(),
+				{ noremap = true }
+			)
+			local augend = require("dial.augend")
+			require("dial.config").augends:register_group({
+				default = {
+					augend.integer.alias.decimal,
+					augend.integer.alias.decimal_int,
+					augend.integer.alias.hex,
+					augend.integer.alias.octal,
+					augend.integer.alias.binary,
+					augend.date.alias["%Y/%m/%d"],
+					augend.date.alias["%Y-%m-%d"],
+					augend.date.alias["%H:%M:%S"],
+					augend.date.alias["%H:%M"],
+					augend.constant.alias.bool,
+					augend.constant.alias.alpha,
+					augend.constant.alias.Alpha,
+					augend.semver.alias.semver,
+				},
+			})
+		end,
+	},
 
 	-- editing: missing directories
 	{
