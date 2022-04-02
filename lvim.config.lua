@@ -240,10 +240,14 @@ which_key["s"] = {
 	-- spectre
 	p = {
 		name = "Spectre",
-		s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre: open" },
+		o = { "<Cmd>lua require('spectre').open()<CR>", "Open" },
 		f = {
 			"<Cmd>lua require('spectre').open_file_search()<CR>",
-			"Spectre: file",
+			"File search",
+		},
+		w = {
+			"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+			"Word",
 		},
 	},
 	-- swap
@@ -428,6 +432,9 @@ lvim.plugins = {
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
 
+	-- editing: quoting and parenthesizing
+	{ "tpope/vim-surround" },
+
 	-- editing: swap function arguments, list elements
 	{ "mizlan/iswap.nvim" },
 
@@ -459,15 +466,6 @@ lvim.plugins = {
 	{
 		"echasnovski/mini.nvim",
 		config = function()
-			-- editing: quoting and parenthesizing
-			require("mini.surround").setup({
-				mappings = {
-					add = "\\a",
-					delete = "\\d",
-					replace = "\\r",
-				},
-			})
-
 			-- editing: trailing space
 			require("mini.trailspace").setup()
 
