@@ -231,18 +231,26 @@ which_key["r"] = {
 }
 which_key["s"] = {
 	name = "...",
-	-- default
-	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
-	-- Spectre
-	f = {
-		"<Cmd>lua require('spectre').open_file_search()<CR>",
-		"Spectre: File",
+	-- sort
+	o = {
+		name = "Sort",
+		n = { "<Cmd>Sort n<CR>", "Numbers" },
+		t = { "<Cmd>Sort<CR>", "Text" },
+	},
+	-- spectre
+	p = {
+		name = "Spectre",
+		s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre: open" },
+		f = {
+			"<Cmd>lua require('spectre').open_file_search()<CR>",
+			"Spectre: file",
+		},
 	},
 	-- swap
 	w = { "<Cmd>ISwapWith<CR>", "Swap with" },
 	-- telescope
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
-	p = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
+	s = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
 	y = { "<Cmd>Telescope symbols<CR>", "Symbols" },
 }
 which_key["t"] = {
@@ -283,10 +291,18 @@ which_key["z"] = {
 local which_key_visual = lvim.builtin.which_key.vmappings
 
 which_key_visual["c"] = { ":Telescope commands<CR>", "Commands" }
-which_key_visual["n"] = { r = { ":NR<CR>", "NrrwRgn" } }
+which_key_visual["n"] = { ":NR<CR>", "NrrwRgn" }
 which_key_visual["s"] = {
-	":lua require('spectre').open_visual({select_word=true})<CR>",
-	"Spectre",
+	name = "Sort/Spectre",
+	o = {
+		name = "Sort",
+		n = { ":Sort n<CR>", "Numbers" },
+		t = { ":Sort<CR>", "Text" },
+	},
+	p = {
+		":lua require('spectre').open_visual({select_word=true})<CR>",
+		"Spectre",
+	},
 }
 which_key_visual["v"] = {
 	name = "...",
@@ -405,6 +421,9 @@ lvim.plugins = {
 
 	-- editing: repeat plugin actions
 	{ "tpope/vim-repeat" },
+
+	-- editing: sort
+	{ "sqve/sort.nvim" },
 
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
