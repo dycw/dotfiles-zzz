@@ -235,7 +235,10 @@ which_key["s"] = {
 	f = {
 		"<Cmd>lua require('spectre').open_file_search()<CR>",
 		"Spectre: File",
-	}, -- others
+	},
+	-- swap
+	w = { "<Cmd>ISwapWith<CR>", "Swap with" },
+	-- telescope
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
 	p = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
 	y = { "<Cmd>Telescope symbols<CR>", "Symbols" },
@@ -327,10 +330,6 @@ lvim.plugins = {
 	{
 		"monaqa/dial.nvim",
 		config = function()
-			-- lvim.keys.normal_mode["<C-a>"] = require("dial.map").inc_normal()
-			-- lvim.keys.normal_mode["<C-x>"] = require("dial.map").dec_normal()
-			-- lvim.keys.visual_mode["<C-a>"] = require("dial.map").inc_visual()
-			-- lvim.keys.visual_mode["<C-x>"] = require("dial.map").dec_visual()
 			vim.api.nvim_set_keymap(
 				"n",
 				"<C-a>",
@@ -410,6 +409,9 @@ lvim.plugins = {
 
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
+
+	-- editing: swap function arguments, list elements
+	{ "mizlan/iswap.nvim" },
 
 	-- editing: visual splits
 	{ "wellle/visual-split.vim" },
