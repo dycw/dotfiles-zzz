@@ -164,7 +164,6 @@ which_key["h"] = {
 		"<Cmd>lua require('harpoon.ui').nav_prev()<CR>",
 		"Harpoon: previous",
 	},
-	m = { "<Cmd>Telescope harpoon marks<CR>", "Harpoon: marks" },
 	-- help
 	t = { "<Cmd>Telescope help_tags<CR>", "Help tags" },
 }
