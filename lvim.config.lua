@@ -218,6 +218,8 @@ which_key["r"] = {
 	f = { "<Cmd>Telescope lsp_references<CR>", "References" },
 	g = { "<Cmd>Telescope registers<CR>", "Registers" },
 	n = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+	-- repos
+	p = { "<Cmd>Telescope repo list<CR>", "Repos" },
 }
 which_key["s"] = {
 	name = "...",
@@ -377,6 +379,14 @@ lvim.plugins = {
 		"ethanholz/nvim-lastplace",
 		config = function()
 			require("nvim-lastplace").setup()
+		end,
+	},
+
+	-- navigation: repos
+	{
+		"cljoly/telescope-repo.nvim",
+		config = function()
+			require("telescope").load_extension("repo")
 		end,
 	},
 
