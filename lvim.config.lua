@@ -164,7 +164,6 @@ which_key["h"] = {
 		"<Cmd>lua require('harpoon.ui').nav_prev()<CR>",
 		"Harpoon: previous",
 	},
-	m = { "<Cmd>Telescope harpoon marks<CR>", "Harpoon: marks" },
 	-- help
 	t = { "<Cmd>Telescope help_tags<CR>", "Help tags" },
 }
@@ -207,6 +206,13 @@ which_key["o"] = {
 	name = "...",
 	f = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
 }
+which_key["p"] = {
+	name = "...",
+	-- packer
+	s = { "<Cmd>PackerSync<CR>", "Packer sync" },
+	-- projects
+	r = { "<Cmd>Telescope projects<CR>", "Projects" },
+}
 which_key["q"] = { "<Cmd>Telescope quickfix<CR>", "Quickfix" }
 which_key["r"] = {
 	name = "...",
@@ -218,6 +224,8 @@ which_key["r"] = {
 	f = { "<Cmd>Telescope lsp_references<CR>", "References" },
 	g = { "<Cmd>Telescope registers<CR>", "Registers" },
 	n = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+	-- repos
+	p = { "<Cmd>Telescope repo list<CR>", "Repos" },
 }
 which_key["s"] = {
 	name = "...",
@@ -256,6 +264,14 @@ which_key["w"] = {
 	s = {
 		"<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
 		"Workspace symbols",
+	},
+}
+which_key["z"] = {
+	name = "...",
+	-- default
+	z = {
+		"<Cmd>lua require('telescope').extensions.zoxide.list{}<CR>",
+		"Zoxide",
 	},
 }
 
@@ -372,6 +388,14 @@ lvim.plugins = {
 		end,
 	},
 
+	-- navigation: repos
+	{
+		"cljoly/telescope-repo.nvim",
+		config = function()
+			require("telescope").load_extension("repo")
+		end,
+	},
+
 	-- navigation: sneak motion
 	{ "ggandor/lightspeed.nvim" },
 
@@ -380,6 +404,14 @@ lvim.plugins = {
 
 	-- navigation: windows
 	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },
+
+	-- navigation: zoxide
+	{
+		"jvgrootveld/telescope-zoxide",
+		config = function()
+			require("telescope").load_extension("zoxide")
+		end,
+	},
 
 	-- searching: hlsearch lens
 	{ "kevinhwang91/nvim-hlslens" },
