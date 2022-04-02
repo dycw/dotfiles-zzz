@@ -129,12 +129,11 @@ which_key["c"] = {
 which_key["d"] = {
 	name = "...",
 	-- diagnostics
-	d = { "<Cmd>Telescope diagnostics<CR>", "Diagostics" },
-	-- others
-	k = { "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic" },
+	d = { "<Cmd>Telescope diagnostics<CR>", "Diagnostics" },
+	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Diagnostics: next" },
+	k = { "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Diagnostics: previous" },
+	-- telescope
 	f = { "<Cmd>Telescope lsp_definitions<CR>", "Definitions" },
-	---- diagnostics
-	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagostic" },
 	s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
 }
 which_key["e"] = {
@@ -156,6 +155,17 @@ which_key["g"] = {
 }
 which_key["h"] = {
 	name = "...",
+	-- default
+	h = { "<Cmd>Telescope harpoon marks<CR>", "Harpoon" },
+	-- harpoon
+	a = { "<Cmd>lua require('harpoon.mark').add_file()<CR>", "Harpoon: add" },
+	j = { "<Cmd>lua require('harpoon.ui').nav_next()<CR>", "Harpoon: next" },
+	k = {
+		"<Cmd>lua require('harpoon.ui').nav_prev()<CR>",
+		"Harpoon: previous",
+	},
+	m = { "<Cmd>Telescope harpoon marks<CR>", "Harpoon: marks" },
+	-- help
 	t = { "<Cmd>Telescope help_tags<CR>", "Help tags" },
 }
 which_key["i"] = {
@@ -170,11 +180,14 @@ which_key["k"] = {
 which_key["l"] = {
 	name = "...",
 	-- trouble
-	d = { "<Cmd>Trouble document_diagnostics<CR>", "Diagnostics" },
-	f = { "<Cmd>Trouble lsp_definitions<CR>", "Definitions" },
-	r = { "<Cmd>Trouble lsp_references<CR>", "References" },
-	q = { "<Cmd>Trouble quickfix<CR>", "Quick Fix" },
-	w = { "<Cmd>Trouble workspace_diagnostics<CR>", "Workspace diagnostics" },
+	d = { "<Cmd>Trouble document_diagnostics<CR>", "Trouble: diagnostics" },
+	f = { "<Cmd>Trouble lsp_definitions<CR>", "Trouble: definitions" },
+	r = { "<Cmd>Trouble lsp_references<CR>", "Trouble: deferences" },
+	q = { "<Cmd>Trouble quickfix<CR>", "Trouble: quick fix" },
+	w = {
+		"<Cmd>Trouble workspace_diagnostics<CR>",
+		"Trouble: Workspace diagnostics",
+	},
 	-- others
 	g = { "<Cmd>Telescope live_grep<CR>", "Live grep" },
 	l = { "<Cmd>Telescope loclist<CR>", "Location list" },
@@ -339,6 +352,14 @@ lvim.plugins = {
 
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
+
+	-- navigation: harpoon
+	{
+		"theprimeagen/harpoon",
+		config = function()
+			require("telescope").load_extension("harpoon")
+		end,
+	},
 
 	-- navigation: pairs of bracket mappings
 	{ "tpope/vim-unimpaired" },
