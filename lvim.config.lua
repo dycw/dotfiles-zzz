@@ -47,6 +47,8 @@ lvim.keys.normal_mode["<C-q>"] = ":q<CR>"
 -- autocommands
 --------------------------------------------------------------------------------
 lvim.autocommands.custom_groups = {
+	-- trim trailing spaces
+	{ "BufWritePre", "*", "lua MiniTrailspace.trim()" },
 	-- keep windows equally sized
 	{ "VimResized", "*", "wincmd =" },
 }
@@ -407,9 +409,6 @@ lvim.plugins = {
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
 
-	-- editing: quoting and parenthesizing
-	{ "tpope/vim-surround" },
-
 	-- editing: swap function arguments, list elements
 	{ "mizlan/iswap.nvim" },
 
@@ -436,6 +435,30 @@ lvim.plugins = {
 
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
+
+	-- mini: multiple plugins
+	{
+		"echasnovski/mini.nvim",
+		config = function()
+			-- editing: quoting and parenthesizing
+			require("mini.surround").setup({
+				mappings = {
+					add = "\\a",
+					delete = "\\d",
+					replace = "\\r",
+				},
+			})
+
+			-- editing: trailing space
+			require("mini.trailspace").setup()
+
+			-- viewing: cursor word
+			require("mini.cursorword").setup()
+
+			-- viewing: indent guides
+			require("mini.indentscope").setup({ symbol = "▏" })
+		end,
+	},
 
 	-- navigation: harpoon
 	{
