@@ -231,18 +231,30 @@ which_key["r"] = {
 }
 which_key["s"] = {
 	name = "...",
-	-- default
-	s = { "<Cmd>lua require('spectre').open()<CR>", "Spectre" },
-	-- Spectre
-	f = {
-		"<Cmd>lua require('spectre').open_file_search()<CR>",
-		"Spectre: File",
+	-- sort
+	o = {
+		name = "Sort",
+		n = { "<Cmd>Sort n<CR>", "Numbers" },
+		t = { "<Cmd>Sort<CR>", "Text" },
+	},
+	-- spectre
+	p = {
+		name = "Spectre",
+		o = { "<Cmd>lua require('spectre').open()<CR>", "Open" },
+		f = {
+			"<Cmd>lua require('spectre').open_file_search()<CR>",
+			"File search",
+		},
+		w = {
+			"<Cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+			"Word",
+		},
 	},
 	-- swap
 	w = { "<Cmd>ISwapWith<CR>", "Swap with" },
 	-- telescope
 	h = { "<Cmd>Telescope search_history<CR>", "Search history" },
-	p = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
+	s = { "<Cmd>Telescope spell_suggest<CR>", "Spell suggest" },
 	y = { "<Cmd>Telescope symbols<CR>", "Symbols" },
 }
 which_key["t"] = {
@@ -283,10 +295,18 @@ which_key["z"] = {
 local which_key_visual = lvim.builtin.which_key.vmappings
 
 which_key_visual["c"] = { ":Telescope commands<CR>", "Commands" }
-which_key_visual["n"] = { r = { ":NR<CR>", "NrrwRgn" } }
+which_key_visual["n"] = { ":NR<CR>", "NrrwRgn" }
 which_key_visual["s"] = {
-	":lua require('spectre').open_visual({select_word=true})<CR>",
-	"Spectre",
+	name = "Sort/Spectre",
+	o = {
+		name = "Sort",
+		n = { ":Sort n<CR>", "Numbers" },
+		t = { ":Sort<CR>", "Text" },
+	},
+	p = {
+		":lua require('spectre').open_visual({select_word=true})<CR>",
+		"Spectre",
+	},
 }
 which_key_visual["v"] = {
 	name = "...",
@@ -403,11 +423,17 @@ lvim.plugins = {
 	-- editing: narrow region
 	{ "chrisbra/nrrwrgn" },
 
+	-- editing: quickfix list editing
+	{ "olical/vim-enmasse" },
+
+	-- editing: quoting and parenthesizing
+	{ "tpope/vim-surround" },
+
 	-- editing: repeat plugin actions
 	{ "tpope/vim-repeat" },
 
-	-- editing: quickfix list editing
-	{ "olical/vim-enmasse" },
+	-- editing: sort
+	{ "sqve/sort.nvim" },
 
 	-- editing: swap function arguments, list elements
 	{ "mizlan/iswap.nvim" },
@@ -440,15 +466,6 @@ lvim.plugins = {
 	{
 		"echasnovski/mini.nvim",
 		config = function()
-			-- editing: quoting and parenthesizing
-			require("mini.surround").setup({
-				mappings = {
-					add = "\\a",
-					delete = "\\d",
-					replace = "\\r",
-				},
-			})
-
 			-- editing: trailing space
 			require("mini.trailspace").setup()
 
