@@ -423,17 +423,17 @@ lvim.plugins = {
 	-- editing: narrow region
 	{ "chrisbra/nrrwrgn" },
 
-	-- editing: repeat plugin actions
-	{ "tpope/vim-repeat" },
-
-	-- editing: sort
-	{ "sqve/sort.nvim" },
-
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
 
 	-- editing: quoting and parenthesizing
 	{ "tpope/vim-surround" },
+
+	-- editing: repeat plugin actions
+	{ "tpope/vim-repeat" },
+
+	-- editing: sort
+	{ "sqve/sort.nvim" },
 
 	-- editing: swap function arguments, list elements
 	{ "mizlan/iswap.nvim" },
