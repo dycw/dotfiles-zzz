@@ -47,6 +47,8 @@ lvim.keys.normal_mode["<C-q>"] = ":q<CR>"
 -- autocommands
 --------------------------------------------------------------------------------
 lvim.autocommands.custom_groups = {
+	-- trim trailing spaces
+	{ "BufWritePre", "*", "lua MiniTrailspace.trim()" },
 	-- keep windows equally sized
 	{ "VimResized", "*", "wincmd =" },
 }
@@ -436,6 +438,14 @@ lvim.plugins = {
 
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
+
+	-- mini: multiple plugins
+	{
+		"echasnovski/mini.nvim",
+		config = function()
+			require("mini.trailspace").setup()
+		end,
+	},
 
 	-- navigation: harpoon
 	{
