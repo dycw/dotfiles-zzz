@@ -258,6 +258,14 @@ which_key["w"] = {
 		"Workspace symbols",
 	},
 }
+which_key["z"] = {
+	name = "...",
+	-- default
+	z = {
+		"<Cmd>lua require('telescope').extensions.zoxide.list{}<CR>",
+		"Zoxide",
+	},
+}
 
 local which_key_visual = lvim.builtin.which_key.vmappings
 
@@ -380,6 +388,14 @@ lvim.plugins = {
 
 	-- navigation: windows
 	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },
+
+	-- navigation: zoxide
+	{
+		"jvgrootveld/telescope-zoxide",
+		config = function()
+			require("telescope").load_extension("zoxide")
+		end,
+	},
 
 	-- searching: hlsearch lens
 	{ "kevinhwang91/nvim-hlslens" },
