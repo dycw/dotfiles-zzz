@@ -47,6 +47,7 @@
 
 - brew:
     - bat
+    - bottom
     - gcc
     - eth-p/software/bat-extras
     - direnv

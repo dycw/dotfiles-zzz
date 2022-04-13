@@ -301,6 +301,7 @@ _BIN="$HOME/.poetry/bin"
 if [ -d "$_BIN" ]; then
 	alias pi='poetry install'
 	alias pu='poetry update'
+	alias pugcm='poetry update && git add pyproject.toml poetry.lock && git commit -m "Update pyproject.toml"'
 	alias pudr='poetry update --dry-run'
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
@@ -326,7 +327,7 @@ if [ -x "$(command -v pyright)" ]; then
 	alias pyr='pyright'
 	alias pyrw='pyright -w'
 	if [ -x "$(command -v watchexec)" ]; then
-		alias wpyr='watchexec -- pyright .'
+		alias wpyr='watchexec -- pyright'
 	fi
 fi
 
