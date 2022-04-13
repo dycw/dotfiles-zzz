@@ -47,6 +47,7 @@
 
 - brew:
     - bat
+    - bottom
     - gcc
     - eth-p/software/bat-extras
     - direnv
@@ -74,6 +75,9 @@
 - shell:
     - [
         /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
+      ]
+    - [
+        npm install prettier prettier-plugin-toml --global --save-dev --save-exact,
       ]
     - [pre-commit install]
     - [sudo snap install signal-desktop]
