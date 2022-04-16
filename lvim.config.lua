@@ -125,6 +125,8 @@ which_key["b"] = {
 	name = "...",
 	-- default
 	b = { "<Cmd>Telescope buffers<CR>", "Buffers" },
+	-- Bracey
+	r = { "<Cmd>Bracey<CR>", "Bracey" },
 	-- others
 	f = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy find" },
 	k = { "<Cmd>BufferKill<CR>", "Buffer kill" },
