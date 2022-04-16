@@ -93,7 +93,16 @@ linters.setup({
 lvim.lsp.automatic_servers_installation = true
 
 -- treesitter
-lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.ensure_installed = {
+	"bash",
+	"haskell",
+	"html",
+	"json",
+	"lua",
+	"python",
+	"rust",
+	"yaml",
+}
 lvim.builtin.treesitter.highlight.enabled = true
 
 --------------------------------------------------------------------------------
@@ -461,6 +470,13 @@ lvim.plugins = {
 		end,
 	},
 
+	-- HTML: live editing
+	{
+		"turbio/bracey.vim",
+		cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+		run = "npm install --prefix server",
+	},
+
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
 
@@ -470,9 +486,6 @@ lvim.plugins = {
 		config = function()
 			-- editing: trailing space
 			require("mini.trailspace").setup()
-
-			-- viewing: cursor word
-			require("mini.cursorword").setup()
 
 			-- viewing: indent guides
 			require("mini.indentscope").setup({ symbol = "▏" })
@@ -547,6 +560,15 @@ lvim.plugins = {
 		requires = { "kana/vim-textobj-user" },
 	},
 
+	-- treesitter: HTML tags
+	{
+		"windwp/nvim-ts-autotag",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+
 	-- tmux
 	{
 		"aserowy/tmux.nvim",
@@ -570,6 +592,19 @@ lvim.plugins = {
 
 	-- viewing: absolute line numbers in inactive windows
 	{ "jeffkreeftmeijer/vim-numbertoggle" },
+
+	-- viewing: context
+	{
+		"romgrk/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
+				throttle = true,
+				max_lines = 0,
+				patterns = { default = { "class", "function", "method" } },
+			})
+		end,
+	},
 
 	-- viewing: indent guides
 	{
