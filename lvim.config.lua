@@ -470,6 +470,13 @@ lvim.plugins = {
 		end,
 	},
 
+	-- HTML: live editing
+	{
+		"turbio/bracey.vim",
+		cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+		run = "npm install --prefix server",
+	},
+
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
 
@@ -479,9 +486,6 @@ lvim.plugins = {
 		config = function()
 			-- editing: trailing space
 			require("mini.trailspace").setup()
-
-			-- viewing: cursor word
-			require("mini.cursorword").setup()
 
 			-- viewing: indent guides
 			require("mini.indentscope").setup({ symbol = "▏" })
@@ -554,6 +558,15 @@ lvim.plugins = {
 	{
 		"julian/vim-textobj-variable-segment",
 		requires = { "kana/vim-textobj-user" },
+	},
+
+	-- treesitter: HTML tags
+	{
+		"windwp/nvim-ts-autotag",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
 	},
 
 	-- tmux
