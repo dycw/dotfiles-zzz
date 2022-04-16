@@ -146,6 +146,8 @@ which_key["f"] = {
 	name = "...",
 	-- default
 	f = { "<Cmd>Telescope find_files<CR>", "Find files" },
+	-- telescope
+	t = { "<Cmd>Telescope filetypes<CR>", "File types" },
 }
 which_key["g"] = {
 	name = "...",
