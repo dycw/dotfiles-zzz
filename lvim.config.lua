@@ -94,7 +94,7 @@ lvim.lsp.automatic_servers_installation = true
 
 -- language servers
 local opts = { filetypes = { "html", "htmldjango" } }
-require("lvim.lsp.manager").setup("tailwindcss", opts)
+require("lvim.lsp.manager").setup("html", opts)
 
 -- treesitter
 lvim.builtin.treesitter.ensure_installed = {
