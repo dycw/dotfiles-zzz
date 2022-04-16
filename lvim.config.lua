@@ -94,7 +94,14 @@ lvim.lsp.automatic_servers_installation = true
 
 -- treesitter
 lvim.builtin.treesitter.ensure_installed = {
-	"bash", "haskell", "html", "json", "lua", "python", "rust", "yaml"
+	"bash",
+	"haskell",
+	"html",
+	"json",
+	"lua",
+	"python",
+	"rust",
+	"yaml",
 }
 lvim.builtin.treesitter.highlight.enabled = true
 
