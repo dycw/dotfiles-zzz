@@ -62,14 +62,23 @@ formatters.setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{ exe = "isort", filetypes = { "python" } },
+	{ exe = "reorder-python-imports", filetypes = { "python" } },
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
 	{
 		exe = "prettier",
 		args = { "-w" },
-		filetypes = { "css", "html", "json", "markdown", "toml", "yaml" },
+		filetypes = {
+			"css",
+			"html",
+			"javascript",
+			"javascriptreact",
+			"json",
+			"markdown",
+			"toml",
+			"yaml",
+		},
 	},
 })
 
