@@ -106,6 +106,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"python",
 	"rust",
 	"yaml",
+	"zig",
 }
 lvim.builtin.treesitter.highlight.enabled = true
 
