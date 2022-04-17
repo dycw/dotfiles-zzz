@@ -69,7 +69,7 @@ formatters.setup({
 	{
 		exe = "prettier",
 		args = { "-w" },
-		filetypes = { "markdown", "toml", "yaml" },
+		filetypes = { "css", "html", "json", "markdown", "toml", "yaml" },
 	},
 })
 
