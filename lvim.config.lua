@@ -62,14 +62,24 @@ formatters.setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{ exe = "isort", filetypes = { "python" } },
+	{ exe = "reorder-python-imports", filetypes = { "python" } },
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
 	{
 		exe = "prettier",
 		args = { "-w" },
-		filetypes = { "markdown", "toml", "yaml" },
+		filetypes = {
+			"css",
+			"html",
+			"htmldjango",
+			"javascript",
+			"javascriptreact",
+			"json",
+			"markdown",
+			"toml",
+			"yaml",
+		},
 	},
 })
 
@@ -78,6 +88,8 @@ formatters.setup({
 --------------------------------------------------------------------------------
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
+	-- javascript
+	{ exe = "eslint", filetypes = { "javascript", "javascriptreact" } },
 	-- lua
 	{ exe = "luacheck", filetypes = { "lua" } },
 	-- python
@@ -106,6 +118,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"python",
 	"rust",
 	"yaml",
+	"zig",
 }
 lvim.builtin.treesitter.highlight.enabled = true
 
