@@ -72,6 +72,7 @@ formatters.setup({
 		filetypes = {
 			"css",
 			"html",
+			"htmldjango",
 			"javascript",
 			"javascriptreact",
 			"json",
@@ -87,6 +88,8 @@ formatters.setup({
 --------------------------------------------------------------------------------
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
+	-- javascript
+	{ exe = "eslint", filetypes = { "javascript", "javascriptreact" } },
 	-- lua
 	{ exe = "luacheck", filetypes = { "lua" } },
 	-- python
