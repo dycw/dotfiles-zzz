@@ -70,6 +70,7 @@ repos:
     rev: "v1.1.238"
     hooks:
       - id: pyright
+        exclude: ipython/
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.1.6
     hooks:
@@ -112,6 +113,22 @@ repos:
     rev: v0.8.0.4
     hooks:
       - id: shellcheck
+  # others
+  - repo: https://github.com/jazzband/pip-tools
+    rev: 6.6.0
+    hooks:
+      - id: pip-compile
+        name: pip-compile requirements.in
+        args:
+          [
+            --allow-unsafe,
+            --generate-hashes,
+            --no-annotate,
+            --no-header,
+            --quiet,
+            --upgrade,
+          ]
+        files: ^requirements\.(in|txt)$
   - repo: meta
     hooks:
       - id: check-useless-excludes

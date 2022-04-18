@@ -1,1 +1,18 @@
-submodules/python-repo-configs/pyrightconfig.json
+{
+  "include": ["src"],
+  "venvPath": ".direnv",
+  "pythonVersion": "3.10",
+  "pythonPlatform": "Linux",
+  "executionEnvironments": [{ "root": "src" }],
+  "typeCheckingMode": "strict",
+  "reportMissingTypeStubs": false,
+  "reportUnknownArgumentType": false,
+  "reportUnknownVariableType": false,
+  "reportUnknownMemberType": false,
+  "reportUntypedBaseClass": false,
+  "reportImplicitStringConcatenation": "error",
+  "reportMissingSuperCall": "error",
+  "reportPropertyTypeMismatch": "error",
+  "reportUnnecessaryTypeIgnoreComment": "error",
+  "reportUnusedCallReport": "error"
+}
