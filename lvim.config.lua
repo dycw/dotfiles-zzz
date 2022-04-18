@@ -62,7 +62,11 @@ formatters.setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{ exe = "reorder-python-imports", filetypes = { "python" } },
+	{
+		exe = "reorder-python-imports",
+		args = { "--application-directories=.:src" },
+		filetypes = { "python" },
+	},
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
@@ -128,6 +132,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
 lvim.builtin.telescope.defaults.layout_config.width = 0.99
 lvim.builtin.telescope.defaults.layout_strategy = "vertical"
+lvim.builtin.telescope.defaults.path_display = { "smart" }
 
 --------------------------------------------------------------------------------
 -- Which Key
@@ -143,7 +148,11 @@ which_key["b"] = {
 	-- default
 	b = { "<Cmd>Telescope buffers<CR>", "Buffers" },
 	-- Bracey
-	r = { "<Cmd>Bracey<CR>", "Bracey" },
+	r = {
+		name = "Bracey",
+		s = { "<Cmd>Bracey<CR>", "Start" },
+		r = { "<Cmd>BraceyReload<CR>", "Reload" },
+	},
 	-- others
 	f = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy find" },
 	k = { "<Cmd>BufferKill<CR>", "Buffer kill" },
@@ -210,6 +219,12 @@ which_key["k"] = {
 }
 which_key["l"] = {
 	name = "...",
+	-- LSP
+	s = {
+		name = "LSP",
+		i = { "<Cmd>LspInfo<CR>", "Info" },
+		r = { "<Cmd>LspRestart<CR>", "Restart" },
+	},
 	-- trouble
 	d = { "<Cmd>Trouble document_diagnostics<CR>", "Trouble: diagnostics" },
 	f = { "<Cmd>Trouble lsp_definitions<CR>", "Trouble: definitions" },

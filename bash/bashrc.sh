@@ -292,9 +292,14 @@ alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 
 # pip
 alias pie='pip install --editable .'
+alias piup='pip install --upgrade pip'
+alias pipt='pip install pip-tools'
 alias plo='pip list --outdated'
 alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
+
+# pip-tools
+alias psreq='pip install pip-tools && pip-sync requirements/*.txt'
 
 # poetry
 _BIN="$HOME/.poetry/bin"
@@ -306,6 +311,9 @@ if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 
+# postgres
+alias pguser='sudo -i -u postgres'
+
 # pre-commit
 alias pca='pre-commit run -a'
 alias pcav='pre-commit run -av'
@@ -316,6 +324,7 @@ alias pctr='pre-commit try-repo .'
 alias pcui='pre-commit uninstall'
 
 # pyenv
+alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
 if [ -x "$(command -v pyenv)" ]; then
@@ -383,7 +392,7 @@ if [ -x "$(command -v xclip)" ]; then
 	alias pbpaste='xclip -selection clipboard -o'
 fi
 
-# XDG
+# xdg
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$USER}"
