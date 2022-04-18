@@ -292,9 +292,14 @@ alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 
 # pip
 alias pie='pip install --editable .'
+alias piup='pip install --upgrade pip'
+alias pipt='pip install pip-tools'
 alias plo='pip list --outdated'
 alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
+
+# pip-tools
+alias psreq='pip-sync requirements/*.txt'
 
 # poetry
 _BIN="$HOME/.poetry/bin"
@@ -316,6 +321,7 @@ alias pctr='pre-commit try-repo .'
 alias pcui='pre-commit uninstall'
 
 # pyenv
+alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
 if [ -x "$(command -v pyenv)" ]; then
