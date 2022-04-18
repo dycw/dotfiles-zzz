@@ -1,10 +1,15 @@
 - apt:
+    - ca-certificates # docker
     - curl
     - git
+    - gnupg # docker
     - gparted
     - htop
+    - libhiredis-dev # hiredis
+    - lsb-release # docker
     - pdfarranger
     - python3-pip
+    - redis-server # redis
     - shotwell
     - sqlitebrowser
     - texlive-xetex
