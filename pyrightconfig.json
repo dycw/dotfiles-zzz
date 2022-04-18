@@ -1,1 +1,28 @@
-submodules/python-repo-configs/pyrightconfig.json
+{
+  "include": ["."],
+  "exclude": [
+    "**/.direnv",
+    "**/.pytest_cache",
+    "**/dotbot",
+    "**/dotbot-apt",
+    "**/dotbot-brew",
+    "**/ipython",
+    "**/submodules",
+    "bin/dropbox.py"
+  ],
+  "venvPath": ".direnv",
+  "pythonVersion": "3.7",
+  "pythonPlatform": "Linux",
+  "executionEnvironments": [{ "root": "." }],
+  "typeCheckingMode": "strict",
+  "reportMissingTypeStubs": false,
+  "reportUnknownArgumentType": false,
+  "reportUnknownVariableType": false,
+  "reportUnknownMemberType": false,
+  "reportUntypedBaseClass": false,
+  "reportImplicitStringConcatenation": "error",
+  "reportMissingSuperCall": "error",
+  "reportPropertyTypeMismatch": "error",
+  "reportUnnecessaryTypeIgnoreComment": "error",
+  "reportUnusedCallReport": "error"
+}

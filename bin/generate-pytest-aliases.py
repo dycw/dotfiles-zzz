@@ -8,11 +8,13 @@ from logging import basicConfig
 from logging import info
 from sys import stdout
 from typing import Any
+from typing import cast
 from typing import Iterator
-from typing import Literal
+from typing import List
 from typing import Optional
 from typing import Union
-from typing import cast
+
+from typing_extensions import Literal
 
 
 basicConfig(format="{message}", level="INFO", stream=stdout, style="{")
@@ -83,7 +85,7 @@ class Part:
 class Alias:
     """An alias consisting of a list of parts."""
 
-    parts: list[Part] = field(default_factory=list)
+    parts: List[Part] = field(default_factory=list)
 
     def __post_init__(self) -> None:
         if any(p.key == "k" for p in self.parts) and self.parts[-1].key != "k":

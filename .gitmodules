@@ -24,7 +24,3 @@
 	path = submodules/oh-my-tmux
 	url = https://github.com/gpakosz/.tmux.git
 	branch = master
-[submodule "submodules/python-repo-configs"]
-	path = submodules/python-repo-configs
-	url = git@github.com:dycw/python-repo-configs.git
-	branch = master

@@ -1,1 +1,4 @@
-submodules/python-repo-configs/pyproject.toml
+[tool.black]
+line-length = 80
+skip-magic-trailing-comma = true
+target-version = ["py37"]
