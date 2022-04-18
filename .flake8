@@ -5,7 +5,7 @@ extend-ignore =
 	B008 # flake8-bugbear: Do not perform function calls in argument defaults
 	U101 # flake8-unused-arguments: Unused argument '_.'
 max-line-length = 88
-min-python-version = 3.9
+min-python-version = 3.7
 per-file-ignores =
 	test_*.py:S101
 show-source = True
