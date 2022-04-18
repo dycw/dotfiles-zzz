@@ -1,5 +1,6 @@
 {
-  "include": ["src"],
+  "include": ["."],
+  "exclude": ["**/.direnv", "**/ipython", "**/dotbot", "**/submodules"],
   "venvPath": ".direnv",
   "pythonVersion": "3.10",
   "pythonPlatform": "Linux",
