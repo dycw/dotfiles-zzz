@@ -62,7 +62,11 @@ formatters.setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{ exe = "reorder-python-imports", filetypes = { "python" } },
+	{
+		exe = "reorder-python-imports",
+		args = { "--application-directories=.:src" },
+		filetypes = { "python" },
+	},
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
@@ -128,6 +132,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
 lvim.builtin.telescope.defaults.layout_config.width = 0.99
 lvim.builtin.telescope.defaults.layout_strategy = "vertical"
+lvim.builtin.telescope.defaults.path_display = { "smart" }
 
 --------------------------------------------------------------------------------
 -- Which Key
