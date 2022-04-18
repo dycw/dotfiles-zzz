@@ -1,6 +1,15 @@
 {
   "include": ["."],
-  "exclude": ["**/.direnv", "**/ipython", "**/dotbot", "**/submodules"],
+  "exclude": [
+    "**/.direnv",
+    "**/.pytest_cache",
+    "**/ipython",
+    "**/dotbot",
+    "**/dotbot-apt",
+    "**/dotbot-brew",
+    "**/submodules",
+    "bin/dropbox.py"
+  ],
   "venvPath": ".direnv",
   "pythonVersion": "3.10",
   "pythonPlatform": "Linux",
