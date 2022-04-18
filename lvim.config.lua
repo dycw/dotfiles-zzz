@@ -214,6 +214,12 @@ which_key["k"] = {
 }
 which_key["l"] = {
 	name = "...",
+	-- LSP
+	s = {
+		name = "LSP",
+		i = { "<Cmd>LspInfo<CR>", "Info" },
+		r = { "<Cmd>LspRestart<CR>", "Restart" },
+	},
 	-- trouble
 	d = { "<Cmd>Trouble document_diagnostics<CR>", "Trouble: diagnostics" },
 	f = { "<Cmd>Trouble lsp_definitions<CR>", "Trouble: definitions" },
