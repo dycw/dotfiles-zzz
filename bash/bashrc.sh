@@ -299,7 +299,7 @@ alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
 
 # pip-tools
-alias psreq='pip-sync requirements/*.txt'
+alias psreq='pip install pip-tools && pip-sync requirements/*.txt'
 
 # poetry
 _BIN="$HOME/.poetry/bin"
@@ -310,6 +310,9 @@ if [ -d "$_BIN" ]; then
 	alias pudr='poetry update --dry-run'
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
+
+# postgres
+alias pguser='sudo -i -u postgres'
 
 # pre-commit
 alias pca='pre-commit run -a'
@@ -389,7 +392,7 @@ if [ -x "$(command -v xclip)" ]; then
 	alias pbpaste='xclip -selection clipboard -o'
 fi
 
-# XDG
+# xdg
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$USER}"
