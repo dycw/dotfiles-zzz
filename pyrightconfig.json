@@ -11,7 +11,7 @@
     "bin/dropbox.py"
   ],
   "venvPath": ".direnv",
-  "pythonVersion": "3.10",
+  "pythonVersion": "3.7",
   "pythonPlatform": "Linux",
   "executionEnvironments": [{ "root": "." }],
   "typeCheckingMode": "strict",
