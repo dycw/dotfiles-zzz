@@ -62,11 +62,7 @@ formatters.setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{
-		exe = "reorder-python-imports",
-		args = { "--application-directories=.:src" },
-		filetypes = { "python" },
-	},
+	{ exe = "isort", filetypes = { "python" } },
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
