@@ -8,11 +8,11 @@ from logging import basicConfig
 from logging import info
 from sys import stdout
 from typing import Any
-from typing import cast
 from typing import Iterator
 from typing import List
 from typing import Optional
 from typing import Union
+from typing import cast
 
 from typing_extensions import Literal
 

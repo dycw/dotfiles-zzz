@@ -6,7 +6,6 @@ from typing import TypeVar
 
 import luigi  # noqa: F401
 from luigi import BoolParameter  # noqa: F401
-from luigi import build
 from luigi import DictParameter  # noqa: F401
 from luigi import EnumParameter  # noqa: F401
 from luigi import ExternalTask  # noqa: F401
@@ -17,6 +16,7 @@ from luigi import Task
 from luigi import TaskParameter  # noqa: F401
 from luigi import TupleParameter  # noqa: F401
 from luigi import WrapperTask
+from luigi import build
 
 
 T = TypeVar("T")
