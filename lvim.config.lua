@@ -646,6 +646,9 @@ lvim.plugins = {
 		end,
 	},
 
+	-- viewing: markdown
+	{ "ellisonleao/glow.nvim", branch = "main" },
+
 	-- viewing: marks in gutter
 	{ "kshenoy/vim-signature" },
 }

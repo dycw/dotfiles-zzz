@@ -58,6 +58,7 @@
     - glow
     - httpie
     - neovim
+    - pandoc
     - pipx
     - ranger
     - ripgrep
