@@ -50,22 +50,22 @@
     ~/.vimrc:
 
 - shell:
-    - source ./install_scripts/apt
-    - source ./install_scripts/brew
-    - source ./install_scripts/docker
-    - source ./install_scripts/lunarvim
-    # - source ./install_scripts/mongodb
-    - source ./install_scripts/mount.py
-    - source ./install_scripts/postgres
-    - source ./install_scripts/snap
+    - ./install_scripts/apt
+    - ./install_scripts/brew
+    - ./install_scripts/docker
+    - ./install_scripts/lunarvim
+    # - ./install_scripts/mongodb
+    - ./install_scripts/mount.py
+    - ./install_scripts/postgres
+    - ./install_scripts/snap
 
 - shell: # after brew
-    - source ./install_scripts/fzf
-    - source ./install_scripts/prettier
-    - source ./install_scripts/pyenv
+    - ./install_scripts/fzf
+    - ./install_scripts/prettier
+    - ./install_scripts/pyenv
 
 - shell: # after mount
-    - source ./install_scripts/dropbox
+    - ./install_scripts/dropbox
 
 - shell: # after pyenv
-    - source ./install_scripts/python-env
+    - ./install_scripts/python-env
