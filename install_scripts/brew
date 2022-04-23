@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+if ! [ -x "$(command -v brew)" ]; then
+	sudo apt install -y curl
+
+	# https://bit.ly/3rL7k6a
+	echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	sudo apt install -y build-essential
+	brew install gcc
+fi
+
+# https://bit.ly/3Ox24gs
+declare -a libs=(
+	bat
+	bottom
+	eth-p/software/bat-extras
+	direnv
+	exa
+	fd
+	fzf
+	git-delta
+	glow
+	httpie
+	htop
+	neovim
+	pandoc
+	pipx
+	ranger
+	ripgrep
+	shellcheck
+	shfmt
+	starship
+	stylua
+	tree
+	tmux
+	vim
+	watchexec
+	zoxide
+	zsh
+)
+for lib in "${libs[@]}"; do
+	brew ls --versions "$lib" || brew install "$lib"
+done

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ -x "$(command -v brew)" ]; then
+	/home/linuxbrew/.linuxbrew/opt/fzf/install \
+		--xdg \
+		--key-bindings \
+		--completion \
+		--no-update-rc \
+		--no-zsh \
+		--no-fish
+fi

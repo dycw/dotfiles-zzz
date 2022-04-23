@@ -6,18 +6,19 @@
 - clean: ["~", "~/.config"]
 
 - shell:
-    - [git submodule update --init]
+    - git submodule update --init
+    - if [ -f ~/.bashrc ] && ! [ -L ~/.bashrc ]; then rm ~/.bashrc; fi
 
 - create:
-    - ~/work/
     - ~/.cache/less/
     - ~/.cache/redis/
     - ~/.cache/sqlite3/
     - ~/.cache/wget/
+    - ~/work/
 
 - link:
-    ~/.bashrc: bash/bashrc.sh
     ~/.bash_profile: bash/bash_profile.sh
+    ~/.bashrc: bash/bashrc.sh
     ~/.cache/nvim/snapshots: nvim/snapshots
     ~/.config/alacritty/alacritty.yml:
     ~/.config/direnv/direnvrc:
@@ -27,8 +28,8 @@
     ~/.config/i3status/config: i3/i3status.config
     ~/.config/lvim/config.lua: lvim.config.lua
     ~/.config/nano/nanorc:
-    ~/.config/ranger/rc.conf: ranger.rc.conf
     ~/.config/pypoetry/config.toml: poetry.config.toml
+    ~/.config/ranger/rc.conf: ranger.rc.conf
     ~/.config/ripgreprc:
     ~/.config/sqlite/.sqliterc:
     ~/.config/starship.toml:
@@ -40,77 +41,31 @@
     ~/.jupyter/jupyter_lab_config.py: jupyter/jupyter_lab_config.py
     ~/.jupyter/jupyter_server_config.json: jupyter/jupyter_server_config.json
     ~/.jupyter/lab/user-settings: jupyter/user-settings
+    ~/.local/share/fonts:
     ~/.luacheckrc: lua/luacheckrc
     ~/.stylua.toml: lua/stylua.toml
-    ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf
+    ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
+    ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
+    ~/.vimrc:
 
-- brew:
-    - bat
-    - bottom
-    - gcc
-    - eth-p/software/bat-extras
-    - direnv
-    - exa
-    - fd
-    - fzf
-    - git-delta
-    - glow
-    - httpie
-    - neovim
-    - pandoc
-    - pipx
-    - ranger
-    - ripgrep
-    - shellcheck
-    - shfmt
-    - starship
-    - stylua
-    - tree
-    - tmux
-    - vim
-    - watchexec
-    - xclip
-    - zoxide
-    - zsh
+- shell:
+    - source ./install_scripts/apt
+    - source ./install_scripts/brew
+    - source ./install_scripts/docker
+    - source ./install_scripts/lunarvim
+    # - source ./install_scripts/mongodb
+    - source ./install_scripts/mount.py
+    - source ./install_scripts/postgres
+    - source ./install_scripts/snap
 
-- shell: # docker
-    - sudo apt update
-    - sudo apt install ca-certificates curl gnupg lsb-release
-    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg --yes
-    - echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    - sudo apt update
-    - sudo apt install docker-ce docker-ce-cli containerd.io
+- shell: # after brew
+    - source ./install_scripts/fzf
+    - source ./install_scripts/prettier
+    - source ./install_scripts/pyenv
 
-- shell: # docker-compose
-    - sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    - sudo chmod +x /usr/local/bin/docker-compose
-    - sudo curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+- shell: # after mount
+    - source ./install_scripts/dropbox
 
-- shell: # fzf
-    - /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish
-
-- shell: # mongodb
-    - sudo apt install gnupg
-    - wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
-    - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list > /dev/null
-    - sudo apt update
-    - sudo apt install -y mongodb-org
-    - sudo systemctl start mongod
-    - sudo systemctl enable mongod
-
-- shell: # postgres
-    - sudo apt update
-    - sudo apt install postgresql postgresql-contrib
-    - sudo systemctl start postgresql.service
-
-- shell: # pre-commit
-    - pre-commit install
-
-- shell: # prettier
-    - npm install prettier prettier-plugin-toml --global --save-dev --save-exact
-
-- shell: # snap
-    - sudo snap install signal-desktop
-    - sudo snap install spotify
-    - sudo snap install telegram-desktop
+- shell: # after pyenv
+    - source ./install_scripts/python-env

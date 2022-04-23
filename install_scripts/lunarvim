@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if ! [ -x "$(command -v lvim)" ]; then
+	# https://bit.ly/3Leza2A
+	# https://bit.ly/3xKilsj
+	# https://bit.ly/3ECcS8x
+	rm /home/linuxbrew/.linuxbrew/bin/tree-sitter
+	curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y
+
+	git checkout -- lvim.config.lua
+fi

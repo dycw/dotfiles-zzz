@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# https://bit.ly/3rL6kPQ
+NEW_HOME='/data/derek'
+if ! [ -d "$NEW_HOME/.dropbox-dist" ]; then
+	cd "$NEW_HOME" || exit
+	HOME="$NEW_HOME" wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+	"$NEW_HOME/.dropbox-dist/dropboxd"
+fi
