@@ -32,6 +32,7 @@ export GIST_ID=690a59ef26208e43fa880c874e01c1
 
 # bash
 alias bashrc='$EDITOR "$HOME/.bashrc"'
+export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
 set -o vi
 shopt -s autocd
 shopt -s cdspell

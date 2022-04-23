@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+if [ -x "$(command -v pyenv)" ]; then
+	pyenv update
+else
+	# https://bit.ly/3EU10yZ
+	sudo apt update -y
+	sudo apt install -y \
+		make \
+		build-essential \
+		libssl-dev \
+		zlib1g-dev \
+		libbz2-dev \
+		libreadline-dev \
+		libsqlite3-dev \
+		wget \
+		curl \
+		llvm \
+		libncursesw5-dev \
+		xz-utils \
+		tk-dev \
+		libxml2-dev \
+		libxmlsec1-dev \
+		libffi-dev \
+		liblzma-dev
+
+	# https://bit.ly/3KYPrc0
+	_GCC="$(brew --prefix gcc)"
+	export CC="$_GCC/bin/gcc-11"
+
+	# https://bit.ly/3xOfbUt
+	brew install openssl
+	export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/openssl@3/lib"
+	export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openssl@3/include"
+
+	# https://bit.ly/3LbZ9HQ
+	curl https://pyenv.run | bash
+	pyenv install 3.7.12 # dotfiles
+	pyenv install 3.10.4 # latest
+fi
