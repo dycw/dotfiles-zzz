@@ -76,7 +76,8 @@
 
   # checkout + pull
   comp = !git checkout master && git pull --force && :
-  compdev = !git checkout master && git pull --force && git branch -D dev && :
+  compdev = !git comp && git ddev && :
+  compredev = !git comp && git redev && :
 
   # cherry-pick
   cp = cherry-pick
