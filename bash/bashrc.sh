@@ -269,6 +269,16 @@ _BIN='/usr/local/go/bin'
 if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
+_DIR="$HOME/.go"
+if [ -d "$_DIR" ]; then
+	export GOROOT="$_DIR"
+	export PATH="$GOROOT/bin${PATH:+:$PATH}"
+fi
+_DIR="$HOME/go"
+if [ -d "$_DIR" ]; then
+	export GOPATH="$_DIR"
+	export PATH="$GOPATH/bin${PATH:+:$PATH}"
+fi
 
 # heroku
 _FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
@@ -372,6 +382,7 @@ alias hypothesis-dev='export HYPOTHESIS_PROFILE=dev'
 alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 alias pyt='pytest'
 alias pytco='pytest --co'
+alias setuppy='$EDITOR $(git rev-parse --show-toplevel)/setup.py'
 _FILE="$DOTFILES/bin/pytest-aliases"
 if [ -f "$_FILE" ]; then
 	source "$_FILE"
