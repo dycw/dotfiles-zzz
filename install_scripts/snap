@@ -11,4 +11,4 @@ for lib in "${libs[@]}"; do
 	fi
 done
 
-sudo snapp install --classic heroku
+sudo snap install --classic heroku
