@@ -270,7 +270,13 @@ if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 
-# rg
+# heroku
+_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
+if test -f "$_FILE"; then
+	source "$_FILE"
+fi
+
+# hyperfine
 if [ -x "$(command -v hyperfine)" ]; then
 	alias time='hyperfine'
 fi
