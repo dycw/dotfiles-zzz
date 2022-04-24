@@ -7,3 +7,9 @@ if ! sudo apt -qq list postgresql --installed | grep ^; then
 	sudo apt-get update
 	sudo apt-get -y install postgresql
 fi
+
+# https://bit.ly/3vE0h0u
+if ! sudo apt -qq list libpq-dev --installed | grep ^; then
+	sudo apt-get update
+	sudo apt-get -y install libpq-dev
+fi
