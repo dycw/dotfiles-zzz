@@ -30,7 +30,7 @@
     ~/.config/nano/nanorc:
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/ranger/rc.conf: ranger.rc.conf
-    ~/.config/ripgreprc:
+    ~/.config/ripgrep/ripgreprc:
     ~/.config/sqlite/.sqliterc:
     ~/.config/starship.toml:
     ~/.config/wget/wgetrc:

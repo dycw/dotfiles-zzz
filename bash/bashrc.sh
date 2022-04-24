@@ -76,6 +76,12 @@ if [ -x "$(command -v batwatch)" ]; then
 	alias bw='batwatch'
 fi
 
+# bottom
+if [ -x "$(command -v btm)" ]; then
+	alias top='btm'
+	alias htop='btm'
+fi
+
 # bump2version
 if [ -x "$(command -v bump2version)" ]; then
 	alias bump='bump2version patch'
@@ -146,6 +152,11 @@ if [ -d "$_DIR" ] && [ -x "$(command -v dropbox.py)" ]; then
 	fi
 fi
 
+# dust
+if [ -x "$(command -v dust)" ]; then
+	alias du='dust'
+fi
+
 # exa
 if [ -x "$(command -v exa)" ]; then
 	alias ls='exa'
@@ -188,7 +199,7 @@ if [ -x "$(command -v fzf)" ]; then
 	if [ -x "$(command -v fd)" ]; then
 		export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
 	fi
-	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
+	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tre)" ]; then
 		export FZF_DEFAULT_OPTS="
       --ansi
       --bind 'ctrl-a:select-all'
@@ -200,7 +211,7 @@ if [ -x "$(command -v fzf)" ]; then
       --info=inline
       --layout=reverse
       --multi
-      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tre {})) || echo {} 2> /dev/null | head -200'
       --preview-window 'right:60%:wrap'
       --prompt='∼ ' --pointer='▶' --marker='✓'
       "
@@ -257,6 +268,11 @@ fi
 _BIN='/usr/local/go/bin'
 if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
+fi
+
+# rg
+if [ -x "$(command -v hyperfine)" ]; then
+	alias time='hyperfine'
 fi
 
 # less
@@ -365,8 +381,8 @@ export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redisclirc"
 
 # rg
 if [ -x "$(command -v rg)" ]; then
-	alias rg='rg -L --hidden --no-messages'
-	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
+	alias grep='rg'
+	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgrep/ripgreprc"
 fi
 
 # rm

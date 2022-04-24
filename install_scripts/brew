@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-if ! [ -x "$(command -v brew)" ]; then
+if [ -x "$(command -v brew)" ]; then
+	brew update
+	brew upgrade
+else
 	sudo apt install -y curl
 
 	# https://bit.ly/3rL7k6a
@@ -15,28 +18,40 @@ fi
 declare -a libs=(
 	bat
 	bottom
-	eth-p/software/bat-extras
+	broot
 	direnv
+	dust
+	eth-p/software/bat-extras
 	exa
 	fd
+	fselect
 	fzf
 	git-delta
 	glow
-	httpie
+	grex
 	htop
+	httpie
+	hyperfine
+	just
 	neovim
 	pandoc
+	pgcli
 	pipx
+	pyright
 	ranger
 	ripgrep
+	sd
 	shellcheck
 	shfmt
+	sk
 	starship
 	stylua
-	tree
+	tokei
 	tmux
+	tre-command
 	vim
 	watchexec
+	yoannfleurydev/gitweb/gitweb
 	zoxide
 	zsh
 )
