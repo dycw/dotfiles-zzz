@@ -199,7 +199,7 @@ if [ -x "$(command -v fzf)" ]; then
 	if [ -x "$(command -v fd)" ]; then
 		export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
 	fi
-	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tre)" ]; then
+	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
 		export FZF_DEFAULT_OPTS="
       --ansi
       --bind 'ctrl-a:select-all'
@@ -211,7 +211,7 @@ if [ -x "$(command -v fzf)" ]; then
       --info=inline
       --layout=reverse
       --multi
-      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tre {})) || echo {} 2> /dev/null | head -200'
+      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {})) || echo {} 2> /dev/null | head -200'
       --preview-window 'right:60%:wrap'
       --prompt='∼ ' --pointer='▶' --marker='✓'
       "

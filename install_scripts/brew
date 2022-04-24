@@ -49,6 +49,7 @@ declare -a libs=(
 	tokei
 	tmux
 	tre-command
+	tree
 	vim
 	watchexec
 	yoannfleurydev/gitweb/gitweb
