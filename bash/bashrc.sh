@@ -324,6 +324,7 @@ export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 
 # pip
+alias pi='pip install'
 alias pie='pip install --editable .'
 alias piup='pip install --upgrade pip'
 alias pipt='pip install pip-tools'
@@ -351,7 +352,7 @@ alias pguser='sudo -i -u postgres'
 # pre-commit
 alias pca='pre-commit run -a'
 alias pcav='pre-commit run -av'
-alias pci='pre-commit install'
+alias pci='pip install pre-commit && pre-commit install'
 alias pcau='pre-commit autoupdate'
 alias pcaua='pre-commit autoupdate && pre-commit run -a'
 alias pctr='pre-commit try-repo .'
