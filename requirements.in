@@ -19,7 +19,7 @@ flake8-no-pep420 >= 2.2.0, < 2.3
 flake8-pie >= 0.15.0, < 0.16
 flake8-print >= 4.0.0, < 4.1
 flake8-simplify >= 0.19.2, < 0.20
-flake8-unused-arguments >= 0.0.9, < 0.1
+flake8-unused-arguments >= 0.0.10, < 0.1
 
 # interactive
 ipython >= 7.32.0, < 7.33
