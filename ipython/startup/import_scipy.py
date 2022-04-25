@@ -8,6 +8,8 @@ with suppress(ModuleNotFoundError):
     from scipy.stats import f_oneway  # noqa: F401
     from scipy.stats import gmean  # noqa: F401
     from scipy.stats import pearsonr  # noqa: F401
+    from scipy.stats import percentileofscore  # noqa: F401
+    from scipy.stats import scoreatpercentile  # noqa: F401
     from scipy.stats import ttest_1samp  # noqa: F401
     from scipy.stats import ttest_ind  # noqa: F401
     from scipy.stats import ttest_rel  # noqa: F401
