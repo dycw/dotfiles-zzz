@@ -20,13 +20,10 @@ if ! sudo apt -qq list docker-ce --installed | grep ^; then
 	sudo curl -L \
 		https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/bash/docker-compose \
 		-o /etc/bash_completion.d/docker-compose
-fi
 
-# Fix Docker Issue: (Permission denied)
-# Create the docker group if it does not exist: sudo groupadd docker
-# See number of super users in the available system: grep -Po '^sudo.+:\K.*$' /etc/group
-# Export the user in linux command shell: export USER=demoUser
-# Add user to the docker group: sudo usermod -aG docker $USER
-# Run the following command/ Login or logout: newgrp docker
-# Check if docker runs ok or not: docker run hello-world
-# Reboot if you still get an error: reboot
+	# permissions
+	# https://dockr.ly/3EIzMev
+	sudo groupadd docker
+	sudo usermod -aG docker "$USER"
+	newgrp docker
+fi
