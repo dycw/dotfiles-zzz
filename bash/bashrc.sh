@@ -333,8 +333,7 @@ alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
 
 # pip-tools
-alias psdev='pip install pip-tools && pip-sync requirements-dev.txt'
-alias psreq='pip install pip-tools && pip-sync requirements.txt'
+alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev.txt'
 
 # poetry
 _BIN="$HOME/.poetry/bin"
@@ -350,8 +349,9 @@ fi
 alias pguser='sudo -i -u postgres'
 
 # pre-commit
-alias pca='pre-commit run -a'
-alias pcav='pre-commit run -av'
+alias pcr='pre-commit run'
+alias pcra='pre-commit run -a'
+alias pcrav='pre-commit run -av'
 alias pci='pip install pre-commit && pre-commit install'
 alias pcau='pre-commit autoupdate'
 alias pcaua='pre-commit autoupdate && pre-commit run -a'
