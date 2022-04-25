@@ -211,7 +211,7 @@ if [ -x "$(command -v fzf)" ]; then
       --info=inline
       --layout=reverse
       --multi
-      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {})) || echo {} 2> /dev/null | head -200'
+      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
       --preview-window 'right:60%:wrap'
       --prompt='∼ ' --pointer='▶' --marker='✓'
       "
