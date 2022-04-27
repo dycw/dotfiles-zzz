@@ -350,12 +350,14 @@ alias pguser='sudo -i -u postgres'
 
 # pre-commit
 alias pcr='pre-commit run'
-alias pcra='pre-commit run -a'
+alias pca='pre-commit run -a'
 alias pcrav='pre-commit run -av'
 alias pci='pip install pre-commit && pre-commit install'
 alias pcau='pre-commit autoupdate'
 alias pcaua='pre-commit autoupdate && pre-commit run -a'
-alias pctr='pre-commit try-repo .'
+alias pctr='pre-commit try-repo'
+alias pctra='pre-commit try-repo -a'
+alias pctrav='pre-commit try-repo -av'
 alias pcui='pre-commit uninstall'
 
 # pyenv

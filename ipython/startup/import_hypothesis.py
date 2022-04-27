@@ -33,11 +33,28 @@ with suppress(ModuleNotFoundError):
     from hypothesis.strategies import tuples  # noqa: F401
 
     with suppress(ModuleNotFoundError):
-        from hypothesis.extra.numpy import array_dtypes  # noqa: F401
-        from hypothesis.extra.numpy import array_shapes  # noqa: F401
+        from hypothesis.extra.django import LiveServerTestCase  # noqa: F401
+        from hypothesis.extra.django import (  # noqa: F401
+            StaticLiveServerTestCase,
+        )
+        from hypothesis.extra.django import TransactionTestCase  # noqa: F401
+        from hypothesis.extra.django import from_form  # noqa: F401
+        from hypothesis.extra.django import from_model  # noqa: F401
 
     with suppress(ModuleNotFoundError):
+        from hypothesis.extra.numpy import array_dtypes  # noqa: F401
+        from hypothesis.extra.numpy import array_shapes  # noqa: F401
+        from hypothesis.extra.numpy import arrays  # noqa: F401
+        from hypothesis.extra.numpy import from_dtype  # noqa: F401
+        from hypothesis.extra.numpy import scalar_dtypes  # noqa: F401
+
+    with suppress(ModuleNotFoundError):
+        from hypothesis.extra.pandas import column  # noqa: F401
+        from hypothesis.extra.pandas import columns  # noqa: F401
         from hypothesis.extra.pandas import data_frames  # noqa: F401
+        from hypothesis.extra.pandas import indexes  # noqa: F401
+        from hypothesis.extra.pandas import range_indexes  # noqa: F401
+        from hypothesis.extra.pandas import series  # noqa: F401
 
     def draw(strategy: SearchStrategy[_T]) -> _T:
         return strategy.example()
