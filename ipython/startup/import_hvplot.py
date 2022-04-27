@@ -2,4 +2,7 @@ from contextlib import suppress
 
 
 with suppress(ModuleNotFoundError):
-    import hvplot.pandas  # noqa: F401
+    with suppress(AttributeError):
+        import hvplot.pandas
+    with suppress(AttributeError):
+        import hvplot.xarray  # noqa: F401
