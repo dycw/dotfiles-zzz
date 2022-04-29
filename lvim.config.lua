@@ -47,6 +47,9 @@ lvim.keys.normal_mode["<C-q>"] = ":q<CR>"
 -- autocommands
 --------------------------------------------------------------------------------
 lvim.autocommands.custom_groups = {
+	-- trim trailing spaces
+	{ "BufWritePre", "*", "lua MiniTrailspace.trim()" },
+
 	-- keep windows equally sized
 	{ "VimResized", "*", "wincmd =" },
 }
