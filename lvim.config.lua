@@ -47,6 +47,9 @@ lvim.keys.normal_mode["<C-q>"] = ":q<CR>"
 -- autocommands
 --------------------------------------------------------------------------------
 lvim.autocommands.custom_groups = {
+	-- trim trailing spaces
+	{ "BufWritePre", "*", "lua MiniTrailspace.trim()" },
+
 	-- keep windows equally sized
 	{ "VimResized", "*", "wincmd =" },
 }
@@ -119,6 +122,8 @@ lvim.builtin.treesitter.ensure_installed = {
 	"zig",
 }
 lvim.builtin.treesitter.highlight.enabled = true
+-- indent bug (https://bit.ly/37TjxiG, https://bit.ly/3y9KNE6)
+lvim.builtin.treesitter.indent = { enable = true, disable = { "python" } }
 
 --------------------------------------------------------------------------------
 -- Nvim tree
