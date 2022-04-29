@@ -121,6 +121,12 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.highlight.enabled = true
 
 --------------------------------------------------------------------------------
+-- Nvim tree
+--------------------------------------------------------------------------------
+lvim.builtin.nvimtree.setup.git.ignore = true
+lvim.builtin.nvimtree.setup.view.relativenumber = true
+
+--------------------------------------------------------------------------------
 -- Telescope
 --------------------------------------------------------------------------------
 lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
