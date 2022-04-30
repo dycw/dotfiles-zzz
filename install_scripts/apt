@@ -6,6 +6,7 @@ declare -a libs=(
 	curl
 	git
 	gparted
+	libreoffice
 	pdfarranger
 	sqlitebrowser
 	texlive-xetex

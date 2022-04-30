@@ -661,3 +661,5 @@ lvim.plugins = {
 	-- viewing: marks in gutter
 	{ "kshenoy/vim-signature" },
 }
+
+vim.diagnostic.config({ virtual_text = false })

@@ -37,6 +37,7 @@ declare -a libs=(
 	pandoc
 	pgcli
 	pipx
+	poetry
 	pyright
 	ranger
 	ripgrep
@@ -59,3 +60,6 @@ declare -a libs=(
 for lib in "${libs[@]}"; do
 	brew ls --versions "$lib" || brew install "$lib"
 done
+
+# https://bit.ly/3MHkd9s
+poetry completions bash >"$(brew --prefix)/etc/bash_completion.d/poetry.bash-completion"
