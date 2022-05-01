@@ -141,6 +141,15 @@ if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook bash)"
 fi
 
+# docker-compose
+if [ -x "$(command -v docker-compose)" ]; then
+	alias dc='docker-compose'
+	alias dcb='docker-compose build'
+	alias dcd='docker-compose down'
+	alias dce='docker-compose exec'
+	alias dcu='docker-compose up'
+fi
+
 # dropbox
 _DIR='/data/derek'
 export PATH_DROPBOX="$_DIR/Dropbox"
@@ -336,8 +345,7 @@ alias pypirc='$EDITOR "$HOME/.pypirc"'
 alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev.txt'
 
 # poetry
-_BIN="$HOME/.poetry/bin"
-if [ -d "$_BIN" ]; then
+if [ -x "$(command -v poetry)" ]; then
 	alias pi='poetry install'
 	alias pu='poetry update'
 	alias pugcm='poetry update && git add pyproject.toml poetry.lock && git commit -m "Update pyproject.toml"'

@@ -10,6 +10,7 @@
     - if [ -f ~/.bashrc ] && ! [ -L ~/.bashrc ]; then rm ~/.bashrc; fi
 
 - create:
+    - ~/.cache/bash/
     - ~/.cache/less/
     - ~/.cache/redis/
     - ~/.cache/sqlite3/
