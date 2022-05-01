@@ -9,14 +9,6 @@
     - git submodule update --init
     - if [ -f ~/.bashrc ] && ! [ -L ~/.bashrc ]; then rm ~/.bashrc; fi
 
-- create:
-    - ~/.cache/bash/
-    - ~/.cache/less/
-    - ~/.cache/redis/
-    - ~/.cache/sqlite3/
-    - ~/.cache/wget/
-    - ~/work/
-
 - link:
     ~/.bash_profile: bash/bash_profile.sh
     ~/.bashrc: bash/bashrc.sh
