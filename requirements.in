@@ -22,7 +22,7 @@ flake8-simplify >= 0.19.2, < 0.20
 flake8-unused-arguments >= 0.0.10, < 0.1
 
 # interactive
-ipython >= 7.32.0, < 7.33
+ipython >= 7.33.0, < 7.34
 
 # utilities
 pyclean >= 2.2.0, < 2.3
