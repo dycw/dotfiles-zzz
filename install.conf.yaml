@@ -12,7 +12,7 @@
 - link:
     ~/.bash_profile: bash/bash_profile.sh
     ~/.bashrc: bash/bashrc.sh
-    ~/.cache/nvim/snapshots: nvim/snapshots
+    ~/.cache/lvim/snapshots: lvim/snapshots
     ~/.config/alacritty/alacritty.yml:
     ~/.config/direnv/direnvrc:
     ~/.config/fd/ignore: fd.ignore
