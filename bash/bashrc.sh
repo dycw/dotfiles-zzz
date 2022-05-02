@@ -33,6 +33,7 @@ export GIST_ID=690a59ef26208e43fa880c874e01c1
 # bash
 alias bashrc='$EDITOR "$HOME/.bashrc"'
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
+mkdir -p "$(dirname "$HISTFILE")"
 set -o vi
 shopt -s autocd
 shopt -s cdspell
@@ -121,7 +122,9 @@ alias cddf='cd $DOTFILES'
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
-alias cdw='cd $HOME/work'
+export PATH_WORK="$HOME/work"
+alias cdw='cd $PATH_WORK'
+mkdir -p "$PATH_WORK"
 
 # cisco
 _BIN='/opt/cisco/anyconnect/bin'
@@ -140,6 +143,19 @@ if [ -x "$(command -v direnv)" ]; then
 	alias dea='direnv allow'
 	eval "$(direnv hook bash)"
 fi
+
+# docker-compose
+if [ -x "$(command -v docker-compose)" ]; then
+	alias dc='docker-compose'
+	alias dcb='docker-compose build'
+	alias dcd='docker-compose down'
+	alias dce='docker-compose exec'
+	alias dcl='docker-compose logs'
+	alias dcu='docker-compose up'
+	alias dcub='docker-compose up --build'
+fi
+
+export DOCKER_BUILDKIT=1
 
 # dropbox
 _DIR='/data/derek'
@@ -294,6 +310,8 @@ fi
 # less
 export LESSHISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/less/history"
 export LESSKEY="${XDG_CONFIG_HOME:-$HOME/.config}/less/lesskey"
+mkdir -p "$(dirname "$LESSHISTFILE")"
+mkdir -p "$(dirname "$LESSKEY")"
 
 # nano
 if [ -x "$(command -v nano)" ]; then
@@ -336,8 +354,7 @@ alias pypirc='$EDITOR "$HOME/.pypirc"'
 alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev.txt'
 
 # poetry
-_BIN="$HOME/.poetry/bin"
-if [ -d "$_BIN" ]; then
+if [ -x "$(command -v poetry)" ]; then
 	alias pi='poetry install'
 	alias pu='poetry update'
 	alias pugcm='poetry update && git add pyproject.toml poetry.lock && git commit -m "Update pyproject.toml"'
@@ -399,6 +416,8 @@ fi
 # redis
 export REDISCLI_HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/redis/history"
 export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redisclirc"
+mkdir -p "$(dirname "$REDISCLI_HISTFILE")"
+mkdir -p "$(dirname "$REDISCLI_RCFILE")"
 
 # rg
 if [ -x "$(command -v rg)" ]; then
@@ -411,6 +430,7 @@ alias rmrf='rm -rf'
 
 # sqlite3
 export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
+mkdir -p "$(dirname "$SQLITE_HISTORY")"
 
 # starship
 if [ -x "$(command -v starship)" ]; then

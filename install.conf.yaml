@@ -9,24 +9,18 @@
     - git submodule update --init
     - if [ -f ~/.bashrc ] && ! [ -L ~/.bashrc ]; then rm ~/.bashrc; fi
 
-- create:
-    - ~/.cache/less/
-    - ~/.cache/redis/
-    - ~/.cache/sqlite3/
-    - ~/.cache/wget/
-    - ~/work/
-
 - link:
     ~/.bash_profile: bash/bash_profile.sh
     ~/.bashrc: bash/bashrc.sh
-    ~/.cache/nvim/snapshots: nvim/snapshots
+    ~/.cache/lvim/snapshots: lvim/snapshots
     ~/.config/alacritty/alacritty.yml:
     ~/.config/direnv/direnvrc:
     ~/.config/fd/ignore: fd.ignore
     ~/.config/git:
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
-    ~/.config/lvim/config.lua: lvim.config.lua
+    ~/.config/lvim/config.lua: lvim/config.lua
+    ~/.config/lvim/snippets: lvim/snippets
     ~/.config/nano/nanorc:
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/ranger/rc.conf: ranger.rc.conf
