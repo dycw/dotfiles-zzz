@@ -1,0 +1,7 @@
+{
+  "from beartype import beartype": {
+    "prefix": "beartype",
+    "body": "from beartype import beartype\n$0",
+    "description": "Import beartype"
+  }
+}

@@ -65,7 +65,7 @@ formatters.setup({
 	{ exe = "black", filetypes = { "python" } },
 	{ exe = "isort", filetypes = { "python" } },
 	-- sh
-	{ exe = "shfmt", filetypes = { "sh" } },
+	{ exe = "shfmt", filetypes = { "sh", "shell", "shellscript", "zsh" } },
 	-- prettier
 	{
 		exe = "prettier",
@@ -662,4 +662,6 @@ lvim.plugins = {
 	{ "kshenoy/vim-signature" },
 }
 
-vim.diagnostic.config({ virtual_text = false })
+-- require("luasnip.loaders.from_vscode").lazy_load({
+-- 	paths = { "~/.config/snippets" },
+-- })
