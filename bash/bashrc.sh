@@ -151,8 +151,10 @@ if [ -x "$(command -v docker-compose)" ]; then
 	alias dcd='docker-compose down'
 	alias dce='docker-compose exec'
 	alias dcl='docker-compose logs'
+	alias dclf='docker-compose logs -f'
 	alias dcu='docker-compose up'
 	alias dcub='docker-compose up --build'
+	alias dcubd='docker-compose up --build -d'
 fi
 
 export DOCKER_BUILDKIT=1

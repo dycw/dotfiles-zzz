@@ -1,7 +1,12 @@
 {
   "from beartype import beartype": {
-    "prefix": "beartype",
+    "prefix": "fimbeartype",
     "body": "from beartype import beartype\n$0",
-    "description": "Import beartype"
+    "description": "from beartype import beartype"
+  },
+  "from hypothesis import reproduce_failure": {
+    "prefix": "fimhreproduce",
+    "body": "from hypothesis import reproduce_failure\n$0",
+    "description": "from hypothesis import reproduce_failure"
   }
 }
