@@ -1,7 +1,0 @@
-- apt:
-    - ca-certificates # docker
-    - gnupg # docker
-    - libhiredis-dev # hiredis
-    - lsb-release # docker
-    - python3-pip
-    - redis-server # redis
