@@ -1,4 +1,74 @@
+#### black ####################################################################
 [tool.black]
 line-length = 80
 skip-magic-trailing-comma = true
 target-version = ["py37"]
+
+#### isort ####################################################################
+[tool.isort]
+atomic = true
+case_sensitive = true
+float_to_top = true
+force_single_line = true
+line_length = 80
+lines_after_imports = 2
+profile = "black"
+remove_redundant_aliases = true
+virtual_env = ".venv/bin/python"
+
+#### poetry ###################################################################
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "dotfiles"
+version = "0.2.14"
+description = "Dotfiles"
+authors = ["Derek Wan <d.wan@icloud.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+bump2version = "^1.0.1"
+flake8 = "^4.0.1"
+flake8-absolute-import = "^1.0.0.1"
+flake8-annotations = "^2.9.0"
+flake8-bandit = "^3.0.0"
+flake8-bugbear = "^22.4.25"
+flake8-comprehensions = "^3.8.0"
+flake8-debugger = "^4.1.2"
+flake8-eradicate = "^1.2.1"
+flake8-no-pep420 = "^2.2.0"
+flake8-pie = "^0.15.0"
+flake8-print = "^5.0.0"
+flake8-simplify = "^0.19.2"
+flake8-unused-arguments = "^0.0.10"
+isort = "^5.10.1"
+poetry-deps-scanner = "^1.0.1"
+pre-commit = "^2.18.1"
+pyclean = "^2.2.0"
+
+#### pyright ##################################################################
+[tool.pyright]
+include = ["src"]
+exclude = ["**/dotbot", "**/ipython", "**/submodules", "bin/dropbox.py"]
+pythonVersion = "3.7"
+executionEnvironments = [{ root = "src" }]
+typeCheckingMode = "strict"
+reportMissingTypeArgument = false
+reportMissingTypeStubs = false
+reportUnknownParameterType = false
+reportUnknownArgumentType = false
+reportUnknownVariableType = false
+reportUnknownMemberType = false
+reportUntypedBaseClass = false
+reportImplicitStringConcatenation = "error"
+reportMissingSuperCall = "error"
+reportPropertyTypeMismatch = "error"
+reportUnnecessaryTypeIgnoreComment = "error"
+reportUnusedCallResult = "error"
+
+
