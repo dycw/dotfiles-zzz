@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
-declare -a libs=(
-	signal-desktop
-	spotify
-	telegram-desktop
-)
-for lib in "${libs[@]}"; do
-	if ! snap list "$lib" | grep ^; then
-		sudo snap install "$lib"
-	fi
-done
+if ! grep -q WSL /proc/version; then
+	declare -a libs=(
+		signal-desktop
+		spotify
+		telegram-desktop
+	)
+	for lib in "${libs[@]}"; do
+		if ! snap list "$lib" | grep ^; then
+			sudo snap install "$lib"
+		fi
+	done
 
-sudo snap install --classic heroku
+	sudo snap install --classic heroku
+fi

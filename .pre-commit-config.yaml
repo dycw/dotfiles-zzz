@@ -113,24 +113,8 @@ repos:
       - id: shellcheck
   # others
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.4.19
+    rev: 0.4.22
     hooks:
       - id: run-bump2version
-  - repo: https://github.com/jazzband/pip-tools
-    rev: 6.6.0
-    hooks:
-      - id: pip-compile
-        name: pip-compile requirements.in
-        args:
-          [
-            --allow-unsafe,
-            --generate-hashes,
-            --no-annotate,
-            --no-header,
-            --quiet,
-            --upgrade,
-          ]
-        files: ^requirements\.(in|txt)$
-  - repo: meta
-    hooks:
-      - id: check-useless-excludes
+        args: [--setup-cfg]
+      - id: run-scan-deps

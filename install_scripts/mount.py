@@ -54,7 +54,7 @@ def is_written(path: Path, device: str) -> bool:
 def write(path: Path, device: str) -> None:
     contents = "    ".join([device, "/data", "ext4", "defaults", "0", "0"])
     cmd = f"echo {contents!r} | sudo tee -a {path.as_posix()}"
-    check_call(cmd, shell=True)  # noqa: S602
+    _ = check_call(cmd, shell=True)  # noqa: S602
 
 
 if __name__ == "__main__":
