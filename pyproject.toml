@@ -53,10 +53,10 @@ pyclean = "^2.2.0"
 
 #### pyright ##################################################################
 [tool.pyright]
-include = ["src"]
-exclude = ["**/dotbot", "**/ipython", "**/submodules", "bin/dropbox.py"]
+include = ["."]
+exclude = ["**/.direnv", "**/dotbot", "**/ipython", "**/submodules", "bin/dropbox.py"]
 pythonVersion = "3.7"
-executionEnvironments = [{ root = "src" }]
+executionEnvironments = [{ root = "." }]
 typeCheckingMode = "strict"
 reportMissingTypeArgument = false
 reportMissingTypeStubs = false
@@ -70,5 +70,3 @@ reportMissingSuperCall = "error"
 reportPropertyTypeMismatch = "error"
 reportUnnecessaryTypeIgnoreComment = "error"
 reportUnusedCallResult = "error"
-
-

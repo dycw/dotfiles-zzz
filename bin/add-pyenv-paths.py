@@ -10,7 +10,7 @@ def main() -> None:
         text=True,
     ).splitlines()
     for version in versions:
-        stdout.write(_get_path(version) + "\n")
+        _ = stdout.write(_get_path(version) + "\n")
 
 
 def _get_path(version: str) -> str:
