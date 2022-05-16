@@ -26,6 +26,8 @@ class Settings:
     """A collection of pytest settings."""
 
     f: bool = False
+    k: bool = False
+    instafail: bool = False
     lf: bool = False
     n: Optional[Union[Literal["auto"], int]] = None
     pdb: bool = False
@@ -46,6 +48,8 @@ class Settings:
         append = parts.append
         if self.f:
             append(Part("f", "-f"))
+        if self.instafail:
+            append(Part("i", "--instafail"))
         if self.lf:
             append(Part("l", "--lf"))
         if self.n == "auto":
@@ -95,15 +99,28 @@ def main() -> None:
     """Echo all the commands, ready for piping to a script."""
 
     info("#!/usr/bin/env bash")
-    for f, lf, n, pdb, x in product(
+    for f, instafail, k, lf, n, pdb, x in product(
+        [True, False],
+        [True, False],
         [True, False],
         [True, False],
         chain(["auto"], [2, 3, 4, 5, 10, 20], [None]),
         [True, False],
         [True, False],
     ):
-        with suppress(ValueError):
-            settings = Settings(f=f, lf=lf, n=cast(Any, n), pdb=pdb, x=x)
+        try:
+            settings = Settings(
+                f=f,
+                instafail=instafail,
+                k=k,
+                lf=lf,
+                n=cast(Any, n),
+                pdb=pdb,
+                x=x,
+            )
+        except ValueError:
+            pass
+        else:
             for alias in settings.yield_aliases():
                 info(alias)
 
