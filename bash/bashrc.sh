@@ -135,6 +135,9 @@ fi
 # clear
 alias cl='clear'
 
+# coverage
+alias open-cov='open .coverage/html/index.html'
+
 # crontab
 alias crontab='crontab -i'
 
