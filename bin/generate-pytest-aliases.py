@@ -27,7 +27,7 @@ class Settings:
     f: bool = False
     k: bool = False
     instafail: bool = False
-    l: bool = False
+    lf: bool = False
     n: Optional[Union[Literal["auto"], int]] = None
     pdb: bool = False
     x: bool = False
@@ -49,8 +49,8 @@ class Settings:
             append(Part("f", "-f"))
         if self.instafail:
             append(Part("i", "--instafail"))
-        if self.l:
-            append(Part("l", "-l"))
+        if self.lf:
+            append(Part("l", "--lf"))
         if self.n == "auto":
             append(Part("n", "-nauto"))
         elif isinstance(self.n, int):
@@ -95,10 +95,7 @@ class Alias:
         keys = "".join(p.key for p in self.parts)
         alias = f"pyt{keys}"
         options = " ".join(
-            chain(
-                ["--color=yes", "--durations=5", "--durations-min=1.0"],
-                (p.option for p in self.parts),
-            )
+            chain(["--color=yes"], (p.option for p in self.parts))
         )
         command = f"pytest {options}".strip()
         return f"alias {alias}='{command}'"
@@ -111,7 +108,7 @@ def main() -> None:
     """Echo all the commands, ready for piping to a script."""
 
     info("#!/usr/bin/env bash")
-    for f, instafail, k, l, n, pdb, x in product(
+    for f, instafail, k, lf, n, pdb, x in product(
         [True, False],
         [True, False],
         [True, False],
@@ -122,7 +119,13 @@ def main() -> None:
     ):
         try:
             settings = Settings(
-                f=f, instafail=instafail, k=k, l=l, n=cast(Any, n), pdb=pdb, x=x
+                f=f,
+                instafail=instafail,
+                k=k,
+                lf=lf,
+                n=cast(Any, n),
+                pdb=pdb,
+                x=x,
             )
         except ValueError:
             pass
