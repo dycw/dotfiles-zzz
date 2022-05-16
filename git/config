@@ -73,6 +73,7 @@
   com = checkout master
   coom = checkout origin/master
   cop = checkout -p
+  cot = checkout -t
 
   # checkout + pull
   comp = !git checkout master && git pull --force && :

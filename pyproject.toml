@@ -23,7 +23,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "dotfiles"
-version = "0.2.14"
+version = "0.2.15"
 description = "Dotfiles"
 authors = ["Derek Wan <d.wan@icloud.com>"]
 

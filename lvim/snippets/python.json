@@ -1,4 +1,9 @@
 {
+  "breakpoint()": {
+    "prefix": "bp",
+    "body": "breakpoint()\n$0",
+    "description": "breakpoint()"
+  },
   "from beartype import beartype": {
     "prefix": "fimbeartype",
     "body": "from beartype import beartype\n$0",
