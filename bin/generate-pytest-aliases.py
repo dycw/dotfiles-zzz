@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from contextlib import suppress
 from dataclasses import dataclass
 from dataclasses import field
 from itertools import chain
@@ -25,8 +26,6 @@ class Settings:
     """A collection of pytest settings."""
 
     f: bool = False
-    k: bool = False
-    instafail: bool = False
     lf: bool = False
     n: Optional[Union[Literal["auto"], int]] = None
     pdb: bool = False
@@ -47,8 +46,6 @@ class Settings:
         append = parts.append
         if self.f:
             append(Part("f", "-f"))
-        if self.instafail:
-            append(Part("i", "--instafail"))
         if self.lf:
             append(Part("l", "--lf"))
         if self.n == "auto":
@@ -59,18 +56,12 @@ class Settings:
             append(Part("p", "--pdb"))
         if self.x:
             append(Part("x", "-x"))
-        if self.k:  # this must be last
-            append(Part("k", "-k"))
         return Alias(parts)
 
     def yield_aliases(self) -> Iterator["Alias"]:
         for parts in permutations(self.alias.parts):
-            try:
-                alias = Alias(list(parts))
-            except ValueError:
-                pass
-            else:
-                yield alias
+            with suppress(ValueError):
+                yield Alias(list(parts))
 
 
 @dataclass(frozen=True)
@@ -86,10 +77,6 @@ class Alias:
     """An alias consisting of a list of parts."""
 
     parts: List[Part] = field(default_factory=list)
-
-    def __post_init__(self) -> None:
-        if any(p.key == "k" for p in self.parts) and self.parts[-1].key != "k":
-            raise ValueError("-k must be the last option")
 
     def __repr__(self) -> str:
         keys = "".join(p.key for p in self.parts)
@@ -108,28 +95,15 @@ def main() -> None:
     """Echo all the commands, ready for piping to a script."""
 
     info("#!/usr/bin/env bash")
-    for f, instafail, k, lf, n, pdb, x in product(
-        [True, False],
-        [True, False],
+    for f, lf, n, pdb, x in product(
         [True, False],
         [True, False],
         chain(["auto"], [2, 3, 4, 5, 10, 20], [None]),
         [True, False],
         [True, False],
     ):
-        try:
-            settings = Settings(
-                f=f,
-                instafail=instafail,
-                k=k,
-                lf=lf,
-                n=cast(Any, n),
-                pdb=pdb,
-                x=x,
-            )
-        except ValueError:
-            pass
-        else:
+        with suppress(ValueError):
+            settings = Settings(f=f, lf=lf, n=cast(Any, n), pdb=pdb, x=x)
             for alias in settings.yield_aliases():
                 info(alias)
 
