@@ -26,6 +26,7 @@ class Settings:
     """A collection of pytest settings."""
 
     f: bool = False
+    k: bool = False
     lf: bool = False
     n: Optional[Union[Literal["auto"], int]] = None
     pdb: bool = False
@@ -56,6 +57,8 @@ class Settings:
             append(Part("p", "--pdb"))
         if self.x:
             append(Part("x", "-x"))
+        if self.k:  # this must be last
+            append(Part("k", "-k"))
         return Alias(parts)
 
     def yield_aliases(self) -> Iterator["Alias"]:
@@ -95,7 +98,8 @@ def main() -> None:
     """Echo all the commands, ready for piping to a script."""
 
     info("#!/usr/bin/env bash")
-    for f, lf, n, pdb, x in product(
+    for f, k, lf, n, pdb, x in product(
+        [True, False],
         [True, False],
         [True, False],
         chain(["auto"], [2, 3, 4, 5, 10, 20], [None]),
@@ -103,7 +107,7 @@ def main() -> None:
         [True, False],
     ):
         with suppress(ValueError):
-            settings = Settings(f=f, lf=lf, n=cast(Any, n), pdb=pdb, x=x)
+            settings = Settings(f=f, k=k, lf=lf, n=cast(Any, n), pdb=pdb, x=x)
             for alias in settings.yield_aliases():
                 info(alias)
 
