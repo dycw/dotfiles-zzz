@@ -2,7 +2,6 @@
 from re import findall
 from subprocess import check_output  # noqa: S404
 from sys import stdout
-from typing import Tuple
 
 
 def main() -> None:
@@ -23,7 +22,7 @@ def _get_path(version: str) -> str:
     ).rstrip("\n")
 
 
-def _key(path: str) -> Tuple[int, int, int]:
+def _key(path: str) -> tuple[int, int, int]:
     ((major, minor, patch),) = findall(r"(\d+)\.(\d+)\.(\d+)", path)
     return int(major), int(minor), int(patch)
 

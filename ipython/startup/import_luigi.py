@@ -3,7 +3,6 @@ from itertools import chain
 from itertools import filterfalse
 from multiprocessing import cpu_count
 from typing import Iterable
-from typing import List
 from typing import Optional
 from typing import TypeVar
 from typing import Union
@@ -73,7 +72,7 @@ with suppress(ModuleNotFoundError):
     def yield_dependencies(task: Task) -> Iterable[Task]:
         """Yield the dependencies of a task."""
 
-        deps = cast(List[Task], task.deps())
+        deps = cast(list[Task], task.deps())
         yield from _unique_everseen(
             chain([task], deps, *map(yield_dependencies, deps))
         )

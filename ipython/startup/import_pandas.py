@@ -2,7 +2,6 @@ from contextlib import suppress
 from functools import partial
 from typing import Any
 from typing import Callable
-from typing import List
 from typing import Optional
 from typing import Union
 
@@ -70,7 +69,7 @@ with suppress(ModuleNotFoundError):
     )
 
     class _ShowMeta(type):
-        _contexts: List[option_context] = []
+        _contexts: list[option_context] = []
 
         def __enter__(cls) -> None:
             new = option_context(

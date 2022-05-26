@@ -10,7 +10,6 @@ from logging import info
 from sys import stdout
 from typing import Any
 from typing import Iterator
-from typing import List
 from typing import Optional
 from typing import Union
 from typing import cast
@@ -79,7 +78,7 @@ class Part:
 class Alias:
     """An alias consisting of a list of parts."""
 
-    parts: List[Part] = field(default_factory=list)
+    parts: list[Part] = field(default_factory=list)
 
     def __repr__(self) -> str:
         keys = "".join(p.key for p in self.parts)

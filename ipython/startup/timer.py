@@ -3,7 +3,6 @@ from re import search
 from sys import stdout
 from timeit import default_timer
 from typing import Any
-from typing import List
 from typing import Optional
 
 
@@ -35,7 +34,7 @@ class _TimerCM:
 class _TimerMeta(type):
     """Metaclass allowing `timer` to be used as a class."""
 
-    _timers: List[_TimerCM] = []
+    _timers: list[_TimerCM] = []
 
     def __enter__(cls) -> None:
         timer = _TimerCM()
