@@ -35,6 +35,6 @@ else
 
 	# https://bit.ly/3LbZ9HQ
 	curl https://pyenv.run | bash
-	pyenv install 3.7.12 # dotfiles
-	pyenv install 3.10.4 # latest
+	pyenv-install-with-brew 3.9:latest
+	pyenv-install-with-brew 3.10:latest
 fi
