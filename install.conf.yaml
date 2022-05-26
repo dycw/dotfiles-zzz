@@ -22,6 +22,7 @@
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/snippets: lvim/snippets
     ~/.config/nano/nanorc:
+    ~/.config/topgrade/config.toml: topgrade.config.toml
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/ranger/rc.conf: ranger.rc.conf
     ~/.config/ripgrep/ripgreprc:

@@ -16,10 +16,13 @@ fi
 
 # https://bit.ly/3Ox24gs
 declare -a libs=(
+	bandwhich
 	bat
 	bottom
 	broot
+	choose
 	direnv
+	duf
 	dust
 	eth-p/software/bat-extras
 	exa
@@ -28,16 +31,22 @@ declare -a libs=(
 	fzf
 	git-delta
 	glow
+	gping
 	grex
+	hexyl
 	htop
 	httpie
 	hyperfine
 	just
+	mdcat
+	navi
 	neovim
 	pandoc
+	pastel
 	pgcli
 	pipx
 	poetry
+	procs
 	pyright
 	ranger
 	ripgrep
@@ -47,13 +56,17 @@ declare -a libs=(
 	sk
 	starship
 	stylua
+	tealdeer
 	tokei
+	topgrade
 	tmux
 	tre-command
 	tree
 	vim
 	watchexec
+	xh
 	yoannfleurydev/gitweb/gitweb
+	zellij
 	zoxide
 	zsh
 )
