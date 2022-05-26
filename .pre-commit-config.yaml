@@ -8,7 +8,7 @@ exclude: (^submodules/|dropbox\.py)
 repos:
   # fixers
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.32.0
+    rev: v2.32.1
     hooks:
       - id: pyupgrade
         args: [--py39-plus]
@@ -62,7 +62,7 @@ repos:
       - id: black
   # linters
   - repo: https://github.com/compwa/mirrors-pyright
-    rev: "v1.1.242"
+    rev: "v1.1.249"
     hooks:
       - id: pyright
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
@@ -113,7 +113,7 @@ repos:
       - id: shellcheck
   # others
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.4.22
+    rev: 0.4.24
     hooks:
       - id: run-bump2version
         args: [--setup-cfg]
