@@ -122,9 +122,9 @@ alias cddf='cd $DOTFILES'
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
-export PATH_WORK="$HOME/work"
-alias cdw='cd $PATH_WORK'
-mkdir -p "$PATH_WORK"
+export _PATH_WORK="$HOME/work"
+alias cdw='cd $_PATH_WORK'
+mkdir -p "$_PATH_WORK"
 
 # cisco
 _BIN='/opt/cisco/anyconnect/bin'
@@ -163,14 +163,9 @@ fi
 export DOCKER_BUILDKIT=1
 
 # dropbox
-_DIR='/data/derek'
-export PATH_DROPBOX="$_DIR/Dropbox"
-if [ -d "$_DIR" ] && [ -x "$(command -v dropbox.py)" ]; then
-	HOME="$_DIR" dropbox.py start >/dev/null 2>&1
-	if [ -d "$PATH_DROPBOX" ]; then
-		alias cddb='cd $PATH_DROPBOX'
-		alias with-home-dropbox-py='HOME=$(dirname $PATH_DROPBOX) dropbox.py'
-	fi
+export _PATH_DROPBOX="$HOME/Dropbox"
+if [ -d "$_PATH_DROPBOX" ]; then
+	alias cddb='cd $_PATH_DROPBOX'
 fi
 
 # dust

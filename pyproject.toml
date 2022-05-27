@@ -54,13 +54,7 @@ pyclean = "^2.2.0"
 #### pyright ##################################################################
 [tool.pyright]
 include = ["."]
-exclude = [
-  "**/.direnv",
-  "**/dotbot",
-  "**/ipython",
-  "**/submodules",
-  "bin/dropbox.py"
-]
+exclude = ["**/.direnv", "**/dotbot", "**/ipython", "**/submodules"]
 pythonVersion = "3.9"
 executionEnvironments = [{ root = "." }]
 typeCheckingMode = "strict"
