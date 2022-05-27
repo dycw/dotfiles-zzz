@@ -59,8 +59,5 @@
     - ./install_scripts/prettier
     - ./install_scripts/pyenv
 
-- shell: # after mount
-    - ./install_scripts/dropbox
-
 - shell: # after pyenv
     - ./install_scripts/python-env
