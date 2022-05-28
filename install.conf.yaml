@@ -56,6 +56,7 @@
 
 - shell: # after brew
     - ./install_scripts/fzf
+    - ./install_scripts/luarocks
     - ./install_scripts/prettier
     - ./install_scripts/pyenv
 
