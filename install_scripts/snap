@@ -12,5 +12,13 @@ if ! grep -q WSL /proc/version; then
 		fi
 	done
 
-	sudo snap install --classic heroku
+	declare -a libs=(
+		go
+		heroku
+	)
+	for lib in "${libs[@]}"; do
+		if ! snap list "$lib" | grep ^; then
+			sudo snap install --classic "$lib"
+		fi
+	done
 fi
