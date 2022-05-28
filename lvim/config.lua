@@ -46,12 +46,20 @@ lvim.keys.normal_mode["<C-q>"] = ":q<CR>"
 --------------------------------------------------------------------------------
 -- autocommands
 --------------------------------------------------------------------------------
-lvim.autocommands.custom_groups = {
-	-- trim trailing spaces
-	{ "BufWritePre", "*", "lua MiniTrailspace.trim()" },
+lvim.autocmds = {
+	{
+		{ -- trim trailing spaces
+			"BufWritePre",
+			pattern = { "*" },
+			command = "lua MiniTrailspace.trim()",
+		},
 
-	-- keep windows equally sized
-	{ "VimResized", "*", "wincmd =" },
+		{ -- keep windows equally sized
+			"VimResized",
+			pattern = { "*" },
+			command = "wincmd =",
+		},
+	},
 }
 
 --------------------------------------------------------------------------------
@@ -371,6 +379,14 @@ which_key_visual["v"] = {
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
+	-- editing: autosave
+	{
+		"pocco81/autosave.nvim",
+		config = function()
+			require("autosave").setup()
+		end,
+	},
+
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
@@ -472,6 +488,9 @@ lvim.plugins = {
 
 	-- editing: narrow region
 	{ "chrisbra/nrrwrgn" },
+
+	-- editing: parenthesis
+	{ "p00f/nvim-ts-rainbow" },
 
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },

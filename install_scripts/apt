@@ -8,6 +8,7 @@ declare -a libs=(
 	gparted
 	libreoffice
 	pdfarranger
+	nautilus-dropbox
 	sqlitebrowser
 	texlive-xetex
 )

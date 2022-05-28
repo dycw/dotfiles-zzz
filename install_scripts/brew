@@ -38,6 +38,7 @@ declare -a libs=(
 	httpie
 	hyperfine
 	just
+	luarocks
 	mdcat
 	navi
 	neovim
