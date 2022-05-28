@@ -379,6 +379,14 @@ which_key_visual["v"] = {
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
+	-- editing: autosave
+	{
+		"pocco81/autosave.nvim",
+		config = function()
+			require("autosave").setup()
+		end,
+	},
+
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
