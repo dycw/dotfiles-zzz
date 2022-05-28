@@ -120,6 +120,7 @@ require("lvim.lsp.manager").setup("html", opts)
 -- treesitter
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
+	"go",
 	"haskell",
 	"html",
 	"json",
