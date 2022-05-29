@@ -120,6 +120,7 @@ require("lvim.lsp.manager").setup("html", opts)
 -- treesitter
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
+	"go",
 	"haskell",
 	"html",
 	"json",
@@ -155,6 +156,7 @@ local which_key = lvim.builtin.which_key.mappings
 which_key["a"] = {
 	name = "...",
 	c = { "<Cmd>Telescope autocommands<CR>", "Autocommands" },
+	s = { "<Cmd>ASToggle<CR>", "Auto-save" },
 }
 which_key["b"] = {
 	name = "...",

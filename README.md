@@ -21,7 +21,60 @@ cd "$HOME/dotfiles"
 ./install
 ```
 
-## Mounting HDDs
+## Machine-specific
+
+### AMD PC
+
+#### Nvidia graphics
+
+[Source](https://bit.ly/3lUqP9i).
+
+1. Install the drivers:
+
+   ```bash
+   sudo ubuntu-drivers autoinstall
+   sudo reboot
+   ```
+
+#### Sleep/suspend crash/freeze
+
+[Source](https://bit.ly/3ai1HXm).
+
+1. Select `lightdm` as the default display manager:
+
+   ```bash
+   sudo apt install -y lightdm
+   ```
+
+1. Try the fix; reboot into the GRUB menu and change the Linux boot command:
+
+   ```diff
+   - linux /boot/vmlinuz-5.15.0-33-generic root=UUID=0078fc53-b302-4373-a300-ede04a2e826d ro quiet splash $vt_handoff
+   + linux /boot/vmlinuz-5.15.0-33-generic root=UUID=0078fc53-b302-4373-a300-ede04a2e826d ro quiet splash  amd_iommu=off $vt_handoff
+   ```
+
+   Press `Ctrl` + `x` to boot.
+
+   If you do not see the GRUB menu, hold down the `Shift` key or set
+   `GRUB_TIMEOUT_STYLE=menu` in `/etc/default/grub` as per
+   [here](https://bit.ly/3wNp6rm).
+
+1. Make the fix permanent; edit `/etc/default/grub`:
+
+   ```diff
+   - GRB_CMDLINE_LINUX_DEFAULT="quiet splash"
+   + GRB_CMDLINE_LINUX_DEFAULT="quiet splash amd_iommu=off"
+   ```
+
+   and then:
+
+   ```bash
+   sudo update-grub
+   ```
+
+### Intel NUC
+
+#### Mounting HDD
 
 1. List your disks:
 

@@ -47,6 +47,7 @@ declare -a libs=(
 	pgcli
 	pipx
 	poetry
+	pre-commit
 	procs
 	pyright
 	ranger
