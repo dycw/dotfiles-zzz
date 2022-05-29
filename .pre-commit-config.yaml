@@ -69,6 +69,7 @@ repos:
     rev: v0.11.0
     hooks:
       - id: markdownlint
+        args: [-r ~MD013]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.2.0
     hooks:

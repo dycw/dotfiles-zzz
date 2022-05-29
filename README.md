@@ -49,11 +49,8 @@ cd "$HOME/dotfiles"
 1. Try the fix; reboot into the GRUB menu and change the Linux boot command:
 
    ```diff
-   - linux /boot/vmlinuz-5.15.0-33-generic \
-     root=UUID=0078fc53-b302-4373-a300-ede04a2e826d ro quiet splash $vt_handoff
-   + linux /boot/vmlinuz-5.15.0-33-generic \
-     root=UUID=0078fc53-b302-4373-a300-ede04a2e826d ro quiet splash \
-     amd_iommu=off $vt_handoff
+   - linux /boot/vmlinuz-5.15.0-33-generic root=UUID=0078fc53-b302-4373-a300-ede04a2e826d ro quiet splash $vt_handoff
+   + linux /boot/vmlinuz-5.15.0-33-generic root=UUID=0078fc53-b302-4373-a300-ede04a2e826d ro quiet splash  amd_iommu=off $vt_handoff
    ```
 
    Press `Ctrl` + `x` to boot.
