@@ -474,3 +474,5 @@ if [ -x "$(command -v zoxide)" ]; then
 		eval "$(zoxide init bash --cmd j --hook prompt)"
 	fi
 fi
+
+complete -C /home/derek/go/bin/gocomplete go

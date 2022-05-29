@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-if [ -x "$(command -v bash-it)" ]; then
-	echo have
-	bash-it enable aliases apt bash-it clipboard curl \
-		docker docker-compose general homebrew tmux
-	bash-it enable plugin git alias-completion base direnv \
-		docker docker-compose edit-mode-vi explain extract \
-		goenv gitstatus go history-eternal proxy postgres
-else
-	echo no
-fi
+bash-it enable completion \
+	bash-it \
+	brew \
+	cargo \
+	docker \
+	docker-compose \
+	django \
+	export \
+	git \
+	go \
+	makefile \
+	pip \
+	pipx \
+	rustup \
+	ssh \
+	tmux
