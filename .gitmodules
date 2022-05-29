@@ -4,7 +4,7 @@
 	ignore = dirty
 [submodule "submodules/bash-it"]
 	path = submodules/bash-it
-	url = https://github.com/Bash-it/bash-it.git
+	url = https://github.com/bash-it/bash-it.git
 	branch = master
 [submodule "submodules/fzf-tab-completion"]
 	path = submodules/fzf-tab-completion
@@ -17,6 +17,10 @@
 [submodule "submodules/oh-my-tmux"]
 	path = submodules/oh-my-tmux
 	url = https://github.com/gpakosz/.tmux.git
+	branch = master
+[submodule "submodules/pyenv"]
+	path = submodules/pyenv
+	url = https://github.com/pyenv/pyenv.git
 	branch = master
 [submodule "submodules/vim-sensible"]
 	path = submodules/vim-sensible
