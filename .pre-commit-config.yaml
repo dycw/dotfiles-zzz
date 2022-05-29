@@ -1,9 +1,4 @@
-ci:
-  autoupdate_schedule: weekly
-
-default_stages: [commit]
-
-exclude: (^submodules/|dropbox\.py)
+exclude: ^submodules/
 
 repos:
   # fixers
