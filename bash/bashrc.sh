@@ -58,7 +58,8 @@ if [ -d "$_DIR" ]; then
 		bash-it enable aliases apt bash-it clipboard curl \
 			docker docker-compose general homebrew tmux
 		bash-it enable plugin git alias-completion base direnv \
-			docker docker-compose edit-mode-vi explain extract
+			docker docker-compose edit-mode-vi explain extract \
+			goenv
 	fi
 fi
 
