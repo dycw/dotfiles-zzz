@@ -6,3 +6,5 @@ fi
 
 # go install github.com/posener/complete/gocomplete@latest
 # gocomplete -install
+
+# go install mvdan.cc/gofumpt@latest

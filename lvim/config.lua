@@ -67,6 +67,8 @@ lvim.autocmds = {
 --------------------------------------------------------------------------------
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
+	-- go
+	-- { exe = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
 	-- lua
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
