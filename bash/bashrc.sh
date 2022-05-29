@@ -296,6 +296,11 @@ if [ -d "$_DIR" ]; then
 	export PATH="$GOPATH/bin${PATH:+:$PATH}"
 fi
 
+# gocomplete
+if [ -x "$(command -v gocomplete)" ]; then
+	complete -C "$(which gocomplete)" go
+fi
+
 # goenv
 _DIR="$DOTFILES/submodules/goenv"
 if [ -d "$_DIR" ]; then
@@ -474,5 +479,3 @@ if [ -x "$(command -v zoxide)" ]; then
 		eval "$(zoxide init bash --cmd j --hook prompt)"
 	fi
 fi
-
-complete -C /home/derek/go/bin/gocomplete go
