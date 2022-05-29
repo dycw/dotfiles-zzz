@@ -46,6 +46,7 @@
 
 - shell:
     - ./install_scripts/apt
+    - source install_scripts/bash-it
     - ./install_scripts/brew
     - ./install_scripts/docker
     - ./install_scripts/lunarvim

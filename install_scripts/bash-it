@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+bash-it enable completion \
+	bash-it \
+	brew \
+	cargo \
+	docker \
+	docker-compose \
+	django \
+	export \
+	git \
+	go \
+	makefile \
+	pip \
+	pipx \
+	rustup \
+	ssh \
+	tmux

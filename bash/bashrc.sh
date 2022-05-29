@@ -296,6 +296,19 @@ if [ -d "$_DIR" ]; then
 	export PATH="$GOPATH/bin${PATH:+:$PATH}"
 fi
 
+# gocomplete
+if [ -x "$(command -v gocomplete)" ]; then
+	complete -C "$(which gocomplete)" go
+fi
+
+# goenv
+_DIR="$DOTFILES/submodules/goenv"
+if [ -d "$_DIR" ]; then
+	export GOENV_ROOT="$_DIR"
+	export PATH="$GOENV_ROOT/bin${PATH:+:$PATH}"
+	eval "$(goenv init -)"
+fi
+
 # heroku
 _FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
 if test -f "$_FILE"; then
@@ -378,10 +391,11 @@ alias pctrav='pre-commit try-repo -av'
 alias pcui='pre-commit uninstall'
 
 # pyenv
-alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
-if [ -x "$(command -v pyenv)" ]; then
+_DIR="$DOTFILES/submodules/pyenv"
+if [ -d "$_DIR" ]; then
+	alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
+	export PYENV_ROOT="$_DIR"
+	export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
 	eval "$(pyenv init --path)"
 fi
 
@@ -389,9 +403,6 @@ fi
 if [ -x "$(command -v pyright)" ]; then
 	alias pyr='pyright'
 	alias pyrw='pyright -w'
-	if [ -x "$(command -v watchexec)" ]; then
-		alias wpyr='watchexec -- pyright'
-	fi
 fi
 
 # python
