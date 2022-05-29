@@ -304,6 +304,13 @@ if [ -d "$_DIR" ]; then
 	export PATH="$GOPATH/bin${PATH:+:$PATH}"
 fi
 
+# goenv
+_DIR="$DOTFILES/submodules/goenv"
+if [ -d "$_DIR" ]; then
+	export GOENV_ROOT="$_DIR"
+	export PATH="$GOENV_ROOT/bin${PATH:+:$PATH}"
+fi
+
 # heroku
 _FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
 if test -f "$_FILE"; then

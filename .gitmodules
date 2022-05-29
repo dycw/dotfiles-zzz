@@ -14,6 +14,10 @@
 	path = submodules/gitstatus
 	url = https://github.com/romkatv/gitstatus.git
 	branch = master
+[submodule "submodules/goenv"]
+	path = submodules/goenv
+	url = https://github.com/syndbg/goenv.git
+	branch = master
 [submodule "submodules/oh-my-tmux"]
 	path = submodules/oh-my-tmux
 	url = https://github.com/gpakosz/.tmux.git
