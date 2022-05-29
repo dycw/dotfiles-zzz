@@ -398,9 +398,6 @@ fi
 if [ -x "$(command -v pyright)" ]; then
 	alias pyr='pyright'
 	alias pyrw='pyright -w'
-	if [ -x "$(command -v watchexec)" ]; then
-		alias wpyr='watchexec -- pyright'
-	fi
 fi
 
 # python
