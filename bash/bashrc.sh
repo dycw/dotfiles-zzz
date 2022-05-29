@@ -32,8 +32,6 @@ export GIST_ID=690a59ef26208e43fa880c874e01c1
 
 # bash
 alias bashrc='$EDITOR "$HOME/.bashrc"'
-export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
-mkdir -p "$(dirname "$HISTFILE")"
 shopt -s autocd
 shopt -s cdspell
 shopt -s checkjobs
@@ -55,11 +53,6 @@ if [ -d "$_DIR" ]; then
 	_FILE="$BASH_IT/bash_it.sh"
 	if [ -f "$_FILE" ]; then
 		source "$_FILE"
-		bash-it enable aliases apt bash-it clipboard curl \
-			docker docker-compose general homebrew tmux
-		bash-it enable plugin git alias-completion base direnv \
-			docker docker-compose edit-mode-vi explain extract \
-			goenv
 	fi
 fi
 
@@ -276,12 +269,6 @@ if [ -x "$(command -v git)" ]; then
 		# shellcheck disable=SC2139,SC2140
 		alias "g$_ALIAS"="git $_ALIAS"
 	done
-fi
-
-# gitstatus
-_FILE="$DOTFILES/submodules/gitstatus/gitstatus.prompt.sh"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
 fi
 
 # gitweb
