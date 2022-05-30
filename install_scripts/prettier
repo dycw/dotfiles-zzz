@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-if ! [ -x "(command -v npm )" ]; then
-	npm install prettier prettier-plugin-toml --force --global --save-dev --save-exact
-fi
+npm install prettier prettier-plugin-toml --force --global --save-dev --save-exact

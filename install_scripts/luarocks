@@ -4,7 +4,5 @@ declare -a libs=(
 	luacheck
 )
 for lib in "${libs[@]}"; do
-	if ! luarocks list --porcelain | grep "^$lib"; then
-		luarocks install "$lib"
-	fi
+	luarocks install "$lib"
 done

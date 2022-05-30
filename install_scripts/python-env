@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -x "$(command -v pyenv)" ]; then
-	pip install pip-tools
-	pip-sync
-	pre-commit install
-fi
