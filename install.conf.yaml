@@ -53,6 +53,7 @@
     # - ./install_scripts/mongodb
     - ./install_scripts/mount.py
     - ./install_scripts/postgres
+    - ./install_scripts/rust
     - ./install_scripts/snap
 
 - shell: # after brew
@@ -61,6 +62,3 @@
     - ./install_scripts/pipx
     - ./install_scripts/prettier
     - ./install_scripts/pyenv
-
-- shell: # after pyenv
-    - ./install_scripts/python-env

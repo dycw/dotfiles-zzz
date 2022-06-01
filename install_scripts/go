@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if ! [ -x "$(command -v go)" ]; then
-	curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
-fi
+curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
 
 # go install github.com/posener/complete/gocomplete@latest
 # gocomplete -install
+
+# go install mvdan.cc/gofumpt@latest

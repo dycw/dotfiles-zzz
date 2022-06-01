@@ -1,19 +1,11 @@
 #!/usr/bin/env bash
 
-# https://bit.ly/3k5ds57
-# https://bit.ly/3MnI4Lk
-declare -a libs=(
-	curl
-	git
-	gparted
-	libreoffice
-	pdfarranger
-	nautilus-dropbox
-	sqlitebrowser
+sudo apt install -y \
+	curl \
+	git \
+	gparted \
+	libreoffice \
+	pdfarranger \
+	nautilus-dropbox \
+	sqlitebrowser \
 	texlive-xetex
-)
-for lib in "${libs[@]}"; do
-	if ! sudo apt -qq list "$lib" --installed | grep ^; then
-		sudo apt install -y "$lib"
-	fi
-done

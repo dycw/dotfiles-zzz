@@ -57,7 +57,7 @@ repos:
       - id: black
   # linters
   - repo: https://github.com/compwa/mirrors-pyright
-    rev: "v1.1.249"
+    rev: "v1.1.250"
     hooks:
       - id: pyright
   - repo: https://github.com/jumanjihouse/pre-commit-hooks

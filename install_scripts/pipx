@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-declare -a libs=()
+declare -a libs=(
+	bump2version
+	pre-commit
+)
 for lib in "${libs[@]}"; do
-	if ! pipx list | grep "$lib"; then
-		pipx install "$lib"
-	fi
+	pipx install "$lib"
 done

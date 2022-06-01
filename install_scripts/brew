@@ -1,80 +1,71 @@
 #!/usr/bin/env bash
 
-if [ -x "$(command -v brew)" ]; then
-	brew update
-	brew upgrade
-else
-	sudo apt install -y curl
+sudo apt install -y curl
 
-	# https://bit.ly/3rL7k6a
-	echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# https://bit.ly/3rL7k6a
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-	sudo apt install -y build-essential
-	brew install gcc
-fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+sudo apt install -y build-essential
+brew install gcc
 
 # https://bit.ly/3Ox24gs
-declare -a libs=(
-	bandwhich
-	bat
-	bottom
-	broot
-	choose
-	direnv
-	duf
-	dust
-	eth-p/software/bat-extras
-	exa
-	fd
-	fselect
-	fzf
-	git-delta
-	glow
-	gping
-	grex
-	hexyl
-	htop
-	httpie
-	hyperfine
-	just
-	luarocks
-	mdcat
-	navi
-	neovim
-	pandoc
-	pastel
-	pgcli
-	pipx
-	poetry
-	pre-commit
-	procs
-	pyright
-	ranger
-	ripgrep
-	sd
-	shellcheck
-	shfmt
-	sk
-	starship
-	stylua
-	tealdeer
-	tokei
-	topgrade
-	tmux
-	tre-command
-	tree
-	vim
-	watchexec
-	xh
-	yoannfleurydev/gitweb/gitweb
-	zellij
-	zoxide
+brew install \
+	bandwhich \
+	bat \
+	bottom \
+	broot \
+	choose \
+	direnv \
+	duf \
+	dust \
+	eth-p/software/bat-extras \
+	exa \
+	fd \
+	fselect \
+	fzf \
+	git-delta \
+	glow \
+	gping \
+	grex \
+	hexyl \
+	htop \
+	httpie \
+	hyperfine \
+	just \
+	luarocks \
+	mdcat \
+	navi \
+	neovim \
+	pandoc \
+	pastel \
+	pgcli \
+	pipx \
+	poetry \
+	pre-commit \
+	procs \
+	pyright \
+	ranger \
+	ripgrep \
+	sd \
+	shellcheck \
+	shfmt \
+	sk \
+	starship \
+	stylua \
+	tealdeer \
+	tokei \
+	topgrade \
+	tmux \
+	tre-command \
+	tree \
+	vim \
+	watchexec \
+	xh \
+	yoannfleurydev/gitweb/gitweb \
+	zellij \
+	zoxide \
 	zsh
-)
-for lib in "${libs[@]}"; do
-	brew ls --versions "$lib" || brew install "$lib"
-done
 
 # https://bit.ly/3MHkd9s
 poetry completions bash >"$(brew --prefix)/etc/bash_completion.d/poetry.bash-completion"

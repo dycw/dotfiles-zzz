@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 # https://bit.ly/3lTWFmI
-if ! sudo apt -qq list mysql-server --installed | grep ^; then
-	sudo apt -y update
-	sudo apt install -y \
-		mysql-server \
-		libmysqlclient21
-	sudo snap install mysql-workbench-community
-fi
+sudo apt -y update
+sudo apt install -y \
+	mysql-server \
+	libmysqlclient21
+sudo snap install mysql-workbench-community
