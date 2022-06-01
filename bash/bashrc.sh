@@ -107,6 +107,7 @@ if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
 	alias wcarb='watchexec -- cargo build'
 	alias wcarr='watchexec -- cargo run'
 	alias wcart='watchexec -- cargo test'
+	function carn-example() { cargo new --name=example "$@"; }
 fi
 
 # cd

@@ -148,7 +148,7 @@ lvim.builtin.nvimtree.setup.view.relativenumber = true
 lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
 lvim.builtin.telescope.defaults.layout_config.width = 0.99
 lvim.builtin.telescope.defaults.layout_strategy = "vertical"
-lvim.builtin.telescope.defaults.path_display = { "smart" }
+lvim.builtin.telescope.defaults.path_display = { "truncate" }
 
 --------------------------------------------------------------------------------
 -- Which Key
@@ -179,15 +179,16 @@ which_key["c"] = {
 	-- default
 	c = { "<Cmd>Telescope commands<CR>", "Commands" },
 	-- others
-	a = { "<Cmd>Telescope lsp_code_actions<CR>", "Code actions" },
+	a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code actions" },
+	l = { vim.lsp.codelens.run, "CodeLens" },
 	h = { "<Cmd>Telescope command_history<CR>", "Command history" },
 }
 which_key["d"] = {
 	name = "...",
 	-- diagnostics
 	d = { "<Cmd>Telescope diagnostics<CR>", "Diagnostics" },
-	j = { "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Diagnostics: next" },
-	k = { "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Diagnostics: previous" },
+	j = { vim.diagnostic.goto_next, "Diagnostics: next" },
+	k = { vim.diagnostic.goto_prev, "Diagnostics: previous" },
 	-- telescope
 	f = { "<Cmd>Telescope lsp_definitions<CR>", "Definitions" },
 	s = { "<Cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
@@ -287,7 +288,7 @@ which_key["r"] = {
 	},
 	f = { "<Cmd>Telescope lsp_references<CR>", "References" },
 	g = { "<Cmd>Telescope registers<CR>", "Registers" },
-	n = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+	n = { vim.lsp.buf.rename, "Rename" },
 	-- repos
 	p = { "<Cmd>Telescope repo list<CR>", "Repos" },
 }
@@ -540,12 +541,12 @@ lvim.plugins = {
 	},
 
 	-- LSP: rust-tools
-	-- {
-	-- 	"simrat39/rust-tools.nvim",
-	-- 	config = function()
-	-- 		require("rust-tools").setup({})
-	-- 	end,
-	-- },
+	{
+		"simrat39/rust-tools.nvim",
+		config = function()
+			require("rust-tools").setup({})
+		end,
+	},
 
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
