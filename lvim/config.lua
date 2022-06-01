@@ -539,6 +539,14 @@ lvim.plugins = {
 		run = "npm install --prefix server",
 	},
 
+	-- LSP: rust-tools
+	-- {
+	-- 	"simrat39/rust-tools.nvim",
+	-- 	config = function()
+	-- 		require("rust-tools").setup({})
+	-- 	end,
+	-- },
+
 	-- LSP: trouble
 	{ "folke/trouble.nvim", cmd = "TroubleToggle" },
 
