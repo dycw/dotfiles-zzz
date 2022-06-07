@@ -1,3 +1,27 @@
 keybinds:
+  unbind:
+    - Ctrl: "h" # SwitchToMode: Move
+    - Ctrl: "q" # Quit
   normal:
-    - unbind: [Ctrl: "q"]
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+  resize:
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+  pane:
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+  tab:
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+  scroll:
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+  session:
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+  tmux:
+    - action: [SwitchToMode: Move]
+      key: [Ctrl: "m"]
+
+copy_on_select: true
