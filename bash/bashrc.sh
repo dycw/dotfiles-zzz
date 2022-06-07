@@ -472,6 +472,11 @@ if [ -x "$(command -v wget)" ]; then
 	export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 fi
 
+# zellij
+if [ -x "$(command -v zellij)" ]; then
+	alias zellijconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/zellij/config.yaml"'
+fi
+
 # zoxide
 if [ -x "$(command -v zoxide)" ]; then
 	export _ZO_EXCLUDE_DIRS="/tmp/*"

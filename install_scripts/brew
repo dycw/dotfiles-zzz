@@ -62,6 +62,7 @@ brew install \
 	vim \
 	watchexec \
 	xh \
+	xplr \
 	yoannfleurydev/gitweb/gitweb \
 	zellij \
 	zoxide \
