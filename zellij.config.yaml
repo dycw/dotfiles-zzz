@@ -1,27 +1,34 @@
 keybinds:
   unbind:
+    - Ctrl: "g" # SwitchToMode: Locked
+    - Ctrl: "p" # SwitchToMode: Pane
+    - Ctrl: "n" # SwitchToMode: Resize
+    - Ctrl: "t" # SwitchToMode: Tab
+    - Ctrl: "s" # SwitchToMode: Scroll
+    - Ctrl: "o" # SwitchToMode: Session
     - Ctrl: "h" # SwitchToMode: Move
+    - Ctrl: "b" # SwitchToMode: Tmux
     - Ctrl: "q" # Quit
   normal:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
   resize:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
   pane:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
   tab:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
   scroll:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
   session:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
   tmux:
     - action: [SwitchToMode: Move]
-      key: [Ctrl: "m"]
+      key: [Alt: "m"]
 
 copy_on_select: true
