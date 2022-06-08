@@ -1,71 +1,143 @@
-add_newline = false
-format = """\
+# top-level
+format = """
 $time\
+$username\
+$hostname\
+$localip\
+$shlvl\
 $directory\
-$git_branch$git_state$git_commit$git_status\
-$docker_context$elixir$elm$python\
+\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+\
+$docker_context\
+$package\
+$container\
+\
+$buf$c$cmake$cobol$crystal$dart$deno$dotnet$elixir$elm$erlang$golang$haskell\
+$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$purescript$python$red\
+$rlang$ruby$rust$scala$swift$terraform$vagrant$vlang$zig\
+\
+$memory_usage\
+$sudo\
+$cmd_duration\
+\
+\
+\
 $line_break\
-$username$hostname$cmd_duration$jobs$memory_usage$shlvl$status\
+\
+\
+\
+$jobs\
+$battery\
+$status\
+$shell\
 $character"""
 
-[character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
-vicmd_symbol = "[❮](bold yellow)"
+[cmd_duration]
+format = "( [$duration]($style))"
 
 [directory]
-truncation_length = 3
+format = "( [$path]($style)[$read_only]($read_only_style))"
+repo_root_format = "( [$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style))"
+repo_root_style = "bold cyan"
+truncation_length = 8
+truncation_symbol = ".../"
 
 [git_branch]
-always_show_remote = true
-format = "[$branch(@$remote_branch)]($style) "
-style = "bold yellow"
+format = "( [$symbol$branch(:$remote_branch)]($style))"
 
 [git_commit]
-format = "[$hash]($style) [$tag]($style)"
-style = "bold purple"
-tag_disabled = false
+format = "( [$hash$tag]($style))"
+
+[git_metrics]
+disabled = false
+format = "( [+$added]($added_style)[-$deleted]($deleted_style))"
 
 [git_state]
-format = "[$state(:$progress_current/$progress_total)]($style) "
-style = "bold red"
+format = "( [$state($progress_current/$progress_total)]($style))"
 
 [git_status]
-format = "([$conflicted$untracked$modified$deleted$renamed$staged$stashed$ahead_behind]($style) )"
-style = "bold yellow"
-ahead = "⇡$count"
-behind = "⇣$count"
-conflicted = "=$count"
-deleted = "✘$count"
-diverged = "⇕⇡$ahead_count⇣$behind_count"
-modified = "!$count"
-renamed = "»$count"
-staged = "+$count"
-stashed = "\\$$count"
-untracked = "?$count"
+format = "( [$all_status$ahead_behind]($style))"
 
 [hostname]
-format = "[$hostname]($style) "
+format = "( [$hostname]($style))"
 
-[python]
-format = "[$symbol$pyenv_prefix$version]($style)"
-pyenv_version_name = true
-symbol = "p:"
+[localip]
+disabled = false
+format = "( [$localipv4]($style))"
 
 [memory_usage]
-format = "[$symbol$ram]($style) "
+disabled = false
+format = "( [$symbol$ram(|$swap)]($style))"
+
+[package]
+format = "( [$symbol$version]($style))"
+version_format = "$raw"
 
 [shlvl]
 disabled = false
-format = "[$symbol$shlvl]($style) "
-style = "bold red"
-threshold = 3
+format = "( [$symbol$shlvl]($style))"
+symbol = "↕️"
+
+[sudo]
+format = "( [$symbol]($style))"
+disabled = true
 
 [time]
 disabled = false
-format = "[$time]($style) "
-style = "bold blue"
-time_format = "%H:%M"
+format = "[$time]($style)" # this is the first
+time_format = "%I:%M:%S%P"
 
 [username]
-format = "[$user]($style) "
+format = "( [$user]($style))"
+
+# language-specific
+[elm]
+format = "( [$symbol$version]($style))"
+style = "cyan"
+version_format = "$raw"
+
+[golang]
+format = "( [$symbol$version]($style))"
+style = "cyan"
+version_format = "$raw"
+
+[haskell]
+format = "( [$symbol$version]($style))"
+style = "purple"
+version_format = "$raw"
+
+[julia]
+format = "( [$symbol$version]($style))"
+style = "purple"
+version_format = "$raw"
+
+[kotlin]
+format = "( [$symbol$version]($style))"
+version_format = "$raw"
+style = "blue"
+
+[lua]
+format = "( [$symbol$version]($style))"
+style = "blue"
+version_format = "$raw"
+
+[nodejs]
+disabled = true
+format = "( [$symbol$version]($style))"
+style = "green"
+version_format = "$raw"
+
+[python]
+format = "( [$symbol$version]($style))"
+style = "yellow"
+version_format = "$raw"
+
+[rust]
+format = "( [$symbol$version]($style))"
+style = "red"
+version_format = "$raw"
