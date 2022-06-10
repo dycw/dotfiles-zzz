@@ -130,8 +130,8 @@ version_format = "$raw"
 
 [kotlin]
 format = "( [$symbol$version]($style))"
-version_format = "$raw"
 style = "blue"
+version_format = "$raw"
 
 [lua]
 format = "( [$symbol$version]($style))"
