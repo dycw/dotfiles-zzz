@@ -38,8 +38,8 @@
     ~/.jupyter/jupyter_server_config.json: jupyter/jupyter_server_config.json
     ~/.jupyter/lab/user-settings: jupyter/user-settings
     ~/.local/share/fonts:
-    ~/.luacheckrc: lua/luacheckrc
-    ~/.stylua.toml: lua/stylua.toml
+    ~/.luacheckrc: luacheck/luacheckrc
+    ~/.stylua.toml: stylua/stylua.toml
     ~/.tmux.conf.local: tmux.conf
     ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
     ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
