@@ -8,10 +8,10 @@ $shlvl\
 $directory\
 \
 $git_branch\
-$git_commit\
 $git_state\
-$git_metrics\
 $git_status\
+$git_commit\
+$git_metrics\
 \
 $docker_context\
 $package\
@@ -58,10 +58,22 @@ disabled = false
 format = "( [+$added]($added_style)[-$deleted]($deleted_style))"
 
 [git_state]
-format = "( [$state($progress_current/$progress_total)]($style))"
+format = "( [$state:($progress_current/$progress_total)]($style))"
 
 [git_status]
-format = "( [$all_status$ahead_behind]($style))"
+format = "( [$conflicted$ahead$behind$diverged$up_to_date$untracked$stashed$modified$staged$renamed$deleted]($style))"
+conflicted = "=$count"
+ahead = "⇡$count"
+behind = "⇣$count"
+diverged = "⇕$count"
+up_to_date = "$count"
+untracked = "?$count"
+stashed = "\\$$$count"
+modified = "!$count"
+staged = "+$count"
+renamed = "»$count"
+deleted = "✘$count"
+ignore_submodules = true
 
 [hostname]
 format = "( [$hostname]($style))"
