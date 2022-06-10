@@ -61,7 +61,7 @@ format = "( [+$added]($added_style)[-$deleted]($deleted_style))"
 format = "( [$state:($progress_current/$progress_total)]($style))"
 
 [git_status]
-format = "( [$conflicted$ahead$behind$diverged$up_to_date$untracked$stashed$modified$staged$renamed$deleted]($style))"
+format = "( [$conflicted]($style))( [$ahead]($style))( [$behind]($style))( [$diverged]($style))( [$up_to_date]($style))( [$untracked]($style))( [$stashed]($style))( [$modified]($style))( [$staged]($style))( [$renamed]($style))( [$deleted]($style))"
 conflicted = "=$count"
 ahead = "⇡$count"
 behind = "⇣$count"
