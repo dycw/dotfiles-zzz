@@ -44,6 +44,7 @@ format = "( [$duration]($style))"
 format = "( [$path]($style)[$read_only]($read_only_style))"
 repo_root_format = "( [$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style))"
 repo_root_style = "bold cyan"
+style = "cyan"
 truncation_length = 8
 truncation_symbol = ".../"
 
