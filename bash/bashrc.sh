@@ -95,7 +95,7 @@ _BIN="$HOME/.cargo/bin"
 if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
-if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
+if [ -x "$(command -v cargo)" ]; then
 	alias carb='cargo build'
 	alias carc='cargo check'
 	alias carn='cargo new'
@@ -104,10 +104,15 @@ if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
 	alias cartig='cargo test -- --ignored'
 	alias cartso='cargo test -- --show-output'
 	alias rbt-carr='RUST_BACKTRACE=1 cargo run'
-	alias wcarb='watchexec -- cargo build'
-	alias wcarr='watchexec -- cargo run'
-	alias wcart='watchexec -- cargo test'
 	function carn-main() { cargo new --name=main "$@"; }
+	if [ -x "$(command -v cargo-add)" ]; then
+		alias cara='cargo-add'
+	fi
+	if [ -x "$(command -v watchexec)" ]; then
+		alias wcarb='watchexec -- cargo build'
+		alias wcarr='watchexec -- cargo run'
+		alias wcart='watchexec -- cargo test'
+	fi
 fi
 
 # cd
