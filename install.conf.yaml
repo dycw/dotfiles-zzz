@@ -53,6 +53,7 @@
     - ./install_scripts/lunarvim
     # - ./install_scripts/mongodb
     - ./install_scripts/mount.py
+    - ./install_scripts/openssl
     - ./install_scripts/postgres
     - ./install_scripts/rust
     - ./install_scripts/snap

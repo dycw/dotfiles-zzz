@@ -2,10 +2,10 @@
 # shellcheck source=/dev/null
 
 # dotfiles
-export DOTFILES="$HOME/dotfiles"
+export _PATH_DOTFILES="$HOME/dotfiles"
 
 # binaries
-_DIRS=("$DOTFILES" "$HOME/.local")
+_DIRS=("$_PATH_DOTFILES" "$HOME/.local")
 for _DIR in "${_DIRS[@]}"; do
 	_BIN="$_DIR/bin"
 	if [ -d "$_BIN" ]; then
@@ -27,9 +27,6 @@ function expand-alias() {
 	eval 'printf "%s\n" "${'"$#"'#*=}"'
 }
 
-# atom
-export GIST_ID=690a59ef26208e43fa880c874e01c1
-
 # bash
 alias bashrc='$EDITOR "$HOME/.bashrc"'
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
@@ -50,7 +47,7 @@ shopt -s shift_verbose
 shopt -s xpg_echo
 
 # bash-it
-_DIR="$DOTFILES/submodules/bash-it"
+_DIR="$_PATH_DOTFILES/submodules/bash-it"
 if [ -d "$_DIR" ]; then
 	export BASH_IT="$_DIR"
 	_FILE="$BASH_IT/bash_it.sh"
@@ -95,7 +92,7 @@ _BIN="$HOME/.cargo/bin"
 if [ -d "$_BIN" ]; then
 	export PATH="$_BIN${PATH:+:$PATH}"
 fi
-if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
+if [ -x "$(command -v cargo)" ]; then
 	alias carb='cargo build'
 	alias carc='cargo check'
 	alias carn='cargo new'
@@ -104,10 +101,15 @@ if [ -x "$(command -v cargo)" ] && [ -x "$(command -v watchexec)" ]; then
 	alias cartig='cargo test -- --ignored'
 	alias cartso='cargo test -- --show-output'
 	alias rbt-carr='RUST_BACKTRACE=1 cargo run'
-	alias wcarb='watchexec -- cargo build'
-	alias wcarr='watchexec -- cargo run'
-	alias wcart='watchexec -- cargo test'
 	function carn-main() { cargo new --name=main "$@"; }
+	if [ -x "$(command -v cargo-add)" ]; then
+		alias cara='cargo-add'
+	fi
+	if [ -x "$(command -v watchexec)" ]; then
+		alias wcarb='watchexec -- cargo build'
+		alias wcarr='watchexec -- cargo run'
+		alias wcart='watchexec -- cargo test'
+	fi
 fi
 
 # cd
@@ -119,7 +121,7 @@ alias .....='cd ../../../..'
 
 alias cdcache='cd "${XDG_CACHE_HOME:-$HOME/.cache}"'
 alias cdconfig='cd "${XDG_CONFIG_HOME:-$HOME/.config}"'
-alias cddf='cd $DOTFILES'
+alias cddf='cd $_PATH_DOTFILES'
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
 alias cdp='cd $HOME/Pictures'
@@ -164,7 +166,7 @@ fi
 export DOCKER_BUILDKIT=1
 
 # dropbox
-export _PATH_DROPBOX="$HOME/Dropbox"
+_PATH_DROPBOX='/data/derek/Dropbox'
 if [ -d "$_PATH_DROPBOX" ]; then
 	alias cddb='cd $_PATH_DROPBOX'
 fi
@@ -239,7 +241,7 @@ fi
 
 # fzf-tab-completion
 if [ -x "$(command -v fzf)" ]; then
-	_FILE="$DOTFILES/submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
+	_FILE="$_PATH_DOTFILES/submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
 	if [ -f "$_FILE" ]; then
 		source "$_FILE"
 		bind -x '"\t": fzf_bash_completion'
@@ -267,7 +269,7 @@ if [ -x "$(command -v git)" ]; then
 	alias gitconfiglocal='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config.local"'
 	alias gitignore='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"'
 	_ALIASES=$(
-		cd "$DOTFILES" || exit
+		cd "$_PATH_DOTFILES" || exit
 		git --list-cmds=alias
 	)
 	for _ALIAS in $_ALIASES; do
@@ -303,7 +305,7 @@ if [ -x "$(command -v gocomplete)" ]; then
 fi
 
 # goenv
-_DIR="$DOTFILES/submodules/goenv"
+_DIR="$_PATH_DOTFILES/submodules/goenv"
 if [ -d "$_DIR" ]; then
 	export GOENV_ROOT="$_DIR"
 	export PATH="$GOENV_ROOT/bin${PATH:+:$PATH}"
@@ -392,7 +394,7 @@ alias pctrav='pre-commit try-repo -av'
 alias pcui='pre-commit uninstall'
 
 # pyenv
-_DIR="$DOTFILES/submodules/pyenv"
+_DIR="$_PATH_DOTFILES/submodules/pyenv"
 if [ -d "$_DIR" ]; then
 	alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
 	export PYENV_ROOT="$_DIR"
@@ -415,7 +417,7 @@ alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 alias pyt='pytest'
 alias pytco='pytest --co'
 alias setuppy='$EDITOR $(git rev-parse --show-toplevel)/setup.py'
-_FILE="$DOTFILES/bin/pytest-aliases"
+_FILE="$_PATH_DOTFILES/bin/pytest-aliases"
 if [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
