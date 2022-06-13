@@ -40,7 +40,7 @@
     ~/.luacheckrc: luacheck/luacheckrc
     ~/.stylua.toml: stylua/stylua.toml
     ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
-    ~/.vimrc:
+    ~/.vimrc: vim/vimrc
 
 - shell:
     # apt
