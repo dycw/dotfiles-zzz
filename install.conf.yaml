@@ -119,18 +119,36 @@
     - [brew install zellij, zellij]
     - [brew install zoxide, zoxide]
 
+      # docker
+    - [./install_scripts/docker, docker]
+
       # fzf
     - [
-        /home/linuxbrew/.linuxbrew/opt/fzf/install \
-        --xdg \
-        --key-bindings \
-        --completion \
-        --no-update-rc \
-        --no-zsh \
-        --no-fish,
-
+        /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
         fzf,
       ]
+
+      # luarocks (after brew)
+    - [luarocks install luacheck, luacheck]
+
+      # mongodb (https://bit.ly/3xRVFXd)
+    - [
+        wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -,
+        mongodb,
+      ]
+    - [
+        "echo 'deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list >/dev/null",
+        mongodb,
+      ]
+    - [sudo apt update -y, mongodb]
+    - [sudo apt install -y mongodb-org, mongodb]
+    - [sudo systemctl start mongod, mongodb]
+    - [sudo systemctl enable mongod, mongodb]
+
+      # mysql (https://bit.ly/3lTWFmI)
+    - [sudo apt install -y mysql-server, mysql]
+    - [sudo apt install -y libmysqlclient21, mysql]
+    - [sudo snap install mysql-workbench-community, mysql]
 
       # nvm
     - [
@@ -141,6 +159,12 @@
       # pipx
     - [pipx install bump2version, bump2version]
 
+      # postgres (https://bit.ly/3v7LoEz)
+    - [sudo apt-get -y install postgresql-client-14, postgres]
+    - [sudo apt-get -y install postgresql-14, postgres]
+    - [sudo apt-get -y install libpq-dev, postgres]
+    - [sudo apt-get -y install postgresql-server-dev-14, postgres]
+
       # rust
     - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
 
@@ -150,9 +174,6 @@
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
-
-      # luarocks (after brew)
-    - [luarocks install luacheck, luacheck]
 
       # npm (after nvm)
     - [nvm install --lts, npm]
@@ -167,7 +188,6 @@
       ]
     - [git checkout -- lvim/config.lua, lunarvim]
 
-      # - ./install_scripts/brew
       # - ./install_scripts/docker
       # - ./install_scripts/lunarvim
       # # - ./install_scripts/mongodb
@@ -179,7 +199,5 @@
       #
       # - shell: # after brew
       # - ./install_scripts/fzf
-      # - ./install_scripts/luarocks
-      # - ./install_scripts/pipx
       # - ./install_scripts/prettier
       # - ./install_scripts/pyenv
