@@ -127,7 +127,7 @@
            --no-fish, fzf]
 
       # nvm
-    - [curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh - s -- -y, nvm]
+    - [curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y, nvm]
 
       # pipx
     - [pipx install bump2version, bump2version]
@@ -145,8 +145,12 @@
       # npm (after nvm)
     - [nvm install --lts, npm]
 
-      # (after npm)
+      # prettier (after npm)
     - [npm install prettier-plugin-toml --global, prettier]
+
+      # lunarvim (after npm, rust)
+    - [curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y, lunarvim]
+    - [git checkout -- lvim/config.lua, lunarvim]
 
 
             # - ./install_scripts/brew
