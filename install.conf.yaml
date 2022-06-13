@@ -29,7 +29,7 @@
     ~/.config/sqlite/.sqliterc:
     ~/.config/starship.toml:
     ~/.config/wget/wgetrc:
-    ~/.config/zellij/config.yaml: zellij.config.yaml
+    ~/.config/zellij: zellij
     ~/.inputrc:
     ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
     ~/.ipython/profile_default/ipython_kernel_config.py: ipython/ipython_kernel_config.py
