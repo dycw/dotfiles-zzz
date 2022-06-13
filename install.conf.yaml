@@ -14,7 +14,7 @@
     ~/.bashrc: bash/bashrc.sh
     ~/.cache/lvim/snapshots: lvim/snapshots
     ~/.config/alacritty/alacritty.yml:
-    ~/.config/direnv/direnvrc:
+    ~/.config/direnv:
     ~/.config/fd/ignore: fd.ignore
     ~/.config/git:
     ~/.config/i3/config: i3/i3.config
@@ -22,14 +22,14 @@
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/snippets: lvim/snippets
     ~/.config/nano/nanorc:
-    ~/.config/topgrade/config.toml: topgrade.config.toml
+    ~/.config/topgrade:
     ~/.config/pypoetry/config.toml: poetry.config.toml
     ~/.config/ranger/rc.conf: ranger.rc.conf
     ~/.config/ripgrep/ripgreprc:
     ~/.config/sqlite/.sqliterc:
     ~/.config/starship.toml:
     ~/.config/wget/wgetrc:
-    ~/.config/zellij: zellij
+    ~/.config/zellij:
     ~/.inputrc:
     ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
     ~/.ipython/profile_default/ipython_kernel_config.py: ipython/ipython_kernel_config.py
@@ -44,7 +44,7 @@
     ~/.vimrc:
 
 - shell:
-      # apt
+    # apt
     - [sudo apt install -y build-essential, build-essential]
     - [sudo apt install -y curl, curl]
     - [sudo apt install -y git, git]
@@ -56,7 +56,10 @@
     - [sudo apt install -y texlive-xetex, texlive-xetex]
 
       # brew
-    - [sudo curl -sSf https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash, brew]
+    - [
+        sudo curl -sSf https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash,
+        brew,
+      ]
     - [eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)", brew]
     - [brew install bandwhich, bandwhich]
     - [brew install bat, bat]
@@ -118,16 +121,23 @@
     - [brew install zoxide, zoxide]
 
       # fzf
-    - [/home/linuxbrew/.linuxbrew/opt/fzf/install \
-           --xdg \
-           --key-bindings \
-           --completion \
-           --no-update-rc \
-           --no-zsh \
-           --no-fish, fzf]
+    - [
+        /home/linuxbrew/.linuxbrew/opt/fzf/install \
+        --xdg \
+        --key-bindings \
+        --completion \
+        --no-update-rc \
+        --no-zsh \
+        --no-fish,
+
+        fzf,
+      ]
 
       # nvm
-    - [curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y, nvm]
+    - [
+        curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y,
+        nvm,
+      ]
 
       # pipx
     - [pipx install bump2version, bump2version]
@@ -149,23 +159,25 @@
     - [npm install prettier-plugin-toml --global, prettier]
 
       # lunarvim (after npm, rust)
-    - [curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y, lunarvim]
+    - [
+        curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y,
+        lunarvim,
+      ]
     - [git checkout -- lvim/config.lua, lunarvim]
 
-
-            # - ./install_scripts/brew
-            # - ./install_scripts/docker
-            # - ./install_scripts/lunarvim
-            # # - ./install_scripts/mongodb
-            # - ./install_scripts/mount.py
-            # - ./install_scripts/openssl
-            # - ./install_scripts/postgres
-            # - ./install_scripts/rust
-            # - ./install_scripts/snap
-            # 
-            # - shell: # after brew
-            # - ./install_scripts/fzf
-            # - ./install_scripts/luarocks
-            # - ./install_scripts/pipx
-            # - ./install_scripts/prettier
-            # - ./install_scripts/pyenv
+      # - ./install_scripts/brew
+      # - ./install_scripts/docker
+      # - ./install_scripts/lunarvim
+      # # - ./install_scripts/mongodb
+      # - ./install_scripts/mount.py
+      # - ./install_scripts/openssl
+      # - ./install_scripts/postgres
+      # - ./install_scripts/rust
+      # - ./install_scripts/snap
+      #
+      # - shell: # after brew
+      # - ./install_scripts/fzf
+      # - ./install_scripts/luarocks
+      # - ./install_scripts/pipx
+      # - ./install_scripts/prettier
+      # - ./install_scripts/pyenv
