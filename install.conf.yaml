@@ -13,9 +13,9 @@
     ~/.bash_profile: bash/bash_profile.sh
     ~/.bashrc: bash/bashrc.sh
     ~/.cache/lvim/snapshots: lvim/snapshots
-    ~/.config/alacritty/alacritty.yml:
+    ~/.config/alacritty:
     ~/.config/direnv:
-    ~/.config/fd/ignore: fd.ignore
+    ~/.config/fd:
     ~/.config/git:
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
