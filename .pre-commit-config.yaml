@@ -2,44 +2,10 @@ exclude: ^submodules/
 
 repos:
   # fixers
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v2.32.1
-    hooks:
-      - id: pyupgrade
-        args: [--py39-plus]
-  - repo: https://github.com/asottile/yesqa
-    rev: v1.3.0
-    hooks:
-      - id: yesqa
-        additional_dependencies:
-          - flake8-absolute-import
-          - flake8-annotations
-          - flake8-bandit
-          - flake8-bugbear
-          - flake8-comprehensions
-          - flake8-debugger
-          - flake8-eradicate
-          - flake8-executable
-          - flake8-no-pep420
-          - flake8-pie
-          - flake8-print
-          - flake8-simplify
-          - flake8-unused-arguments
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.1.6
     hooks:
       - id: shfmt
-  - repo: https://github.com/myint/autoflake
-    rev: v1.4
-    hooks:
-      - id: autoflake
-        args:
-          [
-            --in-place,
-            --remove-all-unused-imports,
-            --remove-duplicate-keys,
-            --remove-unused-variables,
-          ]
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.6.2
     hooks:
@@ -56,10 +22,6 @@ repos:
     hooks:
       - id: black
   # linters
-  - repo: https://github.com/compwa/mirrors-pyright
-    rev: "v1.1.250"
-    hooks:
-      - id: pyright
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.1.6
     hooks:
@@ -81,24 +43,6 @@ repos:
       - id: destroyed-symlinks
       - id: detect-private-key
       - id: no-commit-to-branch
-  - repo: https://github.com/pycqa/flake8
-    rev: 4.0.1
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-absolute-import
-          - flake8-annotations
-          - flake8-bandit
-          - flake8-bugbear
-          - flake8-comprehensions
-          - flake8-debugger
-          - flake8-eradicate
-          - flake8-executable
-          - flake8-no-pep420
-          - flake8-pie
-          - flake8-print
-          - flake8-simplify
-          - flake8-unused-arguments
   - repo: https://github.com/pycqa/isort
     rev: 5.10.1
     hooks:
@@ -113,4 +57,3 @@ repos:
     hooks:
       - id: run-bump2version
         args: [--setup-cfg]
-      - id: run-scan-deps
