@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-/home/linuxbrew/.linuxbrew/opt/fzf/install \
-	--xdg \
-	--key-bindings \
-	--completion \
-	--no-update-rc \
-	--no-zsh \
-	--no-fish

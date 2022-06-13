@@ -69,11 +69,11 @@ behind = "⇣$count"
 diverged = "⇕$count"
 up_to_date = "$count"
 untracked = "?$count"
-stashed = "\\$$$count"
+stashed = "$$$count"
 modified = "!$count"
 staged = "+$count"
 renamed = "»$count"
-deleted = "✘$count"
+deleted = "✘ $count"
 ignore_submodules = true
 
 [hostname]

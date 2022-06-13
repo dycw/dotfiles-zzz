@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# https://bit.ly/3lTWFmI
-sudo apt -y update
-sudo apt install -y \
-	mysql-server \
-	libmysqlclient21
-sudo snap install mysql-workbench-community
