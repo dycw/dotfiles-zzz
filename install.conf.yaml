@@ -45,6 +45,7 @@
 
 - shell:
     - ./install_scripts/apt
+    - curl -sSf https://starship.rs/install.sh | sh -s -- -y
             # - ./install_scripts/brew
             # - ./install_scripts/docker
             # - ./install_scripts/lunarvim
