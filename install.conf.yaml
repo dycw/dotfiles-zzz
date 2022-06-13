@@ -132,6 +132,9 @@
         fzf,
       ]
 
+      # luarocks (after brew)
+    - [luarocks install luacheck, luacheck]
+
       # nvm
     - [
         curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y,
@@ -150,9 +153,6 @@
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
-
-      # luarocks (after brew)
-    - [luarocks install luacheck, luacheck]
 
       # npm (after nvm)
     - [nvm install --lts, npm]
@@ -179,7 +179,5 @@
       #
       # - shell: # after brew
       # - ./install_scripts/fzf
-      # - ./install_scripts/luarocks
-      # - ./install_scripts/pipx
       # - ./install_scripts/prettier
       # - ./install_scripts/pyenv
