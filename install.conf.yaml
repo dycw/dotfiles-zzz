@@ -151,6 +151,9 @@
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
 
+      # luarocks (after brew)
+    - [luarocks install luacheck, luacheck]
+
       # npm (after nvm)
     - [nvm install --lts, npm]
 
