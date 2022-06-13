@@ -44,8 +44,111 @@
     ~/.vimrc:
 
 - shell:
-    - ./install_scripts/apt
-    - curl -sSf https://starship.rs/install.sh | sh -s -- -y
+      # apt
+    - [sudo apt install -y build-essential, build-essential]
+    - [sudo apt install -y curl, curl]
+    - [sudo apt install -y git, git]
+    - [sudo apt install -y gparted, gparted]
+    - [sudo apt install -y libreoffice, libreoffice]
+    - [sudo apt install -y pdfarranger, pdfarranger]
+    - [sudo apt install -y nautilus-dropbox, nautilus-dropbox]
+    - [sudo apt install -y sqlitebrowser, sqlitebrowser]
+    - [sudo apt install -y texlive-xetex, texlive-xetex]
+
+      # brew
+    - [sudo curl -sSf https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash, brew]
+    - [eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)", brew]
+    - [brew install bandwhich, bandwhich]
+    - [brew install bat, bat]
+    - [brew install bottom, bottom]
+    - [brew install broot, broot]
+    - [brew install choose, choose]
+    - [brew install direnv, direnv]
+    - [brew install duf, duf]
+    - [brew install dust, dust]
+    - [brew install eth-p/software/bat-extras, bat-extras]
+    - [brew install exa, exa]
+    - [brew install fd, fd]
+    - [brew install fselect, fselect]
+    - [brew install fzf, fzf]
+    - [brew install gcc, brew]
+    - [brew install git-delta, git-delta]
+    - [brew install glow, glow]
+    - [brew install gping, gping]
+    - [brew install grex, grex]
+    - [brew install hexyl, hexyl]
+    - [brew install htop, htop]
+    - [brew install httpie, httpie]
+    - [brew install hyperfine, hyperfine]
+    - [brew install just, just]
+    - [brew install luarocks, luarocks]
+    - [brew install mdcat, mdcat]
+    - [brew install navi, navi]
+    - [brew install neovim, neovim]
+    - [brew install pandoc, pandoc]
+    - [brew install pastel, pastel]
+    - [brew install pgcli, pgcli]
+    - [brew install pipx, pipx]
+    - [brew install poetry, poetry]
+    - [brew install prettier, prettier]
+    - [brew install pre-commit, pre-commit]
+    - [brew install procs, procs]
+    - [brew install pyright, pyright]
+    - [brew install ranger, ranger]
+    - [brew install restic, restic]
+    - [brew install ripgrep, ripgrep]
+    - [brew install sd, sd]
+    - [brew install shellcheck, shellcheck]
+    - [brew install shfmt, shfmt]
+    - [brew install sk, sk]
+    - [brew install starship, starship]
+    - [brew install stylua, stylua]
+    - [brew install tealdeer, tealdeer]
+    - [brew install tokei, tokei]
+    - [brew install topgrade, topgrade]
+    - [brew install tmux, tmux]
+    - [brew install tre-command, tre-command]
+    - [brew install tree, tree]
+    - [brew install vim, vim]
+    - [brew install watchexec, watchexec]
+    - [brew install xh, xh]
+    - [brew install xplr, xplr]
+    - [brew install yoannfleurydev/gitweb/gitweb, gitweb]
+    - [brew install zellij, zellij]
+    - [brew install zoxide, zoxide]
+
+      # fzf
+    - [/home/linuxbrew/.linuxbrew/opt/fzf/install \
+           --xdg \
+           --key-bindings \
+           --completion \
+           --no-update-rc \
+           --no-zsh \
+           --no-fish, fzf]
+
+      # nvm
+    - [curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh - s -- -y, nvm]
+
+      # pipx
+    - [pipx install bump2version, bump2version]
+
+      # rust
+    - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
+
+      # snap
+    - [sudo snap install flutter --classic, flutter]
+    - [sudo snap install heroku --classic, heroku]
+    - [sudo snap install signal-desktop, signal-desktop]
+    - [sudo snap install spotify, spotify]
+    - [sudo snap install telegram-desktop, telegram-desktop]
+
+      # npm (after nvm)
+    - [nvm install --lts, npm]
+
+      # (after npm)
+    - [npm install prettier-plugin-toml --global, prettier]
+
+
             # - ./install_scripts/brew
             # - ./install_scripts/docker
             # - ./install_scripts/lunarvim

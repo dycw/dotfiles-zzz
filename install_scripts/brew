@@ -12,24 +12,19 @@ brew install gcc
 # https://bit.ly/3Ox24gs
 brew install \
 	bandwhich \
-	bat \
-	bottom \
 	broot \
 	choose \
 	direnv \
 	duf \
 	dust \
 	eth-p/software/bat-extras \
-	exa \
 	fd \
 	fselect \
 	fzf \
-	git-delta \
 	glow \
 	gping \
 	grex \
 	hexyl \
-	htop \
 	httpie \
 	hyperfine \
 	just \

@@ -2,3 +2,4 @@
 # shellcheck source=/dev/null
 
 _FILE="$HOME/.bashrc" && [ -f "$_FILE" ] && source "$_FILE"
+. "$HOME/.cargo/env"
