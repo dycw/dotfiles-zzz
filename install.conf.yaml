@@ -40,27 +40,24 @@
     ~/.local/share/fonts:
     ~/.luacheckrc: luacheck/luacheckrc
     ~/.stylua.toml: stylua/stylua.toml
-    ~/.tmux.conf.local: tmux.conf
-    ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
     ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
     ~/.vimrc:
 
 - shell:
     - ./install_scripts/apt
-    - source install_scripts/bash-it
-    - ./install_scripts/brew
-    - ./install_scripts/docker
-    - ./install_scripts/lunarvim
-    # - ./install_scripts/mongodb
-    - ./install_scripts/mount.py
-    - ./install_scripts/openssl
-    - ./install_scripts/postgres
-    - ./install_scripts/rust
-    - ./install_scripts/snap
-
-- shell: # after brew
-    - ./install_scripts/fzf
-    - ./install_scripts/luarocks
-    - ./install_scripts/pipx
-    - ./install_scripts/prettier
-    - ./install_scripts/pyenv
+            # - ./install_scripts/brew
+            # - ./install_scripts/docker
+            # - ./install_scripts/lunarvim
+            # # - ./install_scripts/mongodb
+            # - ./install_scripts/mount.py
+            # - ./install_scripts/openssl
+            # - ./install_scripts/postgres
+            # - ./install_scripts/rust
+            # - ./install_scripts/snap
+            # 
+            # - shell: # after brew
+            # - ./install_scripts/fzf
+            # - ./install_scripts/luarocks
+            # - ./install_scripts/pipx
+            # - ./install_scripts/prettier
+            # - ./install_scripts/pyenv
