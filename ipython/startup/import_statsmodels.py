@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import statsmodels  # noqa: F401
     import statsmodels.api as sm  # noqa: F401

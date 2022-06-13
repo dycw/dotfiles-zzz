@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import rich  # noqa: F401
     from rich import inspect  # noqa: F401

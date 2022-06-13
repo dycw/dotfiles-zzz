@@ -19,9 +19,9 @@ def get_path() -> Path:
 
 
 def get_device() -> str:
-    blocks = check_output(  # noqa: S603, S607
-        ["sudo", "fdisk", "-l"], text=True
-    ).split("\n\n\n")
+    blocks = check_output(["sudo", "fdisk", "-l"], text=True).split(  # noqa: S603, S607
+        "\n\n\n"
+    )
 
     def extract_device(text: str) -> Optional[str]:
         lines = text.splitlines()

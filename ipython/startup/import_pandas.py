@@ -5,7 +5,6 @@ from typing import Callable
 from typing import Optional
 from typing import Union
 
-
 with suppress(ModuleNotFoundError):
     import pandas  # noqa: F401
     import pandas as pd  # noqa: F401
@@ -26,15 +25,14 @@ with suppress(ModuleNotFoundError):
     from pandas import bdate_range  # noqa: F401
     from pandas import concat  # noqa: F401
     from pandas import date_range  # noqa: F401
-    from pandas import option_context
     from pandas import qcut  # noqa: F401
     from pandas import read_parquet  # noqa: F401
     from pandas import read_pickle  # noqa: F401
     from pandas import read_sql  # noqa: F401
     from pandas import read_table  # noqa: F401
-    from pandas import set_option
     from pandas import to_datetime  # noqa: F401
     from pandas import to_pickle  # noqa: F401
+    from pandas import option_context, set_option
     from pandas.testing import assert_frame_equal  # noqa: F401
     from pandas.testing import assert_index_equal  # noqa: F401
     from pandas.testing import assert_series_equal  # noqa: F401
@@ -72,9 +70,7 @@ with suppress(ModuleNotFoundError):
         _contexts: list[option_context] = []
 
         def __enter__(cls) -> None:
-            new = option_context(
-                "display.min_rows", 100, "display.max_rows", 100
-            )
+            new = option_context("display.min_rows", 100, "display.max_rows", 100)
             cls._contexts.append(new)
             new.__enter__()
 

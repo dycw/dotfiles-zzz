@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     from beartype import beartype  # noqa: F401
     from beartype.vale import Is  # noqa: F401

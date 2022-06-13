@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import seaborn  # noqa: F401
     import seaborn as sns  # noqa: F401
