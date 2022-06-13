@@ -25,11 +25,11 @@
     ~/.config/pypoetry/config.toml: poetry/config.toml
     ~/.config/ripgrep:
     ~/.config/sqlite:
-    ~/.config/starship.toml:
+    ~/.config/starship.toml: starship/starship.toml
     ~/.config/topgrade:
     ~/.config/wget:
     ~/.config/zellij:
-    ~/.inputrc:
+    ~/.inputrc: input/inputrc
     ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
     ~/.ipython/profile_default/ipython_kernel_config.py: ipython/ipython_kernel_config.py
     ~/.ipython/profile_default/startup: ipython/startup
@@ -37,8 +37,8 @@
     ~/.jupyter/jupyter_server_config.json: jupyter/jupyter_server_config.json
     ~/.jupyter/lab/user-settings: jupyter/user-settings
     ~/.local/share/fonts:
-    ~/.luacheckrc: luacheck/luacheckrc
-    ~/.stylua.toml: stylua/stylua.toml
+    ~/.luacheckrc: lua-linters/luacheck/luacheckrc
+    ~/.stylua.toml: lua-linters/stylua/stylua.toml
     ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
     ~/.vimrc: vim/vimrc
 
