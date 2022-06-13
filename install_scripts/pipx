@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-declare -a libs=(
-	bump2version
-	pre-commit
-)
-for lib in "${libs[@]}"; do
-	pipx install "$lib"
-done

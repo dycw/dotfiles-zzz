@@ -13,24 +13,23 @@
     ~/.bash_profile: bash/bash_profile.sh
     ~/.bashrc: bash/bashrc.sh
     ~/.cache/lvim/snapshots: lvim/snapshots
-    ~/.config/alacritty/alacritty.yml:
-    ~/.config/direnv/direnvrc:
-    ~/.config/fd/ignore: fd.ignore
+    ~/.config/alacritty:
+    ~/.config/direnv:
+    ~/.config/fd:
     ~/.config/git:
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/snippets: lvim/snippets
-    ~/.config/nano/nanorc:
-    ~/.config/topgrade/config.toml: topgrade.config.toml
-    ~/.config/pypoetry/config.toml: poetry.config.toml
-    ~/.config/ranger/rc.conf: ranger.rc.conf
-    ~/.config/ripgrep/ripgreprc:
-    ~/.config/sqlite/.sqliterc:
-    ~/.config/starship.toml:
-    ~/.config/wget/wgetrc:
-    ~/.config/zellij/config.yaml: zellij.config.yaml
-    ~/.inputrc:
+    ~/.config/nano:
+    ~/.config/pypoetry/config.toml: poetry/config.toml
+    ~/.config/ripgrep:
+    ~/.config/sqlite:
+    ~/.config/starship.toml: starship/starship.toml
+    ~/.config/topgrade:
+    ~/.config/wget:
+    ~/.config/zellij:
+    ~/.inputrc: input/inputrc
     ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
     ~/.ipython/profile_default/ipython_kernel_config.py: ipython/ipython_kernel_config.py
     ~/.ipython/profile_default/startup: ipython/startup
@@ -38,29 +37,149 @@
     ~/.jupyter/jupyter_server_config.json: jupyter/jupyter_server_config.json
     ~/.jupyter/lab/user-settings: jupyter/user-settings
     ~/.local/share/fonts:
-    ~/.luacheckrc: luacheck/luacheckrc
-    ~/.stylua.toml: stylua/stylua.toml
-    ~/.tmux.conf.local: tmux.conf
-    ~/.tmux.conf: submodules/oh-my-tmux/.tmux.conf
+    ~/.luacheckrc: lua-linters/luacheck/luacheckrc
+    ~/.stylua.toml: lua-linters/stylua/stylua.toml
     ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
-    ~/.vimrc:
+    ~/.vimrc: vim/vimrc
 
 - shell:
-    - ./install_scripts/apt
-    - source install_scripts/bash-it
-    - ./install_scripts/brew
-    - ./install_scripts/docker
-    - ./install_scripts/lunarvim
-    # - ./install_scripts/mongodb
-    - ./install_scripts/mount.py
-    - ./install_scripts/openssl
-    - ./install_scripts/postgres
-    - ./install_scripts/rust
-    - ./install_scripts/snap
+    # apt
+    - [sudo apt install -y build-essential, build-essential]
+    - [sudo apt install -y curl, curl]
+    - [sudo apt install -y git, git]
+    - [sudo apt install -y gparted, gparted]
+    - [sudo apt install -y libreoffice, libreoffice]
+    - [sudo apt install -y pdfarranger, pdfarranger]
+    - [sudo apt install -y nautilus-dropbox, nautilus-dropbox]
+    - [sudo apt install -y sqlitebrowser, sqlitebrowser]
+    - [sudo apt install -y texlive-xetex, texlive-xetex]
 
-- shell: # after brew
-    - ./install_scripts/fzf
-    - ./install_scripts/luarocks
-    - ./install_scripts/pipx
-    - ./install_scripts/prettier
-    - ./install_scripts/pyenv
+      # brew
+    - [
+        sudo curl -sSf https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash,
+        brew,
+      ]
+    - [eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)", brew]
+    - [brew install bandwhich, bandwhich]
+    - [brew install bat, bat]
+    - [brew install bottom, bottom]
+    - [brew install broot, broot]
+    - [brew install choose, choose]
+    - [brew install direnv, direnv]
+    - [brew install duf, duf]
+    - [brew install dust, dust]
+    - [brew install eth-p/software/bat-extras, bat-extras]
+    - [brew install exa, exa]
+    - [brew install fd, fd]
+    - [brew install fselect, fselect]
+    - [brew install fzf, fzf]
+    - [brew install gcc, brew]
+    - [brew install git-delta, git-delta]
+    - [brew install glow, glow]
+    - [brew install gping, gping]
+    - [brew install grex, grex]
+    - [brew install hexyl, hexyl]
+    - [brew install htop, htop]
+    - [brew install httpie, httpie]
+    - [brew install hyperfine, hyperfine]
+    - [brew install just, just]
+    - [brew install luarocks, luarocks]
+    - [brew install mdcat, mdcat]
+    - [brew install navi, navi]
+    - [brew install neovim, neovim]
+    - [brew install pandoc, pandoc]
+    - [brew install pastel, pastel]
+    - [brew install pgcli, pgcli]
+    - [brew install pipx, pipx]
+    - [brew install poetry, poetry]
+    - [brew install prettier, prettier]
+    - [brew install pre-commit, pre-commit]
+    - [brew install procs, procs]
+    - [brew install pyright, pyright]
+    - [brew install ranger, ranger]
+    - [brew install restic, restic]
+    - [brew install ripgrep, ripgrep]
+    - [brew install sd, sd]
+    - [brew install shellcheck, shellcheck]
+    - [brew install shfmt, shfmt]
+    - [brew install sk, sk]
+    - [brew install starship, starship]
+    - [brew install stylua, stylua]
+    - [brew install tealdeer, tealdeer]
+    - [brew install tokei, tokei]
+    - [brew install topgrade, topgrade]
+    - [brew install tmux, tmux]
+    - [brew install tre-command, tre-command]
+    - [brew install tree, tree]
+    - [brew install vim, vim]
+    - [brew install watchexec, watchexec]
+    - [brew install xh, xh]
+    - [brew install xplr, xplr]
+    - [brew install yoannfleurydev/gitweb/gitweb, gitweb]
+    - [brew install zellij, zellij]
+    - [brew install zoxide, zoxide]
+
+      # fzf
+    - [
+        /home/linuxbrew/.linuxbrew/opt/fzf/install \
+        --xdg \
+        --key-bindings \
+        --completion \
+        --no-update-rc \
+        --no-zsh \
+        --no-fish,
+
+        fzf,
+      ]
+
+      # nvm
+    - [
+        curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y,
+        nvm,
+      ]
+
+      # pipx
+    - [pipx install bump2version, bump2version]
+
+      # rust
+    - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
+
+      # snap
+    - [sudo snap install flutter --classic, flutter]
+    - [sudo snap install heroku --classic, heroku]
+    - [sudo snap install signal-desktop, signal-desktop]
+    - [sudo snap install spotify, spotify]
+    - [sudo snap install telegram-desktop, telegram-desktop]
+
+      # luarocks (after brew)
+    - [luarocks install luacheck, luacheck]
+
+      # npm (after nvm)
+    - [nvm install --lts, npm]
+
+      # prettier (after npm)
+    - [npm install prettier-plugin-toml --global, prettier]
+
+      # lunarvim (after npm, rust)
+    - [
+        curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y,
+        lunarvim,
+      ]
+    - [git checkout -- lvim/config.lua, lunarvim]
+
+      # - ./install_scripts/brew
+      # - ./install_scripts/docker
+      # - ./install_scripts/lunarvim
+      # # - ./install_scripts/mongodb
+      # - ./install_scripts/mount.py
+      # - ./install_scripts/openssl
+      # - ./install_scripts/postgres
+      # - ./install_scripts/rust
+      # - ./install_scripts/snap
+      #
+      # - shell: # after brew
+      # - ./install_scripts/fzf
+      # - ./install_scripts/luarocks
+      # - ./install_scripts/pipx
+      # - ./install_scripts/prettier
+      # - ./install_scripts/pyenv

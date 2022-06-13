@@ -487,3 +487,4 @@ if [ -x "$(command -v zoxide)" ]; then
 		eval "$(zoxide init bash --cmd j --hook prompt)"
 	fi
 fi
+. "$HOME/.cargo/env"

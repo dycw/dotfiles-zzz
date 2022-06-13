@@ -2,21 +2,9 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "submodules/bash-it"]
-	path = submodules/bash-it
-	url = https://github.com/bash-it/bash-it.git
-	branch = master
-[submodule "submodules/fzf-tab-completion"]
-	path = submodules/fzf-tab-completion
-	url = https://github.com/lincheney/fzf-tab-completion.git
-	branch = master
 [submodule "submodules/goenv"]
 	path = submodules/goenv
 	url = https://github.com/syndbg/goenv.git
-	branch = master
-[submodule "submodules/oh-my-tmux"]
-	path = submodules/oh-my-tmux
-	url = https://github.com/gpakosz/.tmux.git
 	branch = master
 [submodule "submodules/pyenv"]
 	path = submodules/pyenv

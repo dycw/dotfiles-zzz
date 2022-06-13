@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-npm install prettier prettier-plugin-toml --force --global --save-dev --save-exact

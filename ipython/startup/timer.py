@@ -18,9 +18,7 @@ class _TimerCM:
         msg = " ".join(self._parts).format(desc="S.")
         stdout.write(msg + "\n")
 
-    def __exit__(
-        self, exc_type: Any, exc_val: Any, exc_tb: Any  # noqa: U100
-    ) -> None:
+    def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:  # noqa: U100
         elapsed = dt.timedelta(seconds=default_timer() - self._start)
         e_str = str(elapsed)
         match = search(r"(.*\.\d{1})\d{5}$", e_str)

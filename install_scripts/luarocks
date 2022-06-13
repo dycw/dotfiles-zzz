@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-declare -a libs=(
-	luacheck
-)
-for lib in "${libs[@]}"; do
-	luarocks install "$lib"
-done

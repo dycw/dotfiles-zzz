@@ -19,13 +19,15 @@ def get_path() -> Path:
 
 
 def get_device() -> str:
-    blocks = check_output(  # noqa: S603, S607
-        ["sudo", "fdisk", "-l"], text=True
-    ).split("\n\n\n")
+    blocks = check_output(["sudo", "fdisk", "-l"], text=True).split(  # noqa: S603, S607
+        "\n\n\n"
+    )
 
     def extract_device(text: str) -> Optional[str]:
         lines = text.splitlines()
-        if any(search("Disk model: Samsung SSD 860", line) for line in lines):
+        # Intel NUC: Samsung SSD 860
+        # PC: WDC WD40EZAZ-00S
+        if any(search("Disk model: WDC WD40EZAZ-00S", line) for line in lines):
             (match,) = (m for m in map(is_device, lines) if m is not None)
             return match
         else:

@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import numpy  # noqa: F401
     import numpy as np  # noqa: F401
@@ -47,12 +46,12 @@ with suppress(ModuleNotFoundError):
     from numpy import nonzero  # noqa: F401
     from numpy import ones  # noqa: F401
     from numpy import ones_like  # noqa: F401
-    from numpy import set_printoptions
     from numpy import sqrt  # noqa: F401
     from numpy import vstack  # noqa: F401
     from numpy import where  # noqa: F401
     from numpy import zeros  # noqa: F401
     from numpy import zeros_like  # noqa: F401
+    from numpy import set_printoptions
     from numpy.linalg import LinAlgError  # noqa: F401
     from numpy.linalg import inv  # noqa: F401
     from numpy.random import RandomState  # noqa: F401

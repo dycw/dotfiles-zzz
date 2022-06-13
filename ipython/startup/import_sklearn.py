@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import sklearn  # noqa: F401
     from sklearn.base import BaseEstimator  # noqa: F401

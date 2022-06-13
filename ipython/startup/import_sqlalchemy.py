@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import sqlalchemy  # noqa: F401
     import sqlalchemy as sqla  # noqa: F401

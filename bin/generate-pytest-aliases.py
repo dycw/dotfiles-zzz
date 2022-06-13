@@ -9,13 +9,12 @@ from logging import basicConfig
 from logging import info
 from sys import stdout
 from typing import Any
+from typing import cast
 from typing import Iterator
 from typing import Optional
 from typing import Union
-from typing import cast
 
 from typing_extensions import Literal
-
 
 basicConfig(format="{message}", level="INFO", stream=stdout, style="{")
 
@@ -83,9 +82,7 @@ class Alias:
     def __repr__(self) -> str:
         keys = "".join(p.key for p in self.parts)
         alias = f"pyt{keys}"
-        options = " ".join(
-            chain(["--color=yes"], (p.option for p in self.parts))
-        )
+        options = " ".join(chain(["--color=yes"], (p.option for p in self.parts)))
         command = f"pytest {options}".strip()
         return f"alias {alias}='{command}'"
 

@@ -2,12 +2,11 @@ from contextlib import suppress
 from itertools import chain
 from itertools import filterfalse
 from multiprocessing import cpu_count
+from typing import cast
 from typing import Iterable
 from typing import Optional
 from typing import TypeVar
 from typing import Union
-from typing import cast
-
 
 _T = TypeVar("_T")
 
@@ -21,11 +20,9 @@ with suppress(ModuleNotFoundError):
     from luigi import FloatParameter  # noqa: F401
     from luigi import IntParameter  # noqa: F401
     from luigi import LocalTarget  # noqa: F401
-    from luigi import Task
     from luigi import TaskParameter  # noqa: F401
     from luigi import TupleParameter  # noqa: F401
-    from luigi import WrapperTask
-    from luigi import build
+    from luigi import Task, WrapperTask, build
 
     def build_if_not_complete(
         tasks: Iterable[Task],
@@ -50,9 +47,7 @@ with suppress(ModuleNotFoundError):
 
         def can_run(task: Task) -> bool:
             return not isinstance(task, WrapperTask) and all(
-                dep.complete()
-                for dep in yield_dependencies(task)
-                if dep is not task
+                dep.complete() for dep in yield_dependencies(task) if dep is not task
             )
 
         tasks = set(yield_dependencies(task))
@@ -73,9 +68,7 @@ with suppress(ModuleNotFoundError):
         """Yield the dependencies of a task."""
 
         deps = cast(list[Task], task.deps())
-        yield from _unique_everseen(
-            chain([task], deps, *map(yield_dependencies, deps))
-        )
+        yield from _unique_everseen(chain([task], deps, *map(yield_dependencies, deps)))
 
     def _unique_everseen(iterable: Iterable[_T]) -> Iterable[_T]:
         """List unique elements, preserving order. Remember all elements ever

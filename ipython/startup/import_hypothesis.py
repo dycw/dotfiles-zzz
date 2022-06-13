@@ -2,7 +2,6 @@ from contextlib import suppress
 from typing import Generic
 from typing import TypeVar
 
-
 _T = TypeVar("_T")
 
 
@@ -15,7 +14,6 @@ with suppress(ModuleNotFoundError):
     from hypothesis import reproduce_failure  # noqa: F401
     from hypothesis import settings  # noqa: F401
     from hypothesis.strategies import DataObject  # noqa: F401
-    from hypothesis.strategies import SearchStrategy
     from hypothesis.strategies import booleans  # noqa: F401
     from hypothesis.strategies import complex_numbers  # noqa: F401
     from hypothesis.strategies import dictionaries  # noqa: F401
@@ -31,12 +29,11 @@ with suppress(ModuleNotFoundError):
     from hypothesis.strategies import shared  # noqa: F401
     from hypothesis.strategies import text  # noqa: F401
     from hypothesis.strategies import tuples  # noqa: F401
+    from hypothesis.strategies import SearchStrategy
 
     with suppress(ModuleNotFoundError):
         from hypothesis.extra.django import LiveServerTestCase  # noqa: F401
-        from hypothesis.extra.django import (  # noqa: F401
-            StaticLiveServerTestCase,
-        )
+        from hypothesis.extra.django import StaticLiveServerTestCase  # noqa: F401
         from hypothesis.extra.django import TransactionTestCase  # noqa: F401
         from hypothesis.extra.django import from_form  # noqa: F401
         from hypothesis.extra.django import from_model  # noqa: F401

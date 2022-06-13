@@ -1,6 +1,5 @@
 from contextlib import suppress
 
-
 with suppress(ModuleNotFoundError):
     import pytest  # noqa: F401
     from pytest import fixture  # noqa: F401
