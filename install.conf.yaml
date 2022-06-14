@@ -39,7 +39,7 @@
     ~/.local/share/fonts:
     ~/.luacheckrc: lua-linters/luacheck/luacheckrc
     ~/.stylua.toml: lua-linters/stylua/stylua.toml
-    ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
+    ~/.vim/pack/tpope/start/sensible: vim/vim-sensible
     ~/.vimrc: vim/vimrc
 
 - shell:

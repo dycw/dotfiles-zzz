@@ -10,7 +10,6 @@
 	path = submodules/pyenv
 	url = https://github.com/pyenv/pyenv.git
 	branch = master
-[submodule "submodules/vim-sensible"]
-	path = submodules/vim-sensible
+[submodule "vim/vim-sensible"]
+	path = vim/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-	branch = master
