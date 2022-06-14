@@ -2,14 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "submodules/goenv"]
-	path = submodules/goenv
-	url = https://github.com/syndbg/goenv.git
-	branch = master
-[submodule "submodules/pyenv"]
-	path = submodules/pyenv
-	url = https://github.com/pyenv/pyenv.git
-	branch = master
 [submodule "vim/vim-sensible"]
 	path = vim/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
