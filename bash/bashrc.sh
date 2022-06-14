@@ -394,13 +394,7 @@ alias pctrav='pre-commit try-repo -av'
 alias pcui='pre-commit uninstall'
 
 # pyenv
-_DIR="$_PATH_DOTFILES/submodules/pyenv"
-if [ -d "$_DIR" ]; then
-	alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
-	export PYENV_ROOT="$_DIR"
-	export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
-	eval "$(pyenv init --path)"
-fi
+alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
 
 # pyright
 if [ -x "$(command -v pyright)" ]; then
