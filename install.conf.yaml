@@ -157,6 +157,7 @@
       ]
 
       # pipx (after brew)
+    - [pipx install asciinema, asciinema]
     - [pipx install bump2version, bump2version]
 
       # pyenv (after brew)
@@ -181,6 +182,9 @@
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
+
+      # cargo (after rust)
+    - [cargo install cargo-edit, cargo-edit]
 
       # npm (after nvm)
     - [nvm install --lts, npm]
