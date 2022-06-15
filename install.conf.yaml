@@ -39,7 +39,7 @@
     ~/.local/share/fonts:
     ~/.luacheckrc: lua-linters/luacheck/luacheckrc
     ~/.stylua.toml: lua-linters/stylua/stylua.toml
-    ~/.vim/pack/tpope/start/sensible: submodules/vim-sensible
+    ~/.vim/pack/tpope/start/sensible: vim/vim-sensible
     ~/.vimrc: vim/vimrc
 
 - shell:
@@ -156,8 +156,15 @@
         nvm,
       ]
 
-      # pipx
+      # pipx (after brew)
     - [pipx install bump2version, bump2version]
+
+      # pyenv (after brew)
+    - [
+        sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev,
+        pyenv,
+      ]
+    - [brew install pyenv, pyenv]
 
       # postgres (https://bit.ly/3v7LoEz)
     - [sudo apt-get -y install postgresql-client-14, postgres]
@@ -189,7 +196,6 @@
     - [git checkout -- lvim/config.lua, lunarvim]
 
       # - ./install_scripts/docker
-      # - ./install_scripts/lunarvim
       # # - ./install_scripts/mongodb
       # - ./install_scripts/mount.py
       # - ./install_scripts/openssl
@@ -200,4 +206,3 @@
       # - shell: # after brew
       # - ./install_scripts/fzf
       # - ./install_scripts/prettier
-      # - ./install_scripts/pyenv
