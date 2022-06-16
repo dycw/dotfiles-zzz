@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-export RESTIC_REPOSITORY='/data/derek/restic'
 source .env
-
 restic backup '/data/derek/Dropbox'
