@@ -268,7 +268,7 @@ let $config = {
       name: completion_menu
       modifier: none
       keycode: tab
-      mode: emacs # Options: emacs vi_normal vi_insert
+      mode: vi_normal # Options: emacs vi_normal vi_insert
       event: {
         until: [
           { send: menu name: completion_menu }
@@ -332,7 +332,14 @@ let $config = {
   ]
 }
 
-# aliases
+# ---- aliases ----------------------------------------------------------------
 alias l = ls
 alias la = ls -a
 alias ll = ls -al
+
+alias cdcache = cd "${XDG_CACHE_HOME:-$HOME/.cache}"
+alias cdconfig = cd "${XDG_CONFIG_HOME:-$HOME/.config}"
+alias cddf = cd $_PATH_DOTFILES
+alias cddl = cd $HOME/Downloads
+alias cddt = cd $HOME/Desktop
+alias cdp = cd $HOME/Pictures
