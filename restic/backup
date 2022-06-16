@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-_PATH_RESTIC='/data/derek/restic'
-_PATH_DROPBOX='/data/derek/Dropbox'
-
-if ! [ -d $_PATH_RESTIC ]; then
-	echo "$_PATH_RESTIC" does not exist
-fi
-if ! [ -d $_PATH_DROPBOX ]; then
-	echo "$_PATH_DROPBOX" does not exist
-fi
-
 source .env
-restic backup -r "$_PATH_RESTIC" "$_PATH_RESTIC"
+restic backup '/data/derek/Dropbox'
