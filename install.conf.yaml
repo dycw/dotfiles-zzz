@@ -23,6 +23,8 @@
     ~/.config/lvim/snippets: lvim/snippets
     ~/.config/nano:
     ~/.config/pypoetry/config.toml: poetry/config.toml
+    ~/.config/nushell/config.nu: nushell/config.nu
+    ~/.config/nushell/env.nu: nushell/env.nu
     ~/.config/ripgrep:
     ~/.config/sqlite:
     ~/.config/starship.toml: starship/starship.toml
@@ -87,13 +89,14 @@
     - [brew install mdcat, mdcat]
     - [brew install navi, navi]
     - [brew install neovim, neovim]
+    - [brew install nushell, nushell]
     - [brew install pandoc, pandoc]
     - [brew install pastel, pastel]
     - [brew install pgcli, pgcli]
     - [brew install pipx, pipx]
     - [brew install poetry, poetry]
-    - [brew install prettier, prettier]
     - [brew install pre-commit, pre-commit]
+    - [brew install prettier, prettier]
     - [brew install procs, procs]
     - [brew install pyright, pyright]
     - [brew install ranger, ranger]
@@ -157,6 +160,7 @@
       ]
 
       # pipx (after brew)
+    - [pipx install asciinema, asciinema]
     - [pipx install bump2version, bump2version]
 
       # pyenv (after brew)
@@ -181,6 +185,9 @@
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
+
+      # cargo (after rust)
+    - [cargo install cargo-edit, cargo-edit]
 
       # npm (after nvm)
     - [nvm install --lts, npm]

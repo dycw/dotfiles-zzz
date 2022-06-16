@@ -46,16 +46,6 @@ shopt -s nocasematch
 shopt -s shift_verbose
 shopt -s xpg_echo
 
-# bash-it
-_DIR="$_PATH_DOTFILES/submodules/bash-it"
-if [ -d "$_DIR" ]; then
-	export BASH_IT="$_DIR"
-	_FILE="$BASH_IT/bash_it.sh"
-	if [ -f "$_FILE" ]; then
-		source "$_FILE"
-	fi
-fi
-
 # bat
 if [ -x "$(command -v bat)" ]; then
 	alias cat='bat'
@@ -293,11 +283,6 @@ if [ -d "$_DIR" ]; then
 	export GOROOT="$_DIR"
 	export PATH="$GOROOT/bin${PATH:+:$PATH}"
 fi
-_DIR="$HOME/go"
-if [ -d "$_DIR" ]; then
-	export GOPATH="$_DIR"
-	export PATH="$GOPATH/bin${PATH:+:$PATH}"
-fi
 
 # gocomplete
 if [ -x "$(command -v gocomplete)" ]; then
@@ -426,6 +411,12 @@ export REDISCLI_HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/redis/history"
 export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redisclirc"
 mkdir -p "$(dirname "$REDISCLI_HISTFILE")"
 mkdir -p "$(dirname "$REDISCLI_RCFILE")"
+
+# restic
+_DIR='/data/derek/restic'
+if [ -d "$_DIR" ]; then
+	export RESTIC_REPOSITORY="$_DIR"
+fi
 
 # rg
 if [ -x "$(command -v rg)" ]; then
