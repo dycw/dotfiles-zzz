@@ -190,6 +190,12 @@ if [ -x "$(command -v exa)" ]; then
 	function wllag() { __watch_exa_long -a "$@"; }
 fi
 
+# exercism
+_FILE="$_PATH_DOTFILES/exercism/exercism_completion.bash"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
+
 # fd
 if [ -x "$(command -v fd)" ]; then
 	alias fdd='fd --type=directory'
