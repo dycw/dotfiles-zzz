@@ -96,9 +96,9 @@ if [ -x "$(command -v cargo)" ]; then
 		alias cara='cargo-add'
 	fi
 	if [ -x "$(command -v watchexec)" ]; then
-		alias wcarb='watchexec -- cargo build'
-		alias wcarr='watchexec -- cargo run'
-		alias wcart='watchexec -- cargo test'
+		alias wcarb='watchexec -e=.rs -- cargo build'
+		alias wcarr='watchexec -e=.rs -- cargo run'
+		alias wcart='watchexec -e=.rs -- cargo test'
 	fi
 fi
 
