@@ -390,7 +390,11 @@ lvim.plugins = {
 	{
 		"pocco81/autosave.nvim",
 		config = function()
-			require("autosave").setup({ events = { "InsertLeave" } })
+			require("autosave").setup({
+				events = { "InsertLeave" },
+				write_all_buffers = true,
+				debounce_delay = 0,
+			})
 		end,
 	},
 
