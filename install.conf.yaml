@@ -193,7 +193,7 @@
     - [nvm install --lts, npm]
 
       # prettier (after npm)
-    - [npm install prettier-plugin-toml --global, prettier]
+    - [npm install --location=global prettier-plugin-toml, prettier-plugin-toml]
 
       # lunarvim (after npm, rust)
     - [

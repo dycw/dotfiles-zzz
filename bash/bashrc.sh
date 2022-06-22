@@ -96,9 +96,9 @@ if [ -x "$(command -v cargo)" ]; then
 		alias cara='cargo-add'
 	fi
 	if [ -x "$(command -v watchexec)" ]; then
-		alias wcarb='watchexec -- cargo build'
-		alias wcarr='watchexec -- cargo run'
-		alias wcart='watchexec -- cargo test'
+		alias wcarb='watchexec -e=.rs -- cargo build'
+		alias wcarr='watchexec -e=.rs -- cargo run'
+		alias wcart='watchexec -e=.rs -- cargo test'
 	fi
 fi
 
@@ -188,6 +188,12 @@ if [ -x "$(command -v exa)" ]; then
 	function wll() { __watch_exa_long --git-ignore "$@"; }
 	function wlla() { watchll -a "$@"; }
 	function wllag() { __watch_exa_long -a "$@"; }
+fi
+
+# exercism
+_FILE="$_PATH_DOTFILES/exercism/exercism_completion.bash"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
 fi
 
 # fd
