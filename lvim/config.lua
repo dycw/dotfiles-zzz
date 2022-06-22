@@ -388,7 +388,7 @@ lvim.plugins = {
 	{
 		"pocco81/autosave.nvim",
 		config = function()
-			require("autosave").setup()
+			require("autosave").setup({ debounce_delay = 5000 })
 		end,
 	},
 
