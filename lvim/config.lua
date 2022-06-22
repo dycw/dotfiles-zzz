@@ -291,6 +291,8 @@ which_key["r"] = {
 	n = { vim.lsp.buf.rename, "Rename" },
 	-- repos
 	p = { "<Cmd>Telescope repo list<CR>", "Repos" },
+	-- rust
+	h = { "<Cmd>RustHoverAction<CR>", "Rust hover actions" },
 }
 which_key["s"] = {
 	name = "...",
@@ -388,7 +390,11 @@ lvim.plugins = {
 	{
 		"pocco81/autosave.nvim",
 		config = function()
-			require("autosave").setup({ debounce_delay = 5000 })
+			require("autosave").setup({
+				events = { "InsertLeave" },
+				write_all_buffers = true,
+				debounce_delay = 0,
+			})
 		end,
 	},
 
