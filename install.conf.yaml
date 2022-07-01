@@ -183,7 +183,7 @@
     - [sudo apt-get -y install postgresql-server-dev-14, postgres]
 
     # rust
-    - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
+    - [curl -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path, rust]
 
     # snap
     - [sudo snap install flutter --classic, flutter]
@@ -203,7 +203,7 @@
 
     # lunarvim (after npm, rust)
     - [
-        curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y,
+        curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y --no-install-dependencies,
         lunarvim,
       ]
     - [git checkout -- lvim/config.lua, lunarvim]
