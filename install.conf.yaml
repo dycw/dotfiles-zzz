@@ -56,7 +56,7 @@
     - [sudo apt install -y sqlitebrowser, sqlitebrowser]
     - [sudo apt install -y texlive-xetex, texlive-xetex]
 
-      # brew
+    # brew
     - [
         sudo curl -sSf https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash,
         brew,
@@ -122,16 +122,16 @@
     - [brew install zellij, zellij]
     - [brew install zoxide, zoxide]
 
-      # docker
+    # docker
     - [./install_scripts/docker, docker]
 
-      # fzf
+    # fzf
     - [
         /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
         fzf,
       ]
 
-      # luarocks (after brew)
+    # luarocks (after brew)
     - [luarocks install luacheck, luacheck]
 
       # mongodb (https://bit.ly/3xRVFXd)
@@ -148,68 +148,67 @@
     - [sudo systemctl start mongod, mongodb]
     - [sudo systemctl enable mongod, mongodb]
 
-      # mysql (https://bit.ly/3lTWFmI)
+    # mysql (https://bit.ly/3lTWFmI)
     - [sudo apt install -y mysql-server, mysql]
     - [sudo apt install -y libmysqlclient21, mysql]
     - [sudo snap install mysql-workbench-community, mysql]
 
-      # nvm
+    # nordvpn
     - [
-        curl -sSf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y,
+        sudo curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh,
+        nordvpn,
+      ]
+
+    # nvm
+    - [
+        curl -ssf https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh -s -- -y,
         nvm,
       ]
 
-      # pipx (after brew)
+    # pipx (after brew)
     - [pipx install asciinema, asciinema]
     - [pipx install bump2version, bump2version]
 
-      # pyenv (after brew)
+    # pyenv (after brew)
     - [
         sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev,
         pyenv,
       ]
     - [brew install pyenv, pyenv]
 
-      # postgres (https://bit.ly/3v7LoEz)
+    # postgres (https://bit.ly/3v7LoEz)
     - [sudo apt-get -y install postgresql-client-14, postgres]
     - [sudo apt-get -y install postgresql-14, postgres]
     - [sudo apt-get -y install libpq-dev, postgres]
     - [sudo apt-get -y install postgresql-server-dev-14, postgres]
 
-      # rust
+    # rust
     - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
 
-      # snap
+    # snap
     - [sudo snap install flutter --classic, flutter]
     - [sudo snap install heroku --classic, heroku]
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
 
-      # cargo (after rust)
+    # cargo (after rust)
     - [cargo install cargo-edit, cargo-edit]
 
-      # npm (after nvm)
+    # npm (after nvm)
     - [nvm install --lts, npm]
 
-      # prettier (after npm)
+    # prettier (after npm)
     - [npm install --location=global prettier-plugin-toml, prettier-plugin-toml]
 
-      # lunarvim (after npm, rust)
+    # lunarvim (after npm, rust)
     - [
         curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y,
         lunarvim,
       ]
     - [git checkout -- lvim/config.lua, lunarvim]
 
-      # - ./install_scripts/docker
-      # # - ./install_scripts/mongodb
-      # - ./install_scripts/mount.py
-      # - ./install_scripts/openssl
-      # - ./install_scripts/postgres
-      # - ./install_scripts/rust
-      # - ./install_scripts/snap
-      #
-      # - shell: # after brew
-      # - ./install_scripts/fzf
-      # - ./install_scripts/prettier
+    # - ./install_scripts/docker
+    # - ./install_scripts/mongodb
+    # - ./install_scripts/mount.py
+    # - ./install_scripts/postgres
