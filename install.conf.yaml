@@ -148,7 +148,7 @@
     - [sudo systemctl start mongod, mongodb]
     - [sudo systemctl enable mongod, mongodb]
 
-    # mysql (https://bit.ly/3ltwfmi)
+    # mysql (https://bit.ly/3lTWFmI)
     - [sudo apt install -y mysql-server, mysql]
     - [sudo apt install -y libmysqlclient21, mysql]
     - [sudo snap install mysql-workbench-community, mysql]
@@ -176,14 +176,14 @@
       ]
     - [brew install pyenv, pyenv]
 
-    # postgres (https://bit.ly/3v7loez)
+    # postgres (https://bit.ly/3v7LoEz)
     - [sudo apt-get -y install postgresql-client-14, postgres]
     - [sudo apt-get -y install postgresql-14, postgres]
     - [sudo apt-get -y install libpq-dev, postgres]
     - [sudo apt-get -y install postgresql-server-dev-14, postgres]
 
     # rust
-    - [curl -ssf https://sh.rustup.rs | sh -s -- -y, rust]
+    - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
 
     # snap
     - [sudo snap install flutter --classic, flutter]
