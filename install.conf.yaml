@@ -58,7 +58,7 @@
 
     # brew
     - [
-        sudo curl -ssf https://raw.githubusercontent.com/homebrew/install/master/install.sh | bash,
+        sudo curl -sSf https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash,
         brew,
       ]
     - [eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)", brew]
@@ -134,9 +134,9 @@
     # luarocks (after brew)
     - [luarocks install luacheck, luacheck]
 
-    # mongodb (https://bit.ly/3xrvfxd)
+      # mongodb (https://bit.ly/3xRVFXd)
     - [
-        wget -qo - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -,
+        wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -,
         mongodb,
       ]
     - [
