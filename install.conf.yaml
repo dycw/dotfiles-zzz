@@ -183,7 +183,7 @@
     - [sudo apt-get -y install postgresql-server-dev-14, postgres]
 
     # rust
-    - [curl -sSf https://sh.rustup.rs | sh -s -- -y, rust]
+    - [curl -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path, rust]
 
     # snap
     - [sudo snap install flutter --classic, flutter]
