@@ -203,7 +203,7 @@
 
     # lunarvim (after npm, rust)
     - [
-        curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y,
+        curl -sSf https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -s -- -y --no-install-dependencies,
         lunarvim,
       ]
     - [git checkout -- lvim/config.lua, lunarvim]
