@@ -77,6 +77,7 @@
     - [brew install fzf, fzf]
     - [brew install gcc, brew]
     - [brew install git-delta, git-delta]
+    - [brew install gitweb, gitweb]
     - [brew install glow, glow]
     - [brew install gping, gping]
     - [brew install grex, grex]
@@ -118,7 +119,6 @@
     - [brew install watchexec, watchexec]
     - [brew install xh, xh]
     - [brew install xplr, xplr]
-    - [brew install yoannfleurydev/gitweb/gitweb, gitweb]
     - [brew install zellij, zellij]
     - [brew install zoxide, zoxide]
 
