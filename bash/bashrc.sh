@@ -119,6 +119,20 @@ export _PATH_WORK="$HOME/work"
 alias cdw='cd $_PATH_WORK'
 mkdir -p "$_PATH_WORK"
 
+# chmod
+function chmod-files() {
+	find . -type f -exec chmod "$1" {} \;
+}
+function chmod-dirs() {
+	find . -type d -exec chmod "$1" {} \;
+}
+function chown-files() {
+	find . -type f -exec chown "$1" {} \;
+}
+function chown-dirs() {
+	find . -type d -exec chown "$1" {} \;
+}
+
 # cisco
 _BIN='/opt/cisco/anyconnect/bin'
 if [ -d "$_BIN" ]; then
