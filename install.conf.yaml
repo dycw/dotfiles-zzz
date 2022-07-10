@@ -191,6 +191,7 @@
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
+    - [sudo snap install vlc, vlc]
 
     # cargo (after rust)
     - [cargo install cargo-edit, cargo-edit]
