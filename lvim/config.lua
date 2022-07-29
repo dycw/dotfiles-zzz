@@ -328,6 +328,8 @@ which_key["t"] = {
 	t = { "<Cmd>NvimTreeToggle<CR>", "NvimTree" },
 	-- others
 	d = { "<Cmd>Telescope lsp_type_definitions<CR>", "Type definitions" },
+	-- toggle paste
+	p = { "<Cmd>set togglepaste<CR>", "Toggle paste" },
 }
 which_key["v"] = {
 	name = "...",
