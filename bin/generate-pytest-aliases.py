@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from collections.abc import Iterator
 from contextlib import suppress
 from dataclasses import dataclass
 from dataclasses import field
@@ -10,11 +11,9 @@ from logging import info
 from sys import stdout
 from typing import Any
 from typing import cast
-from typing import Iterator
+from typing import Literal
 from typing import Optional
 from typing import Union
-
-from typing_extensions import Literal
 
 basicConfig(format="{message}", level="INFO", stream=stdout, style="{")
 

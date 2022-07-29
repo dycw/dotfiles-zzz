@@ -1,10 +1,10 @@
 import contextlib  # noqa: F401
+from collections.abc import Iterator
 from contextlib import contextmanager
 from contextlib import redirect_stderr  # noqa: F401
 from contextlib import redirect_stdout
 from contextlib import suppress  # noqa: F401
 from os import devnull
-from typing import Iterator
 
 
 @contextmanager
