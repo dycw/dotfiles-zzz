@@ -2,9 +2,9 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "vim/vim-sensible"]
-	path = vim/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
 [submodule "tmux/oh-my-tmux"]
 	path = tmux/oh-my-tmux
 	url = https://github.com/gpakosz/.tmux.git
+[submodule "vim/vim-sensible"]
+	path = vim/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
