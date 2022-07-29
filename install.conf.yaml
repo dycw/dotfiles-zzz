@@ -41,6 +41,8 @@
     ~/.local/share/fonts:
     ~/.luacheckrc: lua-linters/luacheck/luacheckrc
     ~/.stylua.toml: lua-linters/stylua/stylua.toml
+    ~/.tmux.conf: tmux/oh-my-tmux/.tmux.conf
+    ~/.tmux.conf.local: tmux/tmux.conf.local
     ~/.vim/pack/tpope/start/sensible: vim/vim-sensible
     ~/.vimrc: vim/vimrc
 
