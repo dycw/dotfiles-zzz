@@ -88,6 +88,7 @@
     - [brew install httpie, httpie]
     - [brew install hyperfine, hyperfine]
     - [brew install just, just]
+    - [brew install lazygit, lazygit]
     - [brew install luarocks, luarocks]
     - [brew install mdcat, mdcat]
     - [brew install navi, navi]
