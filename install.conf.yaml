@@ -88,9 +88,11 @@
     - [brew install httpie, httpie]
     - [brew install hyperfine, hyperfine]
     - [brew install just, just]
+    - [brew install lazygit, lazygit]
     - [brew install luarocks, luarocks]
     - [brew install mdcat, mdcat]
     - [brew install navi, navi]
+    - [brew install ncdu, ncdu]
     - [brew install neovim, neovim]
     - [brew install nushell, nushell]
     - [brew install pandoc, pandoc]
@@ -132,6 +134,14 @@
         /home/linuxbrew/.linuxbrew/opt/fzf/install --xdg --key-bindings --completion --no-update-rc --no-zsh --no-fish,
         fzf,
       ]
+
+    # google chrome
+    - [
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb,
+        google chrome,
+      ]
+    - [sudo dpkg -i google-chrome-stable_current_amd64.deb, google chrome]
+    - [rm google-chrome-stable_current_amd64.deb, google chrome]
 
     # luarocks (after brew)
     - [luarocks install luacheck, luacheck]
@@ -196,7 +206,8 @@
     - [sudo snap install vlc, vlc]
 
     # cargo (after rust)
-    - [cargo install cargo-edit, cargo-edit]
+    - [cargo install bacon, bacon]
+    - [cargo install evxcr_repl, evxcr_repl]
 
     # npm (after nvm)
     - [nvm install --lts, npm]
