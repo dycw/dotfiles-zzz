@@ -208,7 +208,7 @@
     # cargo (after rust)
     - [cargo install bacon, bacon]
     - [cargo install cargo-update, cargo-update]
-    - [cargo install evxcr_repl, evxcr_repl]
+    - [cargo install evcxr_repl, evcxr_repl]
 
     # npm (after nvm)
     - [nvm install --lts, npm]
