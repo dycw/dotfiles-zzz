@@ -393,7 +393,7 @@ alias pctrav='pre-commit try-repo -av'
 alias pcui='pre-commit uninstall'
 
 # pyenv
-alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-11" pyenv install' # https://bit.ly/3KYPrc0
+alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install' # https://bit.ly/3KYPrc0
 
 # pyright
 if [ -x "$(command -v pyright)" ]; then
