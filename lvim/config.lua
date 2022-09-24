@@ -350,14 +350,6 @@ which_key["w"] = {
 		"Workspace symbols",
 	},
 }
-which_key["z"] = {
-	name = "...",
-	-- default
-	z = {
-		"<Cmd>lua require('telescope').extensions.zoxide.list{}<CR>",
-		"Zoxide",
-	},
-}
 
 local which_key_visual = lvim.builtin.which_key.vmappings
 
@@ -374,14 +366,6 @@ which_key_visual["s"] = {
 		":lua require('spectre').open_visual({select_word=true})<CR>",
 		"Spectre",
 	},
-}
-which_key_visual["v"] = {
-	name = "...",
-	-- default
-	v = { ":VSSplit<CR>", "VSSplit" },
-	-- others
-	j = { ":VSSplitBelow<CR>", "VSSplitBelow" },
-	k = { ":VSSplitAbove<CR>", "VSSplitAbove" },
 }
 
 --------------------------------------------------------------------------------
