@@ -113,7 +113,7 @@ linters.setup({
 -- LSP
 --------------------------------------------------------------------------------
 -- automatic server installation
-lvim.lsp.automatic_servers_installation = true
+lvim.lsp.installer.setup.automatic_installation = true
 
 -- language servers
 local opts = { filetypes = { "html", "htmldjango" } }
@@ -388,18 +388,6 @@ which_key_visual["v"] = {
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
-	-- editing: autosave
-	{
-		"pocco81/autosave.nvim",
-		config = function()
-			require("autosave").setup({
-				events = { "InsertLeave" },
-				write_all_buffers = true,
-				debounce_delay = 0,
-			})
-		end,
-	},
-
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
@@ -413,23 +401,19 @@ lvim.plugins = {
 	-- editing: change word casing
 	{ "arthurxavierx/vim-caser" },
 
-	-- editing: expand/shrink visual selection
-	{ "terryma/vim-expand-region" },
-
-	-- editing: expand expression
-	{ "allendang/nvim-expand-expr" },
-
 	-- editing: find and replace
 	{
 		"windwp/nvim-spectre",
+		event = "BufRead",
 		config = function()
-			require("spectre").setup({ live_update = true })
+			require("spectre").setup()
 		end,
 	},
 
 	-- editing: increment/decrement
 	{
 		"monaqa/dial.nvim",
+		event = "BufRead",
 		config = function()
 			vim.api.nvim_set_keymap(
 				"n",
@@ -472,17 +456,25 @@ lvim.plugins = {
 				default = {
 					augend.integer.alias.decimal,
 					augend.integer.alias.decimal_int,
-					augend.integer.alias.hex,
-					augend.integer.alias.octal,
-					augend.integer.alias.binary,
-					augend.date.alias["%Y/%m/%d"],
 					augend.date.alias["%Y-%m-%d"],
 					augend.date.alias["%H:%M:%S"],
-					augend.date.alias["%H:%M"],
 					augend.constant.alias.bool,
-					augend.constant.alias.alpha,
-					augend.constant.alias.Alpha,
 					augend.semver.alias.semver,
+					augend.constant.new({
+						elements = { "True", "False" },
+						word = false,
+						cyclic = true,
+					}),
+					augend.constant.new({
+						elements = { "and", "or" },
+						word = false,
+						cyclic = true,
+					}),
+					augend.constant.new({
+						elements = { "&&", "||" },
+						word = false,
+						cyclic = true,
+					}),
 				},
 			})
 		end,
@@ -502,9 +494,6 @@ lvim.plugins = {
 	-- editing: narrow region
 	{ "chrisbra/nrrwrgn" },
 
-	-- editing: parenthesis
-	{ "p00f/nvim-ts-rainbow" },
-
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
 
@@ -520,17 +509,8 @@ lvim.plugins = {
 	-- editing: swap function arguments, list elements
 	{ "mizlan/iswap.nvim" },
 
-	-- editing: visual splits
-	{ "wellle/visual-split.vim" },
-
 	-- git: committia
 	{ "rhysd/committia.vim" },
-
-	-- git: conflict markers
-	{ "rhysd/conflict-marker.vim" },
-
-	-- git: git diff
-	{ "sindrets/diffview.nvim" },
 
 	-- git: mergetool
 	{
@@ -565,9 +545,6 @@ lvim.plugins = {
 		config = function()
 			-- editing: trailing space
 			require("mini.trailspace").setup()
-
-			-- viewing: indent guides
-			require("mini.indentscope").setup({ symbol = "▏" })
 		end,
 	},
 
@@ -590,30 +567,11 @@ lvim.plugins = {
 		end,
 	},
 
-	-- navigation: repos
-	{
-		"cljoly/telescope-repo.nvim",
-		config = function()
-			require("telescope").load_extension("repo")
-		end,
-	},
-
 	-- navigation: sneak motion
 	{ "ggandor/lightspeed.nvim" },
 
-	-- navigation: symbols outline
-	{ "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
-
 	-- navigation: windows
 	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },
-
-	-- navigation: zoxide
-	{
-		"jvgrootveld/telescope-zoxide",
-		config = function()
-			require("telescope").load_extension("zoxide")
-		end,
-	},
 
 	-- searching: hlsearch lens
 	{ "kevinhwang91/nvim-hlslens" },
@@ -621,23 +579,11 @@ lvim.plugins = {
 	-- searching: clear hlsearch when done
 	{ "romainl/vim-cool" },
 
-	-- searching: searching from a visual selection
-	{ "bronson/vim-visual-star-search" },
-
-	-- text objects: lines
-	{ "wellle/line-targets.vim" },
-
 	-- text objects: matching quotes, backticks and pipe
 	{ "airblade/vim-matchquote" },
 
 	-- text objects: pair, quote, separator, argument, multi text
 	{ "wellle/targets.vim" },
-
-	-- text objects: variable segments
-	{
-		"julian/vim-textobj-variable-segment",
-		requires = { "kana/vim-textobj-user" },
-	},
 
 	-- treesitter: HTML tags
 	{
@@ -694,9 +640,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-
-	-- viewing: markdown
-	{ "ellisonleao/glow.nvim", branch = "main" },
 
 	-- viewing: marks in gutter
 	{ "kshenoy/vim-signature" },
