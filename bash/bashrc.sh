@@ -370,7 +370,7 @@ alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev
 
 # poetry
 if [ -x "$(command -v poetry)" ]; then
-	alias pi='poetry install --remove-untracked'
+	alias pi='poetry install --sync'
 	alias pu='poetry update'
 	alias pugcm='poetry update && git add pyproject.toml poetry.lock && git commit -m "Update pyproject.toml"'
 	alias pudr='poetry update --dry-run'
