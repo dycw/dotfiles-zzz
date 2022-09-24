@@ -67,8 +67,10 @@ lvim.autocmds = {
 --------------------------------------------------------------------------------
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
+	-- dart
+	{ exe = "dart", args = { "format" }, filetypes = { "dart" } },
 	-- go
-	-- { exe = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
+	{ exe = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
 	-- lua
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
@@ -115,13 +117,13 @@ linters.setup({
 -- automatic server installation
 lvim.lsp.installer.setup.automatic_installation = true
 
--- language servers
 local opts = { filetypes = { "html", "htmldjango" } }
 require("lvim.lsp.manager").setup("html", opts)
 
 -- treesitter
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
+	"dart",
 	"go",
 	"haskell",
 	"html",
@@ -372,6 +374,12 @@ which_key_visual["s"] = {
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
+	-- Dart: vim support
+	{ "dart-lang/dart-vim-plugin" },
+	{ "natebosch/vim-lsc" },
+	{ "natebosch/vim-lsc-dart" },
+	{ "thosakwe/vim-flutter" },
+
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
@@ -479,6 +487,9 @@ lvim.plugins = {
 
 	-- editing: narrow region
 	{ "chrisbra/nrrwrgn" },
+
+	-- editing: parenthesis
+	{ "p00f/nvim-ts-rainbow" },
 
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
@@ -640,3 +651,6 @@ lvim.plugins = {
 	-- viewing: marks in gutter
 	{ "kshenoy/vim-signature" },
 }
+
+-- language servers
+require("lspconfig").dartls.setup({})
