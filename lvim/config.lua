@@ -440,8 +440,10 @@ lvim.plugins = {
 				default = {
 					augend.integer.alias.decimal,
 					augend.integer.alias.decimal_int,
+					augend.date.alias["%Y/%m/%d"],
 					augend.date.alias["%Y-%m-%d"],
 					augend.date.alias["%H:%M:%S"],
+					augend.date.alias["%H:%M"],
 					augend.constant.alias.bool,
 					augend.semver.alias.semver,
 					augend.constant.new({
