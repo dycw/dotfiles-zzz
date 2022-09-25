@@ -1,6 +1,8 @@
 -- luacheck:ignore 112
 -- luacheck:ignore 113
 
+-- template: https://github.com/LunarVim/LunarVim/blob/master/utils/installer/config.example.lua
+
 --------------------------------------------------------------------------------
 -- vim
 --------------------------------------------------------------------------------
@@ -114,9 +116,10 @@ linters.setup({
 --------------------------------------------------------------------------------
 -- LSP
 --------------------------------------------------------------------------------
--- automatic server installation
-lvim.lsp.installer.setup.automatic_installation = true
+-- language servers -- dart
+require("lspconfig").dartls.setup({})
 
+-- language servers -- html
 local opts = { filetypes = { "html", "htmldjango" } }
 require("lvim.lsp.manager").setup("html", opts)
 
@@ -651,6 +654,3 @@ lvim.plugins = {
 	-- viewing: marks in gutter
 	{ "kshenoy/vim-signature" },
 }
-
--- language servers
-require("lspconfig").dartls.setup({})
