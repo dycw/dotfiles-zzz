@@ -53,6 +53,7 @@
     - [sudo apt install -y git, git]
     - [sudo apt install -y gparted, gparted]
     - [sudo apt install -y libreoffice, libreoffice]
+    - [sudo apt install -y mesa-utils, mesa-utils]
     - [sudo apt install -y pdfarranger, pdfarranger]
     - [sudo apt install -y nautilus-dropbox, nautilus-dropbox]
     - [sudo apt install -y sqlitebrowser, sqlitebrowser]
