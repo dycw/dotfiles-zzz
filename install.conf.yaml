@@ -80,7 +80,6 @@
     - [brew install fzf, fzf]
     - [brew install gcc, brew]
     - [brew install git-delta, git-delta]
-    - [brew install gitweb, gitweb]
     - [brew install glow, glow]
     - [brew install gping, gping]
     - [brew install grex, grex]
@@ -115,15 +114,16 @@
     - [brew install starship, starship]
     - [brew install stylua, stylua]
     - [brew install tealdeer, tealdeer]
+    - [brew install tmux, tmux]
     - [brew install tokei, tokei]
     - [brew install topgrade, topgrade]
-    - [brew install tmux, tmux]
     - [brew install tre-command, tre-command]
     - [brew install tree, tree]
     - [brew install vim, vim]
     - [brew install watchexec, watchexec]
     - [brew install xh, xh]
     - [brew install xplr, xplr]
+    - [brew install yoannfleurydev/gitweb/gitweb, gitweb]
     - [brew install zellij, zellij]
     - [brew install zoxide, zoxide]
 
@@ -143,6 +143,9 @@
       ]
     - [sudo dpkg -i google-chrome-stable_current_amd64.deb, google chrome]
     - [rm google-chrome-stable_current_amd64.deb, google chrome]
+
+    # graphics
+    - [sudo ubuntu-drivers autoinstall, graphics]
 
     # luarocks (after brew)
     - [luarocks install luacheck, luacheck]
