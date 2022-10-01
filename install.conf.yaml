@@ -52,10 +52,11 @@
     - [sudo apt install -y curl, curl]
     - [sudo apt install -y git, git]
     - [sudo apt install -y gparted, gparted]
+    - [sudo apt install -y imagemagick, imagemagick]
     - [sudo apt install -y libreoffice, libreoffice]
     - [sudo apt install -y mesa-utils, mesa-utils]
-    - [sudo apt install -y pdfarranger, pdfarranger]
     - [sudo apt install -y nautilus-dropbox, nautilus-dropbox]
+    - [sudo apt install -y pdfarranger, pdfarranger]
     - [sudo apt install -y sqlitebrowser, sqlitebrowser]
     - [sudo apt install -y texlive-xetex, texlive-xetex]
 
@@ -208,6 +209,7 @@
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
     - [sudo snap install vlc, vlc]
+    - [sudo snap install whatsapp-for-linux, whatsapp-for-linux]
 
     # cargo (after rust)
     - [cargo install bacon, bacon]

@@ -70,7 +70,7 @@ lvim.autocmds = {
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	-- dart
-	{ exe = "dart", args = { "format" }, filetypes = { "dart" } },
+	{ exe = "dart", args = { "format", "--fix" }, filetypes = { "dart" } },
 	-- go
 	{ exe = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
 	-- lua
@@ -377,11 +377,19 @@ which_key_visual["s"] = {
 -- plugins
 --------------------------------------------------------------------------------
 lvim.plugins = {
-	-- Dart: vim support
+	-- Dart
 	{ "dart-lang/dart-vim-plugin" },
 	{ "natebosch/vim-lsc" },
 	{ "natebosch/vim-lsc-dart" },
 	{ "thosakwe/vim-flutter" },
+
+	-- editing: autosave
+	{
+		"pocco81/autosave.nvim",
+		config = function()
+			require("autosave").setup()
+		end,
+	},
 
 	-- editing: better escape
 	{
