@@ -209,6 +209,7 @@
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
     - [sudo snap install vlc, vlc]
+    - [sudo snap install whatsapp-for-linux, whatsapp-for-linux]
 
     # cargo (after rust)
     - [cargo install bacon, bacon]
