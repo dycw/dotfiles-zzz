@@ -205,6 +205,7 @@
     # snap
     - [sudo snap install flutter --classic, flutter]
     - [sudo snap install heroku --classic, heroku]
+    - [sudo snap install postman, postman]
     - [sudo snap install signal-desktop, signal-desktop]
     - [sudo snap install spotify, spotify]
     - [sudo snap install telegram-desktop, telegram-desktop]
