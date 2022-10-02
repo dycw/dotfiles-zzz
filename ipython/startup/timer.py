@@ -9,7 +9,7 @@ from typing import Optional
 class _TimerCM:
     """A timer class."""
 
-    def __init__(self, msg: Optional[str] = None) -> None:
+    def __init__(self, msg: str | None = None) -> None:
         super().__init__()
         self._parts = ["{desc}"] + ([] if msg is None else [msg])
 
