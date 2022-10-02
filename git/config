@@ -10,6 +10,7 @@
   aac = !git add -A && git commit && :
   aaca = !git add -A && git commit --amend && :
   aacan = !git add -A && git commit --amend --no-edit && :
+  aacnan = !git add -A && git commit -n --amend --no-edit && :
   aacm = !git add -A && git commit -m \"$1\" && :
   ac = "!f() { \
     for path in \"$@\"; do \
