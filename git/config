@@ -8,6 +8,8 @@
 
   # add + commit
   aac = !git add -A && git commit && :
+  aaca = !git add -A && git commit --amend && :
+  aacan = !git add -A && git commit --amend --no-edit && :
   aacm = !git add -A && git commit -m \"$1\" && :
   ac = "!f() { \
     for path in \"$@\"; do \
@@ -97,6 +99,7 @@
   # commit
   c = commit
   ca = commit --amend
+  can = commit --amend --no-edit
   cm = !git commit -m \"$1\" && :
   cn = commit -n
   cmn = !git commit -m \"$1\" -n && :
