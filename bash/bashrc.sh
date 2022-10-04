@@ -148,6 +148,12 @@ alias open-cov='open .coverage/html/index.html'
 # crontab
 alias crontab='crontab -i'
 
+# deta
+_BIN="$HOME/.deta/bin"
+if [ -d "$_BIN" ]; then
+	export PATH="$_BIN${PATH:+:$PATH}"
+fi
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	alias dea='direnv allow'
