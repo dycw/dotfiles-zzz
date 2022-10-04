@@ -359,23 +359,14 @@ alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 # pip
 alias pi='pip install'
 alias pie='pip install --editable .'
-alias piup='pip install --upgrade pip'
 alias pipt='pip install pip-tools'
+alias piup='pip install --upgrade pip'
 alias plo='pip list --outdated'
 alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
 
 # pip-tools
 alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev.txt'
-
-# poetry
-if [ -x "$(command -v poetry)" ]; then
-	alias pi='poetry install --sync'
-	alias pu='poetry update'
-	alias pugcm='poetry update && git add pyproject.toml poetry.lock && git commit -m "Update pyproject.toml"'
-	alias pudr='poetry update --dry-run'
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
 
 # postgres
 alias pguser='sudo -i -u postgres'
