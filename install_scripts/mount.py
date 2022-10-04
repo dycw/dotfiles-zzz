@@ -23,7 +23,7 @@ def get_device() -> str:
         "\n\n\n"
     )
 
-    def extract_device(text: str) -> str | None:
+    def extract_device(text: str) -> Optional[str]:
         lines = text.splitlines()
         # Intel NUC: Samsung SSD 860
         # PC: WDC WD40EZAZ-00S
@@ -33,7 +33,7 @@ def get_device() -> str:
         else:
             return None
 
-    def is_device(text: str) -> str | None:
+    def is_device(text: str) -> Optional[str]:
         try:
             (match,) = findall(
                 r"^(.+?)\s+\d+\s+\d+\s+\d+.*\s+Linux filesystem$", text.strip()
