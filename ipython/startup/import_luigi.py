@@ -28,8 +28,8 @@ with suppress(ModuleNotFoundError):
         tasks: Iterable[Task],
         *,
         local_scheduler: bool = False,
-        log_level: str | int = "INFO",
-        workers: int | None = cpu_count(),
+        log_level: Union[str, int] = "INFO",
+        workers: Optional[int] = cpu_count(),
     ) -> None:
         """Build a set of Tasks if they are not complete."""
 

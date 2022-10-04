@@ -25,7 +25,7 @@ class Settings:
     f: bool = False
     k: bool = False
     lf: bool = False
-    n: Literal["auto"] | int | None = None
+    n: Optional[Union[Literal["auto"], int]] = None
     pdb: bool = False
     x: bool = False
 
