@@ -334,6 +334,11 @@ export LESSKEY="${XDG_CONFIG_HOME:-$HOME/.config}/less/lesskey"
 mkdir -p "$(dirname "$LESSHISTFILE")"
 mkdir -p "$(dirname "$LESSKEY")"
 
+# linode
+export SSH_LINODE_IP_ADDRESS='172.104.183.72'
+alias ssh-derek-linode='ssh derek@"$SSH_LINODE_IP_ADDRESS"'
+alias ssh-root-linode='ssh root@"$SSH_LINODE_IP_ADDRESS"'
+
 # nano
 if [ -x "$(command -v nano)" ]; then
 	alias nanorc='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nanorc"'
