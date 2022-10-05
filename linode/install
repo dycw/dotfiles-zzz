@@ -12,6 +12,9 @@ echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https
 sudo apt update
 sudo apt install -y just
 
+# neovim
+sudo apt install -y neovim
+
 # starship
 curl -sS https://starship.rs/install.sh | sh
 
