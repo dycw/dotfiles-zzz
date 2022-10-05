@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+# direnv
+eval "$(direnv hook bash)"
+
+# fzf
+_PATH='/usr/share/doc/fzf/examples/key-bindings.bash'
+[ -f "$_PATH" ] && source "$_PATH"
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:${PATH:+:$PATH}"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+# starship
+eval "$(starship init bash)"
+
+# zoxide
+eval "$(zoxide init bash)"
