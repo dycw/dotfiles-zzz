@@ -335,7 +335,6 @@ mkdir -p "$(dirname "$LESSHISTFILE")"
 mkdir -p "$(dirname "$LESSKEY")"
 
 # linode
-export SSH_LINODE_IP_ADDRESS='172.104.183.72'
 alias ssh-derek-linode='ssh derek@"$SSH_LINODE_IP_ADDRESS"'
 alias ssh-root-linode='ssh root@"$SSH_LINODE_IP_ADDRESS"'
 
@@ -443,6 +442,12 @@ fi
 
 # rm
 alias rmrf='rm -rf'
+
+# secrets
+_FILE="$_PATH_DOTFILES/secrets"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
 
 # sqlite3
 export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
