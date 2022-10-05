@@ -5,13 +5,27 @@
 eval "$(direnv hook bash)"
 
 # fzf
-_PATH='/usr/share/doc/fzf/examples/key-bindings.bash'
-[ -f "$_PATH" ] && source "$_PATH"
+_PATH_KB='/usr/share/doc/fzf/examples/key-bindings.bash'
+[ -f "$_PATH_KB" ] && source "$_PATH_KB"
+
+# neovim
+_PATH_BIN="$HOME/.local/bin"
+if [ -d "$_PATH_BIN" ]; then
+	export PATH="$_PATH_BIN:${PATH:+:$PATH}"
+	export EDITOR='lvim'
+	alias n='lvim'
+elif [ -x "$(command -v nvim)" ]; then
+	export EDITOR='nvim'
+	alias n='nvim'
+fi
 
 # pyenv
-export PATH="$HOME/.pyenv/bin:${PATH:+:$PATH}"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+_PATH_BIN="$HOME/.pyenv/bin"
+if [ -d "$_PATH_BIN" ]; then
+	export PATH="$_PATH_BIN:${PATH:+:$PATH}"
+	eval "$(pyenv init --path)"
+	eval "$(pyenv virtualenv-init -)"
+fi
 
 # starship
 eval "$(starship init bash)"
