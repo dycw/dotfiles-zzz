@@ -556,6 +556,14 @@ lvim.plugins = {
 		end,
 	},
 
+	-- navigation: f/t motions
+	{
+		"ggandor/flit.nvim",
+		config = function()
+			require("flit").setup()
+		end,
+	},
+
 	-- navigation: harpoon
 	{
 		"theprimeagen/harpoon",
@@ -586,7 +594,18 @@ lvim.plugins = {
 	},
 
 	-- navigation: sneak motion
-	{ "ggandor/lightspeed.nvim" },
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			local leap = require("leap")
+			leap.leap({
+				target_windows = vim.tbl_filter(function(win)
+					return vim.api.nvim_win_get_config(win).focusable
+				end, vim.api.nvim_tabpage_list_wins(0)),
+			})
+			leap.add_default_mappings()
+		end,
+	},
 
 	-- navigation: windows
 	{ "https://gitlab.com/yorickpeterse/nvim-window.git" },

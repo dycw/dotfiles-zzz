@@ -1,9 +1,11 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import sqlalchemy  # noqa: F401
     import sqlalchemy as sqla  # noqa: F401
     from sqlalchemy import BigInteger  # noqa: F401
+    from sqlalchemy import Boolean  # noqa: F401
     from sqlalchemy import Column  # noqa: F401
     from sqlalchemy import DateTime  # noqa: F401
     from sqlalchemy import Float  # noqa: F401

@@ -2,6 +2,7 @@ from contextlib import suppress
 from typing import Generic
 from typing import TypeVar
 
+
 _T = TypeVar("_T")
 
 

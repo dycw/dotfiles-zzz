@@ -11,5 +11,6 @@ from typing import TextIO  # noqa: F401
 from typing import TypeVar  # noqa: F401
 from typing import Union  # noqa: F401
 
+
 with suppress(ImportError):
     from typing import Annotated  # noqa: F401

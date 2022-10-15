@@ -5,6 +5,7 @@ from typing import Callable
 from typing import Optional
 from typing import Union
 
+
 with suppress(ModuleNotFoundError):
     import pandas  # noqa: F401
     import pandas as pd  # noqa: F401

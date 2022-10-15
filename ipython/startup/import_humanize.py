@@ -1,5 +1,6 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import humanize  # noqa: F401
     from humanize import fractional  # noqa: F401

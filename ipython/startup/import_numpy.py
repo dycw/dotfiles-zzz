@@ -1,5 +1,6 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import numpy  # noqa: F401
     import numpy as np  # noqa: F401
