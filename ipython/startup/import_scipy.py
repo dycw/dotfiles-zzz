@@ -1,5 +1,6 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import scipy  # noqa: F401
     from scipy.optimize import least_squares  # noqa: F401

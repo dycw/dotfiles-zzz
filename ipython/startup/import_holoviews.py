@@ -1,5 +1,6 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import holoviews  # noqa: F401
     import holoviews as hv  # noqa: F401

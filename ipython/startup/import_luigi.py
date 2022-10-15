@@ -8,6 +8,7 @@ from typing import Optional
 from typing import TypeVar
 from typing import Union
 
+
 _T = TypeVar("_T")
 
 
@@ -20,9 +21,11 @@ with suppress(ModuleNotFoundError):
     from luigi import FloatParameter  # noqa: F401
     from luigi import IntParameter  # noqa: F401
     from luigi import LocalTarget  # noqa: F401
+    from luigi import Task
     from luigi import TaskParameter  # noqa: F401
     from luigi import TupleParameter  # noqa: F401
-    from luigi import Task, WrapperTask, build
+    from luigi import WrapperTask
+    from luigi import build
 
     def build_if_not_complete(
         tasks: Iterable[Task],

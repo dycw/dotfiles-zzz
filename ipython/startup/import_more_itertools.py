@@ -1,5 +1,6 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import more_itertools  # noqa: F401
     from more_itertools import all_equal  # noqa: F401

@@ -1,5 +1,6 @@
 from contextlib import suppress
 
+
 with suppress(ModuleNotFoundError):
     import ray  # noqa: F401
     from ray import get  # noqa: F401
