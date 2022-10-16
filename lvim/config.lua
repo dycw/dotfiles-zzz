@@ -505,14 +505,19 @@ lvim.plugins = {
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
 
-	-- editing: quoting and parenthesizing -- kills macros
-	-- { "tpope/vim-surround" },
-
 	-- editing: repeat plugin actions
 	{ "tpope/vim-repeat" },
 
 	-- editing: sort
 	{ "sqve/sort.nvim" },
+
+	-- editing: surrounding delimiter pairs
+	{
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 
 	-- editing: swap function arguments, list elements
 	{ "mizlan/iswap.nvim" },
