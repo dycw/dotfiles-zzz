@@ -370,6 +370,8 @@ alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
 # pip
 alias pi='pip install'
 alias pie='pip install --editable .'
+alias piip='pip install ipython'
+alias pijl='pip install jupyterlab jupyterlab-vim'
 alias pipt='pip install pip-tools'
 alias piup='pip install --upgrade pip'
 alias plo='pip list --outdated'
