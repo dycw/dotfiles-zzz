@@ -505,8 +505,8 @@ lvim.plugins = {
 	-- editing: quickfix list editing
 	{ "olical/vim-enmasse" },
 
-	-- editing: quoting and parenthesizing
-	{ "tpope/vim-surround" },
+	-- editing: quoting and parenthesizing -- kills macros
+	-- { "tpope/vim-surround" },
 
 	-- editing: repeat plugin actions
 	{ "tpope/vim-repeat" },
