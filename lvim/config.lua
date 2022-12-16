@@ -69,8 +69,6 @@ lvim.autocmds = {
 --------------------------------------------------------------------------------
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	-- dart
-	{ exe = "dart", args = { "format", "--fix" }, filetypes = { "dart" } },
 	-- go
 	{ exe = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
 	-- lua
@@ -116,9 +114,6 @@ linters.setup({
 --------------------------------------------------------------------------------
 -- LSP
 --------------------------------------------------------------------------------
--- language servers -- dart
-require("lspconfig").dartls.setup({})
-
 -- language servers -- html
 local opts = { filetypes = { "html", "htmldjango" } }
 require("lvim.lsp.manager").setup("html", opts)
