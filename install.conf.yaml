@@ -61,6 +61,7 @@
     - [sudo apt install -y solaar, solaar]
     - [sudo apt install -y sqlitebrowser, sqlitebrowser]
     - [sudo apt install -y texlive-xetex, texlive-xetex]
+    - [sudo apt install -y unixodbc-dev, unixodbc-dev]
 
     # brew
     - [
