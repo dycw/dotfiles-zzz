@@ -42,7 +42,7 @@ require("lvim.lsp.null-ls.formatters").setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{ exe = "isort", filetypes = { "python" } },
+	{ exe = "ruff", filetypes = { "python" } },
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
@@ -72,7 +72,7 @@ require("lvim.lsp.null-ls.linters").setup({
 	-- lua
 	{ exe = "luacheck", filetypes = { "lua" } },
 	-- python
-	{ exe = "flake8", filetypes = { "python" } },
+	{ exe = "ruff", filetypes = { "python" } },
 	-- sh
 	{ exe = "shellcheck", filetypes = { "sh" } },
 })
@@ -212,6 +212,13 @@ lvim.plugins = {
 		end,
 		event = { "BufRead", "BufNew" },
 		requires = { "nvim-lua/plenary.nvim" },
+	},
+
+	-- LSP: trouble
+	{
+		"folke/trouble.nvim",
+		event = { "BufRead", "BufNew" },
+		cmd = "TroubleToggle",
 	},
 
 	-- navigation: f/t motions
@@ -438,9 +445,3 @@ lvim.builtin.which_key.vmappings = {
 	["S"] = { ":Sort n<CR>", "Sort (numbers)" },
 	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle" },
 }
-
--------------------------------------------------------------------------------
--- telescope
--------------------------------------------------------------------------------
-lvim.builtin.telescope.defaults.layout_config.width = 0.95
-lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
