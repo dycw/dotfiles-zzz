@@ -435,7 +435,9 @@ lvim.builtin.which_key.mappings = {
 		["r"] = { "<Cmd>Telescope registers<CR>", "Registers" },
 		["t"] = { "<Cmd>Telescope live_grep<CR>", "Text" },
 	},
+	["-"] = { ":split<CR>", "Window (split)" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle" },
+	["\\"] = { ":vsplit<CR>", "Window (vsplit)" },
 }
 
 lvim.builtin.which_key.vmappings = {
