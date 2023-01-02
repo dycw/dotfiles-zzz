@@ -111,6 +111,7 @@
     - [brew install ranger, ranger]
     - [brew install restic, restic]
     - [brew install ripgrep, ripgrep]
+    - [brew install ruff, ruff]
     - [brew install sd, sd]
     - [brew install shellcheck, shellcheck]
     - [brew install shfmt, shfmt]
@@ -203,7 +204,10 @@
     - [sudo apt-get -y install postgresql-server-dev-14, postgres]
 
     # rust
-    - [wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb, rust]  # https://bit.ly/3X2S3ex
+    - [
+        wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb,
+        rust,
+      ] # https://bit.ly/3X2S3ex
     - [curl -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path, rust]
 
     # snap
