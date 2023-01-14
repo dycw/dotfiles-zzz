@@ -445,6 +445,11 @@ fi
 # rm
 alias rmrf='rm -rf'
 
+# ruff
+if [ -x "$(command -v ruff)" ]; then
+	alias rw='ruff --watch .'
+fi
+
 # secrets
 _FILE="$_PATH_DOTFILES/secrets"
 if [ -f "$_FILE" ]; then
