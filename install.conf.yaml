@@ -80,6 +80,7 @@
     - [brew install eth-p/software/bat-extras, bat-extras]
     - [brew install exa, exa]
     - [brew install fd, fd]
+    - [brew install ffmpeg, ffmpeg]
     - [brew install fselect, fselect]
     - [brew install fzf, fzf]
     - [brew install gcc, brew]
