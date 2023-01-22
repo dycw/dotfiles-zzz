@@ -7,10 +7,11 @@ repos:
     hooks:
       - id: pyupgrade
         args: [--py39-plus]
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.9.0
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.229
     hooks:
-      - id: reorder-python-imports
+      - id: ruff
+        args: [--fix]
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
     hooks:
@@ -22,9 +23,17 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+        exclude: bash/(bashrc|bash_profile).sh
+      - id: check-symlinks
+      - id: destroyed-symlinks
+      - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: [--fix=lf]
+      - id: no-commit-to-branch
       - id: trailing-whitespace
   - repo: https://github.com/psf/black
     rev: 22.12.0
@@ -41,17 +50,6 @@ repos:
     hooks:
       - id: markdownlint
         args: [-r ~MD013]
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
-    hooks:
-      - id: check-executables-have-shebangs
-      - id: check-merge-conflict
-      - id: check-shebang-scripts-are-executable
-        exclude: bash/(bashrc|bash_profile).sh
-      - id: check-symlinks
-      - id: destroyed-symlinks
-      - id: detect-private-key
-      - id: no-commit-to-branch
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.8.0.4
     hooks:
