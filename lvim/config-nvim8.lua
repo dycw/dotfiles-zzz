@@ -29,7 +29,7 @@ lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<CR>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>"
 
 -- quit
-lvim.keys.normal_mode["<C-q>"] = ":lua require('lvim.utils.functions').smart_quit()<CR>"
+lvim.keys.normal_mode["<C-q>"] = ":confirm q<CR>"
 
 -------------------------------------------------------------------------------
 -- formatters
