@@ -433,7 +433,6 @@ lvim.builtin.which_key.mappings = {
 		name = "Search",
 		["d"] = { ":Telescope diagnostics<CR>", "Diagnostics" },
 		["g"] = { ":Telescope grep_string<CR>", "Grep (string)" },
-		["h"] = { ":Telescope command_history<CR>", "History (command)" },
 		["l"] = { ":Telescope live_grep<CR>", "Grep (live)" },
 		["m"] = { ":Telescope marks<CR>", "Marks" },
 		["q"] = { ":Telescope quickfix<CR>", "Quickfix" },
