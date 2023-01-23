@@ -29,8 +29,7 @@ lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<CR>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>"
 
 -- quit
-lvim.keys.normal_mode["<C-q>"] =
-	":lua require('lvim.utils.functions').smart_quit()<CR>"
+lvim.keys.normal_mode["<C-q>"] = ":lua require('lvim.utils.functions').smart_quit()<CR>"
 
 -------------------------------------------------------------------------------
 -- formatters
@@ -355,6 +354,7 @@ lvim.builtin.which_key.mappings = {
 		["t"] = { ":Telescope buffers<CR>", "Telescope" },
 	},
 	["c"] = { ":Telescope commands<CR>", "Commands" },
+	["C"] = { ":Telescope command_history<CR>", "Command history" },
 	["d"] = {
 		name = "Debug",
 		b = { ":lua require('dap').step_back()<CR>", "Step Back" },
@@ -433,7 +433,6 @@ lvim.builtin.which_key.mappings = {
 		name = "Search",
 		["d"] = { ":Telescope diagnostics<CR>", "Diagnostics" },
 		["g"] = { ":Telescope grep_string<CR>", "Grep (string)" },
-		["h"] = { ":Telescope command_history<CR>", "History (command)" },
 		["l"] = { ":Telescope live_grep<CR>", "Grep (live)" },
 		["m"] = { ":Telescope marks<CR>", "Marks" },
 		["q"] = { ":Telescope quickfix<CR>", "Quickfix" },
