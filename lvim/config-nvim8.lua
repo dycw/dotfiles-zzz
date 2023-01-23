@@ -342,6 +342,7 @@ lvim.plugins = {
 lvim.builtin.which_key.mappings = {
 	["b"] = {
 		name = "Buffers",
+		["b"] = { ":Telescope buffers<CR>", "Buffers" },
 		["c"] = { ":BufferKill<CR>", "Kill" },
 		["j"] = { ":BufferLineCycleNext<CR>", "Next" },
 		["k"] = { ":BufferLineCyclePrev<CR>", "Previous" },
@@ -431,8 +432,13 @@ lvim.builtin.which_key.mappings = {
 	["R"] = { ":lua require('spectre').open()<CR>", "Spectre (project)" },
 	["s"] = {
 		name = "Search",
+		["b"] = {
+			":Telescope current_buffer_fuzzy_find<CR>",
+			"Buffer fuzzy find",
+		},
 		["d"] = { ":Telescope diagnostics<CR>", "Diagnostics" },
 		["g"] = { ":Telescope grep_string<CR>", "Grep (string)" },
+		["h"] = { ":Telescope harpoon marks<CR>", "Harpoon" },
 		["l"] = { ":Telescope live_grep<CR>", "Grep (live)" },
 		["m"] = { ":Telescope marks<CR>", "Marks" },
 		["q"] = { ":Telescope quickfix<CR>", "Quickfix" },
