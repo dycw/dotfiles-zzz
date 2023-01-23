@@ -20,7 +20,7 @@
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
     ~/.config/lvim/config.lua: lvim/config-nvim8.lua
-    ~/.config/lvim/snippets: lvim/snippets
+    ~/.config/lvim/luasnippets: lvim/luasnippets
     ~/.config/nano:
     ~/.config/pypoetry/config.toml: poetry/config.toml
     ~/.config/nushell/config.nu: nushell/config.nu
