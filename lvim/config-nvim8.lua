@@ -454,6 +454,13 @@ lvim.builtin.which_key.mappings = {
 		},
 	},
 	["T"] = { ":Telescope<CR>", "Telescope" },
+	["w"] = {
+		name = "Window",
+		["h"] = { ":set nosplitright<CR><Cmd>vsplit<CR>", "Left" },
+		["j"] = { ":set splitbelow<CR><Cmd>split<CR>", "Down" },
+		["k"] = { ":set nosplitbelow<CR><Cmd>split<CR>", "Up" },
+		["l"] = { ":set splitright<CR><Cmd>vsplit<CR>", "Right" },
+	},
 	["-"] = { ":split<CR>", "Window (split)" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle" },
 	["\\"] = { ":vsplit<CR>", "Window (vsplit)" },
