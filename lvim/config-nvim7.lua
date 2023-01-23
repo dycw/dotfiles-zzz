@@ -40,110 +40,109 @@ lvim.format_on_save.enabled = true
 -- plugins
 -------------------------------------------------------------------------------
 lvim.plugins = {
-  -- editing: change word casing
-  { "arthurxavierx/vim-caser" },
+	-- editing: change word casing
+	{ "arthurxavierx/vim-caser" },
 
-  -- editing: find and replace
-  {
-    "windwp/nvim-spectre",
-    event = "BufRead",
-    config = function()
-      require("spectre").setup()
-    end,
-  },
+	-- editing: find and replace
+	{
+		"windwp/nvim-spectre",
+		event = "BufRead",
+		config = function()
+			require("spectre").setup()
+		end,
+	},
 
-  -- editing: multiple cursors
-  { "mg979/vim-visual-multi" },
+	-- editing: multiple cursors
+	{ "mg979/vim-visual-multi" },
 
+	-- editing: sort
+	{ "sqve/sort.nvim" },
 
-  -- editing: sort
-  { "sqve/sort.nvim" },
+	-- editing: surrounding delimiter pairs
+	{
 
-  -- editing: surrounding delimiter pairs
-  {
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 
-    "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup()
-    end,
-  },
+	-- editing: swap function arguments, list elements
+	{ "mizlan/iswap.nvim" },
 
-  -- editing: swap function arguments, list elements
-  { "mizlan/iswap.nvim" },
+	-- git: committia
+	{ "rhysd/committia.vim" },
 
-  -- git: committia
-  { "rhysd/committia.vim" },
+	-- git: mergetool
+	{
+		"samoshkin/vim-mergetool",
+		config = function()
+			vim.g.mergetool_layout = "rml,b"
+			vim.g.mergetool_prefer_revisionn = "unmodified"
+		end,
+	},
 
-  -- git: mergetool
-  {
-    "samoshkin/vim-mergetool",
-    config = function()
-      vim.g.mergetool_layout = "rml,b"
-      vim.g.mergetool_prefer_revisionn = "unmodified"
-    end,
-  },
+	-- navigation: f/t motions
+	{
+		"ggandor/flit.nvim",
+		config = function()
+			require("flit").setup()
+		end,
+		requires = { { "ggandor/leap.nvim" } },
+	},
 
-  -- navigation: f/t motions
-  {
-    "ggandor/flit.nvim",
-    config = function()
-      require("flit").setup()
-    end,
-    requires = { { "ggandor/leap.nvim" } },
-  },
+	-- navigation: harpoon
+	{
+		"theprimeagen/harpoon",
+		config = function()
+			require("telescope").load_extension("harpoon")
+		end,
+	},
 
-  -- navigation: harpoon
-  {
-    "theprimeagen/harpoon",
-    config = function()
-      require("telescope").load_extension("harpoon")
-    end,
-  },
+	-- navigation: re-open files at last edit position
+	{
+		"ethanholz/nvim-lastplace",
+		event = "BufRead",
+		config = function()
+			require("nvim-lastplace").setup()
+		end,
+	},
 
-  -- navigation: re-open files at last edit position
-  {
-    "ethanholz/nvim-lastplace",
-    event = "BufRead",
-    config = function()
-      require("nvim-lastplace").setup()
-    end,
-  },
+	-- navigation: sneak motion
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
 
-  -- navigation: sneak motion
-  {
-    "ggandor/leap.nvim",
-    config = function()
-      require("leap").add_default_mappings()
-    end,
-  },
+	-- searching: hlsearch lens
+	{ "kevinhwang91/nvim-hlslens" },
 
-  -- searching: hlsearch lens
-  { "kevinhwang91/nvim-hlslens" },
+	-- searching: clear hlsearch when done
+	{ "romainl/vim-cool" },
 
-  -- searching: clear hlsearch when done
-  { "romainl/vim-cool" },
+	-- text objects: matching quotes, backticks and pipe
+	{ "airblade/vim-matchquote" },
 
-  -- text objects: matching quotes, backticks and pipe
-  { "airblade/vim-matchquote" },
+	-- text objects: pair, quote, separator, argument, multi text
+	{ "wellle/targets.vim" },
 
-  -- text objects: pair, quote, separator, argument, multi text
-  { "wellle/targets.vim" },
+	-- viewing: absolute line numbers in inactive windows
+	{ "jeffkreeftmeijer/vim-numbertoggle" },
 
-  -- viewing: absolute line numbers in inactive windows
-  { "jeffkreeftmeijer/vim-numbertoggle" },
-
-  -- viewing: context
-  {
-    "romgrk/nvim-treesitter-context",
-    config = function()
-      require("treesitter-context").setup({
-        enable = true,
-        throttle = true,
-        max_lines = 0,
-        patterns = { default = { "class", "function", "method" } },
-      })
-    end,
-  },
+	-- viewing: context
+	{
+		"romgrk/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
+				throttle = true,
+				max_lines = 0,
+				patterns = { default = { "class", "function", "method" } },
+			})
+		end,
+	},
 }
 
 -------------------------------------------------------------------------------
@@ -195,18 +194,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+	"bash",
+	"c",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"typescript",
+	"tsx",
+	"css",
+	"rust",
+	"java",
+	"yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
