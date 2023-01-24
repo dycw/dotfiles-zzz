@@ -209,8 +209,8 @@ lvim.plugins = {
 				},
 			})
 		end,
+		dependencies = { "nvim-lua/plenary.nvim" },
 		event = { "BufRead", "BufNew" },
-		requires = { "nvim-lua/plenary.nvim" },
 	},
 
 	-- LSP: trouble
@@ -226,8 +226,8 @@ lvim.plugins = {
 		config = function()
 			require("flit").setup()
 		end,
+		dependencies = { "ggandor/leap.nvim" },
 		event = { "BufRead", "BufNew" },
-		requires = { "ggandor/leap.nvim" },
 	},
 
 	-- navigation: harpoon
