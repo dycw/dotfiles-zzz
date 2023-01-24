@@ -53,7 +53,7 @@
   },
   "harpoon": {
     "branch": "master",
-    "commit": "21d0d1bfa3000e4384740bfaefa0ebc51c773786"
+    "commit": "8c0bb0a328e57278f4783bb0e2ea32f296d36db1"
   },
   "indent-blankline.nvim": {
     "branch": "master",
@@ -109,7 +109,7 @@
   },
   "neogit": {
     "branch": "master",
-    "commit": "30265e7a1bdf59361b37e293cdcecc167851c602"
+    "commit": "de227f740bb29f90d62f9a6112f926de5f052358"
   },
   "nlsp-settings.nvim": {
     "branch": "main",
@@ -237,7 +237,7 @@
   },
   "trouble.nvim": {
     "branch": "main",
-    "commit": "b2a0afac2c319a481f0f0318963a74d672ba5766"
+    "commit": "490f7fe6d227f4f7a64f00be8c7dcd7a508ed271"
   },
   "vim-bracketed-paste": {
     "branch": "master",
