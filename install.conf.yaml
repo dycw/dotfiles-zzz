@@ -12,7 +12,6 @@
 - link:
     ~/.bash_profile: bash/bash_profile.sh
     ~/.bashrc: bash/bashrc.sh
-    ~/.cache/lvim/snapshots: lvim/snapshots
     ~/.config/alacritty:
     ~/.config/direnv:
     ~/.config/fd:
