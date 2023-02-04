@@ -41,7 +41,6 @@ require("lvim.lsp.null-ls.formatters").setup({
 	{ exe = "stylua", filetypes = { "lua" } },
 	-- python
 	{ exe = "black", filetypes = { "python" } },
-	{ exe = "ruff", filetypes = { "python" } },
 	-- sh
 	{ exe = "shfmt", filetypes = { "sh" } },
 	-- prettier
