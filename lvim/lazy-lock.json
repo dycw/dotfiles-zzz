@@ -11,6 +11,10 @@
     "branch": "main",
     "commit": "21a0f2520ad3a7c32c0822f943368dc063a569fb"
   },
+  "auto-save.nvim": {
+    "branch": "main",
+    "commit": "979b6c82f60cfa80f4cf437d77446d0ded0addf0"
+  },
   "better-escape.nvim": {
     "branch": "master",
     "commit": "6fed33809cde3b416087fc540ad9eb17ec470193"
@@ -69,7 +73,7 @@
   },
   "leap.nvim": {
     "branch": "main",
-    "commit": "ff4c3663e5a0a0ecbb3fffbc8318825def35d2aa"
+    "commit": "6068651f7f2bdb379344de52b9833d82bce27cec"
   },
   "lir.nvim": {
     "branch": "master",
@@ -81,7 +85,7 @@
   },
   "lsp_signature.nvim": {
     "branch": "master",
-    "commit": "b86f249cba85ec2f0f74c62b65898bade00b4413"
+    "commit": "6f6252f63b0baf0f2224c4caea33819a27f3f550"
   },
   "lualine.nvim": {
     "branch": "master",
@@ -109,7 +113,7 @@
   },
   "neogit": {
     "branch": "master",
-    "commit": "de227f740bb29f90d62f9a6112f926de5f052358"
+    "commit": "089d388876a535032ac6a3f80e19420f09e4ddda"
   },
   "nlsp-settings.nvim": {
     "branch": "main",
@@ -125,7 +129,7 @@
   },
   "nvim-bqf": {
     "branch": "main",
-    "commit": "d15b59d7429d45f0b057aa63a0266989adc95715"
+    "commit": "da1cd2557a16386829a213330e0fd46b61db7632"
   },
   "nvim-cmp": {
     "branch": "main",
@@ -141,7 +145,7 @@
   },
   "nvim-hlslens": {
     "branch": "main",
-    "commit": "fc83bd515c21c7912a6b9f97088e0492e923dfe0"
+    "commit": "5e3e9088fba7508cee3612ee50b14dfdd3ab19af"
   },
   "nvim-lastplace": {
     "branch": "main",
@@ -157,7 +161,7 @@
   },
   "nvim-spectre": {
     "branch": "master",
-    "commit": "24275beae382e6bd0180b3064cf5729548641a02"
+    "commit": "17b7c84ea8884bfec8e71b8021e924cb3a39c180"
   },
   "nvim-surround": {
     "branch": "main",
@@ -209,7 +213,7 @@
   },
   "symbols-outline.nvim": {
     "branch": "master",
-    "commit": "6a3ed24c5631da7a5d418bced57c16b32af7747c"
+    "commit": "512791925d57a61c545bc303356e8a8f7869763c"
   },
   "targets.vim": {
     "branch": "master",
@@ -225,7 +229,7 @@
   },
   "tmux.nvim": {
     "branch": "main",
-    "commit": "4e746b3707d4e499acc50d4e64c2fc4f0faf9a44"
+    "commit": "feafcf8f48c49c720ee64e745648d69d42cb9c5a"
   },
   "toggleterm.nvim": {
     "branch": "main",

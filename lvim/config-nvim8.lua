@@ -106,6 +106,14 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -- plugins
 -------------------------------------------------------------------------------
 lvim.plugins = {
+	-- editing: auto save
+	{
+		"pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup()
+		end,
+	},
+
 	-- editing: better escape
 	{
 		"max397574/better-escape.nvim",
