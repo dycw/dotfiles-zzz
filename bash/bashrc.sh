@@ -346,7 +346,6 @@ fi
 # neovim/LunarVim
 if [ -x "$(command -v lvim)" ]; then
 	alias n='lvim'
-	alias nps='lvim +PackerSync'
 	alias configlua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/lvim/config.lua"'
 	export EDITOR='lvim'
 elif [ -x "$(command -v nvim)" ]; then

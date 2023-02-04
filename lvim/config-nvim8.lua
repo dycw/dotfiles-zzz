@@ -348,6 +348,7 @@ lvim.plugins = {
 -- whichkey
 -------------------------------------------------------------------------------
 lvim.builtin.which_key.mappings = {
+	["a"] = { ":ASToggle<CR>", "AutoSave" },
 	["b"] = {
 		name = "Buffers",
 		["b"] = { ":Telescope buffers<CR>", "Buffers" },
@@ -423,6 +424,7 @@ lvim.builtin.which_key.mappings = {
 		["r"] = { vim.lsp.buf.rename, "Rename" },
 		["R"] = { ":LspRestart<CR>", "Restart" },
 	},
+	["L"] = { ":Lazy update<CR>", "Lazy update" },
 	["m"] = {
 		name = "Mergetool",
 		["j"] = { ":MergetoolDiffExchangeLeft<CR>", "Left" },
@@ -432,7 +434,6 @@ lvim.builtin.which_key.mappings = {
 		["q"] = { ":MergetoolStop<CR>", "Quit" },
 	},
 	["n"] = { ":Neogit<CR>", "Neogit" },
-	["P"] = { ":PackerSync<CR>", "PackerSync" },
 	["r"] = {
 		":lua require('spectre').open_file_search()<CR>",
 		"Spectre (file)",
