@@ -189,7 +189,7 @@ if [ -x "$(command -v dust)" ]; then
 	function du1 { __du_n 1; }
 	function du2 { __du_n 2; }
 	function du3 { __du_n 3; }
-	function __watch_du_n { watch -n 0.1 --color -- dust -d "$@"; }
+	function __watch_du_n { watch -d -n 0.1 --color -- dust -d "$@"; }
 	function wdu0 { __watch_du_n 0; }
 	function wdu1 { __watch_du_n 1; }
 	function wdu2 { __watch_du_n 2; }
@@ -209,7 +209,7 @@ if [ -x "$(command -v exa)" ]; then
 	function lla() { ll -a "$@"; }
 	function llag() { __exa_long -a "$@"; }
 
-	function __watch_exa_base() { watch -n 0.1 --color -- exa -F --color=always --group-directories-first "$@"; }
+	function __watch_exa_base() { watch -d -n 0.1 --color -- exa -F --color=always --group-directories-first "$@"; }
 	function __watch_exa_short() { __watch_exa_base -x "$@"; }
 	function wl() { __watch_exa_short --git-ignore "$@"; }
 	function wla() { watchl -a "$@"; }
@@ -333,6 +333,11 @@ if test -f "$_FILE"; then
 	source "$_FILE"
 fi
 
+# htop
+if [ -x "$(command -v htop)" ]; then
+	alias htopu='htop -u "$USER"'
+fi
+
 # hyperfine
 if [ -x "$(command -v hyperfine)" ]; then
 	alias time='hyperfine'
@@ -407,7 +412,7 @@ alias pcui='pre-commit uninstall'
 
 # ps
 alias pst='ps -fLu "$USER"| wc -l'
-alias pstw='watch -n0.1 "ps -fLu \"$USER\" | wc -l"'
+alias wpst='watch -d -n0.1 "ps -fLu \"$USER\" | wc -l"'
 
 # pyenv
 alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install' # https://bit.ly/3KYPrc0

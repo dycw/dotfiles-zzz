@@ -1,3 +1,4 @@
+from contextlib import suppress
 import itertools  # noqa: F401
 from itertools import accumulate  # noqa: F401
 from itertools import chain  # noqa: F401
@@ -17,3 +18,7 @@ from itertools import starmap  # noqa: F401
 from itertools import takewhile  # noqa: F401
 from itertools import tee  # noqa: F401
 from itertools import zip_longest  # noqa: F401
+
+
+with suppress(ModuleNotFoundError):
+    from tabulate import tabulate  # noqa: F401
