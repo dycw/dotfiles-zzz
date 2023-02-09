@@ -1,0 +1,10 @@
+{
+    // Document Manager
+    // @jupyterlab/docmanager-extension:plugin
+    // Document Manager settings.
+    // ***************************************
+
+    // Rename Untitled File On First Save
+    // Whether to prompt to rename untitled file on first manual save.
+    "renameUntitledFileOnSave": false
+}
