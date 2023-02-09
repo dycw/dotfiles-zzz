@@ -264,6 +264,15 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
+	-- navigation: scrolling
+	{
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup()
+		end,
+		event = "WinScrolled",
+	},
+
 	-- navigation: sneak motion
 	{
 		"ggandor/leap.nvim",

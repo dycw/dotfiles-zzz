@@ -115,6 +115,10 @@
     "branch": "master",
     "commit": "089d388876a535032ac6a3f80e19420f09e4ddda"
   },
+  "neoscroll.nvim": {
+    "branch": "master",
+    "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93"
+  },
   "nlsp-settings.nvim": {
     "branch": "main",
     "commit": "06816026ccce2e8246e952d55ea87ddd26a9d2a4"
