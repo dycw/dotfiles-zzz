@@ -406,6 +406,7 @@ lvim.builtin.which_key.mappings = {
 		},
 		["s"] = { ":Telescope git_status<CR>", "Status" },
 	},
+	["i"] = { ":ISwapWith<CR>", "ISwap" },
 	["l"] = {
 		name = "LSP",
 		["a"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Action" },
