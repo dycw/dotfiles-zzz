@@ -18,7 +18,7 @@
     ~/.config/git:
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
-    ~/.config/lvim/config.lua: lvim/config-nvim8.lua
+    ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/lazy-lock.json: lvim/lazy-lock.json
     ~/.config/lvim/luasnippets: lvim/luasnippets
     ~/.config/nano:
