@@ -43,6 +43,10 @@
     "branch": "master",
     "commit": "18095520391186d634a0045dacaa346291096566"
   },
+  "dial.nvim": {
+    "branch": "master",
+    "commit": "5020da900cc5dfd7067f181ee2ebd872ca7c84e8"
+  },
   "flit.nvim": {
     "branch": "main",
     "commit": "be110f9814a45788d10537fd59b3c76d956bb7ad"
@@ -65,7 +69,7 @@
   },
   "iswap.nvim": {
     "branch": "master",
-    "commit": "f4935e477c3dd8914a008884c4d83388d024487a"
+    "commit": "cfbe5250840e05185e89bde49fca62183838adc5"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -73,7 +77,7 @@
   },
   "leap.nvim": {
     "branch": "main",
-    "commit": "f565a9c4d92245d8b619235bebeaa73cc38aa40e"
+    "commit": "7140feed70a5911b8c8a7eb9c218d198772f69cf"
   },
   "lir.nvim": {
     "branch": "master",
@@ -169,7 +173,7 @@
   },
   "nvim-surround": {
     "branch": "main",
-    "commit": "abccb2313b581c920b1117b60f91d00f0f469e17"
+    "commit": "90821ad682aac189cd0a38fd83fc96f0cbcc5d29"
   },
   "nvim-tree.lua": {
     "branch": "master",
@@ -245,7 +249,7 @@
   },
   "trouble.nvim": {
     "branch": "main",
-    "commit": "fc003424b02109f1453af6b40dadff6019b97187"
+    "commit": "556ef3089709a6e253df1e500381fec5eb48e48a"
   },
   "vim-bracketed-paste": {
     "branch": "master",
