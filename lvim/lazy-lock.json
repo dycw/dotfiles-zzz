@@ -17,7 +17,7 @@
   },
   "better-escape.nvim": {
     "branch": "master",
-    "commit": "6fed33809cde3b416087fc540ad9eb17ec470193"
+    "commit": "5cd64c0afb82688748d415710d0187df5bdb96f9"
   },
   "bigfile.nvim": {
     "branch": "main",
@@ -49,7 +49,7 @@
   },
   "flit.nvim": {
     "branch": "main",
-    "commit": "be110f9814a45788d10537fd59b3c76d956bb7ad"
+    "commit": "980e80e8fe44caaeb9de501c8e97a559b17db2f4"
   },
   "friendly-snippets": {
     "branch": "main",
@@ -69,7 +69,7 @@
   },
   "iswap.nvim": {
     "branch": "master",
-    "commit": "cfbe5250840e05185e89bde49fca62183838adc5"
+    "commit": "aed5aa196651926871a9d881a80aef868199c2a5"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -77,7 +77,7 @@
   },
   "leap.nvim": {
     "branch": "main",
-    "commit": "7140feed70a5911b8c8a7eb9c218d198772f69cf"
+    "commit": "9a69febb2e5a4f5f5a55dd2d7173098fde917bc5"
   },
   "lir.nvim": {
     "branch": "master",
@@ -169,11 +169,11 @@
   },
   "nvim-spectre": {
     "branch": "master",
-    "commit": "1d8b7a40677fd87da7648d246c4675c3612a7582"
+    "commit": "ce73d505fdc45f16c1a04f6a98c1c1e114841708"
   },
   "nvim-surround": {
     "branch": "main",
-    "commit": "90821ad682aac189cd0a38fd83fc96f0cbcc5d29"
+    "commit": "9739e85547cb97d2f0497d2aedbab7d6f5c6654d"
   },
   "nvim-tree.lua": {
     "branch": "master",
@@ -185,11 +185,15 @@
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "cacee4828152dd3a83736169ae61bbcd29a3d213"
+    "commit": "895ec44f5c89bc67ba5440aef3d1f2efa3d59a41"
   },
   "nvim-ts-context-commentstring": {
     "branch": "main",
     "commit": "a0f89563ba36b3bacd62cf967b46beb4c2c29e52"
+  },
+  "nvim-various-textobjs": {
+    "branch": "main",
+    "commit": "521a9845a7ab241ce919068138d31253418d2dae"
   },
   "nvim-web-devicons": {
     "branch": "master",
@@ -249,7 +253,7 @@
   },
   "trouble.nvim": {
     "branch": "main",
-    "commit": "556ef3089709a6e253df1e500381fec5eb48e48a"
+    "commit": "247f9eeabae8e1efc0ed5bc613cc1a9c27e91828"
   },
   "vim-bracketed-paste": {
     "branch": "master",

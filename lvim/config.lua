@@ -377,6 +377,15 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
+	-- text objects: various
+	{
+		"chrisgrieser/nvim-various-textobjs",
+		config = function()
+			require("various-textobjs").setup({ useDefaultKeymaps = true })
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
 	-- tmux
 	{
 		"aserowy/tmux.nvim",
