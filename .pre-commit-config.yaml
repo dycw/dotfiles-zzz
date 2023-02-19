@@ -3,12 +3,12 @@ exclude: ^(dotbot|submodules)/
 repos:
   # fixers
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.243
+    rev: v0.0.247
     hooks:
       - id: ruff
         args: [--fix]
   - repo: https://github.com/johnnymorganz/stylua
-    rev: v0.16.0
+    rev: v0.16.1
     hooks:
       - id: stylua-system # or stylua-system / stylua-github
       # - id: stylua # or stylua-system / stylua-github
