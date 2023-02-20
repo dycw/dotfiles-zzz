@@ -129,6 +129,7 @@ sudo apt install -y \
 	libsqlite3-dev \
 	libssl-dev \
 	llvm \
+	python3-dev \
 	tk-dev \
 	unixodbc-dev \
 	wget \
