@@ -30,7 +30,7 @@ cd "$HOME/dotfiles" || exit
 
 # apt
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing 'apt' packages..."
-apt install \
+sudo apt install -y \
 	gparted \
 	nautilus-dropbox \
 	pdfarranger \
@@ -149,7 +149,7 @@ packages=(
 	spotify
 	telegram-desktop
 	vlc
-	whatsapp
+	whatsapp-for-linux
 )
 for package in "${packages[@]}"; do
 	if [[ $(snap list) =~ $package ]]; then
