@@ -121,6 +121,7 @@ sudo apt install -y \
 	build-essential \
 	curl \
 	libbz2-dev \
+	libffi-dev \
 	liblzma-dev \
 	libmysqlclient-dev \
 	libncursesw5-dev \
@@ -128,6 +129,8 @@ sudo apt install -y \
 	libreadline-dev \
 	libsqlite3-dev \
 	libssl-dev \
+	libxml2-dev \
+	libxmlsec1-dev \
 	llvm \
 	python3-dev \
 	tk-dev \
