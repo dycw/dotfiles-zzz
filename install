@@ -124,6 +124,7 @@ sudo apt install -y \
 	liblzma-dev \
 	libmysqlclient-dev \
 	libncursesw5-dev \
+	libpq-dev \
 	libreadline-dev \
 	libsqlite3-dev \
 	libssl-dev \
