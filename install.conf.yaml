@@ -21,15 +21,12 @@
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/lazy-lock.json: lvim/lazy-lock.json
     ~/.config/lvim/luasnippets: lvim/luasnippets
-    ~/.config/nano:
     ~/.config/pypoetry/config.toml: poetry/config.toml
     ~/.config/nushell/config.nu: nushell/config.nu
     ~/.config/nushell/env.nu: nushell/env.nu
     ~/.config/ripgrep:
-    ~/.config/sqlite:
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/topgrade:
-    ~/.config/wget:
     ~/.config/zellij:
     ~/.inputrc: input/inputrc
     ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py
