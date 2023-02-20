@@ -3,7 +3,7 @@ exclude: ^(dotbot|submodules)/
 repos:
   # fixers
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.247
+    rev: v0.0.248
     hooks:
       - id: ruff
         args: [--fix]

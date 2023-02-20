@@ -7,18 +7,8 @@ My dotfiles, powered by [`dotbot`](https://github.com/anishathalye/dotbot).
 First:
 
 ```bash
-sudo apt -y install git xclip
-ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
-cat "$HOME/.ssh/id_rsa.pub" | xclip -sel clipboard
-xdg-open https://github.com/settings/keys
-```
-
-Then:
-
-```bash
-git clone --depth=1 --recurse-submodules git@github.com:dycw/dotfiles.git "$HOME/dotfiles"
-cd "$HOME/dotfiles"
-./install
+sudo apt -y install curl
+curl https://raw.githubusercontent.com/dycw/dotfiles/master/new-install.sh | bash
 ```
 
 ## Machine-specific
