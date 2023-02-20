@@ -8,7 +8,7 @@ First:
 
 ```bash
 sudo apt -y install curl
-curl https://raw.githubusercontent.com/dycw/dotfiles/master/new-install.sh | bash
+curl https://raw.githubusercontent.com/dycw/dotfiles/master/install | bash
 ```
 
 ## Machine-specific
