@@ -21,7 +21,6 @@
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/lazy-lock.json: lvim/lazy-lock.json
     ~/.config/lvim/luasnippets: lvim/luasnippets
-    ~/.config/pypoetry/config.toml: poetry/config.toml
     ~/.config/nushell/config.nu: nushell/config.nu
     ~/.config/nushell/env.nu: nushell/env.nu
     ~/.config/ripgrep:
