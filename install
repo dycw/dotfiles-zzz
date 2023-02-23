@@ -34,7 +34,8 @@ sudo apt install -y \
 	gparted \
 	nautilus-dropbox \
 	pdfarranger \
-	sqlitebrowser
+	sqlitebrowser \
+	virtualbox
 
 # brew
 if ! [ -x "$(command -v brew)" ]; then
