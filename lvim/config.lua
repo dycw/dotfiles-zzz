@@ -537,7 +537,7 @@ lvim.builtin.which_key.mappings = {
 			"Diagnostics (document)",
 		},
 		["q"] = { ":Trouble quickfix<CR>", "Quickfix" },
-		["r"] = { ":Trouble lsp_references<CR>", "References" },
+		["r"] = { ":Telescope lsp_references<CR>", "References" },
 		["t"] = { ":TroubleToggle<CR>", "Toggle" },
 		["w"] = {
 			":Trouble workspace_diagnostics<CR>",
