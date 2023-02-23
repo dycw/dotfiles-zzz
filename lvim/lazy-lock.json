@@ -61,7 +61,7 @@
   },
   "harpoon": {
     "branch": "master",
-    "commit": "8c0bb0a328e57278f4783bb0e2ea32f296d36db1"
+    "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1"
   },
   "indent-blankline.nvim": {
     "branch": "master",
@@ -117,7 +117,7 @@
   },
   "neogit": {
     "branch": "master",
-    "commit": "089d388876a535032ac6a3f80e19420f09e4ddda"
+    "commit": "bde758e658c1cdc794293afbde698b5aaa93c5de"
   },
   "neoscroll.nvim": {
     "branch": "master",
@@ -137,7 +137,7 @@
   },
   "nvim-bqf": {
     "branch": "main",
-    "commit": "7a278012efb0a12bc49ecc3e16ec5591c41fae88"
+    "commit": "b71e6bc220ea2ef8f09d5e6b39d52609a965f322"
   },
   "nvim-cmp": {
     "branch": "main",
@@ -173,7 +173,7 @@
   },
   "nvim-surround": {
     "branch": "main",
-    "commit": "9739e85547cb97d2f0497d2aedbab7d6f5c6654d"
+    "commit": "ebdd22d2040798d0b5a5e50d72d940e95f308121"
   },
   "nvim-tree.lua": {
     "branch": "master",
@@ -193,7 +193,7 @@
   },
   "nvim-various-textobjs": {
     "branch": "main",
-    "commit": "521a9845a7ab241ce919068138d31253418d2dae"
+    "commit": "8ad95b453c8a5df29792cebd93bb8cc30316ff9e"
   },
   "nvim-web-devicons": {
     "branch": "master",
@@ -233,7 +233,7 @@
   },
   "targets.vim": {
     "branch": "master",
-    "commit": "8d6ff2984cdfaebe5b7a6eee8f226a6dd1226f2d"
+    "commit": "642d3a4ce306264b05ea3219920b13ea80931767"
   },
   "telescope-fzf-native.nvim": {
     "branch": "main",
@@ -257,7 +257,7 @@
   },
   "trouble.nvim": {
     "branch": "main",
-    "commit": "210969fce79e7d11554c61bca263d7e1ac77bde0"
+    "commit": "3b754285635a66a93aeb15fa71a23417d8997217"
   },
   "vim-bracketed-paste": {
     "branch": "master",
