@@ -52,6 +52,7 @@ fi
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing 'brew' packages..."
 brew install \
 	bat \
+	black \
 	bottom \
 	direnv \
 	dust \
@@ -72,6 +73,7 @@ brew install \
 	pyright \
 	restic \
 	ripgrep \
+	ruff \
 	shellcheck \
 	shfmt \
 	starship \
