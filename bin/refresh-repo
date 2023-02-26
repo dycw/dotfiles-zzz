@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# https://stackoverflow.com/a/20370919
+git submodule udpate --init
+git submodule foreach git fetch origin
+git submodule foreach git checkout master
+git submodule foreach git clean -dfx
+git submodule foreach git pull --force
+
+# this repo
+git checkout master
+git clean -dfx -e .direnv
+git pull --force
