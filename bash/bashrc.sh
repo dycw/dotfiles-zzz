@@ -365,6 +365,7 @@ if [ -x "$(command -v lvim)" ]; then
 	export EDITOR='lvim'
 elif [ -x "$(command -v nvim)" ]; then
 	alias n='nvim'
+	alias nvim-packer='nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync"'
 	export EDITOR='nvim'
 fi
 
