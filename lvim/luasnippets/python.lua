@@ -1,3 +1,6 @@
+-- luacheck: ignore 113
+-- luacheck: ignore 142
+
 return {
 	s("bp", { t("breakpoint()") }),
 	s("fbebeartype", { t("from beartype import beartype") }),
@@ -13,6 +16,8 @@ return {
 	s("fpdreadpickle", { t("from pandas import read_pickle") }),
 	s("fpdseries", { t("from pandas import Series") }),
 	s("fpdtopickle", { t("from pandas import to_pickle") }),
+	s("fpymark", { t("from pytest import mark") }),
+	s("fpyparam", { t("from pytest import param") }),
 	s("ftatabulate", { t("from tabluate import tabulate") }),
 	s("ftyannotated", { t("from typing import Annotated") }),
 	s("ftyany", { t("from typing import Any") }),
