@@ -38,20 +38,20 @@ lvim.keys.insert_mode["<C-k>"] = "<Up>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
 
 -- paste
-lvim.keys.normal_mode["<F2>"] = ":set invpaste paste?<CR>"
-lvim.keys.insert_mode["<F2>"] = "<C-o>:set invpaste paste?<CR>"
+lvim.keys.normal_mode["<F2>"] = "<Cmd>set invpaste paste?<CR>"
+lvim.keys.insert_mode["<F2>"] = "<C-o><Cmd>set invpaste paste?<CR>"
 
 -- quickfix
-lvim.keys.normal_mode["]"] = ":cnext<CR>"
-lvim.keys.normal_mode["["] = ":cprev<CR>"
+lvim.keys.normal_mode["]"] = "<Cmd>cnext<CR>"
+lvim.keys.normal_mode["["] = "<Cmd>cprev<CR>"
 
 -- quit
 lvim.keys.normal_mode["<C-q>"] = ":confirm q<CR>"
 
 -- save
-lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
-lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<CR>"
-lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>"
+lvim.keys.normal_mode["<C-s>"] = "<Cmd>w<CR>"
+lvim.keys.visual_mode["<C-s>"] = "<Esc><Cmd>w<CR>"
+lvim.keys.insert_mode["<C-s>"] = "<Esc><Cmd>w<CR>"
 
 -------------------------------------------------------------------------------
 -- key bindings (leader)
@@ -155,10 +155,10 @@ lvim.keys.visual_mode["<Leader>te"] = "<Esc><Cmd>Telescope<CR>"
 lvim.keys.normal_mode["<Leader>t"] = "<Cmd>TroubleToggle<CR>"
 
 -- windows
-lvim.keys.normal_mode["<Leader>wh"] = "<Cmd>set nosplitright<CR>:vsplit<CR>"
-lvim.keys.normal_mode["<Leader>wj"] = "<Cmd>set splitbelow<CR>:split<CR>"
-lvim.keys.normal_mode["<Leader>wk"] = "<Cmd>set nosplitbelow<CR>:split<CR>"
-lvim.keys.normal_mode["<Leader>wl"] = "<Cmd>set splitright<CR>:vsplit<CR>"
+lvim.keys.normal_mode["<Leader>wh"] = "<Cmd>set nosplitright<CR><Cmd>vsplit<CR>"
+lvim.keys.normal_mode["<Leader>wj"] = "<Cmd>set splitbelow<CR><Cmd>split<CR>"
+lvim.keys.normal_mode["<Leader>wk"] = "<Cmd>set nosplitbelow<CR><Cmd>split<CR>"
+lvim.keys.normal_mode["<Leader>wl"] = "<Cmd>set splitright<CR><Cmd>vsplit<CR>"
 lvim.keys.normal_mode["<Leader>-"] = "<Cmd>split<CR>"
 lvim.keys.normal_mode["<Leader>\\"] = "<Cmd>vsplit<CR>"
 
