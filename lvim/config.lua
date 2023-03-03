@@ -106,7 +106,7 @@ lvim.keys.normal_mode["<Leader>lu"] = "<Cmd>Lazy update<CR>"
 -- LSP
 lvim.keys.normal_mode["<Leader>r"] = "<Cmd>Telescope lsp_references<CR>"
 lvim.keys.normal_mode["<Leader>lr"] = "<Cmd>TroubleToggle lsp_references<CR>"
-lvim.keys.normal_mode["<Leader>r"] = "<Cmd>lua vim.lsp.buf.rename()<CR>"
+lvim.keys.normal_mode["<Leader>rn"] = "<Cmd>lua vim.lsp.buf.rename()<CR>"
 lvim.keys.normal_mode["<Leader>lR"] = "<Cmd>LspRestart<CR>"
 
 -- marks
