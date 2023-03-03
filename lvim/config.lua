@@ -86,8 +86,8 @@ lvim.keys.normal_mode["<Leader>wd"] = "<Cmd>Trouble workspace_diagnostics<CR>"
 -- files
 lvim.keys.normal_mode["<Leader>f"] = "<Cmd>Telescope find_files<CR>"
 lvim.keys.normal_mode["<Leader>gf"] = "<Cmd>Telescope git_files<CR>"
-lvim.keys.normal_mode["<Leader>of"] = "<Cmd>Telescope oldfiles<CR>"
 lvim.keys.normal_mode["<Leader>gs"] = "<Cmd>Telescope git_status<CR>"
+lvim.keys.normal_mode["<Leader>of"] = "<Cmd>Telescope oldfiles<CR>"
 
 -- git
 lvim.keys.normal_mode["<Leader>gj"] = "<Cmd>lua require('gitsigns').next_hunk({navigation_message = false})<CR>"
@@ -133,9 +133,9 @@ lvim.keys.normal_mode["<Leader>l"] = "<Cmd>Telescope live_grep<CR>"
 
 -- sort
 lvim.keys.normal_mode["<Leader>s"] = "<Cmd>Sort<CR>"
-lvim.keys.normal_mode["<Leader>S"] = "<Cmd>Sort n<CR>"
-lvim.keys.visual_mode["<Leader>S"] = "<Cmd>Sort n<CR>"
-lvim.keys.visual_mode["<Leader>s"] = "<Cmd>Sort<CR>"
+lvim.keys.normal_mode["<Leader>sn"] = "<Cmd>Sort n<CR>"
+lvim.keys.visual_mode["<Leader>s"] = "<Esc><Cmd>Sort<CR>"
+lvim.keys.visual_mode["<Leader>sn"] = "<Esc><Cmd>Sort n<CR>"
 
 -- spectre
 lvim.keys.normal_mode["<Leader>sf"] = "<Cmd>lua require('spectre').open_file_search()<CR>"
@@ -149,7 +149,7 @@ lvim.keys.normal_mode["<Leader>ws"] = "<Cmd>Telescope lsp_dynamic_workspace_symb
 
 -- telescope
 lvim.keys.normal_mode["<Leader>te"] = "<Cmd>Telescope<CR>"
-lvim.keys.visual_mode["<Leader>te"] = "<Cmd>Telescope<CR>"
+lvim.keys.visual_mode["<Leader>te"] = "<Esc><Cmd>Telescope<CR>"
 
 -- trouble
 lvim.keys.normal_mode["<Leader>t"] = "<Cmd>TroubleToggle<CR>"
