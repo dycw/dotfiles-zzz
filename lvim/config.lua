@@ -124,24 +124,24 @@ lvim.keys.normal_mode["<Leader>e"] = "<Cmd>NvimTreeToggle<CR>"
 
 -- quickfix
 lvim.keys.normal_mode["<Leader>q"] = "<Cmd>Telescope quickfix<CR>"
-lvim.keys.normal_mode["<Leader>lq"] = "<Cmd>Trouble quickfix<CR>"
+lvim.keys.normal_mode["<Leader>lq"] = "<Cmd>TroubleToggle quickfix<CR>"
 
 -- search text
 lvim.keys.normal_mode["<Leader>bf"] = "<Cmd>Telescope current_buffer_fuzzy_find<CR>"
 lvim.keys.normal_mode["<Leader>gr"] = "<Cmd>Telescope grep_string<CR>"
-lvim.keys.normal_mode["<Leader>l"] = "<Cmd>Telescope live_grep<CR>"
+lvim.keys.normal_mode["<Leader>lg"] = "<Cmd>Telescope live_grep<CR>"
 
 -- sort
-lvim.keys.normal_mode["<Leader>s"] = "<Cmd>Sort<CR>"
+lvim.keys.normal_mode["<Leader>so"] = "<Cmd>Sort<CR>"
 lvim.keys.normal_mode["<Leader>sn"] = "<Cmd>Sort n<CR>"
-lvim.keys.visual_mode["<Leader>s"] = "<Esc><Cmd>Sort<CR>"
+lvim.keys.visual_mode["<Leader>so"] = "<Esc><Cmd>Sort<CR>"
 lvim.keys.visual_mode["<Leader>sn"] = "<Esc><Cmd>Sort n<CR>"
 
 -- spectre
-lvim.keys.normal_mode["<Leader>sf"] = "<Cmd>lua require('spectre').open_file_search()<CR>"
 lvim.keys.normal_mode["<Leader>sp"] = "<Cmd>lua require('spectre').open()<CR>"
-lvim.keys.visual_mode["<Leader>sf"] = "<Esc><Cmd>lua require('spectre').open_file_search({select_word=true})<CR>"
+lvim.keys.normal_mode["<Leader>sf"] = "<Cmd>lua require('spectre').open_file_search()<CR>"
 lvim.keys.visual_mode["<Leader>sp"] = "<Esc><Cmd>lua require('spectre').open_visual()<CR>"
+lvim.keys.visual_mode["<Leader>sf"] = "<Esc><Cmd>lua require('spectre').open_file_search({select_word=true})<CR>"
 
 -- symbols
 lvim.keys.normal_mode["<Leader>s"] = "<Cmd>Telescope lsp_document_symbols<CR>"
@@ -159,8 +159,8 @@ lvim.keys.normal_mode["<Leader>wh"] = "<Cmd>set nosplitright<CR>:vsplit<CR>"
 lvim.keys.normal_mode["<Leader>wj"] = "<Cmd>set splitbelow<CR>:split<CR>"
 lvim.keys.normal_mode["<Leader>wk"] = "<Cmd>set nosplitbelow<CR>:split<CR>"
 lvim.keys.normal_mode["<Leader>wl"] = "<Cmd>set splitright<CR>:vsplit<CR>"
-lvim.keys.normal_mode["<Leader>w-"] = "<Cmd>split<CR>"
-lvim.keys.normal_mode["<Leader>w\\"] = "<Cmd>vsplit<CR>"
+lvim.keys.normal_mode["<Leader>-"] = "<Cmd>split<CR>"
+lvim.keys.normal_mode["<Leader>\\"] = "<Cmd>vsplit<CR>"
 
 -------------------------------------------------------------------------------
 -- formatters
