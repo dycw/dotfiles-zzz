@@ -80,8 +80,8 @@ lvim.keys.visual_mode["<Leader>/"] = "<Plug>(comment_toggle_linewise_visual)"
 lvim.keys.normal_mode["<Leader>d"] = "<Cmd>Telescope diagnostics<CR>"
 lvim.keys.normal_mode["<Leader>dj"] = "<Cmd>lua vim.diagnostic.goto_next()<CR>"
 lvim.keys.normal_mode["<Leader>dk"] = "<Cmd>lua vim.diagnostic.goto_prev()<CR>"
-lvim.keys.normal_mode["<Leader>dd"] = "<Cmd>Trouble document_diagnostics<CR>"
-lvim.keys.normal_mode["<Leader>wd"] = "<Cmd>Trouble workspace_diagnostics<CR>"
+lvim.keys.normal_mode["<Leader>dd"] = "<Cmd>TroubleToggle document_diagnostics<CR>"
+lvim.keys.normal_mode["<Leader>wd"] = "<Cmd>TroubleToggle workspace_diagnostics<CR>"
 
 -- files
 lvim.keys.normal_mode["<Leader>f"] = "<Cmd>Telescope find_files<CR>"
