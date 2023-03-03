@@ -1,3 +1,5 @@
+-- luacheck: ignore 112
+
 -------------------------------------------------------------------------------
 -- vim
 -------------------------------------------------------------------------------
@@ -14,14 +16,34 @@ vim.opt.wrap = true
 lvim.keys.normal_mode["<CR>"] = ":"
 lvim.keys.visual_mode["<CR>"] = ":"
 
--- disable ex-mode
+-- ex-mode
 lvim.keys.normal_mode["Q"] = "<Nop>"
 
--- insert mode: navigation
+-- marks
+local prefixes = "m'"
+local letters = "abcdefghijklmnopqrstuvwxyz"
+for i = 1, #prefixes do
+	for j = 1, #letters do
+		local prefix = prefixes:sub(i, i)
+		local lower_letter = letters:sub(j, j)
+		local upper_letter = string.upper(lower_letter)
+		lvim.keys.normal_mode[prefix .. lower_letter] = prefix .. upper_letter
+	end
+end
+
+-- navigation
 lvim.keys.insert_mode["<C-h>"] = "<Left>"
 lvim.keys.insert_mode["<C-j>"] = "<Down>"
 lvim.keys.insert_mode["<C-k>"] = "<Up>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
+
+-- paste
+lvim.keys.normal_mode["<F2>"] = ":set invpaste paste?<CR>"
+lvim.keys.insert_mode["<F2>"] = "<C-o>:set invpaste paste?<CR>"
+
+-- quickfix
+lvim.keys.normal_mode["]"] = ":cnext<CR>"
+lvim.keys.normal_mode["["] = ":cprev<CR>"
 
 -- save
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
@@ -30,6 +52,115 @@ lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>"
 
 -- quit
 lvim.keys.normal_mode["<C-q>"] = ":confirm q<CR>"
+
+-------------------------------------------------------------------------------
+-- key bindings (leader)
+-------------------------------------------------------------------------------
+-- auto-save
+lvim.keys.normal_mode["<Leader>a"] = "<Cmd>ASToggle<CR>"
+
+-- buffers
+lvim.keys.normal_mode["<Leader>b"] = "<Cmd>Telescope buffers<CR>"
+lvim.keys.normal_mode["<Leader>bd"] = "<Cmd>BDelete this<CR>"
+lvim.keys.normal_mode["<Leader>bD"] = "<Cmd>BDelete other<CR>"
+lvim.keys.normal_mode["<Leader>bj"] = "<Cmd>BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<Leader>bk"] = "<Cmd>BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<Leader>bp"] = "<Cmd>BufferLinePick<CR>"
+
+-- commands
+lvim.keys.normal_mode["<Leader>c"] = "<Cmd>Telescope commands<CR>"
+lvim.keys.normal_mode["<Leader>ch"] = "<Cmd>Telescope command_history<CR>"
+lvim.keys.visual_mode["<Leader>c"] = "<Cmd>Telescope commands<CR>"
+
+-- comment
+lvim.keys.normal_mode["<Leader>/"] = "<Plug>(comment_toggle_linewise_current)"
+lvim.keys.visual_mode["<Leader>/"] = "<Plug>(comment_toggle_linewise_visual)"
+
+-- diagnostics
+lvim.keys.normal_mode["<Leader>d"] = "<Cmd>Telescope diagnostics bufnr=0 theme=get_ivy<CR>"
+lvim.keys.normal_mode["<Leader>dj"] = "<Cmd>lua vim.diagnostic.goto_next()<CR>"
+lvim.keys.normal_mode["<Leader>dk"] = "<Cmd>lua vim.diagnostic.goto_prev()<CR>"
+lvim.keys.normal_mode["<Leader>dd"] = "<Cmd>Trouble document_diagnostics<CR>"
+lvim.keys.normal_mode["<Leader>wd"] = "<Cmd>Trouble workspace_diagnostics<CR>"
+
+-- files
+lvim.keys.normal_mode["<Leader>f"] = "<Cmd>Telescope find_files<CR>"
+lvim.keys.normal_mode["<Leader>gf"] = "<Cmd>Telescope git_files<CR>"
+lvim.keys.normal_mode["<Leader>of"] = "<Cmd>Telescope oldfiles<CR>"
+lvim.keys.normal_mode["<Leader>gs"] = "<Cmd>Telescope git_status<CR>"
+
+-- git
+lvim.keys.normal_mode["<Leader>gj"] = "<Cmd>lua require('gitsigns').next_hunk({navigation_message = false})<CR>"
+lvim.keys.normal_mode["<Leader>gk"] = "<Cmd>lua require('gitsigns').prev_hunk({navigation_message = false})<CR>"
+
+-- iswap
+lvim.keys.normal_mode["<Leader>i"] = "<Cmd>ISwapWith<CR>"
+lvim.keys.normal_mode["<Leader>is"] = "<Cmd>ISwap<CR>"
+
+-- jump list
+lvim.keys.normal_mode["<Leader>j"] = "<Cmd>Telescope jumplist<CR>"
+
+-- lazy
+lvim.keys.normal_mode["<Leader>lu"] = "<Cmd>Lazy update<CR>"
+
+-- LSP
+lvim.keys.normal_mode["<Leader>r"] = "<Cmd>Telescope lsp_references<CR>"
+lvim.keys.normal_mode["<Leader>lr"] = "<Cmd>TroubleToggle lsp_references<CR>"
+lvim.keys.normal_mode["<Leader>r"] = "<Cmd>lua vim.lsp.buf.rename()<CR>"
+lvim.keys.normal_mode["<Leader>lR"] = "<Cmd>LspRestart<CR>"
+
+-- marks
+lvim.keys.normal_mode["<Leader>m"] = "<Cmd>Telescope marks<CR>"
+
+-- mergetool
+lvim.keys.normal_mode["<Leader>mj"] = "<Cmd>MergetoolDiffExchangeLeft<CR>"
+lvim.keys.normal_mode["<Leader>mk"] = "<Cmd>MergetoolDiffExchangeRight<CR>"
+lvim.keys.normal_mode["<Leader>ml"] = "<Cmd>MergetoolPreferLocal<CR>"
+lvim.keys.normal_mode["<Leader>mr"] = "<Cmd>MergetoolPreferRemote<CR>"
+lvim.keys.normal_mode["<Leader>mq"] = "<Cmd>MergetoolStop<CR>"
+
+-- nvim tree
+lvim.keys.normal_mode["<Leader>e"] = "<Cmd>NvimTreeToggle<CR>"
+
+-- quickfix
+lvim.keys.normal_mode["<Leader>q"] = "<Cmd>Telescope quickfix<CR>"
+lvim.keys.normal_mode["<Leader>lq"] = "<Cmd>Trouble quickfix<CR>"
+
+-- search text
+lvim.keys.normal_mode["<Leader>bf"] = "<Cmd>Telescope current_buffer_fuzzy_find<CR>"
+lvim.keys.normal_mode["<Leader>gr"] = "<Cmd>Telescope grep_string<CR>"
+lvim.keys.normal_mode["<Leader>l"] = "<Cmd>Telescope live_grep<CR>"
+
+-- sort
+lvim.keys.normal_mode["<Leader>s"] = "<Cmd>Sort<CR>"
+lvim.keys.normal_mode["<Leader>S"] = "<Cmd>Sort n<CR>"
+lvim.keys.visual_mode["<Leader>S"] = "<Cmd>Sort n<CR>"
+lvim.keys.visual_mode["<Leader>s"] = "<Cmd>Sort<CR>"
+
+-- spectre
+lvim.keys.normal_mode["<Leader>sf"] = "<Cmd>lua require('spectre').open_file_search()<CR>"
+lvim.keys.normal_mode["<Leader>sp"] = "<Cmd>lua require('spectre').open()<CR>"
+lvim.keys.visual_mode["<Leader>sf"] = "<Esc><Cmd>lua require('spectre').open_file_search({select_word=true})<CR>"
+lvim.keys.visual_mode["<Leader>sp"] = "<Esc><Cmd>lua require('spectre').open_visual()<CR>"
+
+-- symbols
+lvim.keys.normal_mode["<Leader>s"] = "<Cmd>Telescope lsp_document_symbols<CR>"
+lvim.keys.normal_mode["<Leader>ws"] = "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>"
+
+-- telescope
+lvim.keys.normal_mode["<Leader>te"] = "<Cmd>Telescope<CR>"
+lvim.keys.visual_mode["<Leader>te"] = "<Cmd>Telescope<CR>"
+
+-- trouble
+lvim.keys.normal_mode["<Leader>t"] = "<Cmd>TroubleToggle<CR>"
+
+-- windows
+lvim.keys.normal_mode["<Leader>wh"] = "<Cmd>set nosplitright<CR>:vsplit<CR>"
+lvim.keys.normal_mode["<Leader>wj"] = "<Cmd>set splitbelow<CR>:split<CR>"
+lvim.keys.normal_mode["<Leader>wk"] = "<Cmd>set nosplitbelow<CR>:split<CR>"
+lvim.keys.normal_mode["<Leader>wl"] = "<Cmd>set splitright<CR>:vsplit<CR>"
+lvim.keys.normal_mode["<Leader>w-"] = "<Cmd>split<CR>"
+lvim.keys.normal_mode["<Leader>w\\"] = "<Cmd>vsplit<CR>"
 
 -------------------------------------------------------------------------------
 -- formatters
@@ -104,16 +235,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -------------------------------------------------------------------------------
 -- plugins
 -------------------------------------------------------------------------------
+lvim.builtin.which_key.active = false
 lvim.plugins = {
-	-- editing: auto save
+	-- auto save
 	{
 		"pocco81/auto-save.nvim",
 		config = function()
 			require("auto-save").setup()
 		end,
+		event = { "BufRead", "BufNew" },
 	},
 
-	-- editing: better escape
+	-- better escape
 	{
 		"max397574/better-escape.nvim",
 		config = function()
@@ -124,22 +257,34 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- editing: change word casing
+	-- better quick fix
+	{
+		"kevinhwang91/nvim-bqf",
+		config = function()
+			require("bqf").setup({ auto_resize_height = true })
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- caser
 	{
 		"arthurxavierx/vim-caser",
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- editing: find and replace
+	-- close buffers
 	{
-		"windwp/nvim-spectre",
-		config = function()
-			require("spectre").setup({ live_update = true })
-		end,
+		"kazhala/close-buffers.nvim",
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- editing: increment/decrement
+	-- cool
+	{
+		"romainl/vim-cool",
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- dial
 	{
 		"monaqa/dial.nvim",
 		config = function()
@@ -189,95 +334,7 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- editing: missing directories
-	{
-		"jghauser/mkdir.nvim",
-		config = function()
-			require("mkdir")
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- editing: multiple cursors
-	{
-		"mg979/vim-visual-multi",
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- editing: pasting
-	{
-		"conradirwin/vim-bracketed-paste",
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- editing: signatures
-	{
-		"ray-x/lsp_signature.nvim",
-		config = function()
-			require("lsp_signature").on_attach()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- editing: sort
-	{
-		"sqve/sort.nvim",
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- editing: surrounding delimiter pairs
-	{
-		"kylechui/nvim-surround",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- editing: swap function arguments, list elements
-	{
-		"mizlan/iswap.nvim",
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- git: mergetool
-	{
-		"samoshkin/vim-mergetool",
-		config = function()
-			vim.g.mergetool_layout = "rml,b"
-			vim.g.mergetool_prefer_revision = "unmodified"
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- git: neogit
-	{
-		"timuntersberger/neogit",
-		config = function()
-			require("neogit").setup({
-				sections = {
-					recent = { folded = false },
-					unstaged = { folded = false },
-					staged = { folded = false },
-					untracked = { folded = false },
-					stashes = { folded = true },
-					unpulled = { folded = true },
-					unmerged = { folded = false },
-				},
-			})
-		end,
-		dependencies = { "nvim-lua/plenary.nvim" },
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- LSP: trouble
-	{
-		"folke/trouble.nvim",
-		event = { "BufRead", "BufNew" },
-		cmd = "TroubleToggle",
-	},
-
-	-- navigation: f/t motions
+	-- flit
 	{
 		"ggandor/flit.nvim",
 		config = function()
@@ -287,70 +344,7 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- navigation: harpoon
-	{
-		"theprimeagen/harpoon",
-		config = function()
-			require("telescope").load_extension("harpoon")
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- navigation: re-open files at last edit position
-	{
-		"ethanholz/nvim-lastplace",
-		config = function()
-			require("nvim-lastplace").setup()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- navigation: root
-	{
-		"ahmedkhalf/lsp-rooter.nvim",
-		config = function()
-			require("lsp-rooter").setup()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- navigation: scrolling
-	{
-		"karb94/neoscroll.nvim",
-		config = function()
-			require("neoscroll").setup()
-		end,
-		event = "WinScrolled",
-	},
-
-	-- navigation: sneak motion
-	{
-		"ggandor/leap.nvim",
-		config = function()
-			require("leap").add_default_mappings()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- navigation: symbols
-	{
-		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("symbols-outline").setup()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- quick fix
-	{
-		"kevinhwang91/nvim-bqf",
-		config = function()
-			require("bqf").setup()
-		end,
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- searching: hlsearch lens
+	-- hlslens
 	{
 		"kevinhwang91/nvim-hlslens",
 		config = function()
@@ -359,31 +353,141 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- searching: clear hlsearch when done
+	-- iswap
 	{
-		"romainl/vim-cool",
+		"mizlan/iswap.nvim",
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- text objects: matching quotes, backticks and pipe
+	-- last place
+	{
+		"ethanholz/nvim-lastplace",
+		config = function()
+			require("nvim-lastplace").setup()
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- leap
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- marks
+	{
+		"chentoast/marks.nvim",
+		config = function()
+			require("marks").setup()
+		end,
+	},
+
+	-- match quote
 	{
 		"airblade/vim-matchquote",
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- text objects: pair, quote, separator, argument, multi text
+	-- mergetool
+	{
+		"samoshkin/vim-mergetool",
+		config = function()
+			vim.g.mergetool_layout = "rml,b"
+			vim.g.mergetool_prefer_revision = "unmodified"
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- mkdir
+	{
+		"jghauser/mkdir.nvim",
+		config = function()
+			require("mkdir")
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- neoscroll
+	{
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup()
+		end,
+		event = "WinScrolled",
+	},
+
+	-- number toggle
+	{
+		"jeffkreeftmeijer/vim-numbertoggle",
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- signature
+	{
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").on_attach()
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- sort
+	{
+		"sqve/sort.nvim",
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- spectre
+	{
+		"windwp/nvim-spectre",
+		config = function()
+			require("spectre").setup({ live_update = true })
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- surround
+	{
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- symbols outline
+	{
+		"simrat39/symbols-outline.nvim",
+		config = function()
+			require("symbols-outline").setup()
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- targets
 	{
 		"wellle/targets.vim",
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- text objects: various
+	-- text objects
 	{
 		"chrisgrieser/nvim-various-textobjs",
 		config = function()
 			require("various-textobjs").setup({ useDefaultKeymaps = true })
 		end,
 		event = { "BufRead", "BufNew" },
+	},
+
+	-- tidy
+	{
+		"mcauley-penney/tidy.nvim",
+		config = function()
+			require("tidy").setup()
+		end,
 	},
 
 	-- tmux
@@ -395,13 +499,7 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
-	-- viewing: absolute line numbers in inactive windows
-	{
-		"jeffkreeftmeijer/vim-numbertoggle",
-		event = { "BufRead", "BufNew" },
-	},
-
-	-- viewing: context
+	-- treesitter context
 	{
 		"romgrk/nvim-treesitter-context",
 		config = function()
@@ -409,158 +507,17 @@ lvim.plugins = {
 		end,
 		event = { "BufRead", "BufNew" },
 	},
-}
 
--------------------------------------------------------------------------------
--- whichkey
--------------------------------------------------------------------------------
-lvim.builtin.which_key.mappings = {
-	["a"] = { ":ASToggle<CR>", "AutoSave" },
-	["b"] = {
-		name = "Buffers",
-		["b"] = { ":Telescope buffers<CR>", "Buffers" },
-		["c"] = { ":BufferKill<CR>", "Kill" },
-		["j"] = { ":BufferLineCycleNext<CR>", "Next" },
-		["k"] = { ":BufferLineCyclePrev<CR>", "Previous" },
-		["m"] = {
-			name = "Move",
-			["j"] = { ":BufferLineMoveNext<CR>", "Next" },
-			["k"] = { ":BufferLineMovePrev<CR>", "Previous" },
-		},
-		["p"] = { ":BufferLinePick<CR>", "Pick" },
-		["t"] = { ":Telescope buffers<CR>", "Telescope" },
+	-- trouble
+	{
+		"folke/trouble.nvim",
+		cmd = "TroubleToggle",
+		event = { "BufRead", "BufNew" },
 	},
-	["c"] = { ":Telescope commands<CR>", "Commands" },
-	["C"] = { ":Telescope command_history<CR>", "Command history" },
-	["d"] = {
-		name = "Debug",
-		b = { ":lua require('dap').step_back()<CR>", "Step Back" },
-		c = { ":lua require('dap').continue()<CR>", "Continue" },
-		C = { ":lua require('dap').run_to_cursor()<CR>", "Run To Cursor" },
-		d = { ":lua require('dap').disconnect()<CR>", "Disconnect" },
-		g = { ":lua require('dap').session()<CR>", "Get Session" },
-		i = { ":lua require('dap').step_into()<CR>", "Step Into" },
-		o = { ":lua require('dap').step_over()<CR>", "Step Over" },
-		p = { ":lua require('dap').pause()<CR>", "Pause" },
-		q = { ":lua require('dap').close()<CR>", "Quit" },
-		r = { ":lua require('dap').repl.toggle()<CR>", "Toggle Repl" },
-		s = { ":lua require('dap').continue()<CR>", "Start" },
-		t = {
-			":lua require('dap').toggle_breakpoint()<CR>",
-			"Toggle Breakpoint",
-		},
-		u = { ":lua require('dap').step_out()<CR>", "Step Out" },
-		U = { ":lua require'dapui'.toggle({reset = true})<CR>", "Toggle UI" },
-	},
-	["e"] = { ":NvimTreeToggle<CR>", "Explorer" },
-	["f"] = {
-		name = "Files",
-		["f"] = { ":Telescope find_files<CR>", "Find" },
-		["g"] = { ":Telescope git_files<CR>", "Git" },
-		["o"] = { ":Telescope oldfiles<CR>", "Old" },
-	},
-	["g"] = {
-		name = "git",
-		["b"] = { ":Telescope git_bcommits<CR>", "Bcommits" },
-		["c"] = { ":Telescope git_commits<CR>", "Commit" },
-		["d"] = { ":Gitsigns diffthis HEAD<CR>", "Diff" },
-		["j"] = {
-			":lua require('gitsigns').next_hunk({navigation_message = false})<CR>",
-			"Next hunk",
-		},
-		["k"] = {
-			":lua require('gitsigns').prev_hunk({navigation_message = false})<CR>",
-			"Previous hunk",
-		},
-		["s"] = { ":Telescope git_status<CR>", "Status" },
-	},
-	["i"] = { ":ISwapWith<CR>", "ISwap" },
-	["l"] = {
-		name = "LSP",
-		["a"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-		["d"] = {
-			":Telescope diagnostics bufnr=0 theme=get_ivy<CR>",
-			"Buffer Diagnostics",
-		},
-		["f"] = { require("lvim.lsp.utils").format, "Format" },
-		["i"] = { ":LspInfo<CR>", "Info" },
-		["I"] = { ":Mason<CR>", "Mason info" },
-		["j"] = { vim.diagnostic.goto_next, "Next diagnostic" },
-		["k"] = { vim.diagnostic.goto_prev, "Prev diagnostic" },
-		["l"] = { vim.lsp.codelens.run, "CodeLens action" },
-		["q"] = { vim.diagnostic.setloclist, "Quickfix" },
-		["r"] = { vim.lsp.buf.rename, "Rename" },
-		["R"] = { ":LspRestart<CR>", "Restart" },
-	},
-	["L"] = { ":Lazy update<CR>", "Lazy update" },
-	["m"] = {
-		name = "Mergetool",
-		["j"] = { ":MergetoolDiffExchangeLeft<CR>", "Left" },
-		["k"] = { ":MergetoolDiffExchangeRight<CR>", "Right" },
-		["l"] = { ":MergetoolPreferLocal<CR>", "Local" },
-		["r"] = { ":MergetoolPreferRemote<CR>", "Remote" },
-		["q"] = { ":MergetoolStop<CR>", "Quit" },
-	},
-	["n"] = { ":Neogit<CR>", "Neogit" },
-	["r"] = {
-		":lua require('spectre').open_file_search()<CR>",
-		"Spectre (file)",
-	},
-	["R"] = { ":lua require('spectre').open()<CR>", "Spectre (project)" },
-	["s"] = {
-		name = "Search",
-		["b"] = {
-			":Telescope current_buffer_fuzzy_find<CR>",
-			"Buffer fuzzy find",
-		},
-		["d"] = { ":Telescope diagnostics<CR>", "Diagnostics" },
-		["g"] = { ":Telescope grep_string<CR>", "Grep (string)" },
-		["h"] = { ":Telescope harpoon marks<CR>", "Harpoon" },
-		["l"] = { ":Telescope live_grep<CR>", "Grep (live)" },
-		["m"] = { ":Telescope marks<CR>", "Marks" },
-		["q"] = { ":Telescope quickfix<CR>", "Quickfix" },
-		["r"] = { ":Telescope registers<CR>", "Registers" },
-		["s"] = {
-			":Telescope lsp_document_symbols<CR>",
-			"Symbols (document)",
-		},
-		["y"] = {
-			":Telescope lsp_dynamic_workspace_symbols<CR>",
-			"Symbols (workspace)",
-		},
-		["/"] = { ":Telescope search_history<CR>", "History (search)" },
-	},
-	["t"] = {
-		name = "Trouble",
-		["d"] = {
-			":Trouble document_diagnostics<CR>",
-			"Diagnostics (document)",
-		},
-		["q"] = { ":Trouble quickfix<CR>", "Quickfix" },
-		["r"] = { ":Telescope lsp_references<CR>", "References" },
-		["t"] = { ":TroubleToggle<CR>", "Toggle" },
-		["w"] = {
-			":Trouble workspace_diagnostics<CR>",
-			"Diagnostics (workspace)",
-		},
-	},
-	["T"] = { ":Telescope<CR>", "Telescope" },
-	["w"] = {
-		name = "Window",
-		["h"] = { ":set nosplitright<CR>:vsplit<CR>", "Left" },
-		["j"] = { ":set splitbelow<CR>:split<CR>", "Down" },
-		["k"] = { ":set nosplitbelow<CR>:split<CR>", "Up" },
-		["l"] = { ":set splitright<CR>:vsplit<CR>", "Right" },
-	},
-	["-"] = { ":split<CR>", "Window (split)" },
-	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle" },
-	["\\"] = { ":vsplit<CR>", "Window (vsplit)" },
-}
 
-lvim.builtin.which_key.vmappings = {
-	["c"] = { ":Telescope commands<CR>", "Commands" },
-	["r"] = { ":lua require('spectre').open_visual()<CR>", "Spectre" },
-	["s"] = { ":Sort<CR>", "Sort" },
-	["S"] = { ":Sort n<CR>", "Sort (numbers)" },
-	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle" },
+	-- visual multi
+	{
+		"mg979/vim-visual-multi",
+		event = { "BufRead", "BufNew" },
+	},
 }
