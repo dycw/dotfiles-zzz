@@ -45,13 +45,13 @@ lvim.keys.insert_mode["<F2>"] = "<C-o>:set invpaste paste?<CR>"
 lvim.keys.normal_mode["]"] = ":cnext<CR>"
 lvim.keys.normal_mode["["] = ":cprev<CR>"
 
+-- quit
+lvim.keys.normal_mode["<C-q>"] = ":confirm q<CR>"
+
 -- save
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.visual_mode["<C-s>"] = "<Esc>:w<CR>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>"
-
--- quit
-lvim.keys.normal_mode["<C-q>"] = ":confirm q<CR>"
 
 -------------------------------------------------------------------------------
 -- key bindings (leader)
@@ -77,7 +77,7 @@ lvim.keys.normal_mode["<Leader>/"] = "<Plug>(comment_toggle_linewise_current)"
 lvim.keys.visual_mode["<Leader>/"] = "<Plug>(comment_toggle_linewise_visual)"
 
 -- diagnostics
-lvim.keys.normal_mode["<Leader>d"] = "<Cmd>Telescope diagnostics bufnr=0 theme=get_ivy<CR>"
+lvim.keys.normal_mode["<Leader>d"] = "<Cmd>Telescope diagnostics<CR>"
 lvim.keys.normal_mode["<Leader>dj"] = "<Cmd>lua vim.diagnostic.goto_next()<CR>"
 lvim.keys.normal_mode["<Leader>dk"] = "<Cmd>lua vim.diagnostic.goto_prev()<CR>"
 lvim.keys.normal_mode["<Leader>dd"] = "<Cmd>Trouble document_diagnostics<CR>"
