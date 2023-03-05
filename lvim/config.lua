@@ -106,7 +106,12 @@ lvim.keys.normal_mode["<Leader>lu"] = "<Cmd>Lazy update<CR>"
 -- LSP
 lvim.keys.normal_mode["<Leader>r"] = "<Cmd>Telescope lsp_references<CR>"
 lvim.keys.normal_mode["<Leader>lr"] = "<Cmd>TroubleToggle lsp_references<CR>"
-lvim.keys.normal_mode["<Leader>rn"] = "<Cmd>lua vim.lsp.buf.rename()<CR>"
+lvim.keys.normal_mode["<Leader>rn"] = {
+	function()
+		return ":IncRename " .. vim.fn.expand("<cword>")
+	end,
+	{ expr = true, noremap = true },
+}
 lvim.keys.normal_mode["<Leader>lR"] = "<Cmd>LspRestart<CR>"
 
 -- marks
@@ -145,6 +150,7 @@ lvim.keys.visual_mode["<Leader>sf"] = "<Esc><Cmd>lua require('spectre').open_fil
 
 -- symbols
 lvim.keys.normal_mode["<Leader>s"] = "<Cmd>Telescope lsp_document_symbols<CR>"
+lvim.keys.normal_mode["<Leader>sy"] = "<Cmd>SymbolsOutline<CR>"
 lvim.keys.normal_mode["<Leader>ws"] = "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>"
 
 -- telescope
@@ -353,6 +359,15 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
+	-- inc rename
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
+		event = { "BufRead", "BufNew" },
+	},
+
 	-- iswap
 	{
 		"mizlan/iswap.nvim",
@@ -407,6 +422,28 @@ lvim.plugins = {
 		config = function()
 			require("mkdir")
 		end,
+		event = { "BufRead", "BufNew" },
+	},
+
+	-- neorg
+	{
+
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		opts = {
+			load = {
+				["core.defaults"] = {},
+				["core.norg.concealer"] = {},
+				["core.norg.dirman"] = {
+					config = {
+						workspaces = {
+							notes = "~/work/notes",
+						},
+					},
+				},
+			},
+		},
+		dependencies = { { "nvim-lua/plenary.nvim" } },
 		event = { "BufRead", "BufNew" },
 	},
 
