@@ -18,6 +18,7 @@
     ~/.config/git:
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
+    ~/.config/luacheck/.luacheckrc: lua-linters/luacheck/luacheckrc
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/lazy-lock.json: lvim/lazy-lock.json
     ~/.config/lvim/luasnippets: lvim/luasnippets
@@ -25,6 +26,9 @@
     ~/.config/nushell/env.nu: nushell/env.nu
     ~/.config/ripgrep:
     ~/.config/starship.toml: starship/starship.toml
+    ~/.config/stylua/stylua.toml: lua-linters/stylua/stylua.toml
+    ~/.config/tmux/tmux.conf.local: tmux/tmux.conf.local
+    ~/.config/tmux/tmux.conf: tmux/oh-my-tmux/.tmux.conf
     ~/.config/topgrade:
     ~/.config/zellij:
     ~/.inputrc: input/inputrc
@@ -35,9 +39,5 @@
     ~/.jupyter/jupyter_server_config.json: jupyter/jupyter_server_config.json
     ~/.jupyter/lab/user-settings: jupyter/user-settings
     ~/.local/share/fonts:
-    ~/.luacheckrc: lua-linters/luacheck/luacheckrc
-    ~/.stylua.toml: lua-linters/stylua/stylua.toml
-    ~/.tmux.conf: tmux/oh-my-tmux/.tmux.conf
-    ~/.tmux.conf.local: tmux/tmux.conf.local
     ~/.vim/pack/tpope/start/sensible: vim/vim-sensible
-    ~/.vimrc: vim/vimrc
+    ~/.vim/vimrc: vim/vimrc
