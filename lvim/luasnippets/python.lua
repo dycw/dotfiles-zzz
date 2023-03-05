@@ -8,6 +8,8 @@ return {
 	s("fhydata", { t("from hypothesis import data") }),
 	s("fhygiven", { t("from hypothesis import given") }),
 	s("fhyreproduce", { t("from hypothesis import reproduce_failure") }),
+	s("fitrepeat", { t("from itertools import repeat") }),
+	s("fitzipequal", { t("from itertools import zip_equal") }),
 	s("flologger", { t("from loguru import logger") }),
 	s("fnundarray", { t("from numpy import ndarray") }),
 	s("fnutyndarray", { t("from numpy.typing import NDArray") }),
