@@ -5,6 +5,8 @@ return {
 	s("bp", { t("breakpoint()") }),
 	s("fbebeartype", { t("from beartype import beartype") }),
 	s("fdadataclass", { t("from dataclasses import dataclass") }),
+	s("fenauto", { t("from enum import auto") }),
+	s("fenenum", { t("from enum import Enum") }),
 	s("fhydata", { t("from hypothesis import data") }),
 	s("fhygiven", { t("from hypothesis import given") }),
 	s("fhyreproduce", { t("from hypothesis import reproduce_failure") }),
