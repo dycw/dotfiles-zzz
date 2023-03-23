@@ -31,6 +31,8 @@ return {
 	s("ftyannotated", { t("from typing import Annotated") }),
 	s("ftyany", { t("from typing import Any") }),
 	s("ftycast", { t("from typing import cast") }),
+	s("ftyoptional", { t("from typing import Optional") }),
+	s("ftyunion", { t("from typing import Union") }),
 	s("fxadataarray", { t("from xarray import DataArray") }),
 	s("fxadatasetl", { t("from xarray import Dataset") }),
 	s("imdt", { t("import datetime as dt") }),
