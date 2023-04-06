@@ -433,6 +433,7 @@ alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 alias pyt='pytest'
 alias pytco='pytest --co'
 alias setuppy='$EDITOR $(git rev-parse --show-toplevel)/setup.py'
+export HYPOTHESIS_PROFILE=dev
 export PYTHONDONTWRITEBYTECODE=1
 _FILE="$_PATH_DOTFILES/bin/pytest-aliases"
 if [ -f "$_FILE" ]; then
