@@ -3,12 +3,12 @@ exclude: ^(dotbot|submodules)/
 repos:
   # fixers
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.259
+    rev: v0.0.261
     hooks:
       - id: ruff
         args: [--fix]
   - repo: https://github.com/johnnymorganz/stylua
-    rev: v0.17.0
+    rev: v0.17.1
     hooks:
       - id: stylua-system # or stylua-system / stylua-github
       # - id: stylua # or stylua-system / stylua-github
@@ -36,7 +36,7 @@ repos:
       - id: no-commit-to-branch
       - id: trailing-whitespace
   - repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: 23.3.0
     hooks:
       - id: black
   # linters
