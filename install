@@ -54,6 +54,7 @@ brew install \
 	bat \
 	black \
 	bottom \
+	cookiecutter \
 	direnv \
 	dust \
 	eth-p/software/bat-extras \
