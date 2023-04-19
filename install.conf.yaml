@@ -20,6 +20,7 @@
     ~/.config/i3/config: i3/i3.config
     ~/.config/i3status/config: i3/i3status.config
     ~/.config/luacheck/.luacheckrc: lua-linters/luacheck/luacheckrc
+    ~/.config/lvim/after: lvim/after
     ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/lvim/lazy-lock.json: lvim/lazy-lock.json
     ~/.config/lvim/luasnippets: lvim/luasnippets
