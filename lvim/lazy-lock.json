@@ -23,6 +23,10 @@
     "branch": "main",
     "commit": "c1bad34ce742b4f360b67ca23c873fef998240fc"
   },
+  "bracey.vim": {
+    "branch": "master",
+    "commit": "4e1a22acc01787814819df1057d039d4ecf357eb"
+  },
   "bufferline.nvim": {
     "branch": "main",
     "commit": "243893ba9d5d1049dd451a25cab32ec7f8f67bcf"

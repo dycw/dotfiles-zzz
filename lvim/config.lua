@@ -282,6 +282,13 @@ lvim.plugins = {
 		event = { "BufRead", "BufNew" },
 	},
 
+	-- bracey
+	{
+		"turbio/bracey.vim",
+		cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+		build = "npm install --prefix server",
+	},
+
 	-- caser
 	{
 		"arthurxavierx/vim-caser",
