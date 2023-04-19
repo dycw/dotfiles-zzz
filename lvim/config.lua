@@ -285,8 +285,11 @@ lvim.plugins = {
 	-- bracey
 	{
 		"turbio/bracey.vim",
-		cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
 		build = "npm install --prefix server",
+		cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+		config = function()
+			vim.api.nvim_set_var("g:bracey_refresh_on_save", 1)
+		end,
 	},
 
 	-- caser
