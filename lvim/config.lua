@@ -173,28 +173,30 @@ lvim.keys.normal_mode["<Leader>\\"] = "<Cmd>vsplit<CR>"
 -------------------------------------------------------------------------------
 require("lvim.lsp.null-ls.formatters").setup({
 	-- go
-	{ exe = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
+	{ name = "gofumpt", args = { "-l", "-w", "-extra" }, filetypes = { "go" } },
 	-- lua
-	{ exe = "stylua", filetypes = { "lua" } },
+	{ name = "stylua", filetypes = { "lua" } },
 	-- python
-	{ exe = "black", filetypes = { "python" } },
+	{ name = "black", filetypes = { "python" } },
 	-- sh
-	{ exe = "shfmt", filetypes = { "sh" } },
+	{ name = "shfmt", filetypes = { "sh" } },
 	-- prettier
 	{
-		exe = "prettier",
-		args = { "-w" },
+		name = "prettier",
 		filetypes = {
 			"css",
 			"html",
 			"htmldjango",
-			"javascript",
-			"javascriptreact",
 			"json",
 			"markdown",
 			"toml",
 			"yaml",
 		},
+	},
+	-- rome
+	{
+		name = "rome",
+		filetypes = { "javascript", "javascriptreact", "typescript" },
 	},
 })
 
@@ -203,13 +205,13 @@ require("lvim.lsp.null-ls.formatters").setup({
 -------------------------------------------------------------------------------
 require("lvim.lsp.null-ls.linters").setup({
 	-- javascript
-	{ exe = "eslint", filetypes = { "javascript", "javascriptreact" } },
+	{ name = "eslint", filetypes = { "javascript", "javascriptreact" } },
 	-- lua
-	{ exe = "luacheck", filetypes = { "lua" } },
+	{ name = "luacheck", filetypes = { "lua" } },
 	-- python
-	{ exe = "ruff", filetypes = { "python" } },
+	{ name = "ruff", filetypes = { "python" } },
 	-- sh
-	{ exe = "shellcheck", filetypes = { "sh" } },
+	{ name = "shellcheck", filetypes = { "sh" } },
 })
 
 -------------------------------------------------------------------------------
@@ -218,11 +220,16 @@ require("lvim.lsp.null-ls.linters").setup({
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
 	"go",
-	"json",
 	"haskell",
+	"javascript",
+	"json",
 	"lua",
 	"python",
 	"rust",
+	"swift",
+	"tsx",
+	"typescript",
+	"vue",
 	"yaml",
 }
 
