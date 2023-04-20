@@ -349,10 +349,6 @@ export LESSKEY="${XDG_CONFIG_HOME:-$HOME/.config}/less/lesskey"
 mkdir -p "$(dirname "$LESSHISTFILE")"
 mkdir -p "$(dirname "$LESSKEY")"
 
-# linode
-alias ssh-derek-linode='ssh derek@"$SSH_LINODE_IP_ADDRESS"'
-alias ssh-root-linode='ssh root@"$SSH_LINODE_IP_ADDRESS"'
-
 # nano
 if [ -x "$(command -v nano)" ]; then
 	alias nanorc='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nanorc"'
@@ -480,6 +476,9 @@ fi
 # sqlite3
 export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
 mkdir -p "$(dirname "$SQLITE_HISTORY")"
+
+# ssh
+alias ssh-dw-pc='ssh derekwan.ddnsfree.com -t tmux a'
 
 # starship
 if [ -x "$(command -v starship)" ]; then
