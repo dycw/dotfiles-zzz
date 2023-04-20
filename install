@@ -33,6 +33,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing 'apt' packages..."
 sudo apt install -y \
 	gparted \
 	nautilus-dropbox \
+	openssh-server \
 	pdfarranger \
 	sqlitebrowser \
 	virtualbox
@@ -85,6 +86,17 @@ brew install \
 	watchexec \
 	yoannfleurydev/gitweb/gitweb \
 	zoxide
+
+# dynu
+if
+	[ "$HOSTANME" == 'DW-PC' ] && ! [ -f '/etc/dynuiuc/dynuiuc.conf' ]
+then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Configuring 'dynu'..."
+	url='https://www.dynu.com/support/downloadfile/31'
+	file="$(mktemp)"
+	wget "$URL" -qO "$file" && sudo dpkg -i "$file"
+	rm "$file"
+fi
 
 # fzf (after brew)
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Configuring 'fzf'..."
