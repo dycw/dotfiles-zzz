@@ -1,0 +1,6 @@
+- shell:
+    - if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/lvim" ] && ! [ -L "${XDG_CONFIG_HOME:-$HOME/.config}/lvim" ]; then rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}/lvim"; fi
+    - if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/lvim.old" ] && ! [ -L "${XDG_CONFIG_HOME:-$HOME/.config}/lvim.old" ]; then rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}/lvim.old"; fi
+
+- link:
+    ~/.config/lvim: ../../lvim

@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
