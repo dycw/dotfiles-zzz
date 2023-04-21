@@ -165,7 +165,7 @@ if [ -x "$(command -v docker)" ]; then
 	alias dc='docker compose'
 	alias dcb='docker compose build'
 	alias dcd='docker compose down'
-	alias dcd='docker compose down -v'
+	alias dcdv='docker compose down -v'
 	alias dce='docker compose exec'
 	alias dcl='docker compose logs'
 	alias dclf='docker compose logs -f'
