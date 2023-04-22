@@ -413,7 +413,7 @@ fi
 # tmux
 if [ -x "$(command -v tmux)" ]; then
 	alias tmuxconf='$EDITOR "$HOME/.tmux.conf.local"'
-	export TERM='xterm-256color'
+	# export TERM='xterm-256color'
 fi
 
 # xdg
