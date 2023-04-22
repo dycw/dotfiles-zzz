@@ -5,6 +5,7 @@ if ! [ -x "$(command -v brew)" ]; then
 		ruby \
 		watch \
 		zplug
+	brew install gnu-sed          # lunarvim
 	brew link -f --overwrite ruby # https://bit.ly/3UY3bcE
 	brew install --cask \
 		1password \
