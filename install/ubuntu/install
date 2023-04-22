@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# SSH key
+./setup-ssh-keys
+
+# clone dotfiles
+./clone-dotfiles
+
+# symlinks
+(
+	cd ../common || exit
+	DOTBOT_CONFIG=dotbot.main.yaml ./run-dotbot
+)
+DOTBOT_CONFIG=dotbot.ubuntu.yaml ./run-dotbot
+
+# apt
+./install-apt-packages
+
+# brew
+./install-brew
+./install-brew-packages
+../common/install-brew-packages
+
+# dynu
+if
+	[ "$HOSTANME" == 'DW-PC' ] && ! [ -f '/etc/dynuiuc/dynuiuc.conf' ]
+then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Configuring 'dynu'..."
+	url='https://www.dynu.com/support/downloadfile/31'
+	file="$(mktemp)"
+	wget "$url" -qO "$file" && sudo dpkg -i "$file"
+	rm "$file"
+fi
+
+# fzf
+../common/setup-fzf
+
+# lunarvim
+(
+	cd ../common || exit
+	./install-lunarvim
+)
+
+# npm
+../common/install-npm-packages
+
+# pyenv
+./install-pyenv-versions
+
+# snap
+./install-snap-packages
