@@ -5,7 +5,6 @@ if ! [ -x "$(command -v brew)" ]; then
 		ruby \
 		watch \
 		zplug
-	brew install gnu-sed          # lunarvim
 	brew link -f --overwrite ruby # https://bit.ly/3UY3bcE
 	brew install --cask \
 		1password \
@@ -15,4 +14,15 @@ if ! [ -x "$(command -v brew)" ]; then
 		signal \
 		spotify \
 		telegram
+
+	# lunarvim
+	brew install gnu-sed
+
+	# python
+	brew install \
+		cmake \
+		mysql \
+		postgresql@15 \
+		unixodbc
+	brew services start postgresql@15
 fi
