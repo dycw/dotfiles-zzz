@@ -455,8 +455,8 @@ lvim.plugins = {
 		opts = {
 			load = {
 				["core.defaults"] = {},
-				["core.norg.concealer"] = {},
-				["core.norg.dirman"] = {
+				["core.concealer"] = {},
+				["core.dirman"] = {
 					config = {
 						workspaces = {
 							notes = "~/work/notes",
@@ -551,10 +551,7 @@ lvim.plugins = {
 
 	-- tmux
 	{
-		"aserowy/tmux.nvim",
-		config = function()
-			require("tmux").setup()
-		end,
+		"christoomey/vim-tmux-navigator",
 		event = { "BufRead", "BufNew" },
 	},
 
