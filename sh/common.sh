@@ -102,6 +102,9 @@ fi
 # clear
 alias cl='clear'
 
+# common
+alias commonsh='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.sh"'
+
 # coverage
 alias open-cov='open .coverage/html/index.html'
 
@@ -266,6 +269,13 @@ fi
 # hyperfine
 if [ -x "$(command -v hyperfine)" ]; then
 	alias time='hyperfine'
+fi
+
+# multipass
+if [ -x "$(command -v multipass)" ]; then
+	alias mpl='multipass list'
+	alias mplaunch='multipass launch -c 4 -m 4G -d 25G'
+	alias mps='multipass shell'
 fi
 
 # neovim/LunarVim
