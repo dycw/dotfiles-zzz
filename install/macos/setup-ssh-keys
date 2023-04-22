@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if ! [ -f "$HOME/.ssh/id_rsa.pub" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Generating SSH key..."
+	ssh-keygen -q -t rsa -N '' <<<$'\ny' >/dev/null 2>&1 # https://stackoverflow.com/a/43235320
+	pbcopy <"$HOME/.ssh/id_rsa.pub"
+	open https://github.com/settings/ssh/new
+	REPLY=$(bash -c "read -p \"Press 'y' to continue... \" -n 1 _TEMP; echo \$_TEMP ")
+	echo
+	if ! [[ "$REPLY" =~ ^[Yy]$ ]]; then
+		echo "$(date '+%Y-%m-%d %H:%M:%S'): Exiting..."
+		exit 0
+	fi
+fi

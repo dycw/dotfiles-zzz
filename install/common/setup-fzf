@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -x "$(command -v brew)" ] && ! [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/fzf" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Configuring 'fzf'..."
+	"$(brew --prefix)/opt/fzf/install" --xdg --key-bindings --completion \
+		--no-update-rc --no-fish
+fi

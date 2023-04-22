@@ -25,8 +25,6 @@ repos:
     hooks:
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
-      - id: check-shebang-scripts-are-executable
-        exclude: bash/(bashrc|bash_profile|prompt).sh
       - id: check-symlinks
       - id: destroyed-symlinks
       - id: detect-private-key

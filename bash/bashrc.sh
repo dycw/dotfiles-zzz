@@ -1,31 +1,19 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-# dotfiles
-export _PATH_DOTFILES="$HOME/dotfiles"
+# common (first)
+_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.sh"
+if [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
 
-# binaries
-_DIRS=("$_PATH_DOTFILES" "$HOME/.local")
-for _DIR in "${_DIRS[@]}"; do
-	_BIN="$_DIR/bin"
-	if [ -d "$_BIN" ]; then
-		export PATH="$_BIN${PATH:+:$PATH}"
-	fi
-done
-
-# homebrew
+# homebrew (first)
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew"
 export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH:+:$PATH}"
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH:+:$MANPATH}:"
 export INFOPATH="$HOMEBREW_PREFIX/share/info${INFOPATH:+:$INFOPATH}"
-
-# aliases
-function expand-alias() {
-	eval "set -- $(alias -- "$1")"
-	eval 'printf "%s\n" "${'"$#"'#*=}"'
-}
 
 # bash
 alias bashrc='$EDITOR "$HOME/.bashrc"'
@@ -46,218 +34,15 @@ shopt -s nocasematch
 shopt -s shift_verbose
 shopt -s xpg_echo
 
-# bat
-if [ -x "$(command -v bat)" ]; then
-	alias cat='bat'
-	alias catp='bat --style=plain'
-	tf() { tail -f "$1" | bat --paging=never -l log; }
-	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-fi
-
-# batgrep
-if [ -x "$(command -v batgrep)" ]; then
-	alias bg='batgrep'
-fi
-
-# batwatch
-if [ -x "$(command -v batwatch)" ]; then
-	alias bw='batwatch'
-fi
-
-# bottom
-if [ -x "$(command -v btm)" ]; then
-	alias top='btm'
-	alias htop='btm'
-fi
-
-# bump2version
-if [ -x "$(command -v bump2version)" ]; then
-	alias bump='bump2version patch'
-	alias bump-minor='bump2version minor'
-	alias bump-major='bump2version major'
-fi
-
-# cargo
-_BIN="$HOME/.cargo/bin"
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-if [ -x "$(command -v cargo)" ]; then
-	alias carb='cargo build'
-	alias carc='cargo check'
-	alias carn='cargo new'
-	alias carr='cargo run'
-	alias cart='cargo test'
-	alias cartig='cargo test -- --ignored'
-	alias cartso='cargo test -- --show-output'
-	alias rbt-carr='RUST_BACKTRACE=1 cargo run'
-	function carn-main() { cargo new --name=main "$@"; }
-	if [ -x "$(command -v cargo-add)" ]; then
-		alias cara='cargo-add'
-	fi
-	if [ -x "$(command -v watchexec)" ]; then
-		alias wcarb='watchexec -e=.rs -- cargo build'
-		alias wcarr='watchexec -e=.rs -- cargo run'
-		alias wcart='watchexec -e=.rs -- cargo test'
-	fi
-fi
-
-# cd
-alias ~='cd "$HOME"'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-
-alias cdcache='cd "${XDG_CACHE_HOME:-$HOME/.cache}"'
-alias cdconfig='cd "${XDG_CONFIG_HOME:-$HOME/.config}"'
-alias cddf='cd $_PATH_DOTFILES'
-alias cddl='cd $HOME/Downloads'
-alias cddt='cd $HOME/Desktop'
-alias cdp='cd $HOME/Pictures'
-export _PATH_WORK="$HOME/work"
-alias cdw='cd $_PATH_WORK'
-mkdir -p "$_PATH_WORK"
-
-# chmod
-function chmod-files() {
-	find . -type f -exec chmod "$1" {} \;
-}
-function chmod-dirs() {
-	find . -type d -exec chmod "$1" {} \;
-}
-function chown-files() {
-	find . -type f -exec chown "$1" {} \;
-}
-function chown-dirs() {
-	find . -type d -exec chown "$1" {} \;
-}
-
-# cisco
-_BIN='/opt/cisco/anyconnect/bin'
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-
-# clear
-alias cl='clear'
-
-# coverage
-alias open-cov='open .coverage/html/index.html'
-
-# crontab
-alias crontab='crontab -i'
-
-# deta
-_BIN="$HOME/.deta/bin"
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-
 # direnv
 if [ -x "$(command -v direnv)" ]; then
-	alias dea='direnv allow'
 	eval "$(direnv hook bash)"
-fi
-
-# docker
-if [ -x "$(command -v docker)" ]; then
-	alias dc='docker compose'
-	alias dcb='docker compose build'
-	alias dcd='docker compose down'
-	alias dcdv='docker compose down -v'
-	alias dce='docker compose exec'
-	alias dcl='docker compose logs'
-	alias dclf='docker compose logs -f'
-	alias dcu='docker compose up'
-	alias dcub='docker compose up --build'
-	alias dcubd='docker compose up --build -d'
-fi
-
-export DOCKER_BUILDKIT=1
-
-# dropbox
-_PATH_DROPBOX='/data/derek/Dropbox'
-if [ -d "$_PATH_DROPBOX" ]; then
-	alias cddb='cd $_PATH_DROPBOX'
-fi
-
-# dust
-if [ -x "$(command -v dust)" ]; then
-	alias du='dust'
-	function __du_n() { dust -d "0"; }
-	function du0 { __du_n 0; }
-	function du1 { __du_n 1; }
-	function du2 { __du_n 2; }
-	function du3 { __du_n 3; }
-	function __watch_du_n { watch -d -n 0.1 --color -- dust -d "$@"; }
-	function wdu0 { __watch_du_n 0; }
-	function wdu1 { __watch_du_n 1; }
-	function wdu2 { __watch_du_n 2; }
-	function wdu3 { __watch_du_n 3; }
-fi
-
-# exa
-if [ -x "$(command -v exa)" ]; then
-	alias ls='exa'
-	function __exa_base() { exa -F --group-directories-first "$@"; }
-	function __exa_short() { __exa_base -x "$@"; }
-	function l() { __exa_short --git-ignore "$@"; }
-	function la() { l -a "$@"; }
-	function lag() { __exa_short -a "$@"; }
-	function __exa_long() { __exa_base -ghl --git --time-style=long-iso "$@"; }
-	function ll() { __exa_long --git-ignore "$@"; }
-	function lla() { ll -a "$@"; }
-	function llag() { __exa_long -a "$@"; }
-
-	function __watch_exa_base() { watch -d -n 0.1 --color -- exa -F --color=always --group-directories-first "$@"; }
-	function __watch_exa_short() { __watch_exa_base -x "$@"; }
-	function wl() { __watch_exa_short --git-ignore "$@"; }
-	function wla() { watchl -a "$@"; }
-	function wlag() { __watch_exa_short -a "$@"; }
-	function __watch_exa_long() { __watch_exa_base -ghl --git --time-style=long-iso "$@"; }
-	function wll() { __watch_exa_long --git-ignore "$@"; }
-	function wlla() { watchll -a "$@"; }
-	function wllag() { __watch_exa_long -a "$@"; }
-fi
-
-# fd
-if [ -x "$(command -v fd)" ]; then
-	alias fdd='fd --type=directory'
-	alias fde='fd --type=executable'
-	alias fdf='fd --type=file'
-	alias fds='fd --type=symlink'
 fi
 
 # fzf
 _FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash"
 if [ -f "$_FILE" ]; then
 	source "$_FILE"
-fi
-if [ -x "$(command -v fzf)" ]; then
-	# https://bit.ly/2OMLMpm
-	if [ -x "$(command -v fd)" ]; then
-		export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
-	fi
-	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
-		export FZF_DEFAULT_OPTS="
-      --ansi
-      --bind 'ctrl-a:select-all'
-      --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
-      --bind 'ctrl-v:execute(code {+})'
-      --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
-      --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
-      --height=80%
-      --info=inline
-      --layout=reverse
-      --multi
-      --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-      --preview-window 'right:60%:wrap'
-      --prompt='∼ ' --pointer='▶' --marker='✓'
-      "
-		export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -t=f -t=d"
-		export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -t=d"
-	fi
 fi
 
 # fzf-tab-completion
@@ -269,228 +54,24 @@ if [ -x "$(command -v fzf)" ]; then
 	fi
 fi
 
-# gem
-if [ -x "$(command -v gem)" ]; then
-	_BIN="$(gem environment gemdir)/bin"
-	if [ -d "$_BIN" ]; then
-		export PATH="$_BIN${PATH:+:$PATH}"
-	fi
-fi
-
-# ghcup
-_FILE="$HOME/.ghcup/env"
+# heroku
+_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
 if [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
 
-# git
-if [ -x "$(command -v git)" ]; then
-	alias cdr='cd $(git rev-parse --show-toplevel)'
-	alias gitconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config"'
-	alias gitconfiglocal='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/config.local"'
-	alias gitignore='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore"'
-	_ALIASES=$(
-		cd "$_PATH_DOTFILES" || exit
-		git --list-cmds=alias
-	)
-	for _ALIAS in $_ALIASES; do
-		# shellcheck disable=SC2139,SC2140
-		alias "g$_ALIAS"="git $_ALIAS"
-	done
-fi
-
-# gitweb
-if [ -x "$(command -v gitweb)" ]; then
-	alias gw='gitweb'
-fi
-
-# go
-_BIN='/usr/local/go/bin'
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-_DIR="$HOME/.go"
-if [ -d "$_DIR" ]; then
-	export GOROOT="$_DIR"
-	export PATH="$GOROOT/bin${PATH:+:$PATH}"
-fi
-
-# gocomplete
-if [ -x "$(command -v gocomplete)" ]; then
-	complete -C "$(which gocomplete)" go
-fi
-
-# goenv
-_DIR="$_PATH_DOTFILES/submodules/goenv"
-if [ -d "$_DIR" ]; then
-	export GOENV_ROOT="$_DIR"
-	export PATH="$GOENV_ROOT/bin${PATH:+:$PATH}"
-	eval "$(goenv init -)"
-fi
-
-# heroku
-_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
-if test -f "$_FILE"; then
+# nvm
+_FILE="${NVM_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/nvm}/bash_completion"
+if [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
-
-# htop
-if [ -x "$(command -v htop)" ]; then
-	alias htopu='htop -u "$USER"'
-fi
-
-# hyperfine
-if [ -x "$(command -v hyperfine)" ]; then
-	alias time='hyperfine'
-fi
-
-# less
-export LESSHISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/less/history"
-export LESSKEY="${XDG_CONFIG_HOME:-$HOME/.config}/less/lesskey"
-mkdir -p "$(dirname "$LESSHISTFILE")"
-mkdir -p "$(dirname "$LESSKEY")"
-
-# nano
-if [ -x "$(command -v nano)" ]; then
-	alias nanorc='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nanorc"'
-fi
-
-# neovim/LunarVim
-if [ -x "$(command -v lvim)" ]; then
-	alias n='lvim'
-	alias configlua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/lvim/config.lua"'
-	export EDITOR='lvim'
-elif [ -x "$(command -v nvim)" ]; then
-	alias n='nvim'
-	alias nvim-packer='nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync"'
-	export EDITOR='nvim'
-fi
-
-# npm
-if [ -x "$(command -v npm)" ]; then
-	alias npmrc='$EDITOR "$HOME/.npmrc"'
-fi
-
-# nvm
-export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-# path
-alias echo-path='sed '"'"'s/:/\n/g'"'"' <<< "$PATH"'
-
-# pip
-alias pi='pip install'
-alias pie='pip install --editable .'
-alias piip='pip install ipython'
-alias pijl='pip install jupyterlab jupyterlab-vim'
-alias pipt='pip install pip-tools'
-alias piup='pip install --upgrade pip'
-alias plo='pip list --outdated'
-alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
-alias pypirc='$EDITOR "$HOME/.pypirc"'
-
-# pip-tools
-alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev.txt'
-
-# postgres
-alias pguser='sudo -i -u postgres'
-
-# pre-commit
-alias pcr='pre-commit run'
-alias pca='pre-commit run -a'
-alias pcrav='pre-commit run -av'
-alias pci='pre-commit install'
-alias pcau='pre-commit autoupdate'
-alias pcaua='pre-commit autoupdate && pre-commit run -a'
-alias pctr='pre-commit try-repo'
-alias pctra='pre-commit try-repo -a'
-alias pctrav='pre-commit try-repo -av'
-alias pcui='pre-commit uninstall'
-
-# ps
-alias pst='ps -fLu "$USER"| wc -l'
-alias wpst='watch -d -n0.1 "ps -fLu \"$USER\" | wc -l"'
 
 # pyenv
 alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install' # https://bit.ly/3KYPrc0
 
-# pyright
-if [ -x "$(command -v pyright)" ]; then
-	alias pyr='pyright'
-	alias pyrw='pyright -w'
-fi
-
-# python
-alias hypothesis-ci='export HYPOTHESIS_PROFILE=ci'
-alias hypothesis-debug='export HYPOTHESIS_PROFILE=debug'
-alias hypothesis-default='export HYPOTHESIS_PROFILE=default'
-alias hypothesis-dev='export HYPOTHESIS_PROFILE=dev'
-alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
-alias pyt='pytest'
-alias pytco='pytest --co'
-alias setuppy='$EDITOR $(git rev-parse --show-toplevel)/setup.py'
-export HYPOTHESIS_PROFILE=dev
-export PYTHONDONTWRITEBYTECODE=1
-_FILE="$_PATH_DOTFILES/bin/pytest-aliases"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
-
-# ranger
-if [ -x "$(command -v ranger)" ]; then
-	alias r='ranger'
-fi
-
-# redis
-export REDISCLI_HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/redis/history"
-export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redisclirc"
-mkdir -p "$(dirname "$REDISCLI_HISTFILE")"
-mkdir -p "$(dirname "$REDISCLI_RCFILE")"
-
-# restic
-_DIR='/data/derek/restic'
-if [ -d "$_DIR" ]; then
-	export RESTIC_REPOSITORY="$_DIR"
-fi
-
-# rg
-if [ -x "$(command -v rg)" ]; then
-	alias grep='rg'
-	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgrep/ripgreprc"
-fi
-
-# rm
-alias rmrf='rm -rf'
-
-# ruff
-if [ -x "$(command -v ruff)" ]; then
-	alias rw='ruff --watch .'
-fi
-
-# secrets
-_FILE="$_PATH_DOTFILES/secrets"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
-
-# sqlite3
-export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
-mkdir -p "$(dirname "$SQLITE_HISTORY")"
-
-# ssh
-alias ssh-dw-pc='ssh derekwan.ddnsfree.com -t tmux a'
-
 # starship
 if [ -x "$(command -v starship)" ]; then
-	alias starshiptoml='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"'
 	eval "$(starship init bash)"
-fi
-
-# tmux
-if [ -x "$(command -v tmux)" ]; then
-	alias tmuxconf='$EDITOR "$HOME/.tmux.conf.local"'
-	export TERM='xterm-256color'
 fi
 
 # xclip
@@ -499,21 +80,7 @@ if [ -x "$(command -v xclip)" ]; then
 	alias pbpaste='xclip -selection clipboard -o'
 fi
 
-# xdg
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$USER}"
-
-# zellij
-if [ -x "$(command -v zellij)" ]; then
-	alias zellijconfig='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/zellij/config.yaml"'
-fi
-
 # zoxide
-if [ -x "$(command -v zoxide)" ]; then
-	export _ZO_EXCLUDE_DIRS="/tmp/*"
-	export _ZO_RESOLVE_SYMLINKS=1
-	if [ -x "$(command -v fzf)" ]; then
-		eval "$(zoxide init bash --cmd j --hook prompt)"
-	fi
+if [ -x "$(command -v zoxide)" ] && [ -x "$(command -v fzf)" ]; then
+	eval "$(zoxide init bash --cmd j --hook prompt)"
 fi
