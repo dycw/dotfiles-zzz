@@ -14,8 +14,11 @@ if [ -x "$(command -v brew)" ]; then
 		signal \
 		spotify \
 		telegram \
-		virtualbox \
 		whatsapp
+
+	# virtualbox:
+	# Error: Cask virtualbox depends on hardware architecture being one of
+	# [{:type=>:intel, :bits=>64}], but you are running {:type=>:arm, :bits=>64}.
 
 	# lunarvim
 	brew install gnu-sed
