@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+packages=(
+	postman
+	signal-desktop
+	spotify
+	telegram-desktop
+	vlc
+	whatsapp-for-linux
+)
+for package in "${packages[@]}"; do
+	if [[ $(snap list) =~ $package ]]; then
+		echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping '$package'..."
+	else
+		echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$package'..."
+		sudo snap install "$package"
+	fi
+done

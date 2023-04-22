@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing 'apt' packages..."
+sudo apt install -y \
+	gparted \
+	nautilus-dropbox \
+	openssh-server \
+	pdfarranger \
+	sqlitebrowser \
+	virtualbox

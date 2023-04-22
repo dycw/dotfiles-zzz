@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if ! [ -d "$HOME/dotfiles" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning dotfiles..."
+	sudo apt install -y git
+	url=git@github.com:dycw/dotfiles.git
+	git clone --depth=1 --recurse-submodules "$url" "$HOME/dotfiles"
+fi

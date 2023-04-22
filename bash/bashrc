@@ -18,7 +18,6 @@ export INFOPATH="$HOMEBREW_PREFIX/share/info${INFOPATH:+:$INFOPATH}"
 # bash
 alias bashrc='$EDITOR "$HOME/.bashrc"'
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
-mkdir -p "$(dirname "$HISTFILE")"
 set -o vi
 shopt -s autocd
 shopt -s cdspell
