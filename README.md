@@ -4,14 +4,74 @@ My dotfiles, powered by [`dotbot`](https://github.com/anishathalye/dotbot).
 
 ## Installation
 
-First:
+1. Run the installer, either for MacOS or Ubuntu:
 
-```bash
-sudo apt -y install curl
-curl https://raw.githubusercontent.com/dycw/dotfiles/master/install | bash
-```
+   ```console
+   url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/macos/install
+   curl "$url" | bash
+   ```
 
-## Machine-specific
+   or:
+
+   ```console
+   sudo apt -y install curl
+   url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/ubuntu/install
+   curl "$url" | bash
+   ```
+
+1. Mount any drives if necessary (https://bit.ly/3Llpgi2):
+
+   1. List the disk partitions:
+
+      ```console
+      > sudo fdisk -l
+
+      ...
+      Disk /dev/sdb: 931.53 GiB, 1000204886016 bytes, 1953525168 sectors
+      Disk model: Samsung SSD 860
+      Units: sectors of 1 * 512 = 512 bytes
+      Sector size (logical/physical): 512 bytes / 512 bytes
+      I/O size (minimum/optimal): 512 bytes / 512 bytes
+      Disklabel type: gpt
+      Disk identifier: 5623EA77-3F36-4FED-BC1D-4BA8FE591A05
+
+      Device   Start        End    Sectors   Size Type
+      /dev/sdb1 2048 1953523711 1953521664 931.5G Linux filesystem
+      ...
+      ```
+
+      Take note of the partition, `/dev/sdb1` in this case.
+
+   1. Create a mount point:
+
+      ```console
+      > sudo mkdir /data
+      ```
+
+   1. Add your disk to `/etc/fstab`:
+
+      ```console
+      > sudo vim /etc/fstab
+      ```
+
+      The result should be:
+
+      ```console
+      ...
+      /dev/sdb1    /data    ext4    defaults    0    0
+      ```
+
+   1. Mount your disk:
+
+      ```console
+      > sudo mount /data
+      ```
+
+   1. If there is a `Structure needs cleaning` error, then (https://bit.ly/3L29UO2):
+
+      ```console
+      > sudo fsck.ext -y /dev/sdb1
+      ```
 
 ### AMD PC
 
@@ -21,7 +81,7 @@ curl https://raw.githubusercontent.com/dycw/dotfiles/master/install | bash
 
 1. Install the drivers:
 
-   ```bash
+   ```console
    sudo ubuntu-drivers autoinstall
    sudo reboot
    ```
@@ -32,7 +92,7 @@ curl https://raw.githubusercontent.com/dycw/dotfiles/master/install | bash
 
 1. Select `lightdm` as the default display manager:
 
-   ```bash
+   ```console
    sudo apt install -y lightdm
    ```
 
@@ -58,52 +118,6 @@ curl https://raw.githubusercontent.com/dycw/dotfiles/master/install | bash
 
    and then:
 
-   ```bash
+   ```console
    sudo update-grub
-   ```
-
-### Intel NUC
-
-#### Mounting HDD
-
-1. List your disks:
-
-   ```bash
-   ❯ sudo fdisk -l
-
-   ...
-   Disk /dev/sdb: 931.53 GiB, 1000204886016 bytes, 1953525168 sectors
-   Disk model: Samsung SSD 860
-   Units: sectors of 1 * 512 = 512 bytes
-   Sector size (logical/physical): 512 bytes / 512 bytes
-   I/O size (minimum/optimal): 512 bytes / 512 bytes
-   Disklabel type: gpt
-   Disk identifier: 5623EA77-3F36-4FED-BC1D-4BA8FE591A05
-
-   Device   Start        End    Sectors   Size Type
-   /dev/sdb1 2048 1953523711 1953521664 931.5G Linux filesystem
-   ...
-   ```
-
-1. Create a mount point:
-
-   ```bash
-   ❯ sudo mkdir /data
-   ```
-
-1. Add your disk to `/etc/fstab`:
-
-   ```bash
-   ❯ sudo vim /etc/fstab
-   ...
-   ❯ cat /etc/fstab
-   ...
-   /dev/sdb1    /data    ext4    defaults    0    0
-   ...
-   ```
-
-1. Mount your disk:
-
-   ```bash
-   ❯ sudo mount /data
    ```
