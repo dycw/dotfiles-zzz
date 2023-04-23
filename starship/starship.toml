@@ -63,17 +63,6 @@ format = "( [$state:($progress_current/$progress_total)]($style))"
 
 [git_status]
 format = "( [$conflicted]($style))( [$ahead]($style))( [$behind]($style))( [$diverged]($style))( [$up_to_date]($style))( [$untracked]($style))( [$stashed]($style))( [$modified]($style))( [$staged]($style))( [$renamed]($style))( [$deleted]($style))"
-conflicted = "=$count"
-ahead = "⇡$count"
-behind = "⇣$count"
-diverged = "⇕$count"
-up_to_date = "$count"
-untracked = "?$count"
-stashed = "$$$count"
-modified = "!$count"
-staged = "+$count"
-renamed = "»$count"
-deleted = "✘ $count"
 ignore_submodules = true
 
 [hostname]

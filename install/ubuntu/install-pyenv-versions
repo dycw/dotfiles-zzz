@@ -29,7 +29,7 @@ if [ "$(command -v pyenv)" ]; then
 			echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping Python $version..."
 		else
 			echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing Python $version..."
-			pyenv install "$version":latest
+			CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install "$version":latest
 		fi
 	done
 fi
