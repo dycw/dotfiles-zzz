@@ -7,6 +7,7 @@ packages=(
 	telegram-desktop
 	vlc
 	whatsapp-for-linux
+	zoom-client
 )
 for package in "${packages[@]}"; do
 	if [[ $(snap list) =~ $package ]]; then
