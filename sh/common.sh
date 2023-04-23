@@ -156,12 +156,6 @@ if [ -x "$(command -v dust)" ]; then
 	wdu3() { __watch_du_n 3; }
 fi
 
-# dynu
-_PATH=/etc/dynuiuc/dynuiuc.conf
-if [ -f "$_PATH" ]; then
-	export PATH_DYNU_LOG=/var/log/dynuiuc.log
-fi
-
 # exa
 if [ -x "$(command -v exa)" ]; then
 	__exa_base() { exa -F --group-directories-first "$@"; }

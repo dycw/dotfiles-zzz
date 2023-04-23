@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+_FILE=.env
+if [ -z "$DUCKDNS_TOKEN" ] && [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
+if [ -n "$DUCKDNS_TOKEN" ]; then
+	DOMAINS=(
+		derekwan
+		part-time
+	)
+	PATH_LOGS="${XDG_CACHE_HOME:-$HOME/.cache}/duckdns"
+	for DOMAIN in "${DOMAINS[@]}"; do
+		URL="https://www.duckdns.org/update?domains=$DOMAIN&token=$DUCKDNS_TOKEN&ip="
+		PATH_LOG="$PATH_LOGS/$DOMAIN"
+		echo url="$URL" | curl -k -o "$PATH_LOG" -K -
+	done
+else
+	echo 'Environment variable "DUCKDNS_TOKEN" is not set'
+	exit 0
+fi

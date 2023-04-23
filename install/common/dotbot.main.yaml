@@ -11,6 +11,7 @@
 
 - shell:
     - git submodule update --init
+    - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/duckdns" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/duckdns"; fi
     - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/redis" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/redis"; fi
     - if ! [ -d "$HOME/work" ]; then mkdir -p "$HOME/work"; fi
 
@@ -33,8 +34,7 @@
     ~/.ipython/profile_default/ipython_config.py: ../../ipython/ipython_config.py
     ~/.ipython/profile_default/ipython_kernel_config.py: ../../ipython/ipython_kernel_config.py
     ~/.ipython/profile_default/startup: ../../ipython/startup
-    ~/.jupyter/jupyter_lab_config.py: ../../jupyter/jupyter_lab_config.py
-    ~/.jupyter/jupyter_server_config.json: ../../jupyter/jupyter_server_config.json
+    ~/.jupyter/jupyter_server_config.py: ../../jupyter/jupyter_server_config.py
     ~/.jupyter/lab/user-settings: ../../jupyter/user-settings
     ~/.local/share/fonts: ../../fonts
     ~/.vim/pack/tpope/start/sensible: ../../vim/vim-sensible
