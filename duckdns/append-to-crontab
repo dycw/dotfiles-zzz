@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+temp_file=$(mktemp)
+crontab -l >"$temp_file"
+echo '*/5 * * * * cd ~/dotfiles/duckdns && ./update' >>"$temp_file"
+crontab "$temp_file"
+rm "$temp_file"

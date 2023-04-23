@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+_FILE=.env
+if [ -z "$DUCKDNS_TOKEN" ] && [ -f "$_FILE" ]; then
+	source "$_FILE"
+fi
+if [ -n "$DUCKDNS_TOKEN" ]; then
+	DOMAINS=(
+		derekwan
+		part-time
+	)
+	for DOMAIN in "${DOMAINS[@]}"; do
+		sudo certbot certonly \
+			--non-interactive \
+			--agree-tos \
+			--email d.wan@icloud.com \
+			--preferred-challenges dns \
+			--authenticator dns-duckdns \
+			--dns-duckdns-token "$DUCKDNS_TOKEN" \
+			--dns-duckdns-propagation-seconds 60 \
+			-d "$DOMAIN.duckdns.org"
+	done
+else
+	echo 'Environment variable "DUCKDNS_TOKEN" is not set'
+	exit 0
+fi

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if ! [ -x "$(command -v certbot)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing 'certbot'..."
+	sudo snap install --classic certbot
+	sudo snap install certbot-dns-duckdns
+	sudo snap connect certbot:plugin certbot-dns-duckdns
+fi

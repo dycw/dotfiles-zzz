@@ -21,11 +21,11 @@ DOTBOT_CONFIG=dotbot.ubuntu.yaml ./run-dotbot
 ./install-brew-packages
 ../common/install-brew-packages
 
+# certbot
+./install-certbot
+
 # docker
 ./install-docker
-
-# dynu
-./install-dynu
 
 # fzf
 ../common/setup-fzf
