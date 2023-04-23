@@ -403,7 +403,8 @@ fi
 export SQLITE_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/sqlite/history"
 
 # ssh
-alias ssh-dw-pc='ssh derekwan.ddnsfree.com -t tmux a'
+alias ssh-dw-pc='ssh derek-dev@derekwan.ddnsfree.com -t tmux a'
+alias ssh-dw-pc-without='ssh derek-dev@derekwan.ddnsfree.com'
 
 # starship
 if [ -x "$(command -v starship)" ]; then
