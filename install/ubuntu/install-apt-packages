@@ -8,4 +8,5 @@ sudo apt install -y \
 	pdfarranger \
 	rubygems \
 	sqlitebrowser \
+	vim \
 	virtualbox

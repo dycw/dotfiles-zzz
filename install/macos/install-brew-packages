@@ -3,6 +3,7 @@
 if [ -x "$(command -v brew)" ]; then
 	brew tap homebrew/cask-fonts
 	brew install \
+		docker \
 		mas \
 		qemu \
 		ruby \
@@ -21,10 +22,6 @@ if [ -x "$(command -v brew)" ]; then
 		spotify \
 		telegram \
 		whatsapp
-
-	# virtualbox:
-	# Error: Cask virtualbox depends on hardware architecture being one of
-	# [{:type=>:intel, :bits=>64}], but you are running {:type=>:arm, :bits=>64}.
 
 	# lunarvim
 	brew install gnu-sed

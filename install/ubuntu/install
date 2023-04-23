@@ -21,16 +21,11 @@ DOTBOT_CONFIG=dotbot.ubuntu.yaml ./run-dotbot
 ./install-brew-packages
 ../common/install-brew-packages
 
+# docker
+./install-docker
+
 # dynu
-if
-	[ "$HOSTANME" == 'DW-PC' ] && ! [ -f '/etc/dynuiuc/dynuiuc.conf' ]
-then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Configuring 'dynu'..."
-	url='https://www.dynu.com/support/downloadfile/31'
-	file="$(mktemp)"
-	wget "$url" -qO "$file" && sudo dpkg -i "$file"
-	rm "$file"
-fi
+./install-dynu
 
 # fzf
 ../common/setup-fzf
