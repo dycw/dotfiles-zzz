@@ -10,6 +10,7 @@ then
 	wget "$url" -qO "$file" && sudo dpkg -i "$file"
 	rm "$file"
 	sudo vim "$_PATH"
+	systemctl enable dynuiuc.service
 	systemctl start dynuiuc.service
 else
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping 'dynu'..."
