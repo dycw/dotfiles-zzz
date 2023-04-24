@@ -6,6 +6,9 @@ if [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
 
+# completions
+# to be implemented
+#
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook zsh)"

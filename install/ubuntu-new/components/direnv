@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+application=direnv
+
+# parse options
+while getopts 'f' option; do
+	case "$option" in
+	f) force=1 ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# install app
+if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	temp_dir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+	(
+		cd "$temp_dir" || exit
+		url=https://direnv.net/install.sh
+		curl -sfL "$url" | bash
+	)
+	rm -r "$temp_dir"
+fi

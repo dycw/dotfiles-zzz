@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# parse options
+declare -a force=()
+while getopts 'f' option; do
+	case "$option" in
+	f) force+=(-f) ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# apt
+sudo apt -y install \
+	curl \
+	git \
+	neovim \
+	tmux
+sudo apt -y autoremove
+
+# curl .../setup-ssh-keys | bash
+
+# components
+./components/bat "${force[@]}"
+./components/bottom "${force[@]}"
+./components/direnv "${force[@]}"
+./components/dust "${force[@]}"
+./components/exa "${force[@]}"
+./components/fd "${force[@]}"
+./components/fzf "${force[@]}"
+./components/just "${force[@]}"
+./components/neovim -l "${force[@]}"
+./components/nvm "${force[@]}"
+./components/ripgrep "${force[@]}"
+./components/rust "${force[@]}"
+./components/sd "${force[@]}"
+./components/starship "${force[@]}"
+./components/watchexec "${force[@]}"
+./components/zoxide "${force[@]}"
