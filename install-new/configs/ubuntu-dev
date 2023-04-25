@@ -16,6 +16,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	cd "$dir_of_script" || exit
 	cd .. || exit
 	cd components || exit
+	DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
 	./install-bat "${force[@]}"
 	./install-bottom "${force[@]}"
 	./install-delta "${force[@]}"
