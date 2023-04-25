@@ -4,7 +4,7 @@
 application=pipx
 
 # install app
-if [ -x "$(command -v pipx)" ]; then
+if ! [ -x "$(command -v $application)" ]; then
 	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
 	./install-pyenv "$@"
 
