@@ -14,9 +14,9 @@ shift "$((OPTIND - 1))"
 # install app
 if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	tempdir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+	temp_dir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	(
-		cd "$tempdir" || exit
+		cd "$temp_dir" || exit
 		api_url=https://api.github.com/repos/ogham/exa/releases/latest
 		download_url=$(
 			curl -s "$api_url" |
@@ -38,5 +38,5 @@ if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 		mkdir -p "$(dirname "$comp_path")"
 		cp -r completions "$comp_path"
 	)
-	rm -r "$tempdir"
+	rm -r "$temp_dir"
 fi
