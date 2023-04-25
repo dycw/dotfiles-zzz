@@ -37,7 +37,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	./install-fd "${force[@]}"
 	./install-fzf "${force[@]}"
 	./install-just "${force[@]}"
-	./install-neovim -l "${force[@]}"
+	./install-lunarvim -l "${force[@]}"
 	./install-npm "${force[@]}"
 	./install-nvm "${force[@]}"
 	./install-ripgrep "${force[@]}"
