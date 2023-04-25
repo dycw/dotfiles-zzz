@@ -14,11 +14,6 @@ shift "$((OPTIND - 1))"
 # install app
 if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	tempdir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
-	(
-		cd "$tempdir" || exit
-		url=https://sh.rustup.rs
-		curl --proto '=https' --tlsv1.2 -sSf "$url" | sh -s -- -y --no-modify-path
-	)
-	rm -r "$tempdir"
+	url=https://sh.rustup.rs
+	curl --proto '=https' --tlsv1.2 -sSf "$url" | sh -s -- -y --no-modify-path
 fi

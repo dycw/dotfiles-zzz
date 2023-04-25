@@ -25,7 +25,7 @@ if ! [ -f "$app_path" ] || [ -n "$force" ]; then
 		url=https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 		echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $url..."
 		wget -q "$url"
-		filename="$(basename $url)"
+		filename="$(basename "$url")"
 		chmod u+x "$filename"
 		mkdir -p "$(dirname "$app_path")"
 		cp "$filename" "$app_path"
