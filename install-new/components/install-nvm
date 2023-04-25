@@ -13,8 +13,8 @@ shift "$((OPTIND - 1))"
 
 # install app
 XDG_CONFIG_HOME="$HOME/.config"
-nvm_root="$XDG_CONFIG_HOME/nvm"
-if ! [ -d "$nvm_root" ] || [ -n "$force" ]; then
+NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
+if ! [ -d "$NVM_DIR" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
 	url=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
 	curl -o- "$url" | bash
