@@ -38,6 +38,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	./install-fzf "${force[@]}"
 	./install-just "${force[@]}"
 	./install-neovim -l "${force[@]}"
+	./install-npm "${force[@]}"
 	./install-nvm "${force[@]}"
 	./install-ripgrep "${force[@]}"
 	./install-rust "${force[@]}"
