@@ -21,20 +21,28 @@ sudo apt -y autoremove
 # curl .../setup-ssh-keys | bash
 
 # components
-../components/install-bat "${force[@]}"
-../components/install-bottom "${force[@]}"
-../components/install-delta "${force[@]}"
-../components/install-direnv "${force[@]}"
-../components/install-dust "${force[@]}"
-../components/install-exa "${force[@]}"
-../components/install-fd "${force[@]}"
-../components/install-fzf "${force[@]}"
-../components/install-just "${force[@]}"
-../components/install-neovim -l "${force[@]}"
-../components/install-nvm "${force[@]}"
-../components/install-ripgrep "${force[@]}"
-../components/install-rust "${force[@]}"
-../components/install-sd "${force[@]}"
-../components/install-starship "${force[@]}"
-../components/install-watchexec "${force[@]}"
-../components/install-zoxide "${force[@]}"
+dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+(
+	cd "$dir_of_script" || exit
+	cd .. || exit
+	cd components || exit
+	DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
+	DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
+	./install-bat "${force[@]}"
+	./install-bottom "${force[@]}"
+	./install-delta "${force[@]}"
+	./install-direnv "${force[@]}"
+	./install-dust "${force[@]}"
+	./install-exa "${force[@]}"
+	./install-fd "${force[@]}"
+	./install-fzf "${force[@]}"
+	./install-just "${force[@]}"
+	./install-neovim -l "${force[@]}"
+	./install-nvm "${force[@]}"
+	./install-ripgrep "${force[@]}"
+	./install-rust "${force[@]}"
+	./install-sd "${force[@]}"
+	./install-starship "${force[@]}"
+	./install-watchexec "${force[@]}"
+	./install-zoxide "${force[@]}"
+)

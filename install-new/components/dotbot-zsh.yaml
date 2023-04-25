@@ -1,0 +1,8 @@
+- shell:
+    - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"; fi
+    - if [ -f "$HOME/.zprofile" ] && ! [ -L "$HOME/.zprofile" ]; then rm "$HOME/.zprofile"; fi
+    - if [ -f "$HOME/.zshrc" ] && ! [ -L "$HOME/.zshrc" ]; then rm "$HOME/.zshrc"; fi
+
+- link:
+    ~/.zprofile: ../../zsh/zprofile
+    ~/.zshrc: ../../zsh/zshrc
