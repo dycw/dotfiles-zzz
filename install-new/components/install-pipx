@@ -3,33 +3,18 @@
 
 application=pipx
 
-# parse options
-declare -a apt_args=()
-while getopts 'af' option; do
-	case "$option" in
-	a) apt_args+=(-a) ;;
-	f) force=1 ;;
-	?) echo "Unrecognized option: $option" ;;
-	esac
-done
-shift "$((OPTIND - 1))"
-
 # install app
-if ! [ -x "$(command -v pipx)" ] || [ -n "$force" ]; then
+if [ -x "$(command -v pipx)" ]; then
+	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+	./install-pyenv "$@"
+
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	(
-		dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-		cd "$dir_of_script" || exit
-		./install-pyenv "${apt_args[@]}"
-	)
 	venv_path="$HOME/.local/bin/${application}_venv"
-	(
-		mkdir -p "$venv_path"
-		cd "$venv_path" || exit
-		eval "$(pyenv init -)"
-		PYENV_VERSION=3.9 python -m venv .venv
-		source .venv/bin/activate
-		pip install pipx
-	)
+	mkdir -p "$venv_path"
+	cd "$venv_path" || exit
+	eval "$(pyenv init -)"
+	PYENV_VERSION=3.9 python -m venv .venv
+	source .venv/bin/activate
+	pip install pipx
 	ln -s "$venv_path/.venv/bin/pipx" "$HOME/.local/bin/$application"
 fi

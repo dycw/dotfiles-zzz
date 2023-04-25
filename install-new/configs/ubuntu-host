@@ -21,36 +21,32 @@ sudo apt -y autoremove
 # curl .../setup-ssh-keys | bash
 
 # components
-(
-	dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-	cd "$dir_of_script" || exit
-	cd .. || exit
-	cd components || exit
-	DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
-	DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
-	./install-bat "${force[@]}"
-	./install-bottom "${force[@]}"
-	./install-bump2version -a "${force[@]}"
-	./install-delta "${force[@]}"
-	./install-direnv "${force[@]}"
-	./install-dust "${force[@]}"
-	./install-exa "${force[@]}"
-	./install-fd "${force[@]}"
-	./install-fzf -t "${force[@]}"
-	./install-gitweb "${force[@]}"
-	./install-just "${force[@]}"
-	./install-lunarvim -l "${force[@]}"
-	./install-npm "${force[@]}"
-	./install-nvm "${force[@]}"
-	./install-pipx -a "${force[@]}"
-	./install-pyenv -a "${force[@]}"
-	./install-ripgrep "${force[@]}"
-	./install-rust "${force[@]}"
-	./install-sd "${force[@]}"
-	./install-shellcheck "${force[@]}"
-	./install-shfmt "${force[@]}"
-	./install-starship "${force[@]}"
-	./install-stylua "${force[@]}"
-	./install-watchexec "${force[@]}"
-	./install-zoxide "${force[@]}"
-)
+cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+cd ../components || exit
+DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
+DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
+./install-bat -s
+./install-bottom -s
+./install-bump2version -s
+./install-delta -s
+./install-direnv -s
+./install-dust -s
+./install-exa -s
+./install-fd -s
+./install-fzf -s
+./install-gitweb -s
+./install-just -s
+./install-lunarvim -s
+./install-npm -s
+./install-nvm -s
+./install-pipx -s
+./install-pyenv -s
+./install-ripgrep -s
+./install-rust -s
+./install-sd -s
+./install-shellcheck -s
+./install-shfmt -s
+./install-starship -s
+./install-stylua -s
+./install-watchexec -s
+./install-zoxide -s

@@ -3,32 +3,27 @@
 application=lvim
 
 # parse options
-while getopts 'fl' option; do
+while getopts 's' option; do
 	case "$option" in
-	f) force=1 ;;
-	l) install_make=1 ;;
+	s) has_sudo=1 ;;
 	?) echo "Unrecognized option: $option" ;;
 	esac
 done
-shift "$((OPTIND - 1))"
 
 # install app
-if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	if [ -n "$install_make" ]; then
+if ! [ -x "$(command -v $application)" ]; then
+	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+	./install-curl "$@"
+	./install-npm "$@"
+	./install-rust "$@"
+
+	if [ -n "$has_sudo" ]; then
 		sudo apt -y install make
 	fi
-	dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-	(
-		cd "$dir_of_script" || exit
-		./install-npm
-		./install-rust
-	)
+
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
 	url=https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $url..."
 	bash <(curl -s "$url") -s -- -y --no-install-dependencies
-	(
-		cd "$dir_of_script" || exit
-		DOTBOT_CONFIG=post-lunarvim.yaml ./run-dotbot
-	)
+	DOTBOT_CONFIG=post-lunarvim.yaml ./run-dotbot
 fi

@@ -1,46 +1,32 @@
 #!/usr/bin/env bash
 
-# parse options
-declare -a force=()
-while getopts 'f' option; do
-	case "$option" in
-	f) force+=(-f) ;;
-	?) echo "Unrecognized option: $option" ;;
-	esac
-done
-shift "$((OPTIND - 1))"
-
 # components
-(
-	dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-	cd "$dir_of_script" || exit
-	cd .. || exit
-	cd components || exit
-	DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
-	DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
-	./install-bat "${force[@]}"
-	./install-bottom "${force[@]}"
-	./install-bump2version "${force[@]}"
-	./install-delta "${force[@]}"
-	./install-direnv "${force[@]}"
-	./install-dust "${force[@]}"
-	./install-exa "${force[@]}"
-	./install-fd "${force[@]}"
-	./install-fzf "${force[@]}"
-	./install-gitweb "${force[@]}"
-	./install-just "${force[@]}"
-	./install-lunarvim "${force[@]}"
-	./install-npm "${force[@]}"
-	./install-nvm "${force[@]}"
-	./install-pipx "${force[@]}"
-	./install-pyenv -a "${force[@]}"
-	./install-ripgrep "${force[@]}"
-	./install-rust "${force[@]}"
-	./install-sd "${force[@]}"
-	./install-shellcheck "${force[@]}"
-	./install-shfmt "${force[@]}"
-	./install-starship "${force[@]}"
-	./install-stylua "${force[@]}"
-	./install-watchexec "${force[@]}"
-	./install-zoxide "${force[@]}"
-)
+cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+cd ../components || exit
+DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
+DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
+./install-bat
+./install-bottom
+./install-bump2version
+./install-delta
+./install-direnv
+./install-dust
+./install-exa
+./install-fd
+./install-fzf
+./install-gitweb
+./install-just
+./install-lunarvim
+./install-npm
+./install-nvm
+./install-pipx
+./install-pyenv
+./install-ripgrep
+./install-rust
+./install-sd
+./install-shellcheck
+./install-shfmt
+./install-starship
+./install-stylua
+./install-watchexec
+./install-zoxide

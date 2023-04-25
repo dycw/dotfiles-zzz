@@ -3,21 +3,22 @@
 application=pyenv
 
 # parse options
-while getopts 'af' option; do
+while getopts 's' option; do
 	case "$option" in
-	a) install_apt=1 ;;
-	f) force=1 ;;
+	s) has_sudo=1 ;;
 	?) echo "Unrecognized option: $option" ;;
 	esac
 done
-shift "$((OPTIND - 1))"
 
 # install app
-if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+if ! [ -x "$(command -v $application)" ]; then
+	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+	./install-curl "$@"
+
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
 	url=https://pyenv.run
 	curl "$url" | bash
-	if [ -n "$install_apt" ]; then
+	if [ -n "$has_sudo" ]; then
 		sudo apt -y install \
 			build-essential \
 			curl \
@@ -35,6 +36,6 @@ if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 			zlib1g-dev
 	fi
 	for version in 3.9 3.10 3.11; do
-		pyenv install "$version":latest
+		pyenv install "${version}:latest"
 	done
 fi

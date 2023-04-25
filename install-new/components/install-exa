@@ -2,41 +2,33 @@
 
 application=exa
 
-# parse options
-while getopts 'f' option; do
-	case "$option" in
-	f) force=1 ;;
-	?) echo "Unrecognized option: $option" ;;
-	esac
-done
-shift "$((OPTIND - 1))"
-
 # install app
-if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+if ! [ -x "$(command -v $application)" ]; then
+	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+	./install-curl "$@"
+
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
 	temp_dir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
-	(
-		cd "$temp_dir" || exit
-		api_url=https://api.github.com/repos/ogham/exa/releases/latest
-		download_url=$(
-			curl -s "$api_url" |
-				grep browser_download_url |
-				grep linux-x86_64 |
-				grep -v musl |
-				cut -d : -f 2,3 |
-				tr -d '[:blank:]' |
-				tr -d \"
-		)
-		echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $download_url..."
-		wget -q "$download_url"
-		filename="$(basename "$download_url")"
-		unzip "$filename"
-		app_path="$HOME/.local/bin/$application"
-		mkdir -p "$(dirname "$app_path")"
-		cp "bin/$application" "$app_path"
-		comp_path="$HOME/.local/completions/$application"
-		mkdir -p "$(dirname "$comp_path")"
-		cp -r completions "$comp_path"
+	cd "$temp_dir" || exit
+	api_url=https://api.github.com/repos/ogham/exa/releases/latest
+	download_url=$(
+		curl -s "$api_url" |
+			grep browser_download_url |
+			grep linux-x86_64 |
+			grep -v musl |
+			cut -d : -f 2,3 |
+			tr -d '[:blank:]' |
+			tr -d \"
 	)
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $download_url..."
+	wget -q "$download_url"
+	filename="$(basename "$download_url")"
+	unzip "$filename"
+	app_path="$HOME/.local/bin/$application"
+	mkdir -p "$(dirname "$app_path")"
+	cp "bin/$application" "$app_path"
+	comp_path="$HOME/.local/completions/$application"
+	mkdir -p "$(dirname "$comp_path")"
+	cp -r completions "$comp_path"
 	rm -r "$temp_dir"
 fi

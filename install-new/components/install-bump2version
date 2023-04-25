@@ -2,25 +2,11 @@
 
 application=bump2version
 
-# parse options
-declare -a apt_args=()
-declare -a force_args=()
-while getopts 'af' option; do
-	case "$option" in
-	a) apt_args+=(-a) ;;
-	f) force_args+=(-f) ;;
-	?) echo "Unrecognized option: $option" ;;
-	esac
-done
-shift "$((OPTIND - 1))"
-
 # install app
-if ! [ -x "$(command -v $application)" ] || ((${#force_args[@]})); then
+if ! [ -x "$(command -v $application)" ]; then
+	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+	./install-pipx "$@"
+
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	(
-		dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-		cd "$dir_of_script" || exit
-		./install-pipx "${apt_args[@]}" "${force_args[@]}"
-	)
 	pipx install "$application"
 fi
