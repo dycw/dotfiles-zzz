@@ -14,11 +14,6 @@ shift "$((OPTIND - 1))"
 # install app
 if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	temp_dir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
-	(
-		cd "$temp_dir" || exit
-		url=https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
-		curl -sS "$url" | bash
-	)
-	rm -r "$temp_dir"
+	url=https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
+	curl -sS "$url" | bash
 fi

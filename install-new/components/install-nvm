@@ -16,11 +16,7 @@ XDG_CONFIG_HOME="$HOME/.config"
 nvm_root="$XDG_CONFIG_HOME/nvm"
 if ! [ -d "$nvm_root" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	tempdir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
-	(
-		url=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
-		curl -o- "$url" | bash
-		nvm install --lts
-	)
-	rm -r "$tempdir"
+	url=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+	curl -o- "$url" | bash
+	nvm install --lts
 fi
