@@ -29,6 +29,6 @@ if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 	bash <(curl -s "$url") -s -- -y --no-install-dependencies
 	(
 		cd "$dir_of_script" || exit
-		DOTBOT_CONFIG=post-lunarvim ./run-dotbot
+		DOTBOT_CONFIG=post-lunarvim.yaml ./run-dotbot
 	)
 fi
