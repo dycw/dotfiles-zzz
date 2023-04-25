@@ -16,3 +16,7 @@
 	path = install/ubuntu/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "install-new/components/dotbot"]
+	path = install-new/components/dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
