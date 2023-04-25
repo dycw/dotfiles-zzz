@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-application='docker'
-
-# install app
 if ! [ -x "$(command -v docker)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-
 	# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 	sudo apt update -y
 	sudo apt install -y ca-certificates curl gnupg
@@ -20,7 +15,8 @@ if ! [ -x "$(command -v docker)" ]; then
 	sudo apt update -y
 	sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-	# permissions - https://dockr.ly/3EIzMev
+	# permissions
+	# https://dockr.ly/3EIzMev
 	sudo groupadd docker
 	sudo usermod -aG docker "$USER"
 	newgrp docker

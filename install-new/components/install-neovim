@@ -3,32 +3,29 @@
 application=nvim
 
 # parse options
-while getopts 'fl' option; do
+while getopts 's' option; do
 	case "$option" in
-	f) force=1 ;;
-	l) install_libfuse=1 ;;
+	s) has_sudo=1 ;;
 	?) echo "Unrecognized option: $option" ;;
 	esac
 done
-shift "$((OPTIND - 1))"
 
 # install app
 app_path="$HOME/.local/bin/$application"
-if ! [ -f "$app_path" ] || [ -n "$force" ]; then
+if ! [ -f "$app_path" ]; then
+	if [ -n "$has_sudo" ]; then
+		sudo apt -y install libfuse2
+	fi
+
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
 	temp_dir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
-	(
-		cd "$temp_dir" || exit
-		if [ -n "$install_libfuse" ]; then
-			sudo apt -y install libfuse2
-		fi
-		url=https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-		echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $url..."
-		wget -q "$url"
-		filename="$(basename "$url")"
-		chmod u+x "$filename"
-		mkdir -p "$(dirname "$app_path")"
-		cp "$filename" "$app_path"
-	)
+	cd "$temp_dir" || exit
+	url=https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $url..."
+	wget -q "$url"
+	filename="$(basename "$url")"
+	chmod u+x "$filename"
+	mkdir -p "$(dirname "$app_path")"
+	cp "$filename" "$app_path"
 	rm -r "$temp_dir"
 fi

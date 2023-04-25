@@ -2,19 +2,13 @@
 
 application=nvm
 
-# parse options
-while getopts 'f' option; do
-	case "$option" in
-	f) force=1 ;;
-	?) echo "Unrecognized option: $option" ;;
-	esac
-done
-shift "$((OPTIND - 1))"
-
 # install app
 XDG_CONFIG_HOME="$HOME/.config"
 NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
-if ! [ -d "$NVM_DIR" ] || [ -n "$force" ]; then
+if ! [ -d "$NVM_DIR" ]; then
+	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
+	./install-curl "$@"
+
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
 	url=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
 	curl -o- "$url" | bash
