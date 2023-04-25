@@ -3,9 +3,10 @@
 application=fzf
 
 # parse options
-while getopts 'f' option; do
+while getopts 'ft' option; do
 	case "$option" in
 	f) force=1 ;;
+	t) install_tree=1 ;;
 	?) echo "Unrecognized option: $option" ;;
 	esac
 done
@@ -14,6 +15,9 @@ shift "$((OPTIND - 1))"
 # install app
 if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	if [ -n "$install_tree" ]; then
+		sudo apt -y install tree
+	fi
 	(
 		cd "$HOME" || exit
 		fzf_root=.fzf

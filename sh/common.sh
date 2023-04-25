@@ -40,10 +40,7 @@ if [ -x "$(command -v bump2version)" ]; then
 fi
 
 # cargo
-_BIN="$HOME/.cargo/bin"
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
+export PATH="$HOME/.cargo/bin${PATH:+:$PATH}"
 if [ -x "$(command -v cargo)" ]; then
 	alias carb='cargo build'
 	alias carc='cargo check'
@@ -93,12 +90,6 @@ chown_dirs() {
 	find . -type d -exec chown "$1" {} \;
 }
 
-# cisco
-_BIN='/opt/cisco/anyconnect/bin'
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-
 # clear
 alias cl='clear'
 
@@ -117,6 +108,7 @@ if [ -x "$(command -v direnv)" ]; then
 fi
 
 # docker
+export DOCKER_BUILDKIT=1
 if [ -x "$(command -v docker)" ]; then
 	alias dc='docker compose'
 	alias dcb='docker compose build'
@@ -128,7 +120,6 @@ if [ -x "$(command -v docker)" ]; then
 	alias dcu='docker compose up'
 	alias dcub='docker compose up --build'
 	alias dcubd='docker compose up --build -d'
-	export DOCKER_BUILDKIT=1
 fi
 
 # dropbox
@@ -187,13 +178,13 @@ if [ -x "$(command -v fd)" ]; then
 fi
 
 # fzf
-if [ -x "$(command -v fzf)" ]; then
-	# https://bit.ly/2OMLMpm
-	if [ -x "$(command -v fd)" ]; then
-		export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
-	fi
-	if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
-		export FZF_DEFAULT_OPTS="
+if [ -x "$(command -v fd)" ]; then
+	export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
+fi
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -t=f -t=d"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -t=d"
+if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
+	export FZF_DEFAULT_OPTS="
       --ansi
       --bind 'ctrl-a:select-all'
       --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
@@ -208,17 +199,12 @@ if [ -x "$(command -v fzf)" ]; then
       --preview-window 'right:60%:wrap'
       --prompt='∼ ' --pointer='▶' --marker='✓'
       "
-		export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -t=f -t=d"
-		export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -t=d"
-	fi
 fi
 
 # gem
 if [ -x "$(command -v gem)" ]; then
 	_BIN="$(gem environment gemdir)/bin"
-	if [ -d "$_BIN" ]; then
-		export PATH="$_BIN${PATH:+:$PATH}"
-	fi
+	export PATH="$_BIN${PATH:+:$PATH}"
 fi
 
 # ghcup
@@ -248,23 +234,9 @@ if [ -x "$(command -v gitweb)" ]; then
 fi
 
 # go
-_BIN='/usr/local/go/bin'
-if [ -d "$_BIN" ]; then
-	export PATH="$_BIN${PATH:+:$PATH}"
-fi
-_DIR="$HOME/.go"
-if [ -d "$_DIR" ]; then
-	export GOROOT="$_DIR"
-	export PATH="$GOROOT/bin${PATH:+:$PATH}"
-fi
-
-# goenv
-_DIR="${PATH_DOTFILES:-$HOME/dotfiles}/submodules/goenv"
-if [ -d "$_DIR" ]; then
-	export GOENV_ROOT="$_DIR"
-	export PATH="$GOENV_ROOT/bin${PATH:+:$PATH}"
-	eval "$(goenv init -)"
-fi
+export GOROOT="$HOME/.go"
+export PATH="$GOROOT/bin${PATH:+:$PATH}"
+export PATH="/usr/local/go/bin${PATH:+:$PATH}"
 
 # hyperfine
 if [ -x "$(command -v hyperfine)" ]; then
@@ -286,16 +258,14 @@ if [ -x "$(command -v lvim)" ]; then
 elif [ -x "$(command -v nvim)" ]; then
 	alias n='nvim'
 	alias nvim-packer='nvim --headless -c "autocmd user packercomplete quitall" -c "packersync"'
-	export editor='nvim'
+	export EDITOR='nvim'
 elif [ -x "$(command -v vim)" ]; then
 	alias n='vim'
 	export EDITOR='vim'
 fi
 
 # npm
-if [ -x "$(command -v npm)" ]; then
-	alias npmrc='$EDITOR "$HOME/.npmrc"'
-fi
+alias npmrc='$EDITOR "$HOME/.npmrc"'
 
 # nvm
 export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
@@ -343,10 +313,11 @@ if [ "$(command -v watch)" ]; then
 fi
 
 # pyenv
-_DIR="$HOME/.pyenv"
-if [ -d "$_DIR" ]; then
-	alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install' # https://bit.ly/3KYPrc0
-	export PYENV_ROOT="$_DIR"
+alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install' # https://bit.ly/3KYPrc0
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin${PATH:+:$PATH}"
+if [ -x "$(command -v pyenv)" ]; then
+	eval "$(pyenv init -)"
 fi
 
 # pyright
@@ -389,9 +360,9 @@ for _ROOT; do
 done
 
 # rg
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
 if [ -x "$(command -v rg)" ]; then
 	alias grep='rg'
-	export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgreprc"
 fi
 
 # rm
@@ -417,7 +388,6 @@ fi
 # tmux
 if [ -x "$(command -v tmux)" ]; then
 	alias tmuxconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf.local"'
-	# export TERM='xterm-256color'
 fi
 
 # xdg
@@ -430,7 +400,5 @@ if [ -x "$(command -v zellij)" ]; then
 fi
 
 # zoxide
-if [ -x "$(command -v zoxide)" ]; then
-	export _ZO_EXCLUDE_DIRS="/tmp/*"
-	export _ZO_RESOLVE_SYMLINKS=1
-fi
+export _ZO_EXCLUDE_DIRS='/tmp/*'
+export _ZO_RESOLVE_SYMLINKS=1
