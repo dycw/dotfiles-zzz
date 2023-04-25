@@ -293,6 +293,9 @@ elif [ -x "$(command -v nvim)" ]; then
 	alias n='nvim'
 	alias nvim-packer='nvim --headless -c "autocmd user packercomplete quitall" -c "packersync"'
 	export editor='nvim'
+elif [ -x "$(command -v vim)" ]; then
+	alias n='vim'
+	export EDITOR='vim'
 fi
 
 # npm
