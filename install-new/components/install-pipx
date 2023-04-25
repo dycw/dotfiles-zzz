@@ -14,25 +14,22 @@ while getopts 'af' option; do
 done
 shift "$((OPTIND - 1))"
 
-# install prerequisities
-dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-(
-	cd "$dir_of_script" || exit
-	./install-pyenv "${apt_args[@]}"
-)
-
 # install app
 if ! [ -x "$(command -v pipx)" ] || [ -n "$force" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	venv_path="$HOME/.local/bin/${application}_venv"
-	mkdir -p "$venv_path"
 	(
+		dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+		cd "$dir_of_script" || exit
+		./install-pyenv "${apt_args[@]}"
+	)
+	venv_path="$HOME/.local/bin/${application}_venv"
+	(
+		mkdir -p "$venv_path"
 		cd "$venv_path" || exit
 		eval "$(pyenv init -)"
 		PYENV_VERSION=3.9 python -m venv .venv
 		source .venv/bin/activate
 		pip install pipx
 	)
-	app_path="$HOME/.local/bin/$application"
-	ln -s "$venv_path/.venv/bin/pipx" "$app_path"
+	ln -s "$venv_path/.venv/bin/pipx" "$HOME/.local/bin/$application"
 fi

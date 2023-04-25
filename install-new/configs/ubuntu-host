@@ -21,8 +21,8 @@ sudo apt -y autoremove
 # curl .../setup-ssh-keys | bash
 
 # components
-dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 (
+	dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	cd "$dir_of_script" || exit
 	cd .. || exit
 	cd components || exit
@@ -30,6 +30,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
 	./install-bat "${force[@]}"
 	./install-bottom "${force[@]}"
+	./install-bump2version -a "${force[@]}"
 	./install-delta "${force[@]}"
 	./install-direnv "${force[@]}"
 	./install-dust "${force[@]}"
@@ -41,6 +42,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	./install-lunarvim -l "${force[@]}"
 	./install-npm "${force[@]}"
 	./install-nvm "${force[@]}"
+	./install-pipx -a "${force[@]}"
 	./install-pyenv -a "${force[@]}"
 	./install-ripgrep "${force[@]}"
 	./install-rust "${force[@]}"
