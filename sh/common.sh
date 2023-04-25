@@ -181,8 +181,6 @@ fi
 if [ -x "$(command -v fd)" ]; then
 	export FZF_DEFAULT_COMMAND='fd -HL -c=always -E=.git -E=node_modules'
 fi
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -t=f -t=d"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -t=d"
 if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
 	export FZF_DEFAULT_OPTS="
       --ansi
@@ -199,6 +197,8 @@ if [ -x "$(command -v bat)" ] && [ -x "$(command -v tree)" ]; then
       --preview-window 'right:60%:wrap'
       --prompt='∼ ' --pointer='▶' --marker='✓'
       "
+	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -t=f -t=d"
+	export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -t=d"
 fi
 
 # gem
