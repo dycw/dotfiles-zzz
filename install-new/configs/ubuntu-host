@@ -36,6 +36,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	./install-exa "${force[@]}"
 	./install-fd "${force[@]}"
 	./install-fzf "${force[@]}"
+	./install-gitweb "${force[@]}"
 	./install-just "${force[@]}"
 	./install-lunarvim -l "${force[@]}"
 	./install-npm "${force[@]}"
