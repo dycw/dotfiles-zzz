@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+application=fzf
+
+# parse options
+while getopts 'f' option; do
+	case "$option" in
+	f) force=1 ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# install app
+if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	tempdir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+	(
+		cd "$HOME" || exit
+		fzf_root=.fzf
+		rm -rf "$fzf_root"
+		git clone --depth 1 https://github.com/junegunn/fzf.git "$fzf_root"
+		./"$fzf_root"/install --completion --key-bindings --xdg --no-update-rc
+	)
+	rm -r "$tempdir"
+fi

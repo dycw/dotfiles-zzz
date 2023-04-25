@@ -1,13 +1,7 @@
 #!/usr/bin/env sh
 # shellcheck source=/dev/null
 
-# aliases
-expand_alias() {
-	eval "set -- $(alias -- "$1")"
-	eval 'printf "%s\n" "${'"$#"'#*=}"'
-}
-
-# binaries
+# binaries (first)
 set -- "$HOME/dotfiles" "$HOME/.local"
 for _DIR; do
 	_BIN="$_DIR/bin"
@@ -15,6 +9,12 @@ for _DIR; do
 		export PATH="$_BIN${PATH:+:$PATH}"
 	fi
 done
+
+# aliases
+expand_alias() {
+	eval "set -- $(alias -- "$1")"
+	eval 'printf "%s\n" "${'"$#"'#*=}"'
+}
 
 # bat
 if [ -x "$(command -v bat)" ]; then
