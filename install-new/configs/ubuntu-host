@@ -30,6 +30,7 @@ DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
 ./install-bump2version -s
 ./install-delta -s
 ./install-direnv -s
+./install-docker -s
 ./install-dust -s
 ./install-exa -s
 ./install-fd -s
