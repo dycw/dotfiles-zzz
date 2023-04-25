@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+application=shfmt
+
+# parse options
+while getopts 'f' option; do
+	case "$option" in
+	f) force=1 ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# install app
+if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	tempdir="$(mktemp -d -t $application-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+	(
+		cd "$tempdir" || exit
+		api_url=https://api.github.com/repos/mvdan/sh/releases/latest
+		download_url=$(
+			curl -s "$api_url" |
+				grep browser_download_url |
+				grep linux_386 |
+				cut -d : -f 2,3 |
+				tr -d '[:blank:]' |
+				tr -d \"
+		)
+		echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $download_url..."
+		wget -q "$download_url"
+		filename="$(basename "$download_url")"
+		chmod u+x "$filename"
+		app_path="$HOME/.local/bin/$application"
+		mkdir -p "$(dirname "$app_path")"
+		cp "$filename" "$app_path"
+	)
+	rm -r "$tempdir"
+fi
