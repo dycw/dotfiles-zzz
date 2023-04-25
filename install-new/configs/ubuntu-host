@@ -44,6 +44,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	./install-ripgrep "${force[@]}"
 	./install-rust "${force[@]}"
 	./install-sd "${force[@]}"
+	./install-shellcheck "${force[@]}"
 	./install-shfmt "${force[@]}"
 	./install-starship "${force[@]}"
 	./install-stylua "${force[@]}"
