@@ -12,18 +12,10 @@
 - shell:
     - git submodule update --init
     - if ! [ -d "$HOME/work" ]; then mkdir -p "$HOME/work"; fi
-    - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/bash" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/bash"; fi
     - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/duckdns" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/duckdns"; fi
     - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/redis" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/redis"; fi
-    - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"; fi
-    - if [ -f "$HOME/.bash_profile" ] && ! [ -L "$HOME/.bash_profile" ]; then rm "$HOME/.bash_profile"; fi
-    - if [ -f "$HOME/.bashrc" ] && ! [ -L "$HOME/.bashrc" ]; then rm "$HOME/.bashrc"; fi
-    - if [ -f "$HOME/.zprofile" ] && ! [ -L "$HOME/.zprofile" ]; then rm "$HOME/.zprofile"; fi
-    - if [ -f "$HOME/.zshrc" ] && ! [ -L "$HOME/.zshrc" ]; then rm "$HOME/.zshrc"; fi
 
 - link:
-    ~/.bash_profile: ../../bash/bash_profile
-    ~/.bashrc: ../../bash/bashrc
     ~/.config/direnv: ../../direnv
     ~/.config/fd: ../../fd
     ~/.config/git: ../../git
@@ -44,5 +36,3 @@
     ~/.local/share/fonts: ../../fonts
     ~/.vim/pack/tpope/start/sensible: ../../vim/vim-sensible
     ~/.vim/vimrc: ../../vim/vimrc
-    ~/.zprofile: ../../zsh/zprofile
-    ~/.zshrc: ../../zsh/zshrc
