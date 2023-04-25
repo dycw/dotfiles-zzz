@@ -8,7 +8,8 @@ fi
 
 # completions
 # to be implemented
-#
+# & pyenv
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook zsh)"
