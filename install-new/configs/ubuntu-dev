@@ -31,6 +31,7 @@ dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	./install-lunarvim "${force[@]}"
 	./install-npm "${force[@]}"
 	./install-nvm "${force[@]}"
+	./install-pyenv -a "${force[@]}"
 	./install-ripgrep "${force[@]}"
 	./install-rust "${force[@]}"
 	./install-sd "${force[@]}"
