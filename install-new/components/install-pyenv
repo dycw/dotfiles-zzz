@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+application=pyenv
+
+# parse options
+while getopts 'f' option; do
+	case "$option" in
+	f) force=1 ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# install app
+if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	url=https://pyenv.run
+	curl "$url" | bash
+fi
