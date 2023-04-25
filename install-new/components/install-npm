@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+application=npm
+
+# parse options
+while getopts 'f' option; do
+	case "$option" in
+	f) force=1 ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# install app
+if ! [ -x "$(command -v $application)" ] || [ -n "$force" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	dir_of_script=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+	(
+		cd "$dir_of_script" || exit
+		./install-nvm
+		export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
+		source "$NVM_DIR/nvm.sh"
+		nvm install --lts
+	)
+fi
