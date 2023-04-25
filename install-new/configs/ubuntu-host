@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# parse options
+declare -a force=()
+while getopts 'f' option; do
+	case "$option" in
+	f) force+=(-f) ;;
+	?) echo "Unrecognized option: $option" ;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+# apt
+sudo apt -y install \
+	curl \
+	git \
+	neovim \
+	tmux
+sudo apt -y autoremove
+
+# curl .../setup-ssh-keys | bash
+
+# components
+../components/install-bat "${force[@]}"
+../components/install-bottom "${force[@]}"
+../components/install-delta "${force[@]}"
+../components/install-direnv "${force[@]}"
+../components/install-dust "${force[@]}"
+../components/install-exa "${force[@]}"
+../components/install-fd "${force[@]}"
+../components/install-fzf "${force[@]}"
+../components/install-just "${force[@]}"
+../components/install-neovim -l "${force[@]}"
+../components/install-nvm "${force[@]}"
+../components/install-ripgrep "${force[@]}"
+../components/install-rust "${force[@]}"
+../components/install-sd "${force[@]}"
+../components/install-starship "${force[@]}"
+../components/install-watchexec "${force[@]}"
+../components/install-zoxide "${force[@]}"
