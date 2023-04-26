@@ -25,6 +25,7 @@ cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
 cd ../components || exit
 DOTBOT_CONFIG=make-symlinks.yaml ./run-dotbot
 DOTBOT_CONFIG=dotbot-bash.yaml ./run-dotbot
+./install-1password -s
 ./install-bat -s
 ./install-bottom -s
 ./install-bump2version -s
