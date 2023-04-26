@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-application=nvm
-
-# install app
-XDG_CONFIG_HOME="$HOME/.config"
-NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
+export XDG_CONFIG_HOME="$HOME/.config"
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 if ! [ -d "$NVM_DIR" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-curl "$@"
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+	sudo apt -y install curl
 	url=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
 	curl -o- "$url" | bash
-	nvm install --lts
+	# shellcheck source=/dev/null
+	source "$NVM_DIR/nvm.sh"
 fi

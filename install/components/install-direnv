@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-application=direnv
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-curl "$@"
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+if ! [ -x "$(command -v direnv)" ]; then
+	sudo apt -y install curl
 	url=https://direnv.net/install.sh
 	curl -sfL "$url" | bash
+	eval "$(direnv hook bash)"
 fi

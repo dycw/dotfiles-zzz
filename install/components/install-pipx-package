@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+app="$1"
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+source "$script_dir/install-pipx"
+
+if ! [ -x "$(command -v "$app")" ]; then
+	pipx install "$app"
+fi

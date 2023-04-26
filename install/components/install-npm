@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
-# shellcheck source=/dev/null
 
-application=npm
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-nvm "$@"
-
-	source "$NVM_DIR/nvm.sh"
+if ! [ -x "$(command -v npm)" ]; then
+	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+	source "$script_dir/install-nvm"
 	nvm install --lts
 fi

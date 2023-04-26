@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-application=just
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-curl "$@"
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+if ! [ -x "$(command -v just)" ]; then
+	sudo apt -y install curl
 	url=https://just.systems/install.sh
 	dest="$HOME/.local/bin"
 	mkdir -p "$dest"

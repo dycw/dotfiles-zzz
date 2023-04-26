@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-application=cargo
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+if ! [ -x "$(command -v cargo)" ]; then
+	sudo apt -y install curl
 	url=https://sh.rustup.rs
 	curl --proto '=https' --tlsv1.2 -sSf "$url" | sh -s -- -y --no-modify-path
+	# shellcheck source=/dev/null
+	source "$HOME/.cargo/env"
 fi

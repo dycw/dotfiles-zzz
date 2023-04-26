@@ -1,29 +1,13 @@
 #!/usr/bin/env bash
 
-application=lvim
-
-# parse options
-while getopts 's' option; do
-	case "$option" in
-	s) has_sudo=1 ;;
-	?) echo "Unrecognized option: $option" ;;
-	esac
-done
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-curl "$@"
-	./install-npm "$@"
-	./install-rust "$@"
-
-	if [ -n "$has_sudo" ]; then
-		sudo apt -y install make
-	fi
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+if ! [ -x "$(command -v lvim)" ]; then
+	sudo apt -y install curl make
+	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+	source "$script_dir/install-neovim"
+	source "$script_dir/install-npm"
+	source "$script_dir/install-rust"
 	url=https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $url..."
 	bash <(curl -s "$url") -s -- -y --no-install-dependencies
-	DOTBOT_CONFIG=post-lunarvim.yaml ./run-dotbot
+	DOTBOT_CONFIG=post-lunarvim.yaml "$script_dir/run-dotbot"
+	lvim +LvimUpdate +q
 fi
