@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# SSH key & dotfiles
+sudo apt -y install curl
+url=https://github.com/dycw/dotfiles/raw/master/install/setup-ssh-key-and-clone-dotfiles
+curl --proto '=https' --tlsv1.2 -sSf "$url" | bash
+
+echo hello
