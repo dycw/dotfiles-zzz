@@ -2,6 +2,7 @@
     ~/:
       force: true
     ~/.config:
+      force: true
       recursive: true
 
 - defaults:
