@@ -17,8 +17,9 @@ if ! [ -f "$path_ssh_key" ]; then
 	chmod g-rwx,o-rwx "$path_ssh_key"
 fi
 
-path_dotfiles="$HOME/dotflies"
+path_dotfiles="$HOME/dotfiles"
 if ! [ -d "$path_dotfiles" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning repo..."
+	cd "$(dirname "$path_dotfiles")" || exit
 	git clone --depth 1 git@github.com:dycw/dotfiles.git
 fi
