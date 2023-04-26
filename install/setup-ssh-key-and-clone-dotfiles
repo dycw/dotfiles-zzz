@@ -21,5 +21,5 @@ path_dotfiles="$HOME/dotfiles"
 if ! [ -d "$path_dotfiles" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning repo..."
 	cd "$(dirname "$path_dotfiles")" || exit
-	git clone --depth 1 git@github.com:dycw/dotfiles.git
+	git clone --recurse-submodules git@github.com:dycw/dotfiles.git
 fi
