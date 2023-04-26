@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -x "$(command -v brew)" ]; then
-	echo >/dev/null
-fi
