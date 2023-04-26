@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-# common (first)
+# ---- first ------------------------------------------------------------------
+
+# common
 _FILE="${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.sh"
 if [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
 
-# homebrew (first)
+# homebrew
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew"
@@ -15,7 +17,10 @@ export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH:+:$PATH}"
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH:+:$MANPATH}:"
 export INFOPATH="$HOMEBREW_PREFIX/share/info${INFOPATH:+:$INFOPATH}"
 
+# ---- rest -------------------------------------------------------------------
+
 # bash
+alias bash-profile='$EDITOR "$HOME/.bash_profile"'
 alias bashrc='$EDITOR "$HOME/.bashrc"'
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
 set -o vi
