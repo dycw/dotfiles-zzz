@@ -1,10 +1,14 @@
 #!/usr/bin/env zsh
 
-# common (first)
+# ---- first ------------------------------------------------------------------
+
+# common
 _FILE="${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.sh"
 if [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
+
+# ---- rest -------------------------------------------------------------------
 
 # completions
 # to be implemented

@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 # shellcheck source=/dev/null
 
-# binaries (first)
+# ---- first ------------------------------------------------------------------
+
+# binaries
 set -- "$HOME/dotfiles" "$HOME/.local"
 for _DIR; do
 	_BIN="$_DIR/bin"
@@ -9,6 +11,14 @@ for _DIR; do
 		export PATH="$_BIN${PATH:+:$PATH}"
 	fi
 done
+
+# common
+_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.local.sh"
+if [ -f "$_FILE" ]; then
+	. "$_FILE"
+fi
+
+# ---- rest -------------------------------------------------------------------
 
 # aliases
 expand_alias() {
