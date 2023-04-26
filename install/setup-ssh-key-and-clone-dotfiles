@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+path_ssh_key="$HOME/.ssh/id_rsa"
+if ! [ -f "$path_ssh_key" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Setting up SSH key..."
+	sudo snap refresh firefox
+	firefox https://my.1password.com/signin
+	read -p "Press 'y' when you ahve copied this machine's SSH key... " -n 1 -r
+	echo
+	if ! [[ "$REPLY" =~ ^[Yy]$ ]]; then
+		echo "$(date '+%Y-%m-%d %H:%M:%S'): Exiting..."
+		exit 0
+	fi
+	mkdir -p "$(dirname "$path_ssh_key")"
+	sudo apt -y install xsel
+	xsel -b >>"$path_ssh_key"
+	chmod g-rwx,o-rwx "$path_ssh_key"
+fi
+
+path_dotfiles="$HOME/dotflies"
+if ! [ -d "$path_dotfiles" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning repo..."
+	git clone --depth 1 git@github.com:dycw/dotfiles.git
+fi
