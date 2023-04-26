@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -x "$(command -v curl)" ] && [ -x "$(command -v nvim)" ] && ! [ -x "$(command -v lvim)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing 'lunarvim'..."
-	url=https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh
-	LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s "$url") --yes --no-install-dependencies
-	DOTBOT_CONFIG=dotbot.lunarvim.yaml ./run-dotbot
-fi
