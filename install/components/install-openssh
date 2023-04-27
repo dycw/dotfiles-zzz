@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing openssh-server..."
+sudo apt -y install openssh-server
+sshd_config=/etc/ssh/sshd_config
+if [ -f "$sshd_config" ]; then
+	exprs=(
+		'#PermitRootLogin prohibit-password/PermitRootLogin no'
+		'#PasswordAuthentication yes/PasswordAuthentication no'
+	)
+	for expr in "${exprs[@]}"; do
+		sudo sed -i "s/$expr/g" "$sshd_config"
+	done
+	sudo systemctl restart sshd
+fi
