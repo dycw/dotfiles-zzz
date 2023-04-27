@@ -4,7 +4,7 @@
 # clone dotfiles
 sudo apt -y install curl
 url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/clone-dotfiles
-source <(curl -fsS "$url")
+source <(curl -fsLS "$url")
 
 # groups/components
 install_dir="$HOME/dotfiles/install" # cannot use usual `script_dir` given `curl`
