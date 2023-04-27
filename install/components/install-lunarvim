@@ -8,6 +8,6 @@ if ! [ -x "$(command -v lvim)" ]; then
 	source "$script_dir/install-rust"
 	url=https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
 	bash <(curl -s "$url") -s -- -y --no-install-dependencies
-	DOTBOT_CONFIG=post-lunarvim.yaml "$script_dir/run-dotbot"
+	source "$script_dir/run-dotbot" post-lunarvim.yaml
 	lvim +LvimUpdate +q
 fi
