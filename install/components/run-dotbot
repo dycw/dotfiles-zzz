@@ -11,4 +11,4 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 	git submodule update --init --recursive dotbot
 )
 
-"$BASEDIR/dotbot/bin/dotbot" -d "$BASEDIR" -c "$CONFIG" "${@:2}"
+"$BASEDIR/dotbot/bin/dotbot" -d "$BASEDIR" -c "$BASEDIR/$CONFIG" "${@:2}"
