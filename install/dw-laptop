@@ -9,6 +9,8 @@ source <(curl -fsS "$url")
 
 # components
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+echo "we have ${BASH_SOURCE[0]} as BASH_SOURCE"
+echo "we have ${script_dir} as script_dir"
 components_dir="$script_dir/components"
 sudo apt -y install \
 	bat \
@@ -17,7 +19,7 @@ sudo apt -y install \
 	ripgrep \
 	shellcheck \
 	tmux
-source "$components_dir/install-1password"
+# source "$components_dir/install-1password"
 source "$components_dir/install-black"
 source "$components_dir/install-bottom"
 source "$components_dir/install-bump2version"
