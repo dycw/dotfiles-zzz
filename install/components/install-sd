@@ -8,7 +8,6 @@ if ! [ -x "$(command -v sd)" ]; then
 		source "$script_dir/download-from-github" chmln sd x86_64-unknown-linux-gnu
 		mv ./*sd* sd
 		chmod u+x sd
-		ls -al
 		bin_dir="$HOME/.local/bin/"
 		mkdir -p "$bin_dir"
 		mv sd "$bin_dir/"

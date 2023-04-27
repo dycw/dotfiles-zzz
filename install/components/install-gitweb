@@ -6,7 +6,6 @@ if [ -x "$(command -v gitweb)" ]; then
 	(
 		cd "$temp_dir" || exit
 		source "$script_dir/download-from-github" yoannfleurydev gitweb linux
-		ls -al
 		mv ./*gitweb* gitweb
 		chmod u+x gitweb
 		bin_dir="$HOME/.local/bin/"

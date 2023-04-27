@@ -8,7 +8,8 @@ url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/cl
 source <(curl -fsS "$url")
 
 # components
-components_dir="$HOME/dotfiles/install/components"
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+components_dir="$script_dir/components"
 sudo apt -y install \
 	bat \
 	exa \

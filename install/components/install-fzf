@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
 sudo apt -y install fzf tree
+root="$HOME/.fzf"
+if ! [ -d "$root" ]; then
+	(
+		cd "$(dirname "$root")" || exit
+		git clone --depth 1 https://github.com/junegunn/fzf.git "$root"
+		"$root/install" --xdg --key-bindings --completion --no-update-rc --no-fish
+	)
+fi
