@@ -18,6 +18,7 @@ sudo apt -y install \
 	tmux
 source "$components_dir/run-dotbot" make-symlinks.yaml
 source "$components_dir/run-dotbot" dotbot-bash.yaml
+source "$components_dir/setup-authorized-keys"
 source "$components_dir/install-black"
 source "$components_dir/install-bottom"
 source "$components_dir/install-bump2version"
