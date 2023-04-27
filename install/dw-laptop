@@ -7,7 +7,7 @@ temp_dir="$(mktemp -d -t dotfiles-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	cd "$temp_dir" || exit
 	sudo apt -y install git
 	git clone https://github.com/dycw/dotfiles.git
-	source "dotfiles/install/components/setup-ssh-key-and-clone-dotfiles"
+	source dotfiles/install/components/setup-ssh-key-and-clone-dotfiles
 )
 rm -rf "$temp_dir"
 

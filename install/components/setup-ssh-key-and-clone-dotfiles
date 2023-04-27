@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 path_ssh_key="$HOME/.ssh/id_rsa"
+path_ssh_key="/tmp/.ssh/id_rsa"
 if ! [ -f "$path_ssh_key" ]; then
-	echo "Setting up SSH key..."
-	echo "Please copy the private key for this machine ($HOSTNAME)"
-	echo 'You may wish to sign in at: https://my.1password.com/signin'
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Setting up SSH key..."
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Please copy the private key for this machine ($HOSTNAME)"
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): You may wish to sign in at: https://my.1password.com/signin"
 	read </dev/tty -p "Press 'y' to continue... " -n 1 -r
 	echo
 	if ! [[ "$REPLY" =~ ^[Yy]$ ]]; then
@@ -17,12 +18,11 @@ if ! [ -f "$path_ssh_key" ]; then
 	chmod g-rwx,o-rwx "$path_ssh_key"
 fi
 
-path_dotfiles="$HOME/dotfiles"
-if ! [ -d "$path_dotfiles" ]; then
+if ! [ -d "$HOME/dotfiles" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning repo..."
 	sudo apt -y install git
 	(
-		cd "$(dirname "$path_dotfiles")" || exit
+		cd "$HOME" || exit
 		git clone --recurse-submodules git@github.com:dycw/dotfiles.git
 	)
 fi
