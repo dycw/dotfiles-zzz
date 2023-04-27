@@ -8,4 +8,5 @@ source <(curl -fsLS "$url")
 
 # groups/components
 install_dir="$HOME/dotfiles/install" # cannot use usual `script_dir` given `curl`
+sudo apt -y install virtualbox-qt
 source "$install_dir/groups/minimal"
