@@ -1,8 +1,0 @@
-- shell:
-    - if ! [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/bash" ]; then mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/bash"; fi
-    - if [ -f "$HOME/.bash_profile" ] && ! [ -L "$HOME/.bash_profile" ]; then rm "$HOME/.bash_profile"; fi
-    - if [ -f "$HOME/.bashrc" ] && ! [ -L "$HOME/.bashrc" ]; then rm "$HOME/.bashrc"; fi
-
-- link:
-    ~/.bash_profile: ../../bash/bash_profile
-    ~/.bashrc: ../../bash/bashrc

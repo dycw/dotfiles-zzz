@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+if [ -n "$($SHELL -c "echo \$BASH_VERSION")" ]; then
+	echo bash
+elif [ -n "$($SHELL -c "echo \$ZSH_VERSION")" ]; then
+	echo zsh
+fi

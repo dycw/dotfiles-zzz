@@ -6,34 +6,34 @@ My dotfiles, powered by [`dotbot`](https://github.com/anishathalye/dotbot).
 
 1. Run the installer:
 
-   1. `DW-MacMini`
+   1. `MacMini`
 
       ```console
-      url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/macos/install
-      curl "$url" | bash
-      ```
-
-   1. `DW-PC`
-
-      ```console
-      sudo apt -y install curl &&
-        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/dw-pc &&
+      url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/mac-mini &&
         bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
       ```
 
-   1. `DW-PC-Ubuntu4`
+   1. `PC`
 
       ```console
       sudo apt -y install curl &&
-        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/dw-pc-ubuntu4 &&
+        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/pc &&
         bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
       ```
 
-   1. `DW-Laptop`
+   1. `PC-Ubuntu4`
 
       ```console
       sudo apt -y install curl &&
-        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/dw-laptop &&
+        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/pc-ubuntu4 &&
+        bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
+      ```
+
+   1. `Laptop`
+
+      ```console
+      sudo apt -y install curl &&
+        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/laptop &&
         bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
       ```
 

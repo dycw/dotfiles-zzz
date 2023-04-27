@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-source "$script_dir/download-and-install-deb-from-github" \
-	delta dandavison delta amd64.deb musl

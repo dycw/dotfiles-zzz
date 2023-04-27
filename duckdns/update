@@ -17,6 +17,7 @@ darwin*)
 	domains+=(dw-mac)
 	;;
 linux*)
+	domains+=(derekwan)
 	domains+=(dw-pc)
 	domains+=(part-time)
 	;;

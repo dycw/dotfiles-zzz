@@ -1,12 +1,16 @@
 #!/usr/bin/env zsh
 
-# ---- first ------------------------------------------------------------------
-
-# common
-_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.sh"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
+# preamble
+files=(
+  "$HOME/dotfiles/sh/source-all-files.sh"
+  "$HOME/.zshrc.local"
+)
+for file in "${files[@]}"; do
+if [ -f "$file" ]; then
+	source "$file"
 fi
+done
+
 
 # ---- rest -------------------------------------------------------------------
 
@@ -14,36 +18,9 @@ fi
 # to be implemented
 # & pyenv
 
-# direnv
-if [ -x "$(command -v direnv)" ]; then
-	eval "$(direnv hook zsh)"
-fi
 
-# fzf
-_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
 
-# starship
-if [ -x "$(command -v starship)" ]; then
-  eval "$(starship init zsh)"
-fi
-
-# zoxide
-if [ -x "$(command -v zoxide)" ] && [ -x "$(command -v fzf)" ]; then
-  eval "$(zoxide init zsh --cmd j --hook prompt)"
-fi
 
 # zsh
 alias zshrc='$EDITOR "$HOME/.zshrc"'
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
-
-# zplug (last)
-_FILE="$HOME/.zplug/init.zsh"
-if [ -f "$_FILE" ]; then
-  source "$_FILE"
-
-  # zsh-nvm
-  zplug "lukechilds/zsh-nvm"
-fi

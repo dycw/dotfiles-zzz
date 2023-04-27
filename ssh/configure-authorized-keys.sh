@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Setting up authorized keys..."
+
+file="$HOME/.ssh/authorized_keys"
+if ! [ -f "$file" ]; then
+	mkdir -p "$(dirname "$file")"
+	touch "$file"
+fi
+
+items=(
+	'DW-Laptop|ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDliPoXZd3C+U/PAESA3U/fRjqBGDfiF0F/ngTT5F3UYAFf2Ho2ujeN9msNKMsNf2yilPER4R8nB6nhOt2HBYpf0M7r4T1N4lNQCSqzN0h0eNWO0yr/3D0G2jFmPrJjzSbQE2HP8lXG/4ywjIyYXAyd9MD1h9ChLrwZAFok644Hh+qBKs23flZWLS0udUmGRUJXazNbudlxiZf34h+XnaWnDZWphnbe1FoadtqDXsEgbxdCUTvAsTMnS1uWk/AtBCBTsLV0OqDjxI0/Tp/6PU9q+lSSFVvHvIPjVEMHoi2TQ9b5qmAbRsJfPGbfwXejgk2qyE+DiulaHt34dGbmYhH3BPw9hMUDoIJJcnCItT6g/8agNMMTzVvrXjjLf47conOvwxhCIr3PHx2lTPr5pehoL1xSfbr97fHGLlx444RRy3Z+HVlhl0zjrqOdBCkk7xP5RbFvGLRMiqWBsFgWFY2xocDKuPtmPU6wr9J5QEXfkNTWyoravWhir2R31P6ZkI2MuHsafV7L7qME5DCauc1NQP9MnQv9YMOin0s8gwufNH6MdBriCyF/N9FxCg8Hbm+LB2telqtdFQ5Ql81kI8Rf8QpS1//2feyzhfzKtQNNjnbtnvYxATtS3D0Hh5+cPh1czdkhY+wHI9GTON6E8+4FbugsPTRi+SfaYA23hX0UEw=='
+	'DW-MacMini|ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDfeb4P7VlTcyUff66EibpMNi5JOfvOFBl/M+0jOHzFlUyl/6tT9tXacAbN1U9Y/MJuA+zKFFZsSWZ/NBG9MIPsr3C4BECjjLsRA57YRGbQmwuPGN6pWo3deq9d5CD+pozOb47GX10T+toTWu+LXNCLYYOTiRQx6CUMINSVcctJVqrsFDUrhRZbQzCXuOBUVok+h6NFSfPbuf1yKyaqFlkWYgoDGAchHDwzkn0Bf+4ukcA97mipHsSlHrEqEWlc1QQZdsfdjfT9FT163rO5LfHh0rGdurpSQmbzGdBGolVJ0qf2dcQTkDJop/zbVrQNjMlnLOBn//lFlHb1p9TVU+5VntEnmcdvXC/zmzqoQjufKIT+XhYWvJz1Z9VU8W/VK68N7BC7LcBslOC0f/okVD7+dMhkZ3YpcYZdqN6aw+R9rn0dCQzZYDl5C/u8Eq8RPjyATYTfuuUqn8OiCApSBl1QUuTib056IyjECi82MuaQWww3PWLTfAbVDPuNdH/j+5nwnl7OrnIE2v7E8nsNw3kdOhRxY7gfTTf3fzXNkkM2KN5ODMhD2J2HvjLGK9gXVcSUyx0fxp5xY08WH5E/6EumdMHuj/vjFP/gtlGduulCTKfvNUuGsX2u8iVSeiN8vDTY8REZZedRBkfZXEGF8dyD6D4+NCZQ1/16wEnjLVKgWw=='
+	'DW-PC|ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDliPoXZd3C+U/PAESA3U/fRjqBGDfiF0F/ngTT5F3UYAFf2Ho2ujeN9msNKMsNf2yilPER4R8nB6nhOt2HBYpf0M7r4T1N4lNQCSqzN0h0eNWO0yr/3D0G2jFmPrJjzSbQE2HP8lXG/4ywjIyYXAyd9MD1h9ChLrwZAFok644Hh+qBKs23flZWLS0udUmGRUJXazNbudlxiZf34h+XnaWnDZWphnbe1FoadtqDXsEgbxdCUTvAsTMnS1uWk/AtBCBTsLV0OqDjxI0/Tp/6PU9q+lSSFVvHvIPjVEMHoi2TQ9b5qmAbRsJfPGbfwXejgk2qyE+DiulaHt34dGbmYhH3BPw9hMUDoIJJcnCItT6g/8agNMMTzVvrXjjLf47conOvwxhCIr3PHx2lTPr5pehoL1xSfbr97fHGLlx444RRy3Z+HVlhl0zjrqOdBCkk7xP5RbFvGLRMiqWBsFgWFY2xocDKuPtmPU6wr9J5QEXfkNTWyoravWhir2R31P6ZkI2MuHsafV7L7qME5DCauc1NQP9MnQv9YMOin0s8gwufNH6MdBriCyF/N9FxCg8Hbm+LB2telqtdFQ5Ql81kI8Rf8QpS1//2feyzhfzKtQNNjnbtnvYxATtS3D0Hh5+cPh1czdkhY+wHI9GTON6E8+4FbugsPTRi+SfaYA23hX0UEw=='
+)
+for item in "${items[@]}"; do
+	key="$(echo "$item" | cut -d '|' -f 1)"
+	if ! grep -q "$key" <<<"$(cat "$file")"; then
+		echo "# $key" >>"$file"
+		value="$(echo "$item" | cut -d '|' -f 2)"
+		echo "$value" >>"$file"
+	fi
+done

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-source "$script_dir/download-and-install-deb-from-github" dust bootandy dust amd64.deb
