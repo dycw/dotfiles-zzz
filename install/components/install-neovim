@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-app_path="$HOME/.local/bin/nvim"
-if ! [ -f "$app_path" ]; then
+if ! [ -x "$(command -v nvim)" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing neovim..."
 	sudo apt -y install libfuse2
 	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
@@ -12,8 +11,9 @@ if ! [ -f "$app_path" ]; then
 			neovim neovim appimage sha256sum zsync
 		mv ./*appimage* nvim
 		chmod u+x nvim
-		mkdir -p "$(dirname "$app_path")"
-		cp nvim "$app_path"
+		bin_dir="$HOME/.local/bin/"
+		mkdir -p "$bin_dir"
+		mv nvim "$bin_dir/"
 	)
 	rm -rf "$temp_dir"
 fi
