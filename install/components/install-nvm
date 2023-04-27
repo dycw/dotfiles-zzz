@@ -3,6 +3,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 if ! [ -d "$NVM_DIR" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing nvm..."
 	sudo apt -y install curl
 	url=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
 	curl -o- "$url" | bash

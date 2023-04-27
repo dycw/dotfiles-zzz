@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v pipx)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing pipx..."
+
 	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	source "$script_dir/install-python-311"
 

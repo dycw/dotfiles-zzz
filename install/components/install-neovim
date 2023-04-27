@@ -2,6 +2,7 @@
 
 app_path="$HOME/.local/bin/nvim"
 if ! [ -f "$app_path" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing neovim..."
 	sudo apt -y install libfuse2
 	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	temp_dir="$(mktemp -d -t nvim-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"

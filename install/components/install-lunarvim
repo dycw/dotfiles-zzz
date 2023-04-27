@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v lvim)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing lunarvim..."
 	sudo apt -y install curl make
 	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	source "$script_dir/install-neovim"
