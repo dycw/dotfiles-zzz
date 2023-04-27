@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-sudo apt -y install fzf tree
-root="$HOME/.fzf"
-if ! [ -d "$root" ]; then
+if ! [ -x "$(command -v fzf)" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing fzf..."
 	(
-		cd "$(dirname "$root")" || exit
-		git clone --depth 1 https://github.com/junegunn/fzf.git "$root"
-		"$root/install" --xdg --key-bindings --completion --no-update-rc --no-fish
+		cd "$HOME" || exit
+		git clone --depth 1 https://github.com/junegunn/fzf.git
+		./install --xdg --key-bindings --completion --no-update-rc --no-fish
 	)
 fi
