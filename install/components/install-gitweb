@@ -12,7 +12,7 @@ if ! [ -x "$(command -v gitweb)" ]; then
 		chmod u+x gitweb
 		bin_dir="$HOME/.local/bin/"
 		mkdir -p "$bin_dir"
-		mv shfmt "$bin_dir/"
+		mv gitweb "$bin_dir/"
 
 		# Ubuntu:
 		# ./gitweb: error while loading shared libraries: libssl.so.1.1: cannot
