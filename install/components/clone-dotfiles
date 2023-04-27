@@ -3,7 +3,7 @@
 sudo apt -y install curl
 url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/setup-ssh-key
 # shellcheck source=/dev/null
-source <(curl -fsS "$url")
+source <(curl -fsLS "$url")
 
 dotfiles="$HOME/dotfiles"
 if [ -d "$dotfiles" ]; then
