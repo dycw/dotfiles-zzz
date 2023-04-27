@@ -9,7 +9,7 @@ source <(curl -fsS "$url")
 
 # components
 install_dir="$HOME/dotfiles/install"
-DOTBOT_CONFIG=make-symlinks.yaml "$install_dir/run-dotbot"
+source "$install_dir/run-dotbot" make-symlinks.yaml
 components_dir="$install_dir/components"
 sudo apt -y install \
 	bat \
