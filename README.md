@@ -13,6 +13,22 @@ My dotfiles, powered by [`dotbot`](https://github.com/anishathalye/dotbot).
       curl "$url" | bash
       ```
 
+   1. `DW-PC`
+
+      ```console
+      sudo apt -y install curl &&
+        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/dw-pc &&
+        bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
+      ```
+
+   1. `DW-PC-Ubuntu4`
+
+      ```console
+      sudo apt -y install curl &&
+        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/dw-pc-ubuntu4 &&
+        bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
+      ```
+
    1. `DW-Laptop`
 
       ```console
