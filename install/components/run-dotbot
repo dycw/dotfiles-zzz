@@ -3,6 +3,8 @@
 config="$1"
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 source "$script_dir/install-python-311"
+
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running dotbot on '$config'..."
 (
 	cd "$script_dir" || exit
 	git -C dotbot submodule sync --quiet --recursive

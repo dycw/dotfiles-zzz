@@ -11,9 +11,9 @@ components_dir="$HOME/dotfiles/install/components" # cannot use usual `script_di
 sudo apt -y install \
 	bat \
 	exa \
-	neovim \
 	ripgrep \
-	tmux
+	tmux \
+	vim
 source "$components_dir/run-dotbot" make-symlinks.yaml
 source "$components_dir/run-dotbot" dotbot-bash.yaml
 source "$components_dir/setup-authorized-keys"
