@@ -5,11 +5,17 @@ url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/se
 # shellcheck source=/dev/null
 source <(curl -fsS "$url")
 
-if ! [ -d "$HOME/dotfiles" ]; then
+dotfiles="$HOME/dotfiles"
+if [ -d "$dotfiles" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Updating dotfiles..."
+	cd "$dotfiles" || exit
+	git checkout master
+	git pull
+else
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning dotfiles..."
 	sudo apt -y install git
 	(
-		cd "$HOME" || exit
+		cd "$(dirname "$dotfiles")" || exit
 		git clone --recurse-submodules git@github.com:dycw/dotfiles.git
 	)
 fi
