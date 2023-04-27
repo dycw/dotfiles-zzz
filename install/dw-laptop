@@ -16,6 +16,7 @@ sudo apt -y install \
 	ripgrep \
 	shellcheck \
 	tmux
+source "$components_dir/install-1password"
 source "$components_dir/install-black"
 source "$components_dir/install-bottom"
 source "$components_dir/install-bump2version"
