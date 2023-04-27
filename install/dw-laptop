@@ -8,10 +8,7 @@ url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/cl
 source <(curl -fsS "$url")
 
 # components
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-echo "we have ${BASH_SOURCE[0]} as BASH_SOURCE"
-echo "we have ${script_dir} as script_dir"
-components_dir="$script_dir/components"
+components_dir="$HOME/install/components" # cannot use usual `script_dir` given `curl`
 sudo apt -y install \
 	bat \
 	exa \
