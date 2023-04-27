@@ -6,21 +6,6 @@ sudo apt -y install curl
 url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/clone-dotfiles
 source <(curl -fsS "$url")
 
-# components
-components_dir="$HOME/dotfiles/install/components" # cannot use usual `script_dir` given `curl`
-sudo apt -y install \
-	bat \
-	exa \
-	ripgrep \
-	tmux \
-	vim
-source "$components_dir/run-dotbot" make-symlinks.yaml
-source "$components_dir/run-dotbot" dotbot-bash.yaml
-source "$components_dir/setup-authorized-keys"
-source "$components_dir/install-bottom"
-source "$components_dir/install-fd"
-source "$components_dir/install-fzf"
-source "$components_dir/install-lunarvim"
-source "$components_dir/install-starship"
-source "$components_dir/install-watchexec"
-source "$components_dir/install-zoxide"
+# groups/components
+install_dir="$HOME/dotfiles/install" # cannot use usual `script_dir` given `curl`
+source "$install_dir/groups/minimal"
