@@ -2,22 +2,24 @@
 # shellcheck source=/dev/null
 
 # SSH key & dotfiles
-sudo apt -y install curl
-url=https://github.com/dycw/dotfiles/raw/master/install/components/setup-ssh-key-and-clone-dotfiles
-url=https://raw.githubusercontent.com/dycw/dotfiles/dev/install/components/setup-ssh-key-and-clone-dotfiles
-echo hi
-curl -Sfs --proto '=https' --tlsv1.2 "$url" | bash
-echo bye
+temp_dir="$(mktemp -d -t dotfiles-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+(
+	cd "$temp_dir" || exit
+	sudo apt -y install git
+	git clone https://github.com/dycw/dotfiles.git
+	source "dotfiles/install/components/setup-ssh-key-and-clone-dotfiles"
+)
+rm -rf "$temp_dir"
 
 # components
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-components_dir="$script_dir/components"
+components_dir="$HOME/dotfiles/install/components"
 sudo apt -y install \
 	bat \
 	exa \
 	fd-find \
 	ripgrep \
-	shellcheck
+	shellcheck \
+	tmux
 source "$components_dir/install-black"
 source "$components_dir/install-bottom"
 source "$components_dir/install-bump2version"
