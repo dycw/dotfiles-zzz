@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v starship)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing starship..."
 	sudo apt -y install curl
 	url=https://starship.rs/install.sh
 	curl -sS "$url" | sh -s -- -b="$HOME/.local/bin" -y

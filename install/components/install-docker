@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v docker)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing docker..."
+
 	# https://bit.ly/3oPKJ9X
 	sudo apt -y update
 	sudo apt -y install \

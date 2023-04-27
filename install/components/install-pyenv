@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v pyenv)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing pyenv..."
 	sudo apt -y install \
 		build-essential \
 		curl \

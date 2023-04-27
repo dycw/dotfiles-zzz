@@ -2,6 +2,7 @@
 
 app="$1"
 if ! [ -x "$(command -v "$app")" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing $app..."
 	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	temp_dir="$(mktemp -d -t "$app"-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	(

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v just)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing just..."
 	sudo apt -y install curl
 	url=https://just.systems/install.sh
 	dest="$HOME/.local/bin"

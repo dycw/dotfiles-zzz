@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 if [ -x "$(command -v gitweb)" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing gitweb..."
+
 	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 	temp_dir="$(mktemp -d -t gitweb-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	(
