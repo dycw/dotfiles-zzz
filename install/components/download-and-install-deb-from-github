@@ -7,7 +7,6 @@ if ! [ -x "$(command -v "$app")" ]; then
 	(
 		cd "$temp_dir" || exit
 		source "$script_dir/download-from-github" "${@:2}"
-		ls -al
 		sudo dpkg -i ./*.deb
 	)
 	rm -rf "$temp_dir"

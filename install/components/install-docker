@@ -1,19 +1,27 @@
 #!/usr/bin/env bash
-# shellcheck source=/dev/null
 
 if ! [ -x "$(command -v docker)" ]; then
-	# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
-	sudo apt update -y
-	sudo apt install -y ca-certificates curl gnupg
-	sudo mkdir -m 0755 -p /etc/apt/keyrings
+	# https://bit.ly/3oPKJ9X
+	sudo apt -y update
+	sudo apt -y install \
+		ca-certificates \
+		curl \
+		gnupg
+	keyrings=/etc/apt/keyrings
+	sudo mkdir -m 0755 -p "$keyrings"
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg |
-		sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+		sudo gpg --dearmor -o "$keyrings/docker.gpg"
 	echo \
 		"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
 		sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
-	sudo apt update -y
-	sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+	sudo apt -y update
+	sudo apt -y install \
+		docker-ce \
+		docker-ce-cli \
+		containerd.io \
+		docker-buildx-plugin \
+		docker-compose-plugin
 
 	# permissions
 	# https://dockr.ly/3EIzMev

@@ -8,7 +8,8 @@ url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/cl
 source <(curl -fsS "$url")
 
 # components
-components_dir="$HOME/dotfiles/install/components"
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+components_dir="$script_dir/components"
 sudo apt -y install \
 	bat \
 	exa \
@@ -22,6 +23,7 @@ source "$components_dir/install-bottom"
 source "$components_dir/install-bump2version"
 source "$components_dir/install-delta"
 source "$components_dir/install-direnv"
+source "$components_dir/install-docker"
 source "$components_dir/install-dust"
 source "$components_dir/install-fzf"
 source "$components_dir/install-gitweb"
