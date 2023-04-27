@@ -4,19 +4,21 @@ My dotfiles, powered by [`dotbot`](https://github.com/anishathalye/dotbot).
 
 ## Installation
 
-1. Run the installer, either for MacOS or Ubuntu:
+1. Run the installer:
+
+   1. `DW-MacMini`
 
    ```console
    url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/macos/install
    curl "$url" | bash
    ```
 
-   or:
+   1. `DW-Laptop`
 
    ```console
-   sudo apt -y install curl
-   url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/ubuntu/install
-   curl "$url" | bash
+   sudo apt -y install curl &&
+     url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/dw-laptop &&
+     bash <"$(curl -sSf --proto '=https' --tlsv1.2 "$url")"
    ```
 
 1. Mount any drives if necessary (https://bit.ly/3Llpgi2):
