@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-set -e
-
-CONFIG="$1"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
+config="$1"
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+source "$script_dir/install-python-311"
 (
-	cd "$BASEDIR" || exit
+	cd "$script_dir" || exit
 	git -C dotbot submodule sync --quiet --recursive
 	git submodule update --init --recursive dotbot
+	PYENV_VERSION=3.11 ./dotbot/bin/dotbot -c "$config"
 )
-
-"$BASEDIR/dotbot/bin/dotbot" -d "$BASEDIR" -c "$BASEDIR/$CONFIG" "${@:2}"
