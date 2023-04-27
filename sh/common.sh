@@ -159,23 +159,19 @@ fi
 
 # exa
 if [ -x "$(command -v exa)" ]; then
-	__exa_base() { exa -F --group-directories-first "$@"; }
-	__exa_long() { __exa_base -ghl --git --time-style=long-iso "$@"; }
-	l() { __exa_long -a --git-ignore "$@"; }
-	lg() { __exa_long -a "$@"; }
+	__exa_base() { exa -aF --group-directories-first "$@"; }
+	l() { __exa_base -ghl --time-style=long-iso "$@"; }
 	alias ll='l'
-	__exa_short() { __exa_base -x "$@"; }
-	ls() { __exa_short -a --git-ignore "$@"; }
-	lsg() { __exa_short -a "$@"; }
+	alias ls='__exa_base -x'
 
 	if [ -x "$(command -v watch)" ]; then
-		__watch_exa_base() { watch -d -n 0.1 --color -- exa -F --color=always --group-directories-first "$@"; }
-		__watch_exa_short() { __watch_exa_base -x "$@"; }
-		wl() { __watch_exa_short -a --git-ignore "$@"; }
-		wlg() { __watch_exa_short -a "$@"; }
-		__watch_exa_long() { __watch_exa_base -ghl --git --time-style=long-iso "$@"; }
-		wll() { __watch_exa_long -a --git-ignore "$@"; }
-		wllg() { __watch_exa_long -a "$@"; }
+		__watch_exa_base() {
+			watch -d -n 0.1 --color -- \
+				exa -aF --color=always --group-directories-first "$@"
+		}
+		wl() { __watch_exa_base -ghl --time-style=long-iso "$@"; }
+		alias wll='wl'
+		alias wls='__watch_exa_base -x'
 	fi
 fi
 
