@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-application=starship
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-curl "$@"
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
+if ! [ -x "$(command -v starship)" ]; then
+	sudo apt -y install curl
 	url=https://starship.rs/install.sh
 	curl -sS "$url" | sh -s -- -b="$HOME/.local/bin" -y
+	eval "$(starship init bash)"
 fi

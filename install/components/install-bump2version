@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 
-application=bump2version
-
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-pipx "$@"
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	pipx install "$application"
-fi
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+source "$script_dir/install-pipx-package" pipx

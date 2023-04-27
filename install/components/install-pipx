@@ -1,20 +1,17 @@
 #!/usr/bin/env bash
-# shellcheck source=/dev/null
 
-application=pipx
+if ! [ -x "$(command -v pipx)" ]; then
+	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+	source "$script_dir/install-python-311"
 
-# install app
-if ! [ -x "$(command -v $application)" ]; then
-	cd "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)" || exit
-	./install-pyenv "$@"
-
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing '$application'..."
-	venv_path="$HOME/.local/bin/${application}_venv"
+	venv_path="$HOME/.local/bin/pipx_venv"
 	mkdir -p "$venv_path"
-	cd "$venv_path" || exit
-	eval "$(pyenv init -)"
-	PYENV_VERSION=3.9 python -m venv .venv
-	source .venv/bin/activate
-	pip install pipx
-	ln -s "$venv_path/.venv/bin/pipx" "$HOME/.local/bin/$application"
+	(
+		cd "$venv_path" || exit
+		PYENV_VERSION=3.11 python -m venv .venv
+		# shellcheck source=/dev/null
+		source .venv/bin/activate
+		pip install pipx
+		ln -s "$venv_path/.venv/bin/pipx" "$HOME/.local/bin/pipx"
+	)
 fi

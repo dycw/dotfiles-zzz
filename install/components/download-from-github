@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+user="$1"
+repo="$2"
+pattern="$3"
+api_url="https://api.github.com/repos/$user/$repo/releases/latest"
+download_url=$(
+	curl -s "$api_url" |
+		grep browser_download_url |
+		grep "$pattern"
+)
+for pattern in "${@:4}"; do
+	download_url=$(echo "$download_url" | grep -v "$pattern")
+done
+download_url=$(
+	echo "$download_url" |
+		cut -d : -f 2,3 |
+		tr -d '[:blank:]' |
+		tr -d \"
+)
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Downloading $download_url..."
+wget -q "$download_url"
