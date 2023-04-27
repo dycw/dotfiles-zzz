@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 if ! [ -x "$(command -v fd)" ]; then
-	script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-	source "$script_dir/download-and-install-deb-from-github" \
-		fd sharkdp fd amd64.deb musl
+	sudo apt -y install fd-find
 	bin_dir="$HOME/.local/bin/"
 	mkdir -p "$bin_dir"
 	ln -s "$(which fdfind)" "$bin_dir/fd"
