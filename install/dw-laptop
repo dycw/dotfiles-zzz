@@ -8,9 +8,7 @@ url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/cl
 source <(curl -fsS "$url")
 
 # components
-install_dir="$HOME/dotfiles/install"
-source "$install_dir/run-dotbot" make-symlinks.yaml
-components_dir="$install_dir/components"
+components_dir="$HOME/dotfiles/install/components"
 sudo apt -y install \
 	bat \
 	exa \
@@ -37,3 +35,5 @@ source "$components_dir/install-starship"
 source "$components_dir/install-stylua"
 source "$components_dir/install-watchexec"
 source "$components_dir/install-zoxide"
+source "$components_dir/run-dotbot" make-symlinks.yaml
+source "$components_dir/run-dotbot" dotbot-bash.yaml
