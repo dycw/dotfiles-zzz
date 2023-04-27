@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+sudo apt -y install curl
+url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/components/setup-ssh-key
+# shellcheck source=/dev/null
+source <(curl -fsS "$url")
+
+if ! [ -d "$HOME/dotfiles" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning dotfiles..."
+	sudo apt -y install git
+	(
+		cd "$HOME" || exit
+		git clone --recurse-submodules git@github.com:dycw/dotfiles.git
+	)
+fi

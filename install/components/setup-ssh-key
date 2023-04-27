@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 path_ssh_key="$HOME/.ssh/id_rsa"
-path_ssh_key="/tmp/.ssh/id_rsa"
 if ! [ -f "$path_ssh_key" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Setting up SSH key..."
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Please copy the private key for this machine ($HOSTNAME)"
@@ -16,13 +15,4 @@ if ! [ -f "$path_ssh_key" ]; then
 	sudo apt -y install xsel
 	xsel -b >>"$path_ssh_key"
 	chmod g-rwx,o-rwx "$path_ssh_key"
-fi
-
-if ! [ -d "$HOME/dotfiles" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Cloning repo..."
-	sudo apt -y install git
-	(
-		cd "$HOME" || exit
-		git clone --recurse-submodules git@github.com:dycw/dotfiles.git
-	)
 fi
