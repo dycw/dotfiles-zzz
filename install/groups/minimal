@@ -4,14 +4,15 @@
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 components_dir="$(dirname "$script_dir")/components"
 sudo apt -y install \
-	bat \
 	exa \
 	ripgrep \
 	tmux \
 	vim
+sudo apt -y autoremove
 source "$components_dir/run-dotbot" make-symlinks.yaml
 source "$components_dir/run-dotbot" dotbot-bash.yaml
 source "$components_dir/setup-authorized-keys"
+source "$components_dir/install-bat"
 source "$components_dir/install-bottom"
 source "$components_dir/install-fd"
 source "$components_dir/install-fzf"

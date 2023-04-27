@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if ! [ -x "$(command -v bat)" ]; then
+	sudo apt -y install bat
+	bin_dir="$HOME/.local/bin/"
+	mkdir -p "$bin_dir"
+	ln -s "$(which bat)" "$bin_dir/bat"
+fi
