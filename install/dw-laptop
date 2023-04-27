@@ -11,7 +11,7 @@ components_dir="$HOME/dotfiles/install/components" # cannot use usual `script_di
 sudo apt -y install \
 	bat \
 	exa \
-	nvim \
+	neovim \
 	ripgrep \
 	tmux
 source "$components_dir/run-dotbot" make-symlinks.yaml
