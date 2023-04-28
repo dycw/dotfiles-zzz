@@ -5,18 +5,30 @@ _FILE=.env
 if [ -z "$DUCKDNS_TOKEN" ] && [ -f "$_FILE" ]; then
 	source "$_FILE"
 fi
-if [ -n "$DUCKDNS_TOKEN" ]; then
-	DOMAINS=(
-		derekwan
-		part-time
-	)
-	PATH_LOGS="${XDG_CACHE_HOME:-$HOME/.cache}/duckdns"
-	for DOMAIN in "${DOMAINS[@]}"; do
-		URL="https://www.duckdns.org/update?domains=$DOMAIN&token=$DUCKDNS_TOKEN&ip="
-		PATH_LOG="$PATH_LOGS/$DOMAIN"
-		echo url="$URL" | curl -k -o "$PATH_LOG" -K -
-	done
-else
+
+if [ -z "$DUCKDNS_TOKEN" ]; then
 	echo 'Environment variable "DUCKDNS_TOKEN" is not set'
 	exit 0
 fi
+
+domains=()
+case "$OSTYPE" in
+darwin*)
+	domains+=(dw-mac)
+	;;
+linux*)
+	domains+=(dw-pc)
+	domains+=(part-time)
+	;;
+*)
+	echo "Unsupported OS type: $OSTYPE"
+	exit 0
+	;;
+esac
+
+path_logs="${XDG_CACHE_HOME:-$HOME/.cache}/duckdns"
+for domain in "${domains[@]}"; do
+	url="https://www.duckdns.org/update?domains=$domain&token=$DUCKDNS_TOKEN&ip="
+	path_log="$path_logs/$domain"
+	echo url="$url" | curl -k -o "$path_log" -K -
+done
