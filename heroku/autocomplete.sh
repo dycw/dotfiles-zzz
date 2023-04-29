@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-file="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
-if [ "$(bash-or-zsh)" == bash ] && [ -f "$file" ]; then
+_file="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
+if [ "$(bash-or-zsh)" == bash ] && [ -f "$_file" ]; then
 	# shellcheck source=/dev/null
-	source "$file"
+	source "$_file"
 fi
