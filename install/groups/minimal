@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# shellcheck source=/dev/null
-
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-components_dir="$(dirname "$script_dir")/components"
-source "$components_dir/run-dotbot" make-symlinks.yaml
-source "$components_dir/run-dotbot" dotbot-bash.yaml
-source "$components_dir/setup-authorized-keys"
