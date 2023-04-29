@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if ! [ -x "$(command -v zoxide)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing zoxide..."
-	sudo apt -y install curl
-	url=https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
-	curl -sS "$url" | bash
-fi

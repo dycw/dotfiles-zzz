@@ -1,44 +1,22 @@
 # top-level
 format = """
-$time\
-$username\
-$hostname\
-$localip\
-$shlvl\
-$directory\
-\
-$git_branch\
-$git_state\
-$git_status\
-$git_commit\
-$git_metrics\
-\
-$docker_context\
-$package\
-$container\
-\
+[┌─────────────────────────────────────────────────────────── ](bold green)$time
+[│](bold green)\
+$hostname$localip$username$directory\
+$git_branch$git_state$git_status$git_commit$git_metrics
+[│](bold green)\
 $buf$c$cmake$cobol$crystal$dart$deno$dotnet$elixir$elm$erlang$golang$haskell\
 $helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$purescript$python$red\
 $rlang$ruby$rust$scala$swift$terraform$vagrant$vlang$zig\
-\
-$memory_usage\
-$sudo\
-$cmd_duration\
-\
-\
-\
-$line_break\
-\
-\
-\
-$jobs\
-$battery\
-$status\
-$shell\
-$character"""
+$docker_context$package$shlvl$memory_usage$sudo$status$battery\
+$status$container$shell
+[└ ](bold green)$character
+"""
+# [└─> ](bold green)
 
 [cmd_duration]
 format = "( [$duration]($style))"
+disabled = false
 
 [directory]
 format = "( [$path]($style)[$read_only]($read_only_style))"
@@ -47,6 +25,9 @@ repo_root_style = "bold cyan"
 style = "cyan"
 truncation_length = 8
 truncation_symbol = ".../"
+
+[docker_context]
+format = "( [$symbol$context]($style))"
 
 [git_branch]
 format = "( [$symbol$branch(:$remote_branch)]($style))"
@@ -66,35 +47,45 @@ format = "( [$conflicted]($style))( [$ahead]($style))( [$behind]($style))( [$div
 ignore_submodules = true
 
 [hostname]
-format = "( [$hostname]($style))"
+ssh_only = false
+ssh_symbol = "🌐"
+format = "( [$ssh_symbol$hostname]($style))"
 
 [localip]
-disabled = false
+ssh_only = true
 format = "( [$localipv4]($style))"
+style = "green"
+disabled = false
 
 [memory_usage]
-disabled = false
 format = "( [$symbol$ram(|$swap)]($style))"
+disabled = false
+
+[os]
+disabled = false
 
 [package]
 format = "( [$symbol$version]($style))"
 version_format = "$raw"
 
 [shlvl]
-disabled = false
-format = "( [$symbol$shlvl]($style))"
+threshold = 3
+format = "( [$symbol  $shlvl]($style))"
 symbol = "↕️"
+repeat = true
+disabled = false
 
 [sudo]
 format = "( [$symbol]($style))"
 disabled = true
 
 [time]
+format = "[$time]($style)" # special format
+time_format = "%Y-%m-%d %H:%M:%S"
 disabled = false
-format = "[$time]($style)" # this is the first
-time_format = "%I:%M:%S%P"
 
 [username]
+show_always = true
 format = "( [$user]($style))"
 
 # language-specific

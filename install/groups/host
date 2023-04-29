@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+components_dir="$(dirname "$script_dir")/components"
+# groups/components
+install_dir="$HOME/dotfiles/install" # cannot use usual `script_dir` given `curl`
+components_dir="$install_dir/components"
+sudo apt -y install \
+	ruby-dev
+source "$install_dir/groups/minimal"
+source "$components_dir/install-black"
+source "$components_dir/install-bump2version"
+source "$components_dir/install-certbot"
+source "$components_dir/install-delta"
+source "$components_dir/install-direnv"
+source "$components_dir/install-docker"
+source "$components_dir/install-dust"
+source "$components_dir/install-gitweb"
+source "$components_dir/install-just"
+source "$components_dir/install-lunarvim"
+source "$components_dir/install-pre-commit"
+source "$components_dir/install-ruff"
+source "$components_dir/install-rust"
+source "$components_dir/install-sd"
+source "$components_dir/install-shfmt"
+source "$components_dir/install-stylua"

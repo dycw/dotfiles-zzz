@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if ! [ -x "$(command -v fd)" ]; then
-	sudo apt -y install fd-find
-	bin_dir="$HOME/.local/bin/"
-	mkdir -p "$bin_dir"
-	ln -s "$(which fdfind)" "$bin_dir/fd"
-fi

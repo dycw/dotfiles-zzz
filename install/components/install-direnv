@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if ! [ -x "$(command -v direnv)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing direnv..."
-	sudo apt -y install curl
-	url=https://direnv.net/install.sh
-	curl -sfL "$url" | bash
-	eval "$(direnv hook bash)"
-fi

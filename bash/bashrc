@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-# ---- first ------------------------------------------------------------------
-
-# common
-_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/sh/common.sh"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
+# preamble
+files=(
+	"$HOME/dotfiles/sh/source-all-files.sh"
+	"$HOME/.bashrc.local"
+)
+for file in "${files[@]}"; do
+	if [ -f "$file" ]; then
+		source "$file"
+	fi
+done
 
 # ---- rest -------------------------------------------------------------------
 
@@ -34,17 +37,6 @@ shopt -s xpg_echo
 # to be implemented
 # & pyenv
 
-# direnv
-if [ -x "$(command -v direnv)" ]; then
-	eval "$(direnv hook bash)"
-fi
-
-# fzf
-_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
-
 # fzf-tab-completion
 if [ -x "$(command -v fzf)" ]; then
 	_FILE="$_PATH_DOTFILES/submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
@@ -52,35 +44,4 @@ if [ -x "$(command -v fzf)" ]; then
 		source "$_FILE"
 		bind -x '"\t": fzf_bash_completion'
 	fi
-fi
-
-# heroku
-_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/heroku/autocomplete/bash_setup"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
-
-# nvm
-_FILE="${NVM_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/nvm}/bash_completion"
-if [ -f "$_FILE" ]; then
-	source "$_FILE"
-fi
-
-# pyenv
-alias pyenv-install-with-brew='CC="$(brew --prefix gcc)/bin/gcc-12" pyenv install' # https://bit.ly/3KYPrc0
-
-# starship
-if [ -x "$(command -v starship)" ]; then
-	eval "$(starship init bash)"
-fi
-
-# xclip
-if [ -x "$(command -v xclip)" ]; then
-	alias pbcopy='xclip -selection clipboard'
-	alias pbpaste='xclip -selection clipboard -o'
-fi
-
-# zoxide
-if [ -x "$(command -v zoxide)" ] && [ -x "$(command -v fzf)" ]; then
-	eval "$(zoxide init bash --cmd j --hook prompt)"
 fi

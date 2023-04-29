@@ -4,6 +4,3 @@
 [submodule "vim/vim-sensible"]
 	path = vim/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "install/components/dotbot"]
-	path = install/components/dotbot
-	url = https://github.com/anishathalye/dotbot
