@@ -2,8 +2,7 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for nvm..."
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 if ! [ -d "$NVM_DIR" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): installing nvm..."
 	# shellcheck source=/dev/null
