@@ -9,12 +9,12 @@ if ! [ -f "$file" ]; then
 	case "$(uname -s)" in
 	Darwin*)
 		# shellcheck source=/dev/null
-		source "$root/ssh/configure-sshd.sh"
+		source "$root/ssh/setup-sshd.sh"
 		;;
 	Linux*)
 		sudo apt -y install openssh-server
 		# shellcheck source=/dev/null
-		source "$root/ssh/configure-sshd.sh"
+		source "$root/ssh/setup-sshd.sh"
 		sudo systemctl restart sshd
 		;;
 	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
@@ -22,4 +22,4 @@ if ! [ -f "$file" ]; then
 fi
 
 # shellcheck source=/dev/null
-source "$root/ssh/configure-authorized-keys.sh"
+source "$root/ssh/setup-authorized-keys.sh"
