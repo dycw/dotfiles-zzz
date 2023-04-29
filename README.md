@@ -6,34 +6,18 @@ My dotfiles, powered by [`dotbot`](https://github.com/anishathalye/dotbot).
 
 1. Run the installer:
 
-   1. `MacMini`
+   1. Mac:
 
       ```console
-      url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/mac-mini &&
+      url=https://raw.githubusercontent.com/dycw/dotfiles/master/installer/curl-entrypoint.sh &&
         bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
       ```
 
-   1. `PC`
+   1. Ubuntu:
 
       ```console
       sudo apt -y install curl &&
-        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/pc &&
-        bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
-      ```
-
-   1. `PC-Ubuntu4`
-
-      ```console
-      sudo apt -y install curl &&
-        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/pc-ubuntu4 &&
-        bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
-      ```
-
-   1. `Laptop`
-
-      ```console
-      sudo apt -y install curl &&
-        url=https://raw.githubusercontent.com/dycw/dotfiles/master/install/laptop &&
+        url=https://raw.githubusercontent.com/dycw/dotfiles/master/installer/curl-entrypoint.sh &&
         bash <(curl -fsLS --proto '=https' --tlsv1.2 "$url")
       ```
 
