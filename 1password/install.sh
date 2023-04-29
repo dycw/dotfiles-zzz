@@ -8,7 +8,7 @@ if ! [ -x "$(command -v 1password)" ]; then
 	Darwin*)
 		# shellcheck source=/dev/null
 		source "$(git rev-parse --show-toplevel)/brew/install.sh"
-		brew install --cask dropbox
+		brew install --cask 1password
 		;;
 	Linux*)
 		temp_dir="$(mktemp -d -t 1password-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
