@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-app="$1"
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for $app..."
+_app="$1"
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for $_app..."
 
-if ! [ -x "$(command -v "$app")" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing $app..."
+if ! [ -x "$(command -v "$_app")" ]; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing $_app..."
 	# shellcheck source=/dev/null
 	source "$(git rev-parse --show-toplevel)/pipx/install.sh"
-	pipx install "$app"
+	pipx install "$_app"
 fi

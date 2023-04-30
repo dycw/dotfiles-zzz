@@ -7,8 +7,8 @@ if ! [ -x "$(command -v ngrok)" ]; then
 	case "$(uname -s)" in
 	Darwin*)
 		# shellcheck source=/dev/null
-		source "$(git rev-parse --show-toplevel)/brew/install.sh"
-		brew install ngrok/ngrok/ngrok
+		source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
+			--cask ngrok ngrok
 		;;
 	Linux*)
 		curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc |

@@ -7,8 +7,8 @@ if ! [ -x "$(command -v certbot)" ]; then
 	case "$(uname -s)" in
 	Darwin*)
 		# shellcheck source=/dev/null
-		source "$(git rev-parse --show-toplevel)/brew/install.sh"
-		brew install certbot
+		source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
+			certbot certbot
 		;;
 	Linux*)
 		sudo snap install --classic certbot

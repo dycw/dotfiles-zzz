@@ -4,12 +4,15 @@ echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for pyenv..."
 
 if ! [ -x "$(command -v pyenv)" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing pyenv..."
+	_root="$(git rev-parse --show-toplevel)"
 	# shellcheck source=/dev/null
-	source "$(git rev-parse --show-toplevel)/curl/install.sh"
+	source "$_root/curl/install.sh"
 	curl https://pyenv.run | bash
 	case "$(uname -s)" in
 	Darwin*)
 		code-select --install
+		# shellcheck source=/dev/null
+		source "$_root/brew/install.sh"
 		brew install openssl readline sqlite3 tcl-tk xz zlib
 		;;
 	Linux*)

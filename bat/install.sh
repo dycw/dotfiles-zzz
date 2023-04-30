@@ -7,14 +7,13 @@ if ! [ -x "$(command -v bat)" ]; then
 	case "$(uname -s)" in
 	Darwin*)
 		# shellcheck source=/dev/null
-		source "$(git rev-parse --show-toplevel)/brew/install.sh"
-		brew install bat
+		source "$(git rev-parse --show-toplevel)/brew/install-package.sh" bat bat
 		;;
 	Linux*)
 		sudo apt -y install bat
-		bin_dir="$HOME/.local/bin/"
-		mkdir -p "$bin_dir"
-		ln -s "$(which batcat)" "$bin_dir/bat"
+		_bin_dir="$HOME/.local/bin/"
+		mkdir -p "$_bin_dir"
+		ln -s "$(which batcat)" "$_bin_dir/bat"
 		;;
 	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
 	esac
