@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-_FILE="$HOME/.bashrc" && [ -f "$_FILE" ] && source "$_FILE"
+_file="$HOME/.bashrc"
+if [ -f "$_file" ]; then
+	source "$_file"
+fi

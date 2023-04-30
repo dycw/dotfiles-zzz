@@ -11,12 +11,3 @@ for file in "${files[@]}"; do
 		source "$file"
 	fi
 done
-
-# fzf-tab-completion
-if [ -x "$(command -v fzf)" ]; then
-	_FILE="$_PATH_DOTFILES/submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
-	if [ -f "$_FILE" ]; then
-		source "$_FILE"
-		bind -x '"\t": fzf_bash_completion'
-	fi
-fi
