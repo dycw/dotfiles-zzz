@@ -7,6 +7,6 @@ Darwin*)
 		export PATH="$_bin${PATH:+:$PATH}"
 	fi
 	;;
-Linux*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Linux..." ;;
+Linux*) ;;
 *) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
 esac
