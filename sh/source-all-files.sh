@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-for name in env aliases config autocomplete; do
-	while IFS= read -r -d '' file; do
+for _name in env aliases config autocomplete; do
+	while IFS= read -r -d '' _file; do
 		# shellcheck source=/dev/null
-		source "$file"
-	done < <(find "$HOME/dotfiles" -type f -name "$name.sh" -print0)
+		source "$_file"
+	done < <(find "$HOME/dotfiles" -type f -name "$_name.sh" -print0)
 done
