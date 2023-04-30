@@ -29,13 +29,13 @@ alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 # pytest
 alias pyt='pytest'
 alias pytco='pytest --co'
-_file="$HOME/dotfiles/bin/pytest-aliases"
-if [ -f "$_file" ]; then
-	# shellcheck source=/dev/null
-	. "$_file"
-fi
 
-# ruff
-if [ -x "$(command -v ruff)" ]; then
-	alias rw='ruff --watch .'
+if git rev-parse --show-toplevel >/dev/null 2>&1; then
+	if [ -f "$(git rev-parse --show-toplevel)/pyproject.toml" ]; then
+		_file="$HOME/dotfiles/bin/pytest-aliases"
+		if [ -f "$_file" ]; then
+			# shellcheck source=/dev/null
+			. "$_file"
+		fi
+	fi
 fi
