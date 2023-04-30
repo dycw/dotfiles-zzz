@@ -12,31 +12,6 @@ for file in "${files[@]}"; do
 	fi
 done
 
-# ---- rest -------------------------------------------------------------------
-
-# bash
-alias bash-profile='$EDITOR "$HOME/.bash_profile"'
-alias bashrc='$EDITOR "$HOME/.bashrc"'
-export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
-set -o vi
-shopt -s autocd
-shopt -s cdspell
-shopt -s checkjobs
-shopt -s checkwinsize
-shopt -s direxpand
-shopt -s dotglob
-shopt -s extglob
-shopt -s globstar
-shopt -s histappend
-shopt -s nocaseglob
-shopt -s nocasematch
-shopt -s shift_verbose
-shopt -s xpg_echo
-
-# completions
-# to be implemented
-# & pyenv
-
 # fzf-tab-completion
 if [ -x "$(command -v fzf)" ]; then
 	_FILE="$_PATH_DOTFILES/submodules/fzf-tab-completion/bash/fzf-bash-completion.sh"
