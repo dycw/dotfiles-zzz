@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$(bash-or-zsh)" = bash ]; then
+if [ -n "${BASH_VERSION+x}" ]; then
 	shopt -s autocd
 	shopt -s cdspell
 	shopt -s checkjobs

@@ -8,7 +8,8 @@ if ! [ -x "$(command -v starship)" ]; then
 	source "$root/curl/install.sh"
 	curl -sS https://starship.rs/install.sh |
 		sh -s -- -b="$HOME/.local/bin" -y
-	eval "$(starship init "$("$root"/bin/bash-or-zsh)")"
+	# shellcheck source=/dev/null
+	source "$root/starship/config.sh"
 fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for starship..."

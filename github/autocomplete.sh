@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-if [ "$(bash-or-zsh)" = bash ]; then
+if [ -n "${BASH_VERSION+x}" ]; then
 	eval "$(gh completion -s bash)"
-elif [ "$(bash-or-zsh)" = zsh ]; then
+elif [ -n "${ZSH_VERSION+x}" ]; then
 	autoload -U compinit
 	compinit -i
+else
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid shell..."
 fi

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$(bash-or-zsh)" = bash ]; then
+if [ -n "${BASH_VERSION+x}" ]; then
 	alias bash-profile='$EDITOR "$HOME/.bash_profile"'
 	alias bashrc='$EDITOR "$HOME/.bashrc"'
 fi
