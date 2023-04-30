@@ -8,7 +8,7 @@ Darwin*)
 	mkdir -p "$HOME/.cache/zsh"
 
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for zsh..."
-	for item in zprofile zshrch; do
+	for item in zprofile zshrc; do
 		# shellcheck source=/dev/null
 		source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
 			"$HOME/dotfiles/zsh/$item" "$HOME/.$item"

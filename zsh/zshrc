@@ -10,17 +10,3 @@ if [ -f "$file" ]; then
 	source "$file"
 fi
 done
-
-
-# ---- rest -------------------------------------------------------------------
-
-# completions
-# to be implemented
-# & pyenv
-
-
-
-
-# zsh
-alias zshrc='$EDITOR "$HOME/.zshrc"'
-export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"

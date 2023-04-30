@@ -9,7 +9,7 @@ if ! [ -x "$(command -v fonts)" ]; then
 		# shellcheck source=/dev/null
 		source "$(git rev-parse --show-toplevel)/brew/install.sh"
 		brew tap homebrew/cask-fonts
-		brew install --cask font-fira-code-nerd-font fonts
+		brew install --cask font-fira-code-nerd-font
 		;;
 	Linux*)
 		echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for fonts..."
