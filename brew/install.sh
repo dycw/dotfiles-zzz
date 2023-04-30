@@ -12,7 +12,7 @@ if ! [ -x "$(command -v brew)" ]; then
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 		brew install gcc
 		;;
-	Linux*) ;;
+	Linux*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Linux..." ;;
 	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
 	esac
 fi

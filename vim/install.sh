@@ -5,7 +5,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for vim..."
 if ! [ -x "$(command -v vim)" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing vim..."
 	case "$(uname -s)" in
-	Darwin*) ;;
+	Darwin*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Mac..." ;;
 	Linux*) sudo apt -y install vim ;;
 	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
 	esac
