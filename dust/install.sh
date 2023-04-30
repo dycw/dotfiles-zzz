@@ -2,22 +2,21 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for dust..."
 
-if ! [ -x "$(command -v btm)" ]; then
+if ! [ -x "$(command -v dust)" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing dust..."
-	root="$(git rev-parse --show-toplevel)"
+	_root="$(git rev-parse --show-toplevel)"
 	case "$(uname -s)" in
 	Darwin*)
 		# shellcheck source=/dev/null
-		source "$root/brew/install.sh"
-		brew install dust
+		source "$_root/brew/install-package.sh" dust dust
 		;;
 	Linux*)
 		# shellcheck source=/dev/null
-		source "$root/installers/download-and-install-deb-from-github.sh" \
+		source "$_root/installers/download-and-install-deb-from-github.sh" \
 			dust bootandy dust amd64.deb
-		bin_dir="$HOME/.local/bin/"
-		mkdir -p "$bin_dir"
-		ln -s "$(which du)" "$bin_dir/dust"
+		_bin_dir="$HOME/.local/bin/"
+		mkdir -p "$_bin_dir"
+		ln -s "$(which du)" "$_bin_dir/dust"
 		;;
 	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
 	esac

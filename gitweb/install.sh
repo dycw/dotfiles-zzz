@@ -4,27 +4,26 @@ echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for gitweb..."
 
 if ! [ -x "$(command -v gitweb)" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing gitweb..."
-	root="$(git rev-parse --show-toplevel)"
+	_root="$(git rev-parse --show-toplevel)"
 	case "$(uname -s)" in
 	Darwin*)
 		# shellcheck source=/dev/null
-		source "$root/brew/install.sh"
-		brew install yoannfleurydev/gitweb/gitweb
+		source "$_root/brew/install-package.sh" gitweb yoannfleurydev/gitweb/gitweb
 		;;
 	Linux*)
-		temp_dir="$(mktemp -d -t sd-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+		_temp_dir="$(mktemp -d -t sd-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 		# shellcheck source=/dev/null
-		source "$root/installers/download-from-github.sh" \
-			"$temp_dir" yoannfleurydev gitweb linux
+		source "$_root/installers/download-from-github.sh" \
+			"$_temp_dir" yoannfleurydev gitweb linux
 		(
-			cd "$temp_dir" || exit
+			cd "$_temp_dir" || exit
 			mv ./*gitweb* gitweb
 			chmod u+x gitweb
-			bin_dir="$HOME/.local/bin/"
-			mkdir -p "$bin_dir"
-			mv gitweb "$bin_dir/"
+			_bin_dir="$HOME/.local/bin/"
+			mkdir -p "$_bin_dir"
+			mv gitweb "$_bin_dir/"
 		)
-		rm -rf "$temp_dir"
+		rm -rf "$_temp_dir"
 		# additional error:
 		# ./gitweb: error while loading shared libraries: libssl.so.1.1: cannot
 		# open shared object file: No such file or directory
