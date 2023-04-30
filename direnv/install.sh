@@ -8,7 +8,8 @@ if ! [ -x "$(command -v direnv)" ]; then
 	# shellcheck source=/dev/null
 	source "$root/curl/install.sh"
 	curl -sfL https://direnv.net/install.sh | bash
-	eval "$(direnv hook "$("$root"/bin/bash-or-zsh)")"
+	# shellcheck source=/dev/null
+	source "$root/direnv/config.sh"
 fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for direnv..."

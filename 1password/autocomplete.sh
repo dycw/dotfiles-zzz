@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-if [ "$(bash-or-zsh)" = bash ]; then
+if [ -n "${BASH_VERSION+x}" ]; then
 	# shellcheck source=/dev/null
 	source <(op completion bash)
-elif [ "$(bash-or-zsh)" = zsh ]; then
+elif [ -n "${ZSH_VERSION+x}" ]; then
 	eval "$(op completion zsh)"
 	compdef _op op
+else
+	echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid shell..."
 fi
