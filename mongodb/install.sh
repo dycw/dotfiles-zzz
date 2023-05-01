@@ -37,7 +37,7 @@ if [[ "$(uname -s)" =~ Darwin* ]]; then
 	fi
 elif
 	[[ "$(uname -s)" =~ Linux* ]] &&
-		! grep -Fq 1password/stable <<<"$(apt list --installed)"
+		! grep -Fq mongodb-compass/stable <<<"$(apt list --installed)"
 then
 	_temp_dir="$(mktemp -d -t mongodb-compass-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	(
