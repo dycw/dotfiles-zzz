@@ -15,6 +15,7 @@ return {
 	s("fhyreproduce", { t("from hypothesis import reproduce_failure") }),
 	s("fhysettings", { t("from hypothesis import settings") }),
 	s("fhystdata", { t("from hypothesis.strategies import data") }),
+	s("fitislice", { t("from itertools import islice") }),
 	s("fitrepeat", { t("from itertools import repeat") }),
 	s("fitzipequal", { t("from itertools import zip_equal") }),
 	s("flologger", { t("from loguru import logger") }),
