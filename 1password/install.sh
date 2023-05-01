@@ -9,7 +9,10 @@ if [[ "$(uname -s)" =~ Darwin* ]]; then
 	if ! grep -Fxq 1password <<<"$(brew list -1)"; then
 		brew install --cask 1password
 	fi
-elif [[ "$(uname -s)" =~ Linux* ]]; then
+elif
+	[[ "$(uname -s)" =~ Linux* ]] &&
+		! grep -Fq 1password/stable <<<"$(apt list --installed)"
+then
 	_temp_dir="$(mktemp -d -t 1password-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	(
 		cd "$_temp_dir" || exit
