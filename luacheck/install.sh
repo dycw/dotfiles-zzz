@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-# shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
-	luacheck luacheck
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running luacheck/install.sh..."
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for luacheck..."
+# shellcheck source=/dev/null
+source "$(git rev-parse --show-toplevel)/brew/install.sh"
+brew install luacheck
+
+# symlinks
 # shellcheck source=/dev/null
 source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
 	"$HOME/dotfiles/luacheck/luacheckrc" \

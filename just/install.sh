@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running just/install.sh..."
+
 # shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install-package.sh" just just
+source "$(git rev-parse --show-toplevel)/brew/install.sh"
+brew install just

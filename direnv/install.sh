@@ -10,7 +10,7 @@ brew install direnv
 # shellcheck source=/dev/null
 source "$_root/direnv/config.sh"
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for direnv..."
+# symlinks
 # shellcheck source=/dev/null
 source "$_root/installers/symlink.sh" \
 	"$HOME/dotfiles/direnv/direnvrc" \

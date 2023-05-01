@@ -2,7 +2,7 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running git/install.sh..."
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for git..."
+# symlinks
 for item in config config.local ignore; do
 	# shellcheck source=/dev/null
 	source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
