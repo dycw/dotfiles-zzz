@@ -42,6 +42,8 @@ return {
 	s("ftyannotated", { t("from typing import Annotated") }),
 	s("ftyany", { t("from typing import Any") }),
 	s("ftycast", { t("from typing import cast") }),
+	s("ftyiterable", { t("from typing import Iterable") }),
+	s("ftyiterator", { t("from typing import Iterator") }),
 	s("ftyoptional", { t("from typing import Optional") }),
 	s("ftyunion", { t("from typing import Union") }),
 	s("fxadataarray", { t("from xarray import DataArray") }),
