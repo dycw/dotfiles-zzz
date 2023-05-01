@@ -2,11 +2,12 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running mongodb/install.sh..."
 
-# shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install.sh"
+_root="$(git rev-parse --show-toplevel)"
 
 if ! [ -x "$(command -v mongod)" ]; then
 	if [[ "$(uname -s)" =~ Darwin* ]]; then
+		# shellcheck source=/dev/null
+		source "$_root/brew/install.sh"
 		xcode-select --install
 		brew tap mongodb/brew
 		brew install mongodb-community
@@ -26,4 +27,22 @@ fi
 
 if ! [ -x "$(command -v mongocli)" ]; then
 	brew install mongocli
+fi
+
+if [[ "$(uname -s)" =~ Darwin* ]]; then
+	# shellcheck source=/dev/null
+	source "$_root/brew/install.sh"
+	if ! grep -Fxq mongodb-compass <<<"$(brew list -1)"; then
+		brew install --cask mongodb-compass
+	fi
+elif
+	[[ "$(uname -s)" =~ Linux* ]] && ! [ -x "$(command -v mongodb-compass)" ]
+then
+	_temp_dir="$(mktemp -d -t mongodb-compass-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
+	(
+		cd "$_temp_dir" || exit
+		wget https://downloads.mongodb.com/compass/mongodb-compass_1.35.0_amd64.deb
+		sudo dpkg -i ./*.deb
+	)
+	rm -rf "$_temp_dir"
 fi
