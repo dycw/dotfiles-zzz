@@ -12,5 +12,4 @@ elif [ -n "${ZSH_VERSION+x}" ]; then
 		# shellcheck source=/dev/null
 		source "$_file"
 	fi
-	_shell=zsh
 fi
