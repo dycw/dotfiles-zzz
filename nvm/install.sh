@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for nvm..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running nvm/install.sh..."
 
 export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 if ! [ -d "$NVM_DIR" ]; then
