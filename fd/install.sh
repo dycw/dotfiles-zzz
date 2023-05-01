@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running fd/install.sh..."
+
 # shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install-package.sh" fd fd
+source "$(git rev-parse --show-toplevel)/brew/install.sh"
+brew install fd

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running git/install.sh..."
+
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for git..."
 for item in config config.local ignore; do
 	# shellcheck source=/dev/null
