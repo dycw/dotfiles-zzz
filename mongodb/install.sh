@@ -2,10 +2,11 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running mongodb/install.sh..."
 
+# shellcheck source=/dev/null
+source "$(git rev-parse --show-toplevel)/brew/install.sh"
+
 if ! [ -x "$(command -v mongod)" ]; then
 	if [[ "$(uname -s)" =~ Darwin* ]]; then
-		# shellcheck source=/dev/null
-		source "$(git rev-parse --show-toplevel)/brew/install.sh"
 		xcode-select --install
 		brew tap mongodb/brew
 		brew install mongodb-community
@@ -21,4 +22,8 @@ if ! [ -x "$(command -v mongod)" ]; then
 		sudo apt-get install -y mongodb-org
 		sudo systemctl start mongod
 	fi
+fi
+
+if ! [ -x "$(command -v mongocli)" ]; then
+	brew install mongocli
 fi
