@@ -5,8 +5,8 @@ echo "$(date '+%Y-%m-%d %H:%M:%S'): Running certbot/install.sh..."
 if ! [ -x "$(command -v certbot)" ]; then
 	if [[ "$(uname -s)" =~ Darwin* ]]; then
 		# shellcheck source=/dev/null
-		source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
-			certbot certbot
+		source "$(git rev-parse --show-toplevel)/brew/install.sh"
+		brew install certbot
 	elif [[ "$(uname -s)" =~ Linux* ]]; then
 		sudo snap install --classic certbot
 		sudo snap install certbot-dns-duckdns
