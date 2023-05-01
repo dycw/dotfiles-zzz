@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -n "${BASH_VERSION+x}" ]; then
-	_shell=bash
+	eval "$(direnv hook bash)"
 elif [ -n "${ZSH_VERSION+x}" ]; then
-	_shell=zsh
-else
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid shell..."
-fi
-if [ -n "$_shell" ]; then
-	eval "$(direnv hook "$_shell")"
-	unset "$_shell"
+	eval "$(direnv hook zsh)"
 fi

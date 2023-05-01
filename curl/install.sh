@@ -2,11 +2,10 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for curl..."
 
-if ! [ -x "$(command -v curl)" ]; then
+if ! [ -x "$(command -v curl)" ] && [[ "$(uname -s)" =~ Linux* ]]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing curl..."
-	case "$(uname -s)" in
-	Darwin*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Mac..." ;;
-	Linux*) sudo apt -y install curl ;;
-	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-	esac
+	sudo apt -y install curl
 fi
+
+# shellcheck source=/dev/null
+source "$(git rev-parse --show-toplevel)/brew/install-package.sh" curl curl
