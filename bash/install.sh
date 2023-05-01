@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Installation for bash..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running bash/install.sh..."
 
-case "$(uname -s)" in
-Darwin*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Mac..." ;;
-Linux*)
+if [ -n "${BASH_VERSION+x}" ]; then
 	echo "$(date '+%Y-%m-%d %H:%M:%S'): Folders for bash..."
 	mkdir -p "$HOME/.cache/bash"
 
@@ -14,6 +12,4 @@ Linux*)
 		source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
 			"$HOME/dotfiles/bash/$item" "$HOME/.$item"
 	done
-	;;
-*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-esac
+fi

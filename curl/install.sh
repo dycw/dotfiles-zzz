@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for curl..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running curl/install.sh..."
 
-if ! [ -x "$(command -v curl)" ] && [[ "$(uname -s)" =~ Linux* ]]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing curl..."
+if [[ "$(uname -s)" =~ Linux* ]]; then
 	sudo apt -y install curl
 fi
 
 # shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install-package.sh" curl curl
+source "$(git rev-parse --show-toplevel)/brew/install.sh"
+brew install curl
