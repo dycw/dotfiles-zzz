@@ -1,30 +1,34 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for lunarvim..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running lunarvim/install.sh..."
 
-root="$(git rev-parse --show-toplevel)"
+_root="$(git rev-parse --show-toplevel)"
 if ! [ -x "$(command -v lvim)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing lunarvim..."
-	for app in curl neovim npm rust; do
+	# dependencies
+	for _app in curl neovim npm rust; do
 		# shellcheck source=/dev/null
-		source "$root/$app/install.sh"
+		source "$_root/$_app/install.sh"
 	done
+
+	# installation
 	bash <(
 		curl -s \
 			https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
 	) -s -- -y --no-install-dependencies
+
+	# undo overrides
+	for _name in lvim lvim.old; do
+		_dir="${XDG_CONFIG_HOME:-$HOME/.config}/$_name"
+		if [ -d "$_dir" ] && ! [ -L "$_dir" ]; then
+			rm -rf "$_dir"
+		fi
+	done
 fi
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for lunarvim..."
-for name in lvim lvim.old; do
-	dir_name="${XDG_CONFIG_HOME:-$HOME/.config}/$name"
-	if [ -d "$dir_name" ] && ! [ -L "$dir_name" ]; then
-		rm -rf "$dir_name"
-	fi
-done
-for name in after config.lua lazy-lock.json luasnippets snapshots; do
-	target="$HOME/dotfiles/lunarvim/$name"
-	link_name="${XDG_CONFIG_HOME:-$HOME/.config}/lvim/$name"
+# symlinks
+for _name in after config.lua lazy-lock.json luasnippets snapshots; do
 	# shellcheck source=/dev/null
-	source "$root/installers/symlink.sh" "$target" "$link_name"
+	source "$_root/installers/symlink.sh" \
+		"$HOME/dotfiles/lunarvim/$_name" \
+		"${XDG_CONFIG_HOME:-$HOME/.config}/lvim/$_name"
 done

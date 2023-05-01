@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
-# shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
-	--cask spotify spotify
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running spotify/install.sh..."
+
+if [[ "$(uname -s)" =~ Darwin* ]]; then
+	# shellcheck source=/dev/null
+	source "$(git rev-parse --show-toplevel)/brew/install.sh"
+	if ! grep -Fxq spotify <<<"$(brew list -1)"; then
+		brew install --cask spotify
+	fi
+fi

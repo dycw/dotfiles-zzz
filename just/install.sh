@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for just..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running just/install.sh..."
 
 if ! [ -x "$(command -v just)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing just..."
 	# shellcheck source=/dev/null
-	source "$(git rev-parse --show-toplevel)/curl/install.sh"
-	dest="$HOME/.local/bin"
-	mkdir -p "$dest"
-	curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh |
-		bash -s -- --to "$dest"
+	source "$(git rev-parse --show-toplevel)/brew/install.sh"
+	brew install just
 fi

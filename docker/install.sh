@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Installation for docker..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running docker/install.sh..."
 
 if ! [ -x "$(command -v docker)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing docker..."
-	case "$(uname -s)" in
-	Darwin*)
-		echo "$(date '+%Y-%m-%d %H:%M:%S'): NOT IMPLEMENTED YET..."
-		;;
-	Linux*)
+	if [[ "$(uname -s)" =~ Darwin* ]]; then
+		# shellcheck source=/dev/null
+		source "$(git rev-parse --show-toplevel)/brew/install.sh"
+		brew install --cask docker
+	elif [[ "$(uname -s)" =~ Linux* ]]; then
 		# https://bit.ly/3oPKJ9X
 		sudo apt -y update
 		sudo apt -y install ca-certificates curl gnupg
@@ -30,7 +29,5 @@ if ! [ -x "$(command -v docker)" ]; then
 		sudo groupadd docker
 		sudo usermod -aG docker "$USER"
 		newgrp docker
-		;;
-	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-	esac
+	fi
 fi

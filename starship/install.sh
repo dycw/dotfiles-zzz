@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing starship..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running starship/install.sh..."
 
-root="$(git rev-parse --show-toplevel)"
 if ! [ -x "$(command -v starship)" ]; then
 	# shellcheck source=/dev/null
-	source "$root/curl/install.sh"
-	curl -sS https://starship.rs/install.sh |
-		sh -s -- -b="$HOME/.local/bin" -y
-	# shellcheck source=/dev/null
-	source "$root/starship/config.sh"
+	source "$(git rev-parse --show-toplevel)/brew/install.sh"
+	brew install starship
 fi
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for starship..."
+# symlinks
 # shellcheck source=/dev/null
-source "$root/installers/symlink.sh" \
+source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
 	"$HOME/dotfiles/starship/starship.toml" \
 	"${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"

@@ -1,26 +1,23 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for vim..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running vim/install.sh..."
 
-if ! [ -x "$(command -v vim)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing vim..."
-	case "$(uname -s)" in
-	Darwin*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Mac..." ;;
-	Linux*) sudo apt -y install vim ;;
-	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-	esac
+if
+	[[ "$(uname -s)" =~ Linux* ]] && ! [ -x "$(command -v vim)" ]
+then
+	sudo apt -y install vim
 fi
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for vim..."
-items=(
+# symlinks
+_items=(
 	vim-sensible:pack/tpope/start/sensible
 	vimrc:vimrc
 )
-for item in "${items[@]}"; do
-	key="$(echo "$item" | cut -d ':' -f 1)"
-	value="$(echo "$item" | cut -d ':' -f 2)"
+for _item in "${_items[@]}"; do
+	_key="$(echo "$_item" | cut -d ':' -f 1)"
+	_value="$(echo "$_item" | cut -d ':' -f 2)"
 	# shellcheck source=/dev/null
 	source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
-		"$HOME/dotfiles/vim/$key" \
-		"$HOME/.vim/$value"
+		"$HOME/dotfiles/vim/$_key" \
+		"$HOME/.vim/$_value"
 done

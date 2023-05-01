@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for rust..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running rust/install.sh..."
 
 if ! [ -x "$(command -v cargo)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing rust..."
+	_root="$(git rev-parse --show-toplevel)"
 	# shellcheck source=/dev/null
-	source "$(git rev-parse --show-toplevel)/curl/install.sh"
+	source "$_root/curl/install.sh"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
 		sh -s -- -y --no-modify-path
 	# shellcheck source=/dev/null
-	source "$HOME/.cargo/env"
+	source "$_root/rust/env.sh"
 fi

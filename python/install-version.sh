@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-version="$1"
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for Python $version..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running python/install-version.sh..."
 
-if ! grep -q "$version" <<<"$(pyenv versions)"; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing Python $version..."
-	pyenv install "$version:latest"
+if ! grep -q "$1" <<<"$(pyenv versions)"; then
+	pyenv install "$1:latest"
 fi
