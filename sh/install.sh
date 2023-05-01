@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Installation for sh..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running sh/install.sh..."
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Folders for sh..."
+# folders
 mkdir -p "$HOME/work"
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for sh..."
+# symlinks
 # shellcheck source=/dev/null
 source "$(git rev-parse --show-toplevel)/installers/symlink.sh" \
 	"$HOME/dotfiles/input/inputrc" "$HOME/.inputrc"
