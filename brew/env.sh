@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-case "$(uname -s)" in
-Darwin*)
+if [[ "$(uname -s)" =~ Darwin* ]]; then
 	_bin=/opt/homebrew/bin
 	if [ -d "$_bin" ]; then
 		export PATH="$_bin${PATH:+:$PATH}"
 	fi
-	;;
-Linux*)
+elif [[ "$(uname -s)" =~ Linux* ]]; then
 	_bin=/home/linuxbrew/.linuxbrew/bin
 	if [ -d "$_bin" ]; then
 		export PATH="$_bin${PATH:+:$PATH}"
 	fi
-	;;
-*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-esac
+fi
