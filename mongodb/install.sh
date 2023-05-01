@@ -36,8 +36,7 @@ if [[ "$(uname -s)" =~ Darwin* ]]; then
 		brew install --cask mongodb-compass
 	fi
 elif
-	[[ "$(uname -s)" =~ Linux* ]] &&
-		! grep -Fq mongodb-compass/stable <<<"$(apt list --installed)"
+	[[ "$(uname -s)" =~ Linux* ]] && ! [ -x "$(command -v mongodb-compass)" ]
 then
 	_temp_dir="$(mktemp -d -t mongodb-compass-"$(date +%Y%m%d-%H%M%S)"-XXXXXXXX)"
 	(
@@ -45,4 +44,5 @@ then
 		wget https://downloads.mongodb.com/compass/mongodb-compass_1.35.0_amd64.deb
 		sudo dpkg -i ./*.deb
 	)
+	rm -rf "$_temp_dir"
 fi
