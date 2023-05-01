@@ -2,26 +2,28 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running lunarvim/install.sh..."
 
-# dependencies
 _root="$(git rev-parse --show-toplevel)"
-for _app in curl neovim npm rust; do
-	# shellcheck source=/dev/null
-	source "$_root/$_app/install.sh"
-done
+if ! [ -x "$(command -v lvim)" ]; then
+	# dependencies
+	for _app in curl neovim npm rust; do
+		# shellcheck source=/dev/null
+		source "$_root/$_app/install.sh"
+	done
 
-# installation
-bash <(
-	curl -s \
-		https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
-) -s -- -y --no-install-dependencies
+	# installation
+	bash <(
+		curl -s \
+			https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
+	) -s -- -y --no-install-dependencies
 
-# undo overrides
-for name in lvim lvim.old; do
-	dir_name="${XDG_CONFIG_HOME:-$HOME/.config}/$name"
-	if [ -d "$dir_name" ] && ! [ -L "$dir_name" ]; then
-		rm -rf "$dir_name"
-	fi
-done
+	# undo overrides
+	for _name in lvim lvim.old; do
+		_dir="${XDG_CONFIG_HOME:-$HOME/.config}/$_name"
+		if [ -d "$_dir" ] && ! [ -L "$_dir" ]; then
+			rm -rf "$_dir"
+		fi
+	done
+fi
 
 # symlinks
 for _name in after config.lua lazy-lock.json luasnippets snapshots; do

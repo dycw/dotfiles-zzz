@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for xclip..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running xclip/install.sh..."
 
 if ! [ -x "$(command -v xclip)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing xclip..."
-	case "$(uname -s)" in
-	Darwin*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Skipping for Mac..." ;;
-	Linux*) sudo apt -y install xclip ;;
-	*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-	esac
+	# shellcheck source=/dev/null
+	source "$(git rev-parse --show-toplevel)/brew/install.sh"
+	brew install xclip
 fi

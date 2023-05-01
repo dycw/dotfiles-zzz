@@ -2,6 +2,8 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running hyperfine/install.sh..."
 
-# shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install.sh"
-brew install hyperfine
+if ! [ -x "$(command -v hyperfine)" ]; then
+	# shellcheck source=/dev/null
+	source "$(git rev-parse --show-toplevel)/brew/install.sh"
+	brew install hyperfine
+fi

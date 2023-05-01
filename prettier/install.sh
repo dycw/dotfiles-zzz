@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-for app in prettier prettier-plugin-toml; do
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running prettier/install.sh..."
+
+if ! [ -x "$(command -v prettier)" ]; then
+	_root="$(git rev-parse --show-toplevel)"
+
 	# shellcheck source=/dev/null
-	source "$(git rev-parse --show-toplevel)/npm/install-package.sh" "$app"
-done
+	source "$_root/brew/install.sh"
+	brew install prettier
+
+	# shellcheck source=/dev/null
+	source "$_root/npm/install.sh"
+	npm install -g prettier-plugin-toml
+fi

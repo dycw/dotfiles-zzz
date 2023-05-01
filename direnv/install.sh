@@ -3,9 +3,11 @@
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running direnv/install.sh..."
 
 _root="$(git rev-parse --show-toplevel)"
-# shellcheck source=/dev/null
-source "$_root/brew/install.sh"
-brew install direnv
+if ! [ -x "$(command -v direnv)" ]; then
+	# shellcheck source=/dev/null
+	source "$_root/brew/install.sh"
+	brew install direnv
+fi
 
 # shellcheck source=/dev/null
 source "$_root/direnv/config.sh"

@@ -1,28 +1,18 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Checking for fonts..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Runnings fonts/install.sh..."
 
 _root="$(git rev-parse --show-toplevel)"
-case "$(uname -s)" in
-Darwin*)
-	_app=font-fira-code-nerd-font
-	if
-		! [ -x "$(command -v brew)" ] || ! grep -Fxq "$_app" <<<"$(brew list -1)"
-	then
-		# shellcheck source=/dev/null
-		source "$_root/brew/install.sh"
+if [[ "$(uname -s)" =~ Darwin* ]]; then
+	# shellcheck source=/dev/null
+	source "$_root/brew/install.sh"
+	if ! grep -Fxq font-fira-code-nerd-font <<<"$(brew list -1)"; then
 		brew tap homebrew/cask-fonts
-		# shellcheck source=/dev/null
-		source "$_root/brew/install-package.sh" \
-			font-fira-code-nerd-font font-fira-code-nerd-font
+		brew install --cask font-fira-code-nerd-font
 	fi
-	;;
-Linux*)
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Symlinking for fonts..."
+elif [[ "$(uname -s)" =~ Linux* ]]; then
 	# shellcheck source=/dev/null
 	source "$_root/installers/symlink.sh" \
 		"$HOME/dotfiles/fonts/Fira Code Retina Nerd Font Complete.ttf" \
 		"$HOME/.local/share/fonts/Fira Code Retina Nerd Font Complete.ttf"
-	;;
-*) echo "$(date '+%Y-%m-%d %H:%M:%S'): Invalid OS: $(uname -s)..." ;;
-esac
+fi
