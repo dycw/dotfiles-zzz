@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-# shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
-	--cask dropbox dropbox
+if [[ "$(uname -s)" =~ Darwin* ]]; then
+	# shellcheck source=/dev/null
+	source "$(git rev-parse --show-toplevel)/brew/install-package.sh" \
+		--cask dropbox dropbox
+fi
