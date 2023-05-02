@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "$(date '+%Y-%m-%d %H:%M:%S'): Running neovim/install.sh..."
+echo "$(date '+%Y-%m-%d %H:%M:%S'): Running net-tools/install.sh..."
 
 if [[ "$(uname -s)" =~ Linux* ]]; then
 	# shellcheck source=/dev/null
