@@ -36,6 +36,7 @@ return {
 	s("fpdseries", { t("from pandas import Series") }),
 	s("fpdtopickle", { t("from pandas import to_pickle") }),
 	s("fpppprint", { t("from pprint import pprint") }),
+	s("fpyfixture", { t("from pytest import fixture") }),
 	s("fpymark", { t("from pytest import mark") }),
 	s("fpyparam", { t("from pytest import param") }),
 	s("fpyraises", { t("from pytest import raises") }),
