@@ -69,7 +69,7 @@
   },
   "glow.nvim": {
     "branch": "main",
-    "commit": "a3f24fdaa71d2c25a2b88026032b34f5b6a6e215"
+    "commit": "bbd0473d72a45094495ee5600b5577823543eefe"
   },
   "inc-rename.nvim": {
     "branch": "main",
@@ -125,7 +125,7 @@
   },
   "neorg": {
     "branch": "main",
-    "commit": "6aa9fd303c807ed1ca3fb15cdeab1e322d02fd31"
+    "commit": "5de014e7cc3dc6eed0a62854fe8ba58f664d97ea"
   },
   "neoscroll.nvim": {
     "branch": "master",
@@ -189,7 +189,7 @@
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "0226dd639712141235d5c9eefde47365d15d0535"
+    "commit": "c8626af1de45174809fd61f90ade95a2681ee9e2"
   },
   "nvim-ts-autotag": {
     "branch": "main",
@@ -201,7 +201,7 @@
   },
   "nvim-various-textobjs": {
     "branch": "main",
-    "commit": "d268ac83dd4d28e29840a13603d8ca280d68caf5"
+    "commit": "988c100ad707acd11ea15973db84fc21a681dc8c"
   },
   "nvim-web-devicons": {
     "branch": "master",

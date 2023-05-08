@@ -189,6 +189,7 @@ require("lvim.lsp.null-ls.formatters").setup({
 			"htmldjango",
 			"json",
 			"markdown",
+			"scss",
 			"toml",
 			"yaml",
 		},
@@ -196,7 +197,12 @@ require("lvim.lsp.null-ls.formatters").setup({
 	-- rome
 	{
 		name = "rome",
-		filetypes = { "javascript", "javascriptreact", "typescript" },
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+		},
 	},
 })
 
@@ -227,6 +233,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"python",
 	"rust",
 	"swift",
+	"tailwindcss",
 	"tsx",
 	"typescript",
 	"vue",
@@ -234,6 +241,8 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 -- https://github.com/LunarVim/LunarVim/issues/4063
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
+-- https://github.com/LunarVim/LunarVim/issues/1386#issuecomment-1313448986
+require("lvim.lsp.manager").setup("emmet_ls")
 
 -------------------------------------------------------------------------------
 -- lvim
