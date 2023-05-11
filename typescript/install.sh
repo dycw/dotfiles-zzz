@@ -2,9 +2,8 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running typescript/install.sh..."
 
-_root="$(git rev-parse --show-toplevel)"
-# shellcheck source=/dev/null
-source "$_root/npm/install.sh"
-if ! grep -Fq typescript <<<"$(npm list -g)"; then
-	npm install -g typescript
+if ! [ -x "$(command -v tsc)" ]; then
+	# shellcheck source=/dev/null
+	source "$(git rev-parse --show-toplevel)/npm/install.sh"
+	npm install -g prettier-plugin-toml
 fi
