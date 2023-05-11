@@ -5,7 +5,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S'): Running tmux/install.sh..."
 _root="$(git rev-parse --show-toplevel)"
 if ! [ -x "$(command -v tmux)" ]; then
 	# shellcheck source=/dev/null
-	source "$(git rev-parse --show-toplevel)/brew/install.sh"
+	source "$_root/brew/install.sh"
 	brew install tmux
 fi
 

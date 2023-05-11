@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-root=/etc/letsencrypt/
-sudo find "$root" -name '*.pem' -print0 -type f | while IFS= read -r -d '' file; do
-	echo "Found file: '$file'"
-	sudo chgrp letsencrypt "$file"
-	sudo chmod g+r "$file"
+_root=/etc/letsencrypt/
+sudo find "$_root" -name '*.pem' -print0 -type f | while IFS= read -r -d '' _file; do
+	echo "Found _file: '$_file'"
+	sudo chgrp letsencrypt "$_file"
+	sudo chmod g+r "$_file"
 done
-sudo find "$root" -print0 -type d | while IFS= read -r -d '' file; do
-	echo "Found directory: '$file'"
-	sudo chgrp letsencrypt "$file"
-	sudo chmod g+rx "$file"
+sudo find "$_root" -print0 -type d | while IFS= read -r -d '' _file; do
+	echo "Found directory: '$_file'"
+	sudo chgrp letsencrypt "$_file"
+	sudo chmod g+rx "$_file"
 done
