@@ -125,7 +125,7 @@
   },
   "neorg": {
     "branch": "main",
-    "commit": "5de014e7cc3dc6eed0a62854fe8ba58f664d97ea"
+    "commit": "4f5448c88f1a09bd7a4dddcfef3b2148619e7280"
   },
   "neoscroll.nvim": {
     "branch": "master",
@@ -173,7 +173,7 @@
   },
   "nvim-spectre": {
     "branch": "master",
-    "commit": "46b9883c0760db6547f152dc97a651611ba6486d"
+    "commit": "1abe23ec9b7bc3082164f4cb842d521ef70e080e"
   },
   "nvim-surround": {
     "branch": "main",
@@ -189,7 +189,7 @@
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "c8626af1de45174809fd61f90ade95a2681ee9e2"
+    "commit": "f24a86c32238867f24fbff49913db0068f8488d2"
   },
   "nvim-ts-autotag": {
     "branch": "main",
@@ -258,6 +258,10 @@
   "tokyonight.nvim": {
     "branch": "main",
     "commit": "ef8f5917f1a3972e6dd083c1ea74dafcb54f9917"
+  },
+  "treesj": {
+    "branch": "main",
+    "commit": "b1e2976c2d7ba922371cc7f3ab08b75136c27231"
   },
   "trouble.nvim": {
     "branch": "main",

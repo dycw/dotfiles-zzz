@@ -191,6 +191,7 @@ require("lvim.lsp.null-ls.formatters").setup({
 			"markdown",
 			"scss",
 			"toml",
+			"vue",
 			"yaml",
 		},
 	},
@@ -585,6 +586,16 @@ lvim.plugins = {
 	{
 		"christoomey/vim-tmux-navigator",
 		event = { "BufRead", "BufNew" },
+	},
+
+	-- treesj
+	{
+		"wansmer/treesj",
+		config = function()
+			require("treesj").setup()
+		end,
+		keys = { "<space>m", "<space>j", "<space>s" },
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 
 	-- treesitter context
