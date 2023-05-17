@@ -11,6 +11,6 @@ if ! [ -x "$(command -v prettier)" ]; then
 
 	# shellcheck source=/dev/null
 	source "$_root/npm/install.sh"
+	npm install -g prettier-plugin-organize-imports
 	npm install -g prettier-plugin-toml
-	npm install -g @trivago/prettier-plugin-sort-imports
 fi
