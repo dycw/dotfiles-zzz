@@ -267,7 +267,7 @@ lvim.builtin.which_key.active = false
 lvim.plugins = {
 	-- auto save
 	{
-		"pocco81/auto-save.nvim",
+		"okuuva/auto-save.nvim",
 		config = function()
 			require("auto-save").setup({ trigger_events = { "InsertLeave" } })
 		end,
