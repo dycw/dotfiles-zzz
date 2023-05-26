@@ -269,7 +269,7 @@ lvim.plugins = {
 	{
 		"okuuva/auto-save.nvim",
 		config = function()
-			require("auto-save").setup({ trigger_events = { "InsertLeave" } })
+			require("auto-save").setup()
 		end,
 		event = { "BufRead", "BufNew" },
 	},

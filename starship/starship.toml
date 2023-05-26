@@ -12,7 +12,6 @@ $docker_context$package$shlvl$memory_usage$sudo$status$battery\
 $status$container$shell
 [└ ](bold green)$character
 """
-# [└─> ](bold green)
 
 [cmd_duration]
 format = "( [$duration]($style))"
