@@ -242,8 +242,6 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 -- https://github.com/LunarVim/LunarVim/issues/4063
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
--- https://github.com/LunarVim/LunarVim/issues/1386#issuecomment-1313448986
-require("lvim.lsp.manager").setup("emmet_ls")
 
 -------------------------------------------------------------------------------
 -- lvim
