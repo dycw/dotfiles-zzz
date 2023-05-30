@@ -9,4 +9,8 @@ if [[ "$(uname -s)" =~ Darwin* ]]; then
 		brew install postgresql@15
 		brew services start postgresql@15
 	fi
+
+	if ! grep -Fxq pgadmin4 <<<"$(brew list -1)"; then
+		brew install --cask pgadmin4
+	fi
 fi
