@@ -226,13 +226,18 @@ require("lvim.lsp.null-ls.linters").setup({
 -------------------------------------------------------------------------------
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
+	"dart",
+	"elm",
 	"go",
+	"graphql",
 	"haskell",
 	"javascript",
 	"json",
 	"lua",
+	"prisma",
 	"python",
 	"rust",
+	"sql",
 	"swift",
 	"tailwindcss",
 	"tsx",
