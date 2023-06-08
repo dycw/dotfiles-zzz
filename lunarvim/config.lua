@@ -212,7 +212,7 @@ require("lvim.lsp.null-ls.formatters").setup({
 -------------------------------------------------------------------------------
 require("lvim.lsp.null-ls.linters").setup({
 	-- javascript
-	{ name = "eslint", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
+	{ name = "rome", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
 	-- lua
 	{ name = "luacheck", filetypes = { "lua" } },
 	-- python
