@@ -9,6 +9,10 @@ return {
 		i(2),
 		t({ "", "}" }),
 	}),
+	s("ec", {
+		t("export const "),
+		i(1),
+	}),
 	s("ef", {
 		t("export function "),
 		i(1),
