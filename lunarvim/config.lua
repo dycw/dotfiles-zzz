@@ -245,8 +245,6 @@ lvim.builtin.treesitter.ensure_installed = {
 	"vue",
 	"yaml",
 }
--- https://github.com/LunarVim/LunarVim/issues/4063
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
 
 -------------------------------------------------------------------------------
 -- lvim
