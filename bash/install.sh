@@ -15,6 +15,10 @@ mkdir -p "$HOME/.cache/bash"
 # symlinks
 for _name in bash_profile bashrc; do
 	# shellcheck source=/dev/null
+	_link_name="$HOME/.$_name"
+	if [ -f "$_link_name" ] && ! [ -L "$_link_name" ]; then
+		rm "$_link_name"
+	fi
 	source "$_root/installers/symlink.sh" \
-		"$HOME/dotfiles/bash/$_name" "$HOME/.$_name"
+		"$HOME/dotfiles/bash/$_name" "$_link_name"
 done

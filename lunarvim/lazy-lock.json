@@ -125,11 +125,11 @@
   },
   "neorg": {
     "branch": "main",
-    "commit": "1c41592ec975189c79987aa32228778c111eb67f"
+    "commit": "f296a22864bbac0d94ad00fa18cc8231dbeaa1e3"
   },
   "neoscroll.nvim": {
     "branch": "master",
-    "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93"
+    "commit": "4bc0212e9f2a7bc7fe7a6bceb15b33e39f0f41fb"
   },
   "nlsp-settings.nvim": {
     "branch": "main",
@@ -145,7 +145,7 @@
   },
   "nvim-bqf": {
     "branch": "main",
-    "commit": "60ebdf05c273e8e7f420851c6a33bbd731a1de8d"
+    "commit": "c920a55c6153766bd909e474b7feffa9739f07e8"
   },
   "nvim-cmp": {
     "branch": "main",
@@ -157,7 +157,7 @@
   },
   "nvim-hlslens": {
     "branch": "main",
-    "commit": "5e3e9088fba7508cee3612ee50b14dfdd3ab19af"
+    "commit": "f0281591a59e95400babf61a96e59ba20e5c9533"
   },
   "nvim-lastplace": {
     "branch": "main",
@@ -173,11 +173,11 @@
   },
   "nvim-spectre": {
     "branch": "master",
-    "commit": "3ba6edeea1390457caaf73e96ab9c086ff6f90e9"
+    "commit": "5b39919a2947b1266b3aa34d0b0b14c35523bc69"
   },
   "nvim-surround": {
     "branch": "main",
-    "commit": "10b20ca7d9da1ac8df8339e140ffef94f9ab3b18"
+    "commit": "0d6882635817a2677749a330127d12ac30a4f3c8"
   },
   "nvim-tree.lua": {
     "branch": "master",
@@ -189,7 +189,7 @@
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "6f8f788738b968f24a108ee599c5be0031f94f06"
+    "commit": "d8fd71428e02190d8f75ff915b6cca9e3063992c"
   },
   "nvim-ts-autotag": {
     "branch": "main",
@@ -201,7 +201,7 @@
   },
   "nvim-various-textobjs": {
     "branch": "main",
-    "commit": "6069b9d0fc80db9005f4ac10222723dfcf481743"
+    "commit": "2bfacdaa18c1be9db83a88bce7def12295850ecd"
   },
   "nvim-web-devicons": {
     "branch": "master",
@@ -249,7 +249,7 @@
   },
   "tidy.nvim": {
     "branch": "main",
-    "commit": "dc52ab804217cc468412e33bdd3bf47e944d1758"
+    "commit": "86eab24e807ed2957d26ca43b2b76b92d0fbf8f4"
   },
   "toggleterm.nvim": {
     "branch": "main",
@@ -261,7 +261,7 @@
   },
   "treesj": {
     "branch": "main",
-    "commit": "3203aa553217921fd4dcb79245f9df07278910b2"
+    "commit": "7ee1250292491dfdd8ac7eda4e1d373a8c2be7de"
   },
   "trouble.nvim": {
     "branch": "main",
