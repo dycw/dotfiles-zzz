@@ -19,6 +19,6 @@ for _name in bash_profile bashrc; do
 	if [ -f "$_link_name" ] && ! [ -L "$_link_name" ]; then
 		rm "$_link_name"
 	fi
-	source "$_root/installers/symlink.sh" \
-		"$HOME/dotfiles/bash/$_name" "$_link_name"
+	# shellcheck source=/dev/null
+	source "$_root/installers/symlink.sh" "$HOME/dotfiles/bash/$_name" "$_link_name"
 done
