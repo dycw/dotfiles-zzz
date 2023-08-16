@@ -8,4 +8,6 @@ if [[ "$(uname -s)" =~ Darwin* ]]; then
 	if ! grep -Fxq dropbox <<<"$(brew list -1)"; then
 		brew install --cask dropbox
 	fi
+elif [[ "$(uname -s)" =~ Linux* ]]; then
+	sudo apt install -y nautilus-dropbox
 fi
