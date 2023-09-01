@@ -1,6 +1,17 @@
 {
+  // editor
+  "editor.cursorSurroundingLines": 10,
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.formatOnType": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80],
+  "editor.suggest.localityBonus": true,
+  "editor.wordWrap": "bounded",
+  // explorer
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // files
   "files.exclude": {
     ".mypy_cache": true,
     ".pytest_cache": true,
@@ -10,32 +21,56 @@
     "node_modules": true,
     "tags": true
   },
-  "workbench.iconTheme": "vscode-icons",
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "python.formatting.provider": "black",
-  "python.testing.pytestEnabled": true,
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "python.analysis.completeFunctionParens": true,
-  "files.autoSave": "afterDelay",
-  "html.format.endWithNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  // git
+  "git.autofetch": true,
+  "git.branchProtection": ["master"],
+  "git.defaultBranchName": "master",
+  "git.enableSmartCommit": true,
+  "git.fetchOnPull": true,
+  "git.followTagsWhenSync": true,
+  "git.ignoreSubmodules": true,
+  "git.mergeEditor": true,
+  "git.openAfterClone": "alwaysNewWindow",
+  "git.pruneOnFetch": true,
+  "git.pullBeforeCheckout": true,
+  "git.rebaseWhenSync": true,
+  // html
   "html.format.indentInnerHtml": true,
+  // jsonc
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // python
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  "unibeautify.defaultConfig": "",
+  "python.testing.pytestEnabled": true,
+  "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
-  "editor.wordWrap": "bounded",
-  "files.autoSaveDelay": 100
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnknownArgumentType": "none"
+  },
+  "python.analysis.typeCheckingMode": "strict",
+  // python - black
+  "black-formatter.args": ["--line-length=80"],
+  // python - ruff
+  "ruff.importStrategy": "useBundled",
+  // vim
+  "vim.gdefault": true,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.showMarksInGutter": true,
+  "vim.smartRelativeLine": true,
+  "vim.sneak": true,
+  "vim.sneakReplacesF": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.targets.enable": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualstar": true,
+  // window
+  "window.title": "${rootName}",
+  // workbench
+  "workbench.iconTheme": "vscode-icons",
 }

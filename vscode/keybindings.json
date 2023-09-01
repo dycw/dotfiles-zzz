@@ -1,0 +1,20 @@
+[
+  // git
+  {
+    "key": "ctrl+g ctrl+p",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+g ctrl+shift+p",
+    "command": "git.pushForce"
+  },
+  // sort
+  {
+    "key": "ctrl+s ctrl+l",
+    "command": "editor.action.sortLinesAscending"
+  },
+  {
+    "key": "ctrl+g ctrl+c",
+    "command": "git.commit"
+  }
+]
