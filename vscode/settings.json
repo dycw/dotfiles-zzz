@@ -1,0 +1,41 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "files.exclude": {
+    ".mypy_cache": true,
+    ".pytest_cache": true,
+    ".venv": true,
+    ".vim": true,
+    "**/__pycache__": true,
+    "node_modules": true,
+    "tags": true
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "python.formatting.provider": "black",
+  "python.testing.pytestEnabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "python.analysis.completeFunctionParens": true,
+  "files.autoSave": "afterDelay",
+  "html.format.endWithNewline": true,
+  "html.format.indentInnerHtml": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "unibeautify.defaultConfig": "",
+  "python.analysis.diagnosticMode": "workspace",
+  "editor.wordWrap": "bounded",
+  "files.autoSaveDelay": 100
+}
