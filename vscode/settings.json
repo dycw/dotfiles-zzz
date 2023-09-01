@@ -63,18 +63,20 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // prettier
+  "prettier.proseWrap": "always",
   // python
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
-  "python.testing.pytestArgs": ["--color=yes"],
-  "python.testing.pytestEnabled": true,
   "python.analysis.diagnosticSeverityOverrides": {
     "reportUnknownArgumentType": "none"
   },
   "python.analysis.typeCheckingMode": "strict",
+  "python.testing.pytestArgs": ["--color=yes"],
+  "python.testing.pytestEnabled": true,
   "pythonTestExplorer.testFramework": "pytest",
   // python - black
   "black-formatter.args": ["--line-length=80"],
