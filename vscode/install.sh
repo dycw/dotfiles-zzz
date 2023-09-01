@@ -2,9 +2,23 @@
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running vscode/install.sh..."
 
-if ! [ -x "$(command -v vscode)" ]; then
-	echo "$(date '+%Y-%m-%d %H:%M:%S'): Installing VSCode..."
+_root="$(git rev-parse --show-toplevel)"
+if [[ "$(uname -s)" =~ Darwin* ]]; then
 	# shellcheck source=/dev/null
-	source "$(git rev-parse --show-toplevel)/brew/install.sh"
-	brew install --cask visual-studio-code
+	source "$_root/brew/install.sh"
+	if ! [ -x "$(command -v code)" ]; then
+		brew install --cask visual-studio-code
+	fi
+fi
+
+# symlinks
+if [[ "$(uname -s)" =~ Darwin* ]]; then
+	for _name in keybindings settings; do
+		_full_name="$_name.json"
+		_link_name="$HOME/dotfiles/vscode/$_full_name"
+		# shellcheck source=/dev/null
+		source "$_root/installers/symlink.sh" \
+			"$_link_name" \
+			"$HOME/Library/Application Support/Code/User/$_full_name"
+	done
 fi
