@@ -21,6 +21,11 @@
     "key": "cmd+k s", // deletion
     "command": "-workbench.action.files.saveWithoutFormatting"
   },
+  // snippets
+  {
+    "key": "cmd+u cmd+s",
+    "command": "workbench.action.openSnippets"
+  },
   // sort
   {
     "key": "ctrl+s ctrl+l",

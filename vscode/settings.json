@@ -1,6 +1,10 @@
 {
   // editor
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
   "editor.cursorSurroundingLines": 10,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -22,8 +26,7 @@
     ".pytest_cache": true,
     ".venv": true,
     "**/__pycache__": true,
-    "node_modules": true,
-    "tags": true
+    "node_modules": true
   },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -72,20 +75,73 @@
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticSeverityOverrides": {
-    "reportUnknownArgumentType": "none"
+    "reportCallInDefaultInitializer": "error",
+    "reportImplicitOverride": "error",
+    "reportImplicitStringConcatenation": "error",
+    "reportImportCycles": "error",
+    "reportMissingSuperCall": "error",
+    "reportPropertyTypeMismatch": "error",
+    "reportShadowedImports": "error",
+    "reportUninitializedInstanceVariable": "error",
+    "reportUnknownArgumentType": "none",
+    "reportUnknownMemberType": "none",
+    "reportUnknownVariableType": "none",
+    "reportUnnecessaryTypeIgnoreComment": "error",
+    "reportUntypedBaseClass": "none",
+    "reportUnusedCallResult": "error"
   },
   "python.analysis.typeCheckingMode": "strict",
   "python.testing.pytestArgs": ["--color=yes"],
   "python.testing.pytestEnabled": true,
   "pythonTestExplorer.testFramework": "pytest",
   // python - black
-  "black-formatter.args": ["--line-length=80"],
+  "black-formatter.args": ["--line-length=80", "--skip-magic-trailing-comma"],
   // python - ruff
+  "ruff.args": [
+    "--select=A", // flake8-builtins
+    "--select=ANN", // flake8-annotations
+    "--select=ASYNC", // flake8-async
+    "--select=B", // flake8-bugbear
+    "--select=BLE", // flake8-blind-excpt
+    "--select=C4", // flake8-comprehensions
+    "--select=E,W", // pycodestyle
+    "--select=EM", // flake8-errmsg
+    "--select=EXE", // flake8-executable
+    "--select=F", // pyflakes
+    "--select=FBT", // flake8-boolean-trap
+    "--select=I", // isort
+    "--select=N", // pep8-naming
+    "--select=S", // flake8-bandit
+    "--select=T10", // flake8-debugger
+    "--select=UP", // pyupgrade
+    "--select=YTT", // flake8-2020
+    "--fixable=ALL"
+  ],
   "ruff.importStrategy": "useBundled",
   // vim
   "vim.gdefault": true,
   "vim.highlightedyank.enable": true,
   "vim.hlsearch": true,
+  "vim.insertModeKeyBindingsNonRecursive": [
+    // escape
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "<Space>",
   "vim.showMarksInGutter": true,
   "vim.smartRelativeLine": true,
   "vim.sneak": true,
