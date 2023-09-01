@@ -1,5 +1,9 @@
 [
-  // git
+  // git  1227
+  {
+    "key": "ctrl+g ctrl+c",
+    "command": "git.commit"
+  },
   {
     "key": "ctrl+g ctrl+p",
     "command": "git.push"
@@ -8,13 +12,33 @@
     "key": "ctrl+g ctrl+shift+p",
     "command": "git.pushForce"
   },
+  // key bindings
+  {
+    "key": "cmd+k s",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
+    "key": "cmd+k s", // deletion
+    "command": "-workbench.action.files.saveWithoutFormatting"
+  },
   // sort
   {
     "key": "ctrl+s ctrl+l",
     "command": "editor.action.sortLinesAscending"
   },
+  // user settings
   {
-    "key": "ctrl+g ctrl+c",
-    "command": "git.commit"
+    "key": "shift+cmd+,",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "shift+cmd+.", // deletion
+    "command": "-editor.action.inPlaceReplace.down",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+,", // deletion
+    "command": "-editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]

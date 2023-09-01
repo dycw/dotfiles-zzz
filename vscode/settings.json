@@ -1,8 +1,9 @@
 {
   // editor
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.cursorSurroundingLines": 10,
-  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
@@ -11,12 +12,15 @@
   // explorer
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
+  "explorer.excludeGitIgnore": true,
   // files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 100,
   "files.exclude": {
+    ".direnv": true,
     ".mypy_cache": true,
     ".pytest_cache": true,
     ".venv": true,
-    ".vim": true,
     "**/__pycache__": true,
     "node_modules": true,
     "tags": true
@@ -25,7 +29,10 @@
   "files.trimTrailingWhitespace": true,
   // git
   "git.autofetch": true,
+  "git.branchPrefix": "dycw-",
   "git.branchProtection": ["master"],
+  "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+  "git.branchRandomName.enable": true,
   "git.defaultBranchName": "master",
   "git.enableSmartCommit": true,
   "git.fetchOnPull": true,
@@ -36,23 +43,39 @@
   "git.pruneOnFetch": true,
   "git.pullBeforeCheckout": true,
   "git.rebaseWhenSync": true,
+  "github.gitProtocol": "ssh",
+  // github
+  "githubPullRequests.createOnPublishBranch": "never",
+  "githubPullRequests.defaultMergeMethod": "squash",
+  "githubPullRequests.notifications": "pullRequests",
+  "githubPullRequests.pullBranch": "always",
+  "githubPullRequests.pushBranch": "always",
   // html
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "html.format.indentInnerHtml": true,
   // jsonc
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // markdown
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // python
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "python.testing.pytestEnabled": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
+  "python.testing.pytestArgs": ["--color=yes"],
+  "python.testing.pytestEnabled": true,
   "python.analysis.diagnosticSeverityOverrides": {
     "reportUnknownArgumentType": "none"
   },
   "python.analysis.typeCheckingMode": "strict",
+  "pythonTestExplorer.testFramework": "pytest",
   // python - black
   "black-formatter.args": ["--line-length=80"],
   // python - ruff
@@ -72,5 +95,5 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "vscode-icons"
 }
