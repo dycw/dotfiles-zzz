@@ -12,27 +12,123 @@
 // 	"description": "Log output to console"
 // }
 {
-  // beartype
-  "from beartype import beartype": {
+  // standard library - abc
+  "iaabc": {
+    "prefix": "iaabc",
+    "body": ["from abc import ABC", "$0"],
+    "description": "from abc import ABC"
+  },
+  "iaabcmeta": {
+    "prefix": "iaabcmeta",
+    "body": ["from abc import ABCMeta", "$0"],
+    "description": "from abc import ABCMeta"
+  },
+  "iaabstractmethod": {
+    "prefix": "iaabstractmethod",
+    "body": ["from abc import abstractmethod", "$0"],
+    "description": "from abc import abstractmethod"
+  },
+  // standard library - argparse
+  "iaargumentparse": {
+    "prefix": "iaargumentparse",
+    "body": ["from argparse import ArgumentParser", "$0"],
+    "description": "from argparse import ArgumentParser"
+  },
+  // third party - attrs
+  "iaasdict": {
+    "prefix": "iaasdict",
+    "body": ["from attrs import asdict", "$0"],
+    "description": "from attrs import asdict"
+  },
+  "iaastuple": {
+    "prefix": "iaastuple",
+    "body": ["from attrs import astuple", "$0"],
+    "description": "from attrs import astuple"
+  },
+  "iadefine": {
+    "prefix": "iadefine",
+    "body": ["from attrs import define", "$0"],
+    "description": "from attrs import define"
+  },
+  "iaevolve": {
+    "prefix": "iaevolve",
+    "body": ["from attrs import evolve", "$0"],
+    "description": "from attrs import evolve"
+  },
+  "iafield": {
+    "prefix": "iafield",
+    "body": ["from attrs import field", "$0"],
+    "description": "from attrs import field"
+  },
+  "iafields": {
+    "prefix": "iafields",
+    "body": ["froma attrs import field", "$0"],
+    "description": "from attrs import fields"
+  },
+  // third party - beartype
+  "ibbeartype": {
     "prefix": "ibbeartype",
-    "body": ["from beartype import beartype", "$0"]
+    "body": ["from beartype import beartype", "$0"],
+    "description": "from beartype import beartype"
   },
-  // pandas
-  "from pandas import Timedelta": {
+  "ibddieifunbearable": {
+    "prefix": "ibddieifunbearable",
+    "body": ["from beartype.door import die_if_unbearable", "$0"],
+    "description": "from beartype.door import die_if_unbearable"
+  },
+  "ibvis": {
+    "prefix": "ibvis",
+    "body": ["from beartype.value import Is", "$0"],
+    "description": "from beartype.vale import Is"
+  },
+  "ibvisattr": {
+    "prefix": "ibvisattr",
+    "body": ["from beartype.value import IsAttr", "$0"],
+    "description": "from beartype.vale import IsAttr"
+  },
+  // third party - bidict
+  "ibbidict": {
+    "prefix": "ibbidict",
+    "body": ["from bidict import bidict", "$0"],
+    "description": "from bidict import bidict"
+  },
+  // third party - box
+  "ibbox": {
+    "prefix": "ibbox",
+    "body": ["from box imoprt Box", "$0"],
+    "description": "from box imoprt Box"
+  },
+  // third party - bs4
+  "ibbeautifulsoup": {
+    "prefix": "ibbeautifulsoup",
+    "body": ["from bs4 import BeautifulSoup", "$0"],
+    "description": "from bs4 import BeautifulSoup"
+  },
+  // third party - pandas
+  "ippd": {
+    "prefix": "ippd",
+    "body": ["import pandas as pd", "$0"],
+    "description": "import pandas"
+  },
+  "iptimedelta": {
     "prefix": "iptimedelta",
-    "body": ["from pandas import Timedelta", "$0"]
+    "body": ["from pandas import Timedelta", "$0"],
+    "description": "from pandas import Timedelta"
   },
-  "from pandas import Timestamp": {
+  "iptimestamp": {
     "prefix": "iptimestamp",
-    "body": ["from pandas import Timestamp", "$0"]
+    "body": ["from pandas import Timestamp", "$0"],
+    "description": "from pandas import Timestamp"
   },
-  // typing-extensions
-  "from typing_extensions import Self": {
+  // third party - typing-extensions
+  "iteself": {
     "prefix": "iteself",
-    "body": ["from typing_extensions import Self", "$0"]
+    "body": ["from typing_extensions import Self", "$0"],
+    "description": "from typing_extensions import Self"
   },
-  "from typing_extensions import override": {
+  "iteoverride": {
     "prefix": "iteoverride",
-    "body": ["from typing_extensions import override", "$0"]
+    "body": ["from typing_extensions import override", "$0"],
+    "description": "from typing_extensions import override"
   }
 }

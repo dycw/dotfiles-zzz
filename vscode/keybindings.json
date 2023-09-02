@@ -41,11 +41,6 @@
     "key": "cmd+k s",
     "command": "-workbench.action.files.saveWithoutFormatting" // deletion
   },
-  // open file
-  {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpen" // deletion
-  },
   // problems
   {
     "key": "ctrl+up",
