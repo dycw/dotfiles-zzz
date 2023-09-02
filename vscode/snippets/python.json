@@ -14,16 +14,25 @@
 {
   // beartype
   "from beartype import beartype": {
-    "prefix": "fbib",
+    "prefix": "ibbeartype",
     "body": ["from beartype import beartype", "$0"]
   },
   // pandas
   "from pandas import Timedelta": {
-    "prefix": "fpitimedelta",
-    "body": ["from pandas import Timedelta"]
+    "prefix": "iptimedelta",
+    "body": ["from pandas import Timedelta", "$0"]
   },
   "from pandas import Timestamp": {
-    "prefix": "fpitimestamp",
-    "body": ["from pandas import Timestamp"]
+    "prefix": "iptimestamp",
+    "body": ["from pandas import Timestamp", "$0"]
+  },
+  // typing-extensions
+  "from typing_extensions import Self": {
+    "prefix": "iteself",
+    "body": ["from typing_extensions import Self", "$0"]
+  },
+  "from typing_extensions import override": {
+    "prefix": "iteoverride",
+    "body": ["from typing_extensions import override", "$0"]
   }
 }

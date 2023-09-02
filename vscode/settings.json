@@ -18,8 +18,8 @@
   "explorer.confirmDelete": false,
   "explorer.excludeGitIgnore": true,
   // files
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 100,
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 10,
   "files.exclude": {
     ".direnv": true,
     ".mypy_cache": true,
@@ -75,11 +75,11 @@
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticSeverityOverrides": {
-    "reportCallInDefaultInitializer": "error",
     "reportImplicitOverride": "error",
-    "reportImplicitStringConcatenation": "error",
     "reportImportCycles": "error",
     "reportMissingSuperCall": "error",
+    "reportMissingTypeStubs": "none",
+    "reportPrivateUsage": "none",
     "reportPropertyTypeMismatch": "error",
     "reportShadowedImports": "error",
     "reportUninitializedInstanceVariable": "error",
@@ -88,6 +88,7 @@
     "reportUnknownVariableType": "none",
     "reportUnnecessaryTypeIgnoreComment": "error",
     "reportUntypedBaseClass": "none",
+    "reportUntypedFunctionDecorator": "none",
     "reportUnusedCallResult": "error"
   },
   "python.analysis.typeCheckingMode": "strict",
@@ -141,8 +142,19 @@
     "--select=TRY", // tryceratops
     "--select=UP", // pyupgrade
     "--select=YTT", // flake8-2020
+    "--ignore=ANN101", // flake8-annotations > missing-type-self
+    "--ignore=ANN102", // flake8-annotations > missing-type-cls
+    "--ignore=ANN401", // flake8-annotations > any-type
+    "--ignore=B008", // flake8-bugbear > function-call-in-default-argument
+    "--ignore=PGH003", // pygrep-hooks > blanket-type-ignore
+    "--ignore=PLR0913", // pylint > too-many-arguments
+    "--ignore=PT012", // flake8-pytest-style > pytest-raises-with-multiple-statements
     "--ignore=PT013", // flake8-pytest-style > pytest-incorrect-pytest-import
-    "--fixable=ALL"
+    "--ignore=S101", // flake8-bandit > assert
+    "--fixable=ALL",
+    "--unfixable=ERA001", // eradicate > commented-out-code
+    // "--unfixable=F401", // pyflakes > unused-import
+    "--unfixable=F841" // pyflakes > unused-variable
   ],
   "ruff.importStrategy": "useBundled",
   // vim
@@ -169,6 +181,23 @@
     }
   ],
   "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // files
+    {
+      "before": ["<Leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // references
+    {
+      "before": ["<Leader>", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    // symbols
+    {
+      "before": ["<Leader>", "s"],
+      "commands": ["workbench.action.showAllSymbols"]
+    }
+  ],
   "vim.showMarksInGutter": true,
   "vim.smartRelativeLine": true,
   "vim.sneak": true,
