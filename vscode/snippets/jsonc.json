@@ -12,12 +12,13 @@
 // 	"description": "Log output to console"
 // }
 {
-  "new snippet": {
-    "prefix": "ns",
+  "snippet": {
+    "prefix": "snippet",
     "body": [
-      "\"$2\": {",
+      "\"$1\": {",
       "  \"prefix\": \"$1\",",
       "  \"body\": [\"$2\", \"\\$0\"],",
+      "  \"description\": \"$2\",",
       "},",
       "$0"
     ]
