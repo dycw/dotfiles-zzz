@@ -28,12 +28,45 @@
     "body": ["from abc import abstractmethod", "$0"],
     "description": "from abc import abstractmethod"
   },
+
   // standard library - argparse
   "iaargumentparse": {
     "prefix": "iaargumentparse",
     "body": ["from argparse import ArgumentParser", "$0"],
     "description": "from argparse import ArgumentParser"
   },
+
+  // standard library - datetime
+  "idatetime": {
+    "prefix": "idatetime",
+    "body": ["import datetime as dt", "$0"],
+    "description": "import datetime as dt"
+  },
+
+  // standard library - future
+  "ifannotations": {
+    "prefix": "ifannotations",
+    "body": ["from __future__ import annotations", "$0"],
+    "description": "from __future__ import annotations"
+  },
+
+  // standard library - typing
+  "ititerable": {
+    "prefix": "ititerable",
+    "body": ["from typing import Iterable", "$0"],
+    "description": "from typing import Iterable"
+  },
+  "ititerator": {
+    "prefix": "ititerator",
+    "body": ["from typing import Iterator", "$0"],
+    "description": "from typing import Iterator"
+  },
+  "ittypechecking": {
+    "prefix": "ittypechecking",
+    "body": ["from typing import TYPE_CHECKING", "$0"],
+    "description": "from typing import TYPE_CHECKING"
+  },
+
   // third party - attrs
   "iaasdict": {
     "prefix": "iaasdict",
@@ -65,6 +98,7 @@
     "body": ["froma attrs import field", "$0"],
     "description": "from attrs import fields"
   },
+
   // third party - beartype
   "ibbeartype": {
     "prefix": "ibbeartype",
@@ -86,24 +120,28 @@
     "body": ["from beartype.value import IsAttr", "$0"],
     "description": "from beartype.vale import IsAttr"
   },
+
   // third party - bidict
   "ibbidict": {
     "prefix": "ibbidict",
     "body": ["from bidict import bidict", "$0"],
     "description": "from bidict import bidict"
   },
+
   // third party - box
   "ibbox": {
     "prefix": "ibbox",
     "body": ["from box imoprt Box", "$0"],
     "description": "from box imoprt Box"
   },
+
   // third party - bs4
   "ibbeautifulsoup": {
     "prefix": "ibbeautifulsoup",
     "body": ["from bs4 import BeautifulSoup", "$0"],
     "description": "from bs4 import BeautifulSoup"
   },
+
   // third party - pandas
   "ippd": {
     "prefix": "ippd",
@@ -120,6 +158,24 @@
     "body": ["from pandas import Timestamp", "$0"],
     "description": "from pandas import Timestamp"
   },
+
+  // third party - sqlalchemy
+  "ismetadata": {
+    "prefix": "ismetadata",
+    "body": ["from sqlalchemy import MetaData", "$0"],
+    "description": "from sqlalchemy import MetaData"
+  },
+  "istable": {
+    "prefix": "istable",
+    "body": ["from sqlalchemy import Table", "$0"],
+    "description": "from sqlalchemy import Table"
+  },
+  "iscreateengine": {
+    "prefix": "iscreateengine",
+    "body": ["from sqlalchemy import create_engine", "$0"],
+    "description": "from sqlalchemy import create_engine"
+  },
+
   // third party - typing-extensions
   "iteself": {
     "prefix": "iteself",

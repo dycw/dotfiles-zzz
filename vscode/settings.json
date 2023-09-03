@@ -209,5 +209,6 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "editor.linkedEditing": true
 }
