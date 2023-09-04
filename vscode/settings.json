@@ -9,6 +9,7 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [80],
   "editor.suggest.localityBonus": true,
@@ -18,7 +19,7 @@
   "explorer.confirmDelete": false,
   "explorer.excludeGitIgnore": true,
   // files
-  "files.autoSave": "onWindowChange",
+  "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 10,
   "files.exclude": {
     ".direnv": true,
@@ -36,6 +37,7 @@
   "git.branchProtection": ["master"],
   "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
   "git.branchRandomName.enable": true,
+  "git.confirmSync": false,
   "git.defaultBranchName": "master",
   "git.enableSmartCommit": true,
   "git.fetchOnPull": true,
@@ -58,13 +60,30 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "html.format.indentInnerHtml": true,
+  // javascript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // javascriptreact
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // json
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
   // jsonc
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   // markdown
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   // prettier
   "prettier.proseWrap": "always",
@@ -72,6 +91,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
+  "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticSeverityOverrides": {
@@ -91,6 +111,8 @@
     "reportUntypedFunctionDecorator": "none",
     "reportUnusedCallResult": "error"
   },
+  "python.analysis.exclude": ["**/*.ipynb"],
+  "python.analysis.ignore": ["**/*.ipynb"],
   "python.analysis.typeCheckingMode": "strict",
   "python.testing.pytestArgs": ["--color=yes"],
   "python.testing.pytestEnabled": true,
@@ -157,6 +179,18 @@
     "--unfixable=F841" // pyflakes > unused-variable
   ],
   "ruff.importStrategy": "useBundled",
+  // search
+  "search.smartCase": true,
+  // typescript
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // typescriptreact
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
   // vim
   "vim.gdefault": true,
   "vim.highlightedyank.enable": true,
@@ -187,6 +221,11 @@
       "before": ["<Leader>", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
+    // highlight
+    {
+      "before": ["<Leader>", "/"],
+      "after": ":noh"
+    },
     // references
     {
       "before": ["<Leader>", "r"],
@@ -209,6 +248,5 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "vscode-icons",
-  "editor.linkedEditing": true
+  "workbench.iconTheme": "vscode-icons"
 }

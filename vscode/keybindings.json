@@ -22,11 +22,11 @@
     "command": "git.pushForce"
   },
   // hover
-  {
-    "key": "shift+k",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
+  // {
+  //   "key": "shift+k",
+  //   "command": "editor.action.showHover",
+  //   "when": "editorTextFocus"
+  // },
   {
     "key": "cmd+k cmd+i",
     "command": "-editor.action.showHover", // deletion
