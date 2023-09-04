@@ -206,6 +206,23 @@
     "description": "from __future__ import annotations"
   },
 
+  // standard library - hashlib
+  "ihmd5": {
+    "prefix": "ihmd5",
+    "body": ["from hashlib import md5", "$0"],
+    "description": "from hashlib import md5"
+  },
+  "ihsha256": {
+    "prefix": "ihsha256",
+    "body": ["from hashlib import sha256", "$0"],
+    "description": "from hashlib import sha256"
+  },
+  "ihsha512": {
+    "prefix": "ihsha512",
+    "body": ["from hashlib import sha512", "$0"],
+    "description": "from hashlib import sha512"
+  },
+
   // standard library - typing
   "ititerable": {
     "prefix": "ititerable",
@@ -317,6 +334,55 @@
     "prefix": "ifparquetfile",
     "body": ["from fastparquet import ParquetFile", "$0"],
     "description": "from fastparquet import ParquetFile"
+  },
+
+  // third party - funcy
+  "ifcomplement": {
+    "prefix": "ifcomplement",
+    "body": ["from funcy import complement", "$0"],
+    "description": "from funcy import complement"
+  },
+  "ifisnone": {
+    "prefix": "ifisnone",
+    "body": ["from funcy import isnone", "$0"],
+    "description": "from funcy import isnone"
+  },
+  "ifnotnone": {
+    "prefix": "ifnotnone",
+    "body": ["from funcy import notnone", "$0"],
+    "description": "from funcy import notnone"
+  },
+
+  // third party - holoviews
+  "ihcurve": {
+    "prefix": "ihcurve",
+    "body": ["from holoviews import Curve", "$0"],
+    "description": "from holoviews import Curve"
+  },
+  "ihhistogram": {
+    "prefix": "ihhistogram",
+    "body": ["from holoviews import Histogram", "$0"],
+    "description": "from holoviews import Histogram"
+  },
+  "ihhline": {
+    "prefix": "ihhline",
+    "body": ["from holoviews import HLine", "$0"],
+    "description": "from holoviews import HLine"
+  },
+  "ihndoverlay": {
+    "prefix": "ihndoverlay",
+    "body": ["from holoviews import NDOverlay", "$0"],
+    "description": "from holoviews import NDOverlay"
+  },
+  "ihoverlay": {
+    "prefix": "ihoverlay",
+    "body": ["from holoviews import Overlay", "$0"],
+    "description": "from holoviews import Overlay"
+  },
+  "ihtable": {
+    "prefix": "ihtable",
+    "body": ["from holoviews import Table", "$0"],
+    "description": "from holoviews import Table"
   },
 
   // third party - pandas
