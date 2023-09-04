@@ -36,6 +36,59 @@
     "description": "from argparse import ArgumentParser"
   },
 
+  // standard library - collections
+  "iccounter": {
+    "prefix": "iccounter",
+    "body": ["from collections import Counter", "$0"],
+    "description": "from collections import Counter"
+  },
+  "icdefaultdict": {
+    "prefix": "icdefaultdict",
+    "body": ["from collections import defaultdict", "$0"],
+    "description": "from collections import defaultdict"
+  },
+  "icdeque": {
+    "prefix": "icdeque",
+    "body": ["from collections import deque", "$0"],
+    "description": "from collections import deque"
+  },
+  "icaawaitable": {
+    "prefix": "icaawaitable",
+    "body": ["from collections.abc import Awaitable", "$0"],
+    "description": "from collections.abc import Awaitable"
+  },
+  "icacallable": {
+    "prefix": "icacallable",
+    "body": ["from collections.abc import Callable", "$0"],
+    "description": "from collections.abc import Callable"
+  },
+  "icahashable": {
+    "prefix": "icahashable",
+    "body": ["from collections.abc import Hashable", "$0"],
+    "description": "from collections.abc import Hashable"
+  },
+  "icaiterable": {
+    "prefix": "icaiterable",
+    "body": ["from collections.abc import Iterable", "$0"],
+    "description": "from collections.abc import Iterable"
+  },
+  "icaiterator": {
+    "prefix": "icaiterator",
+    "body": ["from collections.abc import Iterator", "$0"],
+    "description": "from collections.abc import Iterator"
+  },
+
+  "icamapping": {
+    "prefix": "icamapping",
+    "body": ["from collections.abc import Mapping", "$0"],
+    "description": "from collections.abc import Mapping"
+  },
+  "icasized": {
+    "prefix": "icasized",
+    "body": ["from collections.abc import Sized", "$0"],
+    "description": "from collections.abc import Sized"
+  },
+
   // standard library - datetime
   "idatetime": {
     "prefix": "idatetime",
