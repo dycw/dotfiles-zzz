@@ -96,6 +96,109 @@
     "description": "import datetime as dt"
   },
 
+  // standard library - contextlib
+  "iccontextmanager": {
+    "prefix": "iccontextmanager",
+    "body": ["from contextlib import contextmanager", "$0"],
+    "description": "from contextlib import contextmanager"
+  },
+  "icredirectstderr": {
+    "prefix": "icredirectstderr",
+    "body": ["from contextlib import redirect_stderr", "$0"],
+    "description": "from contextlib import redirect_stderr"
+  },
+  "icredirectstdout": {
+    "prefix": "icredirectstdout",
+    "body": ["from contextlib import redirect_stdout", "$0"],
+    "description": "from contextlib import redirect_stdout"
+  },
+  "icsuppress": {
+    "prefix": "icsuppress",
+    "body": ["from contextlib import suppress", "$0"],
+    "description": "from contextlib import suppress"
+  },
+
+  // standard library - dataclasses
+  "idasdict": {
+    "prefix": "idasdict",
+    "body": ["from dataclasses import asdict", "$0"],
+    "description": "from dataclasses import asdict"
+  },
+  "idastuple": {
+    "prefix": "idastuple",
+    "body": ["from dataclasses import astuple", "$0"],
+    "description": "from dataclasses import astuple"
+  },
+  "iddataclass": {
+    "prefix": "iddataclass",
+    "body": ["from dataclasses import dataclass", "$0"],
+    "description": "from dataclasses import dataclass"
+  },
+  "idfield": {
+    "prefix": "idfield",
+    "body": ["from dataclasses import field", "$0"],
+    "description": "from dataclasses import field"
+  },
+  "idfields": {
+    "prefix": "idfields",
+    "body": ["from dataclasses import fields", "$0"],
+    "description": "from dataclasses import fields"
+  },
+  "idreplace": {
+    "prefix": "idreplace",
+    "body": ["from dataclasses import replace", "$0"],
+    "description": "from dataclasses import replace"
+  },
+
+  // standard library - enum
+  "ieenum": {
+    "prefix": "ieenum",
+    "body": ["from enum import Enum", "$0"],
+    "description": "from enum import Enum"
+  },
+  "ieauto": {
+    "prefix": "ieauto",
+    "body": ["from enum import auto", "$0"],
+    "description": "from enum import auto"
+  },
+
+  // standard library - functools
+  "ifcache": {
+    "prefix": "ifcache",
+    "body": ["from functools import cache", "$0"],
+    "description": "from functools import cache"
+  },
+  "ifcachedproperty": {
+    "prefix": "ifcachedproperty",
+    "body": ["from functools import cached_property", "$0"],
+    "description": "from functools import cached_property"
+  },
+  "iflrucache": {
+    "prefix": "iflrucache",
+    "body": ["from functools import lru_cache", "$0"],
+    "description": "from functools import lru_cache"
+  },
+  "ifpartial": {
+    "prefix": "ifpartial",
+    "body": ["from functools import partial", "$0"],
+    "description": "from functools import partial"
+  },
+  "ifreduce": {
+    "prefix": "ifreduce",
+    "body": ["from functools import reduce", "$0"],
+    "description": "from functools import reduce"
+  },
+  "ifupdatewrapper": {
+    "prefix": "ifupdatewrapper",
+    "body": ["from functools import update_wrapper", "$0"],
+    "description": "from functools import update_wrapper"
+  },
+  "ifwraps": {
+    "prefix": "ifwraps",
+    "body": ["from functools import wraps", "$0"],
+    "description": "from functools import wraps"
+  },
+
   // standard library - future
   "ifannotations": {
     "prefix": "ifannotations",
@@ -188,11 +291,32 @@
     "description": "from box imoprt Box"
   },
 
+  // third party - contexttimer
+  "ictimer": {
+    "prefix": "ictimer",
+    "body": ["from contexttimer import Timer", "$0"],
+    "description": "from contexttimer import Timer"
+  },
+
   // third party - bs4
   "ibbeautifulsoup": {
     "prefix": "ibbeautifulsoup",
     "body": ["from bs4 import BeautifulSoup", "$0"],
     "description": "from bs4 import BeautifulSoup"
+  },
+
+  // third party - faker
+  "iffaker": {
+    "prefix": "iffaker",
+    "body": ["from faker import Faker", "$0"],
+    "description": "from faker import Faker"
+  },
+
+  // third party - fastparquet
+  "ifparquetfile": {
+    "prefix": "ifparquetfile",
+    "body": ["from fastparquet import ParquetFile", "$0"],
+    "description": "from fastparquet import ParquetFile"
   },
 
   // third party - pandas
