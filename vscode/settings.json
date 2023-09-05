@@ -33,9 +33,9 @@
   "files.trimTrailingWhitespace": true,
   // git
   "git.autofetch": true,
-  "git.branchPrefix": "dycw-",
   "git.branchProtection": ["master"],
   "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+  "git.branchRandomName.dictionary": ["colors"],
   "git.branchRandomName.enable": true,
   "git.confirmSync": false,
   "git.defaultBranchName": "master",
