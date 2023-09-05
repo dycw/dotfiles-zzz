@@ -385,6 +385,253 @@
     "description": "from holoviews import Table"
   },
 
+  // third party - humanize
+  "ihfractional": {
+    "prefix": "ihfractional",
+    "body": ["from humanize import fractional", "$0"],
+    "description": "from humanize import fractional"
+  },
+  "ihintcomma": {
+    "prefix": "ihintcomma",
+    "body": ["from humanize import intcomma", "$0"],
+    "description": "from humanize import intcomma"
+  },
+  "ihintword": {
+    "prefix": "ihintword",
+    "body": ["from humanize import intword", "$0"],
+    "description": "from humanize import intword"
+  },
+  "ihnaturaldate": {
+    "prefix": "ihnaturaldate",
+    "body": ["from humanize import naturaldate", "$0"],
+    "description": "from humanize import naturaldate"
+  },
+  "ihnaturalday": {
+    "prefix": "ihnaturalday",
+    "body": ["from humanize import naturalday", "$0"],
+    "description": "from humanize import naturalday"
+  },
+  "ihnaturaldelta": {
+    "prefix": "ihnaturaldelta",
+    "body": ["from humanize import naturaldelta", "$0"],
+    "description": "from humanize import naturaldelta"
+  },
+  "ihnaturalsize": {
+    "prefix": "ihnaturalsize",
+    "body": ["from humanize import naturalsize", "$0"],
+    "description": "from humanize import naturalsize"
+  },
+  "ihnaturaltime": {
+    "prefix": "ihnaturaltime",
+    "body": ["from humanize import naturaltime", "$0"],
+    "description": "from humanize import naturaltime"
+  },
+  "ihprecisedelta": {
+    "prefix": "ihprecisedelta",
+    "body": ["from humanize import precisedelta", "$0"],
+    "description": "from humanize import precisedelta"
+  },
+
+  // third party - hypothesis
+  "ihhealthcheck": {
+    "prefix": "ihhealthcheck",
+    "body": ["kfrom hypothesis import HealthCheck", "$0"],
+    "description": "kfrom hypothesis import HealthCheck"
+  },
+  "ihassume": {
+    "prefix": "ihassume",
+    "body": ["from hypothesis import assume", "$0"],
+    "description": "from hypothesis import assume"
+  },
+  "ihgiven": {
+    "prefix": "ihgiven",
+    "body": ["from hypothesis import given", "$0"],
+    "description": "from hypothesis import given"
+  },
+  "ihinfer": {
+    "prefix": "ihinfer",
+    "body": ["from hypothesis import infer", "$0"],
+    "description": "from hypothesis import infer"
+  },
+  "ihreproducefailure": {
+    "prefix": "ihreproducefailure",
+    "body": ["from hypothesis import reproduce_failure", "$0"],
+    "description": "from hypothesis import reproduce_failure"
+  },
+  "ihsettings": {
+    "prefix": "ihsettings",
+    "body": ["from hypothesis import settings", "$0"],
+    "description": "from hypothesis import settings"
+  },
+  "ihsdataobject": {
+    "prefix": "ihsdataobject",
+    "body": ["from hypothesis.strategies import DataObject", "$0"],
+    "description": "from hypothesis.strategies import DataObject"
+  },
+  "ihssearchstrategy": {
+    "prefix": "ihssearchstrategy",
+    "body": ["from hypothesis.strategies import SearchStrategy", "$0"],
+    "description": "from hypothesis.strategies import SearchStrategy"
+  },
+  "ihsbooleans": {
+    "prefix": "ihsbooleans",
+    "body": ["from hypothesis.strategies import booleans", "$0"],
+    "description": "from hypothesis.strategies import booleans"
+  },
+  "ihscomplexnumbers": {
+    "prefix": "ihscomplexnumbers",
+    "body": ["from hypothesis.strategies import complex_numbers", "$0"],
+    "description": "from hypothesis.strategies import complex_numbers"
+  },
+  "ihsdictionaries": {
+    "prefix": "ihsdictionaries",
+    "body": ["from hypothesis.strategies import dictionaries", "$0"],
+    "description": "from hypothesis.strategies import dictionaries"
+  },
+  "ihsfixeddictionaries": {
+    "prefix": "ihsfixeddictionaries",
+    "body": ["from hypothesis.strategies import fixed_dictionaries", "$0"],
+    "description": "from hypothesis.strategies import fixed_dictionaries"
+  },
+  "ihsfloats": {
+    "prefix": "ihsfloats",
+    "body": ["from hypothesis.strategies import floats", "$0"],
+    "description": "from hypothesis.strategies import floats"
+  },
+  "ihsfromtype": {
+    "prefix": "ihsfromtype",
+    "body": ["from hypothesis.strategies import from_type", "$0"],
+    "description": "from hypothesis.strategies import from_type"
+  },
+  "ihsintegers": {
+    "prefix": "ihsintegers",
+    "body": ["from hypothesis.strategies import integers", "$0"],
+    "description": "from hypothesis.strategies import integers"
+  },
+  "ihsjust": {
+    "prefix": "ihsjust",
+    "body": ["from hypothesis.strategies import just", "$0"],
+    "description": "from hypothesis.strategies import just"
+  },
+  "ihslists": {
+    "prefix": "ihslists",
+    "body": ["from hypothesis.strategies import lists", "$0"],
+    "description": "from hypothesis.strategies import lists"
+  },
+  "ihsnone": {
+    "prefix": "ihsnone",
+    "body": ["from hypothesis.strategies import none", "$0"],
+    "description": "from hypothesis.strategies import none"
+  },
+  "ihssampledfrom": {
+    "prefix": "ihssampledfrom",
+    "body": ["from hypothesis.strategies import sampled_from", "$0"],
+    "description": "from hypothesis.strategies import sampled_from"
+  },
+  "ihssets": {
+    "prefix": "ihssets",
+    "body": ["from hypothesis.strategies import sets", "$0"],
+    "description": "from hypothesis.strategies import sets"
+  },
+  "ihsshared": {
+    "prefix": "ihsshared",
+    "body": ["from hypothesis.strategies import shared", "$0"],
+    "description": "from hypothesis.strategies import shared"
+  },
+  "ihstext": {
+    "prefix": "ihstext",
+    "body": ["from hypothesis.strategies import text", "$0"],
+    "description": "from hypothesis.strategies import text"
+  },
+  "ihstuples": {
+    "prefix": "ihstuples",
+    "body": ["from hypothesis.strategies import tuples", "$0"],
+    "description": "from hypothesis.strategies import tuples"
+  },
+  "ihedliveservertestcase": {
+    "prefix": "ihedliveservertestcase",
+    "body": ["from hypothesis.extra.django import LiveServerTestCase", "$0"],
+    "description": "from hypothesis.extra.django import LiveServerTestCase"
+  },
+  "ihedstaticliveservertestcase": {
+    "prefix": "ihedstaticliveservertestcase",
+    "body": [
+      "from hypothesis.extra.django import StaticLiveServerTestCase",
+      "$0"
+    ],
+    "description": "from hypothesis.extra.django import StaticLiveServerTestCase"
+  },
+  "ihedtransactiontestcase": {
+    "prefix": "ihedtransactiontestcase",
+    "body": ["from hypothesis.extra.django import TransactionTestCase", "$0"],
+    "description": "from hypothesis.extra.django import TransactionTestCase"
+  },
+  "ihedfromform": {
+    "prefix": "ihedfromform",
+    "body": ["from hypothesis.extra.django import from_form", "$0"],
+    "description": "from hypothesis.extra.django import from_form"
+  },
+  "ihedfrommodel": {
+    "prefix": "ihedfrommodel",
+    "body": ["from hypothesis.extra.django import from_model", "$0"],
+    "description": "from hypothesis.extra.django import from_model"
+  },
+  "ihenarraydtypes": {
+    "prefix": "ihenarraydtypes",
+    "body": ["from hypothesis.extra.numpy import array_dtypes", "$0"],
+    "description": "from hypothesis.extra.numpy import array_dtypes"
+  },
+  "ihenarrayshapes": {
+    "prefix": "ihenarrayshapes",
+    "body": ["from hypothesis.extra.numpy import array_shapes", "$0"],
+    "description": "from hypothesis.extra.numpy import array_shapes"
+  },
+  "ihenarrays": {
+    "prefix": "ihenarrays",
+    "body": ["from hypothesis.extra.numpy import arrays", "$0"],
+    "description": "from hypothesis.extra.numpy import arrays"
+  },
+  "ihenfromdtype": {
+    "prefix": "ihenfromdtype",
+    "body": ["from hypothesis.extra.numpy import from_dtype", "$0"],
+    "description": "from hypothesis.extra.numpy import from_dtype"
+  },
+  "ihenscalardtypes": {
+    "prefix": "ihenscalardtypes",
+    "body": ["from hypothesis.extra.numpy import scalar_dtypes", "$0"],
+    "description": "from hypothesis.extra.numpy import scalar_dtypes"
+  },
+  "ihepcolumn": {
+    "prefix": "ihepcolumn",
+    "body": ["from hypothesis.extra.pandas import column", "$0"],
+    "description": "from hypothesis.extra.pandas import column"
+  },
+  "ihepcolumns": {
+    "prefix": "ihepcolumns",
+    "body": ["from hypothesis.extra.pandas import columns", "$0"],
+    "description": "from hypothesis.extra.pandas import columns"
+  },
+  "ihepdataframes": {
+    "prefix": "ihepdataframes",
+    "body": ["from hypothesis.extra.pandas import data_frames", "$0"],
+    "description": "from hypothesis.extra.pandas import data_frames"
+  },
+  "ihepindexes": {
+    "prefix": "ihepindexes",
+    "body": ["from hypothesis.extra.pandas import indexes", "$0"],
+    "description": "from hypothesis.extra.pandas import indexes"
+  },
+  "iheprangeindexes": {
+    "prefix": "iheprangeindexes",
+    "body": ["from hypothesis.extra.pandas import range_indexes", "$0"],
+    "description": "from hypothesis.extra.pandas import range_indexes"
+  },
+  "ihepseries": {
+    "prefix": "ihepseries",
+    "body": ["from hypothesis.extra.pandas import series", "$0"],
+    "description": "from hypothesis.extra.pandas import series"
+  },
+
   // third party - pandas
   "ippd": {
     "prefix": "ippd",
