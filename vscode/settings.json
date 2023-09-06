@@ -244,6 +244,16 @@
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.targets.enable": true,
   "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "after": [">", "g", "c"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "c"]
+    }
+  ],
   "vim.visualstar": true,
   // window
   "window.title": "${rootName}",
