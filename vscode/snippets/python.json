@@ -202,6 +202,12 @@
     "body": ["from __future__ import annotations", "$0"]
   },
 
+  // standard library - gzip
+  "import gzip": {
+    "prefix": "import gzip",
+    "body": ["import gzip", "$0"]
+  },
+
   // standard library - hashlib
   "import hashlib": {
     "prefix": "import hashlib",
@@ -230,6 +236,20 @@
     "body": ["from importlib import reload", "$0"]
   },
 
+  // standard library - inspect
+  "import inspect": {
+    "prefix": "import inspect",
+    "body": ["import inspect", "$0"]
+  },
+  "from inspect import getattr_static": {
+    "prefix": "from inspect import getattr_static",
+    "body": ["from inspect import getattr_static", "$0"]
+  },
+  "from inspect import signature": {
+    "prefix": "from inspect import signature",
+    "body": ["from inspect import signature", "$0"]
+  },
+
   // standard library - io
   "import io": {
     "prefix": "import io",
@@ -242,6 +262,132 @@
   "from io import StringIO": {
     "prefix": "from io import StringIO",
     "body": ["from io import StringIO", "$0"]
+  },
+
+  // standard library - itertools
+  "import itertools": {
+    "prefix": "import itertools",
+    "body": ["import itertools", "$0"]
+  },
+  "from itertools import accumulate": {
+    "prefix": "from itertools import accumulate",
+    "body": ["from itertools import accumulate", "$0"]
+  },
+  "from itertools import chain": {
+    "prefix": "from itertools import chain",
+    "body": ["from itertools import chain", "$0"]
+  },
+  "from itertools import combinations": {
+    "prefix": "from itertools import combinations",
+    "body": ["from itertools import combinations", "$0"]
+  },
+  "from itertools import combinations_with_replacement": {
+    "prefix": "from itertools import combinations_with_replacement",
+    "body": ["from itertools import combinations_with_replacement", "$0"]
+  },
+  "from itertools import compress": {
+    "prefix": "from itertools import compress",
+    "body": ["from itertools import compress", "$0"]
+  },
+  "from itertools import count": {
+    "prefix": "from itertools import count",
+    "body": ["from itertools import count", "$0"]
+  },
+  "from itertools import cycle": {
+    "prefix": "from itertools import cycle",
+    "body": ["from itertools import cycle", "$0"]
+  },
+  "from itertools import dropwhile": {
+    "prefix": "from itertools import dropwhile",
+    "body": ["from itertools import dropwhile", "$0"]
+  },
+  "from itertools import filterfalse": {
+    "prefix": "from itertools import filterfalse",
+    "body": ["from itertools import filterfalse", "$0"]
+  },
+  "from itertools import groupby": {
+    "prefix": "from itertools import groupby",
+    "body": ["from itertools import groupby", "$0"]
+  },
+  "from itertools import islice": {
+    "prefix": "from itertools import islice",
+    "body": ["from itertools import islice", "$0"]
+  },
+  "from itertools import permutations": {
+    "prefix": "from itertools import permutations",
+    "body": ["from itertools import permutations", "$0"]
+  },
+  "from itertools import product": {
+    "prefix": "from itertools import product",
+    "body": ["from itertools import product", "$0"]
+  },
+  "from itertools import repeat": {
+    "prefix": "from itertools import repeat",
+    "body": ["from itertools import repeat", "$0"]
+  },
+  "from itertools import starmap": {
+    "prefix": "from itertools import starmap",
+    "body": ["from itertools import starmap", "$0"]
+  },
+  "from itertools import tabulate": {
+    "prefix": "from itertools import tabulate",
+    "body": ["from itertools import tabulate", "$0"]
+  },
+  "from itertools import takewhile": {
+    "prefix": "from itertools import takewhile",
+    "body": ["from itertools import takewhile", "$0"]
+  },
+  "from itertools import tee": {
+    "prefix": "from itertools import tee",
+    "body": ["from itertools import tee", "$0"]
+  },
+  "from itertools import zip_longest": {
+    "prefix": "from itertools import zip_longest",
+    "body": ["from itertools import zip_longest", "$0"]
+  },
+
+  // standard library - json
+  "import json": {
+    "prefix": "import json",
+    "body": ["import json", "$0"]
+  },
+  "from json import JSONDecoder": {
+    "prefix": "from json import JSONDecoder",
+    "body": ["from json import JSONDecoder", "$0"]
+  },
+  "from json import JSONEncoder": {
+    "prefix": "from json import JSONEncoder",
+    "body": ["from json import JSONEncoder", "$0"]
+  },
+
+  // standard library - logging
+  "import logging": {
+    "prefix": "import logging",
+    "body": ["import logging", "$0"]
+  },
+  "from logging import basicConfig": {
+    "prefix": "from logging import basicConfig",
+    "body": ["from logging import basicConfig", "$0"]
+  },
+  "from logging import DEBUG": {
+    "prefix": "from logging import DEBUG",
+    "body": ["from logging import DEBUG", "$0"]
+  },
+  "from logging import ERROR": {
+    "prefix": "from logging import ERROR",
+    "body": ["from logging import ERROR", "$0"]
+  },
+  "from logging import INFO": {
+    "prefix": "from logging import INFO",
+    "body": ["from logging import INFO", "$0"]
+  },
+  "from logging import WARNING": {
+    "prefix": "from logging import WARNING",
+    "body": ["from logging import WARNING", "$0"]
+  },
+  "from logging.config import dictConfig": {
+    "prefix": "from logging.config import dictConfig",
+    "body": ["from logging.config import dictConfig", "$0"]
   },
 
   // standard library - typing
@@ -394,6 +540,12 @@
     "body": ["from contexttimer import Timer", "$0"]
   },
 
+  // third party - dtale
+  "import dtale": {
+    "prefix": "import dtale",
+    "body": ["import dtale", "$0"]
+  },
+
   // third party - faker
   "import faker": {
     "prefix": "import faker",
@@ -506,6 +658,16 @@
   "from humanize import precisedelta": {
     "prefix": "from humanize import precisedelta",
     "body": ["from humanize import precisedelta", "$0"]
+  },
+
+  // third party - hvplot
+  "import hvplot.pandas": {
+    "prefix": "import hvplot.pandas",
+    "body": ["import hvplot.pandas", "$0"]
+  },
+  "import hvplot.xarray": {
+    "prefix": "import hvplot.xarray",
+    "body": ["import hvplot.xarray", "$0"]
   },
 
   // third party - hypothesis
@@ -703,6 +865,316 @@
   "from icecream import ic": {
     "prefix": "from icecream import ic",
     "body": ["from icecream import ic", "$0"]
+  },
+
+  // third party - joblib
+  "import joblib": {
+    "prefix": "import joblib",
+    "body": ["import joblib", "$0"]
+  },
+  "from joblib import Memory": {
+    "prefix": "from joblib import Memory",
+    "body": ["from joblib import Memory", "$0"]
+  },
+  "from joblib import Parallel": {
+    "prefix": "from joblib import Parallel",
+    "body": ["from joblib import Parallel", "$0"]
+  },
+  "from joblib import delayed": {
+    "prefix": "from joblib import delayed",
+    "body": ["from joblib import delayed", "$0"]
+  },
+
+  // third party - loguru
+  "import loguru": {
+    "prefix": "import loguru",
+    "body": ["import loguru", "$0"]
+  },
+  "from loguru import logger": {
+    "prefix": "from loguru import logger",
+    "body": ["from loguru import logger", "$0"]
+  },
+
+  // third party - luigi
+  "import luigi": {
+    "prefix": "import luigi",
+    "body": ["import luigi", "$0"]
+  },
+  "from luigi import BoolParameter": {
+    "prefix": "from luigi import BoolParameter",
+    "body": ["from luigi import BoolParameter", "$0"]
+  },
+  "from luigi import DictParameter": {
+    "prefix": "from luigi import DictParameter",
+    "body": ["from luigi import DictParameter", "$0"]
+  },
+  "from luigi import EnumParameter": {
+    "prefix": "from luigi import EnumParameter",
+    "body": ["from luigi import EnumParameter", "$0"]
+  },
+  "from luigi import ExternalTask": {
+    "prefix": "from luigi import ExternalTask",
+    "body": ["from luigi import ExternalTask", "$0"]
+  },
+  "from luigi import FloatParameter": {
+    "prefix": "from luigi import FloatParameter",
+    "body": ["from luigi import FloatParameter", "$0"]
+  },
+  "from luigi import IntParameter": {
+    "prefix": "from luigi import IntParameter",
+    "body": ["from luigi import IntParameter", "$0"]
+  },
+  "from luigi import LocalTarget": {
+    "prefix": "from luigi import LocalTarget",
+    "body": ["from luigi import LocalTarget", "$0"]
+  },
+  "from luigi import Task": {
+    "prefix": "from luigi import Task",
+    "body": ["from luigi import Task", "$0"]
+  },
+  "from luigi import TaskParameter": {
+    "prefix": "from luigi import TaskParameter",
+    "body": ["from luigi import TaskParameter", "$0"]
+  },
+  "from luigi import TupleParameter": {
+    "prefix": "from luigi import TupleParameter",
+    "body": ["from luigi import TupleParameter", "$0"]
+  },
+  "from luigi import WrapperTask": {
+    "prefix": "from luigi import WrapperTask",
+    "body": ["from luigi import WrapperTask", "$0"]
+  },
+  "from luigi import build": {
+    "prefix": "from luigi import build",
+    "body": ["from luigi import build", "$0"]
+  },
+
+  // third party - matplotlib
+  "import matplotlib": {
+    "prefix": "import matplotlib",
+    "body": ["import matplotlib", "$0"]
+  },
+  "import matplotlib as mpl": {
+    "prefix": "import matplotlib as mpl",
+    "body": ["import matplotlib as mpl", "$0"]
+  },
+  "import matplotlib as plt": {
+    "prefix": "import matplotlib as plt",
+    "body": ["import matplotlib as plt", "$0"]
+  },
+
+  // third party - more-itertools
+  "import more_itertools": {
+    "prefix": "import more_itertools",
+    "body": ["import more_itertools", "$0"]
+  },
+  "from more_itertools import all_equal": {
+    "prefix": "from more_itertools import all_equal",
+    "body": ["from more_itertools import all_equal", "$0"]
+  },
+  "from more_itertools import always_iterable": {
+    "prefix": "from more_itertools import always_iterable",
+    "body": ["from more_itertools import always_iterable", "$0"]
+  },
+  "from more_itertools import chunked": {
+    "prefix": "from more_itertools import chunked",
+    "body": ["from more_itertools import chunked", "$0"]
+  },
+  "from more_itertools import consume": {
+    "prefix": "from more_itertools import consume",
+    "body": ["from more_itertools import consume", "$0"]
+  },
+  "from more_itertools import distribute": {
+    "prefix": "from more_itertools import distribute",
+    "body": ["from more_itertools import distribute", "$0"]
+  },
+  "from more_itertools import divide": {
+    "prefix": "from more_itertools import divide",
+    "body": ["from more_itertools import divide", "$0"]
+  },
+  "from more_itertools import dotproduct": {
+    "prefix": "from more_itertools import dotproduct",
+    "body": ["from more_itertools import dotproduct", "$0"]
+  },
+  "from more_itertools import filter_except": {
+    "prefix": "from more_itertools import filter_except",
+    "body": ["from more_itertools import filter_except", "$0"]
+  },
+  "from more_itertools import first": {
+    "prefix": "from more_itertools import first",
+    "body": ["from more_itertools import first", "$0"]
+  },
+  "from more_itertools import first_true": {
+    "prefix": "from more_itertools import first_true",
+    "body": ["from more_itertools import first_true", "$0"]
+  },
+  "from more_itertools import flatten": {
+    "prefix": "from more_itertools import flatten",
+    "body": ["from more_itertools import flatten", "$0"]
+  },
+  "from more_itertools import grouper": {
+    "prefix": "from more_itertools import grouper",
+    "body": ["from more_itertools import grouper", "$0"]
+  },
+  "from more_itertools import interleave": {
+    "prefix": "from more_itertools import interleave",
+    "body": ["from more_itertools import interleave", "$0"]
+  },
+  "from more_itertools import interleave_longest": {
+    "prefix": "from more_itertools import interleave_longest",
+    "body": ["from more_itertools import interleave_longest", "$0"]
+  },
+  "from more_itertools import intersperse": {
+    "prefix": "from more_itertools import intersperse",
+    "body": ["from more_itertools import intersperse", "$0"]
+  },
+  "from more_itertools import iter_except": {
+    "prefix": "from more_itertools import iter_except",
+    "body": ["from more_itertools import iter_except", "$0"]
+  },
+  "from more_itertools import iterate": {
+    "prefix": "from more_itertools import iterate",
+    "body": ["from more_itertools import iterate", "$0"]
+  },
+  "from more_itertools import last": {
+    "prefix": "from more_itertools import last",
+    "body": ["from more_itertools import last", "$0"]
+  },
+  "from more_itertools import lstrip": {
+    "prefix": "from more_itertools import lstrip",
+    "body": ["from more_itertools import lstrip", "$0"]
+  },
+  "from more_itertools import map_except": {
+    "prefix": "from more_itertools import map_except",
+    "body": ["from more_itertools import map_except", "$0"]
+  },
+  "from more_itertools import ncycles": {
+    "prefix": "from more_itertools import ncycles",
+    "body": ["from more_itertools import ncycles", "$0"]
+  },
+  "from more_itertools import nth": {
+    "prefix": "from more_itertools import nth",
+    "body": ["from more_itertools import nth", "$0"]
+  },
+  "from more_itertools import nth_combination": {
+    "prefix": "from more_itertools import nth_combination",
+    "body": ["from more_itertools import nth_combination", "$0"]
+  },
+  "from more_itertools import nth_or_last": {
+    "prefix": "from more_itertools import nth_or_last",
+    "body": ["from more_itertools import nth_or_last", "$0"]
+  },
+  "from more_itertools import one": {
+    "prefix": "from more_itertools import one",
+    "body": ["from more_itertools import one", "$0"]
+  },
+  "from more_itertools import only": {
+    "prefix": "from more_itertools import only",
+    "body": ["from more_itertools import only", "$0"]
+  },
+  "from more_itertools import padnone": {
+    "prefix": "from more_itertools import padnone",
+    "body": ["from more_itertools import padnone", "$0"]
+  },
+  "from more_itertools import pairwise": {
+    "prefix": "from more_itertools import pairwise",
+    "body": ["from more_itertools import pairwise", "$0"]
+  },
+  "from more_itertools import partition": {
+    "prefix": "from more_itertools import partition",
+    "body": ["from more_itertools import partition", "$0"]
+  },
+  "from more_itertools import powerset": {
+    "prefix": "from more_itertools import powerset",
+    "body": ["from more_itertools import powerset", "$0"]
+  },
+  "from more_itertools import prepend": {
+    "prefix": "from more_itertools import prepend",
+    "body": ["from more_itertools import prepend", "$0"]
+  },
+  "from more_itertools import quantify": {
+    "prefix": "from more_itertools import quantify",
+    "body": ["from more_itertools import quantify", "$0"]
+  },
+  "from more_itertools import random_combination": {
+    "prefix": "from more_itertools import random_combination",
+    "body": ["from more_itertools import random_combination", "$0"]
+  },
+  "from more_itertools import random_permutation": {
+    "prefix": "from more_itertools import random_permutation",
+    "body": ["from more_itertools import random_permutation", "$0"]
+  },
+  "from more_itertools import random_product": {
+    "prefix": "from more_itertools import random_product",
+    "body": ["from more_itertools import random_product", "$0"]
+  },
+  "from more_itertools import repeatfunc": {
+    "prefix": "from more_itertools import repeatfunc",
+    "body": ["from more_itertools import repeatfunc", "$0"]
+  },
+  "from more_itertools import roundrobin": {
+    "prefix": "from more_itertools import roundrobin",
+    "body": ["from more_itertools import roundrobin", "$0"]
+  },
+  "from more_itertools import rstrip": {
+    "prefix": "from more_itertools import rstrip",
+    "body": ["from more_itertools import rstrip", "$0"]
+  },
+  "from more_itertools import split_after": {
+    "prefix": "from more_itertools import split_after",
+    "body": ["from more_itertools import split_after", "$0"]
+  },
+  "from more_itertools import split_at": {
+    "prefix": "from more_itertools import split_at",
+    "body": ["from more_itertools import split_at", "$0"]
+  },
+  "from more_itertools import split_before": {
+    "prefix": "from more_itertools import split_before",
+    "body": ["from more_itertools import split_before", "$0"]
+  },
+  "from more_itertools import split_into": {
+    "prefix": "from more_itertools import split_into",
+    "body": ["from more_itertools import split_into", "$0"]
+  },
+  "from more_itertools import split_when": {
+    "prefix": "from more_itertools import split_when",
+    "body": ["from more_itertools import split_when", "$0"]
+  },
+  "from more_itertools import strip": {
+    "prefix": "from more_itertools import strip",
+    "body": ["from more_itertools import strip", "$0"]
+  },
+  "from more_itertools import tabulate": {
+    "prefix": "from more_itertools import tabulate",
+    "body": ["from more_itertools import tabulate", "$0"]
+  },
+  "from more_itertools import tail": {
+    "prefix": "from more_itertools import tail",
+    "body": ["from more_itertools import tail", "$0"]
+  },
+  "from more_itertools import take": {
+    "prefix": "from more_itertools import take",
+    "body": ["from more_itertools import take", "$0"]
+  },
+  "from more_itertools import unique_everseen": {
+    "prefix": "from more_itertools import unique_everseen",
+    "body": ["from more_itertools import unique_everseen", "$0"]
+  },
+  "from more_itertools import unique_justseen": {
+    "prefix": "from more_itertools import unique_justseen",
+    "body": ["from more_itertools import unique_justseen", "$0"]
+  },
+  "from more_itertools import unzip": {
+    "prefix": "from more_itertools import unzip",
+    "body": ["from more_itertools import unzip", "$0"]
+  },
+  "from more_itertools import windowed": {
+    "prefix": "from more_itertools import windowed",
+    "body": ["from more_itertools import windowed", "$0"]
+  },
+  "from more_itertools import zip_equal": {
+    "prefix": "from more_itertools import zip_equal",
+    "body": ["from more_itertools import zip_equal", "$0"]
   },
 
   // third party - pandas

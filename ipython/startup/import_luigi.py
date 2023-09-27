@@ -1,31 +1,28 @@
 from collections.abc import Iterable
 from contextlib import suppress
-from itertools import chain
-from itertools import filterfalse
+from itertools import chain, filterfalse
 from multiprocessing import cpu_count
-from typing import cast
-from typing import Optional
-from typing import TypeVar
-from typing import Union
-
+from typing import Optional, TypeVar, Union, cast
 
 _T = TypeVar("_T")
 
 
 with suppress(ModuleNotFoundError):
     import luigi  # noqa: F401
-    from luigi import BoolParameter  # noqa: F401
-    from luigi import DictParameter  # noqa: F401
-    from luigi import EnumParameter  # noqa: F401
-    from luigi import ExternalTask  # noqa: F401
-    from luigi import FloatParameter  # noqa: F401
-    from luigi import IntParameter  # noqa: F401
-    from luigi import LocalTarget  # noqa: F401
-    from luigi import Task
-    from luigi import TaskParameter  # noqa: F401
-    from luigi import TupleParameter  # noqa: F401
-    from luigi import WrapperTask
-    from luigi import build
+    from luigi import (
+        BoolParameter,  # noqa: F401
+        DictParameter,  # noqa: F401
+        EnumParameter,  # noqa: F401
+        ExternalTask,  # noqa: F401
+        FloatParameter,  # noqa: F401
+        IntParameter,  # noqa: F401
+        LocalTarget,  # noqa: F401
+        Task,
+        TaskParameter,  # noqa: F401
+        TupleParameter,  # noqa: F401
+        WrapperTask,
+        build,
+    )
 
     def build_if_not_complete(
         tasks: Iterable[Task],
@@ -59,13 +56,13 @@ with suppress(ModuleNotFoundError):
             try:
                 to_run = next(task for task in tasks if can_run(task))
             except StopIteration:
-                raise RuntimeError(
-                    f"Unable to build {task} sequentially; {tasks} remain"
-                )
+                msg = f"Unable to build {task} sequentially; {tasks} remain"
+                raise RuntimeError(msg)
             else:
                 to_run.run()
                 if not to_run.complete():
-                    raise RuntimeError(f"Ran {task}; but remains incomplete")
+                    msg = f"Ran {task}; but remains incomplete"
+                    raise RuntimeError(msg)
 
     def yield_dependencies(task: Task) -> Iterable[Task]:
         """Yield the dependencies of a task."""
