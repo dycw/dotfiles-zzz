@@ -5,7 +5,8 @@ _T = TypeVar("_T")
 
 
 with suppress(ModuleNotFoundError):
-    import hypothesis  # noqa: F401
+    import hypothesis
+    import hypothesis.strategies  # noqa: F401
     from hypothesis import (
         HealthCheck,  # noqa: F401
         assume,  # noqa: F401
@@ -42,7 +43,6 @@ with suppress(ModuleNotFoundError):
             from_form,  # noqa: F401
             from_model,  # noqa: F401
         )
-
     with suppress(ModuleNotFoundError):
         from hypothesis.extra.numpy import (
             array_dtypes,  # noqa: F401
@@ -51,7 +51,6 @@ with suppress(ModuleNotFoundError):
             from_dtype,  # noqa: F401
             scalar_dtypes,  # noqa: F401
         )
-
     with suppress(ModuleNotFoundError):
         from hypothesis.extra.pandas import (
             column,  # noqa: F401
