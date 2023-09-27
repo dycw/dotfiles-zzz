@@ -714,30 +714,251 @@
     "prefix": "import pandas as pd",
     "body": ["import pandas as pd", "$0"]
   },
+  "from pandas import BooleanDtype": {
+    "prefix": "from pandas import BooleanDtype",
+    "body": ["from pandas import BooleanDtype", "$0"]
+  },
+  "from pandas import DataFrame": {
+    "prefix": "from pandas import DataFrame",
+    "body": ["from pandas import DataFrame", "$0"]
+  },
+  "from pandas import DateOffset": {
+    "prefix": "from pandas import DateOffset",
+    "body": ["from pandas import DateOffset", "$0"]
+  },
+  "from pandas import DatetimeIndex": {
+    "prefix": "from pandas import DatetimeIndex",
+    "body": ["from pandas import DatetimeIndex", "$0"]
+  },
+  "from pandas import Index": {
+    "prefix": "from pandas import Index",
+    "body": ["from pandas import Index", "$0"]
+  },
+  "from pandas import Int64Dtype": {
+    "prefix": "from pandas import Int64Dtype",
+    "body": ["from pandas import Int64Dtype", "$0"]
+  },
+  "from pandas import MultiIndex": {
+    "prefix": "from pandas import MultiIndex",
+    "body": ["from pandas import MultiIndex", "$0"]
+  },
+  "from pandas import RangeIndex": {
+    "prefix": "from pandas import RangeIndex",
+    "body": ["from pandas import RangeIndex", "$0"]
+  },
+  "from pandas import Series": {
+    "prefix": "from pandas import Series",
+    "body": ["from pandas import Series", "$0"]
+  },
+  "from pandas import StringDtype": {
+    "prefix": "from pandas import StringDtype",
+    "body": ["from pandas import StringDtype", "$0"]
+  },
   "from pandas import Timedelta": {
     "prefix": "from pandas import Timedelta",
     "body": ["from pandas import Timedelta", "$0"]
+  },
+  "from pandas import TimedeltaIndex": {
+    "prefix": "from pandas import TimedeltaIndex",
+    "body": ["from pandas import TimedeltaIndex", "$0"]
   },
   "from pandas import Timestamp": {
     "prefix": "from pandas import Timestamp",
     "body": ["from pandas import Timestamp", "$0"]
   },
+  "from pandas import bdate_range": {
+    "prefix": "from pandas import bdate_range",
+    "body": ["from pandas import bdate_range", "$0"]
+  },
+  "from pandas import concat": {
+    "prefix": "from pandas import concat",
+    "body": ["from pandas import concat", "$0"]
+  },
+  "from pandas import date_range": {
+    "prefix": "from pandas import date_range",
+    "body": ["from pandas import date_range", "$0"]
+  },
+  "from pandas import option_context": {
+    "prefix": "from pandas import option_context",
+    "body": ["from pandas import option_context", "$0"]
+  },
+  "from pandas import qcut": {
+    "prefix": "from pandas import qcut",
+    "body": ["from pandas import qcut", "$0"]
+  },
+  "from pandas import read_parquet": {
+    "prefix": "from pandas import read_parquet",
+    "body": ["from pandas import read_parquet", "$0"]
+  },
+  "from pandas import read_pickle": {
+    "prefix": "from pandas import read_pickle",
+    "body": ["from pandas import read_pickle", "$0"]
+  },
+  "from pandas import read_sql": {
+    "prefix": "from pandas import read_sql",
+    "body": ["from pandas import read_sql", "$0"]
+  },
+  "from pandas import read_table": {
+    "prefix": "from pandas import read_table",
+    "body": ["from pandas import read_table", "$0"]
+  },
+  "from pandas import set_option": {
+    "prefix": "from pandas import set_option",
+    "body": ["from pandas import set_option", "$0"]
+  },
+  "from pandas import to_datetime": {
+    "prefix": "from pandas import to_datetime",
+    "body": ["from pandas import to_datetime", "$0"]
+  },
+  "from pandas import to_pickle": {
+    "prefix": "from pandas import to_pickle",
+    "body": ["from pandas import to_pickle", "$0"]
+  },
+  "from pandas.testing import assert_frame_equal": {
+    "prefix": "from pandas.testing import assert_frame_equal",
+    "body": ["from pandas.testing import assert_frame_equal", "$0"]
+  },
+  "from pandas.testing import assert_index_equal": {
+    "prefix": "from pandas.testing import assert_index_equal",
+    "body": ["from pandas.testing import assert_index_equal", "$0"]
+  },
+  "from pandas.testing import assert_series_equal": {
+    "prefix": "from pandas.testing import assert_series_equal",
+    "body": ["from pandas.testing import assert_series_equal", "$0"]
+  },
+  "from pandas.tseries.offsets import BDay": {
+    "prefix": "from pandas.tseries.offsets import BDay",
+    "body": ["from pandas.tseries.offsets import BDay", "$0"]
+  },
+  "from pandas.tseries.offsets import Hour": {
+    "prefix": "from pandas.tseries.offsets import Hour",
+    "body": ["from pandas.tseries.offsets import Hour", "$0"]
+  },
+  "from pandas.tseries.offsets import Micro": {
+    "prefix": "from pandas.tseries.offsets import Micro",
+    "body": ["from pandas.tseries.offsets import Micro", "$0"]
+  },
+  "from pandas.tseries.offsets import Milli": {
+    "prefix": "from pandas.tseries.offsets import Milli",
+    "body": ["from pandas.tseries.offsets import Milli", "$0"]
+  },
+  "from pandas.tseries.offsets import Minute": {
+    "prefix": "from pandas.tseries.offsets import Minute",
+    "body": ["from pandas.tseries.offsets import Minute", "$0"]
+  },
+  "from pandas.tseries.offsets import MonthBegin": {
+    "prefix": "from pandas.tseries.offsets import MonthBegin",
+    "body": ["from pandas.tseries.offsets import MonthBegin", "$0"]
+  },
+  "from pandas.tseries.offsets import MonthEnd": {
+    "prefix": "from pandas.tseries.offsets import MonthEnd",
+    "body": ["from pandas.tseries.offsets import MonthEnd", "$0"]
+  },
+  "from pandas.tseries.offsets import Nano": {
+    "prefix": "from pandas.tseries.offsets import Nano",
+    "body": ["from pandas.tseries.offsets import Nano", "$0"]
+  },
+  "from pandas.tseries.offsets import Second": {
+    "prefix": "from pandas.tseries.offsets import Second",
+    "body": ["from pandas.tseries.offsets import Second", "$0"]
+  },
+  "from pandas.tseries.offsets import Week": {
+    "prefix": "from pandas.tseries.offsets import Week",
+    "body": ["from pandas.tseries.offsets import Week", "$0"]
+  },
 
   // third party - sqlalchemy
+  "import sqlalchemy": {
+    "prefix": "import sqlalchemy",
+    "body": ["import sqlalchemy", "$0"]
+  },
+  "import sqlalchemy as sqla": {
+    "prefix": "import sqlalchemy as sqla",
+    "body": ["import sqlalchemy as sqla", "$0"]
+  },
+  "import sqlalchemy.orm": {
+    "prefix": "import sqlalchemy.orm",
+    "body": ["import sqlalchemy.orm", "$0"]
+  },
+  "from sqlalchemy import BigInteger": {
+    "prefix": "from sqlalchemy import BigInteger",
+    "body": ["from sqlalchemy import BigInteger", "$0"]
+  },
+  "from sqlalchemy import Boolean": {
+    "prefix": "from sqlalchemy import Boolean",
+    "body": ["from sqlalchemy import Boolean", "$0"]
+  },
+  "from sqlalchemy import Column": {
+    "prefix": "from sqlalchemy import Column",
+    "body": ["from sqlalchemy import Column", "$0"]
+  },
+  "from sqlalchemy import DateTime": {
+    "prefix": "from sqlalchemy import DateTime",
+    "body": ["from sqlalchemy import DateTime", "$0"]
+  },
+  "from sqlalchemy import Float": {
+    "prefix": "from sqlalchemy import Float",
+    "body": ["from sqlalchemy import Float", "$0"]
+  },
+  "from sqlalchemy import ForeignKey": {
+    "prefix": "from sqlalchemy import ForeignKey",
+    "body": ["from sqlalchemy import ForeignKey", "$0"]
+  },
+  "from sqlalchemy import Integer": {
+    "prefix": "from sqlalchemy import Integer",
+    "body": ["from sqlalchemy import Integer", "$0"]
+  },
   "from sqlalchemy import MetaData": {
     "prefix": "from sqlalchemy import MetaData",
     "body": ["from sqlalchemy import MetaData", "$0"]
+  },
+  "from sqlalchemy import SmallInteger": {
+    "prefix": "from sqlalchemy import SmallInteger",
+    "body": ["from sqlalchemy import SmallInteger", "$0"]
+  },
+  "from sqlalchemy import String": {
+    "prefix": "from sqlalchemy import String",
+    "body": ["from sqlalchemy import String", "$0"]
   },
   "from sqlalchemy import Table": {
     "prefix": "from sqlalchemy import Table",
     "body": ["from sqlalchemy import Table", "$0"]
   },
+  "from sqlalchemy import Unicode": {
+    "prefix": "from sqlalchemy import Unicode",
+    "body": ["from sqlalchemy import Unicode", "$0"]
+  },
   "from sqlalchemy import create_engine": {
     "prefix": "from sqlalchemy import create_engine",
     "body": ["from sqlalchemy import create_engine", "$0"]
   },
+  "from sqlalchemy import select": {
+    "prefix": "from sqlalchemy import select",
+    "body": ["from sqlalchemy import select", "$0"]
+  },
+  "from sqlalchemy.engine import Engine": {
+    "prefix": "from sqlalchemy.engine import Engine",
+    "body": ["from sqlalchemy.engine import Engine", "$0"]
+  },
+  "from sqlalchemy.orm import Session": {
+    "prefix": "from sqlalchemy.orm import Session",
+    "body": ["from sqlalchemy.orm import Session"]
+  },
+  "from sqlalchemy.orm import declarative_base": {
+    "prefix": "from sqlalchemy.orm import declarative_base",
+    "body": ["from sqlalchemy.orm import declarative_base", "$0"]
+  },
+  "from sqlalchemy.orm import relationship": {
+    "prefix": "from sqlalchemy.orm import relationship",
+    "body": ["from sqlalchemy.orm import relationship", "$0"]
+  },
+  "from sqlalchemy.orm import sessionmaker": {
+    "prefix": "from sqlalchemy.orm import sessionmaker",
+    "body": ["from sqlalchemy.orm import sessionmaker", "$0"]
+  },
 
   // third party - typing-extensions
+
   "from typing_extensions import Self": {
     "prefix": "from typing_extensions import Self",
     "body": ["from typing_extensions import Self", "$0"]
