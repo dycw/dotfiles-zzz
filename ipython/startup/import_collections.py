@@ -1,4 +1,5 @@
-import collections  # noqa: F401
+import collections
+import collections.abc  # noqa: F401
 from collections import (
     Counter,  # noqa: F401
     defaultdict,  # noqa: F401

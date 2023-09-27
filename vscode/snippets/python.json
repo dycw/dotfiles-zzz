@@ -13,668 +13,737 @@
 // }
 {
   // standard library - abc
-  "iaabc": {
-    "prefix": "iaabc",
-    "body": ["from abc import ABC", "$0"],
-    "description": "from abc import ABC"
+  "import abc": {
+    "prefix": "import abc",
+    "body": ["import abc", "$0"]
   },
-  "iaabcmeta": {
-    "prefix": "iaabcmeta",
-    "body": ["from abc import ABCMeta", "$0"],
-    "description": "from abc import ABCMeta"
+  "from abc import ABC": {
+    "prefix": "fromabcimportabc",
+    "body": ["from abc import ABC", "$0"]
   },
-  "iaabstractmethod": {
-    "prefix": "iaabstractmethod",
-    "body": ["from abc import abstractmethod", "$0"],
-    "description": "from abc import abstractmethod"
+  "from abc import ABCMeta": {
+    "prefix": "from abc import ABCMeta",
+    "body": ["from abc import ABCMeta", "$0"]
+  },
+  "from abc import abstractmethod": {
+    "prefix": "from abc import abstractmethod",
+    "body": ["from abc import abstractmethod", "$0"]
   },
 
   // standard library - argparse
-  "iaargumentparse": {
-    "prefix": "iaargumentparse",
-    "body": ["from argparse import ArgumentParser", "$0"],
-    "description": "from argparse import ArgumentParser"
+  "import argparse": {
+    "prefix": "import argparse",
+    "body": ["import argparse", "$0"]
+  },
+  "from argparse import ArgumentParser": {
+    "prefix": "from argparse import ArgumentParser",
+    "body": ["from argparse import ArgumentParser", "$0"]
   },
 
   // standard library - collections
-  "iccounter": {
-    "prefix": "iccounter",
-    "body": ["from collections import Counter", "$0"],
-    "description": "from collections import Counter"
+  "import collections": {
+    "prefix": "import collections",
+    "body": ["import collections", "$0"]
   },
-  "icdefaultdict": {
-    "prefix": "icdefaultdict",
-    "body": ["from collections import defaultdict", "$0"],
-    "description": "from collections import defaultdict"
+  "import collections.abc": {
+    "prefix": "import collections.abc",
+    "body": ["import collections.abc", "$0"]
   },
-  "icdeque": {
-    "prefix": "icdeque",
-    "body": ["from collections import deque", "$0"],
-    "description": "from collections import deque"
+  "from collections import Counter": {
+    "prefix": "from collections import Counter",
+    "body": ["from collections import Counter", "$0"]
   },
-  "icaawaitable": {
-    "prefix": "icaawaitable",
-    "body": ["from collections.abc import Awaitable", "$0"],
-    "description": "from collections.abc import Awaitable"
+  "from collections import defaultdict": {
+    "prefix": "from collections import defaultdict",
+    "body": ["from collections import defaultdict", "$0"]
   },
-  "icacallable": {
-    "prefix": "icacallable",
-    "body": ["from collections.abc import Callable", "$0"],
-    "description": "from collections.abc import Callable"
+  "from collections import deque": {
+    "prefix": "from collections import deque",
+    "body": ["from collections import deque", "$0"]
   },
-  "icahashable": {
-    "prefix": "icahashable",
-    "body": ["from collections.abc import Hashable", "$0"],
-    "description": "from collections.abc import Hashable"
+  "from collections.abc import Awaitable": {
+    "prefix": "from collections.abc import Awaitable",
+    "body": ["from collections.abc import Awaitable", "$0"]
   },
-  "icaiterable": {
-    "prefix": "icaiterable",
-    "body": ["from collections.abc import Iterable", "$0"],
-    "description": "from collections.abc import Iterable"
+  "from collections.abc import Callable": {
+    "prefix": "from collections.abc import Callable",
+    "body": ["from collections.abc import Callable", "$0"]
   },
-  "icaiterator": {
-    "prefix": "icaiterator",
-    "body": ["from collections.abc import Iterator", "$0"],
-    "description": "from collections.abc import Iterator"
+  "from collections.abc import hashable": {
+    "prefix": "from collections.abc import Hashable",
+    "body": ["from collections.abc import Hashable", "$0"]
   },
-
-  "icamapping": {
-    "prefix": "icamapping",
-    "body": ["from collections.abc import Mapping", "$0"],
-    "description": "from collections.abc import Mapping"
+  "from collections.abc import Iterable": {
+    "prefix": "from collections.abc import Iterable",
+    "body": ["from collections.abc import Iterable", "$0"]
   },
-  "icasized": {
-    "prefix": "icasized",
-    "body": ["from collections.abc import Sized", "$0"],
-    "description": "from collections.abc import Sized"
+  "from collections.abc import Iterator": {
+    "prefix": "from collections.abc import Iterator",
+    "body": ["from collections.abc import Iterator", "$0"]
   },
-
-  // standard library - datetime
-  "idatetime": {
-    "prefix": "idatetime",
-    "body": ["import datetime as dt", "$0"],
-    "description": "import datetime as dt"
+  "from collections.abc import Mapping": {
+    "prefix": "from collections.abc import Mapping",
+    "body": ["from collections.abc import Mapping", "$0"]
+  },
+  "from collections.abc import Sized": {
+    "prefix": "from collections.abc import Sized",
+    "body": ["from collections.abc import Sized", "$0"]
   },
 
   // standard library - contextlib
-  "iccontextmanager": {
-    "prefix": "iccontextmanager",
-    "body": ["from contextlib import contextmanager", "$0"],
-    "description": "from contextlib import contextmanager"
+  "import contextlib": {
+    "prefix": "import contextlib",
+    "body": ["import contextlib", "$0"]
   },
-  "icredirectstderr": {
-    "prefix": "icredirectstderr",
-    "body": ["from contextlib import redirect_stderr", "$0"],
-    "description": "from contextlib import redirect_stderr"
+  "from contextlib import contextmanager": {
+    "prefix": "from contextlib import contextmanager",
+    "body": ["from contextlib import contextmanager", "$0"]
   },
-  "icredirectstdout": {
-    "prefix": "icredirectstdout",
-    "body": ["from contextlib import redirect_stdout", "$0"],
-    "description": "from contextlib import redirect_stdout"
+  "from contextlib import redirect_stderr": {
+    "prefix": "from contextlib import redirect_stderr",
+    "body": ["from contextlib import redirect_stderr", "$0"]
   },
-  "icsuppress": {
-    "prefix": "icsuppress",
-    "body": ["from contextlib import suppress", "$0"],
-    "description": "from contextlib import suppress"
+  "from contextlib import redirect_stdout": {
+    "prefix": "from contextlib import redirect_stdout",
+    "body": ["from contextlib import redirect_stdout", "$0"]
+  },
+  "from contextlib import suppress": {
+    "prefix": "from contextlib import suppress",
+    "body": ["from contextlib import suppress", "$0"]
   },
 
   // standard library - dataclasses
-  "idasdict": {
-    "prefix": "idasdict",
-    "body": ["from dataclasses import asdict", "$0"],
-    "description": "from dataclasses import asdict"
+  "import dataclasses": {
+    "prefix": "import dataclasses",
+    "body": ["import dataclasses", "$0"]
   },
-  "idastuple": {
-    "prefix": "idastuple",
-    "body": ["from dataclasses import astuple", "$0"],
-    "description": "from dataclasses import astuple"
+  "from dataclasses import asdict": {
+    "prefix": "from dataclasses import asdict",
+    "body": ["from dataclasses import asdict", "$0"]
   },
-  "iddataclass": {
-    "prefix": "iddataclass",
-    "body": ["from dataclasses import dataclass", "$0"],
-    "description": "from dataclasses import dataclass"
+  "from dataclasses import astuple": {
+    "prefix": "from dataclasses import astuple",
+    "body": ["from dataclasses import astuple", "$0"]
   },
-  "idfield": {
-    "prefix": "idfield",
-    "body": ["from dataclasses import field", "$0"],
-    "description": "from dataclasses import field"
+  "from dataclasses import dataclass": {
+    "prefix": "from dataclasses import dataclass",
+    "body": ["from dataclasses import dataclass", "$0"]
   },
-  "idfields": {
-    "prefix": "idfields",
-    "body": ["from dataclasses import fields", "$0"],
-    "description": "from dataclasses import fields"
+  "from dataclasses import field": {
+    "prefix": "from dataclasses import field",
+    "body": ["from dataclasses import field", "$0"]
   },
-  "idreplace": {
-    "prefix": "idreplace",
-    "body": ["from dataclasses import replace", "$0"],
-    "description": "from dataclasses import replace"
+  "from dataclasses import fields": {
+    "prefix": "from dataclasses import fields",
+    "body": ["from dataclasses import fields", "$0"]
+  },
+  "from dataclasses import replace": {
+    "prefix": "from dataclasses import replace",
+    "body": ["from dataclasses import replace", "$0"]
+  },
+
+  // standard library - datetime
+  "import datetime as dt": {
+    "prefix": "import datetime as dt",
+    "body": ["import datetime as dt", "$0"]
   },
 
   // standard library - enum
-  "ieenum": {
-    "prefix": "ieenum",
-    "body": ["from enum import Enum", "$0"],
-    "description": "from enum import Enum"
+  "import enum": {
+    "prefix": "import enum",
+    "body": ["import enum", "$0"]
   },
-  "ieauto": {
-    "prefix": "ieauto",
-    "body": ["from enum import auto", "$0"],
-    "description": "from enum import auto"
+  "from enum import Enum": {
+    "prefix": "from enum import Enum",
+    "body": ["from enum import Enum", "$0"]
+  },
+  "from enum import auto": {
+    "prefix": "from enum import auto",
+    "body": ["from enum import auto", "$0"]
   },
 
   // standard library - functools
-  "ifcache": {
-    "prefix": "ifcache",
-    "body": ["from functools import cache", "$0"],
-    "description": "from functools import cache"
+  "import functools": {
+    "prefix": "import functools",
+    "body": ["import functools", "$0"]
   },
-  "ifcachedproperty": {
-    "prefix": "ifcachedproperty",
-    "body": ["from functools import cached_property", "$0"],
-    "description": "from functools import cached_property"
+  "from functools import cache": {
+    "prefix": "from functools import cache",
+    "body": ["from functools import cache", "$0"]
   },
-  "iflrucache": {
-    "prefix": "iflrucache",
-    "body": ["from functools import lru_cache", "$0"],
-    "description": "from functools import lru_cache"
+  "from functools import cached_property": {
+    "prefix": "from functools import cached_property",
+    "body": ["from functools import cached_property", "$0"]
   },
-  "ifpartial": {
-    "prefix": "ifpartial",
-    "body": ["from functools import partial", "$0"],
-    "description": "from functools import partial"
+  "from functools import lru_cache": {
+    "prefix": "from functools import lru_cache",
+    "body": ["from functools import lru_cache", "$0"]
   },
-  "ifreduce": {
-    "prefix": "ifreduce",
-    "body": ["from functools import reduce", "$0"],
-    "description": "from functools import reduce"
+  "from functools import partial": {
+    "prefix": "from functools import partial",
+    "body": ["from functools import partial", "$0"]
   },
-  "ifupdatewrapper": {
-    "prefix": "ifupdatewrapper",
-    "body": ["from functools import update_wrapper", "$0"],
-    "description": "from functools import update_wrapper"
+  "from functools import reduce": {
+    "prefix": "from functools import reduce",
+    "body": ["from functools import reduce", "$0"]
   },
-  "ifwraps": {
-    "prefix": "ifwraps",
-    "body": ["from functools import wraps", "$0"],
-    "description": "from functools import wraps"
+  "from functools import update_wrapper": {
+    "prefix": "from functools import update_wrapper",
+    "body": ["from functools import update_wrapper", "$0"]
+  },
+  "from functools import wraps": {
+    "prefix": "from functools import wraps",
+    "body": ["from functools import wraps", "$0"]
   },
 
   // standard library - future
-  "ifannotations": {
-    "prefix": "ifannotations",
-    "body": ["from __future__ import annotations", "$0"],
-    "description": "from __future__ import annotations"
+  "from __future__ import annotations": {
+    "prefix": "from __future__ import annotations",
+    "body": ["from __future__ import annotations", "$0"]
   },
 
   // standard library - hashlib
-  "ihmd5": {
-    "prefix": "ihmd5",
-    "body": ["from hashlib import md5", "$0"],
-    "description": "from hashlib import md5"
+  "import hashlib": {
+    "prefix": "import hashlib",
+    "body": ["import hashlib", "$0"]
   },
-  "ihsha256": {
-    "prefix": "ihsha256",
-    "body": ["from hashlib import sha256", "$0"],
-    "description": "from hashlib import sha256"
+  "from hashlib import md5": {
+    "prefix": "from hashlib import md5",
+    "body": ["from hashlib import md5", "$0"]
   },
-  "ihsha512": {
-    "prefix": "ihsha512",
-    "body": ["from hashlib import sha512", "$0"],
-    "description": "from hashlib import sha512"
+  "from hashlib import sha256": {
+    "prefix": "from hashlib import sha256",
+    "body": ["from hashlib import sha256", "$0"]
+  },
+  "from hashlib import sha512": {
+    "prefix": "from hashlib import sha512",
+    "body": ["from hashlib import sha512", "$0"]
+  },
+
+  // standard library - importlib
+  "import importlib": {
+    "prefix": "import importlib",
+    "body": ["import importlib", "$0"]
+  },
+  "from importlib import reload": {
+    "prefix": "from importlib import reload",
+    "body": ["from importlib import reload", "$0"]
+  },
+
+  // standard library - io
+  "import io": {
+    "prefix": "import io",
+    "body": ["import io", "$0"]
+  },
+  "from io import BytesIO": {
+    "prefix": "from io import BytesIO",
+    "body": ["from io import BytesIO", "$0"]
+  },
+  "from io import StringIO": {
+    "prefix": "from io import StringIO",
+    "body": ["from io import StringIO", "$0"]
   },
 
   // standard library - typing
-  "ititerable": {
-    "prefix": "ititerable",
-    "body": ["from typing import Iterable", "$0"],
-    "description": "from typing import Iterable"
+  "from typing import TYPE_CHECKING": {
+    "prefix": "from typing import TYPE_CHECKING",
+    "body": ["from typing import TYPE_CHECKING", "$0"]
   },
-  "ititerator": {
-    "prefix": "ititerator",
-    "body": ["from typing import Iterator", "$0"],
-    "description": "from typing import Iterator"
+  "from typing import Any": {
+    "prefix": "from typing import Any",
+    "body": ["from typing import Any", "$0"]
   },
-  "ittypechecking": {
-    "prefix": "ittypechecking",
-    "body": ["from typing import TYPE_CHECKING", "$0"],
-    "description": "from typing import TYPE_CHECKING"
+  "from typing import BinaryIO": {
+    "prefix": "from typing import BinaryIO",
+    "body": ["from typing import BinaryIO", "$0"]
+  },
+  "from typing import Deque": {
+    "prefix": "from typing import Deque",
+    "body": ["from typing import Deque", "$0"]
+  },
+  "from typing import Generic": {
+    "prefix": "from typing import Generic",
+    "body": ["from typing import Generic", "$0"]
+  },
+  "from typing import Iterable": {
+    "prefix": "from typing import Iterable",
+    "body": ["from typing import Iterable", "$0"]
+  },
+  "from typing import Iterator": {
+    "prefix": "from typing import Iterator",
+    "body": ["from typing import Iterator", "$0"]
+  },
+  "from typing import NamedTuple": {
+    "prefix": "from typing import NamedTuple",
+    "body": ["from typing import NamedTuple", "$0"]
+  },
+  "from typing import NewType": {
+    "prefix": "from typing import NewType",
+    "body": ["from typing import NewType", "$0"]
+  },
+  "from typing import TextIO": {
+    "prefix": "from typing import TextIO",
+    "body": ["from typing import TextIO", "$0"]
+  },
+  "from typing import TypeVar": {
+    "prefix": "from typing import TypeVar",
+    "body": ["from typing import TypeVar", "$0"]
+  },
+  "from typing import Union": {
+    "prefix": "from typing import Union",
+    "body": ["from typing import Union", "$0"]
+  },
+  "from typing import cast": {
+    "prefix": "from typing import cast",
+    "body": ["from typing import cast", "$0"]
   },
 
   // third party - attrs
-  "iaasdict": {
-    "prefix": "iaasdict",
-    "body": ["from attrs import asdict", "$0"],
-    "description": "from attrs import asdict"
+  "import attrs": {
+    "prefix": "import attrs",
+    "body": ["import attrs", "$0"]
   },
-  "iaastuple": {
-    "prefix": "iaastuple",
-    "body": ["from attrs import astuple", "$0"],
-    "description": "from attrs import astuple"
+  "from attrs import asdict": {
+    "prefix": "from attrs import asdict",
+    "body": ["from attrs import asdict", "$0"]
   },
-  "iadefine": {
-    "prefix": "iadefine",
-    "body": ["from attrs import define", "$0"],
-    "description": "from attrs import define"
+  "from attrs import astuple": {
+    "prefix": "from attrs import astuple",
+    "body": ["from attrs import astuple", "$0"]
   },
-  "iaevolve": {
-    "prefix": "iaevolve",
-    "body": ["from attrs import evolve", "$0"],
-    "description": "from attrs import evolve"
+  "from attrs import define": {
+    "prefix": "from attrs import define",
+    "body": ["from attrs import define", "$0"]
   },
-  "iafield": {
-    "prefix": "iafield",
-    "body": ["from attrs import field", "$0"],
-    "description": "from attrs import field"
+  "from attrs import evolve": {
+    "prefix": "from attrs import evolve",
+    "body": ["from attrs import evolve", "$0"]
   },
-  "iafields": {
-    "prefix": "iafields",
-    "body": ["froma attrs import field", "$0"],
-    "description": "from attrs import fields"
+  "from attrs import field": {
+    "prefix": "from attrs import field",
+    "body": ["from attrs import field", "$0"]
+  },
+  "from attrs import fields": {
+    "prefix": "from attrs import fields",
+    "body": ["from attrs import fields", "$0"]
+  },
+  "from attrs import frozen": {
+    "prefix": "from attrs import frozen",
+    "body": ["from attrs import frozen", "$0"]
   },
 
   // third party - beartype
-  "ibbeartype": {
-    "prefix": "ibbeartype",
-    "body": ["from beartype import beartype", "$0"],
-    "description": "from beartype import beartype"
+  "from beartype import beartype": {
+    "prefix": "from beartype import beartype",
+    "body": ["from beartype import beartype", "$0"]
   },
-  "ibddieifunbearable": {
-    "prefix": "ibddieifunbearable",
-    "body": ["from beartype.door import die_if_unbearable", "$0"],
-    "description": "from beartype.door import die_if_unbearable"
+  "from beartype.door import die_if_unbearable": {
+    "prefix": "from beartype.door import die_if_unbearable",
+    "body": ["from beartype.door import die_if_unbearable", "$0"]
   },
-  "ibvis": {
-    "prefix": "ibvis",
-    "body": ["from beartype.value import Is", "$0"],
-    "description": "from beartype.vale import Is"
+  "from beartype.vale import Is": {
+    "prefix": "from beartype.vale import Is",
+    "body": ["from beartype.vale import Is", "$0"]
   },
-  "ibvisattr": {
-    "prefix": "ibvisattr",
-    "body": ["from beartype.value import IsAttr", "$0"],
-    "description": "from beartype.vale import IsAttr"
+  "from beartype.vale import IsAttr": {
+    "prefix": "from beartype.vale import IsAttr",
+    "body": ["from beartype.vale import IsAttr", "$0"]
+  },
+  "from beartype.vale import IsEqual": {
+    "prefix": "from beartype.vale import IsEqual",
+    "body": ["from beartype.vale import IsEqual", "$0"]
+  },
+  "from beartype.vale import IsSubclass": {
+    "prefix": "from beartype.vale import IsSubclass",
+    "body": ["from beartype.vale import IsSubclass", "$0"]
   },
 
   // third party - bidict
-  "ibbidict": {
-    "prefix": "ibbidict",
-    "body": ["from bidict import bidict", "$0"],
-    "description": "from bidict import bidict"
+  "from bidict import bidict": {
+    "prefix": "from bidict import bidict",
+    "body": ["from bidict import bidict", "$0"]
   },
 
   // third party - box
-  "ibbox": {
-    "prefix": "ibbox",
-    "body": ["from box imoprt Box", "$0"],
-    "description": "from box imoprt Box"
+  "import box": {
+    "prefix": "import box",
+    "body": ["import box", "$0"]
   },
-
-  // third party - contexttimer
-  "ictimer": {
-    "prefix": "ictimer",
-    "body": ["from contexttimer import Timer", "$0"],
-    "description": "from contexttimer import Timer"
+  "from box import Box": {
+    "prefix": "from box import Box",
+    "body": ["from box import Box", "$0"]
   },
 
   // third party - bs4
-  "ibbeautifulsoup": {
-    "prefix": "ibbeautifulsoup",
-    "body": ["from bs4 import BeautifulSoup", "$0"],
-    "description": "from bs4 import BeautifulSoup"
+  "import bs4": {
+    "prefix": "import bs4",
+    "body": ["import bs4", "$0"]
+  },
+  "from bs4 import BeautifulSoup": {
+    "prefix": "from bs4 import BeautifulSoup",
+    "body": ["from bs4 import BeautifulSoup", "$0"]
+  },
+
+  // third party - contexttimer
+  "import contexttimer": {
+    "prefix": "import contexttimer",
+    "body": ["import contexttimer", "$0"]
+  },
+  "from contexttimer import Timer": {
+    "prefix": "from contexttimer import Timer",
+    "body": ["from contexttimer import Timer", "$0"]
   },
 
   // third party - faker
-  "iffaker": {
-    "prefix": "iffaker",
-    "body": ["from faker import Faker", "$0"],
-    "description": "from faker import Faker"
+  "import faker": {
+    "prefix": "import faker",
+    "body": ["import faker", "$0"]
+  },
+  "from faker import Faker": {
+    "prefix": "from faker import Faker",
+    "body": ["from faker import Faker", "$0"]
   },
 
   // third party - fastparquet
-  "ifparquetfile": {
-    "prefix": "ifparquetfile",
-    "body": ["from fastparquet import ParquetFile", "$0"],
-    "description": "from fastparquet import ParquetFile"
+  "import fastparquet": {
+    "prefix": "import fastparquet",
+    "body": ["import fastparquet", "$0"]
+  },
+  "from fastparquet import ParquetFile": {
+    "prefix": "from fastparquet import ParquetFile",
+    "body": ["from fastparquet import ParquetFile", "$0"]
   },
 
   // third party - funcy
-  "ifcomplement": {
-    "prefix": "ifcomplement",
-    "body": ["from funcy import complement", "$0"],
-    "description": "from funcy import complement"
+  "import funcy": {
+    "prefix": "import funcy",
+    "body": ["import funcy", "$0"]
   },
-  "ifisnone": {
-    "prefix": "ifisnone",
-    "body": ["from funcy import isnone", "$0"],
-    "description": "from funcy import isnone"
+  "from funcy import complement": {
+    "prefix": "from funcy import complement",
+    "body": ["from funcy import complement", "$0"]
   },
-  "ifnotnone": {
-    "prefix": "ifnotnone",
-    "body": ["from funcy import notnone", "$0"],
-    "description": "from funcy import notnone"
+  "from funcy import isnone": {
+    "prefix": "from funcy import isnone",
+    "body": ["from funcy import isnone", "$0"]
+  },
+  "from funcy import notnone": {
+    "prefix": "from funcy import notnone",
+    "body": ["from funcy import notnone", "$0"]
   },
 
   // third party - holoviews
-  "ihcurve": {
-    "prefix": "ihcurve",
-    "body": ["from holoviews import Curve", "$0"],
-    "description": "from holoviews import Curve"
+  "import holoviews": {
+    "prefix": "import holoviews",
+    "body": ["import holoviews", "$0"]
   },
-  "ihhistogram": {
-    "prefix": "ihhistogram",
-    "body": ["from holoviews import Histogram", "$0"],
-    "description": "from holoviews import Histogram"
+  "import holoviews as hv": {
+    "prefix": "import holoviews as hv",
+    "body": ["import holoviews as hv", "$0"]
   },
-  "ihhline": {
-    "prefix": "ihhline",
-    "body": ["from holoviews import HLine", "$0"],
-    "description": "from holoviews import HLine"
+  "from holoviews import Curve": {
+    "prefix": "from holoviews import Curve",
+    "body": ["from holoviews import Curve", "$0"]
   },
-  "ihndoverlay": {
-    "prefix": "ihndoverlay",
-    "body": ["from holoviews import NDOverlay", "$0"],
-    "description": "from holoviews import NDOverlay"
+  "from holoviews import Histogram": {
+    "prefix": "from holoviews import Histogram",
+    "body": ["from holoviews import Histogram", "$0"]
   },
-  "ihoverlay": {
-    "prefix": "ihoverlay",
-    "body": ["from holoviews import Overlay", "$0"],
-    "description": "from holoviews import Overlay"
+  "from holoviews import HLine": {
+    "prefix": "from holoviews import HLine",
+    "body": ["from holoviews import HLine", "$0"]
   },
-  "ihtable": {
-    "prefix": "ihtable",
-    "body": ["from holoviews import Table", "$0"],
-    "description": "from holoviews import Table"
+  "from holoviews import NDOverlay": {
+    "prefix": "from holoviews import NDOverlay",
+    "body": ["from holoviews import NDOverlay", "$0"]
+  },
+  "from holoviews import Overlay": {
+    "prefix": "from holoviews import Overlay",
+    "body": ["from holoviews import Overlay", "$0"]
+  },
+  "from holoviews import Table": {
+    "prefix": "from holoviews import Table",
+    "body": ["from holoviews import Table", "$0"]
   },
 
   // third party - humanize
-  "ihfractional": {
-    "prefix": "ihfractional",
-    "body": ["from humanize import fractional", "$0"],
-    "description": "from humanize import fractional"
+  "import humanize": {
+    "prefix": "import humanize",
+    "body": ["import humanize", "$0"]
   },
-  "ihintcomma": {
-    "prefix": "ihintcomma",
-    "body": ["from humanize import intcomma", "$0"],
-    "description": "from humanize import intcomma"
+  "from humanize import fractional": {
+    "prefix": "from humanize import fractional",
+    "body": ["from humanize import fractional", "$0"]
   },
-  "ihintword": {
-    "prefix": "ihintword",
-    "body": ["from humanize import intword", "$0"],
-    "description": "from humanize import intword"
+  "from humanize import intcomma": {
+    "prefix": "from humanize import intcomma",
+    "body": ["from humanize import intcomma", "$0"]
   },
-  "ihnaturaldate": {
-    "prefix": "ihnaturaldate",
-    "body": ["from humanize import naturaldate", "$0"],
-    "description": "from humanize import naturaldate"
+  "from humanize import intword": {
+    "prefix": "from humanize import intword",
+    "body": ["from humanize import intword", "$0"]
   },
-  "ihnaturalday": {
-    "prefix": "ihnaturalday",
-    "body": ["from humanize import naturalday", "$0"],
-    "description": "from humanize import naturalday"
+  "from humanize import naturaldate": {
+    "prefix": "from humanize import naturaldate",
+    "body": ["from humanize import naturaldate", "$0"]
   },
-  "ihnaturaldelta": {
-    "prefix": "ihnaturaldelta",
-    "body": ["from humanize import naturaldelta", "$0"],
-    "description": "from humanize import naturaldelta"
+  "from humanize import naturalday": {
+    "prefix": "from humanize import naturalday",
+    "body": ["from humanize import naturalday", "$0"]
   },
-  "ihnaturalsize": {
-    "prefix": "ihnaturalsize",
-    "body": ["from humanize import naturalsize", "$0"],
-    "description": "from humanize import naturalsize"
+  "from humanize import naturaldelta": {
+    "prefix": "from humanize import naturaldelta",
+    "body": ["from humanize import naturaldelta", "$0"]
   },
-  "ihnaturaltime": {
-    "prefix": "ihnaturaltime",
-    "body": ["from humanize import naturaltime", "$0"],
-    "description": "from humanize import naturaltime"
+  "from humanize import naturalsize": {
+    "prefix": "from humanize import naturalsize",
+    "body": ["from humanize import naturalsize", "$0"]
   },
-  "ihprecisedelta": {
-    "prefix": "ihprecisedelta",
-    "body": ["from humanize import precisedelta", "$0"],
-    "description": "from humanize import precisedelta"
+  "from humanize import naturaltime": {
+    "prefix": "from humanize import naturaltime",
+    "body": ["from humanize import naturaltime", "$0"]
+  },
+  "from humanize import precisedelta": {
+    "prefix": "from humanize import precisedelta",
+    "body": ["from humanize import precisedelta", "$0"]
   },
 
   // third party - hypothesis
-  "ihhealthcheck": {
-    "prefix": "ihhealthcheck",
-    "body": ["kfrom hypothesis import HealthCheck", "$0"],
-    "description": "kfrom hypothesis import HealthCheck"
+  "import hypothesis": {
+    "prefix": "import hypothesis",
+    "body": ["import hypothesis", "$0"]
   },
-  "ihassume": {
-    "prefix": "ihassume",
-    "body": ["from hypothesis import assume", "$0"],
-    "description": "from hypothesis import assume"
+  "import hypothesis.strategies": {
+    "prefix": "import hypothesis.strategies",
+    "body": ["import hypothesis.strategies", "$0"]
   },
-  "ihgiven": {
-    "prefix": "ihgiven",
-    "body": ["from hypothesis import given", "$0"],
-    "description": "from hypothesis import given"
+  "kfrom hypothesis import HealthCheck": {
+    "prefix": "kfrom hypothesis import HealthCheck",
+    "body": ["kfrom hypothesis import HealthCheck", "$0"]
   },
-  "ihinfer": {
-    "prefix": "ihinfer",
-    "body": ["from hypothesis import infer", "$0"],
-    "description": "from hypothesis import infer"
+  "from hypothesis import assume": {
+    "prefix": "from hypothesis import assume",
+    "body": ["from hypothesis import assume", "$0"]
   },
-  "ihreproducefailure": {
-    "prefix": "ihreproducefailure",
-    "body": ["from hypothesis import reproduce_failure", "$0"],
-    "description": "from hypothesis import reproduce_failure"
+  "from hypothesis import given": {
+    "prefix": "from hypothesis import given",
+    "body": ["from hypothesis import given", "$0"]
   },
-  "ihsettings": {
-    "prefix": "ihsettings",
-    "body": ["from hypothesis import settings", "$0"],
-    "description": "from hypothesis import settings"
+  "from hypothesis import infer": {
+    "prefix": "from hypothesis import infer",
+    "body": ["from hypothesis import infer", "$0"]
   },
-  "ihsdataobject": {
-    "prefix": "ihsdataobject",
-    "body": ["from hypothesis.strategies import DataObject", "$0"],
-    "description": "from hypothesis.strategies import DataObject"
+  "from hypothesis import reproduce_failure": {
+    "prefix": "from hypothesis import reproduce_failure",
+    "body": ["from hypothesis import reproduce_failure", "$0"]
   },
-  "ihssearchstrategy": {
-    "prefix": "ihssearchstrategy",
-    "body": ["from hypothesis.strategies import SearchStrategy", "$0"],
-    "description": "from hypothesis.strategies import SearchStrategy"
+  "from hypothesis import settings": {
+    "prefix": "from hypothesis import settings",
+    "body": ["from hypothesis import settings", "$0"]
   },
-  "ihsbooleans": {
-    "prefix": "ihsbooleans",
-    "body": ["from hypothesis.strategies import booleans", "$0"],
-    "description": "from hypothesis.strategies import booleans"
+  "from hypothesis.strategies import DataObject": {
+    "prefix": "from hypothesis.strategies import DataObject",
+    "body": ["from hypothesis.strategies import DataObject", "$0"]
   },
-  "ihscomplexnumbers": {
-    "prefix": "ihscomplexnumbers",
-    "body": ["from hypothesis.strategies import complex_numbers", "$0"],
-    "description": "from hypothesis.strategies import complex_numbers"
+  "from hypothesis.strategies import SearchStrategy": {
+    "prefix": "from hypothesis.strategies import SearchStrategy",
+    "body": ["from hypothesis.strategies import SearchStrategy", "$0"]
   },
-  "ihsdictionaries": {
-    "prefix": "ihsdictionaries",
-    "body": ["from hypothesis.strategies import dictionaries", "$0"],
-    "description": "from hypothesis.strategies import dictionaries"
+  "from hypothesis.strategies import booleans": {
+    "prefix": "from hypothesis.strategies import booleans",
+    "body": ["from hypothesis.strategies import booleans", "$0"]
   },
-  "ihsfixeddictionaries": {
-    "prefix": "ihsfixeddictionaries",
-    "body": ["from hypothesis.strategies import fixed_dictionaries", "$0"],
-    "description": "from hypothesis.strategies import fixed_dictionaries"
+  "from hypothesis.strategies import complex_numbers": {
+    "prefix": "from hypothesis.strategies import complex_numbers",
+    "body": ["from hypothesis.strategies import complex_numbers", "$0"]
   },
-  "ihsfloats": {
-    "prefix": "ihsfloats",
-    "body": ["from hypothesis.strategies import floats", "$0"],
-    "description": "from hypothesis.strategies import floats"
+  "from hypothesis.strategies import dictionaries": {
+    "prefix": "from hypothesis.strategies import dictionaries",
+    "body": ["from hypothesis.strategies import dictionaries", "$0"]
   },
-  "ihsfromtype": {
-    "prefix": "ihsfromtype",
-    "body": ["from hypothesis.strategies import from_type", "$0"],
-    "description": "from hypothesis.strategies import from_type"
+  "from hypothesis.strategies import fixed_dictionaries": {
+    "prefix": "from hypothesis.strategies import fixed_dictionaries",
+    "body": ["from hypothesis.strategies import fixed_dictionaries", "$0"]
   },
-  "ihsintegers": {
-    "prefix": "ihsintegers",
-    "body": ["from hypothesis.strategies import integers", "$0"],
-    "description": "from hypothesis.strategies import integers"
+  "from hypothesis.strategies import floats": {
+    "prefix": "from hypothesis.strategies import floats",
+    "body": ["from hypothesis.strategies import floats", "$0"]
   },
-  "ihsjust": {
-    "prefix": "ihsjust",
-    "body": ["from hypothesis.strategies import just", "$0"],
-    "description": "from hypothesis.strategies import just"
+  "from hypothesis.strategies import from_type": {
+    "prefix": "from hypothesis.strategies import from_type",
+    "body": ["from hypothesis.strategies import from_type", "$0"]
   },
-  "ihslists": {
-    "prefix": "ihslists",
-    "body": ["from hypothesis.strategies import lists", "$0"],
-    "description": "from hypothesis.strategies import lists"
+  "from hypothesis.strategies import integers": {
+    "prefix": "from hypothesis.strategies import integers",
+    "body": ["from hypothesis.strategies import integers", "$0"]
   },
-  "ihsnone": {
-    "prefix": "ihsnone",
-    "body": ["from hypothesis.strategies import none", "$0"],
-    "description": "from hypothesis.strategies import none"
+  "from hypothesis.strategies import just": {
+    "prefix": "from hypothesis.strategies import just",
+    "body": ["from hypothesis.strategies import just", "$0"]
   },
-  "ihssampledfrom": {
-    "prefix": "ihssampledfrom",
-    "body": ["from hypothesis.strategies import sampled_from", "$0"],
-    "description": "from hypothesis.strategies import sampled_from"
+  "from hypothesis.strategies import lists": {
+    "prefix": "from hypothesis.strategies import lists",
+    "body": ["from hypothesis.strategies import lists", "$0"]
   },
-  "ihssets": {
-    "prefix": "ihssets",
-    "body": ["from hypothesis.strategies import sets", "$0"],
-    "description": "from hypothesis.strategies import sets"
+  "from hypothesis.strategies import none": {
+    "prefix": "from hypothesis.strategies import none",
+    "body": ["from hypothesis.strategies import none", "$0"]
   },
-  "ihsshared": {
-    "prefix": "ihsshared",
-    "body": ["from hypothesis.strategies import shared", "$0"],
-    "description": "from hypothesis.strategies import shared"
+  "from hypothesis.strategies import sampled_from": {
+    "prefix": "from hypothesis.strategies import sampled_from",
+    "body": ["from hypothesis.strategies import sampled_from", "$0"]
   },
-  "ihstext": {
-    "prefix": "ihstext",
-    "body": ["from hypothesis.strategies import text", "$0"],
-    "description": "from hypothesis.strategies import text"
+  "from hypothesis.strategies import sets": {
+    "prefix": "from hypothesis.strategies import sets",
+    "body": ["from hypothesis.strategies import sets", "$0"]
   },
-  "ihstuples": {
-    "prefix": "ihstuples",
-    "body": ["from hypothesis.strategies import tuples", "$0"],
-    "description": "from hypothesis.strategies import tuples"
+  "from hypothesis.strategies import shared": {
+    "prefix": "from hypothesis.strategies import shared",
+    "body": ["from hypothesis.strategies import shared", "$0"]
   },
-  "ihedliveservertestcase": {
-    "prefix": "ihedliveservertestcase",
-    "body": ["from hypothesis.extra.django import LiveServerTestCase", "$0"],
-    "description": "from hypothesis.extra.django import LiveServerTestCase"
+  "from hypothesis.strategies import text": {
+    "prefix": "from hypothesis.strategies import text",
+    "body": ["from hypothesis.strategies import text", "$0"]
   },
-  "ihedstaticliveservertestcase": {
-    "prefix": "ihedstaticliveservertestcase",
+  "from hypothesis.strategies import tuples": {
+    "prefix": "from hypothesis.strategies import tuples",
+    "body": ["from hypothesis.strategies import tuples", "$0"]
+  },
+  "from hypothesis.extra.django import LiveServerTestCase": {
+    "prefix": "from hypothesis.extra.django import LiveServerTestCase",
+    "body": ["from hypothesis.extra.django import LiveServerTestCase", "$0"]
+  },
+  "from hypothesis.extra.django import StaticLiveServerTestCase": {
+    "prefix": "from hypothesis.extra.django import StaticLiveServerTestCase",
     "body": [
       "from hypothesis.extra.django import StaticLiveServerTestCase",
       "$0"
-    ],
-    "description": "from hypothesis.extra.django import StaticLiveServerTestCase"
+    ]
   },
-  "ihedtransactiontestcase": {
-    "prefix": "ihedtransactiontestcase",
-    "body": ["from hypothesis.extra.django import TransactionTestCase", "$0"],
-    "description": "from hypothesis.extra.django import TransactionTestCase"
+  "from hypothesis.extra.django import TransactionTestCase": {
+    "prefix": "from hypothesis.extra.django import TransactionTestCase",
+    "body": ["from hypothesis.extra.django import TransactionTestCase", "$0"]
   },
-  "ihedfromform": {
-    "prefix": "ihedfromform",
-    "body": ["from hypothesis.extra.django import from_form", "$0"],
-    "description": "from hypothesis.extra.django import from_form"
+  "from hypothesis.extra.django import from_form": {
+    "prefix": "from hypothesis.extra.django import from_form",
+    "body": ["from hypothesis.extra.django import from_form", "$0"]
   },
-  "ihedfrommodel": {
-    "prefix": "ihedfrommodel",
-    "body": ["from hypothesis.extra.django import from_model", "$0"],
-    "description": "from hypothesis.extra.django import from_model"
+  "from hypothesis.extra.django import from_model": {
+    "prefix": "from hypothesis.extra.django import from_model",
+    "body": ["from hypothesis.extra.django import from_model", "$0"]
   },
-  "ihenarraydtypes": {
-    "prefix": "ihenarraydtypes",
-    "body": ["from hypothesis.extra.numpy import array_dtypes", "$0"],
-    "description": "from hypothesis.extra.numpy import array_dtypes"
+  "from hypothesis.extra.numpy import array_dtypes": {
+    "prefix": "from hypothesis.extra.numpy import array_dtypes",
+    "body": ["from hypothesis.extra.numpy import array_dtypes", "$0"]
   },
-  "ihenarrayshapes": {
-    "prefix": "ihenarrayshapes",
-    "body": ["from hypothesis.extra.numpy import array_shapes", "$0"],
-    "description": "from hypothesis.extra.numpy import array_shapes"
+  "from hypothesis.extra.numpy import array_shapes": {
+    "prefix": "from hypothesis.extra.numpy import array_shapes",
+    "body": ["from hypothesis.extra.numpy import array_shapes", "$0"]
   },
-  "ihenarrays": {
-    "prefix": "ihenarrays",
-    "body": ["from hypothesis.extra.numpy import arrays", "$0"],
-    "description": "from hypothesis.extra.numpy import arrays"
+  "from hypothesis.extra.numpy import arrays": {
+    "prefix": "from hypothesis.extra.numpy import arrays",
+    "body": ["from hypothesis.extra.numpy import arrays", "$0"]
   },
-  "ihenfromdtype": {
-    "prefix": "ihenfromdtype",
-    "body": ["from hypothesis.extra.numpy import from_dtype", "$0"],
-    "description": "from hypothesis.extra.numpy import from_dtype"
+  "from hypothesis.extra.numpy import from_dtype": {
+    "prefix": "from hypothesis.extra.numpy import from_dtype",
+    "body": ["from hypothesis.extra.numpy import from_dtype", "$0"]
   },
-  "ihenscalardtypes": {
-    "prefix": "ihenscalardtypes",
-    "body": ["from hypothesis.extra.numpy import scalar_dtypes", "$0"],
-    "description": "from hypothesis.extra.numpy import scalar_dtypes"
+  "from hypothesis.extra.numpy import scalar_dtypes": {
+    "prefix": "from hypothesis.extra.numpy import scalar_dtypes",
+    "body": ["from hypothesis.extra.numpy import scalar_dtypes", "$0"]
   },
-  "ihepcolumn": {
-    "prefix": "ihepcolumn",
-    "body": ["from hypothesis.extra.pandas import column", "$0"],
-    "description": "from hypothesis.extra.pandas import column"
+  "from hypothesis.extra.pandas import column": {
+    "prefix": "from hypothesis.extra.pandas import column",
+    "body": ["from hypothesis.extra.pandas import column", "$0"]
   },
-  "ihepcolumns": {
-    "prefix": "ihepcolumns",
-    "body": ["from hypothesis.extra.pandas import columns", "$0"],
-    "description": "from hypothesis.extra.pandas import columns"
+  "from hypothesis.extra.pandas import columns": {
+    "prefix": "from hypothesis.extra.pandas import columns",
+    "body": ["from hypothesis.extra.pandas import columns", "$0"]
   },
-  "ihepdataframes": {
-    "prefix": "ihepdataframes",
-    "body": ["from hypothesis.extra.pandas import data_frames", "$0"],
-    "description": "from hypothesis.extra.pandas import data_frames"
+  "from hypothesis.extra.pandas import data_frames": {
+    "prefix": "from hypothesis.extra.pandas import data_frames",
+    "body": ["from hypothesis.extra.pandas import data_frames", "$0"]
   },
-  "ihepindexes": {
-    "prefix": "ihepindexes",
-    "body": ["from hypothesis.extra.pandas import indexes", "$0"],
-    "description": "from hypothesis.extra.pandas import indexes"
+  "from hypothesis.extra.pandas import indexes": {
+    "prefix": "from hypothesis.extra.pandas import indexes",
+    "body": ["from hypothesis.extra.pandas import indexes", "$0"]
   },
-  "iheprangeindexes": {
-    "prefix": "iheprangeindexes",
-    "body": ["from hypothesis.extra.pandas import range_indexes", "$0"],
-    "description": "from hypothesis.extra.pandas import range_indexes"
+  "from hypothesis.extra.pandas import range_indexes": {
+    "prefix": "from hypothesis.extra.pandas import range_indexes",
+    "body": ["from hypothesis.extra.pandas import range_indexes", "$0"]
   },
-  "ihepseries": {
-    "prefix": "ihepseries",
-    "body": ["from hypothesis.extra.pandas import series", "$0"],
-    "description": "from hypothesis.extra.pandas import series"
+  "from hypothesis.extra.pandas import series": {
+    "prefix": "from hypothesis.extra.pandas import series",
+    "body": ["from hypothesis.extra.pandas import series", "$0"]
+  },
+
+  // third party - ib-insync
+  "import ib_insync": {
+    "prefix": "import ib_insync",
+    "body": ["import ib_insync", "$0"]
+  },
+  "from ib_insync.util import dataclassAsDict": {
+    "prefix": "from ib_insync.util import dataclassAsDict",
+    "body": ["from ib_insync.util import dataclassAsDict", "$0"]
+  },
+  "from ib_insync.util import dataclassAsTuple": {
+    "prefix": "from ib_insync.util import dataclassAsTuple",
+    "body": ["from ib_insync.util import dataclassAsTuple", "$0"]
+  },
+  "from ib_insync.util import startLoop": {
+    "prefix": "from ib_insync.util import startLoop",
+    "body": ["from ib_insync.util import startLoop", "$0"]
+  },
+
+  // third party - icecream
+  "import icecream": {
+    "prefix": "import icecream",
+    "body": ["import icecream", "$0"]
+  },
+  "from icecream import ic": {
+    "prefix": "from icecream import ic",
+    "body": ["from icecream import ic", "$0"]
   },
 
   // third party - pandas
-  "ippd": {
-    "prefix": "ippd",
-    "body": ["import pandas as pd", "$0"],
-    "description": "import pandas"
+  "import pandas": {
+    "prefix": "import pandas",
+    "body": ["import pandas", "$0"]
   },
-  "iptimedelta": {
-    "prefix": "iptimedelta",
-    "body": ["from pandas import Timedelta", "$0"],
-    "description": "from pandas import Timedelta"
+  "import pandas as pd": {
+    "prefix": "import pandas as pd",
+    "body": ["import pandas as pd", "$0"]
   },
-  "iptimestamp": {
-    "prefix": "iptimestamp",
-    "body": ["from pandas import Timestamp", "$0"],
-    "description": "from pandas import Timestamp"
+  "from pandas import Timedelta": {
+    "prefix": "from pandas import Timedelta",
+    "body": ["from pandas import Timedelta", "$0"]
+  },
+  "from pandas import Timestamp": {
+    "prefix": "from pandas import Timestamp",
+    "body": ["from pandas import Timestamp", "$0"]
   },
 
   // third party - sqlalchemy
-  "ismetadata": {
-    "prefix": "ismetadata",
-    "body": ["from sqlalchemy import MetaData", "$0"],
-    "description": "from sqlalchemy import MetaData"
+  "from sqlalchemy import MetaData": {
+    "prefix": "from sqlalchemy import MetaData",
+    "body": ["from sqlalchemy import MetaData", "$0"]
   },
-  "istable": {
-    "prefix": "istable",
-    "body": ["from sqlalchemy import Table", "$0"],
-    "description": "from sqlalchemy import Table"
+  "from sqlalchemy import Table": {
+    "prefix": "from sqlalchemy import Table",
+    "body": ["from sqlalchemy import Table", "$0"]
   },
-  "iscreateengine": {
-    "prefix": "iscreateengine",
-    "body": ["from sqlalchemy import create_engine", "$0"],
-    "description": "from sqlalchemy import create_engine"
+  "from sqlalchemy import create_engine": {
+    "prefix": "from sqlalchemy import create_engine",
+    "body": ["from sqlalchemy import create_engine", "$0"]
   },
 
   // third party - typing-extensions
-  "iteself": {
-    "prefix": "iteself",
-    "body": ["from typing_extensions import Self", "$0"],
-    "description": "from typing_extensions import Self"
+  "from typing_extensions import Self": {
+    "prefix": "from typing_extensions import Self",
+    "body": ["from typing_extensions import Self", "$0"]
   },
-  "iteoverride": {
-    "prefix": "iteoverride",
-    "body": ["from typing_extensions import override", "$0"],
-    "description": "from typing_extensions import override"
+  "from typing_extensions import override": {
+    "prefix": "from typing_extensions import override",
+    "body": ["from typing_extensions import override", "$0"]
   }
 }
