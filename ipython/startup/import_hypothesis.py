@@ -61,11 +61,11 @@ with suppress(ModuleNotFoundError):
             series,  # noqa: F401
         )
 
-    def draw(strategy: SearchStrategy[_T]) -> _T:
+    def draw(strategy: SearchStrategy[_T], /) -> _T:
         return strategy.example()
 
     class _Data(Generic[_T]):
-        def draw(self, strategy: SearchStrategy[_T]) -> _T:
+        def draw(self, strategy: SearchStrategy[_T], /) -> _T:
             return draw(strategy)
 
     data = _Data()

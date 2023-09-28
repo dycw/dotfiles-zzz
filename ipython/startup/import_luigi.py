@@ -26,6 +26,7 @@ with suppress(ModuleNotFoundError):
 
     def build_if_not_complete(
         tasks: Iterable[Task],
+        /,
         *,
         local_scheduler: bool = False,
         log_level: Union[str, int] = "INFO",
@@ -42,10 +43,10 @@ with suppress(ModuleNotFoundError):
                 **({} if workers is None else {"workers": workers}),
             )
 
-    def build_sequentially(task: Task) -> None:
+    def build_sequentially(task: Task, /) -> None:
         """Build a task sequentially."""
 
-        def can_run(task: Task) -> bool:
+        def can_run(task: Task, /) -> bool:
             return not isinstance(task, WrapperTask) and all(
                 dep.complete() for dep in yield_dependencies(task) if dep is not task
             )
@@ -64,13 +65,13 @@ with suppress(ModuleNotFoundError):
                     msg = f"Ran {task}; but remains incomplete"
                     raise RuntimeError(msg)
 
-    def yield_dependencies(task: Task) -> Iterable[Task]:
+    def yield_dependencies(task: Task, /) -> Iterable[Task]:
         """Yield the dependencies of a task."""
 
         deps = cast(list[Task], task.deps())
         yield from _unique_everseen(chain([task], deps, *map(yield_dependencies, deps)))
 
-    def _unique_everseen(iterable: Iterable[_T]) -> Iterable[_T]:
+    def _unique_everseen(iterable: Iterable[_T], /) -> Iterable[_T]:
         """List unique elements, preserving order. Remember all elements ever
         seen.
         """

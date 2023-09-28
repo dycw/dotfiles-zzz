@@ -69,7 +69,7 @@
     "prefix": "from collections.abc import Callable",
     "body": ["from collections.abc import Callable", "$0"]
   },
-  "from collections.abc import hashable": {
+  "from collections.abc import Hashable": {
     "prefix": "from collections.abc import Hashable",
     "body": ["from collections.abc import Hashable", "$0"]
   },
@@ -329,10 +329,6 @@
     "prefix": "from itertools import starmap",
     "body": ["from itertools import starmap", "$0"]
   },
-  "from itertools import tabulate": {
-    "prefix": "from itertools import tabulate",
-    "body": ["from itertools import tabulate", "$0"]
-  },
   "from itertools import takewhile": {
     "prefix": "from itertools import takewhile",
     "body": ["from itertools import takewhile", "$0"]
@@ -542,6 +538,172 @@
     "body": ["from re import match", "$0"]
   },
 
+  // standard library - socket
+  "import socket": {
+    "prefix": "import socket",
+    "body": ["import socket", "$0"]
+  },
+  "from socket import gethostname": {
+    "prefix": "from socket import gethostname",
+    "body": ["from socket import gethostname", "$0"]
+  },
+
+  // standard library - stat
+  "import stat": { "prefix": "import stat", "body": ["import stat", "$0"] },
+  "from stat import S_IRGRP": {
+    "prefix": "from stat import S_IRGRP",
+    "body": ["from stat import S_IRGRP", "$0"]
+  },
+  "from stat import S_IRUSR": {
+    "prefix": "from stat import S_IRUSR",
+    "body": ["from stat import S_IRUSR", "$0"]
+  },
+  "from stat import S_IWGRP": {
+    "prefix": "from stat import S_IWGRP",
+    "body": ["from stat import S_IWGRP", "$0"]
+  },
+  "from stat import S_IWUSR": {
+    "prefix": "from stat import S_IWUSR",
+    "body": ["from stat import S_IWUSR", "$0"]
+  },
+  "from stat import S_IXGRP": {
+    "prefix": "from stat import S_IXGRP",
+    "body": ["from stat import S_IXGRP", "$0"]
+  },
+  "from stat import S_IXUSR": {
+    "prefix": "from stat import S_IXUSR",
+    "body": ["from stat import S_IXUSR", "$0"]
+  },
+
+  // standard library - string
+  "import string": {
+    "prefix": "import string",
+    "body": ["import string", "$0"]
+  },
+  "from string import ascii_letters": {
+    "prefix": "from string import ascii_letters",
+    "body": ["from string import ascii_letters", "$0"]
+  },
+  "from string import ascii_lowercase": {
+    "prefix": "from string import ascii_lowercase",
+    "body": ["from string import ascii_lowercase", "$0"]
+  },
+  "from string import ascii_uppercase": {
+    "prefix": "from string import ascii_uppercase",
+    "body": ["from string import ascii_uppercase", "$0"]
+  },
+
+  // standard library - subprocess
+  "import subprocess": {
+    "prefix": "import subprocess",
+    "body": ["import subprocess", "$0"]
+  },
+  "from subprocess import CalledProcessError": {
+    "prefix": "from subprocess import CalledProcessError",
+    "body": ["from subprocess import CalledProcessError", "$0"]
+  },
+  "from subprocess import check_call": {
+    "prefix": "from subprocess import check_call",
+    "body": ["from subprocess import check_call", "$0"]
+  },
+  "from subprocess import check_output": {
+    "prefix": "from subprocess import check_output",
+    "body": ["from subprocess import check_output", "$0"]
+  },
+  "from subprocess import DEVNULL": {
+    "prefix": "from subprocess import DEVNULL",
+    "body": ["from subprocess import DEVNULL", "$0"]
+  },
+  "from subprocess import PIPE": {
+    "prefix": "from subprocess import PIPE",
+    "body": ["from subprocess import PIPE", "$0"]
+  },
+  "from subprocess import run": {
+    "prefix": "from subprocess import run",
+    "body": ["from subprocess import run", "$0"]
+  },
+  "from subprocess import STDOUT": {
+    "prefix": "from subprocess import STDOUT",
+    "body": ["from subprocess import STDOUT", "$0"]
+  },
+
+  // standard library - sys
+  "import sys": { "prefix": "import sys", "body": ["import sys", "$0"] },
+  "from sys import stderr": {
+    "prefix": "from sys import stderr",
+    "body": ["from sys import stderr", "$0"]
+  },
+  "from sys import stdout": {
+    "prefix": "from sys import stdout",
+    "body": ["from sys import stdout", "$0"]
+  },
+
+  // standard library - tempfile
+  "import tempfile": {
+    "prefix": "import tempfile",
+    "body": ["import tempfile", "$0"]
+  },
+  "from tempfile import gettempdir": {
+    "prefix": "from tempfile import gettempdir",
+    "body": ["from tempfile import gettempdir", "$0"]
+  },
+  "from tempfile import NamedTemporaryFile": {
+    "prefix": "from tempfile import NamedTemporaryFile",
+    "body": ["from tempfile import NamedTemporaryFile", "$0"]
+  },
+  "from tempfile import TemporaryDirectory": {
+    "prefix": "from tempfile import TemporaryDirectory",
+    "body": ["from tempfile import TemporaryDirectory", "$0"]
+  },
+
+  // standard library - textfile
+  "import textwrap": {
+    "prefix": "import textwrap",
+    "body": ["import textwrap", "$0"]
+  },
+  "from textwrap import dedent": {
+    "prefix": "from textwrap import dedent",
+    "body": ["from textwrap import dedent", "$0"]
+  },
+  "from textwrap import indent": {
+    "prefix": "from textwrap import indent",
+    "body": ["from textwrap import indent", "$0"]
+  },
+
+  // standard library - time
+  "import time": { "prefix": "import time", "body": ["import time", "$0"] },
+  "from time import sleep": {
+    "prefix": "from time import sleep",
+    "body": ["from time import sleep", "$0"]
+  },
+
+  // standard library - types
+  "import types": { "prefix": "import types", "body": ["import types", "$0"] },
+  "from types import MemberDescriptorType": {
+    "prefix": "from types import MemberDescriptorType",
+    "body": ["from types import MemberDescriptorType", "$0"]
+  },
+  "from types import MethodDescriptorType": {
+    "prefix": "from types import MethodDescriptorType",
+    "body": ["from types import MethodDescriptorType", "$0"]
+  },
+  "from types import MethodType": {
+    "prefix": "from types import MethodType",
+    "body": ["from types import MethodType", "$0"]
+  },
+  "from types import MethodWrapperType": {
+    "prefix": "from types import MethodWrapperType",
+    "body": ["from types import MethodWrapperType", "$0"]
+  },
+  "from types import ModuleType": {
+    "prefix": "from types import ModuleType",
+    "body": ["from types import ModuleType", "$0"]
+  },
+  "from types import new_class": {
+    "prefix": "from types import new_class",
+    "body": ["from types import new_class", "$0"]
+  },
+
   // standard library - typing
   "import shutil": {
     "prefix": "import shutil",
@@ -612,6 +774,30 @@
   "from typing import cast": {
     "prefix": "from typing import cast",
     "body": ["from typing import cast", "$0"]
+  },
+  "from typing import Annotated": {
+    "prefix": "from typing import Annotated",
+    "body": ["from typing import Annotated", "$0"]
+  },
+
+  // standard library - urllib
+  "import urllib": {
+    "prefix": "import urllib",
+    "body": ["import urllib", "$0"]
+  },
+  "from urllib.request import urlretrieve": {
+    "prefix": "from urllib.request import urlretrieve",
+    "body": ["from urllib.request import urlretrieve", "$0"]
+  },
+
+  // standard library - urllib
+  "import zipfile": {
+    "prefix": "import zipfile",
+    "body": ["import zipfile", "$0"]
+  },
+  "from zipfile import ZipFile": {
+    "prefix": "from zipfile import ZipFile",
+    "body": ["from zipfile import ZipFile", "$0"]
   },
 
   // third party - atomicwrites
@@ -746,6 +932,12 @@
     "body": ["from contexttimer import Timer", "$0"]
   },
 
+  // third party - cvxpy
+  "import cvxpy": {
+    "prefix": "import cvxpy",
+    "body": ["import cvxpy", "$0"]
+  },
+
   // third party - dtale
   "import dtale": {
     "prefix": "import dtale",
@@ -794,10 +986,6 @@
   "import holoviews": {
     "prefix": "import holoviews",
     "body": ["import holoviews", "$0"]
-  },
-  "import holoviews as hv": {
-    "prefix": "import holoviews as hv",
-    "body": ["import holoviews as hv", "$0"]
   },
   "from holoviews import Curve": {
     "prefix": "from holoviews import Curve",
@@ -1160,14 +1348,6 @@
     "prefix": "import matplotlib",
     "body": ["import matplotlib", "$0"]
   },
-  "import matplotlib as mpl": {
-    "prefix": "import matplotlib as mpl",
-    "body": ["import matplotlib as mpl", "$0"]
-  },
-  "import matplotlib as plt": {
-    "prefix": "import matplotlib as plt",
-    "body": ["import matplotlib as plt", "$0"]
-  },
 
   // third party - more-itertools
   "import more_itertools": {
@@ -1385,10 +1565,6 @@
 
   // third party - numpy
   "import numpy": { "prefix": "import numpy", "body": ["import numpy", "$0"] },
-  "import numpy as np": {
-    "prefix": "import numpy as np",
-    "body": ["import numpy as np", "$0"]
-  },
   "from numpy import arange": {
     "prefix": "from numpy import arange",
     "body": ["from numpy import arange", "$0"]
@@ -1436,10 +1612,6 @@
   "from numpy import flatnonzero": {
     "prefix": "from numpy import flatnonzero",
     "body": ["from numpy import flatnonzero", "$0"]
-  },
-  "from numpy import float128": {
-    "prefix": "from numpy import float128",
-    "body": ["from numpy import float128", "$0"]
   },
   "from numpy import float16": {
     "prefix": "from numpy import float16",
@@ -1605,15 +1777,15 @@
     "prefix": "from numpy.typing import NDArray",
     "body": ["from numpy.typing import NDArray", "$0"]
   },
+  "from numpy import float128": {
+    "prefix": "from numpy import float128",
+    "body": ["from numpy import float128", "$0"]
+  },
 
   // third party - pandas
   "import pandas": {
     "prefix": "import pandas",
     "body": ["import pandas", "$0"]
-  },
-  "import pandas as pd": {
-    "prefix": "import pandas as pd",
-    "body": ["import pandas as pd", "$0"]
   },
   "from pandas import BooleanDtype": {
     "prefix": "from pandas import BooleanDtype",
@@ -1686,6 +1858,14 @@
   "from pandas import qcut": {
     "prefix": "from pandas import qcut",
     "body": ["from pandas import qcut", "$0"]
+  },
+  "from pandas import read_csv": {
+    "prefix": "from pandas import read_csv",
+    "body": ["from pandas import read_csv", "$0"]
+  },
+  "from pandas import read_excel": {
+    "prefix": "from pandas import read_excel",
+    "body": ["from pandas import read_excel", "$0"]
   },
   "from pandas import read_parquet": {
     "prefix": "from pandas import read_parquet",
@@ -1768,14 +1948,361 @@
     "body": ["from pandas.tseries.offsets import Week", "$0"]
   },
 
+  // third party - pqdm
+  "from pqdm.processes import pqdm": {
+    "prefix": "from pqdm.processes import pqdm",
+    "body": ["from pqdm.processes import pqdm", "$0"]
+  },
+
+  // third party - pyinstrument_decorator
+  "import pyinstrument_decorator": {
+    "prefix": "import pyinstrument_decorator",
+    "body": ["import pyinstrument_decorator", "$0"]
+  },
+  "from pyinstrument_decorator import profile": {
+    "prefix": "from pyinstrument_decorator import profile",
+    "body": ["from pyinstrument_decorator import profile", "$0"]
+  },
+
+  // third party - pytest
+  "import pytest": {
+    "prefix": "import pytest",
+    "body": ["import pytest", "$0"]
+  },
+  "from pytest import fixture": {
+    "prefix": "from pytest import fixture",
+    "body": ["from pytest import fixture", "$0"]
+  },
+  "from pytest import mark": {
+    "prefix": "from pytest import mark",
+    "body": ["from pytest import mark", "$0"]
+  },
+  "from pytest import param": {
+    "prefix": "from pytest import param",
+    "body": ["from pytest import param", "$0"]
+  },
+  "from pytest import raises": {
+    "prefix": "from pytest import raises",
+    "body": ["from pytest import raises", "$0"]
+  },
+  "from pytest import warns": {
+    "prefix": "from pytest import warns",
+    "body": ["from pytest import warns", "$0"]
+  },
+
+  // third party - pytz
+  "import pytz": { "prefix": "import pytz", "body": ["import pytz", "$0"] },
+  "from pytz import UTC": {
+    "prefix": "from pytz import UTC",
+    "body": ["from pytz import UTC", "$0"]
+  },
+
+  // third party - ray
+  "import ray": { "prefix": "import ray", "body": ["import ray", "$0"] },
+  "from ray import get": {
+    "prefix": "from ray import get",
+    "body": ["from ray import get", "$0"]
+  },
+  "from ray import put": {
+    "prefix": "from ray import put",
+    "body": ["from ray import put", "$0"]
+  },
+  "from ray import remote": {
+    "prefix": "from ray import remote",
+    "body": ["from ray import remote", "$0"]
+  },
+  "from ray import shutdown": {
+    "prefix": "from ray import shutdown",
+    "body": ["from ray import shutdown", "$0"]
+  },
+  "from ray import wait": {
+    "prefix": "from ray import wait",
+    "body": ["from ray import wait", "$0"]
+  },
+  "from ray.remote_function import RemoteFunction": {
+    "prefix": "from ray.remote_function import RemoteFunction",
+    "body": ["from ray.remote_function import RemoteFunction", "$0"]
+  },
+  "": { "prefix": "", "body": ["", "$0"] },
+
+  // third party - requests
+  "import requests": {
+    "prefix": "import requests",
+    "body": ["import requests", "$0"]
+  },
+
+  // third party - rich
+  "import rich": { "prefix": "import rich", "body": ["import rich", "$0"] },
+  "from rich import inspect": {
+    "prefix": "from rich import inspect",
+    "body": ["from rich import inspect", "$0"]
+  },
+  "from rich import pretty": {
+    "prefix": "from rich import pretty",
+    "body": ["from rich import pretty", "$0"]
+  },
+  "from rich import print": {
+    "prefix": "from rich import print",
+    "body": ["from rich import print", "$0"]
+  },
+
+  // third party - scalene
+  "import scalene": {
+    "prefix": "import scalene",
+    "body": ["import scalene", "$0"]
+  },
+
+  // third party - scipy
+  "import scipy": { "prefix": "import scipy", "body": ["import scipy", "$0"] },
+  "from scipy.optimize import least_squares": {
+    "prefix": "from scipy.optimize import least_squares",
+    "body": ["from scipy.optimize import least_squares", "$0"]
+  },
+  "from scipy.stats import describe": {
+    "prefix": "from scipy.stats import describe",
+    "body": ["from scipy.stats import describe", "$0"]
+  },
+  "from scipy.stats import f_oneway": {
+    "prefix": "from scipy.stats import f_oneway",
+    "body": ["from scipy.stats import f_oneway", "$0"]
+  },
+  "from scipy.stats import gmean": {
+    "prefix": "from scipy.stats import gmean",
+    "body": ["from scipy.stats import gmean", "$0"]
+  },
+  "from scipy.stats import pearsonr": {
+    "prefix": "from scipy.stats import pearsonr",
+    "body": ["from scipy.stats import pearsonr", "$0"]
+  },
+  "from scipy.stats import percentileofscore": {
+    "prefix": "from scipy.stats import percentileofscore",
+    "body": ["from scipy.stats import percentileofscore", "$0"]
+  },
+  "from scipy.stats import scoreatpercentile": {
+    "prefix": "from scipy.stats import scoreatpercentile",
+    "body": ["from scipy.stats import scoreatpercentile", "$0"]
+  },
+  "from scipy.stats import ttest_1samp": {
+    "prefix": "from scipy.stats import ttest_1samp",
+    "body": ["from scipy.stats import ttest_1samp", "$0"]
+  },
+  "from scipy.stats import ttest_ind": {
+    "prefix": "from scipy.stats import ttest_ind",
+    "body": ["from scipy.stats import ttest_ind", "$0"]
+  },
+  "from scipy.stats import ttest_rel": {
+    "prefix": "from scipy.stats import ttest_rel",
+    "body": ["from scipy.stats import ttest_rel", "$0"]
+  },
+
+  // third party - seaborn
+  "import seaborn": {
+    "prefix": "import seaborn",
+    "body": ["import seaborn", "$0"]
+  },
+  "from seaborn import catplot": {
+    "prefix": "from seaborn import catplot",
+    "body": ["from seaborn import catplot", "$0"]
+  },
+  "from seaborn import distplot": {
+    "prefix": "from seaborn import distplot",
+    "body": ["from seaborn import distplot", "$0"]
+  },
+  "from seaborn import heatmap": {
+    "prefix": "from seaborn import heatmap",
+    "body": ["from seaborn import heatmap", "$0"]
+  },
+  "from seaborn import jointplot": {
+    "prefix": "from seaborn import jointplot",
+    "body": ["from seaborn import jointplot", "$0"]
+  },
+  "from seaborn import kdeplot": {
+    "prefix": "from seaborn import kdeplot",
+    "body": ["from seaborn import kdeplot", "$0"]
+  },
+  "from seaborn import pairplot": {
+    "prefix": "from seaborn import pairplot",
+    "body": ["from seaborn import pairplot", "$0"]
+  },
+  "from seaborn import violinplot": {
+    "prefix": "from seaborn import violinplot",
+    "body": ["from seaborn import violinplot", "$0"]
+  },
+
+  // third party - semver
+  "import semver": {
+    "prefix": "import semver",
+    "body": ["import semver", "$0"]
+  },
+  "from semver import VersionInfo": {
+    "prefix": "from semver import VersionInfo",
+    "body": ["from semver import VersionInfo", "$0"]
+  },
+
+  // third party - sklearn
+  "import sklearn": {
+    "prefix": "import sklearn",
+    "body": ["import sklearn", "$0"]
+  },
+  "from sklearn.base import BaseEstimator": {
+    "prefix": "from sklearn.base import BaseEstimator",
+    "body": ["from sklearn.base import BaseEstimator", "$0"]
+  },
+  "from sklearn.compose import ColumnTransformer": {
+    "prefix": "from sklearn.compose import ColumnTransformer",
+    "body": ["from sklearn.compose import ColumnTransformer", "$0"]
+  },
+  "from sklearn.compose import TransformedTargetRegressor": {
+    "prefix": "from sklearn.compose import TransformedTargetRegressor",
+    "body": ["from sklearn.compose import TransformedTargetRegressor", "$0"]
+  },
+  "from sklearn.compose import make_column_selector": {
+    "prefix": "from sklearn.compose import make_column_selector",
+    "body": ["from sklearn.compose import make_column_selector", "$0"]
+  },
+  "from sklearn.compose import make_column_transformer": {
+    "prefix": "from sklearn.compose import make_column_transformer",
+    "body": ["from sklearn.compose import make_column_transformer", "$0"]
+  },
+  "from sklearn.ensemble import RandomForestClassifier": {
+    "prefix": "from sklearn.ensemble import RandomForestClassifier",
+    "body": ["from sklearn.ensemble import RandomForestClassifier", "$0"]
+  },
+  "from sklearn.ensemble import RandomForestRegressor": {
+    "prefix": "from sklearn.ensemble import RandomForestRegressor",
+    "body": ["from sklearn.ensemble import RandomForestRegressor", "$0"]
+  },
+  "from sklearn.impute import SimpleImputer": {
+    "prefix": "from sklearn.impute import SimpleImputer",
+    "body": ["from sklearn.impute import SimpleImputer", "$0"]
+  },
+  "from sklearn.linear_model import LinearRegression": {
+    "prefix": "from sklearn.linear_model import LinearRegression",
+    "body": ["from sklearn.linear_model import LinearRegression", "$0"]
+  },
+  "from sklearn.linear_model import Ridge": {
+    "prefix": "from sklearn.linear_model import Ridge",
+    "body": ["from sklearn.linear_model import Ridge", "$0"]
+  },
+  "from sklearn.metrics import accuracy_score": {
+    "prefix": "from sklearn.metrics import accuracy_score",
+    "body": ["from sklearn.metrics import accuracy_score", "$0"]
+  },
+  "from sklearn.metrics import confusion_matrix": {
+    "prefix": "from sklearn.metrics import confusion_matrix",
+    "body": ["from sklearn.metrics import confusion_matrix", "$0"]
+  },
+  "from sklearn.metrics import mean_squared_error": {
+    "prefix": "from sklearn.metrics import mean_squared_error",
+    "body": ["from sklearn.metrics import mean_squared_error", "$0"]
+  },
+  "from sklearn.metrics import r2_score": {
+    "prefix": "from sklearn.metrics import r2_score",
+    "body": ["from sklearn.metrics import r2_score", "$0"]
+  },
+  "from sklearn.model_selection import GridSearchCV": {
+    "prefix": "from sklearn.model_selection import GridSearchCV",
+    "body": ["from sklearn.model_selection import GridSearchCV", "$0"]
+  },
+  "from sklearn.model_selection import RandomizedSearchCV": {
+    "prefix": "from sklearn.model_selection import RandomizedSearchCV",
+    "body": ["from sklearn.model_selection import RandomizedSearchCV", "$0"]
+  },
+  "from sklearn.model_selection import TimeSeriesSplit": {
+    "prefix": "from sklearn.model_selection import TimeSeriesSplit",
+    "body": ["from sklearn.model_selection import TimeSeriesSplit", "$0"]
+  },
+  "from sklearn.model_selection import cross_val_score": {
+    "prefix": "from sklearn.model_selection import cross_val_score",
+    "body": ["from sklearn.model_selection import cross_val_score", "$0"]
+  },
+  "from sklearn.model_selection import cross_validate": {
+    "prefix": "from sklearn.model_selection import cross_validate",
+    "body": ["from sklearn.model_selection import cross_validate", "$0"]
+  },
+  "from sklearn.model_selection import train_test_split": {
+    "prefix": "from sklearn.model_selection import train_test_split",
+    "body": ["from sklearn.model_selection import train_test_split", "$0"]
+  },
+  "from sklearn.pipeline import FeatureUnion": {
+    "prefix": "from sklearn.pipeline import FeatureUnion",
+    "body": ["from sklearn.pipeline import FeatureUnion", "$0"]
+  },
+  "from sklearn.pipeline import Pipeline": {
+    "prefix": "from sklearn.pipeline import Pipeline",
+    "body": ["from sklearn.pipeline import Pipeline", "$0"]
+  },
+  "from sklearn.pipeline import make_pipeline": {
+    "prefix": "from sklearn.pipeline import make_pipeline",
+    "body": ["from sklearn.pipeline import make_pipeline", "$0"]
+  },
+  "from sklearn.pipeline import make_union": {
+    "prefix": "from sklearn.pipeline import make_union",
+    "body": ["from sklearn.pipeline import make_union", "$0"]
+  },
+  "from sklearn.preprocessing import FunctionTransformer": {
+    "prefix": "from sklearn.preprocessing import FunctionTransformer",
+    "body": ["from sklearn.preprocessing import FunctionTransformer", "$0"]
+  },
+  "from sklearn.preprocessing import LabelEncoder": {
+    "prefix": "from sklearn.preprocessing import LabelEncoder",
+    "body": ["from sklearn.preprocessing import LabelEncoder", "$0"]
+  },
+  "from sklearn.preprocessing import MaxAbsScaler": {
+    "prefix": "from sklearn.preprocessing import MaxAbsScaler",
+    "body": ["from sklearn.preprocessing import MaxAbsScaler", "$0"]
+  },
+  "from sklearn.preprocessing import MinMaxScaler": {
+    "prefix": "from sklearn.preprocessing import MinMaxScaler",
+    "body": ["from sklearn.preprocessing import MinMaxScaler", "$0"]
+  },
+  "from sklearn.preprocessing import OneHotEncoder": {
+    "prefix": "from sklearn.preprocessing import OneHotEncoder",
+    "body": ["from sklearn.preprocessing import OneHotEncoder", "$0"]
+  },
+  "from sklearn.preprocessing import PowerTransformer": {
+    "prefix": "from sklearn.preprocessing import PowerTransformer",
+    "body": ["from sklearn.preprocessing import PowerTransformer", "$0"]
+  },
+  "from sklearn.preprocessing import QuantileTransformer": {
+    "prefix": "from sklearn.preprocessing import QuantileTransformer",
+    "body": ["from sklearn.preprocessing import QuantileTransformer", "$0"]
+  },
+  "from sklearn.preprocessing import RobustScaler": {
+    "prefix": "from sklearn.preprocessing import RobustScaler",
+    "body": ["from sklearn.preprocessing import RobustScaler", "$0"]
+  },
+  "from sklearn.preprocessing import StandardScaler": {
+    "prefix": "from sklearn.preprocessing import StandardScaler",
+    "body": ["from sklearn.preprocessing import StandardScaler", "$0"]
+  },
+  "from sklearn.tree import DecisionTreeClassifier": {
+    "prefix": "from sklearn.tree import DecisionTreeClassifier",
+    "body": ["from sklearn.tree import DecisionTreeClassifier", "$0"]
+  },
+  "from sklearn.tree import DecisionTreeRegressor": {
+    "prefix": "from sklearn.tree import DecisionTreeRegressor",
+    "body": ["from sklearn.tree import DecisionTreeRegressor", "$0"]
+  },
+  "from sklearn.utils.validation import check_random_state": {
+    "prefix": "from sklearn.utils.validation import check_random_state",
+    "body": ["from sklearn.utils.validation import check_random_state", "$0"]
+  },
+
+  // third party - sklearn-pandas
+  "import sklearn_pandas": {
+    "prefix": "import sklearn_pandas",
+    "body": ["import sklearn_pandas", "$0"]
+  },
+  "from sklearn_pandas import DataFrameMapper": {
+    "prefix": "from sklearn_pandas import DataFrameMapper",
+    "body": ["from sklearn_pandas import DataFrameMapper", "$0"]
+  },
+
   // third party - sqlalchemy
   "import sqlalchemy": {
     "prefix": "import sqlalchemy",
     "body": ["import sqlalchemy", "$0"]
-  },
-  "import sqlalchemy as sqla": {
-    "prefix": "import sqlalchemy as sqla",
-    "body": ["import sqlalchemy as sqla", "$0"]
   },
   "import sqlalchemy.orm": {
     "prefix": "import sqlalchemy.orm",
@@ -1858,6 +2385,54 @@
     "body": ["from sqlalchemy.orm import sessionmaker", "$0"]
   },
 
+  // third party - statsmodels
+  "import statsmodels": {
+    "prefix": "import statsmodels",
+    "body": ["import statsmodels", "$0"]
+  },
+  "import statsmodels.api": {
+    "prefix": "import statsmodels.api",
+    "body": ["import statsmodels.api", "$0"]
+  },
+  "from statsmodels.regression.linear_model import OLS": {
+    "prefix": "from statsmodels.regression.linear_model import OLS",
+    "body": ["from statsmodels.regression.linear_model import OLS", "$0"]
+  },
+  "from statsmodels.tsa.ar_model import AutoReg": {
+    "prefix": "from statsmodels.tsa.ar_model import AutoReg",
+    "body": ["from statsmodels.tsa.ar_model import AutoReg", "$0"]
+  },
+  "from statsmodels.tsa.stattools import acf": {
+    "prefix": "from statsmodels.tsa.stattools import acf",
+    "body": ["from statsmodels.tsa.stattools import acf", "$0"]
+  },
+
+  // third party - tabulate
+  "from tabulate import tabulate": {
+    "prefix": "from tabulate import tabulate",
+    "body": ["from tabulate import tabulate", "$0"]
+  },
+
+  // third party - tqdm
+  "from tqdm import tqdm": {
+    "prefix": "from tqdm import tqdm",
+    "body": ["from tqdm import tqdm", "$0"]
+  },
+  "from tqdm import trange": {
+    "prefix": "from tqdm import trange",
+    "body": ["from tqdm import trange", "$0"]
+  },
+
+  // third party - typeguard
+  "import typeguard": {
+    "prefix": "import typeguard",
+    "body": ["import typeguard", "$0"]
+  },
+  "from typeguard import typechecked": {
+    "prefix": "from typeguard import typechecked",
+    "body": ["from typeguard import typechecked", "$0"]
+  },
+
   // third party - typing-extensions
   "from typing_extensions import Self": {
     "prefix": "from typing_extensions import Self",
@@ -1866,5 +2441,40 @@
   "from typing_extensions import override": {
     "prefix": "from typing_extensions import override",
     "body": ["from typing_extensions import override", "$0"]
+  },
+
+  // third party - wrapt
+  "import wrapt": { "prefix": "import wrapt", "body": ["import wrapt", "$0"] },
+  "from wrapt import decorator": {
+    "prefix": "from wrapt import decorator",
+    "body": ["from wrapt import decorator", "$0"]
+  },
+
+  // third party - zarr
+  "import xarray": {
+    "prefix": "import xarray",
+    "body": ["import xarray", "$0"]
+  },
+  "from xarray import DataArray": {
+    "prefix": "from xarray import DataArray",
+    "body": ["from xarray import DataArray", "$0"]
+  },
+  "from xarray import Dataset": {
+    "prefix": "from xarray import Dataset",
+    "body": ["from xarray import Dataset", "$0"]
+  },
+  "from xarray import merge": {
+    "prefix": "from xarray import merge",
+    "body": ["from xarray import merge", "$0"]
+  },
+
+  // third party - zarr
+  "import zarr": {
+    "prefix": "import zarr",
+    "body": ["import zarr", "$0"]
+  },
+  "from zarr import Array": {
+    "prefix": "from zarr import Array",
+    "body": ["from zarr import Array", "$0"]
   }
 }

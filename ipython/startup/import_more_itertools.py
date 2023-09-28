@@ -47,7 +47,7 @@ with suppress(ModuleNotFoundError):
         split_into,  # noqa: F401
         split_when,  # noqa: F401
         strip,  # noqa: F401
-        tabulate,  # noqa: F401
+        tabulate,
         tail,  # noqa: F401
         take,  # noqa: F401
         unique_everseen,  # noqa: F401
@@ -56,3 +56,8 @@ with suppress(ModuleNotFoundError):
         windowed,  # noqa: F401
         zip_equal,  # noqa: F401
     )
+
+    try:
+        import tabulate as _tabulate  # noqa: F401
+    except ModuleNotFoundError:
+        from more_itertools import tabulate  # noqa: F401, F811

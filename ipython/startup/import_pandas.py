@@ -25,6 +25,8 @@ with suppress(ModuleNotFoundError):
         date_range,  # noqa: F401
         option_context,
         qcut,  # noqa: F401
+        read_csv,  # noqa: F401
+        read_excel,  # noqa: F401
         read_parquet,  # noqa: F401
         read_pickle,  # noqa: F401
         read_sql,  # noqa: F401
@@ -53,10 +55,10 @@ with suppress(ModuleNotFoundError):
 
     _DEFAULT_MIN_MAX_ROWS, _DEFAULT_MAX_COLUMNS = 7, 100
 
-    def _formatter(x: float, *, template: str) -> str:
+    def _formatter(x: float, /, *, template: str) -> str:
         return format(x, template)
 
-    def _get_float_formatter(dp: int) -> Callable[[float], str]:
+    def _get_float_formatter(dp: int, /) -> Callable[[float], str]:
         return partial(_formatter, template=f".{dp}f")
 
     set_option(

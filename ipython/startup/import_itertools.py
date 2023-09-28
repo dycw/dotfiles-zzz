@@ -1,5 +1,4 @@
 import itertools  # noqa: F401
-from contextlib import suppress
 from itertools import (
     accumulate,  # noqa: F401
     chain,  # noqa: F401
@@ -16,11 +15,7 @@ from itertools import (
     product,  # noqa: F401
     repeat,  # noqa: F401
     starmap,  # noqa: F401
-    tabulate,
     takewhile,  # noqa: F401
     tee,  # noqa: F401
     zip_longest,  # noqa: F401
 )
-
-with suppress(ModuleNotFoundError):
-    from tabulate import tabulate  # noqa: F401,F811

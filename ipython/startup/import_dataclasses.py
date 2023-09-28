@@ -1,5 +1,5 @@
 import dataclasses  # noqa: F401
-from dataclasses import dataclass, replace  # noqa: F401  # noqa: F401
+from dataclasses import dataclass, replace  # noqa: F401
 
 try:
     import attrs  # noqa: F401
