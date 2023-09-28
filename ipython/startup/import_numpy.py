@@ -19,7 +19,6 @@ with suppress(ModuleNotFoundError):
         float16,  # noqa: F401
         float32,  # noqa: F401
         float64,  # noqa: F401
-        float128,  # noqa: F401
         histogram,  # noqa: F401
         hstack,  # noqa: F401
         iinfo,  # noqa: F401
@@ -55,8 +54,11 @@ with suppress(ModuleNotFoundError):
         zeros,  # noqa: F401
         zeros_like,  # noqa: F401
     )
-    from numpy.linalg import LinAlgError, inv  # noqa: F401  # noqa: F401
+    from numpy.linalg import LinAlgError, inv  # noqa: F401
     from numpy.random import RandomState  # noqa: F401
     from numpy.typing import NDArray  # noqa: F401
+
+    with suppress(ImportError):
+        from numpy import float128  # noqa: F401
 
     set_printoptions(suppress=True)
