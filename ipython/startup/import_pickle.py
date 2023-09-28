@@ -1,1 +1,1 @@
-import pickle  # noqa: F401, S403
+import pickle  # noqa: F401

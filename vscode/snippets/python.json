@@ -390,6 +390,176 @@
     "body": ["from logging.config import dictConfig", "$0"]
   },
 
+  // standard library - multiprocessing
+  "import multiprocessing": {
+    "prefix": "import multiprocessing",
+    "body": ["import multiprocessing", "$0"]
+  },
+  "from multiprocessing import Pool": {
+    "prefix": "from multiprocessing import Pool",
+    "body": ["from multiprocessing import Pool", "$0"]
+  },
+  "from multiprocessing import cpu_count": {
+    "prefix": "from multiprocessing import cpu_count",
+    "body": ["from multiprocessing import cpu_count", "$0"]
+  },
+
+  // standard library - numbers
+  "import numbers": {
+    "prefix": "import numbers",
+    "body": ["import numbers", "$0"]
+  },
+  "from numbers import Integral": {
+    "prefix": "from numbers import Integral",
+    "body": ["from numbers import Integral", "$0"]
+  },
+  "from numbers import Number": {
+    "prefix": "from numbers import Number",
+    "body": ["from numbers import Number", "$0"]
+  },
+  "from numbers import Real": {
+    "prefix": "from numbers import Real",
+    "body": ["from numbers import Real", "$0"]
+  },
+
+  // standard library - operator
+  "import operator": {
+    "prefix": "import operator",
+    "body": ["import operator", "$0"]
+  },
+  "from operator import add": {
+    "prefix": "from operator import add",
+    "body": ["from operator import add", "$0"]
+  },
+  "from operator import and_": {
+    "prefix": "from operator import and_",
+    "body": ["from operator import and_", "$0"]
+  },
+  "from operator import attrgetter": {
+    "prefix": "from operator import attrgetter",
+    "body": ["from operator import attrgetter", "$0"]
+  },
+  "from operator import itemgetter": {
+    "prefix": "from operator import itemgetter",
+    "body": ["from operator import itemgetter", "$0"]
+  },
+  "from operator import mul": {
+    "prefix": "from operator import mul",
+    "body": ["from operator import mul", "$0"]
+  },
+  "from operator import or_": {
+    "prefix": "from operator import or_",
+    "body": ["from operator import or_", "$0"]
+  },
+  "from operator import sub": {
+    "prefix": "from operator import sub",
+    "body": ["from operator import sub", "$0"]
+  },
+  "from operator import truediv": {
+    "prefix": "from operator import truediv",
+    "body": ["from operator import truediv", "$0"]
+  },
+
+  // standard library - os
+  "import os": { "prefix": "import os", "body": ["import os", "$0"] },
+  "from os import environ": {
+    "prefix": "from os import environ",
+    "body": ["from os import environ", "$0"]
+  },
+  "from os import getenv": {
+    "prefix": "from os import getenv",
+    "body": ["from os import getenv", "$0"]
+  },
+  "from os.path import expanduser": {
+    "prefix": "from os.path import expanduser",
+    "body": ["from os.path import expanduser", "$0"]
+  },
+  "from os.path import expandvars": {
+    "prefix": "from os.path import expandvars",
+    "body": ["from os.path import expandvars", "$0"]
+  },
+
+  // standard library - pathlib
+  "import pathlib": {
+    "prefix": "import pathlib",
+    "body": ["import pathlib", "$0"]
+  },
+  "from pathlib import Path": {
+    "prefix": "from pathlib import Path",
+    "body": ["from pathlib import Path", "$0"]
+  },
+
+  // standard library - pickle
+  "import pickle": {
+    "prefix": "import pickle",
+    "body": ["import pickle", "$0"]
+  },
+
+  // standard library - platform
+  "import platform": {
+    "prefix": "import platform",
+    "body": ["import platform", "$0"]
+  },
+  "from platform import system": {
+    "prefix": "from platform import system",
+    "body": ["from platform import system", "$0"]
+  },
+
+  // standard library - random
+  "import random": {
+    "prefix": "import random",
+    "body": ["import random", "$0"]
+  },
+  "from random import choice": {
+    "prefix": "from random import choice",
+    "body": ["from random import choice", "$0"]
+  },
+  "from random import sample": {
+    "prefix": "from random import sample",
+    "body": ["from random import sample", "$0"]
+  },
+  "from random import shuffle": {
+    "prefix": "from random import shuffle",
+    "body": ["from random import shuffle", "$0"]
+  },
+
+  // standard library - re
+  "import re": { "prefix": "import re", "body": ["import re", "$0"] },
+  "from re import escape": {
+    "prefix": "from re import escape",
+    "body": ["from re import escape", "$0"]
+  },
+  "from re import findall": {
+    "prefix": "from re import findall",
+    "body": ["from re import findall", "$0"]
+  },
+  "from re import fullmatch": {
+    "prefix": "from re import fullmatch",
+    "body": ["from re import fullmatch", "$0"]
+  },
+  "from re import match": {
+    "prefix": "from re import match",
+    "body": ["from re import match", "$0"]
+  },
+
+  // standard library - typing
+  "import shutil": {
+    "prefix": "import shutil",
+    "body": ["import shutil", "$0"]
+  },
+  "from shutil import copyfile": {
+    "prefix": "from shutil import copyfile",
+    "body": ["from shutil import copyfile", "$0"]
+  },
+  "from shutil import rmtree": {
+    "prefix": "from shutil import rmtree",
+    "body": ["from shutil import rmtree", "$0"]
+  },
+  "from shutil import which": {
+    "prefix": "from shutil import which",
+    "body": ["from shutil import which", "$0"]
+  },
+
   // standard library - typing
   "from typing import TYPE_CHECKING": {
     "prefix": "from typing import TYPE_CHECKING",
@@ -442,6 +612,28 @@
   "from typing import cast": {
     "prefix": "from typing import cast",
     "body": ["from typing import cast", "$0"]
+  },
+
+  // third party - atomicwrites
+  "import atomicwrites": {
+    "prefix": "import atomicwrites",
+    "body": ["import atomicwrites", "$0"]
+  },
+  "from atomicwrites import AtomicWriter": {
+    "prefix": "from atomicwrites import AtomicWriter",
+    "body": ["from atomicwrites import AtomicWriter", "$0"]
+  },
+  "from atomicwrites import atomic_write": {
+    "prefix": "from atomicwrites import atomic_write",
+    "body": ["from atomicwrites import atomic_write", "$0"]
+  },
+  "from atomicwrites import move_atomic": {
+    "prefix": "from atomicwrites import move_atomic",
+    "body": ["from atomicwrites import move_atomic", "$0"]
+  },
+  "from atomicwrites import replace_atomic": {
+    "prefix": "from atomicwrites import replace_atomic",
+    "body": ["from atomicwrites import replace_atomic", "$0"]
   },
 
   // third party - attrs
@@ -528,6 +720,20 @@
   "from bs4 import BeautifulSoup": {
     "prefix": "from bs4 import BeautifulSoup",
     "body": ["from bs4 import BeautifulSoup", "$0"]
+  },
+
+  // third party - click
+  "import click": {
+    "prefix": "import click",
+    "body": ["import click", "$0"]
+  },
+  "from click import command": {
+    "prefix": "from click import command",
+    "body": ["from click import command", "$0"]
+  },
+  "from click import option": {
+    "prefix": "from click import option",
+    "body": ["from click import option", "$0"]
   },
 
   // third party - contexttimer
@@ -1177,6 +1383,229 @@
     "body": ["from more_itertools import zip_equal", "$0"]
   },
 
+  // third party - numpy
+  "import numpy": { "prefix": "import numpy", "body": ["import numpy", "$0"] },
+  "import numpy as np": {
+    "prefix": "import numpy as np",
+    "body": ["import numpy as np", "$0"]
+  },
+  "from numpy import arange": {
+    "prefix": "from numpy import arange",
+    "body": ["from numpy import arange", "$0"]
+  },
+  "from numpy import array": {
+    "prefix": "from numpy import array",
+    "body": ["from numpy import array", "$0"]
+  },
+  "from numpy import bool_": {
+    "prefix": "from numpy import bool_",
+    "body": ["from numpy import bool_", "$0"]
+  },
+  "from numpy import concatenate": {
+    "prefix": "from numpy import concatenate",
+    "body": ["from numpy import concatenate", "$0"]
+  },
+  "from numpy import corrcoef": {
+    "prefix": "from numpy import corrcoef",
+    "body": ["from numpy import corrcoef", "$0"]
+  },
+  "from numpy import cumsum": {
+    "prefix": "from numpy import cumsum",
+    "body": ["from numpy import cumsum", "$0"]
+  },
+  "from numpy import dtype": {
+    "prefix": "from numpy import dtype",
+    "body": ["from numpy import dtype", "$0"]
+  },
+  "from numpy import exp": {
+    "prefix": "from numpy import exp",
+    "body": ["from numpy import exp", "$0"]
+  },
+  "from numpy import expand_dims": {
+    "prefix": "from numpy import expand_dims",
+    "body": ["from numpy import expand_dims", "$0"]
+  },
+  "from numpy import eye": {
+    "prefix": "from numpy import eye",
+    "body": ["from numpy import eye", "$0"]
+  },
+  "from numpy import finfo": {
+    "prefix": "from numpy import finfo",
+    "body": ["from numpy import finfo", "$0"]
+  },
+  "from numpy import flatnonzero": {
+    "prefix": "from numpy import flatnonzero",
+    "body": ["from numpy import flatnonzero", "$0"]
+  },
+  "from numpy import float128": {
+    "prefix": "from numpy import float128",
+    "body": ["from numpy import float128", "$0"]
+  },
+  "from numpy import float16": {
+    "prefix": "from numpy import float16",
+    "body": ["from numpy import float16", "$0"]
+  },
+  "from numpy import float32": {
+    "prefix": "from numpy import float32",
+    "body": ["from numpy import float32", "$0"]
+  },
+  "from numpy import float64": {
+    "prefix": "from numpy import float64",
+    "body": ["from numpy import float64", "$0"]
+  },
+  "from numpy import histogram": {
+    "prefix": "from numpy import histogram",
+    "body": ["from numpy import histogram", "$0"]
+  },
+  "from numpy import hstack": {
+    "prefix": "from numpy import hstack",
+    "body": ["from numpy import hstack", "$0"]
+  },
+  "from numpy import iinfo": {
+    "prefix": "from numpy import iinfo",
+    "body": ["from numpy import iinfo", "$0"]
+  },
+  "from numpy import inf": {
+    "prefix": "from numpy import inf",
+    "body": ["from numpy import inf", "$0"]
+  },
+  "from numpy import int16": {
+    "prefix": "from numpy import int16",
+    "body": ["from numpy import int16", "$0"]
+  },
+  "from numpy import int32": {
+    "prefix": "    from numpy import int32",
+    "body": ["    from numpy import int32", "$0"]
+  },
+  "from numpy import int64": {
+    "prefix": "from numpy import int64",
+    "body": ["from numpy import int64", "$0"]
+  },
+  "from numpy import int8": {
+    "prefix": "from numpy import int8",
+    "body": ["from numpy import int8", "$0"]
+  },
+  "from numpy import isclose": {
+    "prefix": "from numpy import isclose",
+    "body": ["from numpy import isclose", "$0"]
+  },
+  "from numpy import isfinite": {
+    "prefix": "from numpy import isfinite",
+    "body": ["from numpy import isfinite", "$0"]
+  },
+  "from numpy import isnan": {
+    "prefix": "from numpy import isnan",
+    "body": ["from numpy import isnan", "$0"]
+  },
+  "from numpy import issubdtype": {
+    "prefix": "from numpy import issubdtype",
+    "body": ["from numpy import issubdtype", "$0"]
+  },
+  "from numpy import linspace": {
+    "prefix": "from numpy import linspace",
+    "body": ["from numpy import linspace", "$0"]
+  },
+  "from numpy import log": {
+    "prefix": "from numpy import log",
+    "body": ["from numpy import log", "$0"]
+  },
+  "from numpy import log10": {
+    "prefix": "from numpy import log10",
+    "body": ["from numpy import log10", "$0"]
+  },
+  "from numpy import log2": {
+    "prefix": "from numpy import log2",
+    "body": ["from numpy import log2", "$0"]
+  },
+  "from numpy import maximum": {
+    "prefix": "from numpy import maximum",
+    "body": ["from numpy import maximum", "$0"]
+  },
+  "from numpy import memmap": {
+    "prefix": "from numpy import memmap",
+    "body": ["from numpy import memmap", "$0"]
+  },
+  "from numpy import minimum": {
+    "prefix": "from numpy import minimum",
+    "body": ["from numpy import minimum", "$0"]
+  },
+  "from numpy import nan": {
+    "prefix": "from numpy import nan",
+    "body": ["from numpy import nan", "$0"]
+  },
+  "from numpy import nan_to_num": {
+    "prefix": "from numpy import nan_to_num",
+    "body": ["from numpy import nan_to_num", "$0"]
+  },
+  "from numpy import nansum": {
+    "prefix": "from numpy import nansum",
+    "body": ["from numpy import nansum", "$0"]
+  },
+  "from numpy import ndarray": {
+    "prefix": "from numpy import ndarray",
+    "body": ["from numpy import ndarray", "$0"]
+  },
+  "from numpy import newaxis": {
+    "prefix": "from numpy import newaxis",
+    "body": ["from numpy import newaxis", "$0"]
+  },
+  "from numpy import nonzero": {
+    "prefix": "from numpy import nonzero",
+    "body": ["from numpy import nonzero", "$0"]
+  },
+  "from numpy import ones": {
+    "prefix": "from numpy import ones",
+    "body": ["from numpy import ones", "$0"]
+  },
+  "from numpy import ones_like": {
+    "prefix": "from numpy import ones_like",
+    "body": ["from numpy import ones_like", "$0"]
+  },
+  "from numpy import ravel": {
+    "prefix": "from numpy import ravel",
+    "body": ["from numpy import ravel", "$0"]
+  },
+  "from numpy import set_printoptions": {
+    "prefix": "from numpy import set_printoptions",
+    "body": ["from numpy import set_printoptions", "$0"]
+  },
+  "from numpy import sqrt": {
+    "prefix": "from numpy import sqrt",
+    "body": ["from numpy import sqrt", "$0"]
+  },
+  "from numpy import vstack": {
+    "prefix": "from numpy import vstack",
+    "body": ["from numpy import vstack", "$0"]
+  },
+  "from numpy import where": {
+    "prefix": "from numpy import where",
+    "body": ["from numpy import where", "$0"]
+  },
+  "from numpy import zeros": {
+    "prefix": "from numpy import zeros",
+    "body": ["from numpy import zeros", "$0"]
+  },
+  "from numpy import zeros_like": {
+    "prefix": "from numpy import zeros_like",
+    "body": ["from numpy import zeros_like", "$0"]
+  },
+  "from numpy.linalg import LinAlgError": {
+    "prefix": "from numpy.linalg import LinAlgError",
+    "body": ["from numpy.linalg import LinAlgError", "$0"]
+  },
+  "from numpy.linalg import inv": {
+    "prefix": "from numpy.linalg import inv",
+    "body": ["from numpy.linalg import inv", "$0"]
+  },
+  "from numpy.random import RandomState": {
+    "prefix": "from numpy.random import RandomState",
+    "body": ["from numpy.random import RandomState", "$0"]
+  },
+  "from numpy.typing import NDArray": {
+    "prefix": "from numpy.typing import NDArray",
+    "body": ["from numpy.typing import NDArray", "$0"]
+  },
+
   // third party - pandas
   "import pandas": {
     "prefix": "import pandas",
@@ -1430,7 +1859,6 @@
   },
 
   // third party - typing-extensions
-
   "from typing_extensions import Self": {
     "prefix": "from typing_extensions import Self",
     "body": ["from typing_extensions import Self", "$0"]
