@@ -10,10 +10,8 @@ from logging import basicConfig
 from logging import info
 from sys import stdout
 from typing import Any
-from typing import cast
 from typing import Literal
-from typing import Optional
-from typing import Union
+from typing import cast
 
 basicConfig(format="{message}", level="INFO", stream=stdout, style="{")
 
@@ -26,21 +24,22 @@ class Settings:
     i: bool = False
     k: bool = False
     lf: bool = False
-    n: Optional[Union[Literal["auto"], int]] = None
+    n: Literal["auto"] | int | None = None
     pdb: bool = False
     x: bool = False
 
     def __post_init__(self) -> None:
         if self.pdb:
             if self.f:
-                raise ValueError("--pdb and -f are mutually exclusive")
-            elif self.n is not None:
-                raise ValueError("--pdb and -n are mutually exclusive")
+                msg = "--pdb and -f are mutually exclusive"
+                raise ValueError(msg)
+            if self.n is not None:
+                msg = "--pdb and -n are mutually exclusive"
+                raise ValueError(msg)
 
     @property
     def alias(self) -> "Alias":
         """The alias."""
-
         parts: list[Part] = []
         append = parts.append
         if self.f:
@@ -84,7 +83,9 @@ class Alias:
     def __repr__(self) -> str:
         keys = "".join(p.key for p in self.parts)
         alias = f"pyt{keys}"
-        options = " ".join(chain(["--color=yes"], (p.option for p in self.parts)))
+        options = " ".join(
+            chain(["--color=yes"], (p.option for p in self.parts))
+        )
         command = f"pytest {options}".strip()
         return f"alias {alias}='{command}'"
 
@@ -94,7 +95,6 @@ class Alias:
 
 def main() -> None:
     """Echo all the commands, ready for piping to a script."""
-
     info("#!/usr/bin/env bash")
     for f, i, k, lf, n, pdb, x in product(
         [True, False],
@@ -106,7 +106,9 @@ def main() -> None:
         [True, False],
     ):
         with suppress(ValueError):
-            settings = Settings(f=f, i=i, k=k, lf=lf, n=cast(Any, n), pdb=pdb, x=x)
+            settings = Settings(
+                f=f, i=i, k=k, lf=lf, n=cast(Any, n), pdb=pdb, x=x
+            )
             for alias in settings.yield_aliases():
                 info(alias)
 

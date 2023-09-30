@@ -121,66 +121,77 @@
   "black-formatter.args": ["--line-length=80", "--skip-magic-trailing-comma"],
   // python - ruff
   "ruff.args": [
-    "--select=A", // flake8-builtins
-    "--select=ANN", // flake8-annotations
-    "--select=ARG", // flake8-unused-arguments
-    "--select=ASYNC", // flake8-async
-    "--select=B", // flake8-bugbear
-    "--select=BLE", // flake8-blind-excpt
-    "--select=C4", // flake8-comprehensions
-    "--select=E,W", // pycodestyle
-    "--select=EM", // flake8-errmsg
-    "--select=ERA", // eradicate
-    "--select=EXE", // flake8-executable
     "--select=F", // pyflakes
-    "--select=FA", // flake8-future-annotations
-    "--select=FBT", // flake8-boolean-trap
-    "--select=FIX", // flake8-fixme
-    "--select=FLY", // flynt
-    "--select=G", // flake8-logging-format
+    "--select=E", // pycodestyle
+    "--select=W", // pycodestyle
     "--select=I", // isort
-    "--select=ICN", // flake8-import-conventions
-    "--select=INP", // flake8-no-pep420
-    "--select=INT", // flake8-gettext
-    "--select=ISC", // flake8-implicit-str-concat
     "--select=N", // pep8-naming
-    "--select=PGH", // pygrep-hooks
-    "--select=PIE", // flake8-pie
-    "--select=PL", // pylint
-    "--select=PT", // flake8-pytest-style
-    "--select=PTH", // flake8-use-pathlib
-    "--select=PYI", // flake8-pyi
-    "--select=RET", // flake8-return
-    "--select=RSE", // flake8-raise
-    "--select=RUF", // ruff
-    "--select=S", // flake8-bandit
-    "--select=SIM", // flake8-simplify
-    "--select=SLF", // flake8-self
-    "--select=SLOT", // flake8-slots
-    "--select=T10", // flake8-debugger
-    "--select=T20", // flake8-print
-    "--select=TD", // flake8-todos
-    "--select=TID", // flake8-tidy-imports
-    "--select=TRY", // tryceratops
     "--select=UP", // pyupgrade
     "--select=YTT", // flake8-2020
-    "--ignore=ANN101", // flake8-annotations > missing-type-self
-    "--ignore=ANN102", // flake8-annotations > missing-type-cls
-    "--ignore=ANN401", // flake8-annotations > any-type
-    "--ignore=B008", // flake8-bugbear > function-call-in-default-argument
-    "--ignore=PGH003", // pygrep-hooks > blanket-type-ignore
-    "--ignore=PLR0913", // pylint > too-many-arguments
-    "--ignore=PT012", // flake8-pytest-style > pytest-raises-with-multiple-statements
-    "--ignore=PT013", // flake8-pytest-style > pytest-incorrect-pytest-import
-    "--ignore=S101", // flake8-bandit > assert
+    "--select=ANN", // flake8-annotations
+    "--select=ASYNC", // flake8-async
+    "--select=S", // flake8-bandit
+    "--select=BLE", // flake8-blind-excpt
+    "--select=FBT", // flake8-boolean-trap
+    "--select=B", // flake8-bugbear
+    "--select=A", // flake8-builtins
+    "--select=C4", // flake8-comprehensions
+    "--select=DTZ", // flake8-datetimez
+    "--select=T10", // flake8-debugger
+    "--select=EM", // flake8-errmsg
+    "--select=EXE", // flake8-executable
+    "--select=FA", // flake8-future-annotations
+    "--select=ISC", // flake8-implicit-str-concat
+    "--select=ICN", // flake8-import-conventions
+    "--select=G", // flake8-logging-format
+    "--select=INP", // flake8-no-pep420
+    "--select=PIE", // flake8-pie
+    "--select=T20", // flake8-print
+    "--select=PYI", // flake8-pyi
+    "--select=PT", // flake8-pytest-style
+    "--select=RSE", // flake8-raise
+    "--select=RET", // flake8-return
+    "--select=SLF", // flake8-self
+    "--select=SLOT", // flake8-slots
+    "--select=SIM", // flake8-simplify
+    "--select=TID", // flake8-tidy-imports
+    "--select=INT", // flake8-gettext
+    "--select=ARG", // flake8-unused-arguments
+    "--select=PTH", // flake8-use-pathlib
+    "--select=TD", // flake8-todos
+    "--select=FIX", // flake8-fixme
+    "--select=ERA", // eradicate
+    "--select=PGH", // pygrep-hooks
+    "--select=PL", // pylint
+    "--select=TRY", // tryceratops
+    "--select=FLY", // flynt
+    "--select=NPY", // numpy-specific-rules
+    "--select=PERF", // perflint
+    "--select=FURB", // refurb
+    "--select=LOG", // flake8-logging
+    "--select=RUF", // ruff
+    "--ignore=ANN101", // flake8-annotations, missing-type-self
+    "--ignore=ANN102", // flake8-annotations, missing-type-cls
+    "--ignore=ANN401", // flake8-annotations, dynamically-typed-expression
+    "--ignore=B008", // flake8-bugbear, function-call-argument-default
+    "--ignore=COM812", // flake8-commas, trailing-comma-missing
+    "--ignore=PGH003", // pygrep-hooks, blanket-type-ignore
+    "--ignore=PLR0913", // refactor, too-many-arguments
+    "--ignore=PT012", // flake8-pytest-style, raises-with-multiple-statements
+    "--ignore=PT013", // flake8-pytest-style, incorrect-pytest-import
     "--fixable=ALL",
-    "--unfixable=ERA001", // eradicate > commented-out-code
-    // "--unfixable=F401", // pyflakes > unused-import
-    "--unfixable=F841" // pyflakes > unused-variable
+    "--unfixable=ERA001", // eradicate, commented-out-code
+    "--unfixable=F401", // pyflakes, unused-import
+    "--unfixable=F841" // pyflakes, unused-variable
   ],
   "ruff.importStrategy": "useBundled",
   // search
   "search.smartCase": true,
+  // svelte
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
   // typescript
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",

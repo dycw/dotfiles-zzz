@@ -1,4 +1,5 @@
 # top-level
+
 format = """
 [┌─────────────────────────────────────────────────────────── ](bold green)$time
 [│](bold green)\
@@ -14,8 +15,8 @@ $status$container$shell
 """
 
 [cmd_duration]
-format = "( [$duration]($style))"
 disabled = false
+format = "( [$duration]($style))"
 
 [directory]
 format = "( [$path]($style)[$read_only]($read_only_style))"
@@ -27,6 +28,12 @@ truncation_symbol = ".../"
 
 [docker_context]
 format = "( [$symbol$context]($style))"
+
+# language-specific
+[elm]
+format = "( [$symbol$version]($style))"
+style = "cyan"
+version_format = "$raw"
 
 [git_branch]
 format = "( [$symbol$branch(:$remote_branch)]($style))"
@@ -45,54 +52,6 @@ format = "( [$state:($progress_current/$progress_total)]($style))"
 format = "( [$conflicted]($style))( [$ahead]($style))( [$behind]($style))( [$diverged]($style))( [$up_to_date]($style))( [$untracked]($style))( [$stashed]($style))( [$modified]($style))( [$staged]($style))( [$renamed]($style))( [$deleted]($style))"
 ignore_submodules = true
 
-[hostname]
-ssh_only = false
-ssh_symbol = "🌐"
-format = "( [$ssh_symbol$hostname]($style))"
-
-[localip]
-ssh_only = true
-format = "( [$localipv4]($style))"
-style = "green"
-disabled = false
-
-[memory_usage]
-format = "( [$symbol$ram(|$swap)]($style))"
-disabled = false
-
-[os]
-disabled = false
-
-[package]
-format = "( [$symbol$version]($style))"
-version_format = "$raw"
-
-[shlvl]
-threshold = 3
-format = "( [$symbol  $shlvl]($style))"
-symbol = "↕️"
-repeat = true
-disabled = false
-
-[sudo]
-format = "( [$symbol]($style))"
-disabled = true
-
-[time]
-format = "[$time]($style)" # special format
-time_format = "%Y-%m-%d %H:%M:%S"
-disabled = false
-
-[username]
-show_always = true
-format = "( [$user]($style))"
-
-# language-specific
-[elm]
-format = "( [$symbol$version]($style))"
-style = "cyan"
-version_format = "$raw"
-
 [golang]
 format = "( [$symbol$version]($style))"
 style = "cyan"
@@ -102,6 +61,11 @@ version_format = "$raw"
 format = "( [$symbol$version]($style))"
 style = "purple"
 version_format = "$raw"
+
+[hostname]
+format = "( [$ssh_symbol$hostname]($style))"
+ssh_only = false
+ssh_symbol = "🌐"
 
 [julia]
 format = "( [$symbol$version]($style))"
@@ -113,15 +77,32 @@ format = "( [$symbol$version]($style))"
 style = "blue"
 version_format = "$raw"
 
+[localip]
+disabled = false
+format = "( [$localipv4]($style))"
+ssh_only = true
+style = "green"
+
 [lua]
 format = "( [$symbol$version]($style))"
 style = "blue"
 version_format = "$raw"
 
+[memory_usage]
+disabled = false
+format = "( [$symbol$ram(|$swap)]($style))"
+
 [nodejs]
 disabled = true
 format = "( [$symbol$version]($style))"
 style = "green"
+version_format = "$raw"
+
+[os]
+disabled = false
+
+[package]
+format = "( [$symbol$version]($style))"
 version_format = "$raw"
 
 [python]
@@ -133,3 +114,23 @@ version_format = "$raw"
 format = "( [$symbol$version]($style))"
 style = "red"
 version_format = "$raw"
+
+[shlvl]
+disabled = false
+format = "( [$symbol  $shlvl]($style))"
+repeat = true
+symbol = "↕️"
+threshold = 3
+
+[sudo]
+disabled = true
+format = "( [$symbol]($style))"
+
+[time]
+disabled = false
+format = "[$time]($style)"  # special format
+time_format = "%Y-%m-%d %H:%M:%S"
+
+[username]
+format = "( [$user]($style))"
+show_always = true
