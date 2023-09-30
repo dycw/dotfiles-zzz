@@ -1,6 +1,5 @@
-from pathlib import Path
 from os import environ
-
+from pathlib import Path
 
 # Configuration file for jupyter-server.
 
@@ -31,8 +30,8 @@ if "JUPYTER_PUBLIC" in environ:
     config.ServerApp.ip = "*"
     config.ServerApp.open_browser = False
     config.ServerApp.password = (
-        "argon2:$argon2id$v=19$m=10240,t=10,p=8$QXtzANnBeX+hW+Bci7211A$1MibEqBam7/"
-        "jcQ35ynR+janFpxIwCtfIQ9Sn7YpgaLM"
+        "argon2:$argon2id$v=19$m=10240,t=10,p=8$QXtzANnBeX+hW"  # noqa: S105
+        "+Bci7211A$1MibEqBam7/jcQ35ynR+janFpxIwCtfIQ9Sn7YpgaLM"
     )
     config.ServerApp.port = 8888
 

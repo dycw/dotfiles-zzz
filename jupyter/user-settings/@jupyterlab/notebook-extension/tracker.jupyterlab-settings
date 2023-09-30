@@ -1,7 +1,24 @@
 {
-  "codeCellConfig": {
-    "lineNumbers": true
-  },
-  "kernelShutdown": true,
-  "recordTiming": true
+    // Notebook
+    // @jupyterlab/notebook-extension:tracker
+    // Notebook settings.
+    // **************************************
+
+    // Automatically Start Preferred Kernel
+    // Whether to automatically start the preferred kernel.
+    "autoStartDefaultKernel": true,
+
+    // Code Cell Configuration
+    // The configuration for all code cells; it will override the CodeMirror default configuration.
+    "codeCellConfig": {
+        "lineNumbers": true
+    },
+
+    // Shut down kernel
+    // Whether to shut down or not the kernel when closing a notebook.
+    "kernelShutdown": true,
+
+    // Recording timing
+    // Should timing data be recorded in cell metadata
+    "recordTiming": true
 }
