@@ -4,7 +4,28 @@ return {
 		-- Event to trigger linters
 		events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 		linters_by_ft = {
+			-- https://github.com/mfussenegger/nvim-lint#available-linters
+			dockerfile = { "hadolint" },
+			haskell = { "hlint" },
+			htmldjango = { "djlint" },
+			javascript = { "biome" },
+			javascriptreact = { "biome" },
+			json = { "biome" },
+			jsonc = { "biome" },
+			lua = { "luacheck" },
+			markdown = { "markdownlint" },
 			python = { "ruff" },
+			sh = { "shellcheck" },
+			sql = { "sqlfluff" },
+			typescript = { "biome" },
+			typescriptreact = { "biome" },
+			yaml = { "yamllint" },
+			-- css = { "biome" }, -- no ready
+			-- html = { "biome" }, -- not ready
+			-- htmldjango = { "biome" }, -- not ready
+			-- markdown = { "biome" }, -- not ready
+			-- svelte = { "biome" }, -- no ready
+			-- vue = { "biome" }, -- no ready
 		},
 		-- LazyVim extension to easily override linter options
 		-- or add custom linters.
