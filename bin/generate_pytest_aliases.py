@@ -51,7 +51,7 @@ class Settings:
         if self.n == "auto":
             append(Part("n", "-nauto"))
         elif isinstance(self.n, int):
-            append(Part(f"n{self.n}", f"-n{self.n}"))
+            append(Part(str(self.n), f"-n{self.n}"))
         if self.pdb:
             append(Part("p", "--pdb"))
         if self.x:
@@ -101,7 +101,7 @@ def main() -> None:
         [True, False],
         [True, False],
         [True, False],
-        chain(["auto"], [2, 3, 4, 5, 10, 20], [None]),
+        chain(["auto"], [5, 10, 20], [None]),
         [True, False],
         [True, False],
     ):
