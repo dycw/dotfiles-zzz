@@ -2,6 +2,8 @@ return {
 	"williamboman/mason.nvim",
 	opts = {
 		ensure_installed = {
+			-- debuggers
+			"debugpy",
 			-- linters (https://github.com/mfussenegger/nvim-lint#available-linters)
 			"hadolint",
 			"luacheck",

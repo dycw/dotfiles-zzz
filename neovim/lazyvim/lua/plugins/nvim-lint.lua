@@ -20,6 +20,7 @@ return {
 			typescript = { "biome" },
 			typescriptreact = { "biome" },
 			yaml = { "yamllint" },
+			zsh = { "shellcheck" },
 			-- css = { "biome" }, -- no ready
 			-- html = { "biome" }, -- not ready
 			-- htmldjango = { "biome" }, -- not ready
