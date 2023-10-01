@@ -1,0 +1,3 @@
+return {
+	"mizlan/iswap.nvim",
+}

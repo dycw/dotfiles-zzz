@@ -47,3 +47,7 @@ map("n", "[", "<Cmd>cprev<CR>", { desc = "Prev in list" })
 
 -- quit
 map("n", "<C-q>", "<Cmd>q<CR>", { desc = "Quit" })
+
+-- windows
+map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", remap = true })
+map("n", "<leader>\\", "<C-W>v", { desc = "Split window right", remap = true })
