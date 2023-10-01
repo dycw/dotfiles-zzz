@@ -6,5 +6,5 @@ if [ -x "$(command -v nvim)" ] && ! [ -x "$(command -v lvim)" ]; then
 	alias keymapslua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/config/keymaps.lua"'
 	alias lazylua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/config/lazy.lua"'
 	alias optionslua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/config/options.lua"'
-	alias cdplugins='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua"'
+	alias cdplugins='cd "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/plugins"'
 fi
