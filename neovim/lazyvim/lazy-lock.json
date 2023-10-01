@@ -103,6 +103,10 @@
     "branch": "main",
     "commit": "81e30dd629de24cbb26d08073ee938ab40006695"
   },
+  "mason-nvim-dap.nvim": {
+    "branch": "main",
+    "commit": "6148b51db945b55b3b725da39eaea6441e59dff8"
+  },
   "mason.nvim": {
     "branch": "main",
     "commit": "d66c60e17dd6fd8165194b1d14d21f7eb2c1697a"
@@ -194,6 +198,26 @@
   "nvim-cmp": {
     "branch": "main",
     "commit": "5dce1b778b85c717f6614e3f4da45e9f19f54435"
+  },
+  "nvim-dap": {
+    "branch": "master",
+    "commit": "b3d4408e29d924fe130c9397a7c3b3630b3ea671"
+  },
+  "nvim-dap-go": {
+    "branch": "main",
+    "commit": "1b508e9db330108d3b5d62a6d9cc01fe6bbdd4e0"
+  },
+  "nvim-dap-python": {
+    "branch": "master",
+    "commit": "37b4cba02e337a95cb62ad1609b3d1dccb2e5d42"
+  },
+  "nvim-dap-ui": {
+    "branch": "master",
+    "commit": "34160a7ce6072ef332f350ae1d4a6a501daf0159"
+  },
+  "nvim-dap-virtual-text": {
+    "branch": "master",
+    "commit": "57f1dbd0458dd84a286b27768c142e1567f3ce3b"
   },
   "nvim-lint": {
     "branch": "master",
