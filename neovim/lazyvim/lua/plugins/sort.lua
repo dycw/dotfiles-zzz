@@ -1,0 +1,3 @@
+return {
+	"sqve/sort.nvim",
+}
