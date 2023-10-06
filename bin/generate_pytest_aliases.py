@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 from collections.abc import Iterator
 from contextlib import suppress
 from dataclasses import dataclass
@@ -9,9 +11,7 @@ from itertools import product
 from logging import basicConfig
 from logging import info
 from sys import stdout
-from typing import Any
 from typing import Literal
-from typing import cast
 
 basicConfig(format="{message}", level="INFO", stream=stdout, style="{")
 
@@ -29,16 +29,18 @@ class Settings:
     x: bool = False
 
     def __post_init__(self) -> None:
-        if self.pdb:
-            if self.f:
-                msg = "--pdb and -f are mutually exclusive"
-                raise ValueError(msg)
-            if self.n is not None:
-                msg = "--pdb and -n are mutually exclusive"
-                raise ValueError(msg)
+        if self.f and self.pdb:
+            msg = "-f and --pdb are mutually exclusive"
+            raise ValueError(msg)
+        if self.i and self.x:
+            msg = "-x and --instafail are mutually exclusive"
+            raise ValueError(msg)
+        if (self.n is not None) and self.pdb:
+            msg = "-n and --pdb are mutually exclusive"
+            raise ValueError(msg)
 
     @property
-    def alias(self) -> "Alias":
+    def alias(self) -> Alias:
         """The alias."""
         parts: list[Part] = []
         append = parts.append
@@ -60,7 +62,7 @@ class Settings:
             append(Part("k", "-k"))
         return Alias(parts)
 
-    def yield_aliases(self) -> Iterator["Alias"]:
+    def yield_aliases(self) -> Iterator[Alias]:
         for parts in permutations(self.alias.parts):
             with suppress(ValueError):
                 yield Alias(list(parts))
@@ -106,9 +108,7 @@ def main() -> None:
         [True, False],
     ):
         with suppress(ValueError):
-            settings = Settings(
-                f=f, i=i, k=k, lf=lf, n=cast(Any, n), pdb=pdb, x=x
-            )
+            settings = Settings(f=f, i=i, k=k, lf=lf, n=n, pdb=pdb, x=x)
             for alias in settings.yield_aliases():
                 info(alias)
 
