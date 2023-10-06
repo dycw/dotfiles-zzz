@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import dataclasses  # noqa: F401
 from dataclasses import dataclass  # noqa: F401
 from dataclasses import replace  # noqa: F401

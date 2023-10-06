@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import tempfile  # noqa: F401
 from pathlib import Path
 from tempfile import NamedTemporaryFile  # noqa: F401

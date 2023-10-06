@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import datetime as dt
 from re import search
 from sys import stdout
@@ -61,7 +63,7 @@ class timer(metaclass=_TimerMeta):  # noqa: N801
         self.msg = msg
 
     def __enter__(self) -> None:
-        self._timer = _TimerCM(self.msg)
+        self._timer = _TimerCM(msg=self.msg)
         self._timer.__enter__()
 
     def __exit__(

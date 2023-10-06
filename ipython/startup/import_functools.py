@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import functools  # noqa: F401
 from contextlib import suppress
 from functools import cache  # noqa: F401

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import itertools  # noqa: F401
 from itertools import accumulate  # noqa: F401
 from itertools import chain  # noqa: F401

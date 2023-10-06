@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import stat  # noqa: F401
 from stat import S_IRGRP  # noqa: F401
 from stat import S_IRUSR  # noqa: F401
