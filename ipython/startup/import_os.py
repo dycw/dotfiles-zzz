@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os  # noqa: F401
 from os import environ  # noqa: F401
 from os import getenv  # noqa: F401

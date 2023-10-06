@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import operator  # noqa: F401
 from operator import add  # noqa: F401
 from operator import and_  # noqa: F401

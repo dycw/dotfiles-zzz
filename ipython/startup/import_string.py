@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import string  # noqa: F401
 from string import ascii_letters  # noqa: F401
 from string import ascii_lowercase  # noqa: F401

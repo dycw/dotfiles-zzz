@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from contextlib import suppress
 from typing import Generic
 from typing import TypeVar
@@ -34,7 +36,6 @@ with suppress(ModuleNotFoundError):
 
     with suppress(ModuleNotFoundError):
         from hypothesis.extra.django import LiveServerTestCase  # noqa: F401
-        from hypothesis.extra.django import StaticLiveServerTestCase  # noqa: F401
         from hypothesis.extra.django import TransactionTestCase  # noqa: F401
         from hypothesis.extra.django import from_form  # noqa: F401
         from hypothesis.extra.django import from_model  # noqa: F401

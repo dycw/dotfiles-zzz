@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging  # noqa: F401
 from logging import DEBUG  # noqa: F401
 from logging import ERROR  # noqa: F401

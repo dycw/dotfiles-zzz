@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import types  # noqa: F401
 from types import MemberDescriptorType  # noqa: F401
 from types import MethodDescriptorType  # noqa: F401

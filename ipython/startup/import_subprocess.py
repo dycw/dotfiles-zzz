@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import subprocess  # noqa: F401
 from subprocess import DEVNULL  # noqa: F401
 from subprocess import PIPE  # noqa: F401

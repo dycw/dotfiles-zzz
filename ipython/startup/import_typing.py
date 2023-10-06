@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import typing  # noqa: F401
 from contextlib import suppress
 from typing import TYPE_CHECKING  # noqa: F401

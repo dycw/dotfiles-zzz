@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import collections
 import collections.abc  # noqa: F401
 from collections import Counter  # noqa: F401
