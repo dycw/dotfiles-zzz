@@ -54,4 +54,6 @@ alias ssh-pc='ssh derek@dw-pc.duckdns.org -p 2022'
 alias ssh-pc-tmux='ssh derek@dw-pc.duckdns.org -p 2022 -t tmux attach'
 
 # rm
+alias rmr='rm -r'
+alias rmf='rm -f'
 alias rmrf='rm -rf'
