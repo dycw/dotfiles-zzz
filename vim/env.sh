@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-if [ -x "$(command -v vim)" ] &&
-	! [ -x "$(command -v nvim)" ] &&
-	! [ -x "$(command -v lvim)" ]; then
-	EDITOR=vim
-	alias n='vim'
-	alias configlua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/lvim/config.lua"'
+if [ -x "$(command -v vim)" ] && ! [ -x "$(command -v nvim)" ]; then
+	export EDITOR=vim
 fi
