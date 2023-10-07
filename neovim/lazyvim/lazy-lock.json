@@ -1,15 +1,15 @@
 {
   "LazyVim": {
     "branch": "main",
-    "commit": "cce46cd6401239f04c6ce98113a3410677c1a82f"
+    "commit": "8bcc241b720517d4e61fcdd2021d1e39008f5415"
   },
   "LuaSnip": {
     "branch": "master",
-    "commit": "2c3a3a3e4fb503bf39efb61290ecfa8aae95f5eb"
+    "commit": "cdbf6f41381e5ee4810b4b09284b603d8f18365d"
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "08ab25507a92e22cec433f6750bb4a56a8cec22d"
+    "commit": "9b8e2b34ff007f49884b3b910e4ccba168a2d505"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -49,7 +49,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "ba1ca20bb5f89a8bdd94b268411263275550843a"
+    "commit": "e75819642c36810a55a7235b6b5e16a5ce896ed3"
   },
   "crates.nvim": {
     "branch": "main",
@@ -85,7 +85,7 @@
   },
   "lazy.nvim": {
     "branch": "main",
-    "commit": "6b6f0a451200bb6abde85978c577c73ea1577758"
+    "commit": "6687afae42b72fb660bfae2bd0eb98e77156829b"
   },
   "leap.nvim": {
     "branch": "main",
@@ -189,7 +189,7 @@
   },
   "none-ls.nvim": {
     "branch": "main",
-    "commit": "f39f627bbdfb33cc4ae4a95b4708e7dba7b9aafc"
+    "commit": "abaa369530fad3025672c73b1c3fdcb3d8518111"
   },
   "nui.nvim": {
     "branch": "main",
@@ -205,7 +205,7 @@
   },
   "nvim-dap-go": {
     "branch": "main",
-    "commit": "1b508e9db330108d3b5d62a6d9cc01fe6bbdd4e0"
+    "commit": "63874381f2cb9dad090ced4d14a3f116a9d3bdc5"
   },
   "nvim-dap-python": {
     "branch": "master",
@@ -333,7 +333,7 @@
   },
   "vim-illuminate": {
     "branch": "master",
-    "commit": "1b5d70332a51a1de05f281069851865a2bb1e6d7"
+    "commit": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86"
   },
   "vim-matchquote": {
     "branch": "master",

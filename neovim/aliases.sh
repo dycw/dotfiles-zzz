@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -x "$(command -v nvim)" ] && ! [ -x "$(command -v lvim)" ]; then
+if [ -x "$(command -v nvim)" ]; then
 	alias n='nvim'
 	alias autocmdslua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/config/autocmds.lua"'
 	alias keymapslua='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lua/config/keymaps.lua"'
