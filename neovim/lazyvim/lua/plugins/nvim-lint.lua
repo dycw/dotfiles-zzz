@@ -8,25 +8,31 @@ return {
 			dockerfile = { "hadolint" },
 			haskell = { "hlint" },
 			htmldjango = { "djlint" },
-			javascript = { "biome" },
-			javascriptreact = { "biome" },
-			json = { "biome" },
-			jsonc = { "biome" },
+			javascript = { "eslint" },
+			javascriptreact = { "eslint" },
+			json = { "jsonlint" },
+			jsonc = { "jsonlint" },
 			lua = { "luacheck" },
 			markdown = { "markdownlint" },
 			python = { "ruff" },
 			sh = { "shellcheck" },
 			sql = { "sqlfluff" },
-			typescript = { "biome" },
-			typescriptreact = { "biome" },
+			typescript = { "eslint" },
+			typescriptreact = { "eslint" },
 			yaml = { "yamllint" },
 			zsh = { "shellcheck" },
-			-- css = { "biome" }, -- no ready
-			-- html = { "biome" }, -- not ready
-			-- htmldjango = { "biome" }, -- not ready
-			-- markdown = { "biome" }, -- not ready
-			-- svelte = { "biome" }, -- no ready
-			-- vue = { "biome" }, -- no ready
+			-- javascript = { "biome" }, -- nvim-lint does not support yet
+			-- javascriptreact = { "biome" }, -- nvim-lint does not support yet
+			-- json = { "biome" }, -- nvim-lint does not support yet
+			-- jsonc = { "biome" }, -- nvim-lint does not support yet
+			-- typescript = { "biome" }, -- nvim-lint does not support yet
+			-- typescriptreact = { "biome" }, -- nvim-lint does not support yet
+			-- css = { "biome" }, -- biome does not support yet
+			-- html = { "biome" }, -- biome does not support yet
+			-- htmldjango = { "biome" }, -- biome does not support yet
+			-- markdown = { "biome" }, -- biome does not support yet
+			-- svelte = { "biome" }, -- biome does not support yet
+			-- vue = { "biome" }, -- biome does not support yet
 		},
 		-- LazyVim extension to easily override linter options
 		-- or add custom linters.
