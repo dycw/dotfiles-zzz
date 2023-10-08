@@ -17,8 +17,8 @@ return {
 			python = { "ruff" },
 			sh = { "shellcheck" },
 			sql = { "sqlfluff" },
-			typescript = { "eslint" },
-			typescriptreact = { "eslint" },
+			typescript = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
 			yaml = { "yamllint" },
 			zsh = { "shellcheck" },
 			-- javascript = { "biome" }, -- nvim-lint does not support yet
