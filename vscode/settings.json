@@ -269,5 +269,5 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "material-icon-theme"
 }
