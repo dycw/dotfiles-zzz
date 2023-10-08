@@ -41,6 +41,9 @@ return {
 			s("ftyoptional", { t("from typing import Optional") }),
 			s("ftyunion", { t("from typing import Union") }),
 
+			-- standard library: typing
+			s("fzozoneinfo", { t("from zoneinfo import ZoneInfo") }),
+
 			-- third party: beartype
 			s("fbebeartype", { t("from beartype import beartype") }),
 
@@ -56,24 +59,27 @@ return {
 
 			-- third party: numpy
 			s("imnp", { t("import numpy as np") }),
-			s("fnparange", { t("from numpy import arange") }),
-			s("fnparray", { t("from numpy import array") }),
-			s("fnpisfinite", { t("from numpy import isfinite") }),
-			s("fnpisnan", { t("from numpy import isnan") }),
-			s("fnpnan", { t("from numpy import nan") }),
-			s("fnpndarray", { t("from numpy import ndarray") }),
-			s("fnpones", { t("from numpy import ones") }),
-			s("fnponeslike", { t("from numpy import ones_like") }),
-			s("fnptyndarray", { t("from numpy.typing import NDArray") }),
-			s("fnpzeros", { t("from numpy import zeros") }),
-			s("fnpzeroslike", { t("from numpy import zeros_like") }),
+			s("fnuarange", { t("from numpy import arange") }),
+			s("fnuarray", { t("from numpy import array") }),
+			s("fnuisfinite", { t("from numpy import isfinite") }),
+			s("fnuisnan", { t("from numpy import isnan") }),
+			s("fnunan", { t("from numpy import nan") }),
+			s("fnundarray", { t("from numpy import ndarray") }),
+			s("fnuones", { t("from numpy import ones") }),
+			s("fnuoneslike", { t("from numpy import ones_like") }),
+			s("fnutyndarray", { t("from numpy.typing import NDArray") }),
+			s("fnuzeros", { t("from numpy import zeros") }),
+			s("fnuzeroslike", { t("from numpy import zeros_like") }),
 
 			-- third party: pandas
 			s("impd", { t("import pandas as pd") }),
-			s("fpddataframe", { t("from pandas import DataFrame") }),
-			s("fpdreadpickle", { t("from pandas import read_pickle") }),
-			s("fpdseries", { t("from pandas import Series") }),
-			s("fpdtopickle", { t("from pandas import to_pickle") }),
+			s("fpaassertframeequal", { t("from pandas.testing import assert_frame_equal") }),
+			s("fpaassertindexequal", { t("from pandas.testing import assert_index_equal") }),
+			s("fpaassertseriesequal", { t("from pandas.testing import assert_series_equal") }),
+			s("fpadataframe", { t("from pandas import DataFrame") }),
+			s("fpareadpickle", { t("from pandas import read_pickle") }),
+			s("fpaseries", { t("from pandas import Series") }),
+			s("fpatopickle", { t("from pandas import to_pickle") }),
 
 			-- third party: pprint
 			s("fpppprint", { t("from pprint import pprint") }),
