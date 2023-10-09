@@ -1,7 +1,7 @@
 {
   "LazyVim": {
     "branch": "main",
-    "commit": "8c20e0b5889ed254613dbac26b203130764d9c5f"
+    "commit": "80e66963431e235baea04998384c41b0244c1f7e"
   },
   "LuaSnip": {
     "branch": "master",
@@ -85,7 +85,7 @@
   },
   "lazy.nvim": {
     "branch": "main",
-    "commit": "62745a7320f48a00ac4f7b0591352608cbc6bcea"
+    "commit": "9102d051a8e27298f4c913e3017ac44f151ae820"
   },
   "leap.nvim": {
     "branch": "main",
@@ -201,7 +201,7 @@
   },
   "nvim-dap": {
     "branch": "master",
-    "commit": "27d65bd6301779acbe9674221b7201e5048f3b68"
+    "commit": "e79007c6d7a24db3ad19ea9196f1f0b2840e8ae7"
   },
   "nvim-dap-go": {
     "branch": "main",
@@ -245,7 +245,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "957f3f8c15a88ef0f0c77ecd13edf2e2578f176e"
+    "commit": "a102053352bd958d84a3e1be3de0203d2af92984"
   },
   "nvim-treesitter-context": {
     "branch": "master",
@@ -313,11 +313,11 @@
   },
   "tokyonight.nvim": {
     "branch": "main",
-    "commit": "4412dafadf920deb9e08d4b9c1c11b2cf65ca1ca"
+    "commit": "05ed8720eec1fd69c88d38a0dac874aef81f9b70"
   },
   "trouble.nvim": {
     "branch": "main",
-    "commit": "2ea761f697a00954956da9be1b591649d87e9631"
+    "commit": "a97c24c311e08365a69b092b2f6f3d31559f92e2"
   },
   "venv-selector.nvim": {
     "branch": "main",
