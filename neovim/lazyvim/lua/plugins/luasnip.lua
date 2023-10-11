@@ -21,6 +21,9 @@ return {
 			s("fenauto", { t("from enum import auto") }),
 			s("fenenum", { t("from enum import Enum") }),
 
+			-- standard library: future
+			s("ffuannotations", { t("from __future__ import annotations") }),
+
 			-- standard library: itertools
 			s("fitislice", { t("from itertools import islice") }),
 			s("fitrepeat", { t("from itertools import repeat") }),
@@ -41,7 +44,7 @@ return {
 			s("ftyoptional", { t("from typing import Optional") }),
 			s("ftyunion", { t("from typing import Union") }),
 
-			-- standard library: typing
+			-- standard library: zoneinfo
 			s("fzozoneinfo", { t("from zoneinfo import ZoneInfo") }),
 
 			-- third party: beartype
@@ -49,10 +52,12 @@ return {
 
 			-- third party: hypothesis
 			s("fhyassume", { t("from hypothesis import assume") }),
+			s("fhydata", { t("from hypothesis.strategies import data") }),
+			s("fhydataobject", { t("from hypothesis.strategies import DataObject") }),
 			s("fhygiven", { t("from hypothesis import given") }),
 			s("fhyreproduce", { t("from hypothesis import reproduce_failure") }),
+			s("fhysearchstrategy", { t("from hypothesis.strategies import SearchStrategy") }),
 			s("fhysettings", { t("from hypothesis import settings") }),
-			s("fhystdata", { t("from hypothesis.strategies import data") }),
 
 			-- third party: loguru
 			s("flologger", { t("from loguru import logger") }),
@@ -78,6 +83,9 @@ return {
 			s("fpaassertseriesequal", { t("from pandas.testing import assert_series_equal") }),
 			s("fpadataframe", { t("from pandas import DataFrame") }),
 			s("fpareadpickle", { t("from pandas import read_pickle") }),
+			s("fpareadcsv", { t("from pandas import read_csv") }),
+			s("fpareadexcel", { t("from pandas import read_excel") }),
+			s("fpaindex", { t("from pandas import Index") }),
 			s("fpaseries", { t("from pandas import Series") }),
 			s("fpatopickle", { t("from pandas import to_pickle") }),
 
