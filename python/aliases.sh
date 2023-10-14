@@ -17,6 +17,7 @@ alias pijl='pip install jupyterlab jupyterlab-vim'
 alias pipt='pip install pip-tools'
 alias piup='pip install --upgrade pip'
 alias plo='pip list --outdated'
+alias pui='pip uninstall'
 alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
 

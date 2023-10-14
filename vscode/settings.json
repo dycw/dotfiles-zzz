@@ -49,6 +49,7 @@
   "git.enableSmartCommit": true,
   "git.fetchOnPull": true,
   "git.followTagsWhenSync": true,
+  "git.ignoreRebaseWarning": true,
   "git.ignoreSubmodules": true,
   "git.mergeEditor": true,
   "git.openAfterClone": "alwaysNewWindow",
