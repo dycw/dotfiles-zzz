@@ -12,8 +12,14 @@
 // 	"description": "Log output to console"
 // }
 {
+  // standard library - future
+  "ffuannotations": {
+    "prefix": "ffuannotations",
+    "body": ["from __future__ import annotations", "$0"]
+  },
+
   // third party - hypothesis
-  "from hypothesis import reproduce_failure": {
+  "fhyreproducefailure": {
     "prefix": "from hypothesis import reproduce_failure",
     "body": ["from hypothesis import reproduce_failure", "$0"]
   }

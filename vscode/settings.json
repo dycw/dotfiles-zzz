@@ -19,6 +19,13 @@
   "explorer.confirmDelete": false,
   "explorer.excludeGitIgnore": true,
   // files
+  "files.associations": {
+    "jsonc.json": "jsonc",
+    "keybindings.json": "jsonc",
+    "lua.json": "jsonc",
+    "python.json": "jsonc",
+    "settings.json": "jsonc"
+  },
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 10,
   "files.exclude": {
@@ -45,11 +52,12 @@
   "git.ignoreSubmodules": true,
   "git.mergeEditor": true,
   "git.openAfterClone": "alwaysNewWindow",
+  "git.openRepositoryInParentFolders": "always",
   "git.pruneOnFetch": true,
   "git.pullBeforeCheckout": true,
   "git.rebaseWhenSync": true,
-  "github.gitProtocol": "ssh",
   // github
+  "github.gitProtocol": "ssh",
   "githubPullRequests.createOnPublishBranch": "never",
   "githubPullRequests.defaultMergeMethod": "squash",
   "githubPullRequests.notifications": "pullRequests",
