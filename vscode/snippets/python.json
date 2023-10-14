@@ -18,6 +18,12 @@
     "body": ["from __future__ import annotations", "$0"]
   },
 
+  // third party - beartype
+  "fbebeartype": {
+    "prefix": "fbebeartype",
+    "body": ["from beartype import beartype", "$0"]
+  },
+
   // third party - hypothesis
   "fhyreproducefailure": {
     "prefix": "from hypothesis import reproduce_failure",
