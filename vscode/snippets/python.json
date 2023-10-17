@@ -13,28 +13,42 @@
 // }
 {
   // standard library - future
-  "ffuannotations": {
-    "prefix": "ffuannotations",
+  "ffu-annotations": {
+    "prefix": "ffu-annotations",
     "body": ["from __future__ import annotations", "$0"]
   },
 
   // third party - beartype
-  "fbebeartype": {
-    "prefix": "fbebeartype",
+  "fbe-beartype": {
+    "prefix": "fbe-beartype",
     "body": ["from beartype import beartype", "$0"]
   },
 
   // third party - hypothesis
-  "fhyreproducefailure": {
-    "prefix": "from hypothesis import reproduce_failure",
+  "fhy-reproduce-failure": {
+    "prefix": "fhy-reproduce-failure",
     "body": ["from hypothesis import reproduce_failure", "$0"]
   },
-  "fhybooleans": {
-    "prefix": "fhybooleans",
+  "fhy-booleans": {
+    "prefix": "fhy-booleans",
     "body": ["from hypothesis.strategies import booleans", "$0"]
   },
-  "fhyintegers": {
-    "prefix": "fhyintegers",
+  "fhy-integers": {
+    "prefix": "fhy-integers",
     "body": ["from hypothesis.strategies import integers", "$0"]
+  },
+
+  // third party - pandas
+  "fpa-assert-frame-equal": {
+    "prefix": "fpa-assert-frame-equal",
+    "body": ["from pandas.testing import assert_frame_equal ", "$0"]
+  },
+  "fpa-assert-index-equal": {
+    "prefix": "fpa-assert-index-equal",
+    "body": ["from pandas.testing import assert_index_equal ", "$0"]
+  },
+  "fpa-assert-series-equal": {
+    "prefix": "fpa-assert-series-equal",
+    "body": ["from pandas.testing import assert_series_equal ", "$0"]
   }
 }
