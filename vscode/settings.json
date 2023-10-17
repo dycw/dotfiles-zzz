@@ -129,7 +129,7 @@
   // python - black
   "black-formatter.args": ["--line-length=80", "--skip-magic-trailing-comma"],
   // python - ruff
-  "ruff.args": [
+  "ruff.lint.args": [
     "--select=F", // pyflakes
     "--select=E", // pycodestyle
     "--select=W", // pycodestyle
@@ -267,11 +267,11 @@
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [">"],
-      "after": [">", "g", "c"]
+      "after": [">", "g", "v"]
     },
     {
       "before": ["<"],
-      "after": ["<", "g", "c"]
+      "after": ["<", "g", "v"]
     }
   ],
   "vim.visualstar": true,

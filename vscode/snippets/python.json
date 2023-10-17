@@ -28,5 +28,13 @@
   "fhyreproducefailure": {
     "prefix": "from hypothesis import reproduce_failure",
     "body": ["from hypothesis import reproduce_failure", "$0"]
+  },
+  "fhybooleans": {
+    "prefix": "fhybooleans",
+    "body": ["from hypothesis.strategies import booleans", "$0"]
+  },
+  "fhyintegers": {
+    "prefix": "fhyintegers",
+    "body": ["from hypothesis.strategies import integers", "$0"]
   }
 }
