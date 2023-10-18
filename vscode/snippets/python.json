@@ -12,10 +12,42 @@
 // 	"description": "Log output to console"
 // }
 {
+  // standard library - datetime
+  "im-dt": {
+    "prefix": "im-dt",
+    "body": ["import datetime as dt", "$0"]
+  },
+
+  // standard library - enum
+  "fen-auto": {
+    "prefix": "fen-auto",
+    "body": ["from enum import auto", "$0"]
+  },
+  "fen-enum": {
+    "prefix": "fen-enum",
+    "body": ["from enum import Enum", "$0"]
+  },
+
   // standard library - future
   "ffu-annotations": {
     "prefix": "ffu-annotations",
     "body": ["from __future__ import annotations", "$0"]
+  },
+
+  // standard library - pathlib
+  "fpa-path": {
+    "prefix": "fpa-path",
+    "body": ["from pathlib import Path", "$0"]
+  },
+
+  // standard library - pathlib
+  "fty-any": {
+    "prefix": "fty-any",
+    "body": ["from typing import Any", "$0"]
+  },
+  "fty-cast": {
+    "prefix": "fty-cast",
+    "body": ["from typing import cast", "$0"]
   },
 
   // third party - beartype
@@ -24,18 +56,54 @@
     "body": ["from beartype import beartype", "$0"]
   },
 
-  // third party - hypothesis
-  "fhy-reproduce-failure": {
-    "prefix": "fhy-reproduce-failure",
-    "body": ["from hypothesis import reproduce_failure", "$0"]
+  // third party - fastapi
+  "ffa-fastapi": {
+    "prefix": "ffa-fastapi",
+    "body": ["from fastapi import FastAPI", "$0"]
   },
+
+  // third party - hypothesis
   "fhy-booleans": {
     "prefix": "fhy-booleans",
     "body": ["from hypothesis.strategies import booleans", "$0"]
   },
+  "fhy-data": {
+    "prefix": "fhy-data",
+    "body": ["from hypothesis.strategies import data", "$0"]
+  },
+  "fhy-data-object": {
+    "prefix": "fhy-data-object",
+    "body": ["from hypothesis.strategies import DataObject", "$0"]
+  },
+  "fhy-floats": {
+    "prefix": "fhy-floats",
+    "body": ["from hypothesis.strategies import floats", "$0"]
+  },
   "fhy-integers": {
     "prefix": "fhy-integers",
     "body": ["from hypothesis.strategies import integers", "$0"]
+  },
+  "fhy-lists": {
+    "prefix": "fhy-lists",
+    "body": ["from hypothesis.strategies import lists", "$0"]
+  },
+  "fhy-reproduce-failure": {
+    "prefix": "fhy-reproduce-failure",
+    "body": ["from hypothesis import reproduce_failure", "$0"]
+  },
+  "fhy-sampled-from": {
+    "prefix": "fhy-sampled-from",
+    "body": ["from hypothesis.strategies import sampled_from", "$0"]
+  },
+  "fhy-sets": {
+    "prefix": "fhy-sets",
+    "body": ["from hypothesis.strategies import sets", "$0"]
+  },
+
+  // third party - loguru
+  "flo-logger": {
+    "prefix": "flo-logger",
+    "body": ["from loguru import logger", "$0"]
   },
 
   // third party - pandas
@@ -50,5 +118,57 @@
   "fpa-assert-series-equal": {
     "prefix": "fpa-assert-series-equal",
     "body": ["from pandas.testing import assert_series_equal ", "$0"]
+  },
+  "fhy-bday": {
+    "prefix": "fhy-bday",
+    "body": ["from pandas.tseries.offsets import BDay", "$0"]
+  },
+  "fhy-dataframe": {
+    "prefix": "fhy-dataframe",
+    "body": ["from pandas import DataFrame", "$0"]
+  },
+  "fhy-series": {
+    "prefix": "fhy-series",
+    "body": ["from pandas import Series", "$0"]
+  },
+  "fhy-timedelta": {
+    "prefix": "fhy-timedelta",
+    "body": ["from pandas import Timedelta", "$0"]
+  },
+  "fhy-timestamp": {
+    "prefix": "fhy-timestamp",
+    "body": ["from pandas import Timestamp", "$0"]
+  },
+
+  // third party - pytest
+  "fpy-fixture": {
+    "prefix": "fpy-fixture",
+    "body": ["from pytest import fixture", "$0"]
+  },
+  "fpy-mark": {
+    "prefix": "fpy-mark",
+    "body": ["from pytest import mark", "$0"]
+  },
+  "fpy-param": {
+    "prefix": "fpy-param",
+    "body": ["from pytest import param", "$0"]
+  },
+  "fpy-raises": {
+    "prefix": "fpy-raises",
+    "body": ["from pytest import raises", "$0"]
+  },
+
+  // third party - pytest
+  "fsq-columne": {
+    "prefix": "fsq-columne",
+    "body": ["from sqlalchemy import Column", "$0"]
+  },
+  "fsq-engine": {
+    "prefix": "fsq-engine",
+    "body": ["from sqlalchemy.engine import Engine", "$0"]
+  },
+  "fsq-table": {
+    "prefix": "fsq-table",
+    "body": ["from sqlalchemy import Table", "$0"]
   }
 }
