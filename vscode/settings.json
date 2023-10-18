@@ -1,4 +1,6 @@
 {
+  // diff editor
+  "diffEditor.hideUnchangedRegions.enabled": true,
   // editor
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
