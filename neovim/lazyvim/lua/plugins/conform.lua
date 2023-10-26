@@ -8,7 +8,7 @@ return {
 			go = { "gofumpt" },
 			htmldjango = { "djlint", "rustywind" },
 			lua = { "stylua" },
-			python = { "black", "ruff_fix" },
+			python = { "ruff_fix", "ruff_format" },
 			rust = { "rustfmt" },
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
