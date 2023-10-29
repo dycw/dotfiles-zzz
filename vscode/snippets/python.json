@@ -40,7 +40,7 @@
     "body": ["from pathlib import Path", "$0"]
   },
 
-  // standard library - pathlib
+  // standard library - typing
   "fty-any": {
     "prefix": "fty-any",
     "body": ["from typing import Any", "$0"]
@@ -48,6 +48,10 @@
   "fty-cast": {
     "prefix": "fty-cast",
     "body": ["from typing import cast", "$0"]
+  },
+  "fty-union": {
+    "prefix": "fty-union",
+    "body": ["from typing import Union", "$0"]
   },
 
   // third party - beartype
@@ -119,25 +123,43 @@
     "prefix": "fpa-assert-series-equal",
     "body": ["from pandas.testing import assert_series_equal ", "$0"]
   },
-  "fhy-bday": {
-    "prefix": "fhy-bday",
+  "fpa-bday": {
+    "prefix": "fpa-bday",
     "body": ["from pandas.tseries.offsets import BDay", "$0"]
   },
-  "fhy-dataframe": {
-    "prefix": "fhy-dataframe",
+  "fpa-dataframe": {
+    "prefix": "fpa-dataframe",
     "body": ["from pandas import DataFrame", "$0"]
   },
-  "fhy-series": {
-    "prefix": "fhy-series",
+  "fpa-series": {
+    "prefix": "fpa-series",
     "body": ["from pandas import Series", "$0"]
   },
-  "fhy-timedelta": {
-    "prefix": "fhy-timedelta",
+  "fpa-timedelta": {
+    "prefix": "fpa-timedelta",
     "body": ["from pandas import Timedelta", "$0"]
   },
-  "fhy-timestamp": {
-    "prefix": "fhy-timestamp",
+  "fpa-timestamp": {
+    "prefix": "fpa-timestamp",
     "body": ["from pandas import Timestamp", "$0"]
+  },
+
+  // third party - polars
+  "fpo-dataframe": {
+    "prefix": "fpo-dataframe",
+    "body": ["from polars import DataFrame", "$0"]
+  },
+  "fpo-read-csv": {
+    "prefix": "fpo-read-csv",
+    "body": ["from polars import read_csv", "$0"]
+  },
+  "fpo-read-excel": {
+    "prefix": "fpo-read-excel",
+    "body": ["from polars import read_excel", "$0"]
+  },
+  "fpo-series": {
+    "prefix": "fpo-series",
+    "body": ["from polars import Series", "$0"]
   },
 
   // third party - pytest
@@ -158,9 +180,9 @@
     "body": ["from pytest import raises", "$0"]
   },
 
-  // third party - pytest
-  "fsq-columne": {
-    "prefix": "fsq-columne",
+  // third party - sqlalchemy
+  "fsq-column": {
+    "prefix": "fsq-column",
     "body": ["from sqlalchemy import Column", "$0"]
   },
   "fsq-engine": {
