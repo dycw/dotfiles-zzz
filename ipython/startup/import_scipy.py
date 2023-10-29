@@ -4,7 +4,10 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import scipy  # noqa: F401
-    from scipy.optimize import least_squares  # noqa: F401
+    import scipy as sp  # noqa: F401
+    from scipy.optimize import (
+        least_squares,  # noqa: F401
+    )
     from scipy.stats import (
         describe,  # noqa: F401
         f_oneway,  # noqa: F401

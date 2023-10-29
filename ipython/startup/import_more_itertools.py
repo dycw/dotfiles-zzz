@@ -62,4 +62,6 @@ with suppress(ModuleNotFoundError):
     try:
         import tabulate as _tabulate  # noqa: F401
     except ModuleNotFoundError:
-        from more_itertools import tabulate  # noqa: F401, F811
+        from more_itertools import (
+            tabulate,  # noqa: F401, F811
+        )

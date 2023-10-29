@@ -4,4 +4,6 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import pydantic  # noqa: F401
-    from pydantic import BaseModel  # noqa: F401
+    from pydantic import (
+        BaseModel,  # noqa: F401
+    )

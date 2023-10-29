@@ -60,8 +60,12 @@ with suppress(ModuleNotFoundError):
         LinAlgError,  # noqa: F401
         inv,  # noqa: F401
     )
-    from numpy.random import RandomState  # noqa: F401
-    from numpy.typing import NDArray  # noqa: F401
+    from numpy.random import (
+        RandomState,  # noqa: F401
+    )
+    from numpy.typing import (
+        NDArray,  # noqa: F401
+    )
 
     with suppress(ImportError):
         from numpy import float128  # noqa: F401
