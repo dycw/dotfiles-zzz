@@ -24,6 +24,7 @@ with suppress(ModuleNotFoundError):
         List,  # noqa: F401
         Null,  # noqa: F401
         Object,  # noqa: F401
+        Series,  # noqa: F401
         Struct,  # noqa: F401
         Time,  # noqa: F401
         UIn32,  # noqa: F401
@@ -33,6 +34,20 @@ with suppress(ModuleNotFoundError):
         UInt64,  # noqa: F401
         Unknown,  # noqa: F401
         Utf8,  # noqa: F401
+        read_avro,  # noqa: F401
+        read_csv,  # noqa: F401
+        read_csv_batched,  # noqa: F401
+        read_database,  # noqa: F401
+        read_database_uri,  # noqa: F401
+        read_delta,  # noqa: F401
+        read_excel,  # noqa: F401
+        read_ipc,  # noqa: F401
+        read_ipc_schema,  # noqa: F401
+        read_ipc_stream,  # noqa: F401
+        read_json,  # noqa: F401
+        read_ndjson,  # noqa: F401
+        read_ods,  # noqa: F401
+        read_parquet,  # noqa: F401
     )
     from polars.type_aliases import (
         PolarsDataType,  # noqa: F401

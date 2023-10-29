@@ -13,14 +13,12 @@ with suppress(ModuleNotFoundError):
     from pandas import (
         NA,  # noqa: F401
         BooleanDtype,  # noqa: F401
-        DataFrame,  # noqa: F401
         DateOffset,  # noqa: F401
         DatetimeIndex,  # noqa: F401
         Index,  # noqa: F401
         Int64Dtype,  # noqa: F401
         MultiIndex,  # noqa: F401
         RangeIndex,  # noqa: F401
-        Series,  # noqa: F401
         StringDtype,  # noqa: F401
         Timedelta,  # noqa: F401
         TimedeltaIndex,  # noqa: F401
@@ -30,9 +28,6 @@ with suppress(ModuleNotFoundError):
         date_range,  # noqa: F401
         option_context,
         qcut,  # noqa: F401
-        read_csv,  # noqa: F401
-        read_excel,  # noqa: F401
-        read_parquet,  # noqa: F401
         read_pickle,  # noqa: F401
         read_sql,  # noqa: F401
         read_table,  # noqa: F401
@@ -60,6 +55,17 @@ with suppress(ModuleNotFoundError):
         Second,  # noqa: F401
         Week,  # noqa: F401
     )
+
+    try:
+        import polars as _polars  # noqa: F401, ICN001
+    except ModuleNotFoundError:
+        from pandas import (
+            DataFrame,  # noqa: F401
+            Series,  # noqa: F401
+            read_csv,  # noqa: F401
+            read_excel,  # noqa: F401
+            read_parquet,  # noqa: F401
+        )
 
     _DEFAULT_MIN_MAX_ROWS, _DEFAULT_MAX_COLUMNS = 7, 100
 
