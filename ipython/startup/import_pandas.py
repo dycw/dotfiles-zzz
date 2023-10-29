@@ -40,7 +40,9 @@ with suppress(ModuleNotFoundError):
         to_datetime,  # noqa: F401
         to_pickle,  # noqa: F401
     )
-    from pandas._libs.missing import NAType  # noqa: F401
+    from pandas._libs.missing import (
+        NAType,  # noqa: F401
+    )
     from pandas.testing import (
         assert_frame_equal,  # noqa: F401
         assert_index_equal,  # noqa: F401

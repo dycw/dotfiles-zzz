@@ -8,4 +8,6 @@ from logging import (
     WARNING,  # noqa: F401
     basicConfig,  # noqa: F401
 )
-from logging.config import dictConfig  # noqa: F401
+from logging.config import (
+    dictConfig,  # noqa: F401
+)

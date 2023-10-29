@@ -22,7 +22,9 @@ with suppress(ModuleNotFoundError):
         create_engine,  # noqa: F401
         select,  # noqa: F401
     )
-    from sqlalchemy.engine import Engine  # noqa: F401
+    from sqlalchemy.engine import (
+        Engine,  # noqa: F401
+    )
     from sqlalchemy.orm import (
         Session,  # noqa: F401
         declarative_base,  # noqa: F401

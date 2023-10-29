@@ -4,7 +4,9 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import sklearn  # noqa: F401
-    from sklearn.base import BaseEstimator  # noqa: F401
+    from sklearn.base import (
+        BaseEstimator,  # noqa: F401
+    )
     from sklearn.compose import (
         ColumnTransformer,  # noqa: F401
         TransformedTargetRegressor,  # noqa: F401
@@ -15,7 +17,9 @@ with suppress(ModuleNotFoundError):
         RandomForestClassifier,  # noqa: F401
         RandomForestRegressor,  # noqa: F401
     )
-    from sklearn.impute import SimpleImputer  # noqa: F401
+    from sklearn.impute import (
+        SimpleImputer,  # noqa: F401
+    )
     from sklearn.linear_model import (
         LinearRegression,  # noqa: F401
         Ridge,  # noqa: F401
@@ -55,4 +59,6 @@ with suppress(ModuleNotFoundError):
         DecisionTreeClassifier,  # noqa: F401
         DecisionTreeRegressor,  # noqa: F401
     )
-    from sklearn.utils.validation import check_random_state  # noqa: F401
+    from sklearn.utils.validation import (
+        check_random_state,  # noqa: F401
+    )
