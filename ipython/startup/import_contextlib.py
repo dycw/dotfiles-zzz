@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import contextlib  # noqa: F401
 from collections.abc import Iterator
-from contextlib import contextmanager
-from contextlib import redirect_stderr  # noqa: F401
-from contextlib import redirect_stdout
-from contextlib import suppress  # noqa: F401
+from contextlib import (
+    contextmanager,
+    redirect_stderr,  # noqa: F401
+    redirect_stdout,
+    suppress,  # noqa: F401
+)
 from os import devnull
 from pathlib import Path
 
