@@ -100,7 +100,7 @@
   "prettier.proseWrap": "always",
   // python
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliemarsh.ruff"
   },
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
@@ -128,8 +128,6 @@
   "python.testing.pytestArgs": ["--color=yes"],
   "python.testing.pytestEnabled": true,
   "pythonTestExplorer.testFramework": "pytest",
-  // python - black
-  "black-formatter.args": ["--line-length=80", "--skip-magic-trailing-comma"],
   // python - ruff
   "ruff.lint.args": [
     "--select=F", // pyflakes

@@ -49,7 +49,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "e4ecb6e8ed3163c86d7e647f1dc3d94de77ca687"
+    "commit": "3d639d6155a63e3143920b739cee02f3faa1b4db"
   },
   "crates.nvim": {
     "branch": "main",
@@ -77,11 +77,11 @@
   },
   "indent-blankline.nvim": {
     "branch": "master",
-    "commit": "046e2cf04e08ece927bacbfb87c5b35c0b636546"
+    "commit": "64fdadb3ada61c4297452f7662789b01ee82ffcb"
   },
   "iswap.nvim": {
     "branch": "master",
-    "commit": "8b038cb10585713b4c3918d44d6c329effad2a5d"
+    "commit": "e05889db694524f68eb69567a70a98470994b890"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -177,7 +177,7 @@
   },
   "nvim-dap": {
     "branch": "master",
-    "commit": "3eb26a63a3674e3722182a92f21d04c4e5ce0f43"
+    "commit": "79dbc70eb79271ad801e4ff293887cde324c28d0"
   },
   "nvim-dap-go": {
     "branch": "main",
@@ -221,11 +221,11 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "107e61afb7129d637ea6c3c68b97a22194b0bf16"
+    "commit": "bf0a96568a54618138ac42c84758945cdafef86b"
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "8aa32aa6b84dda357849dbc0f775e69f2e04c041"
+    "commit": "2806d83e3965017382ce08792ee527e708fa1bd4"
   },
   "nvim-treesitter-textobjects": {
     "branch": "master",
@@ -345,7 +345,7 @@
   },
   "vimtex": {
     "branch": "master",
-    "commit": "5454d86413a4b6ea7bca9dc19d1ba7114d86aade"
+    "commit": "b73f7c3272b75fc4c51fc04b7dd4f1665b259c03"
   },
   "which-key.nvim": {
     "branch": "main",

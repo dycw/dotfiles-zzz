@@ -3,13 +3,9 @@ from __future__ import annotations
 
 from collections.abc import Iterator
 from contextlib import suppress
-from dataclasses import dataclass
-from dataclasses import field
-from itertools import chain
-from itertools import permutations
-from itertools import product
-from logging import basicConfig
-from logging import info
+from dataclasses import dataclass, field
+from itertools import chain, permutations, product
+from logging import basicConfig, info
 from sys import stdout
 from typing import Literal
 
@@ -85,9 +81,7 @@ class Alias:
     def __repr__(self) -> str:
         keys = "".join(p.key for p in self.parts)
         alias = f"pyt{keys}"
-        options = " ".join(
-            chain(["--color=yes"], (p.option for p in self.parts))
-        )
+        options = " ".join(chain(["--color=yes"], (p.option for p in self.parts)))
         command = f"pytest {options}".strip()
         return f"alias {alias}='{command}'"
 
