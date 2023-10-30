@@ -77,7 +77,7 @@
   },
   "indent-blankline.nvim": {
     "branch": "master",
-    "commit": "64fdadb3ada61c4297452f7662789b01ee82ffcb"
+    "commit": "29be0919b91fb59eca9e90690d76014233392bef"
   },
   "iswap.nvim": {
     "branch": "master",
@@ -133,7 +133,7 @@
   },
   "mini.hipatterns": {
     "branch": "main",
-    "commit": "00c9466b6bdfd556e0138fb28bf4906b0fd00dc9"
+    "commit": "a1470aa227d37c13b9d0b06b96ab46d694a29d2f"
   },
   "mini.indentscope": {
     "branch": "main",
@@ -161,7 +161,7 @@
   },
   "neodev.nvim": {
     "branch": "main",
-    "commit": "f3f5d756f4043180523bb69072a104f7216b5f42"
+    "commit": "0491a9c7a1775fa5380ecf38d79de1a32f68cc52"
   },
   "noice.nvim": {
     "branch": "main",
@@ -221,7 +221,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "d2fe87062dde25e7fdadac061f6ca04541275e31"
+    "commit": "a8c14d68b024ffc20baec92d1acc91796bcfb485"
   },
   "nvim-treesitter-context": {
     "branch": "master",
@@ -317,7 +317,7 @@
   },
   "vim-matchquote": {
     "branch": "master",
-    "commit": "e6d99738478d00bf8316dcd7e61a3fa0d07f6a6e"
+    "commit": "c4c70010ddb62607e03f84b68262ce9d0c2c82fe"
   },
   "vim-mergetool": {
     "branch": "master",
@@ -345,7 +345,7 @@
   },
   "vimtex": {
     "branch": "master",
-    "commit": "b73f7c3272b75fc4c51fc04b7dd4f1665b259c03"
+    "commit": "7785ecd75b9a71a22ac33a8250e3bf4eaca6b439"
   },
   "which-key.nvim": {
     "branch": "main",
