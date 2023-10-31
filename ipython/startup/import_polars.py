@@ -33,6 +33,7 @@ with suppress(ModuleNotFoundError):
         UInt64,  # noqa: F401
         Unknown,  # noqa: F401
         Utf8,  # noqa: F401
+        col,  # noqa: F401
         read_avro,  # noqa: F401
         read_csv,  # noqa: F401
         read_csv_batched,  # noqa: F401
@@ -47,6 +48,13 @@ with suppress(ModuleNotFoundError):
         read_ndjson,  # noqa: F401
         read_ods,  # noqa: F401
         read_parquet,  # noqa: F401
+        when,  # noqa: F401
+    )
+    from polars.testing import (
+        assert_frame_equal,  # noqa: F401
+        assert_frame_not_equal,  # noqa: F401
+        assert_series_equal,  # noqa: F401
+        assert_series_not_equal,  # noqa: F401
     )
     from polars.type_aliases import (
         PolarsDataType,  # noqa: F401
