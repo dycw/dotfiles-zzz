@@ -9,7 +9,7 @@
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "976e7e3e9c400b99f1cb337b2ce804a9652571ec"
+    "commit": "b32a272176d81938cac71a0b85f21f029c1ee8e6"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -49,7 +49,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "3d639d6155a63e3143920b739cee02f3faa1b4db"
+    "commit": "f7766d2fbe23f0f22a3db1513beba7d03a8dc261"
   },
   "crates.nvim": {
     "branch": "main",

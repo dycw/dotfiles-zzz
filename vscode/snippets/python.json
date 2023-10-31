@@ -28,6 +28,24 @@
     "body": ["from enum import Enum", "$0"]
   },
 
+  // standard library - functools
+  "ffu-cache": {
+    "prefix": "ffu-cache",
+    "body": ["from functools import cache", "$0"]
+  },
+  "ffu-cached-property": {
+    "prefix": "ffu-cached-property",
+    "body": ["from functools import cached_property", "$0"]
+  },
+  "ffu-partial": {
+    "prefix": "ffu-partial",
+    "body": ["from functools import partial", "$0"]
+  },
+  "ffu-lru-cache": {
+    "prefix": "ffu-lru-cache",
+    "body": ["from functools import lru_cache", "$0"]
+  },
+
   // standard library - future
   "ffu-annotations": {
     "prefix": "ffu-annotations",
@@ -145,9 +163,33 @@
   },
 
   // third party - polars
+  "fpo-boolean": {
+    "prefix": "fpo-boolean",
+    "body": ["from polars import Boolean", "$0"]
+  },
+  "fpo-col": {
+    "prefix": "fpo-col",
+    "body": ["from polars import col", "$0"]
+  },
   "fpo-dataframe": {
     "prefix": "fpo-dataframe",
     "body": ["from polars import DataFrame", "$0"]
+  },
+  "fpo-date": {
+    "prefix": "fpo-date",
+    "body": ["from polars import Date", "$0"]
+  },
+  "fpo-datetime": {
+    "prefix": "fpo-datetime",
+    "body": ["from polars import Datetime", "$0"]
+  },
+  "fpo-float64": {
+    "prefix": "fpo-float64",
+    "body": ["from polars import Float64", "$0"]
+  },
+  "fpo-int64": {
+    "prefix": "fpo-int64",
+    "body": ["from polars import Int64", "$0"]
   },
   "fpo-read-csv": {
     "prefix": "fpo-read-csv",
@@ -160,6 +202,14 @@
   "fpo-series": {
     "prefix": "fpo-series",
     "body": ["from polars import Series", "$0"]
+  },
+  "fpo-utf8": {
+    "prefix": "fpo-utf8",
+    "body": ["from polars import Utf8", "$0"]
+  },
+  "fpo-when": {
+    "prefix": "fpo-when",
+    "body": ["from polars import when", "$0"]
   },
 
   // third party - pytest
@@ -181,13 +231,29 @@
   },
 
   // third party - sqlalchemy
+  "fsq-and": {
+    "prefix": "fsq-and",
+    "body": ["from sqlalchemy import and_", "$0"]
+  },
   "fsq-column": {
     "prefix": "fsq-column",
     "body": ["from sqlalchemy import Column", "$0"]
   },
+  "fsq-date": {
+    "prefix": "fsq-date",
+    "body": ["from sqlalchemy import Date", "$0"]
+  },
   "fsq-engine": {
     "prefix": "fsq-engine",
     "body": ["from sqlalchemy.engine import Engine", "$0"]
+  },
+  "fsq-func": {
+    "prefix": "fsq-func",
+    "body": ["from sqlalchemy import func", "$0"]
+  },
+  "fsq-or": {
+    "prefix": "fsq-or",
+    "body": ["from sqlalchemy import or_", "$0"]
   },
   "fsq-table": {
     "prefix": "fsq-table",
