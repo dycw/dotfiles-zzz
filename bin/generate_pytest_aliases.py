@@ -9,7 +9,7 @@ from logging import basicConfig, info
 from sys import stdout
 from typing import Literal
 
-basicConfig(format="{message}", level="INFO", stream=stdout, style="{")
+basicConfig(format="{message}", style="{", level="INFO", stream=stdout)
 
 
 @dataclass(frozen=True)
