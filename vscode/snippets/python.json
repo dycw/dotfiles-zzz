@@ -258,5 +258,87 @@
   "fsq-table": {
     "prefix": "fsq-table",
     "body": ["from sqlalchemy import Table", "$0"]
+  },
+
+  // third party - streamlit
+  "fst-bar-chart": {
+    "prefix": "fst-bar-chart",
+    "body": ["from streamlit import bar_chart", "$0"]
+  },
+  "fst-cache-data": {
+    "prefix": "fst-cache-data",
+    "body": ["from streamlit import cache_data", "$0"]
+  },
+  "fst-checkbox": {
+    "prefix": "fst-checkbox",
+    "body": ["from streamlit import checkbox", "$0"]
+  },
+  "fst-columns": {
+    "prefix": "fst-columns",
+    "body": ["from streamlit import columns", "$0"]
+  },
+  "fst-container": {
+    "prefix": "fst-container",
+    "body": ["from streamlit import container", "$0"]
+  },
+  "fst-dataframe": {
+    "prefix": "fst-dataframe",
+    "body": ["from streamlit import dataframe", "$0"]
+  },
+  "fst-empty": {
+    "prefix": "fst-empty",
+    "body": ["from streamlit import empty", "$0"]
+  },
+  "fst-error": {
+    "prefix": "fst-error",
+    "body": ["from streamlit import error", "$0"]
+  },
+  "fst-form": {
+    "prefix": "fst-form",
+    "body": ["from streamlit import form", "$0"]
+  },
+  "fst-form-submit-button": {
+    "prefix": "fst-form-submit-button",
+    "body": ["from streamlit import form_submit_button", "$0"]
+  },
+  "fst-header": {
+    "prefix": "fst-header",
+    "body": ["from streamlit import header", "$0"]
+  },
+  "fst-markdown": {
+    "prefix": "fst-markdown",
+    "body": ["from streamlit import markdown", "$0"]
+  },
+  "fst-map": {
+    "prefix": "fst-map",
+    "body": ["from streamlit import map", "$0"]
+  },
+  "fst-progress": {
+    "prefix": "fst-progress",
+    "body": ["from streamlit import progress", "$0"]
+  },
+  "fst-secrets": {
+    "prefix": "fst-secrets",
+    "body": ["from streamlit import secrets", "$0"]
+  },
+  "fst-session-state": {
+    "prefix": "fst-session-state",
+    "body": ["from streamlit import session-state", "$0"]
+  },
+  "fst-subheader": {
+    "prefix": "fst-subheader",
+    "body": ["from streamlit import subheader", "$0"]
+  },
+  "fst-text": {
+    "prefix": "fst-text",
+    "body": ["from streamlit import text", "$0"]
+  },
+  "fst-text-input": {
+    "prefix": "fst-text-input",
+    "body": ["from streamlit import text_input", "$0"]
+  },
+  "fst-write": {
+    "prefix": "fst-write",
+    "body": ["from streamlit import write", "$0"]
   }
 }
