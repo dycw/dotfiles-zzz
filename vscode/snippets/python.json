@@ -55,6 +55,10 @@
     "prefix": "fen-enum",
     "body": ["from enum import Enum", "$0"]
   },
+  "fen-enum-and-auto": {
+    "prefix": "fen-enum-and-auto",
+    "body": ["from enum import Enum, auto", "$0"]
+  },
 
   // standard library - functools
   "ffu-cache": {
@@ -80,10 +84,70 @@
     "body": ["from __future__ import annotations", "$0"]
   },
 
+  // standard library - itertools
+  "fit-chain": {
+    "prefix": "fit-chain",
+    "body": ["from itertools import chain", "$0"]
+  },
+
   // standard library - pathlib
   "fpa-path": {
     "prefix": "fpa-path",
     "body": ["from pathlib import Path", "$0"]
+  },
+
+  // standard library - shutil
+  "fsh-copyfile": {
+    "prefix": "fsh-copyfile",
+    "body": ["from shutil import copyfile", "$0"]
+  },
+  "fsh-copytree": {
+    "prefix": "fsh-copytree",
+    "body": ["from shutil import copytree", "$0"]
+  },
+
+  // standard library - subprocess
+  "fsu-called-process-error": {
+    "prefix": "fsu-called-process-error",
+    "body": ["from subprocess import CalledProcessError", "$0"]
+  },
+  "fsu-check-call": {
+    "prefix": "fsu-check-call",
+    "body": ["from subprocess import check_call", "$0"]
+  },
+  "fsu-check-output": {
+    "prefix": "fsu-check-output",
+    "body": ["from subprocess import check_output", "$0"]
+  },
+  "fsu-devnull": {
+    "prefix": "fsu-devnull",
+    "body": ["from subprocess import DEVNULL", "$0"]
+  },
+  "fsu-pipe": {
+    "prefix": "fsu-pipe",
+    "body": ["from subprocess import PIPE", "$0"]
+  },
+  "fsu-run": {
+    "prefix": "fsu-run",
+    "body": ["from subprocess import run", "$0"]
+  },
+  "fsu-stdout": {
+    "prefix": "fsu-stdout",
+    "body": ["from subprocess import STDOUT", "$0"]
+  },
+
+  // standard library - subprocess
+  "fsy-argv": {
+    "prefix": "fsy-argv",
+    "body": ["from sys import argv", "$0"]
+  },
+  "fsy-stderr": {
+    "prefix": "fsy-stderr",
+    "body": ["from sys import stderr", "$0"]
+  },
+  "fsy-stdout": {
+    "prefix": "fsy-stdout",
+    "body": ["from sys import stdout", "$0"]
   },
 
   // standard library - time
