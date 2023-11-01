@@ -12,6 +12,34 @@
 // 	"description": "Log output to console"
 // }
 {
+  // standard library - collections
+  "fco-iterable": {
+    "prefix": "fco-iterable",
+    "body": ["from collections.abc import Iterable", "$0"]
+  },
+  "fco-iterator": {
+    "prefix": "fco-iterator",
+    "body": ["from collections.abc import Iterator", "$0"]
+  },
+  "fco-mapping": {
+    "prefix": "fco-mapping",
+    "body": ["from collections.abc import rmapping", "$0"]
+  },
+  "fco-set": {
+    "prefix": "fco-set",
+    "body": ["from collections.abc import Set", "$0"]
+  },
+
+  // standard library - dataclasses
+  "fda-dataclasses": {
+    "prefix": "fda-dataclasses",
+    "body": ["from dataclasses import dataclass", "$0"]
+  },
+  "fda-field": {
+    "prefix": "fda-field",
+    "body": ["from dataclasses import field", "$0"]
+  },
+
   // standard library - datetime
   "im-dt": {
     "prefix": "im-dt",
@@ -58,6 +86,12 @@
     "body": ["from pathlib import Path", "$0"]
   },
 
+  // standard library - time
+  "fti-slee": {
+    "prefix": "fti-slee",
+    "body": ["from time import sleep", "$0"]
+  },
+
   // standard library - typing
   "fty-any": {
     "prefix": "fty-any",
@@ -66,6 +100,22 @@
   "fty-cast": {
     "prefix": "fty-cast",
     "body": ["from typing import cast", "$0"]
+  },
+  "fty-iterable": {
+    "prefix": "fty-iterable",
+    "body": ["from typing import Iterable", "$0"]
+  },
+  "fty-iterator": {
+    "prefix": "fty-iterator",
+    "body": ["from typing import Iterator", "$0"]
+  },
+  "fty-mapping": {
+    "prefix": "fty-mapping",
+    "body": ["from typing import Mapping", "$0"]
+  },
+  "fty-sequence": {
+    "prefix": "fty-sequence",
+    "body": ["from typing import Sequence", "$0"]
   },
   "fty-union": {
     "prefix": "fty-union",
@@ -76,6 +126,50 @@
   "fbe-beartype": {
     "prefix": "fbe-beartype",
     "body": ["from beartype import beartype", "$0"]
+  },
+
+  // third party - bidict
+  "fbi-bidict": {
+    "prefix": "fbi-bidict",
+    "body": ["from bidict import bidict", "$0"]
+  },
+
+  // third party - cvxpy
+  "fcv-constraint": {
+    "prefix": "fcv-constraint",
+    "body": ["from cvxpy import Constraint", "$0"]
+  },
+  "fcv-expression": {
+    "prefix": "fcv-expression",
+    "body": ["from cvxpy import Expression", "$0"]
+  },
+  "fcv-maximize": {
+    "prefix": "fcv-maximize",
+    "body": ["from cvxpy import Maximize", "$0"]
+  },
+  "fcv-minimize": {
+    "prefix": "fcv-minimize",
+    "body": ["from cvxpy import Minimize", "$0"]
+  },
+  "fcv-multiply": {
+    "prefix": "fcv-multiply",
+    "body": ["from cvxpy import multiply", "$0"]
+  },
+  "fcv-norm": {
+    "prefix": "fcv-norm",
+    "body": ["from cvxpy import norm", "$0"]
+  },
+  "fcv-problem": {
+    "prefix": "fcv-problem",
+    "body": ["from cvxpy import Problem", "$0"]
+  },
+  "fcv-scalar-product": {
+    "prefix": "fcv-scalar-product",
+    "body": ["from cvxpy import scalar_product", "$0"]
+  },
+  "fcv-variable": {
+    "prefix": "fcv-variable",
+    "body": ["from cvxpy import Variable", "$0"]
   },
 
   // third party - fastapi
@@ -126,6 +220,44 @@
   "flo-logger": {
     "prefix": "flo-logger",
     "body": ["from loguru import logger", "$0"]
+  },
+
+  // third party - numpy
+  "fnu-block": {
+    "prefix": "fnu-block",
+    "body": ["from numpy import block", "$0"]
+  },
+  "fnu-cholesky": {
+    "prefix": "fnu-cholesky",
+    "body": ["from numpy.linalg import cholesky", "$0"]
+  },
+  "fnu-diag": {
+    "prefix": "fnu-diag",
+    "body": ["from numpy import diag", "$0"]
+  },
+  "fnu-eye": {
+    "prefix": "fnu-eye",
+    "body": ["from numpy import eye", "$0"]
+  },
+  "fnu-isclose": {
+    "prefix": "fnu-isclose",
+    "body": ["from numpy import isclose", "$0"]
+  },
+  "fnu-sqrt": {
+    "prefix": "fnu-sqrt",
+    "body": ["from numpy import sqrt", "$0"]
+  },
+  "fnu-vstack": {
+    "prefix": "fnu-vstack",
+    "body": ["from numpy import vstack", "$0"]
+  },
+  "fnu-zeros": {
+    "prefix": "fnu-zeros",
+    "body": ["from numpy import zeros", "$0"]
+  },
+  "fnu-zeros-like": {
+    "prefix": "fnu-zeros-like",
+    "body": ["from numpy import zeros_like", "$0"]
   },
 
   // third party - pandas
@@ -191,6 +323,14 @@
     "prefix": "fpo-int64",
     "body": ["from polars import Int64", "$0"]
   },
+  "fpo-into-expr-column": {
+    "prefix": "fpo-into-expr-column",
+    "body": ["from polars.type_aliases import IntoExprColumn", "$0"]
+  },
+  "fpo-lit": {
+    "prefix": "fpo-lit",
+    "body": ["from polars import lit", "$0"]
+  },
   "fpo-read-csv": {
     "prefix": "fpo-read-csv",
     "body": ["from polars import read_csv", "$0"]
@@ -220,6 +360,10 @@
   "fpy-mark": {
     "prefix": "fpy-mark",
     "body": ["from pytest import mark", "$0"]
+  },
+  "fpy-mark-and-param": {
+    "prefix": "fpy-mark",
+    "body": ["from pytest import mark, param", "$0"]
   },
   "fpy-param": {
     "prefix": "fpy-param",
@@ -337,8 +481,36 @@
     "prefix": "fst-text-input",
     "body": ["from streamlit import text_input", "$0"]
   },
+  "fst-title": {
+    "prefix": "fst-title",
+    "body": ["from streamlit import title", "$0"]
+  },
   "fst-write": {
     "prefix": "fst-write",
     "body": ["from streamlit import write", "$0"]
+  },
+
+  // third party - typed-settings
+  "fty-settings": {
+    "prefix": "fty-settings",
+    "body": ["from typed_settings import settings", "$0"]
+  },
+
+  // third party - (dycw-)utilities
+  "fut-add-weekdays": {
+    "prefix": "fut-add-weekdays",
+    "body": ["from utilities.datetime import add_weekdays", "$0"]
+  },
+  "fut-ensure-str": {
+    "prefix": "fut-ensure-str",
+    "body": ["from utilities.text import ensure_str", "$0"]
+  },
+  "fut-get-repo-root": {
+    "prefix": "fut-get-repo-root",
+    "body": ["from utilities.git import get_repo_root", "$0"]
+  },
+  "fut-hong-kong": {
+    "prefix": "fut-hong-kong",
+    "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
   }
 }

@@ -39,6 +39,9 @@ with suppress(ModuleNotFoundError):
         serialize_timedelta,  # noqa: F401
         yield_weekdays,  # noqa: F401
     )
+    from utilities.getpass import (
+        USER,  # noqa: F401
+    )
     from utilities.re import (
         MultipleCaptureGroupsError,  # noqa: F401
         MultipleMatchesError,  # noqa: F401

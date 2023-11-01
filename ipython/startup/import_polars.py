@@ -29,7 +29,7 @@ with suppress(ModuleNotFoundError):
         Time,  # noqa: F401
         UInt8,  # noqa: F401
         UInt16,  # noqa: F401
-        UInt32,  # noqa: F401  # noqa: F401
+        UInt32,  # noqa: F401
         UInt64,  # noqa: F401
         Unknown,  # noqa: F401
         Utf8,  # noqa: F401
