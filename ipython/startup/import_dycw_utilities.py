@@ -15,12 +15,12 @@ with suppress(ModuleNotFoundError):
         TODAY_TKY,  # noqa: F401
         TODAY_UTC,  # noqa: F401
         UTC,  # noqa: F401
-        CallYieldWeekdaysError,  # noqa: F401
         IsWeekendError,  # noqa: F401
         LocalTimeZoneError,  # noqa: F401
         ParseDateError,  # noqa: F401
         ParseDateTimeError,  # noqa: F401
         ParseTimeError,  # noqa: F401
+        YieldWeekdaysError,  # noqa: F401
         add_weekdays,  # noqa: F401
         date_to_datetime,  # noqa: F401
         duration_to_float,  # noqa: F401
