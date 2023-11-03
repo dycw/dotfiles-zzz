@@ -426,7 +426,7 @@
     "body": ["from pytest import mark", "$0"]
   },
   "fpy-mark-and-param": {
-    "prefix": "fpy-mark",
+    "prefix": "fpy-mark-and-param",
     "body": ["from pytest import mark, param", "$0"]
   },
   "fpy-param": {
@@ -462,6 +462,10 @@
   "fsq-or": {
     "prefix": "fsq-or",
     "body": ["from sqlalchemy import or_", "$0"]
+  },
+  "fsq-select": {
+    "prefix": "fsq-select",
+    "body": ["from sqlalchemy import select", "$0"]
   },
   "fsq-table": {
     "prefix": "fsq-table",
@@ -569,6 +573,10 @@
     "prefix": "fut-ensure-str",
     "body": ["from utilities.text import ensure_str", "$0"]
   },
+  "fut-extract-group": {
+    "prefix": "fut-extract-group",
+    "body": ["from utilities.re import extract_group", "$0"]
+  },
   "fut-get-repo-root": {
     "prefix": "fut-get-repo-root",
     "body": ["from utilities.git import get_repo_root", "$0"]
@@ -576,5 +584,9 @@
   "fut-hong-kong": {
     "prefix": "fut-hong-kong",
     "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
+  },
+  "fut-snake-case": {
+    "prefix": "fut-snake-case",
+    "body": ["from utilities.text import snake_case", "$0"]
   }
 }
