@@ -30,6 +30,16 @@
     "body": ["from collections.abc import Set", "$0"]
   },
 
+  // standard library - csv
+  "fcs-reader": {
+    "prefix": "fcs-reader",
+    "body": ["from csv import reader", "$0"]
+  },
+  "fcs-writer": {
+    "prefix": "fcs-writer",
+    "body": ["from csv import writer", "$0"]
+  },
+
   // standard library - dataclasses
   "fda-dataclasses": {
     "prefix": "fda-dataclasses",
@@ -395,6 +405,10 @@
     "prefix": "fpo-lit",
     "body": ["from polars import lit", "$0"]
   },
+  "fpo-polars-data-type": {
+    "prefix": "fpo-polars-data-type",
+    "body": ["from polars.type_alises import PolarsDataType", "$0"]
+  },
   "fpo-read-csv": {
     "prefix": "fpo-read-csv",
     "body": ["from polars import read_csv", "$0"]
@@ -402,6 +416,10 @@
   "fpo-read-excel": {
     "prefix": "fpo-read-excel",
     "body": ["from polars import read_excel", "$0"]
+  },
+  "fpo-schema-dict": {
+    "prefix": "fpo-schema-dict",
+    "body": ["from polars.type_aliases import SchemaDict", "$0"]
   },
   "fpo-series": {
     "prefix": "fpo-series",
@@ -426,7 +444,7 @@
     "body": ["from pytest import mark", "$0"]
   },
   "fpy-mark-and-param": {
-    "prefix": "fpy-mark",
+    "prefix": "fpy-mark-and-param",
     "body": ["from pytest import mark, param", "$0"]
   },
   "fpy-param": {
@@ -462,6 +480,10 @@
   "fsq-or": {
     "prefix": "fsq-or",
     "body": ["from sqlalchemy import or_", "$0"]
+  },
+  "fsq-select": {
+    "prefix": "fsq-select",
+    "body": ["from sqlalchemy import select", "$0"]
   },
   "fsq-table": {
     "prefix": "fsq-table",
@@ -569,6 +591,10 @@
     "prefix": "fut-ensure-str",
     "body": ["from utilities.text import ensure_str", "$0"]
   },
+  "fut-extract-group": {
+    "prefix": "fut-extract-group",
+    "body": ["from utilities.re import extract_group", "$0"]
+  },
   "fut-get-repo-root": {
     "prefix": "fut-get-repo-root",
     "body": ["from utilities.git import get_repo_root", "$0"]
@@ -576,5 +602,9 @@
   "fut-hong-kong": {
     "prefix": "fut-hong-kong",
     "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
+  },
+  "fut-snake-case": {
+    "prefix": "fut-snake-case",
+    "body": ["from utilities.text import snake_case", "$0"]
   }
 }

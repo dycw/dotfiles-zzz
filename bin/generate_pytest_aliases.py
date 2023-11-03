@@ -19,7 +19,6 @@ class Settings:
     f: bool = False
     i: bool = False
     k: bool = False
-    lf: bool = False
     n: Literal["auto"] | int | None = None
     pdb: bool = False
     x: bool = False
@@ -44,8 +43,6 @@ class Settings:
             append(Part("f", "-f"))
         if self.i:
             append(Part("i", "--instafail"))
-        if self.lf:
-            append(Part("l", "--lf"))
         if self.n == "auto":
             append(Part("n", "-nauto"))
         elif isinstance(self.n, int):
@@ -92,8 +89,7 @@ class Alias:
 def main() -> None:
     """Echo all the commands, ready for piping to a script."""
     info("#!/usr/bin/env bash")
-    for f, i, k, lf, n, pdb, x in product(
-        [True, False],
+    for f, i, k, n, pdb, x in product(
         [True, False],
         [True, False],
         [True, False],
@@ -102,7 +98,7 @@ def main() -> None:
         [True, False],
     ):
         with suppress(ValueError):
-            settings = Settings(f=f, i=i, k=k, lf=lf, n=n, pdb=pdb, x=x)
+            settings = Settings(f=f, i=i, k=k, n=n, pdb=pdb, x=x)
             for alias in settings.yield_aliases():
                 info(alias)
 
