@@ -25,7 +25,7 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "40dc9f0621c55bd40da4ad0731fac44d15bb393a"
+    "commit": "d7521f6050b94cb0e23067f63829d86886f870fe"
   },
   "cmp-buffer": {
     "branch": "main",
@@ -49,7 +49,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "893b139e6dcdb55dee4c98215d9217d3a1ec69eb"
+    "commit": "0bbe83830be5a07a1161bb1a23d7280310656177"
   },
   "crates.nvim": {
     "branch": "main",
@@ -197,7 +197,7 @@
   },
   "nvim-lint": {
     "branch": "master",
-    "commit": "8d2bd9a2d1f0b41c96dfa0c998cc22ba152935ed"
+    "commit": "7746f952827dabfb70194518c99c93d5651b8f19"
   },
   "nvim-lspconfig": {
     "branch": "master",
@@ -221,7 +221,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "bef2c24e23d0da62a8542b1f08b1ac87ec43e93f"
+    "commit": "a82bba45fb0fb43fc2e7998f3394fadc80606d8a"
   },
   "nvim-treesitter-context": {
     "branch": "master",
@@ -345,7 +345,7 @@
   },
   "vimtex": {
     "branch": "master",
-    "commit": "2ee33217ba76cb875429ceabd2d99c2f59fdfe11"
+    "commit": "7d1dbd0eebe041fbda4d1132622bf051b1546497"
   },
   "which-key.nvim": {
     "branch": "main",

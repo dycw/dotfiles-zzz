@@ -13,6 +13,10 @@
 // }
 {
   // standard library - collections
+  "fco-callable": {
+    "prefix": "fco-callable",
+    "body": ["from collections.abc import Callable", "$0"]
+  },
   "fco-iterable": {
     "prefix": "fco-iterable",
     "body": ["from collections.abc import Iterable", "$0"]
@@ -23,7 +27,7 @@
   },
   "fco-mapping": {
     "prefix": "fco-mapping",
-    "body": ["from collections.abc import rmapping", "$0"]
+    "body": ["from collections.abc import Mapping", "$0"]
   },
   "fco-set": {
     "prefix": "fco-set",
@@ -100,6 +104,12 @@
     "body": ["from itertools import chain", "$0"]
   },
 
+  // standard library - operator
+  "fop-eq": {
+    "prefix": "fop-eq",
+    "body": ["from operator import eq", "$0"]
+  },
+
   // standard library - pathlib
   "fpa-path": {
     "prefix": "fpa-path",
@@ -171,6 +181,10 @@
     "prefix": "fty-any",
     "body": ["from typing import Any", "$0"]
   },
+  "fty-callable": {
+    "prefix": "fty-callable",
+    "body": ["from typing import Callable", "$0"]
+  },
   "fty-cast": {
     "prefix": "fty-cast",
     "body": ["from typing import cast", "$0"]
@@ -186,6 +200,10 @@
   "fty-mapping": {
     "prefix": "fty-mapping",
     "body": ["from typing import Mapping", "$0"]
+  },
+  "fty-overload": {
+    "prefix": "fty-overload",
+    "body": ["from typing import overload", "$0"]
   },
   "fty-sequence": {
     "prefix": "fty-sequence",
@@ -265,6 +283,18 @@
     "prefix": "fhy-data-object",
     "body": ["from hypothesis.strategies import DataObject", "$0"]
   },
+  "fhy-dates": {
+    "prefix": "fhy-dates",
+    "body": ["from hypothesis.strategies import dates", "$0"]
+  },
+  "fhy-datetimes": {
+    "prefix": "fhy-datetimes",
+    "body": ["from hypothesis.strategies import datetimes", "$0"]
+  },
+  "fhy-fixed-dictionaries": {
+    "prefix": "fhy-fixed-dictionaries",
+    "body": ["from hypothesis.strategies import fixed_dictionaries", "$0"]
+  },
   "fhy-floats": {
     "prefix": "fhy-floats",
     "body": ["from hypothesis.strategies import floats", "$0"]
@@ -273,9 +303,17 @@
     "prefix": "fhy-integers",
     "body": ["from hypothesis.strategies import integers", "$0"]
   },
+  "fhy-just": {
+    "prefix": "fhy-just",
+    "body": ["from hypothesis.strategies import just", "$0"]
+  },
   "fhy-lists": {
     "prefix": "fhy-lists",
     "body": ["from hypothesis.strategies import lists", "$0"]
+  },
+  "fhy-none": {
+    "prefix": "fhy-none",
+    "body": ["from hypothesis.strategies import none", "$0"]
   },
   "fhy-reproduce-failure": {
     "prefix": "fhy-reproduce-failure",
@@ -285,9 +323,17 @@
     "prefix": "fhy-sampled-from",
     "body": ["from hypothesis.strategies import sampled_from", "$0"]
   },
+  "fhy-search-strategy": {
+    "prefix": "fhy-search-strategy",
+    "body": ["from hypothesis.strategies import SearchStrategy", "$0"]
+  },
   "fhy-sets": {
     "prefix": "fhy-sets",
     "body": ["from hypothesis.strategies import sets", "$0"]
+  },
+  "fhy-tuples": {
+    "prefix": "fhy-tuples",
+    "body": ["from hypothesis.strategies import tuples", "$0"]
   },
 
   // third party - loguru
@@ -369,6 +415,14 @@
   },
 
   // third party - polars
+  "fpo-assert-frame-equal": {
+    "prefix": "fpo-assert-frame-equal",
+    "body": ["from polars.testing import assert_frame_equal ", "$0"]
+  },
+  "fpo-assert-series-equal": {
+    "prefix": "fpo-assert-series-equal",
+    "body": ["from polars.testing import assert_series_equal ", "$0"]
+  },
   "fpo-boolean": {
     "prefix": "fpo-boolean",
     "body": ["from polars import Boolean", "$0"]
@@ -397,6 +451,10 @@
     "prefix": "fpo-int64",
     "body": ["from polars import Int64", "$0"]
   },
+  "fpo-into-expr": {
+    "prefix": "fpo-into-expr",
+    "body": ["from polars.type_aliases import IntoExpr", "$0"]
+  },
   "fpo-into-expr-column": {
     "prefix": "fpo-into-expr-column",
     "body": ["from polars.type_aliases import IntoExprColumn", "$0"]
@@ -407,7 +465,7 @@
   },
   "fpo-polars-data-type": {
     "prefix": "fpo-polars-data-type",
-    "body": ["from polars.type_alises import PolarsDataType", "$0"]
+    "body": ["from polars.type_aliases import PolarsDataType", "$0"]
   },
   "fpo-read-csv": {
     "prefix": "fpo-read-csv",
@@ -465,13 +523,17 @@
     "prefix": "fsq-column",
     "body": ["from sqlalchemy import Column", "$0"]
   },
+  "fsq-connection": {
+    "prefix": "fsq-connection",
+    "body": ["from sqlalchemy import Connection", "$0"]
+  },
   "fsq-date": {
     "prefix": "fsq-date",
     "body": ["from sqlalchemy import Date", "$0"]
   },
   "fsq-engine": {
     "prefix": "fsq-engine",
-    "body": ["from sqlalchemy.engine import Engine", "$0"]
+    "body": ["from sqlalchemy import Engine", "$0"]
   },
   "fsq-func": {
     "prefix": "fsq-func",
