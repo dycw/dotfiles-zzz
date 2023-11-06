@@ -431,6 +431,10 @@
     "prefix": "fpo-col",
     "body": ["from polars import col", "$0"]
   },
+  "fpo-data-type-class": {
+    "prefix": "fpo-data-type-class",
+    "body": ["from polars.datatypes import DataTypeClass", "$0"]
+  },
   "fpo-dataframe": {
     "prefix": "fpo-dataframe",
     "body": ["from polars import DataFrame", "$0"]
@@ -465,7 +469,7 @@
   },
   "fpo-polars-data-type": {
     "prefix": "fpo-polars-data-type",
-    "body": ["from polars.type_aliases import PolarsDataType", "$0"]
+    "body": ["from polars import PolarsDataType", "$0"]
   },
   "fpo-read-csv": {
     "prefix": "fpo-read-csv",
