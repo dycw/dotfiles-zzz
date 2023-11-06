@@ -49,7 +49,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "0bbe83830be5a07a1161bb1a23d7280310656177"
+    "commit": "0d43691a092bd8c81f617a99519dde4b2f19fdf2"
   },
   "crates.nvim": {
     "branch": "main",
