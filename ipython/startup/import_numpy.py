@@ -9,11 +9,13 @@ with suppress(ModuleNotFoundError):
         arange,  # noqa: F401
         array,  # noqa: F401
         bool_,  # noqa: F401
+        ceil,  # noqa: F401
         concatenate,  # noqa: F401
         corrcoef,  # noqa: F401
         cumsum,  # noqa: F401
         dtype,  # noqa: F401
         exp,  # noqa: F401
+        exp2,  # noqa: F401
         expand_dims,  # noqa: F401
         eye,  # noqa: F401
         finfo,  # noqa: F401
@@ -21,6 +23,7 @@ with suppress(ModuleNotFoundError):
         float16,  # noqa: F401
         float32,  # noqa: F401
         float64,  # noqa: F401
+        floor,  # noqa: F401
         histogram,  # noqa: F401
         hstack,  # noqa: F401
         iinfo,  # noqa: F401
@@ -31,6 +34,7 @@ with suppress(ModuleNotFoundError):
         int64,  # noqa: F401
         isclose,  # noqa: F401
         isfinite,  # noqa: F401
+        isinf,  # noqa: F401
         isnan,  # noqa: F401
         issubdtype,  # noqa: F401
         linspace,  # noqa: F401
