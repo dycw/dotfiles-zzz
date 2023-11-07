@@ -10,6 +10,7 @@ with suppress(ModuleNotFoundError):
         Binary,  # noqa: F401
         Boolean,  # noqa: F401
         Categorical,  # noqa: F401
+        Config,
         DataFrame,  # noqa: F401
         Date,  # noqa: F401
         Datetime,  # noqa: F401
@@ -60,3 +61,5 @@ with suppress(ModuleNotFoundError):
         PolarsDataType,  # noqa: F401
         SchemaDict,  # noqa: F401
     )
+
+    Config(tbl_rows=7, tbl_cols=100)
