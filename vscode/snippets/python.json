@@ -347,13 +347,41 @@
   },
 
   // third party - numpy
+  "fnu-arange": {
+    "prefix": "fnu-arange",
+    "body": ["from numpy import arange", "$0"]
+  },
+  "fnu-array": {
+    "prefix": "fnu-array",
+    "body": ["from numpy import array", "$0"]
+  },
   "fnu-block": {
     "prefix": "fnu-block",
     "body": ["from numpy import block", "$0"]
   },
+  "fnu-bool": {
+    "prefix": "fnu-bool",
+    "body": ["from numpy import bool_", "$0"]
+  },
+  "fnu-ceil": {
+    "prefix": "fnu-ceil",
+    "body": ["from numpy import ceil", "$0"]
+  },
   "fnu-cholesky": {
     "prefix": "fnu-cholesky",
     "body": ["from numpy.linalg import cholesky", "$0"]
+  },
+  "fnu-concatenate": {
+    "prefix": "fnu-concatenate",
+    "body": ["from numpy import concatenate", "$0"]
+  },
+  "fnu-corrcoef": {
+    "prefix": "fnu-corrcoef",
+    "body": ["from numpy import corrcoef", "$0"]
+  },
+  "fnu-cumsum": {
+    "prefix": "fnu-cumsum",
+    "body": ["from numpy import cumsum", "$0"]
   },
   "fnu-diag": {
     "prefix": "fnu-diag",

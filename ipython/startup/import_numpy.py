@@ -8,11 +8,13 @@ with suppress(ModuleNotFoundError):
     from numpy import (
         arange,  # noqa: F401
         array,  # noqa: F401
+        block,  # noqa: F401
         bool_,  # noqa: F401
         ceil,  # noqa: F401
         concatenate,  # noqa: F401
         corrcoef,  # noqa: F401
         cumsum,  # noqa: F401
+        diag,  # noqa: F401
         dtype,  # noqa: F401
         exp,  # noqa: F401
         exp2,  # noqa: F401
@@ -62,6 +64,7 @@ with suppress(ModuleNotFoundError):
     )
     from numpy.linalg import (
         LinAlgError,  # noqa: F401
+        cholesky,  # noqa: F401
         inv,  # noqa: F401
     )
     from numpy.random import (
