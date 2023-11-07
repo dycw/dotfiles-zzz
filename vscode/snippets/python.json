@@ -91,6 +91,10 @@
     "prefix": "ffu-lru-cache",
     "body": ["from functools import lru_cache", "$0"]
   },
+  "ffu-reduce": {
+    "prefix": "ffu-reduce",
+    "body": ["from functools import reduce", "$0"]
+  },
 
   // standard library - future
   "ffu-annotations": {
