@@ -685,6 +685,18 @@
     "prefix": "fut-add-weekdays",
     "body": ["from utilities.datetime import add_weekdays", "$0"]
   },
+  "fut-click-options": {
+    "prefix": "fut-click-options",
+    "body": ["from utilities.typed_settings import click_options", "$0"]
+  },
+  "fut-decrypt": {
+    "prefix": "fut-decrypt",
+    "body": ["from utilities.cryptography import decrypt", "$0"]
+  },
+  "fut-encrypt": {
+    "prefix": "fut-encrypt",
+    "body": ["from utilities.cryptography import encrypt", "$0"]
+  },
   "fut-ensure-str": {
     "prefix": "fut-ensure-str",
     "body": ["from utilities.text import ensure_str", "$0"]
@@ -692,6 +704,22 @@
   "fut-extract-group": {
     "prefix": "fut-extract-group",
     "body": ["from utilities.re import extract_group", "$0"]
+  },
+  "fut-extract-groups": {
+    "prefix": "fut-extract-groups",
+    "body": ["from utilities.re import extract_groups", "$0"]
+  },
+  "fut-fernet-key-missing": {
+    "prefix": "fut-fernet-key-missing",
+    "body": ["from utilities.cryptography import FernetKeyMissingError", "$0"]
+  },
+  "fut-get-class-name": {
+    "prefix": "fut-get-class-name",
+    "body": ["from utilities.class_name import get_class_name", "$0"]
+  },
+  "fut-get-repo-config": {
+    "prefix": "fut-get-repo-config",
+    "body": ["from utilities.typed_settings import get_repo_root_config", "$0"]
   },
   "fut-get-repo-root": {
     "prefix": "fut-get-repo-root",
@@ -701,8 +729,24 @@
     "prefix": "fut-hong-kong",
     "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
   },
+  "fut-load-settings": {
+    "prefix": "fut-load-settings",
+    "body": ["from utilities.typed_settings import load_settings", "$0"]
+  },
   "fut-snake-case": {
     "prefix": "fut-snake-case",
     "body": ["from utilities.text import snake_case", "$0"]
+  },
+  "fut-temp-dir": {
+    "prefix": "fut-temp-dir",
+    "body": ["from utilities.tempfile import TEMP_DIR", "$0"]
+  },
+  "fut-temporary-directory": {
+    "prefix": "fut-temporary-directory",
+    "body": ["from utilities.tempfile import TemporaryDirectory", "$0"]
+  },
+  "fut-writer": {
+    "prefix": "fut-writer",
+    "body": ["from utilities.atomicwrites import writer", "$0"]
   }
 }

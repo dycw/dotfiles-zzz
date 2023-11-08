@@ -47,6 +47,12 @@ with suppress(ModuleNotFoundError):
     from utilities.getpass import (
         USER,  # noqa: F401
     )
+    from utilities.git import (
+        InvalidRepoRoot,  # noqa: F401
+        get_branch_name,  # noqa: F401
+        get_repo_name,  # noqa: F401
+        get_repo_root,  # noqa: F401
+    )
     from utilities.re import (
         MultipleCaptureGroupsError,  # noqa: F401
         MultipleMatchesError,  # noqa: F401
@@ -58,6 +64,11 @@ with suppress(ModuleNotFoundError):
     from utilities.sentinel import (
         Sentinel,  # noqa: F401
         sentinel,  # noqa: F401
+    )
+    from utilities.tempfile import (
+        TEMP_DIR,  # noqa: F401
+        TemporaryDirectory,  # noqa: F401
+        gettempdir,  # noqa: F401
     )
 
     with suppress(ModuleNotFoundError):

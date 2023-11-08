@@ -1,11 +1,16 @@
 from __future__ import annotations
 
 import math  # noqa: F401
-
-from numpy import (
+from contextlib import suppress
+from math import (
     prod,  # noqa: F401
-    sumprod,  # noqa: F401
 )
+
+with suppress(ImportError):
+    from math import (
+        sumprod,  # noqa: F401
+    )
+
 
 try:
     import numpy as _numpy  # noqa: F401, ICN001
