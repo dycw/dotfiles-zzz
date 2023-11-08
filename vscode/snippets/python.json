@@ -12,6 +12,26 @@
 // 	"description": "Log output to console"
 // }
 {
+  // standard library - abc
+  "fab-abc": {
+    "prefix": "fab-abc",
+    "body": ["from abc import ABC", "$0"]
+  },
+  "fab-abc-meta": {
+    "prefix": "fab-abc-meta",
+    "body": ["from abc import ABCMeta", "$0"]
+  },
+  "fab-abstractmethod": {
+    "prefix": "fab-abstractmethod",
+    "body": ["from abc import abstractmethod", "$0"]
+  },
+
+  // standard library - argparse
+  "far-argument-parser": {
+    "prefix": "far-argument-parser",
+    "body": ["from argparse import ArgumentParser", "$0"]
+  },
+
   // standard library - collections
   "fco-callable": {
     "prefix": "fco-callable",
@@ -216,6 +236,24 @@
   "fty-union": {
     "prefix": "fty-union",
     "body": ["from typing import Union", "$0"]
+  },
+
+  // third party - atomicwrites
+  "fat-atomic-writer": {
+    "prefix": "fat-atomic-writer",
+    "body": ["from atomicwrites import AtomicWriter", "$0"]
+  },
+  "fat-atomic-write": {
+    "prefix": "fat-atomic-write",
+    "body": ["from atomicwrites import atomic_write", "$0"]
+  },
+  "fat-move-atomic": {
+    "prefix": "fat-move-atomic",
+    "body": ["from atomicwrites import move_atomic", "$0"]
+  },
+  "fat-replace-atomic": {
+    "prefix": "fat-replace-atomic",
+    "body": ["from atomicwrites import replace_atomic", "$0"]
   },
 
   // third party - beartype
