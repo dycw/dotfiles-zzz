@@ -6,7 +6,7 @@ from pathlib import Path
 from subprocess import PIPE, CalledProcessError, check_output
 
 
-def get_src() -> None:
+def _add_src_to_sys_path() -> None:
     output = check_output(
         ["git", "rev-parse", "--show-toplevel"],  # noqa: S603, S607
         stderr=PIPE,
@@ -18,4 +18,4 @@ def get_src() -> None:
 
 
 with suppress(CalledProcessError):
-    _root = get_src()
+    _ = _add_src_to_sys_path()

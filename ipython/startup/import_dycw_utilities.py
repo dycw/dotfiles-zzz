@@ -48,7 +48,7 @@ with suppress(ModuleNotFoundError):
         USER,  # noqa: F401
     )
     from utilities.git import (
-        InvalidRepoRoot,  # noqa: F401
+        InvalidRepoError,  # noqa: F401
         get_branch_name,  # noqa: F401
         get_repo_name,  # noqa: F401
         get_repo_root,  # noqa: F401

@@ -21,9 +21,29 @@
     "prefix": "fab-abc-meta",
     "body": ["from abc import ABCMeta", "$0"]
   },
+  "fab-abstractclassmethod": {
+    "prefix": "fab-abstractclassmethod",
+    "body": ["from abc import abstractclassmethod", "$0"]
+  },
   "fab-abstractmethod": {
     "prefix": "fab-abstractmethod",
     "body": ["from abc import abstractmethod", "$0"]
+  },
+  "fab-abstractproperty": {
+    "prefix": "fab-abstractproperty",
+    "body": ["from abc import abstractproperty", "$0"]
+  },
+  "fab-abstractstaticmethod": {
+    "prefix": "fab-abstractstaticmethod",
+    "body": ["from abc import abstractstaticmethod", "$0"]
+  },
+  "fab-get-cache-token": {
+    "prefix": "fab-get-cache-token",
+    "body": ["from abc import get_cache_token", "$0"]
+  },
+  "fab-update-abstractmethods": {
+    "prefix": "fab-update-abstractmethods",
+    "body": ["from abc import update_abstractmethods", "$0"]
   },
 
   // standard library - argparse
@@ -33,9 +53,65 @@
   },
 
   // standard library - collections
+  "fco-async-generator": {
+    "prefix": "fco-async-generator",
+    "body": ["from collections.abc import AsyncGenerator", "$0"]
+  },
+  "fco-async-iterable": {
+    "prefix": "fco-async-iterable",
+    "body": ["from collections.abc import AsyncIterable", "$0"]
+  },
+  "fco-async-iterator": {
+    "prefix": "fco-async-iterator",
+    "body": ["from collections.abc import AsyncIterator", "$0"]
+  },
+  "fco-awaitable": {
+    "prefix": "fco-awaitable",
+    "body": ["from collections.abc import Awaitable", "$0"]
+  },
+  "fco-buffer": {
+    "prefix": "fco-buffer",
+    "body": ["from collections.abc import Buffer", "$0"]
+  },
   "fco-callable": {
     "prefix": "fco-callable",
     "body": ["from collections.abc import Callable", "$0"]
+  },
+  "fco-chain-map": {
+    "prefix": "fco-chain-map",
+    "body": ["from collections import ChainMap", "$0"]
+  },
+  "fco-collection": {
+    "prefix": "fco-collection",
+    "body": ["from collections.abc import Collection", "$0"]
+  },
+  "fco-container": {
+    "prefix": "fco-container",
+    "body": ["from collections.abc import Container", "$0"]
+  },
+  "fco-counter": {
+    "prefix": "fco-counter",
+    "body": ["from collections import Counter", "$0"]
+  },
+  "fco-defaultdict": {
+    "prefix": "fco-defaultdict",
+    "body": ["from collections import defaultdict", "$0"]
+  },
+  "fco-deque": {
+    "prefix": "fco-deque",
+    "body": ["from collections import deque", "$0"]
+  },
+  "fco-generator": {
+    "prefix": "fco-generator",
+    "body": ["from collections.abc import Generator", "$0"]
+  },
+  "fco-hashable": {
+    "prefix": "fco-hashable",
+    "body": ["from collections.abc import Hashable", "$0"]
+  },
+  "fco-items-view": {
+    "prefix": "fco-items-view",
+    "body": ["from collections.abc import ItemsView", "$0"]
   },
   "fco-iterable": {
     "prefix": "fco-iterable",
@@ -45,19 +121,181 @@
     "prefix": "fco-iterator",
     "body": ["from collections.abc import Iterator", "$0"]
   },
+  "fco-keys-view": {
+    "prefix": "fco-keys-view",
+    "body": ["from collections.abc import KeysView", "$0"]
+  },
   "fco-mapping": {
     "prefix": "fco-mapping",
     "body": ["from collections.abc import Mapping", "$0"]
   },
+  "fco-mapping-view": {
+    "prefix": "fco-mapping-view",
+    "body": ["from collections.abc import MappingView", "$0"]
+  },
+  "fco-mutable-mapping": {
+    "prefix": "fco-mutable-mapping",
+    "body": ["from collections.abc import MutableMapping", "$0"]
+  },
+  "fco-mutable-sequence": {
+    "prefix": "fco-mutable-sequence",
+    "body": ["from collections.abc import MutableSequence", "$0"]
+  },
+  "fco-mutable-set": {
+    "prefix": "fco-mutable-set",
+    "body": ["from collections.abc import MutableSet", "$0"]
+  },
+  "fco-namedtuple": {
+    "prefix": "fco-namedtuple",
+    "body": ["from collections import namedtuple", "$0"]
+  },
+  "fco-ordered-dict": {
+    "prefix": "fco-ordered-dict",
+    "body": ["from collections import OrderedDict", "$0"]
+  },
+  "fco-reversible": {
+    "prefix": "fco-reversible",
+    "body": ["from collections.abc import Reversible", "$0"]
+  },
+  "fco-sequence": {
+    "prefix": "fco-sequence",
+    "body": ["from collections.abc import Sequence", "$0"]
+  },
   "fco-set": {
     "prefix": "fco-set",
-    "body": ["from collections.abc import Set", "$0"]
+    "body": ["from collections.abc import Set as AbstractSet", "$0"]
+  },
+  "fco-sized": {
+    "prefix": "fco-sized",
+    "body": ["from collections.abc import Sized", "$0"]
+  },
+  "fco-user-dict": {
+    "prefix": "fco-user-dict",
+    "body": ["from collections import UserDict", "$0"]
+  },
+  "fco-user-list": {
+    "prefix": "fco-user-list",
+    "body": ["from collections import UserList", "$0"]
+  },
+  "fco-user-string": {
+    "prefix": "fco-user-string",
+    "body": ["from collections import UserString", "$0"]
+  },
+  "fco-values-view": {
+    "prefix": "fco-values-view",
+    "body": ["from collections.abc import ValuesView", "$0"]
+  },
+
+  // standard library - contextlib
+  "fco-abstract-async-context-manager": {
+    "prefix": "fco-abstract-async-context-manager",
+    "body": ["from contextlib import AbstractAsyncContextManager", "$0"]
+  },
+  "fco-abstract-context-manager": {
+    "prefix": "fco-abstract-context-manager",
+    "body": ["from contextlib import AbstractContextManager", "$0"]
+  },
+  "fco-aclosing": {
+    "prefix": "fco-aclosing",
+    "body": ["from contextlib import aclosing", "$0"]
+  },
+  "fco-asynccontextmanager": {
+    "prefix": "fco-asynccontextmanager",
+    "body": ["from contextlib import asynccontextmanager", "$0"]
+  },
+  "fco-chdir": {
+    "prefix": "fco-chdir",
+    "body": ["from contextlib import chdir", "$0"]
+  },
+  "fco-closing": {
+    "prefix": "fco-closing",
+    "body": ["from contextlib import closing", "$0"]
+  },
+  "fco-contextmanager": {
+    "prefix": "fco-contextmanager",
+    "body": ["from contextlib import contextmanager", "$0"]
+  },
+  "fco-nullcontext": {
+    "prefix": "fco-nullcontext",
+    "body": ["from contextlib import nullcontext", "$0"]
+  },
+  "fco-redirect-stderr": {
+    "prefix": "fco-redirect-stderr",
+    "body": ["from contextlib import redirect_stderr", "$0"]
+  },
+  "fco-redirect-stdout": {
+    "prefix": "fco-redirect-stdout",
+    "body": ["from contextlib import redirect_stdout", "$0"]
+  },
+  "fco-suppress": {
+    "prefix": "fco-suppress",
+    "body": ["from contextlib import suppress", "$0"]
   },
 
   // standard library - csv
+  "fcs-dialect": {
+    "prefix": "fcs-dialect",
+    "body": ["from csv import Dialect", "$0"]
+  },
+  "fcs-dict-reader": {
+    "prefix": "fcs-dict-reader",
+    "body": ["from csv import DictReader", "$0"]
+  },
+  "fcs-dict-writer": {
+    "prefix": "fcs-dict-writer",
+    "body": ["from csv import DictWriter", "$0"]
+  },
+  "fcs-excel": {
+    "prefix": "fcs-excel",
+    "body": ["from csv import excel", "$0"]
+  },
+  "fcs-excel-tab": {
+    "prefix": "fcs-excel-tab",
+    "body": ["from csv import excel_tab", "$0"]
+  },
+  "fcs-field-size-limit": {
+    "prefix": "fcs-field-size-limit",
+    "body": ["from csv import field_size_limit", "$0"]
+  },
+  "fcs-list-dialects": {
+    "prefix": "fcs-list-dialects",
+    "body": ["from csv import list_dialects", "$0"]
+  },
+  "fcs-quote-all": {
+    "prefix": "fcs-quote-all",
+    "body": ["from csv import QUOTE_ALL", "$0"]
+  },
+  "fcs-quote-minimal": {
+    "prefix": "fcs-quote-minimal",
+    "body": ["from csv import QUOTE_MINIMAL", "$0"]
+  },
+  "fcs-quote-none": {
+    "prefix": "fcs-quote-none",
+    "body": ["from csv import QUOTE_NONE", "$0"]
+  },
+  "fcs-quote-nonnumeric": {
+    "prefix": "fcs-quote-nonnumeric",
+    "body": ["from csv import QUOTE_NONNUMERIC", "$0"]
+  },
   "fcs-reader": {
     "prefix": "fcs-reader",
     "body": ["from csv import reader", "$0"]
+  },
+  "fcs-register-dialect": {
+    "prefix": "fcs-register-dialect",
+    "body": ["from csv import register_dialect", "$0"]
+  },
+  "fcs-sniffer": {
+    "prefix": "fcs-sniffer",
+    "body": ["from csv import Sniffer", "$0"]
+  },
+  "fcs-unix-dialect": {
+    "prefix": "fcs-unix-dialect",
+    "body": ["from csv import unix_dialect", "$0"]
+  },
+  "fcs-unregister-dialect": {
+    "prefix": "fcs-unregister-dialect",
+    "body": ["from csv import unregister_dialect", "$0"]
   },
   "fcs-writer": {
     "prefix": "fcs-writer",
@@ -266,6 +504,288 @@
   "fbi-bidict": {
     "prefix": "fbi-bidict",
     "body": ["from bidict import bidict", "$0"]
+  },
+
+  // third party - click
+  "fcl-abort": {
+    "prefix": "fcl-abort",
+    "body": ["from click import Abort", "$0"]
+  },
+  "fcl-argument": {
+    "prefix": "fcl-argument",
+    "body": ["from click import argument", "$0"]
+  },
+  "fcl-bad-argument-usage": {
+    "prefix": "fcl-bad-argument-usage",
+    "body": ["from click import BadArgumentUsage", "$0"]
+  },
+  "fcl-bad-option-usage": {
+    "prefix": "fcl-bad-option-usage",
+    "body": ["from click import BadOptionUsage", "$0"]
+  },
+  "fcl-bad-parameter": {
+    "prefix": "fcl-bad-parameter",
+    "body": ["from click import BadParameter", "$0"]
+  },
+  "fcl-base-command": {
+    "prefix": "fcl-base-command",
+    "body": ["from click import BaseCommand", "$0"]
+  },
+  "fcl-bool": {
+    "prefix": "fcl-bool",
+    "body": ["from click import BOOL", "$0"]
+  },
+  "fcl-choice": {
+    "prefix": "fcl-choice",
+    "body": ["from click import Choice", "$0"]
+  },
+  "fcl-clear": {
+    "prefix": "fcl-clear",
+    "body": ["from click import clear", "$0"]
+  },
+  "fcl-click-exception": {
+    "prefix": "fcl-click-exception",
+    "body": ["from click import ClickException", "$0"]
+  },
+  "fcl-command": {
+    "prefix": "fcl-command",
+    "body": ["from click import command", "$0"]
+  },
+  "fcl-command-collection": {
+    "prefix": "fcl-command-collection",
+    "body": ["from click import CommandCollection", "$0"]
+  },
+  "fcl-confirm": {
+    "prefix": "fcl-confirm",
+    "body": ["from click import confirm", "$0"]
+  },
+  "fcl-confirmation-option": {
+    "prefix": "fcl-confirmation-option",
+    "body": ["from click import confirmation_option", "$0"]
+  },
+  "fcl-context": {
+    "prefix": "fcl-context",
+    "body": ["from click import Context", "$0"]
+  },
+  "fcl-core": {
+    "prefix": "fcl-core",
+    "body": ["from click import core", "$0"]
+  },
+  "fcl-date-time": {
+    "prefix": "fcl-date-time",
+    "body": ["from click import DateTime", "$0"]
+  },
+  "fcl-decorators": {
+    "prefix": "fcl-decorators",
+    "body": ["from click import decorators", "$0"]
+  },
+  "fcl-echo": {
+    "prefix": "fcl-echo",
+    "body": ["from click import echo", "$0"]
+  },
+  "fcl-echo-via-pager": {
+    "prefix": "fcl-echo-via-pager",
+    "body": ["from click import echo_via_pager", "$0"]
+  },
+  "fcl-edit": {
+    "prefix": "fcl-edit",
+    "body": ["from click import edit", "$0"]
+  },
+  "fcl-exceptions": {
+    "prefix": "fcl-exceptions",
+    "body": ["from click import exceptions", "$0"]
+  },
+  "fcl-file": {
+    "prefix": "fcl-file",
+    "body": ["from click import File", "$0"]
+  },
+  "fcl-file-error": {
+    "prefix": "fcl-file-error",
+    "body": ["from click import FileError", "$0"]
+  },
+  "fcl-float": {
+    "prefix": "fcl-float",
+    "body": ["from click import FLOAT", "$0"]
+  },
+  "fcl-float-range": {
+    "prefix": "fcl-float-range",
+    "body": ["from click import FloatRange", "$0"]
+  },
+  "fcl-format-filename": {
+    "prefix": "fcl-format-filename",
+    "body": ["from click import format_filename", "$0"]
+  },
+  "fcl-formatting": {
+    "prefix": "fcl-formatting",
+    "body": ["from click import formatting", "$0"]
+  },
+  "fcl-get-app-dir": {
+    "prefix": "fcl-get-app-dir",
+    "body": ["from click import get_app_dir", "$0"]
+  },
+  "fcl-get-binary-stream": {
+    "prefix": "fcl-get-binary-stream",
+    "body": ["from click import get_binary_stream", "$0"]
+  },
+  "fcl-get-current-context": {
+    "prefix": "fcl-get-current-context",
+    "body": ["from click import get_current_context", "$0"]
+  },
+  "fcl-get-text-stream": {
+    "prefix": "fcl-get-text-stream",
+    "body": ["from click import get_text_stream", "$0"]
+  },
+  "fcl-getchar": {
+    "prefix": "fcl-getchar",
+    "body": ["from click import getchar", "$0"]
+  },
+  "fcl-globals": {
+    "prefix": "fcl-globals",
+    "body": ["from click import globals", "$0"]
+  },
+  "fcl-group": {
+    "prefix": "fcl-group",
+    "body": ["from click import group", "$0"]
+  },
+  "fcl-help-formatter": {
+    "prefix": "fcl-help-formatter",
+    "body": ["from click import HelpFormatter", "$0"]
+  },
+  "fcl-help-option": {
+    "prefix": "fcl-help-option",
+    "body": ["from click import help_option", "$0"]
+  },
+  "fcl-int": {
+    "prefix": "fcl-int",
+    "body": ["from click import INT", "$0"]
+  },
+  "fcl-int-range": {
+    "prefix": "fcl-int-range",
+    "body": ["from click import IntRange", "$0"]
+  },
+  "fcl-launch": {
+    "prefix": "fcl-launch",
+    "body": ["from click import launch", "$0"]
+  },
+  "fcl-make-pass-decorator": {
+    "prefix": "fcl-make-pass-decorator",
+    "body": ["from click import make_pass_decorator", "$0"]
+  },
+  "fcl-missing-parameter": {
+    "prefix": "fcl-missing-parameter",
+    "body": ["from click import MissingParameter", "$0"]
+  },
+  "fcl-multi-command": {
+    "prefix": "fcl-multi-command",
+    "body": ["from click import MultiCommand", "$0"]
+  },
+  "fcl-no-such-option": {
+    "prefix": "fcl-no-such-option",
+    "body": ["from click import NoSuchOption", "$0"]
+  },
+  "fcl-open-file": {
+    "prefix": "fcl-open-file",
+    "body": ["from click import open_file", "$0"]
+  },
+  "fcl-option": {
+    "prefix": "fcl-option",
+    "body": ["from click import option", "$0"]
+  },
+  "fcl-option-parser": {
+    "prefix": "fcl-option-parser",
+    "body": ["from click import OptionParser", "$0"]
+  },
+  "fcl-param-type": {
+    "prefix": "fcl-param-type",
+    "body": ["from click import ParamType", "$0"]
+  },
+  "fcl-parameter": {
+    "prefix": "fcl-parameter",
+    "body": ["from click import Parameter", "$0"]
+  },
+  "fcl-parser": {
+    "prefix": "fcl-parser",
+    "body": ["from click import parser", "$0"]
+  },
+  "fcl-pass-context": {
+    "prefix": "fcl-pass-context",
+    "body": ["from click import pass_context", "$0"]
+  },
+  "fcl-pass-obj": {
+    "prefix": "fcl-pass-obj",
+    "body": ["from click import pass_obj", "$0"]
+  },
+  "fcl-password-option": {
+    "prefix": "fcl-password-option",
+    "body": ["from click import password_option", "$0"]
+  },
+  "fcl-path": {
+    "prefix": "fcl-path",
+    "body": ["from click import Path", "$0"]
+  },
+  "fcl-pause": {
+    "prefix": "fcl-pause",
+    "body": ["from click import pause", "$0"]
+  },
+  "fcl-progressbar": {
+    "prefix": "fcl-progressbar",
+    "body": ["from click import progressbar", "$0"]
+  },
+  "fcl-prompt": {
+    "prefix": "fcl-prompt",
+    "body": ["from click import prompt", "$0"]
+  },
+  "fcl-secho": {
+    "prefix": "fcl-secho",
+    "body": ["from click import secho", "$0"]
+  },
+  "fcl-string": {
+    "prefix": "fcl-string",
+    "body": ["from click import STRING", "$0"]
+  },
+  "fcl-style": {
+    "prefix": "fcl-style",
+    "body": ["from click import style", "$0"]
+  },
+  "fcl-termui": {
+    "prefix": "fcl-termui",
+    "body": ["from click import termui", "$0"]
+  },
+  "fcl-tuple": {
+    "prefix": "fcl-tuple",
+    "body": ["from click import Tuple", "$0"]
+  },
+  "fcl-types": {
+    "prefix": "fcl-types",
+    "body": ["from click import types", "$0"]
+  },
+  "fcl-unprocessed": {
+    "prefix": "fcl-unprocessed",
+    "body": ["from click import UNPROCESSED", "$0"]
+  },
+  "fcl-unstyle": {
+    "prefix": "fcl-unstyle",
+    "body": ["from click import unstyle", "$0"]
+  },
+  "fcl-usage-error": {
+    "prefix": "fcl-usage-error",
+    "body": ["from click import UsageError", "$0"]
+  },
+  "fcl-utils": {
+    "prefix": "fcl-utils",
+    "body": ["from click import utils", "$0"]
+  },
+  "fcl-uuid": {
+    "prefix": "fcl-uuid",
+    "body": ["from click import UUID", "$0"]
+  },
+  "fcl-version-option": {
+    "prefix": "fcl-version-option",
+    "body": ["from click import version_option", "$0"]
+  },
+  "fcl-wrap-text": {
+    "prefix": "fcl-wrap-text",
+    "body": ["from click import wrap_text", "$0"]
   },
 
   // third party - cvxpy
@@ -751,6 +1271,10 @@
     "prefix": "fut-fernet-key-missing",
     "body": ["from utilities.cryptography import FernetKeyMissingError", "$0"]
   },
+  "fut-get-branch-name": {
+    "prefix": "fut-get-branch-name",
+    "body": ["from utilities.git import get_branch_name", "$0"]
+  },
   "fut-get-class-name": {
     "prefix": "fut-get-class-name",
     "body": ["from utilities.class_name import get_class_name", "$0"]
@@ -759,17 +1283,53 @@
     "prefix": "fut-get-repo-config",
     "body": ["from utilities.typed_settings import get_repo_root_config", "$0"]
   },
+  "fut-get-repo-name": {
+    "prefix": "fut-get-repo-name",
+    "body": ["from utilities.git import get_repo_name", "$0"]
+  },
   "fut-get-repo-root": {
     "prefix": "fut-get-repo-root",
     "body": ["from utilities.git import get_repo_root", "$0"]
+  },
+  "fut-gettempdir": {
+    "prefix": "fut-gettempdir",
+    "body": ["from utilities.tempfile import gettempdir", "$0"]
   },
   "fut-hong-kong": {
     "prefix": "fut-hong-kong",
     "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
   },
+  "fut-invalid-repo-error": {
+    "prefix": "fut-invalid-repo-error",
+    "body": ["from utilities.git import InvalidRepoError", "$0"]
+  },
   "fut-load-settings": {
     "prefix": "fut-load-settings",
     "body": ["from utilities.typed_settings import load_settings", "$0"]
+  },
+  "fut-multiple-capture-groups-error": {
+    "prefix": "fut-multiple-capture-groups-error",
+    "body": ["from utilities.re import MultipleCaptureGroupsError", "$0"]
+  },
+  "fut-multiple-matches-error": {
+    "prefix": "fut-multiple-matches-error",
+    "body": ["from utilities.re import MultipleMatchesError", "$0"]
+  },
+  "fut-no-capture-groups-error": {
+    "prefix": "fut-no-capture-groups-error",
+    "body": ["from utilities.re import NoCaptureGroupsError", "$0"]
+  },
+  "fut-no-matches-error": {
+    "prefix": "fut-no-matches-error",
+    "body": ["from utilities.re import NoMatchesError", "$0"]
+  },
+  "fut-sentinel": {
+    "prefix": "fut-sentinel",
+    "body": ["from utilities.sentinel import sentinel", "$0"]
+  },
+  "fut-sentinel-class": {
+    "prefix": "fut-sentinel-class",
+    "body": ["from utilities.sentinel import Sentinel", "$0"]
   },
   "fut-snake-case": {
     "prefix": "fut-snake-case",
@@ -782,6 +1342,10 @@
   "fut-temporary-directory": {
     "prefix": "fut-temporary-directory",
     "body": ["from utilities.tempfile import TemporaryDirectory", "$0"]
+  },
+  "fut-user": {
+    "prefix": "fut-user",
+    "body": ["from utilities.getpass import USER", "$0"]
   },
   "fut-writer": {
     "prefix": "fut-writer",
