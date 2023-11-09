@@ -15,17 +15,15 @@ contents = """
 
 
 
-
-from abc import (
-    ABC,  # noqa: F401
-    ABCMeta,  # noqa: F401
-    abstractclassmethod,  # noqa: F401
-    abstractmethod,  # noqa: F401
-    abstractproperty,  # noqa: F401
-    abstractstaticmethod,  # noqa: F401
-    get_cache_token,  # noqa: F401
-    update_abstractmethods,  # noqa: F401
+from utilities.typing import (
+    IterableStrs,  # noqa: F401
+    NeverError,  # noqa: F401
+    Number,  # noqa: F401
+    SequenceStrs,  # noqa: F401
+    never,  # noqa: F401
 )
+
+
 
 
 

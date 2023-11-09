@@ -1303,6 +1303,10 @@
     "prefix": "fut-invalid-repo-error",
     "body": ["from utilities.git import InvalidRepoError", "$0"]
   },
+  "fut-iterable-strs": {
+    "prefix": "fut-iterable-strs",
+    "body": ["from utilities.typing import IterableStrs", "$0"]
+  },
   "fut-load-settings": {
     "prefix": "fut-load-settings",
     "body": ["from utilities.typed_settings import load_settings", "$0"]
@@ -1315,6 +1319,14 @@
     "prefix": "fut-multiple-matches-error",
     "body": ["from utilities.re import MultipleMatchesError", "$0"]
   },
+  "fut-never": {
+    "prefix": "fut-never",
+    "body": ["from utilities.typing import never", "$0"]
+  },
+  "fut-never-error": {
+    "prefix": "fut-never-error",
+    "body": ["from utilities.typing import NeverError", "$0"]
+  },
   "fut-no-capture-groups-error": {
     "prefix": "fut-no-capture-groups-error",
     "body": ["from utilities.re import NoCaptureGroupsError", "$0"]
@@ -1323,6 +1335,10 @@
     "prefix": "fut-no-matches-error",
     "body": ["from utilities.re import NoMatchesError", "$0"]
   },
+  "fut-number": {
+    "prefix": "fut-number",
+    "body": ["from utilities.typing import Number", "$0"]
+  },
   "fut-sentinel": {
     "prefix": "fut-sentinel",
     "body": ["from utilities.sentinel import sentinel", "$0"]
@@ -1330,6 +1346,10 @@
   "fut-sentinel-class": {
     "prefix": "fut-sentinel-class",
     "body": ["from utilities.sentinel import Sentinel", "$0"]
+  },
+  "fut-sequence-strs": {
+    "prefix": "fut-sequence-strs",
+    "body": ["from utilities.typing import SequenceStrs", "$0"]
   },
   "fut-snake-case": {
     "prefix": "fut-snake-case",
