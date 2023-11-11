@@ -12,7 +12,7 @@
 // 	"description": "Log output to console"
 // }
 {
-  // standard library - abc
+  // standard library: abc
   "fab-abc": {
     "prefix": "fab-abc",
     "body": ["from abc import ABC", "$0"]
@@ -46,13 +46,13 @@
     "body": ["from abc import update_abstractmethods", "$0"]
   },
 
-  // standard library - argparse
+  // standard library: argparse
   "far-argument-parser": {
     "prefix": "far-argument-parser",
     "body": ["from argparse import ArgumentParser", "$0"]
   },
 
-  // standard library - collections
+  // standard library: collections
   "fco-async-generator": {
     "prefix": "fco-async-generator",
     "body": ["from collections.abc import AsyncGenerator", "$0"]
@@ -186,7 +186,7 @@
     "body": ["from collections.abc import ValuesView", "$0"]
   },
 
-  // standard library - contextlib
+  // standard library: contextlib
   "fco-abstract-async-context-manager": {
     "prefix": "fco-abstract-async-context-manager",
     "body": ["from contextlib import AbstractAsyncContextManager", "$0"]
@@ -232,7 +232,7 @@
     "body": ["from contextlib import suppress", "$0"]
   },
 
-  // standard library - csv
+  // standard library: csv
   "fcs-dialect": {
     "prefix": "fcs-dialect",
     "body": ["from csv import Dialect", "$0"]
@@ -302,37 +302,120 @@
     "body": ["from csv import writer", "$0"]
   },
 
-  // standard library - dataclasses
-  "fda-dataclasses": {
-    "prefix": "fda-dataclasses",
+  // standard library: dataclasses
+  "fda-asdict": {
+    "prefix": "fda-asdict",
+    "body": ["from dataclasses import asdict", "$0"]
+  },
+  "fda-astuple": {
+    "prefix": "fda-astuple",
+    "body": ["from dataclasses import astuple", "$0"]
+  },
+  "fda-dataclass": {
+    "prefix": "fda-dataclass",
     "body": ["from dataclasses import dataclass", "$0"]
   },
   "fda-field": {
     "prefix": "fda-field",
     "body": ["from dataclasses import field", "$0"]
   },
+  "fda-fields": {
+    "prefix": "fda-fields",
+    "body": ["from dataclasses import fields", "$0"]
+  },
+  "fda-frozen-instance-error": {
+    "prefix": "fda-frozen-instance-error",
+    "body": ["from dataclasses import FrozenInstanceError", "$0"]
+  },
+  "fda-is-dataclass": {
+    "prefix": "fda-is-dataclass",
+    "body": ["from dataclasses import is_dataclass", "$0"]
+  },
+  "fda-kw-only": {
+    "prefix": "fda-kw-only",
+    "body": ["from dataclasses import KW_ONLY", "$0"]
+  },
+  "fda-make-dataclass": {
+    "prefix": "fda-make-dataclass",
+    "body": ["from dataclasses import make_dataclass", "$0"]
+  },
+  "fda-missing": {
+    "prefix": "fda-missing",
+    "body": ["from dataclasses import MISSING", "$0"]
+  },
+  "fda-replace": {
+    "prefix": "fda-replace",
+    "body": ["from dataclasses import replace", "$0"]
+  },
 
-  // standard library - datetime
+  // standard library: datetime
   "im-dt": {
     "prefix": "im-dt",
     "body": ["import datetime as dt", "$0"]
   },
 
-  // standard library - enum
-  "fen-auto": {
-    "prefix": "fen-auto",
-    "body": ["from enum import auto", "$0"]
+  // standard library: enum
+  "fen-auto": { "prefix": "fen-auto", "body": ["from enum import auto", "$0"] },
+  "fen-enum": { "prefix": "fen-enum", "body": ["from enum import Enum", "$0"] },
+  "fen-enum-check": {
+    "prefix": "fen-enum-check",
+    "body": ["from enum import EnumCheck", "$0"]
   },
-  "fen-enum": {
-    "prefix": "fen-enum",
-    "body": ["from enum import Enum", "$0"]
+  "fen-enum-meta": {
+    "prefix": "fen-enum-meta",
+    "body": ["from enum import EnumMeta", "$0"]
   },
-  "fen-enum-and-auto": {
-    "prefix": "fen-enum-and-auto",
-    "body": ["from enum import Enum, auto", "$0"]
+  "fen-flag": { "prefix": "fen-flag", "body": ["from enum import Flag", "$0"] },
+  "fen-flag-boundary": {
+    "prefix": "fen-flag-boundary",
+    "body": ["from enum import FlagBoundary", "$0"]
+  },
+  "fen-global-enum": {
+    "prefix": "fen-global-enum",
+    "body": ["from enum import global_enum", "$0"]
+  },
+  "fen-int-enum": {
+    "prefix": "fen-int-enum",
+    "body": ["from enum import IntEnum", "$0"]
+  },
+  "fen-int-flag": {
+    "prefix": "fen-int-flag",
+    "body": ["from enum import IntFlag", "$0"]
+  },
+  "fen-member": {
+    "prefix": "fen-member",
+    "body": ["from enum import member", "$0"]
+  },
+  "fen-nonmember": {
+    "prefix": "fen-nonmember",
+    "body": ["from enum import nonmember", "$0"]
+  },
+  "fen-property": {
+    "prefix": "fen-property",
+    "body": ["from enum import property", "$0"]
+  },
+  "fen-repr-enum": {
+    "prefix": "fen-repr-enum",
+    "body": ["from enum import ReprEnum", "$0"]
+  },
+  "fen-show-flag-values": {
+    "prefix": "fen-show-flag-values",
+    "body": ["from enum import show_flag_values", "$0"]
+  },
+  "fen-str-enum": {
+    "prefix": "fen-str-enum",
+    "body": ["from enum import StrEnum", "$0"]
+  },
+  "fen-unique": {
+    "prefix": "fen-unique",
+    "body": ["from enum import unique", "$0"]
+  },
+  "fen-verify": {
+    "prefix": "fen-verify",
+    "body": ["from enum import verify", "$0"]
   },
 
-  // standard library - functools
+  // standard library: functools
   "ffu-cache": {
     "prefix": "ffu-cache",
     "body": ["from functools import cache", "$0"]
@@ -341,44 +424,407 @@
     "prefix": "ffu-cached-property",
     "body": ["from functools import cached_property", "$0"]
   },
-  "ffu-partial": {
-    "prefix": "ffu-partial",
-    "body": ["from functools import partial", "$0"]
+  "ffu-cmp-to-key": {
+    "prefix": "ffu-cmp-to-key",
+    "body": ["from functools import cmp_to_key", "$0"]
   },
   "ffu-lru-cache": {
     "prefix": "ffu-lru-cache",
     "body": ["from functools import lru_cache", "$0"]
   },
+  "ffu-partial": {
+    "prefix": "ffu-partial",
+    "body": ["from functools import partial", "$0"]
+  },
+  "ffu-partialmethod": {
+    "prefix": "ffu-partialmethod",
+    "body": ["from functools import partialmethod", "$0"]
+  },
   "ffu-reduce": {
     "prefix": "ffu-reduce",
     "body": ["from functools import reduce", "$0"]
   },
+  "ffu-singledispatch": {
+    "prefix": "ffu-singledispatch",
+    "body": ["from functools import singledispatch", "$0"]
+  },
+  "ffu-singledispatchmethod": {
+    "prefix": "ffu-singledispatchmethod",
+    "body": ["from functools import singledispatchmethod", "$0"]
+  },
+  "ffu-total-ordering": {
+    "prefix": "ffu-total-ordering",
+    "body": ["from functools import total_ordering", "$0"]
+  },
+  "ffu-update-wrapper": {
+    "prefix": "ffu-update-wrapper",
+    "body": ["from functools import update_wrapper", "$0"]
+  },
+  "ffu-wraps": {
+    "prefix": "ffu-wraps",
+    "body": ["from functools import wraps", "$0"]
+  },
 
-  // standard library - future
+  // standard library: future
   "ffu-annotations": {
     "prefix": "ffu-annotations",
     "body": ["from __future__ import annotations", "$0"]
   },
 
-  // standard library - itertools
+  // standard library: gzip
+  "fgz-bad-gzip-file": {
+    "prefix": "fgz-bad-gzip-file",
+    "body": ["from gzip import BadGzipFile", "$0"]
+  },
+  "fgz-compress": {
+    "prefix": "fgz-compress",
+    "body": ["from gzip import compress", "$0"]
+  },
+  "fgz-decompress": {
+    "prefix": "fgz-decompress",
+    "body": ["from gzip import decompress", "$0"]
+  },
+  "fgz-gzip-file": {
+    "prefix": "fgz-gzip-file",
+    "body": ["from gzip import GzipFile", "$0"]
+  },
+
+  // standard library: hashlib
+  "fha-algorithms-available": {
+    "prefix": "fha-algorithms-available",
+    "body": ["from hashlib import algorithms_available", "$0"]
+  },
+  "fha-algorithms-guaranteed": {
+    "prefix": "fha-algorithms-guaranteed",
+    "body": ["from hashlib import algorithms_guaranteed", "$0"]
+  },
+  "fha-blake2b": {
+    "prefix": "fha-blake2b",
+    "body": ["from hashlib import blake2b", "$0"]
+  },
+  "fha-blake2s": {
+    "prefix": "fha-blake2s",
+    "body": ["from hashlib import blake2s", "$0"]
+  },
+  "fha-file-digest": {
+    "prefix": "fha-file-digest",
+    "body": ["from hashlib import file_digest", "$0"]
+  },
+  "fha-md5": { "prefix": "fha-md5", "body": ["from hashlib import md5", "$0"] },
+  "fha-new": { "prefix": "fha-new", "body": ["from hashlib import new", "$0"] },
+  "fha-pbkdf2-hmac": {
+    "prefix": "fha-pbkdf2-hmac",
+    "body": ["from hashlib import pbkdf2_hmac", "$0"]
+  },
+  "fha-scrypt": {
+    "prefix": "fha-scrypt",
+    "body": ["from hashlib import scrypt", "$0"]
+  },
+  "fha-sha1": {
+    "prefix": "fha-sha1",
+    "body": ["from hashlib import sha1", "$0"]
+  },
+  "fha-sha224": {
+    "prefix": "fha-sha224",
+    "body": ["from hashlib import sha224", "$0"]
+  },
+  "fha-sha256": {
+    "prefix": "fha-sha256",
+    "body": ["from hashlib import sha256", "$0"]
+  },
+  "fha-sha3-224": {
+    "prefix": "fha-sha3-224",
+    "body": ["from hashlib import sha3_224", "$0"]
+  },
+  "fha-sha3-256": {
+    "prefix": "fha-sha3-256",
+    "body": ["from hashlib import sha3_256", "$0"]
+  },
+  "fha-sha3-384": {
+    "prefix": "fha-sha3-384",
+    "body": ["from hashlib import sha3_384", "$0"]
+  },
+  "fha-sha3-512": {
+    "prefix": "fha-sha3-512",
+    "body": ["from hashlib import sha3_512", "$0"]
+  },
+  "fha-sha384": {
+    "prefix": "fha-sha384",
+    "body": ["from hashlib import sha384", "$0"]
+  },
+  "fha-sha512": {
+    "prefix": "fha-sha512",
+    "body": ["from hashlib import sha512", "$0"]
+  },
+  "fha-shake-128": {
+    "prefix": "fha-shake-128",
+    "body": ["from hashlib import shake_128", "$0"]
+  },
+  "fha-shake-256": {
+    "prefix": "fha-shake-256",
+    "body": ["from hashlib import shake_256", "$0"]
+  },
+
+  // standard library: importlib
+  "fim-all-suffixes": {
+    "prefix": "fim-all-suffixes",
+    "body": ["from importlib.machinery import all_suffixes", "$0"]
+  },
+  "fim-builtin-importer": {
+    "prefix": "fim-builtin-importer",
+    "body": ["from importlib.machinery import BuiltinImporter", "$0"]
+  },
+  "fim-bytecode-suffixes": {
+    "prefix": "fim-bytecode-suffixes",
+    "body": ["from importlib.machinery import BYTECODE_SUFFIXES", "$0"]
+  },
+  "fim-cache-from-source": {
+    "prefix": "fim-cache-from-source",
+    "body": ["from importlib.util import cache_from_source", "$0"]
+  },
+  "fim-debug-bytecode-suffixes": {
+    "prefix": "fim-debug-bytecode-suffixes",
+    "body": ["from importlib.machinery import DEBUG_BYTECODE_SUFFIXES", "$0"]
+  },
+  "fim-decode-source": {
+    "prefix": "fim-decode-source",
+    "body": ["from importlib.util import decode_source", "$0"]
+  },
+  "fim-execution-loader": {
+    "prefix": "fim-execution-loader",
+    "body": ["from importlib.abc import ExecutionLoader", "$0"]
+  },
+  "fim-extension-file-loader": {
+    "prefix": "fim-extension-file-loader",
+    "body": ["from importlib.machinery import ExtensionFileLoader", "$0"]
+  },
+  "fim-extension-suffixes": {
+    "prefix": "fim-extension-suffixes",
+    "body": ["from importlib.machinery import EXTENSION_SUFFIXES", "$0"]
+  },
+  "fim-file-finder": {
+    "prefix": "fim-file-finder",
+    "body": ["from importlib.machinery import FileFinder", "$0"]
+  },
+  "fim-file-loader": {
+    "prefix": "fim-file-loader",
+    "body": ["from importlib.abc import FileLoader", "$0"]
+  },
+  "fim-find-loader": {
+    "prefix": "fim-find-loader",
+    "body": ["from importlib import find_loader", "$0"]
+  },
+  "fim-find-spec": {
+    "prefix": "fim-find-spec",
+    "body": ["from importlib.util import find_spec", "$0"]
+  },
+  "fim-frozen-importer": {
+    "prefix": "fim-frozen-importer",
+    "body": ["from importlib.machinery import FrozenImporter", "$0"]
+  },
+  "fim-import-module": {
+    "prefix": "fim-import-module",
+    "body": ["from importlib import import_module", "$0"]
+  },
+  "fim-inspect-loader": {
+    "prefix": "fim-inspect-loader",
+    "body": ["from importlib.abc import InspectLoader", "$0"]
+  },
+  "fim-invalidate-caches": {
+    "prefix": "fim-invalidate-caches",
+    "body": ["from importlib import invalidate_caches", "$0"]
+  },
+  "fim-lazy-loader": {
+    "prefix": "fim-lazy-loader",
+    "body": ["from importlib.util import LazyLoader", "$0"]
+  },
+  "fim-loader": {
+    "prefix": "fim-loader",
+    "body": ["from importlib.abc import Loader", "$0"]
+  },
+  "fim-magic-number": {
+    "prefix": "fim-magic-number",
+    "body": ["from importlib.util import MAGIC_NUMBER", "$0"]
+  },
+  "fim-meta-path-finder": {
+    "prefix": "fim-meta-path-finder",
+    "body": ["from importlib.abc import MetaPathFinder", "$0"]
+  },
+  "fim-module-for-loader": {
+    "prefix": "fim-module-for-loader",
+    "body": ["from importlib.util import module_for_loader", "$0"]
+  },
+  "fim-module-from-spec": {
+    "prefix": "fim-module-from-spec",
+    "body": ["from importlib.util import module_from_spec", "$0"]
+  },
+  "fim-module-spec": {
+    "prefix": "fim-module-spec",
+    "body": ["from importlib.machinery import ModuleSpec", "$0"]
+  },
+  "fim-namespace-loader": {
+    "prefix": "fim-namespace-loader",
+    "body": ["from importlib.machinery import NamespaceLoader", "$0"]
+  },
+  "fim-optimized-bytecode-suffixes": {
+    "prefix": "fim-optimized-bytecode-suffixes",
+    "body": [
+      "from importlib.machinery import OPTIMIZED_BYTECODE_SUFFIXES",
+      "$0"
+    ]
+  },
+  "fim-path-entry-finder": {
+    "prefix": "fim-path-entry-finder",
+    "body": ["from importlib.abc import PathEntryFinder", "$0"]
+  },
+  "fim-path-finder": {
+    "prefix": "fim-path-finder",
+    "body": ["from importlib.machinery import PathFinder", "$0"]
+  },
+  "fim-reload": {
+    "prefix": "fim-reload",
+    "body": ["from importlib import reload", "$0"]
+  },
+  "fim-resolve-name": {
+    "prefix": "fim-resolve-name",
+    "body": ["from importlib.util import resolve_name", "$0"]
+  },
+  "fim-resource-loader": {
+    "prefix": "fim-resource-loader",
+    "body": ["from importlib.abc import ResourceLoader", "$0"]
+  },
+  "fim-set-loader": {
+    "prefix": "fim-set-loader",
+    "body": ["from importlib.util import set_loader", "$0"]
+  },
+  "fim-set-package": {
+    "prefix": "fim-set-package",
+    "body": ["from importlib.util import set_package", "$0"]
+  },
+  "fim-source-file-loader": {
+    "prefix": "fim-source-file-loader",
+    "body": ["from importlib.machinery import SourceFileLoader", "$0"]
+  },
+  "fim-source-from-cache": {
+    "prefix": "fim-source-from-cache",
+    "body": ["from importlib.util import source_from_cache", "$0"]
+  },
+  "fim-source-hash": {
+    "prefix": "fim-source-hash",
+    "body": ["from importlib.util import source_hash", "$0"]
+  },
+  "fim-source-loader": {
+    "prefix": "fim-source-loader",
+    "body": ["from importlib.abc import SourceLoader", "$0"]
+  },
+  "fim-source-suffixes": {
+    "prefix": "fim-source-suffixes",
+    "body": ["from importlib.machinery import SOURCE_SUFFIXES", "$0"]
+  },
+  "fim-sourceless-file-loader": {
+    "prefix": "fim-sourceless-file-loader",
+    "body": ["from importlib.machinery import SourcelessFileLoader", "$0"]
+  },
+  "fim-spec-from-file-location": {
+    "prefix": "fim-spec-from-file-location",
+    "body": ["from importlib.util import spec_from_file_location", "$0"]
+  },
+  "fim-spec-from-loader": {
+    "prefix": "fim-spec-from-loader",
+    "body": ["from importlib.util import spec_from_loader", "$0"]
+  },
+
+  // standard library: itertools
+  "fit-accumulate": {
+    "prefix": "fit-accumulate",
+    "body": ["from itertools import accumulate", "$0"]
+  },
   "fit-chain": {
     "prefix": "fit-chain",
     "body": ["from itertools import chain", "$0"]
   },
+  "fit-combinations": {
+    "prefix": "fit-combinations",
+    "body": ["from itertools import combinations", "$0"]
+  },
+  "fit-combinations-with-replacement": {
+    "prefix": "fit-combinations-with-replacement",
+    "body": ["from itertools import combinations_with_replacement", "$0"]
+  },
+  "fit-compress": {
+    "prefix": "fit-compress",
+    "body": ["from itertools import compress", "$0"]
+  },
+  "fit-count": {
+    "prefix": "fit-count",
+    "body": ["from itertools import count", "$0"]
+  },
+  "fit-cycle": {
+    "prefix": "fit-cycle",
+    "body": ["from itertools import cycle", "$0"]
+  },
+  "fit-dropwhile": {
+    "prefix": "fit-dropwhile",
+    "body": ["from itertools import dropwhile", "$0"]
+  },
+  "fit-filterfalse": {
+    "prefix": "fit-filterfalse",
+    "body": ["from itertools import filterfalse", "$0"]
+  },
+  "fit-groupby": {
+    "prefix": "fit-groupby",
+    "body": ["from itertools import groupby", "$0"]
+  },
+  "fit-islice": {
+    "prefix": "fit-islice",
+    "body": ["from itertools import islice", "$0"]
+  },
+  "fit-pairwise": {
+    "prefix": "fit-pairwise",
+    "body": ["from itertools import pairwise", "$0"]
+  },
+  "fit-permutations": {
+    "prefix": "fit-permutations",
+    "body": ["from itertools import permutations", "$0"]
+  },
+  "fit-product": {
+    "prefix": "fit-product",
+    "body": ["from itertools import product", "$0"]
+  },
+  "fit-repeat": {
+    "prefix": "fit-repeat",
+    "body": ["from itertools import repeat", "$0"]
+  },
+  "fit-starmap": {
+    "prefix": "fit-starmap",
+    "body": ["from itertools import starmap", "$0"]
+  },
+  "fit-takewhile": {
+    "prefix": "fit-takewhile",
+    "body": ["from itertools import takewhile", "$0"]
+  },
+  "fit-tee": {
+    "prefix": "fit-tee",
+    "body": ["from itertools import tee", "$0"]
+  },
+  "fit-zip-longest": {
+    "prefix": "fit-zip-longest",
+    "body": ["from itertools import zip_longest", "$0"]
+  },
 
-  // standard library - operator
+  // standard library: operator
   "fop-eq": {
     "prefix": "fop-eq",
     "body": ["from operator import eq", "$0"]
   },
 
-  // standard library - pathlib
+  // standard library: pathlib
   "fpa-path": {
     "prefix": "fpa-path",
     "body": ["from pathlib import Path", "$0"]
   },
 
-  // standard library - shutil
+  // standard library: shutil
   "fsh-copyfile": {
     "prefix": "fsh-copyfile",
     "body": ["from shutil import copyfile", "$0"]
@@ -388,7 +834,7 @@
     "body": ["from shutil import copytree", "$0"]
   },
 
-  // standard library - subprocess
+  // standard library: subprocess
   "fsu-called-process-error": {
     "prefix": "fsu-called-process-error",
     "body": ["from subprocess import CalledProcessError", "$0"]
@@ -418,7 +864,7 @@
     "body": ["from subprocess import STDOUT", "$0"]
   },
 
-  // standard library - subprocess
+  // standard library: subprocess
   "fsy-argv": {
     "prefix": "fsy-argv",
     "body": ["from sys import argv", "$0"]
@@ -432,13 +878,13 @@
     "body": ["from sys import stdout", "$0"]
   },
 
-  // standard library - time
+  // standard library: time
   "fti-slee": {
     "prefix": "fti-slee",
     "body": ["from time import sleep", "$0"]
   },
 
-  // standard library - typing
+  // standard library: typing
   "fty-any": {
     "prefix": "fty-any",
     "body": ["from typing import Any", "$0"]
@@ -476,7 +922,7 @@
     "body": ["from typing import Union", "$0"]
   },
 
-  // third party - atomicwrites
+  // third party: atomicwrites
   "fat-atomic-writer": {
     "prefix": "fat-atomic-writer",
     "body": ["from atomicwrites import AtomicWriter", "$0"]
@@ -494,19 +940,19 @@
     "body": ["from atomicwrites import replace_atomic", "$0"]
   },
 
-  // third party - beartype
+  // third party: beartype
   "fbe-beartype": {
     "prefix": "fbe-beartype",
     "body": ["from beartype import beartype", "$0"]
   },
 
-  // third party - bidict
+  // third party: bidict
   "fbi-bidict": {
     "prefix": "fbi-bidict",
     "body": ["from bidict import bidict", "$0"]
   },
 
-  // third party - click
+  // third party: click
   "fcl-abort": {
     "prefix": "fcl-abort",
     "body": ["from click import Abort", "$0"]
@@ -788,7 +1234,7 @@
     "body": ["from click import wrap_text", "$0"]
   },
 
-  // third party - cvxpy
+  // third party: cvxpy
   "fcv-constraint": {
     "prefix": "fcv-constraint",
     "body": ["from cvxpy import Constraint", "$0"]
@@ -826,13 +1272,13 @@
     "body": ["from cvxpy import Variable", "$0"]
   },
 
-  // third party - fastapi
+  // third party: fastapi
   "ffa-fastapi": {
     "prefix": "ffa-fastapi",
     "body": ["from fastapi import FastAPI", "$0"]
   },
 
-  // third party - hypothesis
+  // third party: hypothesis
   "fhy-booleans": {
     "prefix": "fhy-booleans",
     "body": ["from hypothesis.strategies import booleans", "$0"]
@@ -898,13 +1344,13 @@
     "body": ["from hypothesis.strategies import tuples", "$0"]
   },
 
-  // third party - loguru
+  // third party: loguru
   "flo-logger": {
     "prefix": "flo-logger",
     "body": ["from loguru import logger", "$0"]
   },
 
-  // third party - numpy
+  // third party: numpy
   "fnu-arange": {
     "prefix": "fnu-arange",
     "body": ["from numpy import arange", "$0"]
@@ -970,7 +1416,7 @@
     "body": ["from numpy import zeros_like", "$0"]
   },
 
-  // third party - pandas
+  // third party: pandas
   "fpa-assert-frame-equal": {
     "prefix": "fpa-assert-frame-equal",
     "body": ["from pandas.testing import assert_frame_equal ", "$0"]
@@ -1004,7 +1450,7 @@
     "body": ["from pandas import Timestamp", "$0"]
   },
 
-  // third party - polars
+  // third party: polars
   "fpo-assert-frame-equal": {
     "prefix": "fpo-assert-frame-equal",
     "body": ["from polars.testing import assert_frame_equal ", "$0"]
@@ -1086,7 +1532,7 @@
     "body": ["from polars import when", "$0"]
   },
 
-  // third party - pytest
+  // third party: pytest
   "fpy-fixture": {
     "prefix": "fpy-fixture",
     "body": ["from pytest import fixture", "$0"]
@@ -1108,7 +1554,7 @@
     "body": ["from pytest import raises", "$0"]
   },
 
-  // third party - sqlalchemy
+  // third party: sqlalchemy
   "fsq-and": {
     "prefix": "fsq-and",
     "body": ["from sqlalchemy import and_", "$0"]
@@ -1146,7 +1592,7 @@
     "body": ["from sqlalchemy import Table", "$0"]
   },
 
-  // third party - streamlit
+  // third party: streamlit
   "fst-bar-chart": {
     "prefix": "fst-bar-chart",
     "body": ["from streamlit import bar_chart", "$0"]
@@ -1232,13 +1678,13 @@
     "body": ["from streamlit import write", "$0"]
   },
 
-  // third party - typed-settings
+  // third party: typed-settings
   "fty-settings": {
     "prefix": "fty-settings",
     "body": ["from typed_settings import settings", "$0"]
   },
 
-  // third party - (dycw-)utilities
+  // third party: (dycw-)utilities
   "fut-add-weekdays": {
     "prefix": "fut-add-weekdays",
     "body": ["from utilities.datetime import add_weekdays", "$0"]
