@@ -221,7 +221,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "c543ffae1c34a92fb647505f2165b35f68c113c4"
+    "commit": "075a64addc33390028ea124a1046a43497f05cd1"
   },
   "nvim-treesitter-context": {
     "branch": "master",
