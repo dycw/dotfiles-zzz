@@ -13,6 +13,7 @@ from itertools import (
     filterfalse,  # noqa: F401
     groupby,  # noqa: F401
     islice,  # noqa: F401
+    pairwise,  # noqa: F401
     permutations,  # noqa: F401
     product,  # noqa: F401
     repeat,  # noqa: F401
