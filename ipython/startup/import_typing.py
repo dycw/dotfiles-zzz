@@ -6,7 +6,7 @@ from contextlib import (
 )
 from typing import (
     IO,  # noqa: F401
-    TYPE_CHECKING,  # noqa: F401  # noqa: F401
+    TYPE_CHECKING,  # noqa: F401
     Annotated,  # noqa: F401
     Any,  # noqa: F401
     AnyStr,  # noqa: F401
