@@ -824,6 +824,104 @@
     "body": ["from pathlib import Path", "$0"]
   },
 
+  // standard library: random
+  "fra-betavariate": {
+    "prefix": "fra-betavariate",
+    "body": ["from random import betavariate", "$0"]
+  },
+  "fra-binomialvariate": {
+    "prefix": "fra-binomialvariate",
+    "body": ["from random import binomialvariate", "$0"]
+  },
+  "fra-choice": {
+    "prefix": "fra-choice",
+    "body": ["from random import choice", "$0"]
+  },
+  "fra-expovariate": {
+    "prefix": "fra-expovariate",
+    "body": ["from random import expovariate", "$0"]
+  },
+  "fra-gammavariate": {
+    "prefix": "fra-gammavariate",
+    "body": ["from random import gammavariate", "$0"]
+  },
+  "fra-gauss": {
+    "prefix": "fra-gauss",
+    "body": ["from random import gauss", "$0"]
+  },
+  "fra-getrandbits": {
+    "prefix": "fra-getrandbits",
+    "body": ["from random import getrandbits", "$0"]
+  },
+  "fra-getstate": {
+    "prefix": "fra-getstate",
+    "body": ["from random import getstate", "$0"]
+  },
+  "fra-lognormvariate": {
+    "prefix": "fra-lognormvariate",
+    "body": ["from random import lognormvariate", "$0"]
+  },
+  "fra-normalvariate": {
+    "prefix": "fra-normalvariate",
+    "body": ["from random import normalvariate", "$0"]
+  },
+  "fra-paretovariate": {
+    "prefix": "fra-paretovariate",
+    "body": ["from random import paretovariate", "$0"]
+  },
+  "fra-randbytes": {
+    "prefix": "fra-randbytes",
+    "body": ["from random import randbytes", "$0"]
+  },
+  "fra-randint": {
+    "prefix": "fra-randint",
+    "body": ["from random import randint", "$0"]
+  },
+  "fra-random": {
+    "prefix": "fra-random",
+    "body": ["from random import random", "$0"]
+  },
+  "fra-randrange": {
+    "prefix": "fra-randrange",
+    "body": ["from random import randrange", "$0"]
+  },
+  "fra-sample": {
+    "prefix": "fra-sample",
+    "body": ["from random import sample", "$0"]
+  },
+  "fra-seed": {
+    "prefix": "fra-seed",
+    "body": ["from random import seed", "$0"]
+  },
+  "fra-setstate": {
+    "prefix": "fra-setstate",
+    "body": ["from random import setstate", "$0"]
+  },
+  "fra-shuffle": {
+    "prefix": "fra-shuffle",
+    "body": ["from random import shuffle", "$0"]
+  },
+  "fra-system-random": {
+    "prefix": "fra-system-random",
+    "body": ["from random import SystemRandom", "$0"]
+  },
+  "fra-triangular": {
+    "prefix": "fra-triangular",
+    "body": ["from random import triangular", "$0"]
+  },
+  "fra-uniform": {
+    "prefix": "fra-uniform",
+    "body": ["from random import uniform", "$0"]
+  },
+  "fra-vonmisesvariate": {
+    "prefix": "fra-vonmisesvariate",
+    "body": ["from random import vonmisesvariate", "$0"]
+  },
+  "fra-weibullvariate": {
+    "prefix": "fra-weibullvariate",
+    "body": ["from random import weibullvariate", "$0"]
+  },
+
   // standard library: shutil
   "fsh-copyfile": {
     "prefix": "fsh-copyfile",
@@ -1419,35 +1517,148 @@
   // third party: pandas
   "fpa-assert-frame-equal": {
     "prefix": "fpa-assert-frame-equal",
-    "body": ["from pandas.testing import assert_frame_equal ", "$0"]
+    "body": ["from pandas.testing import assert_frame_equal", "$0"]
   },
   "fpa-assert-index-equal": {
     "prefix": "fpa-assert-index-equal",
-    "body": ["from pandas.testing import assert_index_equal ", "$0"]
+    "body": ["from pandas.testing import assert_index_equal", "$0"]
   },
   "fpa-assert-series-equal": {
     "prefix": "fpa-assert-series-equal",
-    "body": ["from pandas.testing import assert_series_equal ", "$0"]
+    "body": ["from pandas.testing import assert_series_equal", "$0"]
   },
-  "fpa-bday": {
-    "prefix": "fpa-bday",
+  "fpa-b-day": {
+    "prefix": "fpa-b-day",
     "body": ["from pandas.tseries.offsets import BDay", "$0"]
   },
-  "fpa-dataframe": {
-    "prefix": "fpa-dataframe",
-    "body": ["from pandas import DataFrame", "$0"]
+  "fpa-bdate-range": {
+    "prefix": "fpa-bdate-range",
+    "body": ["from pandas import bdate_range", "$0"]
   },
-  "fpa-series": {
-    "prefix": "fpa-series",
-    "body": ["from pandas import Series", "$0"]
+  "fpa-boolean-dtype": {
+    "prefix": "fpa-boolean-dtype",
+    "body": ["from pandas import BooleanDtype", "$0"]
+  },
+  "fpa-concat": {
+    "prefix": "fpa-concat",
+    "body": ["from pandas import concat", "$0"]
+  },
+  "fpa-date-offset": {
+    "prefix": "fpa-date-offset",
+    "body": ["from pandas import DateOffset", "$0"]
+  },
+  "fpa-date-range": {
+    "prefix": "fpa-date-range",
+    "body": ["from pandas import date_range", "$0"]
+  },
+  "fpa-datetime-index": {
+    "prefix": "fpa-datetime-index",
+    "body": ["from pandas import DatetimeIndex", "$0"]
+  },
+  "fpa-hour": {
+    "prefix": "fpa-hour",
+    "body": ["from pandas.tseries.offsets import Hour", "$0"]
+  },
+  "fpa-index": {
+    "prefix": "fpa-index",
+    "body": ["from pandas import Index", "$0"]
+  },
+  "fpa-int64-dtype": {
+    "prefix": "fpa-int64-dtype",
+    "body": ["from pandas import Int64Dtype", "$0"]
+  },
+  "fpa-micro": {
+    "prefix": "fpa-micro",
+    "body": ["from pandas.tseries.offsets import Micro", "$0"]
+  },
+  "fpa-milli": {
+    "prefix": "fpa-milli",
+    "body": ["from pandas.tseries.offsets import Milli", "$0"]
+  },
+  "fpa-minute": {
+    "prefix": "fpa-minute",
+    "body": ["from pandas.tseries.offsets import Minute", "$0"]
+  },
+  "fpa-month-begin": {
+    "prefix": "fpa-month-begin",
+    "body": ["from pandas.tseries.offsets import MonthBegin", "$0"]
+  },
+  "fpa-month-end": {
+    "prefix": "fpa-month-end",
+    "body": ["from pandas.tseries.offsets import MonthEnd", "$0"]
+  },
+  "fpa-multi-index": {
+    "prefix": "fpa-multi-index",
+    "body": ["from pandas import MultiIndex", "$0"]
+  },
+  "fpa-na": { "prefix": "fpa-na", "body": ["from pandas import NA", "$0"] },
+  "fpa-na-type": {
+    "prefix": "fpa-na-type",
+    "body": ["from pandas._libs.missing import NAType", "$0"]
+  },
+  "fpa-nano": {
+    "prefix": "fpa-nano",
+    "body": ["from pandas.tseries.offsets import Nano", "$0"]
+  },
+  "fpa-option-context": {
+    "prefix": "fpa-option-context",
+    "body": ["from pandas import option_context", "$0"]
+  },
+  "fpa-qcut": {
+    "prefix": "fpa-qcut",
+    "body": ["from pandas import qcut", "$0"]
+  },
+  "fpa-range-index": {
+    "prefix": "fpa-range-index",
+    "body": ["from pandas import RangeIndex", "$0"]
+  },
+  "fpa-read-pickle": {
+    "prefix": "fpa-read-pickle",
+    "body": ["from pandas import read_pickle", "$0"]
+  },
+  "fpa-read-sql": {
+    "prefix": "fpa-read-sql",
+    "body": ["from pandas import read_sql", "$0"]
+  },
+  "fpa-read-table": {
+    "prefix": "fpa-read-table",
+    "body": ["from pandas import read_table", "$0"]
+  },
+  "fpa-second": {
+    "prefix": "fpa-second",
+    "body": ["from pandas.tseries.offsets import Second", "$0"]
+  },
+  "fpa-set-option": {
+    "prefix": "fpa-set-option",
+    "body": ["from pandas import set_option", "$0"]
+  },
+  "fpa-string-dtype": {
+    "prefix": "fpa-string-dtype",
+    "body": ["from pandas import StringDtype", "$0"]
   },
   "fpa-timedelta": {
     "prefix": "fpa-timedelta",
     "body": ["from pandas import Timedelta", "$0"]
   },
+  "fpa-timedelta-index": {
+    "prefix": "fpa-timedelta-index",
+    "body": ["from pandas import TimedeltaIndex", "$0"]
+  },
   "fpa-timestamp": {
     "prefix": "fpa-timestamp",
     "body": ["from pandas import Timestamp", "$0"]
+  },
+  "fpa-to-datetime": {
+    "prefix": "fpa-to-datetime",
+    "body": ["from pandas import to_datetime", "$0"]
+  },
+  "fpa-to-pickle": {
+    "prefix": "fpa-to-pickle",
+    "body": ["from pandas import to_pickle", "$0"]
+  },
+  "fpa-week": {
+    "prefix": "fpa-week",
+    "body": ["from pandas.tseries.offsets import Week", "$0"]
   },
 
   // third party: polars
@@ -1530,6 +1741,39 @@
   "fpo-when": {
     "prefix": "fpo-when",
     "body": ["from polars import when", "$0"]
+  },
+
+  // third party: pprint
+  "fpp-isreadable": {
+    "prefix": "fpp-isreadable",
+    "body": ["from pprint import isreadable", "$0"]
+  },
+  "fpp-isrecursive": {
+    "prefix": "fpp-isrecursive",
+    "body": ["from pprint import isrecursive", "$0"]
+  },
+  "fpp-pformat": {
+    "prefix": "fpp-pformat",
+    "body": ["from pprint import pformat", "$0"]
+  },
+  "fpp-pp": { "prefix": "fpp-pp", "body": ["from pprint import pp", "$0"] },
+  "fpp-pprint": {
+    "prefix": "fpp-pprint",
+    "body": ["from pprint import pprint", "$0"]
+  },
+  "fpp-pretty-printer": {
+    "prefix": "fpp-pretty-printer",
+    "body": ["from pprint import PrettyPrinter", "$0"]
+  },
+  "fpp-saferepr": {
+    "prefix": "fpp-saferepr",
+    "body": ["from pprint import saferepr", "$0"]
+  },
+
+  // third party: pydantic
+  "fpy-base-model": {
+    "prefix": "fpy-base-model",
+    "body": ["from pydantic import BaseModel", "$0"]
   },
 
   // third party: pytest
@@ -1678,6 +1922,12 @@
     "body": ["from streamlit import write", "$0"]
   },
 
+  // third party: tabulate
+  "fta-tabulate": {
+    "prefix": "fta-tabulate",
+    "body": ["from tabulate import tabulate", "$0"]
+  },
+
   // third party: typed-settings
   "fty-settings": {
     "prefix": "fty-settings",
@@ -1816,5 +2066,15 @@
   "fut-writer": {
     "prefix": "fut-writer",
     "body": ["from utilities.atomicwrites import writer", "$0"]
+  },
+
+  // third party: xarray
+  "fxa-data-array": {
+    "prefix": "fxa-data-array",
+    "body": ["from xarray import DataArray", "$0"]
+  },
+  "fxa-dataset": {
+    "prefix": "fxa-dataset",
+    "body": ["from xarray import Dataset", "$0"]
   }
 }
