@@ -922,6 +922,16 @@
     "body": ["from random import weibullvariate", "$0"]
   },
 
+  // standard library: re
+  "fre-findall": {
+    "prefix": "fre-findall",
+    "body": ["from re import findall", "$0"]
+  },
+  "fre-search": {
+    "prefix": "fre-search",
+    "body": ["from re import search", "$0"]
+  },
+
   // standard library: shutil
   "fsh-copyfile": {
     "prefix": "fsh-copyfile",
@@ -983,41 +993,223 @@
   },
 
   // standard library: typing
-  "fty-any": {
-    "prefix": "fty-any",
-    "body": ["from typing import Any", "$0"]
+  "fty-annotated": {
+    "prefix": "fty-annotated",
+    "body": ["from typing import Annotated", "$0"]
   },
-  "fty-callable": {
-    "prefix": "fty-callable",
-    "body": ["from typing import Callable", "$0"]
+  "fty-any": { "prefix": "fty-any", "body": ["from typing import Any", "$0"] },
+  "fty-any-str": {
+    "prefix": "fty-any-str",
+    "body": ["from typing import AnyStr", "$0"]
+  },
+  "fty-assert-never": {
+    "prefix": "fty-assert-never",
+    "body": ["from typing import assert_never", "$0"]
+  },
+  "fty-assert-type": {
+    "prefix": "fty-assert-type",
+    "body": ["from typing import assert_type", "$0"]
+  },
+  "fty-binary-io": {
+    "prefix": "fty-binary-io",
+    "body": ["from typing import BinaryIO", "$0"]
   },
   "fty-cast": {
     "prefix": "fty-cast",
     "body": ["from typing import cast", "$0"]
   },
-  "fty-iterable": {
-    "prefix": "fty-iterable",
-    "body": ["from typing import Iterable", "$0"]
+  "fty-class-var": {
+    "prefix": "fty-class-var",
+    "body": ["from typing import ClassVar", "$0"]
   },
-  "fty-iterator": {
-    "prefix": "fty-iterator",
-    "body": ["from typing import Iterator", "$0"]
+  "fty-clear-overloads": {
+    "prefix": "fty-clear-overloads",
+    "body": ["from typing import clear_overloads", "$0"]
   },
-  "fty-mapping": {
-    "prefix": "fty-mapping",
-    "body": ["from typing import Mapping", "$0"]
+  "fty-concatenate": {
+    "prefix": "fty-concatenate",
+    "body": ["from typing import Concatenate", "$0"]
+  },
+  "fty-dataclass-transform": {
+    "prefix": "fty-dataclass-transform",
+    "body": ["from typing import dataclass_transform", "$0"]
+  },
+  "fty-final": {
+    "prefix": "fty-final",
+    "body": ["from typing import Final", "$0"]
+  },
+  "fty-final": {
+    "prefix": "fty-final",
+    "body": ["from typing import final", "$0"]
+  },
+  "fty-forward-ref": {
+    "prefix": "fty-forward-ref",
+    "body": ["from typing import ForwardRef", "$0"]
+  },
+  "fty-generic": {
+    "prefix": "fty-generic",
+    "body": ["from typing import Generic", "$0"]
+  },
+  "fty-get-args": {
+    "prefix": "fty-get-args",
+    "body": ["from typing import get_args", "$0"]
+  },
+  "fty-get-origin": {
+    "prefix": "fty-get-origin",
+    "body": ["from typing import get_origin", "$0"]
+  },
+  "fty-get-overloads": {
+    "prefix": "fty-get-overloads",
+    "body": ["from typing import get_overloads", "$0"]
+  },
+  "fty-get-type-hints": {
+    "prefix": "fty-get-type-hints",
+    "body": ["from typing import get_type_hints", "$0"]
+  },
+  "fty-io": { "prefix": "fty-io", "body": ["from typing import IO", "$0"] },
+  "fty-is-typeddict": {
+    "prefix": "fty-is-typeddict",
+    "body": ["from typing import is_typeddict", "$0"]
+  },
+  "fty-literal": {
+    "prefix": "fty-literal",
+    "body": ["from typing import Literal", "$0"]
+  },
+  "fty-literal-string": {
+    "prefix": "fty-literal-string",
+    "body": ["from typing import LiteralString", "$0"]
+  },
+  "fty-named-tuple": {
+    "prefix": "fty-named-tuple",
+    "body": ["from typing import NamedTuple", "$0"]
+  },
+  "fty-never": {
+    "prefix": "fty-never",
+    "body": ["from typing import Never", "$0"]
+  },
+  "fty-new-type": {
+    "prefix": "fty-new-type",
+    "body": ["from typing import NewType", "$0"]
+  },
+  "fty-no-return": {
+    "prefix": "fty-no-return",
+    "body": ["from typing import NoReturn", "$0"]
+  },
+  "fty-no-type-check": {
+    "prefix": "fty-no-type-check",
+    "body": ["from typing import no_type_check", "$0"]
+  },
+  "fty-not-required": {
+    "prefix": "fty-not-required",
+    "body": ["from typing import NotRequired", "$0"]
   },
   "fty-overload": {
     "prefix": "fty-overload",
     "body": ["from typing import overload", "$0"]
   },
-  "fty-sequence": {
-    "prefix": "fty-sequence",
-    "body": ["from typing import Sequence", "$0"]
+  "fty-override": {
+    "prefix": "fty-override",
+    "body": ["from typing import override", "$0"]
+  },
+  "fty-param-spec": {
+    "prefix": "fty-param-spec",
+    "body": ["from typing import ParamSpec", "$0"]
+  },
+  "fty-param-spec-args": {
+    "prefix": "fty-param-spec-args",
+    "body": ["from typing import ParamSpecArgs", "$0"]
+  },
+  "fty-param-spec-kwargs": {
+    "prefix": "fty-param-spec-kwargs",
+    "body": ["from typing import ParamSpecKwargs", "$0"]
+  },
+  "fty-protocol": {
+    "prefix": "fty-protocol",
+    "body": ["from typing import Protocol", "$0"]
+  },
+  "fty-required": {
+    "prefix": "fty-required",
+    "body": ["from typing import Required", "$0"]
+  },
+  "fty-reveal-type": {
+    "prefix": "fty-reveal-type",
+    "body": ["from typing import reveal_type", "$0"]
+  },
+  "fty-runtime-checkable": {
+    "prefix": "fty-runtime-checkable",
+    "body": ["from typing import runtime_checkable", "$0"]
+  },
+  "fty-self": {
+    "prefix": "fty-self",
+    "body": ["from typing import Self", "$0"]
+  },
+  "fty-supports-abs": {
+    "prefix": "fty-supports-abs",
+    "body": ["from typing import SupportsAbs", "$0"]
+  },
+  "fty-supports-bytes": {
+    "prefix": "fty-supports-bytes",
+    "body": ["from typing import SupportsBytes", "$0"]
+  },
+  "fty-supports-complex": {
+    "prefix": "fty-supports-complex",
+    "body": ["from typing import SupportsComplex", "$0"]
+  },
+  "fty-supports-float": {
+    "prefix": "fty-supports-float",
+    "body": ["from typing import SupportsFloat", "$0"]
+  },
+  "fty-supports-index": {
+    "prefix": "fty-supports-index",
+    "body": ["from typing import SupportsIndex", "$0"]
+  },
+  "fty-supports-int": {
+    "prefix": "fty-supports-int",
+    "body": ["from typing import SupportsInt", "$0"]
+  },
+  "fty-supports-round": {
+    "prefix": "fty-supports-round",
+    "body": ["from typing import SupportsRound", "$0"]
+  },
+  "fty-text-io": {
+    "prefix": "fty-text-io",
+    "body": ["from typing import TextIO", "$0"]
+  },
+  "fty-type-alias": {
+    "prefix": "fty-type-alias",
+    "body": ["from typing import TypeAlias", "$0"]
+  },
+  "fty-type-alias-type": {
+    "prefix": "fty-type-alias-type",
+    "body": ["from typing import TypeAliasType", "$0"]
+  },
+  "fty-type-checking": {
+    "prefix": "fty-type-checking",
+    "body": ["from typing import TYPE_CHECKING", "$0"]
+  },
+  "fty-type-guard": {
+    "prefix": "fty-type-guard",
+    "body": ["from typing import TypeGuard", "$0"]
+  },
+  "fty-type-var": {
+    "prefix": "fty-type-var",
+    "body": ["from typing import TypeVar", "$0"]
+  },
+  "fty-type-var-tuple": {
+    "prefix": "fty-type-var-tuple",
+    "body": ["from typing import TypeVarTuple", "$0"]
+  },
+  "fty-typed-dict": {
+    "prefix": "fty-typed-dict",
+    "body": ["from typing import TypedDict", "$0"]
   },
   "fty-union": {
     "prefix": "fty-union",
     "body": ["from typing import Union", "$0"]
+  },
+  "fty-unpack": {
+    "prefix": "fty-unpack",
+    "body": ["from typing import Unpack", "$0"]
   },
 
   // third party: atomicwrites
