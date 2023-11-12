@@ -414,8 +414,100 @@ return {
 			s("fpy-param", { t("from pytest import param") }),
 			s("fpy-raises", { t("from pytest import raises") }),
 
-			-- third party: tabluate
-			s("fta-tabulate", { t("from tabluate import tabulate") }),
+			-- third party: tabulate
+			s("fta-tabulate", { t("from tabulate import tabulate") }),
+
+			-- third party: (dycw-)utilities.airium
+			s("fut-yield-airium", { t("from utilities.airium import yield_airium") }),
+
+			-- third party: (dycw-)utilities.atomicwrites
+			s("fut-writer", { t("from utilities.atomicwrites import writer") }),
+
+			-- third party: (dycw-)utilities.class_name
+			s("fut-get-class-name", { t("from utilities.class_name import get_class_name") }),
+
+			-- third party: (dycw-)utilities.cryptography
+			s("fut-decrypt", { t("from utilities.cryptography import decrypt") }),
+			s("fut-encrypt", { t("from utilities.cryptography import encrypt") }),
+			s("fut-fernet-key-missing-error", { t("from utilities.cryptography import FernetKeyMissingError") }),
+
+			-- third party: (dycw-)utilities.datetime
+			s("fut-add-weekdays", { t("from utilities.datetime import add_weekdays") }),
+			s("fut-date-to-datetime", { t("from utilities.datetime import date_to_datetime") }),
+			s("fut-duration-to-float", { t("from utilities.datetime import duration_to_float") }),
+			s("fut-duration-to-timedelta", { t("from utilities.datetime import duration_to_timedelta") }),
+			s("fut-ensure-date", { t("from utilities.datetime import ensure_date") }),
+			s("fut-ensure-datetime", { t("from utilities.datetime import ensure_datetime") }),
+			s("fut-ensure-time", { t("from utilities.datetime import ensure_time") }),
+			s("fut-ensure-timedelta", { t("from utilities.datetime import ensure_timedelta") }),
+			s("fut-get-now", { t("from utilities.datetime import get_now") }),
+			s("fut-get-today", { t("from utilities.datetime import get_today") }),
+			s("fut-is-weekday", { t("from utilities.datetime import is_weekday") }),
+			s("fut-is-weekend-error", { t("from utilities.datetime import IsWeekendError") }),
+			s("fut-local-time-zone-error", { t("from utilities.datetime import LocalTimeZoneError") }),
+			s("fut-local-timezone", { t("from utilities.datetime import local_timezone") }),
+			s("fut-maybe-sub-pct-y", { t("from utilities.datetime import maybe_sub_pct_y") }),
+			s("fut-parse-date", { t("from utilities.datetime import parse_date") }),
+			s("fut-parse-date-error", { t("from utilities.datetime import ParseDateError") }),
+			s("fut-parse-date-time-error", { t("from utilities.datetime import ParseDateTimeError") }),
+			s("fut-parse-datetime", { t("from utilities.datetime import parse_datetime") }),
+			s("fut-parse-time", { t("from utilities.datetime import parse_time") }),
+			s("fut-parse-time-error", { t("from utilities.datetime import ParseTimeError") }),
+			s("fut-parse-timedelta", { t("from utilities.datetime import parse_timedelta") }),
+			s("fut-parse-timedelta-error", { t("from utilities.datetime import ParseTimedeltaError") }),
+			s("fut-round-to-next-weekday", { t("from utilities.datetime import round_to_next_weekday") }),
+			s("fut-round-to-prev-weekday", { t("from utilities.datetime import round_to_prev_weekday") }),
+			s("fut-serialize-date", { t("from utilities.datetime import serialize_date") }),
+			s("fut-serialize-datetime", { t("from utilities.datetime import serialize_datetime") }),
+			s("fut-serialize-time", { t("from utilities.datetime import serialize_time") }),
+			s("fut-serialize-timedelta", { t("from utilities.datetime import serialize_timedelta") }),
+			s("fut-system", { t("from utilities.datetime import System") }),
+			s("fut-yield-weekdays", { t("from utilities.datetime import yield_weekdays") }),
+			s("fut-yield-weekdays-error", { t("from utilities.datetime import YieldWeekdaysError") }),
+
+			-- third party: (dycw-)utilities.getpass
+			s("fut-user", { t("from utilities.getpass import USER") }),
+
+			-- third party: (dycw-)utilities.git
+			s("fut-get-branch-name", { t("from utilities.git import get_branch_name") }),
+			s("fut-get-repo-name", { t("from utilities.git import get_repo_name") }),
+			s("fut-get-repo-root", { t("from utilities.git import get_repo_root") }),
+			s("fut-invalid-repo-error", { t("from utilities.git import InvalidRepoError") }),
+
+			-- third party: (dycw-)utilities.itertools
+			s("fut-always-iterable", { t("from utilities.itertools import always_iterable") }),
+			s("fut-check-duplicates", { t("from utilities.itertools import check_duplicates") }),
+			s("fut-chunked", { t("from utilities.itertools import chunked") }),
+			s("fut-empty-iterable-error", { t("from utilities.itertools import EmptyIterableError") }),
+			s("fut-is-iterable-not-str", { t("from utilities.itertools import is_iterable_not_str") }),
+			s(
+				"fut-iterable-contains-duplicates-error",
+				{ t("from utilities.itertools import IterableContainsDuplicatesError") }
+			),
+			s("fut-multiple-elements-error", { t("from utilities.itertools import MultipleElementsError") }),
+			s("fut-one", { t("from utilities.itertools import one") }),
+			s("fut-take", { t("from utilities.itertools import take") }),
+
+			-- third party: (dycw-)utilities.re
+			s("fut-extract-group", { t("from utilities.re import extract_group") }),
+			s("fut-extract-groups", { t("from utilities.re import extract_groups") }),
+			s("fut-multiple-capture-groups-error", { t("from utilities.re import MultipleCaptureGroupsError") }),
+			s("fut-multiple-matches-error", { t("from utilities.re import MultipleMatchesError") }),
+			s("fut-no-capture-groups-error", { t("from utilities.re import NoCaptureGroupsError") }),
+			s("fut-no-matches-error", { t("from utilities.re import NoMatchesError") }),
+
+			-- third party: (dycw-)utilities.sentinel
+			s("fut-sentinel", { t("from utilities.sentinel import sentinel") }),
+
+			-- third party: (dycw-)utilities.tempfile
+			s("fut-gettempdir", { t("from utilities.tempfile import gettempdir") }),
+			s("fut-temp-dir", { t("from utilities.tempfile import TEMP_DIR") }),
+			s("fut-temporary-directory", { t("from utilities.tempfile import TemporaryDirectory") }),
+
+			-- third party: (dycw-)utilities.typing
+			s("fut-iterable-strs", { t("from utilities.typing import IterableStrs") }),
+			s("fut-number", { t("from utilities.typing import Number") }),
+			s("fut-sequence-strs", { t("from utilities.typing import SequenceStrs") }),
 
 			-- third party: xarray
 			s("fxa-data-array", { t("from xarray import DataArray") }),

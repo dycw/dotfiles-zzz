@@ -19,7 +19,9 @@ with suppress(ModuleNotFoundError):
         LocalTimeZoneError,  # noqa: F401
         ParseDateError,  # noqa: F401
         ParseDateTimeError,  # noqa: F401
+        ParseTimedeltaError,  # noqa: F401
         ParseTimeError,  # noqa: F401
+        System,  # noqa: F401
         YieldWeekdaysError,  # noqa: F401
         add_weekdays,  # noqa: F401
         date_to_datetime,  # noqa: F401
@@ -29,6 +31,8 @@ with suppress(ModuleNotFoundError):
         ensure_datetime,  # noqa: F401
         ensure_time,  # noqa: F401
         ensure_timedelta,  # noqa: F401
+        get_now,  # noqa: F401
+        get_today,  # noqa: F401
         is_weekday,  # noqa: F401
         local_timezone,  # noqa: F401
         maybe_sub_pct_y,  # noqa: F401
@@ -53,6 +57,17 @@ with suppress(ModuleNotFoundError):
         get_repo_name,  # noqa: F401
         get_repo_root,  # noqa: F401
     )
+    from utilities.itertools import (
+        EmptyIterableError,  # noqa: F401
+        IterableContainsDuplicatesError,  # noqa: F401
+        MultipleElementsError,  # noqa: F401
+        always_iterable,  # noqa: F401
+        check_duplicates,  # noqa: F401
+        chunked,  # noqa: F401
+        is_iterable_not_str,  # noqa: F401
+        one,  # noqa: F401
+        take,  # noqa: F401
+    )
     from utilities.re import (
         MultipleCaptureGroupsError,  # noqa: F401
         MultipleMatchesError,  # noqa: F401
@@ -73,9 +88,7 @@ with suppress(ModuleNotFoundError):
     from utilities.typing import (
         IterableStrs,  # noqa: F401
         NeverError,  # noqa: F401
-        Number,  # noqa: F401
         SequenceStrs,  # noqa: F401
-        never,  # noqa: F401
     )
 
     with suppress(ModuleNotFoundError):

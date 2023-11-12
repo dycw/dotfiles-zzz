@@ -1036,10 +1036,6 @@
   },
   "fty-final": {
     "prefix": "fty-final",
-    "body": ["from typing import Final", "$0"]
-  },
-  "fty-final": {
-    "prefix": "fty-final",
     "body": ["from typing import final", "$0"]
   },
   "fty-forward-ref": {
@@ -2126,15 +2122,25 @@
     "body": ["from typed_settings import settings", "$0"]
   },
 
-  // third party: (dycw-)utilities
-  "fut-add-weekdays": {
-    "prefix": "fut-add-weekdays",
-    "body": ["from utilities.datetime import add_weekdays", "$0"]
+  // third party: (dycw-)utilities.airium
+  "fut-yield-airium": {
+    "prefix": "fut-yield-airium",
+    "body": ["from utilities.airium import yield_airium", "$0"]
   },
-  "fut-click-options": {
-    "prefix": "fut-click-options",
-    "body": ["from utilities.typed_settings import click_options", "$0"]
+
+  // third party: (dycw-)utilities.atomicwrites
+  "fut-writer": {
+    "prefix": "fut-writer",
+    "body": ["from utilities.atomicwrites import writer", "$0"]
   },
+
+  // third party: (dycw-)utilities.class_name
+  "fut-get-class-name": {
+    "prefix": "fut-get-class-name",
+    "body": ["from utilities.class_name import get_class_name", "$0"]
+  },
+
+  // third party: (dycw-)utilities.cryptography
   "fut-decrypt": {
     "prefix": "fut-decrypt",
     "body": ["from utilities.cryptography import decrypt", "$0"]
@@ -2143,33 +2149,151 @@
     "prefix": "fut-encrypt",
     "body": ["from utilities.cryptography import encrypt", "$0"]
   },
-  "fut-ensure-str": {
-    "prefix": "fut-ensure-str",
-    "body": ["from utilities.text import ensure_str", "$0"]
-  },
-  "fut-extract-group": {
-    "prefix": "fut-extract-group",
-    "body": ["from utilities.re import extract_group", "$0"]
-  },
-  "fut-extract-groups": {
-    "prefix": "fut-extract-groups",
-    "body": ["from utilities.re import extract_groups", "$0"]
-  },
-  "fut-fernet-key-missing": {
-    "prefix": "fut-fernet-key-missing",
+  "fut-fernet-key-missing-error": {
+    "prefix": "fut-fernet-key-missing-error",
     "body": ["from utilities.cryptography import FernetKeyMissingError", "$0"]
   },
+
+  // third party: (dycw-)utilities.datetime
+  "fut-add-weekdays": {
+    "prefix": "fut-add-weekdays",
+    "body": ["from utilities.datetime import add_weekdays", "$0"]
+  },
+  "fut-date-to-datetime": {
+    "prefix": "fut-date-to-datetime",
+    "body": ["from utilities.datetime import date_to_datetime", "$0"]
+  },
+  "fut-duration-to-float": {
+    "prefix": "fut-duration-to-float",
+    "body": ["from utilities.datetime import duration_to_float", "$0"]
+  },
+  "fut-duration-to-timedelta": {
+    "prefix": "fut-duration-to-timedelta",
+    "body": ["from utilities.datetime import duration_to_timedelta", "$0"]
+  },
+  "fut-ensure-date": {
+    "prefix": "fut-ensure-date",
+    "body": ["from utilities.datetime import ensure_date", "$0"]
+  },
+  "fut-ensure-datetime": {
+    "prefix": "fut-ensure-datetime",
+    "body": ["from utilities.datetime import ensure_datetime", "$0"]
+  },
+  "fut-ensure-time": {
+    "prefix": "fut-ensure-time",
+    "body": ["from utilities.datetime import ensure_time", "$0"]
+  },
+  "fut-ensure-timedelta": {
+    "prefix": "fut-ensure-timedelta",
+    "body": ["from utilities.datetime import ensure_timedelta", "$0"]
+  },
+  "fut-get-now": {
+    "prefix": "fut-get-now",
+    "body": ["from utilities.datetime import get_now", "$0"]
+  },
+  "fut-get-today": {
+    "prefix": "fut-get-today",
+    "body": ["from utilities.datetime import get_today", "$0"]
+  },
+  "fut-is-weekday": {
+    "prefix": "fut-is-weekday",
+    "body": ["from utilities.datetime import is_weekday", "$0"]
+  },
+  "fut-is-weekend-error": {
+    "prefix": "fut-is-weekend-error",
+    "body": ["from utilities.datetime import IsWeekendError", "$0"]
+  },
+  "fut-local-time-zone-error": {
+    "prefix": "fut-local-time-zone-error",
+    "body": ["from utilities.datetime import LocalTimeZoneError", "$0"]
+  },
+  "fut-local-timezone": {
+    "prefix": "fut-local-timezone",
+    "body": ["from utilities.datetime import local_timezone", "$0"]
+  },
+  "fut-maybe-sub-pct-y": {
+    "prefix": "fut-maybe-sub-pct-y",
+    "body": ["from utilities.datetime import maybe_sub_pct_y", "$0"]
+  },
+  "fut-parse-date": {
+    "prefix": "fut-parse-date",
+    "body": ["from utilities.datetime import parse_date", "$0"]
+  },
+  "fut-parse-date-error": {
+    "prefix": "fut-parse-date-error",
+    "body": ["from utilities.datetime import ParseDateError", "$0"]
+  },
+  "fut-parse-date-time-error": {
+    "prefix": "fut-parse-date-time-error",
+    "body": ["from utilities.datetime import ParseDateTimeError", "$0"]
+  },
+  "fut-parse-datetime": {
+    "prefix": "fut-parse-datetime",
+    "body": ["from utilities.datetime import parse_datetime", "$0"]
+  },
+  "fut-parse-time": {
+    "prefix": "fut-parse-time",
+    "body": ["from utilities.datetime import parse_time", "$0"]
+  },
+  "fut-parse-time-error": {
+    "prefix": "fut-parse-time-error",
+    "body": ["from utilities.datetime import ParseTimeError", "$0"]
+  },
+  "fut-parse-timedelta": {
+    "prefix": "fut-parse-timedelta",
+    "body": ["from utilities.datetime import parse_timedelta", "$0"]
+  },
+  "fut-parse-timedelta-error": {
+    "prefix": "fut-parse-timedelta-error",
+    "body": ["from utilities.datetime import ParseTimedeltaError", "$0"]
+  },
+  "fut-round-to-next-weekday": {
+    "prefix": "fut-round-to-next-weekday",
+    "body": ["from utilities.datetime import round_to_next_weekday", "$0"]
+  },
+  "fut-round-to-prev-weekday": {
+    "prefix": "fut-round-to-prev-weekday",
+    "body": ["from utilities.datetime import round_to_prev_weekday", "$0"]
+  },
+  "fut-serialize-date": {
+    "prefix": "fut-serialize-date",
+    "body": ["from utilities.datetime import serialize_date", "$0"]
+  },
+  "fut-serialize-datetime": {
+    "prefix": "fut-serialize-datetime",
+    "body": ["from utilities.datetime import serialize_datetime", "$0"]
+  },
+  "fut-serialize-time": {
+    "prefix": "fut-serialize-time",
+    "body": ["from utilities.datetime import serialize_time", "$0"]
+  },
+  "fut-serialize-timedelta": {
+    "prefix": "fut-serialize-timedelta",
+    "body": ["from utilities.datetime import serialize_timedelta", "$0"]
+  },
+  "fut-system": {
+    "prefix": "fut-system",
+    "body": ["from utilities.datetime import System", "$0"]
+  },
+  "fut-yield-weekdays": {
+    "prefix": "fut-yield-weekdays",
+    "body": ["from utilities.datetime import yield_weekdays", "$0"]
+  },
+  "fut-yield-weekdays-error": {
+    "prefix": "fut-yield-weekdays-error",
+    "body": ["from utilities.datetime import YieldWeekdaysError", "$0"]
+  },
+
+  // third party: (dycw-)utilities.getpass
+  "fut-user": {
+    "prefix": "fut-user",
+    "body": ["from utilities.getpass import USER", "$0"]
+  },
+
+  // third party: (dycw-)utilities.git
   "fut-get-branch-name": {
     "prefix": "fut-get-branch-name",
     "body": ["from utilities.git import get_branch_name", "$0"]
-  },
-  "fut-get-class-name": {
-    "prefix": "fut-get-class-name",
-    "body": ["from utilities.class_name import get_class_name", "$0"]
-  },
-  "fut-get-repo-config": {
-    "prefix": "fut-get-repo-config",
-    "body": ["from utilities.typed_settings import get_repo_root_config", "$0"]
   },
   "fut-get-repo-name": {
     "prefix": "fut-get-repo-name",
@@ -2179,25 +2303,60 @@
     "prefix": "fut-get-repo-root",
     "body": ["from utilities.git import get_repo_root", "$0"]
   },
-  "fut-gettempdir": {
-    "prefix": "fut-gettempdir",
-    "body": ["from utilities.tempfile import gettempdir", "$0"]
-  },
-  "fut-hong-kong": {
-    "prefix": "fut-hong-kong",
-    "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
-  },
   "fut-invalid-repo-error": {
     "prefix": "fut-invalid-repo-error",
     "body": ["from utilities.git import InvalidRepoError", "$0"]
   },
-  "fut-iterable-strs": {
-    "prefix": "fut-iterable-strs",
-    "body": ["from utilities.typing import IterableStrs", "$0"]
+
+  // third party: (dycw-)utilities.itertools
+  "fut-always-iterable": {
+    "prefix": "fut-always-iterable",
+    "body": ["from utilities.itertools import always_iterable", "$0"]
   },
-  "fut-load-settings": {
-    "prefix": "fut-load-settings",
-    "body": ["from utilities.typed_settings import load_settings", "$0"]
+  "fut-check-duplicates": {
+    "prefix": "fut-check-duplicates",
+    "body": ["from utilities.itertools import check_duplicates", "$0"]
+  },
+  "fut-chunked": {
+    "prefix": "fut-chunked",
+    "body": ["from utilities.itertools import chunked", "$0"]
+  },
+  "fut-empty-iterable-error": {
+    "prefix": "fut-empty-iterable-error",
+    "body": ["from utilities.itertools import EmptyIterableError", "$0"]
+  },
+  "fut-is-iterable-not-str": {
+    "prefix": "fut-is-iterable-not-str",
+    "body": ["from utilities.itertools import is_iterable_not_str", "$0"]
+  },
+  "fut-iterable-contains-duplicates-error": {
+    "prefix": "fut-iterable-contains-duplicates-error",
+    "body": [
+      "from utilities.itertools import IterableContainsDuplicatesError",
+      "$0"
+    ]
+  },
+  "fut-multiple-elements-error": {
+    "prefix": "fut-multiple-elements-error",
+    "body": ["from utilities.itertools import MultipleElementsError", "$0"]
+  },
+  "fut-one": {
+    "prefix": "fut-one",
+    "body": ["from utilities.itertools import one", "$0"]
+  },
+  "fut-take": {
+    "prefix": "fut-take",
+    "body": ["from utilities.itertools import take", "$0"]
+  },
+
+  // third party: (dycw-)utilities.re
+  "fut-extract-group": {
+    "prefix": "fut-extract-group",
+    "body": ["from utilities.re import extract_group", "$0"]
+  },
+  "fut-extract-groups": {
+    "prefix": "fut-extract-groups",
+    "body": ["from utilities.re import extract_groups", "$0"]
   },
   "fut-multiple-capture-groups-error": {
     "prefix": "fut-multiple-capture-groups-error",
@@ -2207,14 +2366,6 @@
     "prefix": "fut-multiple-matches-error",
     "body": ["from utilities.re import MultipleMatchesError", "$0"]
   },
-  "fut-never": {
-    "prefix": "fut-never",
-    "body": ["from utilities.typing import never", "$0"]
-  },
-  "fut-never-error": {
-    "prefix": "fut-never-error",
-    "body": ["from utilities.typing import NeverError", "$0"]
-  },
   "fut-no-capture-groups-error": {
     "prefix": "fut-no-capture-groups-error",
     "body": ["from utilities.re import NoCaptureGroupsError", "$0"]
@@ -2223,25 +2374,17 @@
     "prefix": "fut-no-matches-error",
     "body": ["from utilities.re import NoMatchesError", "$0"]
   },
-  "fut-number": {
-    "prefix": "fut-number",
-    "body": ["from utilities.typing import Number", "$0"]
-  },
+
+  // third party: (dycw-)utilities.sentinel
   "fut-sentinel": {
     "prefix": "fut-sentinel",
     "body": ["from utilities.sentinel import sentinel", "$0"]
   },
-  "fut-sentinel-class": {
-    "prefix": "fut-sentinel-class",
-    "body": ["from utilities.sentinel import Sentinel", "$0"]
-  },
-  "fut-sequence-strs": {
-    "prefix": "fut-sequence-strs",
-    "body": ["from utilities.typing import SequenceStrs", "$0"]
-  },
-  "fut-snake-case": {
-    "prefix": "fut-snake-case",
-    "body": ["from utilities.text import snake_case", "$0"]
+
+  // third party: (dycw-)utilities.tempfile
+  "fut-gettempdir": {
+    "prefix": "fut-gettempdir",
+    "body": ["from utilities.tempfile import gettempdir", "$0"]
   },
   "fut-temp-dir": {
     "prefix": "fut-temp-dir",
@@ -2251,13 +2394,19 @@
     "prefix": "fut-temporary-directory",
     "body": ["from utilities.tempfile import TemporaryDirectory", "$0"]
   },
-  "fut-user": {
-    "prefix": "fut-user",
-    "body": ["from utilities.getpass import USER", "$0"]
+
+  // third party: (dycw-)utilities.typing
+  "fut-iterable-strs": {
+    "prefix": "fut-iterable-strs",
+    "body": ["from utilities.typing import IterableStrs", "$0"]
   },
-  "fut-writer": {
-    "prefix": "fut-writer",
-    "body": ["from utilities.atomicwrites import writer", "$0"]
+  "fut-number": {
+    "prefix": "fut-number",
+    "body": ["from utilities.typing import Number", "$0"]
+  },
+  "fut-sequence-strs": {
+    "prefix": "fut-sequence-strs",
+    "body": ["from utilities.typing import SequenceStrs", "$0"]
   },
 
   // third party: xarray
