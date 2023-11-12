@@ -824,6 +824,104 @@
     "body": ["from pathlib import Path", "$0"]
   },
 
+  // standard library: random
+  "fra-betavariate": {
+    "prefix": "fra-betavariate",
+    "body": ["from random import betavariate", "$0"]
+  },
+  "fra-binomialvariate": {
+    "prefix": "fra-binomialvariate",
+    "body": ["from random import binomialvariate", "$0"]
+  },
+  "fra-choice": {
+    "prefix": "fra-choice",
+    "body": ["from random import choice", "$0"]
+  },
+  "fra-expovariate": {
+    "prefix": "fra-expovariate",
+    "body": ["from random import expovariate", "$0"]
+  },
+  "fra-gammavariate": {
+    "prefix": "fra-gammavariate",
+    "body": ["from random import gammavariate", "$0"]
+  },
+  "fra-gauss": {
+    "prefix": "fra-gauss",
+    "body": ["from random import gauss", "$0"]
+  },
+  "fra-getrandbits": {
+    "prefix": "fra-getrandbits",
+    "body": ["from random import getrandbits", "$0"]
+  },
+  "fra-getstate": {
+    "prefix": "fra-getstate",
+    "body": ["from random import getstate", "$0"]
+  },
+  "fra-lognormvariate": {
+    "prefix": "fra-lognormvariate",
+    "body": ["from random import lognormvariate", "$0"]
+  },
+  "fra-normalvariate": {
+    "prefix": "fra-normalvariate",
+    "body": ["from random import normalvariate", "$0"]
+  },
+  "fra-paretovariate": {
+    "prefix": "fra-paretovariate",
+    "body": ["from random import paretovariate", "$0"]
+  },
+  "fra-randbytes": {
+    "prefix": "fra-randbytes",
+    "body": ["from random import randbytes", "$0"]
+  },
+  "fra-randint": {
+    "prefix": "fra-randint",
+    "body": ["from random import randint", "$0"]
+  },
+  "fra-random": {
+    "prefix": "fra-random",
+    "body": ["from random import random", "$0"]
+  },
+  "fra-randrange": {
+    "prefix": "fra-randrange",
+    "body": ["from random import randrange", "$0"]
+  },
+  "fra-sample": {
+    "prefix": "fra-sample",
+    "body": ["from random import sample", "$0"]
+  },
+  "fra-seed": {
+    "prefix": "fra-seed",
+    "body": ["from random import seed", "$0"]
+  },
+  "fra-setstate": {
+    "prefix": "fra-setstate",
+    "body": ["from random import setstate", "$0"]
+  },
+  "fra-shuffle": {
+    "prefix": "fra-shuffle",
+    "body": ["from random import shuffle", "$0"]
+  },
+  "fra-system-random": {
+    "prefix": "fra-system-random",
+    "body": ["from random import SystemRandom", "$0"]
+  },
+  "fra-triangular": {
+    "prefix": "fra-triangular",
+    "body": ["from random import triangular", "$0"]
+  },
+  "fra-uniform": {
+    "prefix": "fra-uniform",
+    "body": ["from random import uniform", "$0"]
+  },
+  "fra-vonmisesvariate": {
+    "prefix": "fra-vonmisesvariate",
+    "body": ["from random import vonmisesvariate", "$0"]
+  },
+  "fra-weibullvariate": {
+    "prefix": "fra-weibullvariate",
+    "body": ["from random import weibullvariate", "$0"]
+  },
+
   // standard library: shutil
   "fsh-copyfile": {
     "prefix": "fsh-copyfile",

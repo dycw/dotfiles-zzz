@@ -235,6 +235,32 @@ return {
 			-- standard library: pathlib
 			s("fpapath", { t("from pathlib import Path") }),
 
+			-- standard library: random
+			s("fra-betavariate", { t("from random import betavariate") }),
+			s("fra-binomialvariate", { t("from random import binomialvariate") }),
+			s("fra-choice", { t("from random import choice") }),
+			s("fra-expovariate", { t("from random import expovariate") }),
+			s("fra-gammavariate", { t("from random import gammavariate") }),
+			s("fra-gauss", { t("from random import gauss") }),
+			s("fra-getrandbits", { t("from random import getrandbits") }),
+			s("fra-getstate", { t("from random import getstate") }),
+			s("fra-lognormvariate", { t("from random import lognormvariate") }),
+			s("fra-normalvariate", { t("from random import normalvariate") }),
+			s("fra-paretovariate", { t("from random import paretovariate") }),
+			s("fra-randbytes", { t("from random import randbytes") }),
+			s("fra-randint", { t("from random import randint") }),
+			s("fra-random", { t("from random import random") }),
+			s("fra-randrange", { t("from random import randrange") }),
+			s("fra-sample", { t("from random import sample") }),
+			s("fra-seed", { t("from random import seed") }),
+			s("fra-setstate", { t("from random import setstate") }),
+			s("fra-shuffle", { t("from random import shuffle") }),
+			s("fra-system-random", { t("from random import SystemRandom") }),
+			s("fra-triangular", { t("from random import triangular") }),
+			s("fra-uniform", { t("from random import uniform") }),
+			s("fra-vonmisesvariate", { t("from random import vonmisesvariate") }),
+			s("fra-weibullvariate", { t("from random import weibullvariate") }),
+
 			-- standard library: re
 			s("fresearch", { t("from re import search") }),
 
