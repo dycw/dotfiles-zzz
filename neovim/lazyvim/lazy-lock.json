@@ -9,7 +9,7 @@
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "80580573cb7be3f9253ff4b4213328074cf15c59"
+    "commit": "a937222abcc2843c13f0a92576a215d391829811"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -45,7 +45,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "e388bd6725d83f83639e24482b9d1bca01c0c040"
+    "commit": "ca3dfba94600aa62bfc88ae37cbd4f17eaea2553"
   },
   "crates.nvim": {
     "branch": "main",
@@ -153,7 +153,7 @@
   },
   "neodev.nvim": {
     "branch": "main",
-    "commit": "20f1e5d3c143333bdf5ea48729f7b50660135cb3"
+    "commit": "f93a984ee75ba6d532d85419619cc6e91d954ee9"
   },
   "noice.nvim": {
     "branch": "main",
@@ -173,7 +173,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "b0852218bc5fa6514a71a9da6d5cfa63a263c83d"
+    "commit": "90a28fd7637b66e055af62387ecee06f7cbd3173"
   },
   "nvim-navic": {
     "branch": "master",
@@ -197,7 +197,7 @@
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "2aa86487c4ed9b00d0a62fd87ed644429e535dca"
+    "commit": "c03f8aab1e6649036d69ba7e3af4d09cb7e4d977"
   },
   "nvim-treesitter-textobjects": {
     "branch": "master",
