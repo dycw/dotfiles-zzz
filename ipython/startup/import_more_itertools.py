@@ -6,8 +6,6 @@ with suppress(ModuleNotFoundError):
     import more_itertools  # noqa: F401
     from more_itertools import (
         all_equal,  # noqa: F401
-        always_iterable,  # noqa: F401
-        chunked,  # noqa: F401
         consume,  # noqa: F401
         distribute,  # noqa: F401
         divide,  # noqa: F401
@@ -29,7 +27,6 @@ with suppress(ModuleNotFoundError):
         nth,  # noqa: F401
         nth_combination,  # noqa: F401
         nth_or_last,  # noqa: F401
-        one,  # noqa: F401
         only,  # noqa: F401
         padnone,  # noqa: F401
         pairwise,  # noqa: F401
@@ -49,9 +46,7 @@ with suppress(ModuleNotFoundError):
         split_into,  # noqa: F401
         split_when,  # noqa: F401
         strip,  # noqa: F401
-        tabulate,
         tail,  # noqa: F401
-        take,  # noqa: F401
         unique_everseen,  # noqa: F401
         unique_justseen,  # noqa: F401
         unzip,  # noqa: F401
@@ -63,5 +58,15 @@ with suppress(ModuleNotFoundError):
         import tabulate as _tabulate  # noqa: F401
     except ModuleNotFoundError:
         from more_itertools import (
-            tabulate,  # noqa: F401, F811
+            tabulate,  # noqa: F401
+        )
+
+    try:
+        import utilities as _utilities  # noqa: F401
+    except ModuleNotFoundError:
+        from more_itertools import (
+            always_iterable,  # noqa: F401
+            chunked,  # noqa: F401
+            one,  # noqa: F401
+            take,  # noqa: F401
         )
