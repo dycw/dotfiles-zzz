@@ -1565,13 +1565,85 @@
   },
 
   // third party: hypothesis
+  "fhy-array-dtypes": {
+    "prefix": "fhy-array-dtypes",
+    "body": ["from hypothesis.extra.numpy import array_dtypes", "$0"]
+  },
+  "fhy-array-shapes": {
+    "prefix": "fhy-array-shapes",
+    "body": ["from hypothesis.extra.numpy import array_shapes", "$0"]
+  },
+  "fhy-arrays": {
+    "prefix": "fhy-arrays",
+    "body": ["from hypothesis.extra.numpy import arrays", "$0"]
+  },
+  "fhy-assume": {
+    "prefix": "fhy-assume",
+    "body": ["from hypothesis import assume", "$0"]
+  },
+  "fhy-basic-indices": {
+    "prefix": "fhy-basic-indices",
+    "body": ["from hypothesis.extra.numpy import basic_indices", "$0"]
+  },
+  "fhy-binary": {
+    "prefix": "fhy-binary",
+    "body": ["from hypothesis.strategies import binary", "$0"]
+  },
+  "fhy-boolean-dtypes": {
+    "prefix": "fhy-boolean-dtypes",
+    "body": ["from hypothesis.extra.numpy import boolean_dtypes", "$0"]
+  },
   "fhy-booleans": {
     "prefix": "fhy-booleans",
     "body": ["from hypothesis.strategies import booleans", "$0"]
   },
+  "fhy-broadcastable-shapes": {
+    "prefix": "fhy-broadcastable-shapes",
+    "body": ["from hypothesis.extra.numpy import broadcastable_shapes", "$0"]
+  },
+  "fhy-builds": {
+    "prefix": "fhy-builds",
+    "body": ["from hypothesis.strategies import builds", "$0"]
+  },
+  "fhy-byte-string-dtypes": {
+    "prefix": "fhy-byte-string-dtypes",
+    "body": ["from hypothesis.extra.numpy import byte_string_dtypes", "$0"]
+  },
+  "fhy-characters": {
+    "prefix": "fhy-characters",
+    "body": ["from hypothesis.strategies import characters", "$0"]
+  },
+  "fhy-column": {
+    "prefix": "fhy-column",
+    "body": ["from hypothesis.extra.pandas import column", "$0"]
+  },
+  "fhy-columns": {
+    "prefix": "fhy-columns",
+    "body": ["from hypothesis.extra.pandas import columns", "$0"]
+  },
+  "fhy-complex-number-dtypes": {
+    "prefix": "fhy-complex-number-dtypes",
+    "body": ["from hypothesis.extra.numpy import complex_number_dtypes", "$0"]
+  },
+  "fhy-complex-numbers": {
+    "prefix": "fhy-complex-numbers",
+    "body": ["from hypothesis.strategies import complex_numbers", "$0"]
+  },
+  "fhy-composite": {
+    "prefix": "fhy-composite",
+    "body": ["from hypothesis.strategies import composite", "$0"]
+  },
+  "fhy-currently-in-test-context": {
+    "prefix": "fhy-currently-in-test-context",
+    "body": ["from hypothesis import currently_in_test_context", "$0"]
+  },
   "fhy-data": {
     "prefix": "fhy-data",
     "body": ["from hypothesis.strategies import data", "$0"]
+  },
+  "fhy-data-frames": {
+    "prefix": "fhy-data-frames",
+    "body": ["from hypothesis.extra.pandas import data_frames", "$0"]
   },
   "fhy-data-object": {
     "prefix": "fhy-data-object",
@@ -1581,21 +1653,117 @@
     "prefix": "fhy-dates",
     "body": ["from hypothesis.strategies import dates", "$0"]
   },
+  "fhy-datetime64-dtypes": {
+    "prefix": "fhy-datetime64-dtypes",
+    "body": ["from hypothesis.extra.numpy import datetime64_dtypes", "$0"]
+  },
   "fhy-datetimes": {
     "prefix": "fhy-datetimes",
     "body": ["from hypothesis.strategies import datetimes", "$0"]
+  },
+  "fhy-decimals": {
+    "prefix": "fhy-decimals",
+    "body": ["from hypothesis.strategies import decimals", "$0"]
+  },
+  "fhy-deferred": {
+    "prefix": "fhy-deferred",
+    "body": ["from hypothesis.strategies import deferred", "$0"]
+  },
+  "fhy-dictionaries": {
+    "prefix": "fhy-dictionaries",
+    "body": ["from hypothesis.strategies import dictionaries", "$0"]
+  },
+  "fhy-draw-fn": {
+    "prefix": "fhy-draw-fn",
+    "body": ["from hypothesis.strategies import DrawFn", "$0"]
+  },
+  "fhy-emails": {
+    "prefix": "fhy-emails",
+    "body": ["from hypothesis.strategies import emails", "$0"]
+  },
+  "fhy-event": {
+    "prefix": "fhy-event",
+    "body": ["from hypothesis import event", "$0"]
+  },
+  "fhy-example": {
+    "prefix": "fhy-example",
+    "body": ["from hypothesis import example", "$0"]
+  },
+  "fhy-find": {
+    "prefix": "fhy-find",
+    "body": ["from hypothesis import find", "$0"]
   },
   "fhy-fixed-dictionaries": {
     "prefix": "fhy-fixed-dictionaries",
     "body": ["from hypothesis.strategies import fixed_dictionaries", "$0"]
   },
+  "fhy-floating-dtypes": {
+    "prefix": "fhy-floating-dtypes",
+    "body": ["from hypothesis.extra.numpy import floating_dtypes", "$0"]
+  },
   "fhy-floats": {
     "prefix": "fhy-floats",
     "body": ["from hypothesis.strategies import floats", "$0"]
   },
+  "fhy-fractions": {
+    "prefix": "fhy-fractions",
+    "body": ["from hypothesis.strategies import fractions", "$0"]
+  },
+  "fhy-from-dtype": {
+    "prefix": "fhy-from-dtype",
+    "body": ["from hypothesis.extra.numpy import from_dtype", "$0"]
+  },
+  "fhy-from-regex": {
+    "prefix": "fhy-from-regex",
+    "body": ["from hypothesis.strategies import from_regex", "$0"]
+  },
+  "fhy-from-type": {
+    "prefix": "fhy-from-type",
+    "body": ["from hypothesis.strategies import from_type", "$0"]
+  },
+  "fhy-frozensets": {
+    "prefix": "fhy-frozensets",
+    "body": ["from hypothesis.strategies import frozensets", "$0"]
+  },
+  "fhy-functions": {
+    "prefix": "fhy-functions",
+    "body": ["from hypothesis.strategies import functions", "$0"]
+  },
+  "fhy-given": {
+    "prefix": "fhy-given",
+    "body": ["from hypothesis import given", "$0"]
+  },
+  "fhy-health-check": {
+    "prefix": "fhy-health-check",
+    "body": ["from hypothesis import HealthCheck", "$0"]
+  },
+  "fhy-indexes": {
+    "prefix": "fhy-indexes",
+    "body": ["from hypothesis.extra.pandas import indexes", "$0"]
+  },
+  "fhy-infer": {
+    "prefix": "fhy-infer",
+    "body": ["from hypothesis import infer", "$0"]
+  },
+  "fhy-integer-array-indices": {
+    "prefix": "fhy-integer-array-indices",
+    "body": ["from hypothesis.extra.numpy import integer_array_indices", "$0"]
+  },
+  "fhy-integer-dtypes": {
+    "prefix": "fhy-integer-dtypes",
+    "body": ["from hypothesis.extra.numpy import integer_dtypes", "$0"]
+  },
   "fhy-integers": {
     "prefix": "fhy-integers",
     "body": ["from hypothesis.strategies import integers", "$0"]
+  },
+  "fhy-ip-addresses": {
+    "prefix": "fhy-ip-addresses",
+    "body": ["from hypothesis.strategies import ip_addresses", "$0"]
+  },
+  "fhy-iterables": {
+    "prefix": "fhy-iterables",
+    "body": ["from hypothesis.strategies import iterables", "$0"]
   },
   "fhy-just": {
     "prefix": "fhy-just",
@@ -1605,29 +1773,164 @@
     "prefix": "fhy-lists",
     "body": ["from hypothesis.strategies import lists", "$0"]
   },
+  "fhy-mutually-broadcastable-shapes": {
+    "prefix": "fhy-mutually-broadcastable-shapes",
+    "body": [
+      "from hypothesis.extra.numpy import mutually_broadcastable_shapes",
+      "$0"
+    ]
+  },
+  "fhy-nested-dtypes": {
+    "prefix": "fhy-nested-dtypes",
+    "body": ["from hypothesis.extra.numpy import nested_dtypes", "$0"]
+  },
   "fhy-none": {
     "prefix": "fhy-none",
     "body": ["from hypothesis.strategies import none", "$0"]
+  },
+  "fhy-note": {
+    "prefix": "fhy-note",
+    "body": ["from hypothesis import note", "$0"]
+  },
+  "fhy-nothing": {
+    "prefix": "fhy-nothing",
+    "body": ["from hypothesis.strategies import nothing", "$0"]
+  },
+  "fhy-one-of": {
+    "prefix": "fhy-one-of",
+    "body": ["from hypothesis.strategies import one_of", "$0"]
+  },
+  "fhy-permutations": {
+    "prefix": "fhy-permutations",
+    "body": ["from hypothesis.strategies import permutations", "$0"]
+  },
+  "fhy-phase": {
+    "prefix": "fhy-phase",
+    "body": ["from hypothesis import Phase", "$0"]
+  },
+  "fhy-random-module": {
+    "prefix": "fhy-random-module",
+    "body": ["from hypothesis.strategies import random_module", "$0"]
+  },
+  "fhy-randoms": {
+    "prefix": "fhy-randoms",
+    "body": ["from hypothesis.strategies import randoms", "$0"]
+  },
+  "fhy-range-indexes": {
+    "prefix": "fhy-range-indexes",
+    "body": ["from hypothesis.extra.pandas import range_indexes", "$0"]
+  },
+  "fhy-recursive": {
+    "prefix": "fhy-recursive",
+    "body": ["from hypothesis.strategies import recursive", "$0"]
+  },
+  "fhy-register-random": {
+    "prefix": "fhy-register-random",
+    "body": ["from hypothesis import register_random", "$0"]
+  },
+  "fhy-register-type-strategy": {
+    "prefix": "fhy-register-type-strategy",
+    "body": ["from hypothesis.strategies import register_type_strategy", "$0"]
+  },
+  "fhy-reject": {
+    "prefix": "fhy-reject",
+    "body": ["from hypothesis import reject", "$0"]
   },
   "fhy-reproduce-failure": {
     "prefix": "fhy-reproduce-failure",
     "body": ["from hypothesis import reproduce_failure", "$0"]
   },
+  "fhy-runner": {
+    "prefix": "fhy-runner",
+    "body": ["from hypothesis.strategies import runner", "$0"]
+  },
   "fhy-sampled-from": {
     "prefix": "fhy-sampled-from",
     "body": ["from hypothesis.strategies import sampled_from", "$0"]
+  },
+  "fhy-scalar-dtypes": {
+    "prefix": "fhy-scalar-dtypes",
+    "body": ["from hypothesis.extra.numpy import scalar_dtypes", "$0"]
   },
   "fhy-search-strategy": {
     "prefix": "fhy-search-strategy",
     "body": ["from hypothesis.strategies import SearchStrategy", "$0"]
   },
+  "fhy-seed": {
+    "prefix": "fhy-seed",
+    "body": ["from hypothesis import seed", "$0"]
+  },
+  "fhy-series": {
+    "prefix": "fhy-series",
+    "body": ["from hypothesis.extra.pandas import series", "$0"]
+  },
   "fhy-sets": {
     "prefix": "fhy-sets",
     "body": ["from hypothesis.strategies import sets", "$0"]
   },
+  "fhy-settings": {
+    "prefix": "fhy-settings",
+    "body": ["from hypothesis import settings", "$0"]
+  },
+  "fhy-shared": {
+    "prefix": "fhy-shared",
+    "body": ["from hypothesis.strategies import shared", "$0"]
+  },
+  "fhy-slices": {
+    "prefix": "fhy-slices",
+    "body": ["from hypothesis.strategies import slices", "$0"]
+  },
+  "fhy-target": {
+    "prefix": "fhy-target",
+    "body": ["from hypothesis import target", "$0"]
+  },
+  "fhy-text": {
+    "prefix": "fhy-text",
+    "body": ["from hypothesis.strategies import text", "$0"]
+  },
+  "fhy-timedelta64-dtypes": {
+    "prefix": "fhy-timedelta64-dtypes",
+    "body": ["from hypothesis.extra.numpy import timedelta64_dtypes", "$0"]
+  },
+  "fhy-timedeltas": {
+    "prefix": "fhy-timedeltas",
+    "body": ["from hypothesis.strategies import timedeltas", "$0"]
+  },
+  "fhy-times": {
+    "prefix": "fhy-times",
+    "body": ["from hypothesis.strategies import times", "$0"]
+  },
+  "fhy-timezone-keys": {
+    "prefix": "fhy-timezone-keys",
+    "body": ["from hypothesis.strategies import timezone_keys", "$0"]
+  },
+  "fhy-timezones": {
+    "prefix": "fhy-timezones",
+    "body": ["from hypothesis.strategies import timezones", "$0"]
+  },
   "fhy-tuples": {
     "prefix": "fhy-tuples",
     "body": ["from hypothesis.strategies import tuples", "$0"]
+  },
+  "fhy-unicode-string-dtypes": {
+    "prefix": "fhy-unicode-string-dtypes",
+    "body": ["from hypothesis.extra.numpy import unicode_string_dtypes", "$0"]
+  },
+  "fhy-unsigned-integer-dtypes": {
+    "prefix": "fhy-unsigned-integer-dtypes",
+    "body": ["from hypothesis.extra.numpy import unsigned_integer_dtypes", "$0"]
+  },
+  "fhy-uuids": {
+    "prefix": "fhy-uuids",
+    "body": ["from hypothesis.strategies import uuids", "$0"]
+  },
+  "fhy-valid-tuple-axes": {
+    "prefix": "fhy-valid-tuple-axes",
+    "body": ["from hypothesis.extra.numpy import valid_tuple_axes", "$0"]
+  },
+  "fhy-verbosity": {
+    "prefix": "fhy-verbosity",
+    "body": ["from hypothesis import Verbosity", "$0"]
   },
 
   // third party: loguru
