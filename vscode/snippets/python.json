@@ -2187,6 +2187,10 @@
     "prefix": "fut-ensure-timedelta",
     "body": ["from utilities.datetime import ensure_timedelta", "$0"]
   },
+  "fut-epoch-utc": {
+    "prefix": "fut-epoch-utc",
+    "body": ["from utilities.datetime import EPOCH_UTC", "$0"]
+  },
   "fut-get-now": {
     "prefix": "fut-get-now",
     "body": ["from utilities.datetime import get_now", "$0"]
@@ -2214,6 +2218,18 @@
   "fut-maybe-sub-pct-y": {
     "prefix": "fut-maybe-sub-pct-y",
     "body": ["from utilities.datetime import maybe_sub_pct_y", "$0"]
+  },
+  "fut-now-hkg": {
+    "prefix": "fut-now-hkg",
+    "body": ["from utilities.datetime import NOW_HKG", "$0"]
+  },
+  "fut-now-tky": {
+    "prefix": "fut-now-tky",
+    "body": ["from utilities.datetime import NOW_TKY", "$0"]
+  },
+  "fut-now-utc": {
+    "prefix": "fut-now-utc",
+    "body": ["from utilities.datetime import NOW_UTC", "$0"]
   },
   "fut-parse-date": {
     "prefix": "fut-parse-date",
@@ -2271,9 +2287,21 @@
     "prefix": "fut-serialize-timedelta",
     "body": ["from utilities.datetime import serialize_timedelta", "$0"]
   },
-  "fut-system": {
-    "prefix": "fut-system",
-    "body": ["from utilities.datetime import System", "$0"]
+  "fut-today-hkg": {
+    "prefix": "fut-today-hkg",
+    "body": ["from utilities.datetime import TODAY_HKG", "$0"]
+  },
+  "fut-today-tky": {
+    "prefix": "fut-today-tky",
+    "body": ["from utilities.datetime import TODAY_TKY", "$0"]
+  },
+  "fut-today-utc": {
+    "prefix": "fut-today-utc",
+    "body": ["from utilities.datetime import TODAY_UTC", "$0"]
+  },
+  "fut-utc": {
+    "prefix": "fut-utc",
+    "body": ["from utilities.datetime import UTC", "$0"]
   },
   "fut-yield-weekdays": {
     "prefix": "fut-yield-weekdays",
@@ -2393,6 +2421,35 @@
   "fut-temporary-directory": {
     "prefix": "fut-temporary-directory",
     "body": ["from utilities.tempfile import TemporaryDirectory", "$0"]
+  },
+
+  // third party: (dycw-)utilities.text
+  "fut-ensure-str": {
+    "prefix": "fut-ensure-str",
+    "body": ["from utilities.text import ensure_str", "$0"]
+  },
+  "fut-not-a-string-error": {
+    "prefix": "fut-not-a-string-error",
+    "body": ["from utilities.text import NotAStringError", "$0"]
+  },
+  "fut-snake-case": {
+    "prefix": "fut-snake-case",
+    "body": ["from utilities.text import snake_case", "$0"]
+  },
+  "fut-snake-case-contains-duplicates-error": {
+    "prefix": "fut-snake-case-contains-duplicates-error",
+    "body": [
+      "from utilities.text import SnakeCaseContainsDuplicatesError",
+      "$0"
+    ]
+  },
+  "fut-snake-case-mappings": {
+    "prefix": "fut-snake-case-mappings",
+    "body": ["from utilities.text import snake_case_mappings", "$0"]
+  },
+  "fut-strip-and-dedent": {
+    "prefix": "fut-strip-and-dedent",
+    "body": ["from utilities.text import strip_and_dedent", "$0"]
   },
 
   // third party: (dycw-)utilities.typing

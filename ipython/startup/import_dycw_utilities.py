@@ -21,7 +21,6 @@ with suppress(ModuleNotFoundError):
         ParseDateTimeError,  # noqa: F401
         ParseTimedeltaError,  # noqa: F401
         ParseTimeError,  # noqa: F401
-        System,  # noqa: F401
         YieldWeekdaysError,  # noqa: F401
         add_weekdays,  # noqa: F401
         date_to_datetime,  # noqa: F401
@@ -85,9 +84,17 @@ with suppress(ModuleNotFoundError):
         TemporaryDirectory,  # noqa: F401
         gettempdir,  # noqa: F401
     )
+    from utilities.text import (
+        NotAStringError,  # noqa: F401
+        SnakeCaseContainsDuplicatesError,  # noqa: F401
+        ensure_str,  # noqa: F401
+        snake_case,  # noqa: F401
+        snake_case_mappings,  # noqa: F401
+        strip_and_dedent,  # noqa: F401
+    )
     from utilities.typing import (
         IterableStrs,  # noqa: F401
-        NeverError,  # noqa: F401
+        Number,  # noqa: F401
         SequenceStrs,  # noqa: F401
     )
 

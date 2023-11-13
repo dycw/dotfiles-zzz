@@ -440,6 +440,7 @@ return {
 			s("fut-ensure-datetime", { t("from utilities.datetime import ensure_datetime") }),
 			s("fut-ensure-time", { t("from utilities.datetime import ensure_time") }),
 			s("fut-ensure-timedelta", { t("from utilities.datetime import ensure_timedelta") }),
+			s("fut-epoch-utc", { t("from utilities.datetime import EPOCH_UTC") }),
 			s("fut-get-now", { t("from utilities.datetime import get_now") }),
 			s("fut-get-today", { t("from utilities.datetime import get_today") }),
 			s("fut-is-weekday", { t("from utilities.datetime import is_weekday") }),
@@ -447,6 +448,9 @@ return {
 			s("fut-local-time-zone-error", { t("from utilities.datetime import LocalTimeZoneError") }),
 			s("fut-local-timezone", { t("from utilities.datetime import local_timezone") }),
 			s("fut-maybe-sub-pct-y", { t("from utilities.datetime import maybe_sub_pct_y") }),
+			s("fut-now-hkg", { t("from utilities.datetime import NOW_HKG") }),
+			s("fut-now-tky", { t("from utilities.datetime import NOW_TKY") }),
+			s("fut-now-utc", { t("from utilities.datetime import NOW_UTC") }),
 			s("fut-parse-date", { t("from utilities.datetime import parse_date") }),
 			s("fut-parse-date-error", { t("from utilities.datetime import ParseDateError") }),
 			s("fut-parse-date-time-error", { t("from utilities.datetime import ParseDateTimeError") }),
@@ -461,7 +465,10 @@ return {
 			s("fut-serialize-datetime", { t("from utilities.datetime import serialize_datetime") }),
 			s("fut-serialize-time", { t("from utilities.datetime import serialize_time") }),
 			s("fut-serialize-timedelta", { t("from utilities.datetime import serialize_timedelta") }),
-			s("fut-system", { t("from utilities.datetime import System") }),
+			s("fut-today-hkg", { t("from utilities.datetime import TODAY_HKG") }),
+			s("fut-today-tky", { t("from utilities.datetime import TODAY_TKY") }),
+			s("fut-today-utc", { t("from utilities.datetime import TODAY_UTC") }),
+			s("fut-utc", { t("from utilities.datetime import UTC") }),
 			s("fut-yield-weekdays", { t("from utilities.datetime import yield_weekdays") }),
 			s("fut-yield-weekdays-error", { t("from utilities.datetime import YieldWeekdaysError") }),
 
@@ -503,6 +510,17 @@ return {
 			s("fut-gettempdir", { t("from utilities.tempfile import gettempdir") }),
 			s("fut-temp-dir", { t("from utilities.tempfile import TEMP_DIR") }),
 			s("fut-temporary-directory", { t("from utilities.tempfile import TemporaryDirectory") }),
+
+			-- third party: (dycw-)utilities.text
+			s("fut-ensure-str", { t("from utilities.text import ensure_str") }),
+			s("fut-not-a-string-error", { t("from utilities.text import NotAStringError") }),
+			s("fut-snake-case", { t("from utilities.text import snake_case") }),
+			s(
+				"fut-snake-case-contains-duplicates-error",
+				{ t("from utilities.text import SnakeCaseContainsDuplicatesError") }
+			),
+			s("fut-snake-case-mappings", { t("from utilities.text import snake_case_mappings") }),
+			s("fut-strip-and-dedent", { t("from utilities.text import strip_and_dedent") }),
 
 			-- third party: (dycw-)utilities.typing
 			s("fut-iterable-strs", { t("from utilities.typing import IterableStrs") }),
