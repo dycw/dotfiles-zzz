@@ -582,6 +582,10 @@ return {
 			s("fut-one", { t("from utilities.itertools import one") }),
 			s("fut-take", { t("from utilities.itertools import take") }),
 
+			-- third party: (dycw-)utilities.pickle
+			s("fut-read-pickle", { t("from utilities.pickle import read_pickle") }),
+			s("fut-write-pickle", { t("from utilities.pickle import write_pickle") }),
+
 			-- third party: (dycw-)utilities.re
 			s("fut-extract-group", { t("from utilities.re import extract_group") }),
 			s("fut-extract-groups", { t("from utilities.re import extract_groups") }),

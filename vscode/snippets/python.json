@@ -2680,6 +2680,16 @@
     "body": ["from utilities.itertools import take", "$0"]
   },
 
+  // third party: (dycw-)utilities.pickle
+  "fut-read-pickle": {
+    "prefix": "fut-read-pickle",
+    "body": ["from utilities.pickle import read_pickle", "$0"]
+  },
+  "fut-write-pickle": {
+    "prefix": "fut-write-pickle",
+    "body": ["from utilities.pickle import write_pickle", "$0"]
+  },
+
   // third party: (dycw-)utilities.re
   "fut-extract-group": {
     "prefix": "fut-extract-group",

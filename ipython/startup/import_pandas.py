@@ -28,7 +28,6 @@ with suppress(ModuleNotFoundError):
         date_range,  # noqa: F401
         option_context,
         qcut,  # noqa: F401
-        read_pickle,  # noqa: F401
         read_sql,  # noqa: F401
         read_table,  # noqa: F401
         set_option,
@@ -65,6 +64,13 @@ with suppress(ModuleNotFoundError):
             read_csv,  # noqa: F401
             read_excel,  # noqa: F401
             read_parquet,  # noqa: F401
+        )
+
+    try:
+        import utilities as _utilities  # noqa: F401
+    except ModuleNotFoundError:
+        from pandas import (
+            read_pickle,  # noqa: F401
         )
 
     _DEFAULT_MIN_MAX_ROWS, _DEFAULT_MAX_COLUMNS = 7, 100
