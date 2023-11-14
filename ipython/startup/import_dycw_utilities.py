@@ -67,6 +67,12 @@ with suppress(ModuleNotFoundError):
         one,  # noqa: F401
         take,  # noqa: F401
     )
+    from utilities.pathlib import (
+        PathLike,  # noqa: F401
+        ensure_suffix,  # noqa: F401
+        temp_cwd,  # noqa: F401
+        walk,  # noqa: F401
+    )
     from utilities.pickle import (
         read_pickle,  # noqa: F401
         write_pickle,  # noqa: F401

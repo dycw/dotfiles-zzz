@@ -2680,6 +2680,24 @@
     "body": ["from utilities.itertools import take", "$0"]
   },
 
+  // third party: (dycw-)utilities.pathlib
+  "fut-ensure-suffix": {
+    "prefix": "fut-ensure-suffix",
+    "body": ["from utilities.pathlib import ensure_suffix", "$0"]
+  },
+  "fut-path-like": {
+    "prefix": "fut-path-like",
+    "body": ["from utilities.pathlib import PathLike", "$0"]
+  },
+  "fut-temp-cwd": {
+    "prefix": "fut-temp-cwd",
+    "body": ["from utilities.pathlib import temp_cwd", "$0"]
+  },
+  "fut-walk": {
+    "prefix": "fut-walk",
+    "body": ["from utilities.pathlib import walk", "$0"]
+  },
+
   // third party: (dycw-)utilities.pickle
   "fut-read-pickle": {
     "prefix": "fut-read-pickle",
