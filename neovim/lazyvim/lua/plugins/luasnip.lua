@@ -583,6 +583,12 @@ return {
 			s("fut-take", { t("from utilities.itertools import take") }),
 
 			-- third party: (dycw-)utilities.pickle
+			s("fut-ensure-suffix", { t("from utilities.pathlib import ensure_suffix") }),
+			s("fut-path-like", { t("from utilities.pathlib import PathLike") }),
+			s("fut-temp-cwd", { t("from utilities.pathlib import temp_cwd") }),
+			s("fut-walk", { t("from utilities.pathlib import walk") }),
+
+			-- third party: (dycw-)utilities.pickle
 			s("fut-read-pickle", { t("from utilities.pickle import read_pickle") }),
 			s("fut-write-pickle", { t("from utilities.pickle import write_pickle") }),
 
