@@ -67,6 +67,10 @@ with suppress(ModuleNotFoundError):
         one,  # noqa: F401
         take,  # noqa: F401
     )
+    from utilities.pickle import (
+        read_pickle,  # noqa: F401
+        write_pickle,  # noqa: F401
+    )
     from utilities.re import (
         MultipleCaptureGroupsError,  # noqa: F401
         MultipleMatchesError,  # noqa: F401
