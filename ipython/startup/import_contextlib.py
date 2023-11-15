@@ -5,6 +5,10 @@ from collections.abc import Iterator
 from contextlib import (
     AbstractAsyncContextManager,  # noqa: F401
     AbstractContextManager,  # noqa: F401
+    AsyncContextDecorator,  # noqa: F401
+    AsyncExitStack,  # noqa: F401
+    ContextDecorator,  # noqa: F401
+    ExitStack,  # noqa: F401
     aclosing,  # noqa: F401
     asynccontextmanager,  # noqa: F401
     closing,  # noqa: F401
@@ -17,7 +21,7 @@ from contextlib import (
 from os import devnull
 from pathlib import Path
 
-with suppress(ImportError):  # python 3.12+
+with suppress(ImportError):  # python 3.11+
     from contextlib import (
         chdir,  # noqa: F401
     )
