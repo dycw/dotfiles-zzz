@@ -89,6 +89,10 @@
     "prefix": "fco-container",
     "body": ["from collections.abc import Container", "$0"]
   },
+  "fco-coroutine": {
+    "prefix": "fco-coroutine",
+    "body": ["from collections.abc import Coroutine", "$0"]
+  },
   "fco-counter": {
     "prefix": "fco-counter",
     "body": ["from collections import Counter", "$0"]
@@ -199,6 +203,14 @@
     "prefix": "fco-aclosing",
     "body": ["from contextlib import aclosing", "$0"]
   },
+  "fco-async-context-decorator": {
+    "prefix": "fco-async-context-decorator",
+    "body": ["from contextlib import AsyncContextDecorator", "$0"]
+  },
+  "fco-async-exit-stack": {
+    "prefix": "fco-async-exit-stack",
+    "body": ["from contextlib import AsyncExitStack", "$0"]
+  },
   "fco-asynccontextmanager": {
     "prefix": "fco-asynccontextmanager",
     "body": ["from contextlib import asynccontextmanager", "$0"]
@@ -211,9 +223,17 @@
     "prefix": "fco-closing",
     "body": ["from contextlib import closing", "$0"]
   },
+  "fco-context-decorator": {
+    "prefix": "fco-context-decorator",
+    "body": ["from contextlib import ContextDecorator", "$0"]
+  },
   "fco-contextmanager": {
     "prefix": "fco-contextmanager",
     "body": ["from contextlib import contextmanager", "$0"]
+  },
+  "fco-exit-stack": {
+    "prefix": "fco-exit-stack",
+    "body": ["from contextlib import ExitStack", "$0"]
   },
   "fco-nullcontext": {
     "prefix": "fco-nullcontext",
@@ -1054,6 +1074,10 @@
     "prefix": "fty-get-origin",
     "body": ["from typing import get_origin", "$0"]
   },
+  "fty-get-original-bases": {
+    "prefix": "fty-get-original-bases",
+    "body": ["from typing import get_original_bases", "$0"]
+  },
   "fty-get-overloads": {
     "prefix": "fty-get-overloads",
     "body": ["from typing import get_overloads", "$0"]
@@ -1094,6 +1118,10 @@
   "fty-no-type-check": {
     "prefix": "fty-no-type-check",
     "body": ["from typing import no_type_check", "$0"]
+  },
+  "fty-no-type-check-decorator": {
+    "prefix": "fty-no-type-check-decorator",
+    "body": ["from typing import no_type_check_decorator", "$0"]
   },
   "fty-not-required": {
     "prefix": "fty-not-required",
@@ -2423,6 +2451,88 @@
   "fty-settings": {
     "prefix": "fty-settings",
     "body": ["from typed_settings import settings", "$0"]
+  },
+
+  // third party: typing-extensions
+  "ftye-assert-never": {
+    "prefix": "ftye-assert-never",
+    "body": ["from typing_extensions import assert_never", "$0"]
+  },
+  "ftye-assert-type": {
+    "prefix": "ftye-assert-type",
+    "body": ["from typing_extensions import assert_type", "$0"]
+  },
+  "ftye-clear-overloads": {
+    "prefix": "ftye-clear-overloads",
+    "body": ["from typing_extensions import clear_overloads", "$0"]
+  },
+  "ftye-dataclass-transform": {
+    "prefix": "ftye-dataclass-transform",
+    "body": ["from typing_extensions import dataclass_transform", "$0"]
+  },
+  "ftye-doc": {
+    "prefix": "ftye-doc",
+    "body": ["from typing_extensions import Doc", "$0"]
+  },
+  "ftye-get-original-bases": {
+    "prefix": "ftye-get-original-bases",
+    "body": ["from typing_extensions import get_original_bases", "$0"]
+  },
+  "ftye-get-overloads": {
+    "prefix": "ftye-get-overloads",
+    "body": ["from typing_extensions import get_overloads", "$0"]
+  },
+  "ftye-get-protocol-members": {
+    "prefix": "ftye-get-protocol-members",
+    "body": ["from typing_extensions import get_protocol_members", "$0"]
+  },
+  "ftye-literal-string": {
+    "prefix": "ftye-literal-string",
+    "body": ["from typing_extensions import LiteralString", "$0"]
+  },
+  "ftye-named-tuple": {
+    "prefix": "ftye-named-tuple",
+    "body": ["from typing_extensions import NamedTuple", "$0"]
+  },
+  "ftye-never": {
+    "prefix": "ftye-never",
+    "body": ["from typing_extensions import Never", "$0"]
+  },
+  "ftye-not-required": {
+    "prefix": "ftye-not-required",
+    "body": ["from typing_extensions import NotRequired", "$0"]
+  },
+  "ftye-overload": {
+    "prefix": "ftye-overload",
+    "body": ["from typing_extensions import overload", "$0"]
+  },
+  "ftye-override": {
+    "prefix": "ftye-override",
+    "body": ["from typing_extensions import override", "$0"]
+  },
+  "ftye-required": {
+    "prefix": "ftye-required",
+    "body": ["from typing_extensions import Required", "$0"]
+  },
+  "ftye-reveal-type": {
+    "prefix": "ftye-reveal-type",
+    "body": ["from typing_extensions import reveal_type", "$0"]
+  },
+  "ftye-self": {
+    "prefix": "ftye-self",
+    "body": ["from typing_extensions import Self", "$0"]
+  },
+  "ftye-type-alias-type": {
+    "prefix": "ftye-type-alias-type",
+    "body": ["from typing_extensions import TypeAliasType", "$0"]
+  },
+  "ftye-type-var-tuple": {
+    "prefix": "ftye-type-var-tuple",
+    "body": ["from typing_extensions import TypeVarTuple", "$0"]
+  },
+  "ftye-unpack": {
+    "prefix": "ftye-unpack",
+    "body": ["from typing_extensions import Unpack", "$0"]
   },
 
   // third party: (dycw-)utilities.airium

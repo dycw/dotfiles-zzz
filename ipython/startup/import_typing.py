@@ -44,6 +44,7 @@ from typing import (
     get_type_hints,  # noqa: F401
     is_typeddict,  # noqa: F401
     no_type_check,  # noqa: F401
+    no_type_check_decorator,  # noqa: F401
     runtime_checkable,  # noqa: F401
 )
 
@@ -69,5 +70,6 @@ with suppress(ImportError):  # Python 3.11+
 with suppress(ImportError):  # Python 3.12+
     from typing import (
         TypeAliasType,  # noqa: F401
+        get_original_bases,  # noqa: F401
         override,  # noqa: F401
     )

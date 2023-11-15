@@ -21,6 +21,7 @@ from collections.abc import (
     Callable,  # noqa: F401
     Collection,  # noqa: F401
     Container,  # noqa: F401
+    Coroutine,  # noqa: F401
     Generator,  # noqa: F401
     Hashable,  # noqa: F401
     ItemsView,  # noqa: F401
