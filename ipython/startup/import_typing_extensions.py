@@ -4,9 +4,8 @@ from contextlib import (
     suppress,
 )
 
-import typing_extensions  # noqa: F401
-
 with suppress(ModuleNotFoundError):
+    import typing_extensions  # noqa: F401
     from typing_extensions import (
         Doc,  # noqa: F401
         LiteralString,  # noqa: F401

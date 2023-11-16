@@ -16,6 +16,7 @@ with suppress(ModuleNotFoundError):
         cumsum,  # noqa: F401
         diag,  # noqa: F401
         dtype,  # noqa: F401
+        empty,  # noqa: F401
         exp,  # noqa: F401
         exp2,  # noqa: F401
         expand_dims,  # noqa: F401

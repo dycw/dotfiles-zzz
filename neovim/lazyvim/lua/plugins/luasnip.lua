@@ -600,6 +600,9 @@ return {
 			s("fut-get-repo-root", { t("from utilities.git import get_repo_root") }),
 			s("fut-invalid-repo-error", { t("from utilities.git import InvalidRepoError") }),
 
+			-- third party: (dycw-)utilities.hashlib
+			s("fut-md5-hash", { t("from utilities.hashlib import md5_hash") }),
+
 			-- third party: (dycw-)utilities.itertools
 			s("fut-always-iterable", { t("from utilities.itertools import always_iterable") }),
 			s("fut-check-duplicates", { t("from utilities.itertools import check_duplicates") }),
@@ -614,6 +617,37 @@ return {
 			s("fut-one", { t("from utilities.itertools import one") }),
 			s("fut-take", { t("from utilities.itertools import take") }),
 
+			-- third party: (dycw-)utilities.luigi
+			s("fut-ambiguous-date-error", { t("from utilities.luigi import AmbiguousDateError") }),
+			s("fut-ambiguous-datetime-error", { t("from utilities.luigi import AmbiguousDatetimeError") }),
+			s("fut-await-task", { t("from utilities.luigi import AwaitTask") }),
+			s("fut-await-time", { t("from utilities.luigi import AwaitTime") }),
+			s("fut-build", { t("from utilities.luigi import build") }),
+			s("fut-build-params-mixin", { t("from utilities.luigi import build_params_mixin") }),
+			s("fut-clone", { t("from utilities.luigi import clone") }),
+			s("fut-database-target", { t("from utilities.luigi import DatabaseTarget") }),
+			s("fut-date-hour-parameter", { t("from utilities.luigi import DateHourParameter") }),
+			s("fut-date-minute-parameter", { t("from utilities.luigi import DateMinuteParameter") }),
+			s("fut-date-parameter", { t("from utilities.luigi import DateParameter") }),
+			s("fut-date-second-parameter", { t("from utilities.luigi import DateSecondParameter") }),
+			s("fut-engine-parameter", { t("from utilities.luigi import EngineParameter") }),
+			s("fut-enum-parameter", { t("from utilities.luigi import EnumParameter") }),
+			s("fut-external-file", { t("from utilities.luigi import ExternalFile") }),
+			s("fut-external-task", { t("from utilities.luigi import ExternalTask") }),
+			s("fut-get-dependencies-downstream", { t("from utilities.luigi import get_dependencies_downstream") }),
+			s("fut-get-dependencies-upstream", { t("from utilities.luigi import get_dependencies_upstream") }),
+			s("fut-get-task-classes", { t("from utilities.luigi import get_task_classes") }),
+			s(
+				"fut-invalid-annotation-and-keywords-error",
+				{ t("from utilities.luigi import InvalidAnnotationAndKeywordsError") }
+			),
+			s("fut-invalid-annotation-error", { t("from utilities.luigi import InvalidAnnotationError") }),
+			s("fut-path-target", { t("from utilities.luigi import PathTarget") }),
+			s("fut-table-parameter", { t("from utilities.luigi import TableParameter") }),
+			s("fut-time-parameter", { t("from utilities.luigi import TimeParameter") }),
+			s("fut-version-parameter", { t("from utilities.luigi import VersionParameter") }),
+			s("fut-weekday-parameter", { t("from utilities.luigi import WeekdayParameter") }),
+
 			-- third party: (dycw-)utilities.pickle
 			s("fut-ensure-suffix", { t("from utilities.pathlib import ensure_suffix") }),
 			s("fut-path-like", { t("from utilities.pathlib import PathLike") }),
@@ -623,6 +657,23 @@ return {
 			-- third party: (dycw-)utilities.pickle
 			s("fut-read-pickle", { t("from utilities.pickle import read_pickle") }),
 			s("fut-write-pickle", { t("from utilities.pickle import write_pickle") }),
+
+			-- third party: (dycw-)utilities.polars
+			s("fut-check-dataframe", { t("from utilities.polars import check_dataframe") }),
+			s("fut-data-frame-columns-error", { t("from utilities.polars import DataFrameColumnsError") }),
+			s("fut-data-frame-dtypes-error", { t("from utilities.polars import DataFrameDTypesError") }),
+			s("fut-data-frame-height-error", { t("from utilities.polars import DataFrameHeightError") }),
+			s("fut-data-frame-max-height-error", { t("from utilities.polars import DataFrameMaxHeightError") }),
+			s("fut-data-frame-min-height-error", { t("from utilities.polars import DataFrameMinHeightError") }),
+			s("fut-data-frame-schema-error", { t("from utilities.polars import DataFrameSchemaError") }),
+			s("fut-data-frame-shape-error", { t("from utilities.polars import DataFrameShapeError") }),
+			s("fut-data-frame-sorted-error", { t("from utilities.polars import DataFrameSortedError") }),
+			s("fut-data-frame-unique-error", { t("from utilities.polars import DataFrameUniqueError") }),
+			s("fut-data-frame-width-error", { t("from utilities.polars import DataFrameWidthError") }),
+			s("fut-empty-data-frame-error", { t("from utilities.polars import EmptyDataFrameError") }),
+			s("fut-multiple-th-rows-error", { t("from utilities.polars import MultipleTHRowsError") }),
+			s("fut-set-first-row-as-columns", { t("from utilities.polars import set_first_row_as_columns") }),
+			s("fut-yield-tables", { t("from utilities.polars import yield_tables") }),
 
 			-- third party: (dycw-)utilities.re
 			s("fut-extract-group", { t("from utilities.re import extract_group") }),
