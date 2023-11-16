@@ -163,3 +163,24 @@ with suppress(ModuleNotFoundError):
             InvalidAnnotationError,  # noqa: F401
             build_params_mixin,  # noqa: F401
         )
+    with suppress(ModuleNotFoundError):
+        from utilities.polars.polars import (
+            DataFrameColumnsError,  # noqa: F401
+            DataFrameDTypesError,  # noqa: F401
+            DataFrameHeightError,  # noqa: F401
+            DataFrameMaxHeightError,  # noqa: F401
+            DataFrameMinHeightError,  # noqa: F401
+            DataFrameSchemaError,  # noqa: F401
+            DataFrameShapeError,  # noqa: F401
+            DataFrameSortedError,  # noqa: F401
+            DataFrameUniqueError,  # noqa: F401
+            DataFrameWidthError,  # noqa: F401
+            EmptyDataFrameError,  # noqa: F401
+            check_dataframe,  # noqa: F401
+            set_first_row_as_columns,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
+        from utilities.polars.bs4 import (
+            MultipleTHRowsError,  # noqa: F401
+            yield_tables,  # noqa: F401
+        )

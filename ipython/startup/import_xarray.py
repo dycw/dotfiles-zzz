@@ -7,5 +7,7 @@ with suppress(ModuleNotFoundError):
     from xarray import (
         DataArray,  # noqa: F401
         Dataset,  # noqa: F401
+        apply_ufunc,  # noqa: F401
+        concat,  # noqa: F401
         merge,  # noqa: F401
     )

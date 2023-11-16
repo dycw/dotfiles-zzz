@@ -658,6 +658,23 @@ return {
 			s("fut-read-pickle", { t("from utilities.pickle import read_pickle") }),
 			s("fut-write-pickle", { t("from utilities.pickle import write_pickle") }),
 
+			-- third party: (dycw-)utilities.polars
+			s("fut-check-dataframe", { t("from utilities.polars import check_dataframe") }),
+			s("fut-data-frame-columns-error", { t("from utilities.polars import DataFrameColumnsError") }),
+			s("fut-data-frame-dtypes-error", { t("from utilities.polars import DataFrameDTypesError") }),
+			s("fut-data-frame-height-error", { t("from utilities.polars import DataFrameHeightError") }),
+			s("fut-data-frame-max-height-error", { t("from utilities.polars import DataFrameMaxHeightError") }),
+			s("fut-data-frame-min-height-error", { t("from utilities.polars import DataFrameMinHeightError") }),
+			s("fut-data-frame-schema-error", { t("from utilities.polars import DataFrameSchemaError") }),
+			s("fut-data-frame-shape-error", { t("from utilities.polars import DataFrameShapeError") }),
+			s("fut-data-frame-sorted-error", { t("from utilities.polars import DataFrameSortedError") }),
+			s("fut-data-frame-unique-error", { t("from utilities.polars import DataFrameUniqueError") }),
+			s("fut-data-frame-width-error", { t("from utilities.polars import DataFrameWidthError") }),
+			s("fut-empty-data-frame-error", { t("from utilities.polars import EmptyDataFrameError") }),
+			s("fut-multiple-th-rows-error", { t("from utilities.polars import MultipleTHRowsError") }),
+			s("fut-set-first-row-as-columns", { t("from utilities.polars import set_first_row_as_columns") }),
+			s("fut-yield-tables", { t("from utilities.polars import yield_tables") }),
+
 			-- third party: (dycw-)utilities.re
 			s("fut-extract-group", { t("from utilities.re import extract_group") }),
 			s("fut-extract-groups", { t("from utilities.re import extract_groups") }),

@@ -2008,6 +2008,10 @@
     "prefix": "fnu-diag",
     "body": ["from numpy import diag", "$0"]
   },
+  "fnu-empty": {
+    "prefix": "fnu-empty",
+    "body": ["from numpy import empty", "$0"]
+  },
   "fnu-eye": {
     "prefix": "fnu-eye",
     "body": ["from numpy import eye", "$0"]
@@ -2015,6 +2019,10 @@
   "fnu-isclose": {
     "prefix": "fnu-isclose",
     "body": ["from numpy import isclose", "$0"]
+  },
+  "fnu-nan": {
+    "prefix": "fnu-nan",
+    "body": ["from numpy import nan", "$0"]
   },
   "fnu-sqrt": {
     "prefix": "fnu-sqrt",
@@ -2931,6 +2939,68 @@
   "fut-write-pickle": {
     "prefix": "fut-write-pickle",
     "body": ["from utilities.pickle import write_pickle", "$0"]
+  },
+
+  // third party: (dycw-)utilities.polars
+  "fut-check-dataframe": {
+    "prefix": "fut-check-dataframe",
+    "body": ["from utilities.polars import check_dataframe", "$0"]
+  },
+  "fut-data-frame-columns-error": {
+    "prefix": "fut-data-frame-columns-error",
+    "body": ["from utilities.polars import DataFrameColumnsError", "$0"]
+  },
+  "fut-data-frame-dtypes-error": {
+    "prefix": "fut-data-frame-dtypes-error",
+    "body": ["from utilities.polars import DataFrameDTypesError", "$0"]
+  },
+  "fut-data-frame-height-error": {
+    "prefix": "fut-data-frame-height-error",
+    "body": ["from utilities.polars import DataFrameHeightError", "$0"]
+  },
+  "fut-data-frame-max-height-error": {
+    "prefix": "fut-data-frame-max-height-error",
+    "body": ["from utilities.polars import DataFrameMaxHeightError", "$0"]
+  },
+  "fut-data-frame-min-height-error": {
+    "prefix": "fut-data-frame-min-height-error",
+    "body": ["from utilities.polars import DataFrameMinHeightError", "$0"]
+  },
+  "fut-data-frame-schema-error": {
+    "prefix": "fut-data-frame-schema-error",
+    "body": ["from utilities.polars import DataFrameSchemaError", "$0"]
+  },
+  "fut-data-frame-shape-error": {
+    "prefix": "fut-data-frame-shape-error",
+    "body": ["from utilities.polars import DataFrameShapeError", "$0"]
+  },
+  "fut-data-frame-sorted-error": {
+    "prefix": "fut-data-frame-sorted-error",
+    "body": ["from utilities.polars import DataFrameSortedError", "$0"]
+  },
+  "fut-data-frame-unique-error": {
+    "prefix": "fut-data-frame-unique-error",
+    "body": ["from utilities.polars import DataFrameUniqueError", "$0"]
+  },
+  "fut-data-frame-width-error": {
+    "prefix": "fut-data-frame-width-error",
+    "body": ["from utilities.polars import DataFrameWidthError", "$0"]
+  },
+  "fut-empty-data-frame-error": {
+    "prefix": "fut-empty-data-frame-error",
+    "body": ["from utilities.polars import EmptyDataFrameError", "$0"]
+  },
+  "fut-multiple-th-rows-error": {
+    "prefix": "fut-multiple-th-rows-error",
+    "body": ["from utilities.polars import MultipleTHRowsError", "$0"]
+  },
+  "fut-set-first-row-as-columns": {
+    "prefix": "fut-set-first-row-as-columns",
+    "body": ["from utilities.polars import set_first_row_as_columns", "$0"]
+  },
+  "fut-yield-tables": {
+    "prefix": "fut-yield-tables",
+    "body": ["from utilities.polars import yield_tables", "$0"]
   },
 
   // third party: (dycw-)utilities.re
