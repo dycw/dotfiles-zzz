@@ -2749,6 +2749,12 @@
     "body": ["from utilities.git import InvalidRepoError", "$0"]
   },
 
+  // third party: (dycw-)utilities.hashlib
+  "fut-md5-hash": {
+    "prefix": "fut-md5-hash",
+    "body": ["from utilities.hashlib import md5_hash", "$0"]
+  },
+
   // third party: (dycw-)utilities.itertools
   "fut-always-iterable": {
     "prefix": "fut-always-iterable",
@@ -2788,6 +2794,115 @@
   "fut-take": {
     "prefix": "fut-take",
     "body": ["from utilities.itertools import take", "$0"]
+  },
+
+  // third party: (dycw-)utilities.luigi
+  "fut-ambiguous-date-error": {
+    "prefix": "fut-ambiguous-date-error",
+    "body": ["from utilities.luigi import AmbiguousDateError", "$0"]
+  },
+  "fut-ambiguous-datetime-error": {
+    "prefix": "fut-ambiguous-datetime-error",
+    "body": ["from utilities.luigi import AmbiguousDatetimeError", "$0"]
+  },
+  "fut-await-task": {
+    "prefix": "fut-await-task",
+    "body": ["from utilities.luigi import AwaitTask", "$0"]
+  },
+  "fut-await-time": {
+    "prefix": "fut-await-time",
+    "body": ["from utilities.luigi import AwaitTime", "$0"]
+  },
+  "fut-build": {
+    "prefix": "fut-build",
+    "body": ["from utilities.luigi import build", "$0"]
+  },
+  "fut-build-params-mixin": {
+    "prefix": "fut-build-params-mixin",
+    "body": ["from utilities.luigi import build_params_mixin", "$0"]
+  },
+  "fut-clone": {
+    "prefix": "fut-clone",
+    "body": ["from utilities.luigi import clone", "$0"]
+  },
+  "fut-database-target": {
+    "prefix": "fut-database-target",
+    "body": ["from utilities.luigi import DatabaseTarget", "$0"]
+  },
+  "fut-date-hour-parameter": {
+    "prefix": "fut-date-hour-parameter",
+    "body": ["from utilities.luigi import DateHourParameter", "$0"]
+  },
+  "fut-date-minute-parameter": {
+    "prefix": "fut-date-minute-parameter",
+    "body": ["from utilities.luigi import DateMinuteParameter", "$0"]
+  },
+  "fut-date-parameter": {
+    "prefix": "fut-date-parameter",
+    "body": ["from utilities.luigi import DateParameter", "$0"]
+  },
+  "fut-date-second-parameter": {
+    "prefix": "fut-date-second-parameter",
+    "body": ["from utilities.luigi import DateSecondParameter", "$0"]
+  },
+  "fut-engine-parameter": {
+    "prefix": "fut-engine-parameter",
+    "body": ["from utilities.luigi import EngineParameter", "$0"]
+  },
+  "fut-enum-parameter": {
+    "prefix": "fut-enum-parameter",
+    "body": ["from utilities.luigi import EnumParameter", "$0"]
+  },
+  "fut-external-file": {
+    "prefix": "fut-external-file",
+    "body": ["from utilities.luigi import ExternalFile", "$0"]
+  },
+  "fut-external-task": {
+    "prefix": "fut-external-task",
+    "body": ["from utilities.luigi import ExternalTask", "$0"]
+  },
+  "fut-get-dependencies-downstream": {
+    "prefix": "fut-get-dependencies-downstream",
+    "body": ["from utilities.luigi import get_dependencies_downstream", "$0"]
+  },
+  "fut-get-dependencies-upstream": {
+    "prefix": "fut-get-dependencies-upstream",
+    "body": ["from utilities.luigi import get_dependencies_upstream", "$0"]
+  },
+  "fut-get-task-classes": {
+    "prefix": "fut-get-task-classes",
+    "body": ["from utilities.luigi import get_task_classes", "$0"]
+  },
+  "fut-invalid-annotation-and-keywords-error": {
+    "prefix": "fut-invalid-annotation-and-keywords-error",
+    "body": [
+      "from utilities.luigi import InvalidAnnotationAndKeywordsError",
+      "$0"
+    ]
+  },
+  "fut-invalid-annotation-error": {
+    "prefix": "fut-invalid-annotation-error",
+    "body": ["from utilities.luigi import InvalidAnnotationError", "$0"]
+  },
+  "fut-path-target": {
+    "prefix": "fut-path-target",
+    "body": ["from utilities.luigi import PathTarget", "$0"]
+  },
+  "fut-table-parameter": {
+    "prefix": "fut-table-parameter",
+    "body": ["from utilities.luigi import TableParameter", "$0"]
+  },
+  "fut-time-parameter": {
+    "prefix": "fut-time-parameter",
+    "body": ["from utilities.luigi import TimeParameter", "$0"]
+  },
+  "fut-version-parameter": {
+    "prefix": "fut-version-parameter",
+    "body": ["from utilities.luigi import VersionParameter", "$0"]
+  },
+  "fut-weekday-parameter": {
+    "prefix": "fut-weekday-parameter",
+    "body": ["from utilities.luigi import WeekdayParameter", "$0"]
   },
 
   // third party: (dycw-)utilities.pathlib
