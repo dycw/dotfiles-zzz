@@ -336,6 +336,24 @@ return {
 			-- third party: beartype
 			s("fbe-beartype", { t("from beartype import beartype") }),
 
+			-- third party: bidict
+			s("fbi-bidict", { t("from bidict import bidict") }),
+
+			-- third party: cachetools
+			s("fca-cache", { t("from cachetools import Cache") }),
+			s("fca-cached", { t("from cachetools import cached") }),
+			s("fca-cachedmethod", { t("from cachetools import cachedmethod") }),
+			s("fca-fifo-cache", { t("from cachetools.func import fifo_cache") }),
+			s("fca-hashkey", { t("from cachetools.keys import hashkey") }),
+			s("fca-lfu-cache", { t("from cachetools.func import lfu_cache") }),
+			s("fca-lru-cache", { t("from cachetools.func import lru_cache") }),
+			s("fca-methodkey", { t("from cachetools.keys import methodkey") }),
+			s("fca-mru-cache", { t("from cachetools.func import mru_cache") }),
+			s("fca-rr-cache", { t("from cachetools.func import rr_cache") }),
+			s("fca-tlru-cache", { t("from cachetools import TLRUCache") }),
+			s("fca-ttl-cache", { t("from cachetools.func import ttl_cache") }),
+			s("fca-typedkey", { t("from cachetools.keys import typedkey") }),
+
 			-- third party: hypothesis
 			s("fhy-array-dtypes", { t("from hypothesis.extra.numpy import array_dtypes") }),
 			s("fhy-array-shapes", { t("from hypothesis.extra.numpy import array_shapes") }),
