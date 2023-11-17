@@ -1266,6 +1266,60 @@
     "body": ["from bidict import bidict", "$0"]
   },
 
+  // third party: cachetools
+  "fca-cache": {
+    "prefix": "fca-cache",
+    "body": ["from cachetools import Cache", "$0"]
+  },
+  "fca-cached": {
+    "prefix": "fca-cached",
+    "body": ["from cachetools import cached", "$0"]
+  },
+  "fca-cachedmethod": {
+    "prefix": "fca-cachedmethod",
+    "body": ["from cachetools import cachedmethod", "$0"]
+  },
+  "fca-fifo-cache": {
+    "prefix": "fca-fifo-cache",
+    "body": ["from cachetools.func import fifo_cache", "$0"]
+  },
+  "fca-hashkey": {
+    "prefix": "fca-hashkey",
+    "body": ["from cachetools.keys import hashkey", "$0"]
+  },
+  "fca-lfu-cache": {
+    "prefix": "fca-lfu-cache",
+    "body": ["from cachetools.func import lfu_cache", "$0"]
+  },
+  "fca-lru-cache": {
+    "prefix": "fca-lru-cache",
+    "body": ["from cachetools.func import lru_cache", "$0"]
+  },
+  "fca-methodkey": {
+    "prefix": "fca-methodkey",
+    "body": ["from cachetools.keys import methodkey", "$0"]
+  },
+  "fca-mru-cache": {
+    "prefix": "fca-mru-cache",
+    "body": ["from cachetools.func import mru_cache", "$0"]
+  },
+  "fca-rr-cache": {
+    "prefix": "fca-rr-cache",
+    "body": ["from cachetools.func import rr_cache", "$0"]
+  },
+  "fca-tlru-cache": {
+    "prefix": "fca-tlru-cache",
+    "body": ["from cachetools import TLRUCache", "$0"]
+  },
+  "fca-ttl-cache": {
+    "prefix": "fca-ttl-cache",
+    "body": ["from cachetools.func import ttl_cache", "$0"]
+  },
+  "fca-typedkey": {
+    "prefix": "fca-typedkey",
+    "body": ["from cachetools.keys import typedkey", "$0"]
+  },
+
   // third party: click
   "fcl-abort": {
     "prefix": "fcl-abort",
