@@ -3172,6 +3172,31 @@
     "body": ["from utilities.timer import Timer", "$0"]
   },
 
+  // third party: (dycw-)utilities.typed_settings
+  "fut-app-name-contains-underscore-error": {
+    "prefix": "fut-app-name-contains-underscore-error",
+    "body": [
+      "from utilities.typed_settings import AppNameContainsUnderscoreError",
+      "$0"
+    ]
+  },
+  "fut-click-field": {
+    "prefix": "fut-click-field",
+    "body": ["from utilities.typed_settings import click_field", "$0"]
+  },
+  "fut-click-options": {
+    "prefix": "fut-click-options",
+    "body": ["from utilities.typed_settings import click_options", "$0"]
+  },
+  "fut-get-repo-root-config": {
+    "prefix": "fut-get-repo-root-config",
+    "body": ["from utilities.typed_settings import get_repo_root_config", "$0"]
+  },
+  "fut-load-settings": {
+    "prefix": "fut-load-settings",
+    "body": ["from utilities.typed_settings import load_settings", "$0"]
+  },
+
   // third party: (dycw-)utilities.typing
   "fut-iterable-strs": {
     "prefix": "fut-iterable-strs",

@@ -198,3 +198,10 @@ with suppress(ModuleNotFoundError):
             MultipleTHRowsError,  # noqa: F401
             yield_tables,  # noqa: F401
         )
+    with suppress(ModuleNotFoundError):
+        from utilities.typed_settings.click import (
+            click_field,  # noqa: F401
+            click_options,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
+        pass
