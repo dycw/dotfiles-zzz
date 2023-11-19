@@ -2418,29 +2418,113 @@
   },
 
   // third party: streamlit
+  "fst-altair-chart": {
+    "prefix": "fst-altair-chart",
+    "body": ["from streamlit import altair_chart", "$0"]
+  },
+  "fst-area-chart": {
+    "prefix": "fst-area-chart",
+    "body": ["from streamlit import area_chart", "$0"]
+  },
+  "fst-audio": {
+    "prefix": "fst-audio",
+    "body": ["from streamlit import audio", "$0"]
+  },
+  "fst-balloons": {
+    "prefix": "fst-balloons",
+    "body": ["from streamlit import balloons", "$0"]
+  },
   "fst-bar-chart": {
     "prefix": "fst-bar-chart",
     "body": ["from streamlit import bar_chart", "$0"]
+  },
+  "fst-bokeh-chart": {
+    "prefix": "fst-bokeh-chart",
+    "body": ["from streamlit import bokeh_chart", "$0"]
+  },
+  "fst-button": {
+    "prefix": "fst-button",
+    "body": ["from streamlit import button", "$0"]
+  },
+  "fst-cache": {
+    "prefix": "fst-cache",
+    "body": ["from streamlit import cache", "$0"]
   },
   "fst-cache-data": {
     "prefix": "fst-cache-data",
     "body": ["from streamlit import cache_data", "$0"]
   },
+  "fst-cache-resource": {
+    "prefix": "fst-cache-resource",
+    "body": ["from streamlit import cache_resource", "$0"]
+  },
+  "fst-camera-input": {
+    "prefix": "fst-camera-input",
+    "body": ["from streamlit import camera_input", "$0"]
+  },
+  "fst-caption": {
+    "prefix": "fst-caption",
+    "body": ["from streamlit import caption", "$0"]
+  },
+  "fst-chat-input": {
+    "prefix": "fst-chat-input",
+    "body": ["from streamlit import chat_input", "$0"]
+  },
+  "fst-chat-message": {
+    "prefix": "fst-chat-message",
+    "body": ["from streamlit import chat_message", "$0"]
+  },
   "fst-checkbox": {
     "prefix": "fst-checkbox",
     "body": ["from streamlit import checkbox", "$0"]
+  },
+  "fst-code": {
+    "prefix": "fst-code",
+    "body": ["from streamlit import code", "$0"]
+  },
+  "fst-color-picker": {
+    "prefix": "fst-color-picker",
+    "body": ["from streamlit import color_picker", "$0"]
+  },
+  "fst-column-config": {
+    "prefix": "fst-column-config",
+    "body": ["from streamlit import column_config", "$0"]
   },
   "fst-columns": {
     "prefix": "fst-columns",
     "body": ["from streamlit import columns", "$0"]
   },
+  "fst-connection": {
+    "prefix": "fst-connection",
+    "body": ["from streamlit import connection", "$0"]
+  },
   "fst-container": {
     "prefix": "fst-container",
     "body": ["from streamlit import container", "$0"]
   },
+  "fst-data-editor": {
+    "prefix": "fst-data-editor",
+    "body": ["from streamlit import data_editor", "$0"]
+  },
   "fst-dataframe": {
     "prefix": "fst-dataframe",
     "body": ["from streamlit import dataframe", "$0"]
+  },
+  "fst-date-input": {
+    "prefix": "fst-date-input",
+    "body": ["from streamlit import date_input", "$0"]
+  },
+  "fst-divider": {
+    "prefix": "fst-divider",
+    "body": ["from streamlit import divider", "$0"]
+  },
+  "fst-download-button": {
+    "prefix": "fst-download-button",
+    "body": ["from streamlit import download_button", "$0"]
+  },
+  "fst-echo": {
+    "prefix": "fst-echo",
+    "body": ["from streamlit import echo", "$0"]
   },
   "fst-empty": {
     "prefix": "fst-empty",
@@ -2450,6 +2534,18 @@
     "prefix": "fst-error",
     "body": ["from streamlit import error", "$0"]
   },
+  "fst-exception": {
+    "prefix": "fst-exception",
+    "body": ["from streamlit import exception", "$0"]
+  },
+  "fst-expander": {
+    "prefix": "fst-expander",
+    "body": ["from streamlit import expander", "$0"]
+  },
+  "fst-file-uploader": {
+    "prefix": "fst-file-uploader",
+    "body": ["from streamlit import file_uploader", "$0"]
+  },
   "fst-form": {
     "prefix": "fst-form",
     "body": ["from streamlit import form", "$0"]
@@ -2458,45 +2554,177 @@
     "prefix": "fst-form-submit-button",
     "body": ["from streamlit import form_submit_button", "$0"]
   },
+  "fst-graphviz-chart": {
+    "prefix": "fst-graphviz-chart",
+    "body": ["from streamlit import graphviz_chart", "$0"]
+  },
   "fst-header": {
     "prefix": "fst-header",
     "body": ["from streamlit import header", "$0"]
   },
-  "fst-markdown": {
-    "prefix": "fst-markdown",
-    "body": ["from streamlit import markdown", "$0"]
+  "fst-help": {
+    "prefix": "fst-help",
+    "body": ["from streamlit import help", "$0"]
+  },
+  "fst-image": {
+    "prefix": "fst-image",
+    "body": ["from streamlit import image", "$0"]
+  },
+  "fst-info": {
+    "prefix": "fst-info",
+    "body": ["from streamlit import info", "$0"]
+  },
+  "fst-json": {
+    "prefix": "fst-json",
+    "body": ["from streamlit import json", "$0"]
+  },
+  "fst-latex": {
+    "prefix": "fst-latex",
+    "body": ["from streamlit import latex", "$0"]
+  },
+  "fst-line-chart": {
+    "prefix": "fst-line-chart",
+    "body": ["from streamlit import line_chart", "$0"]
+  },
+  "fst-link-button": {
+    "prefix": "fst-link-button",
+    "body": ["from streamlit import link_button", "$0"]
   },
   "fst-map": {
     "prefix": "fst-map",
     "body": ["from streamlit import map", "$0"]
   },
+  "fst-markdown": {
+    "prefix": "fst-markdown",
+    "body": ["from streamlit import markdown", "$0"]
+  },
+  "fst-metric": {
+    "prefix": "fst-metric",
+    "body": ["from streamlit import metric", "$0"]
+  },
+  "fst-number-input": {
+    "prefix": "fst-number-input",
+    "body": ["from streamlit import number_input", "$0"]
+  },
+  "fst-plotly-chart": {
+    "prefix": "fst-plotly-chart",
+    "body": ["from streamlit import plotly_chart", "$0"]
+  },
   "fst-progress": {
     "prefix": "fst-progress",
     "body": ["from streamlit import progress", "$0"]
+  },
+  "fst-pydeck-chart": {
+    "prefix": "fst-pydeck-chart",
+    "body": ["from streamlit import pydeck_chart", "$0"]
+  },
+  "fst-pyplot": {
+    "prefix": "fst-pyplot",
+    "body": ["from streamlit import pyplot", "$0"]
+  },
+  "fst-radio": {
+    "prefix": "fst-radio",
+    "body": ["from streamlit import radio", "$0"]
+  },
+  "fst-rerun": {
+    "prefix": "fst-rerun",
+    "body": ["from streamlit import rerun", "$0"]
+  },
+  "fst-scatter-chart": {
+    "prefix": "fst-scatter-chart",
+    "body": ["from streamlit import scatter_chart", "$0"]
   },
   "fst-secrets": {
     "prefix": "fst-secrets",
     "body": ["from streamlit import secrets", "$0"]
   },
+  "fst-select-slider": {
+    "prefix": "fst-select-slider",
+    "body": ["from streamlit import select_slider", "$0"]
+  },
+  "fst-selectbox": {
+    "prefix": "fst-selectbox",
+    "body": ["from streamlit import selectbox", "$0"]
+  },
   "fst-session-state": {
     "prefix": "fst-session-state",
-    "body": ["from streamlit import session-state", "$0"]
+    "body": ["from streamlit import session_state", "$0"]
+  },
+  "fst-set-page-config": {
+    "prefix": "fst-set-page-config",
+    "body": ["from streamlit import set_page_config", "$0"]
+  },
+  "fst-sidebar": {
+    "prefix": "fst-sidebar",
+    "body": ["from streamlit import sidebar", "$0"]
+  },
+  "fst-snow": {
+    "prefix": "fst-snow",
+    "body": ["from streamlit import snow", "$0"]
+  },
+  "fst-spinner": {
+    "prefix": "fst-spinner",
+    "body": ["from streamlit import spinner", "$0"]
+  },
+  "fst-status": {
+    "prefix": "fst-status",
+    "body": ["from streamlit import status", "$0"]
+  },
+  "fst-stop": {
+    "prefix": "fst-stop",
+    "body": ["from streamlit import stop", "$0"]
   },
   "fst-subheader": {
     "prefix": "fst-subheader",
     "body": ["from streamlit import subheader", "$0"]
   },
+  "fst-success": {
+    "prefix": "fst-success",
+    "body": ["from streamlit import success", "$0"]
+  },
+  "fst-table": {
+    "prefix": "fst-table",
+    "body": ["from streamlit import table", "$0"]
+  },
+  "fst-tabs": {
+    "prefix": "fst-tabs",
+    "body": ["from streamlit import tabs", "$0"]
+  },
   "fst-text": {
     "prefix": "fst-text",
     "body": ["from streamlit import text", "$0"]
+  },
+  "fst-text-area": {
+    "prefix": "fst-text-area",
+    "body": ["from streamlit import text_area", "$0"]
   },
   "fst-text-input": {
     "prefix": "fst-text-input",
     "body": ["from streamlit import text_input", "$0"]
   },
+  "fst-time-input": {
+    "prefix": "fst-time-input",
+    "body": ["from streamlit import time_input", "$0"]
+  },
   "fst-title": {
     "prefix": "fst-title",
     "body": ["from streamlit import title", "$0"]
+  },
+  "fst-toast": {
+    "prefix": "fst-toast",
+    "body": ["from streamlit import toast", "$0"]
+  },
+  "fst-toggle": {
+    "prefix": "fst-toggle",
+    "body": ["from streamlit import toggle", "$0"]
+  },
+  "fst-vega-lite-chart": {
+    "prefix": "fst-vega-lite-chart",
+    "body": ["from streamlit import vega_lite_chart", "$0"]
+  },
+  "fst-video": {
+    "prefix": "fst-video",
+    "body": ["from streamlit import video", "$0"]
   },
   "fst-write": {
     "prefix": "fst-write",
