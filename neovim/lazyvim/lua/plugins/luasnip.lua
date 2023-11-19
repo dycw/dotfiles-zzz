@@ -736,6 +736,16 @@ return {
 			-- third party: (dycw-)utilities.timer
 			s("fut-timer", { t("from utilities.timer import Timer") }),
 
+			-- third party: (dycw-)utilities.typed_settings
+			s(
+				"fut-app-name-contains-underscore-error",
+				{ t("from utilities.typed_settings import AppNameContainsUnderscoreError") }
+			),
+			s("fut-click-field", { t("from utilities.typed_settings import click_field") }),
+			s("fut-click-options", { t("from utilities.typed_settings import click_options") }),
+			s("fut-get-repo-root-config", { t("from utilities.typed_settings import get_repo_root_config") }),
+			s("fut-load-settings", { t("from utilities.typed_settings import load_settings") }),
+
 			-- third party: (dycw-)utilities.typing
 			s("fut-iterable-strs", { t("from utilities.typing import IterableStrs") }),
 			s("fut-number", { t("from utilities.typing import Number") }),
