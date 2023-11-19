@@ -47,6 +47,13 @@ with suppress(ModuleNotFoundError):
         serialize_timedelta,  # noqa: F401
         yield_weekdays,  # noqa: F401
     )
+    from utilities.errors import (
+        DirectoryExistsError,  # noqa: F401
+        NoUniqueArgError,  # noqa: F401
+        redirect_error,  # noqa: F401
+        retry,  # noqa: F401
+    )
+    from utilities.functools import partial  # noqa: F401
     from utilities.getpass import (
         USER,  # noqa: F401
     )
@@ -69,6 +76,10 @@ with suppress(ModuleNotFoundError):
         is_iterable_not_str,  # noqa: F401
         one,  # noqa: F401
         take,  # noqa: F401
+    )
+    from utilities.json import (
+        deserialize,  # noqa: F401
+        serialize,  # noqa: F401
     )
     from utilities.pathlib import (
         PathLike,  # noqa: F401
@@ -104,6 +115,9 @@ with suppress(ModuleNotFoundError):
         snake_case,  # noqa: F401
         snake_case_mappings,  # noqa: F401
         strip_and_dedent,  # noqa: F401
+    )
+    from utilities.timer import (
+        Timer,  # noqa: F401
     )
     from utilities.typing import (
         IterableStrs,  # noqa: F401
