@@ -609,6 +609,15 @@ return {
 			s("fut-yield-weekdays", { t("from utilities.datetime import yield_weekdays") }),
 			s("fut-yield-weekdays-error", { t("from utilities.datetime import YieldWeekdaysError") }),
 
+			-- third party: (dycw-)utilities.errors
+			s("fut-directory-exists-error", { t("from utilities.errors import DirectoryExistsError") }),
+			s("fut-no-unique-arg-error", { t("from utilities.errors import NoUniqueArgError") }),
+			s("fut-redirect-error", { t("from utilities.errors import redirect_error") }),
+			s("fut-retry", { t("from utilities.errors import retry") }),
+
+			-- third party: (dycw-)utilities.functools
+			s("fut-partial", { t("from utilities.functools import partial") }),
+
 			-- third party: (dycw-)utilities.getpass
 			s("fut-user", { t("from utilities.getpass import USER") }),
 
@@ -634,6 +643,10 @@ return {
 			s("fut-multiple-elements-error", { t("from utilities.itertools import MultipleElementsError") }),
 			s("fut-one", { t("from utilities.itertools import one") }),
 			s("fut-take", { t("from utilities.itertools import take") }),
+
+			-- third party: (dycw-)utilities.json
+			s("fut-deserialize", { t("from utilities.json import deserialize") }),
+			s("fut-serialize", { t("from utilities.json import serialize") }),
 
 			-- third party: (dycw-)utilities.luigi
 			s("fut-ambiguous-date-error", { t("from utilities.luigi import AmbiguousDateError") }),
@@ -719,6 +732,9 @@ return {
 			),
 			s("fut-snake-case-mappings", { t("from utilities.text import snake_case_mappings") }),
 			s("fut-strip-and-dedent", { t("from utilities.text import strip_and_dedent") }),
+
+			-- third party: (dycw-)utilities.timer
+			s("fut-timer", { t("from utilities.timer import Timer") }),
 
 			-- third party: (dycw-)utilities.typing
 			s("fut-iterable-strs", { t("from utilities.typing import IterableStrs") }),

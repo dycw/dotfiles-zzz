@@ -2787,6 +2787,30 @@
     "body": ["from utilities.datetime import YieldWeekdaysError", "$0"]
   },
 
+  // third party: (dycw-)utilities.errors
+  "fut-directory-exists-error": {
+    "prefix": "fut-directory-exists-error",
+    "body": ["from utilities.errors import DirectoryExistsError", "$0"]
+  },
+  "fut-no-unique-arg-error": {
+    "prefix": "fut-no-unique-arg-error",
+    "body": ["from utilities.errors import NoUniqueArgError", "$0"]
+  },
+  "fut-redirect-error": {
+    "prefix": "fut-redirect-error",
+    "body": ["from utilities.errors import redirect_error", "$0"]
+  },
+  "fut-retry": {
+    "prefix": "fut-retry",
+    "body": ["from utilities.errors import retry", "$0"]
+  },
+
+  // third party: (dycw-)utilities.functools
+  "fut-partial": {
+    "prefix": "fut-partial",
+    "body": ["from utilities.functools import partial", "$0"]
+  },
+
   // third party: (dycw-)utilities.getpass
   "fut-user": {
     "prefix": "fut-user",
@@ -2856,6 +2880,16 @@
   "fut-take": {
     "prefix": "fut-take",
     "body": ["from utilities.itertools import take", "$0"]
+  },
+
+  // third party: (dycw-)utilities.json
+  "fut-deserialize": {
+    "prefix": "fut-deserialize",
+    "body": ["from utilities.json import deserialize", "$0"]
+  },
+  "fut-serialize": {
+    "prefix": "fut-serialize",
+    "body": ["from utilities.json import serialize", "$0"]
   },
 
   // third party: (dycw-)utilities.luigi
@@ -3130,6 +3164,12 @@
   "fut-strip-and-dedent": {
     "prefix": "fut-strip-and-dedent",
     "body": ["from utilities.text import strip_and_dedent", "$0"]
+  },
+
+  // third party: (dycw-)utilities.timer
+  "fut-timer": {
+    "prefix": "fut-timer",
+    "body": ["from utilities.timer import Timer", "$0"]
   },
 
   // third party: (dycw-)utilities.typing
