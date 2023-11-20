@@ -2243,28 +2243,45 @@
   },
 
   // third party: polars
+  "fpo-array": {
+    "prefix": "fpo-array",
+    "body": ["from polars import Array", "$0"]
+  },
   "fpo-assert-frame-equal": {
     "prefix": "fpo-assert-frame-equal",
-    "body": ["from polars.testing import assert_frame_equal ", "$0"]
+    "body": ["from polars.testing import assert_frame_equal", "$0"]
+  },
+  "fpo-assert-frame-not-equal": {
+    "prefix": "fpo-assert-frame-not-equal",
+    "body": ["from polars.testing import assert_frame_not_equal", "$0"]
   },
   "fpo-assert-series-equal": {
     "prefix": "fpo-assert-series-equal",
-    "body": ["from polars.testing import assert_series_equal ", "$0"]
+    "body": ["from polars.testing import assert_series_equal", "$0"]
+  },
+  "fpo-assert-series-not-equal": {
+    "prefix": "fpo-assert-series-not-equal",
+    "body": ["from polars.testing import assert_series_not_equal", "$0"]
+  },
+  "fpo-binary": {
+    "prefix": "fpo-binary",
+    "body": ["from polars import Binary", "$0"]
   },
   "fpo-boolean": {
     "prefix": "fpo-boolean",
     "body": ["from polars import Boolean", "$0"]
   },
-  "fpo-col": {
-    "prefix": "fpo-col",
-    "body": ["from polars import col", "$0"]
+  "fpo-categorical": {
+    "prefix": "fpo-categorical",
+    "body": ["from polars import Categorical", "$0"]
   },
-  "fpo-data-type-class": {
-    "prefix": "fpo-data-type-class",
-    "body": ["from polars.datatypes import DataTypeClass", "$0"]
+  "fpo-col": { "prefix": "fpo-col", "body": ["from polars import col", "$0"] },
+  "fpo-config": {
+    "prefix": "fpo-config",
+    "body": ["from polars import Config", "$0"]
   },
-  "fpo-dataframe": {
-    "prefix": "fpo-dataframe",
+  "fpo-data-frame": {
+    "prefix": "fpo-data-frame",
     "body": ["from polars import DataFrame", "$0"]
   },
   "fpo-date": {
@@ -2275,37 +2292,110 @@
     "prefix": "fpo-datetime",
     "body": ["from polars import Datetime", "$0"]
   },
+  "fpo-decimal": {
+    "prefix": "fpo-decimal",
+    "body": ["from polars import Decimal", "$0"]
+  },
+  "fpo-duration": {
+    "prefix": "fpo-duration",
+    "body": ["from polars import Duration", "$0"]
+  },
+  "fpo-float32": {
+    "prefix": "fpo-float32",
+    "body": ["from polars import Float32", "$0"]
+  },
   "fpo-float64": {
     "prefix": "fpo-float64",
     "body": ["from polars import Float64", "$0"]
+  },
+  "fpo-int16": {
+    "prefix": "fpo-int16",
+    "body": ["from polars import Int16", "$0"]
+  },
+  "fpo-int32": {
+    "prefix": "fpo-int32",
+    "body": ["from polars import Int32", "$0"]
   },
   "fpo-int64": {
     "prefix": "fpo-int64",
     "body": ["from polars import Int64", "$0"]
   },
-  "fpo-into-expr": {
-    "prefix": "fpo-into-expr",
-    "body": ["from polars.type_aliases import IntoExpr", "$0"]
+  "fpo-int8": {
+    "prefix": "fpo-int8",
+    "body": ["from polars import Int8", "$0"]
   },
-  "fpo-into-expr-column": {
-    "prefix": "fpo-into-expr-column",
-    "body": ["from polars.type_aliases import IntoExprColumn", "$0"]
+  "fpo-list": {
+    "prefix": "fpo-list",
+    "body": ["from polars import List", "$0"]
   },
-  "fpo-lit": {
-    "prefix": "fpo-lit",
-    "body": ["from polars import lit", "$0"]
+  "fpo-lit": { "prefix": "fpo-lit", "body": ["from polars import lit", "$0"] },
+  "fpo-null": {
+    "prefix": "fpo-null",
+    "body": ["from polars import Null", "$0"]
+  },
+  "fpo-object": {
+    "prefix": "fpo-object",
+    "body": ["from polars import Object", "$0"]
   },
   "fpo-polars-data-type": {
     "prefix": "fpo-polars-data-type",
-    "body": ["from polars import PolarsDataType", "$0"]
+    "body": ["from polars.type_aliases import PolarsDataType", "$0"]
+  },
+  "fpo-read-avro": {
+    "prefix": "fpo-read-avro",
+    "body": ["from polars import read_avro", "$0"]
   },
   "fpo-read-csv": {
     "prefix": "fpo-read-csv",
     "body": ["from polars import read_csv", "$0"]
   },
+  "fpo-read-csv-batched": {
+    "prefix": "fpo-read-csv-batched",
+    "body": ["from polars import read_csv_batched", "$0"]
+  },
+  "fpo-read-database": {
+    "prefix": "fpo-read-database",
+    "body": ["from polars import read_database", "$0"]
+  },
+  "fpo-read-database-uri": {
+    "prefix": "fpo-read-database-uri",
+    "body": ["from polars import read_database_uri", "$0"]
+  },
+  "fpo-read-delta": {
+    "prefix": "fpo-read-delta",
+    "body": ["from polars import read_delta", "$0"]
+  },
   "fpo-read-excel": {
     "prefix": "fpo-read-excel",
     "body": ["from polars import read_excel", "$0"]
+  },
+  "fpo-read-ipc": {
+    "prefix": "fpo-read-ipc",
+    "body": ["from polars import read_ipc", "$0"]
+  },
+  "fpo-read-ipc-schema": {
+    "prefix": "fpo-read-ipc-schema",
+    "body": ["from polars import read_ipc_schema", "$0"]
+  },
+  "fpo-read-ipc-stream": {
+    "prefix": "fpo-read-ipc-stream",
+    "body": ["from polars import read_ipc_stream", "$0"]
+  },
+  "fpo-read-json": {
+    "prefix": "fpo-read-json",
+    "body": ["from polars import read_json", "$0"]
+  },
+  "fpo-read-ndjson": {
+    "prefix": "fpo-read-ndjson",
+    "body": ["from polars import read_ndjson", "$0"]
+  },
+  "fpo-read-ods": {
+    "prefix": "fpo-read-ods",
+    "body": ["from polars import read_ods", "$0"]
+  },
+  "fpo-read-parquet": {
+    "prefix": "fpo-read-parquet",
+    "body": ["from polars import read_parquet", "$0"]
   },
   "fpo-schema-dict": {
     "prefix": "fpo-schema-dict",
@@ -2314,6 +2404,34 @@
   "fpo-series": {
     "prefix": "fpo-series",
     "body": ["from polars import Series", "$0"]
+  },
+  "fpo-struct": {
+    "prefix": "fpo-struct",
+    "body": ["from polars import Struct", "$0"]
+  },
+  "fpo-time": {
+    "prefix": "fpo-time",
+    "body": ["from polars import Time", "$0"]
+  },
+  "fpo-uint16": {
+    "prefix": "fpo-uint16",
+    "body": ["from polars import UInt16", "$0"]
+  },
+  "fpo-uint32": {
+    "prefix": "fpo-uint32",
+    "body": ["from polars import UInt32", "$0"]
+  },
+  "fpo-uint64": {
+    "prefix": "fpo-uint64",
+    "body": ["from polars import UInt64", "$0"]
+  },
+  "fpo-uint8": {
+    "prefix": "fpo-uint8",
+    "body": ["from polars import UInt8", "$0"]
+  },
+  "fpo-unknown": {
+    "prefix": "fpo-unknown",
+    "body": ["from polars import Unknown", "$0"]
   },
   "fpo-utf8": {
     "prefix": "fpo-utf8",
@@ -3120,6 +3238,16 @@
     "body": ["from utilities.json import serialize", "$0"]
   },
 
+  // third party: (dycw-)utilities.logging
+  "fut-basic-config": {
+    "prefix": "fut-basic-config",
+    "body": ["from utilities.logging import basic_config", "$0"]
+  },
+  "fut-log-level": {
+    "prefix": "fut-log-level",
+    "body": ["from utilities.logging import LogLevel", "$0"]
+  },
+
   // third party: (dycw-)utilities.luigi
   "fut-ambiguous-date-error": {
     "prefix": "fut-ambiguous-date-error",
@@ -3437,6 +3565,16 @@
   "fut-sequence-strs": {
     "prefix": "fut-sequence-strs",
     "body": ["from utilities.typing import SequenceStrs", "$0"]
+  },
+
+  // third party: (dycw-)utilities.zoneinfo
+  "fut-hong-kong": {
+    "prefix": "fut-hong-kong",
+    "body": ["from utilities.zoneinfo import HONG_KONG", "$0"]
+  },
+  "fut-tokyo": {
+    "prefix": "fut-tokyo",
+    "body": ["from utilities.zoneinfo import TOKYO", "$0"]
   },
 
   // third party: xarray
