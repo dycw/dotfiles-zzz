@@ -692,6 +692,7 @@ return {
 
 			-- third party: (dycw-)utilities.atomicwrites
 			s("fut-writer", { t("from utilities.atomicwrites import writer") }),
+			s("fut-writer-empty-error", { t("from utilities.atomicwrites import WriterEmptyError") }),
 
 			-- third party: (dycw-)utilities.class_name
 			s("fut-get-class-name", { t("from utilities.class_name import get_class_name") }),
@@ -741,6 +742,13 @@ return {
 			s("fut-utc", { t("from utilities.datetime import UTC") }),
 			s("fut-yield-weekdays", { t("from utilities.datetime import yield_weekdays") }),
 			s("fut-yield-weekdays-error", { t("from utilities.datetime import YieldWeekdaysError") }),
+
+			-- third party: (dycw-)utilities.enum
+			s("fut-ensure-enum", { t("from utilities.enum import ensure_enum") }),
+			s("fut-multiple-matching-members-error", { t("from utilities.enum import MultipleMatchingMembersError") }),
+			s("fut-no-matching-member-error", { t("from utilities.enum import NoMatchingMemberError") }),
+			s("fut-parse-enum", { t("from utilities.enum import parse_enum") }),
+			s("fut-str-enum", { t("from utilities.enum import StrEnum") }),
 
 			-- third party: (dycw-)utilities.errors
 			s("fut-directory-exists-error", { t("from utilities.errors import DirectoryExistsError") }),
@@ -816,7 +824,15 @@ return {
 			s("fut-version-parameter", { t("from utilities.luigi import VersionParameter") }),
 			s("fut-weekday-parameter", { t("from utilities.luigi import WeekdayParameter") }),
 
-			-- third party: (dycw-)utilities.pickle
+			-- third party: (dycw-)utilities.os
+			s("fut-cpu-count", { t("from utilities.os import CPU_COUNT") }),
+			s("fut-temp-environ", { t("from utilities.os import temp_environ") }),
+			s(
+				"fut-unable-to-determine-cpu-count-error",
+				{ t("from utilities.os import UnableToDetermineCPUCountError") }
+			),
+
+			-- third party: (dycw-)utilities.pathlib
 			s("fut-ensure-suffix", { t("from utilities.pathlib import ensure_suffix") }),
 			s("fut-path-like", { t("from utilities.pathlib import PathLike") }),
 			s("fut-temp-cwd", { t("from utilities.pathlib import temp_cwd") }),
@@ -839,6 +855,7 @@ return {
 			s("fut-data-frame-unique-error", { t("from utilities.polars import DataFrameUniqueError") }),
 			s("fut-data-frame-width-error", { t("from utilities.polars import DataFrameWidthError") }),
 			s("fut-empty-data-frame-error", { t("from utilities.polars import EmptyDataFrameError") }),
+			s("fut-join", { t("from utilities.polars import join") }),
 			s("fut-multiple-th-rows-error", { t("from utilities.polars import MultipleTHRowsError") }),
 			s("fut-set-first-row-as-columns", { t("from utilities.polars import set_first_row_as_columns") }),
 			s("fut-yield-tables", { t("from utilities.polars import yield_tables") }),

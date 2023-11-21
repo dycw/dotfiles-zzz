@@ -2954,6 +2954,10 @@
     "prefix": "fut-writer",
     "body": ["from utilities.atomicwrites import writer", "$0"]
   },
+  "fut-writer-empty-error": {
+    "prefix": "fut-writer-empty-error",
+    "body": ["from utilities.atomicwrites import WriterEmptyError", "$0"]
+  },
 
   // third party: (dycw-)utilities.class_name
   "fut-get-class-name": {
@@ -3131,6 +3135,28 @@
   "fut-yield-weekdays-error": {
     "prefix": "fut-yield-weekdays-error",
     "body": ["from utilities.datetime import YieldWeekdaysError", "$0"]
+  },
+
+  // third party: (dycw-)utilities.enum
+  "fut-ensure-enum": {
+    "prefix": "fut-ensure-enum",
+    "body": ["from utilities.enum import ensure_enum", "$0"]
+  },
+  "fut-multiple-matching-members-error": {
+    "prefix": "fut-multiple-matching-members-error",
+    "body": ["from utilities.enum import MultipleMatchingMembersError", "$0"]
+  },
+  "fut-no-matching-member-error": {
+    "prefix": "fut-no-matching-member-error",
+    "body": ["from utilities.enum import NoMatchingMemberError", "$0"]
+  },
+  "fut-parse-enum": {
+    "prefix": "fut-parse-enum",
+    "body": ["from utilities.enum import parse_enum", "$0"]
+  },
+  "fut-str-enum": {
+    "prefix": "fut-str-enum",
+    "body": ["from utilities.enum import StrEnum", "$0"]
   },
 
   // third party: (dycw-)utilities.errors
@@ -3357,6 +3383,20 @@
     "body": ["from utilities.luigi import WeekdayParameter", "$0"]
   },
 
+  // third party: (dycw-)utilities.os
+  "fut-cpu-count": {
+    "prefix": "fut-cpu-count",
+    "body": ["from utilities.os import CPU_COUNT", "$0"]
+  },
+  "fut-temp-environ": {
+    "prefix": "fut-temp-environ",
+    "body": ["from utilities.os import temp_environ", "$0"]
+  },
+  "fut-unable-to-determine-cpu-count-error": {
+    "prefix": "fut-unable-to-determine-cpu-count-error",
+    "body": ["from utilities.os import UnableToDetermineCPUCountError", "$0"]
+  },
+
   // third party: (dycw-)utilities.pathlib
   "fut-ensure-suffix": {
     "prefix": "fut-ensure-suffix",
@@ -3433,6 +3473,10 @@
   "fut-empty-data-frame-error": {
     "prefix": "fut-empty-data-frame-error",
     "body": ["from utilities.polars import EmptyDataFrameError", "$0"]
+  },
+  "fut-join": {
+    "prefix": "fut-join",
+    "body": ["from utilities.polars import join", "$0"]
   },
   "fut-multiple-th-rows-error": {
     "prefix": "fut-multiple-th-rows-error",
