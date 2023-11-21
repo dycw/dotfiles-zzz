@@ -47,13 +47,22 @@ with suppress(ModuleNotFoundError):
         serialize_timedelta,  # noqa: F401
         yield_weekdays,  # noqa: F401
     )
+    from utilities.enum import (
+        MultipleMatchingMembersError,  # noqa: F401
+        NoMatchingMemberError,  # noqa: F401
+        StrEnum,  # noqa: F401
+        ensure_enum,  # noqa: F401
+        parse_enum,  # noqa: F401
+    )
     from utilities.errors import (
         DirectoryExistsError,  # noqa: F401
         NoUniqueArgError,  # noqa: F401
         redirect_error,  # noqa: F401
         retry,  # noqa: F401
     )
-    from utilities.functools import partial  # noqa: F401
+    from utilities.functools import (
+        partial,  # noqa: F401
+    )
     from utilities.getpass import (
         USER,  # noqa: F401
     )
@@ -84,6 +93,11 @@ with suppress(ModuleNotFoundError):
     from utilities.logging import (
         LogLevel,  # noqa: F401
         basic_config,  # noqa: F401
+    )
+    from utilities.os import (
+        CPU_COUNT,  # noqa: F401
+        UnableToDetermineCPUCountError,  # noqa: F401
+        temp_environ,  # noqa: F401
     )
     from utilities.pathlib import (
         PathLike,  # noqa: F401
@@ -139,6 +153,7 @@ with suppress(ModuleNotFoundError):
         )
     with suppress(ModuleNotFoundError):
         from utilities.atomicwrites import (
+            WriterEmptyError,  # noqa: F401
             writer,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
@@ -186,6 +201,11 @@ with suppress(ModuleNotFoundError):
             build_params_mixin,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
+        from utilities.polars.bs4 import (
+            MultipleTHRowsError,  # noqa: F401
+            yield_tables,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
         from utilities.polars.polars import (
             DataFrameColumnsError,  # noqa: F401
             DataFrameDTypesError,  # noqa: F401
@@ -199,12 +219,8 @@ with suppress(ModuleNotFoundError):
             DataFrameWidthError,  # noqa: F401
             EmptyDataFrameError,  # noqa: F401
             check_dataframe,  # noqa: F401
+            join,  # noqa: F401
             set_first_row_as_columns,  # noqa: F401
-        )
-    with suppress(ModuleNotFoundError):
-        from utilities.polars.bs4 import (
-            MultipleTHRowsError,  # noqa: F401
-            yield_tables,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
         from utilities.typed_settings.click import (
