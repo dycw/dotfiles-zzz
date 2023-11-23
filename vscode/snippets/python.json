@@ -3523,6 +3523,467 @@
     "body": ["from utilities.sentinel import sentinel", "$0"]
   },
 
+  // third party: (dycw-)utilities.sqlalchemy
+  "fut-check-dataframe-schema-against-table": {
+    "prefix": "fut-check-dataframe-schema-against-table",
+    "body": [
+      "from utilities.sqlalchemy import check_dataframe_schema_against_table",
+      "$0"
+    ]
+  },
+  "fut-check-engine": {
+    "prefix": "fut-check-engine",
+    "body": ["from utilities.sqlalchemy import check_engine", "$0"]
+  },
+  "fut-check-selectable-for-duplicate-columns": {
+    "prefix": "fut-check-selectable-for-duplicate-columns",
+    "body": [
+      "from utilities.sqlalchemy import check_selectable_for_duplicate_columns",
+      "$0"
+    ]
+  },
+  "fut-check-table-against-reflection": {
+    "prefix": "fut-check-table-against-reflection",
+    "body": [
+      "from utilities.sqlalchemy import check_table_against_reflection",
+      "$0"
+    ]
+  },
+  "fut-check-tables-equal": {
+    "prefix": "fut-check-tables-equal",
+    "body": ["from utilities.sqlalchemy import check_tables_equal", "$0"]
+  },
+  "fut-chunk-size-frac": {
+    "prefix": "fut-chunk-size-frac",
+    "body": ["from utilities.sqlalchemy import CHUNK_SIZE_FRAC", "$0"]
+  },
+  "fut-column-to-pandas-d-type-error": {
+    "prefix": "fut-column-to-pandas-d-type-error",
+    "body": ["from utilities.sqlalchemy import ColumnToPandasDTypeError", "$0"]
+  },
+  "fut-column-to-polars-expr-error": {
+    "prefix": "fut-column-to-polars-expr-error",
+    "body": ["from utilities.sqlalchemy import ColumnToPolarsExprError", "$0"]
+  },
+  "fut-columnwise-max": {
+    "prefix": "fut-columnwise-max",
+    "body": ["from utilities.sqlalchemy import columnwise_max", "$0"]
+  },
+  "fut-columnwise-min": {
+    "prefix": "fut-columnwise-min",
+    "body": ["from utilities.sqlalchemy import columnwise_min", "$0"]
+  },
+  "fut-create-engine": {
+    "prefix": "fut-create-engine",
+    "body": ["from utilities.sqlalchemy import create_engine", "$0"]
+  },
+  "fut-dialect": {
+    "prefix": "fut-dialect",
+    "body": ["from utilities.sqlalchemy import Dialect", "$0"]
+  },
+  "fut-engine-error": {
+    "prefix": "fut-engine-error",
+    "body": ["from utilities.sqlalchemy import EngineError", "$0"]
+  },
+  "fut-ensure-engine": {
+    "prefix": "fut-ensure-engine",
+    "body": ["from utilities.sqlalchemy import ensure_engine", "$0"]
+  },
+  "fut-ensure-tables-created": {
+    "prefix": "fut-ensure-tables-created",
+    "body": ["from utilities.sqlalchemy import ensure_tables_created", "$0"]
+  },
+  "fut-ensure-tables-dropped": {
+    "prefix": "fut-ensure-tables-dropped",
+    "body": ["from utilities.sqlalchemy import ensure_tables_dropped", "$0"]
+  },
+  "fut-first-argument-invalid-error": {
+    "prefix": "fut-first-argument-invalid-error",
+    "body": ["from utilities.sqlalchemy import FirstArgumentInvalidError", "$0"]
+  },
+  "fut-first-argument-list-item-invalid-error": {
+    "prefix": "fut-first-argument-list-item-invalid-error",
+    "body": [
+      "from utilities.sqlalchemy import FirstArgumentListItemInvalidError",
+      "$0"
+    ]
+  },
+  "fut-get-column-names": {
+    "prefix": "fut-get-column-names",
+    "body": ["from utilities.sqlalchemy import get_column_names", "$0"]
+  },
+  "fut-get-columns": {
+    "prefix": "fut-get-columns",
+    "body": ["from utilities.sqlalchemy import get_columns", "$0"]
+  },
+  "fut-get-dialect": {
+    "prefix": "fut-get-dialect",
+    "body": ["from utilities.sqlalchemy import get_dialect", "$0"]
+  },
+  "fut-get-table": {
+    "prefix": "fut-get-table",
+    "body": ["from utilities.sqlalchemy import get_table", "$0"]
+  },
+  "fut-get-table-name": {
+    "prefix": "fut-get-table-name",
+    "body": ["from utilities.sqlalchemy import get_table_name", "$0"]
+  },
+  "fut-incorrect-number-of-tables-error": {
+    "prefix": "fut-incorrect-number-of-tables-error",
+    "body": [
+      "from utilities.sqlalchemy import IncorrectNumberOfTablesError",
+      "$0"
+    ]
+  },
+  "fut-insert-items": {
+    "prefix": "fut-insert-items",
+    "body": ["from utilities.sqlalchemy import insert_items", "$0"]
+  },
+  "fut-insert-pandas-dataframe": {
+    "prefix": "fut-insert-pandas-dataframe",
+    "body": ["from utilities.sqlalchemy import insert_pandas_dataframe", "$0"]
+  },
+  "fut-insert-polars-dataframe": {
+    "prefix": "fut-insert-polars-dataframe",
+    "body": ["from utilities.sqlalchemy import insert_polars_dataframe", "$0"]
+  },
+  "fut-invalid-item-error": {
+    "prefix": "fut-invalid-item-error",
+    "body": ["from utilities.sqlalchemy import InvalidItemError", "$0"]
+  },
+  "fut-invalid-item-in-iterable-error": {
+    "prefix": "fut-invalid-item-in-iterable-error",
+    "body": [
+      "from utilities.sqlalchemy import InvalidItemInIterableError",
+      "$0"
+    ]
+  },
+  "fut-is-mapped-class": {
+    "prefix": "fut-is-mapped-class",
+    "body": ["from utilities.sqlalchemy import is_mapped_class", "$0"]
+  },
+  "fut-is-table-or-mapped-class": {
+    "prefix": "fut-is-table-or-mapped-class",
+    "body": ["from utilities.sqlalchemy import is_table_or_mapped_class", "$0"]
+  },
+  "fut-mapped-class-to-dict": {
+    "prefix": "fut-mapped-class-to-dict",
+    "body": ["from utilities.sqlalchemy import mapped_class_to_dict", "$0"]
+  },
+  "fut-next-from-sequence": {
+    "prefix": "fut-next-from-sequence",
+    "body": ["from utilities.sqlalchemy import next_from_sequence", "$0"]
+  },
+  "fut-no-such-sequence-error": {
+    "prefix": "fut-no-such-sequence-error",
+    "body": ["from utilities.sqlalchemy import NoSuchSequenceError", "$0"]
+  },
+  "fut-non-positive-stream-error": {
+    "prefix": "fut-non-positive-stream-error",
+    "body": ["from utilities.sqlalchemy import NonPositiveStreamError", "$0"]
+  },
+  "fut-not-a-table-or-a-mapped-class-error": {
+    "prefix": "fut-not-a-table-or-a-mapped-class-error",
+    "body": [
+      "from utilities.sqlalchemy import NotATableOrAMappedClassError",
+      "$0"
+    ]
+  },
+  "fut-pandas-data-frame-yields-no-rows-error": {
+    "prefix": "fut-pandas-data-frame-yields-no-rows-error",
+    "body": [
+      "from utilities.sqlalchemy import PandasDataFrameYieldsNoRowsError",
+      "$0"
+    ]
+  },
+  "fut-parse-engine": {
+    "prefix": "fut-parse-engine",
+    "body": ["from utilities.sqlalchemy import parse_engine", "$0"]
+  },
+  "fut-parse-engine-error": {
+    "prefix": "fut-parse-engine-error",
+    "body": ["from utilities.sqlalchemy import ParseEngineError", "$0"]
+  },
+  "fut-polars-data-frame-yields-no-rows-error": {
+    "prefix": "fut-polars-data-frame-yields-no-rows-error",
+    "body": [
+      "from utilities.sqlalchemy import PolarsDataFrameYieldsNoRowsError",
+      "$0"
+    ]
+  },
+  "fut-redirect-to-no-such-sequence-error": {
+    "prefix": "fut-redirect-to-no-such-sequence-error",
+    "body": [
+      "from utilities.sqlalchemy import redirect_to_no_such_sequence_error",
+      "$0"
+    ]
+  },
+  "fut-redirect-to-no-such-table-error": {
+    "prefix": "fut-redirect-to-no-such-table-error",
+    "body": [
+      "from utilities.sqlalchemy import redirect_to_no_such_table_error",
+      "$0"
+    ]
+  },
+  "fut-redirect-to-table-already-exists-error": {
+    "prefix": "fut-redirect-to-table-already-exists-error",
+    "body": [
+      "from utilities.sqlalchemy import redirect_to_table_already_exists_error",
+      "$0"
+    ]
+  },
+  "fut-second-argument-not-a-table-or-mapped-class-error": {
+    "prefix": "fut-second-argument-not-a-table-or-mapped-class-error",
+    "body": [
+      "from utilities.sqlalchemy import SecondArgumentNotATableOrMappedClassError",
+      "$0"
+    ]
+  },
+  "fut-select-to-pandas-dataframe": {
+    "prefix": "fut-select-to-pandas-dataframe",
+    "body": [
+      "from utilities.sqlalchemy import select_to_pandas_dataframe",
+      "$0"
+    ]
+  },
+  "fut-select-to-parquet": {
+    "prefix": "fut-select-to-parquet",
+    "body": ["from utilities.sqlalchemy import select_to_parquet", "$0"]
+  },
+  "fut-select-to-polars-dataframe": {
+    "prefix": "fut-select-to-polars-dataframe",
+    "body": [
+      "from utilities.sqlalchemy import select_to_polars_dataframe",
+      "$0"
+    ]
+  },
+  "fut-serialize-engine": {
+    "prefix": "fut-serialize-engine",
+    "body": ["from utilities.sqlalchemy import serialize_engine", "$0"]
+  },
+  "fut-series-and-table-column-incompatible-error": {
+    "prefix": "fut-series-and-table-column-incompatible-error",
+    "body": [
+      "from utilities.sqlalchemy import SeriesAndTableColumnIncompatibleError",
+      "$0"
+    ]
+  },
+  "fut-series-matches-against-multiple-columns-error": {
+    "prefix": "fut-series-matches-against-multiple-columns-error",
+    "body": [
+      "from utilities.sqlalchemy import SeriesMatchesAgainstMultipleColumnsError",
+      "$0"
+    ]
+  },
+  "fut-series-matches-against-no-column-error": {
+    "prefix": "fut-series-matches-against-no-column-error",
+    "body": [
+      "from utilities.sqlalchemy import SeriesMatchesAgainstNoColumnError",
+      "$0"
+    ]
+  },
+  "fut-sq-lite-does-not-support-sequences-error": {
+    "prefix": "fut-sq-lite-does-not-support-sequences-error",
+    "body": [
+      "from utilities.sqlalchemy import SQLiteDoesNotSupportSequencesError",
+      "$0"
+    ]
+  },
+  "fut-table-already-exists-error": {
+    "prefix": "fut-table-already-exists-error",
+    "body": ["from utilities.sqlalchemy import TableAlreadyExistsError", "$0"]
+  },
+  "fut-tablename-mixin": {
+    "prefix": "fut-tablename-mixin",
+    "body": ["from utilities.sqlalchemy import TablenameMixin", "$0"]
+  },
+  "fut-tuple-not-a-pair-error": {
+    "prefix": "fut-tuple-not-a-pair-error",
+    "body": ["from utilities.sqlalchemy import TupleNotAPairError", "$0"]
+  },
+  "fut-unequal-boolean-column-create-constraint-error": {
+    "prefix": "fut-unequal-boolean-column-create-constraint-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalBooleanColumnCreateConstraintError",
+      "$0"
+    ]
+  },
+  "fut-unequal-boolean-column-name-error": {
+    "prefix": "fut-unequal-boolean-column-name-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalBooleanColumnNameError",
+      "$0"
+    ]
+  },
+  "fut-unequal-column-types-error": {
+    "prefix": "fut-unequal-column-types-error",
+    "body": ["from utilities.sqlalchemy import UnequalColumnTypesError", "$0"]
+  },
+  "fut-unequal-date-time-column-timezone-error": {
+    "prefix": "fut-unequal-date-time-column-timezone-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalDateTimeColumnTimezoneError",
+      "$0"
+    ]
+  },
+  "fut-unequal-enum-column-create-constraint-error": {
+    "prefix": "fut-unequal-enum-column-create-constraint-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalEnumColumnCreateConstraintError",
+      "$0"
+    ]
+  },
+  "fut-unequal-enum-column-inherit-schema-error": {
+    "prefix": "fut-unequal-enum-column-inherit-schema-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalEnumColumnInheritSchemaError",
+      "$0"
+    ]
+  },
+  "fut-unequal-enum-column-length-error": {
+    "prefix": "fut-unequal-enum-column-length-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalEnumColumnLengthError",
+      "$0"
+    ]
+  },
+  "fut-unequal-enum-column-native-enum-error": {
+    "prefix": "fut-unequal-enum-column-native-enum-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalEnumColumnNativeEnumError",
+      "$0"
+    ]
+  },
+  "fut-unequal-enum-column-types-error": {
+    "prefix": "fut-unequal-enum-column-types-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalEnumColumnTypesError",
+      "$0"
+    ]
+  },
+  "fut-unequal-float-column-as-decimal-error": {
+    "prefix": "fut-unequal-float-column-as-decimal-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalFloatColumnAsDecimalError",
+      "$0"
+    ]
+  },
+  "fut-unequal-float-column-decimal-return-scale-error": {
+    "prefix": "fut-unequal-float-column-decimal-return-scale-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalFloatColumnDecimalReturnScaleError",
+      "$0"
+    ]
+  },
+  "fut-unequal-float-column-precisions-error": {
+    "prefix": "fut-unequal-float-column-precisions-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalFloatColumnPrecisionsError",
+      "$0"
+    ]
+  },
+  "fut-unequal-interval-column-day-precision-error": {
+    "prefix": "fut-unequal-interval-column-day-precision-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalIntervalColumnDayPrecisionError",
+      "$0"
+    ]
+  },
+  "fut-unequal-interval-column-native-error": {
+    "prefix": "fut-unequal-interval-column-native-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalIntervalColumnNativeError",
+      "$0"
+    ]
+  },
+  "fut-unequal-interval-column-second-precision-error": {
+    "prefix": "fut-unequal-interval-column-second-precision-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalIntervalColumnSecondPrecisionError",
+      "$0"
+    ]
+  },
+  "fut-unequal-large-binary-column-length-error": {
+    "prefix": "fut-unequal-large-binary-column-length-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalLargeBinaryColumnLengthError",
+      "$0"
+    ]
+  },
+  "fut-unequal-nullable-status-error": {
+    "prefix": "fut-unequal-nullable-status-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalNullableStatusError",
+      "$0"
+    ]
+  },
+  "fut-unequal-number-of-columns-error": {
+    "prefix": "fut-unequal-number-of-columns-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalNumberOfColumnsError",
+      "$0"
+    ]
+  },
+  "fut-unequal-numeric-scale-error": {
+    "prefix": "fut-unequal-numeric-scale-error",
+    "body": ["from utilities.sqlalchemy import UnequalNumericScaleError", "$0"]
+  },
+  "fut-unequal-primary-key-status-error": {
+    "prefix": "fut-unequal-primary-key-status-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalPrimaryKeyStatusError",
+      "$0"
+    ]
+  },
+  "fut-unequal-set-of-columns-error": {
+    "prefix": "fut-unequal-set-of-columns-error",
+    "body": ["from utilities.sqlalchemy import UnequalSetOfColumnsError", "$0"]
+  },
+  "fut-unequal-string-collation-error": {
+    "prefix": "fut-unequal-string-collation-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalStringCollationError",
+      "$0"
+    ]
+  },
+  "fut-unequal-string-length-error": {
+    "prefix": "fut-unequal-string-length-error",
+    "body": ["from utilities.sqlalchemy import UnequalStringLengthError", "$0"]
+  },
+  "fut-unequal-table-or-column-names-error": {
+    "prefix": "fut-unequal-table-or-column-names-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalTableOrColumnNamesError",
+      "$0"
+    ]
+  },
+  "fut-unequal-table-or-column-snake-case-names-error": {
+    "prefix": "fut-unequal-table-or-column-snake-case-names-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalTableOrColumnSnakeCaseNamesError",
+      "$0"
+    ]
+  },
+  "fut-unequal-uuid-as-uuid-error": {
+    "prefix": "fut-unequal-uuid-as-uuid-error",
+    "body": ["from utilities.sqlalchemy import UnequalUUIDAsUUIDError", "$0"]
+  },
+  "fut-unequal-uuid-native-uuid-error": {
+    "prefix": "fut-unequal-uuid-native-uuid-error",
+    "body": [
+      "from utilities.sqlalchemy import UnequalUUIDNativeUUIDError",
+      "$0"
+    ]
+  },
+  "fut-unsupported-dialect-error": {
+    "prefix": "fut-unsupported-dialect-error",
+    "body": ["from utilities.sqlalchemy import UnsupportedDialectError", "$0"]
+  },
+  "fut-yield-connection": {
+    "prefix": "fut-yield-connection",
+    "body": ["from utilities.sqlalchemy import yield_connection", "$0"]
+  },
+
   // third party: (dycw-)utilities.tempfile
   "fut-gettempdir": {
     "prefix": "fut-gettempdir",

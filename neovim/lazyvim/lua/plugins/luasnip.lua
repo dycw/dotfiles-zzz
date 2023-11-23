@@ -871,6 +871,209 @@ return {
 			-- third party: (dycw-)utilities.sentinel
 			s("fut-sentinel", { t("from utilities.sentinel import sentinel") }),
 
+			-- third party: (dycw-)utilities.sqlalchemy
+			s(
+				"fut-check-dataframe-schema-against-table",
+				{ t("from utilities.sqlalchemy import check_dataframe_schema_against_table") }
+			),
+			s("fut-check-engine", { t("from utilities.sqlalchemy import check_engine") }),
+			s(
+				"fut-check-selectable-for-duplicate-columns",
+				{ t("from utilities.sqlalchemy import check_selectable_for_duplicate_columns") }
+			),
+			s(
+				"fut-check-table-against-reflection",
+				{ t("from utilities.sqlalchemy import check_table_against_reflection") }
+			),
+			s("fut-check-tables-equal", { t("from utilities.sqlalchemy import check_tables_equal") }),
+			s("fut-chunk-size-frac", { t("from utilities.sqlalchemy import CHUNK_SIZE_FRAC") }),
+			s("fut-column-to-pandas-d-type-error", { t("from utilities.sqlalchemy import ColumnToPandasDTypeError") }),
+			s("fut-column-to-polars-expr-error", { t("from utilities.sqlalchemy import ColumnToPolarsExprError") }),
+			s("fut-columnwise-max", { t("from utilities.sqlalchemy import columnwise_max") }),
+			s("fut-columnwise-min", { t("from utilities.sqlalchemy import columnwise_min") }),
+			s("fut-create-engine", { t("from utilities.sqlalchemy import create_engine") }),
+			s("fut-dialect", { t("from utilities.sqlalchemy import Dialect") }),
+			s("fut-engine-error", { t("from utilities.sqlalchemy import EngineError") }),
+			s("fut-ensure-engine", { t("from utilities.sqlalchemy import ensure_engine") }),
+			s("fut-ensure-tables-created", { t("from utilities.sqlalchemy import ensure_tables_created") }),
+			s("fut-ensure-tables-dropped", { t("from utilities.sqlalchemy import ensure_tables_dropped") }),
+			s("fut-first-argument-invalid-error", { t("from utilities.sqlalchemy import FirstArgumentInvalidError") }),
+			s(
+				"fut-first-argument-list-item-invalid-error",
+				{ t("from utilities.sqlalchemy import FirstArgumentListItemInvalidError") }
+			),
+			s("fut-get-column-names", { t("from utilities.sqlalchemy import get_column_names") }),
+			s("fut-get-columns", { t("from utilities.sqlalchemy import get_columns") }),
+			s("fut-get-dialect", { t("from utilities.sqlalchemy import get_dialect") }),
+			s("fut-get-table", { t("from utilities.sqlalchemy import get_table") }),
+			s("fut-get-table-name", { t("from utilities.sqlalchemy import get_table_name") }),
+			s(
+				"fut-incorrect-number-of-tables-error",
+				{ t("from utilities.sqlalchemy import IncorrectNumberOfTablesError") }
+			),
+			s("fut-insert-items", { t("from utilities.sqlalchemy import insert_items") }),
+			s("fut-insert-pandas-dataframe", { t("from utilities.sqlalchemy import insert_pandas_dataframe") }),
+			s("fut-insert-polars-dataframe", { t("from utilities.sqlalchemy import insert_polars_dataframe") }),
+			s("fut-invalid-item-error", { t("from utilities.sqlalchemy import InvalidItemError") }),
+			s(
+				"fut-invalid-item-in-iterable-error",
+				{ t("from utilities.sqlalchemy import InvalidItemInIterableError") }
+			),
+			s("fut-is-mapped-class", { t("from utilities.sqlalchemy import is_mapped_class") }),
+			s("fut-is-table-or-mapped-class", { t("from utilities.sqlalchemy import is_table_or_mapped_class") }),
+			s("fut-mapped-class-to-dict", { t("from utilities.sqlalchemy import mapped_class_to_dict") }),
+			s("fut-next-from-sequence", { t("from utilities.sqlalchemy import next_from_sequence") }),
+			s("fut-no-such-sequence-error", { t("from utilities.sqlalchemy import NoSuchSequenceError") }),
+			s("fut-non-positive-stream-error", { t("from utilities.sqlalchemy import NonPositiveStreamError") }),
+			s(
+				"fut-not-a-table-or-a-mapped-class-error",
+				{ t("from utilities.sqlalchemy import NotATableOrAMappedClassError") }
+			),
+			s(
+				"fut-pandas-data-frame-yields-no-rows-error",
+				{ t("from utilities.sqlalchemy import PandasDataFrameYieldsNoRowsError") }
+			),
+			s("fut-parse-engine", { t("from utilities.sqlalchemy import parse_engine") }),
+			s("fut-parse-engine-error", { t("from utilities.sqlalchemy import ParseEngineError") }),
+			s(
+				"fut-polars-data-frame-yields-no-rows-error",
+				{ t("from utilities.sqlalchemy import PolarsDataFrameYieldsNoRowsError") }
+			),
+			s(
+				"fut-redirect-to-no-such-sequence-error",
+				{ t("from utilities.sqlalchemy import redirect_to_no_such_sequence_error") }
+			),
+			s(
+				"fut-redirect-to-no-such-table-error",
+				{ t("from utilities.sqlalchemy import redirect_to_no_such_table_error") }
+			),
+			s(
+				"fut-redirect-to-table-already-exists-error",
+				{ t("from utilities.sqlalchemy import redirect_to_table_already_exists_error") }
+			),
+			s(
+				"fut-second-argument-not-a-table-or-mapped-class-error",
+				{ t("from utilities.sqlalchemy import SecondArgumentNotATableOrMappedClassError") }
+			),
+			s("fut-select-to-pandas-dataframe", { t("from utilities.sqlalchemy import select_to_pandas_dataframe") }),
+			s("fut-select-to-parquet", { t("from utilities.sqlalchemy import select_to_parquet") }),
+			s("fut-select-to-polars-dataframe", { t("from utilities.sqlalchemy import select_to_polars_dataframe") }),
+			s("fut-serialize-engine", { t("from utilities.sqlalchemy import serialize_engine") }),
+			s(
+				"fut-series-and-table-column-incompatible-error",
+				{ t("from utilities.sqlalchemy import SeriesAndTableColumnIncompatibleError") }
+			),
+			s(
+				"fut-series-matches-against-multiple-columns-error",
+				{ t("from utilities.sqlalchemy import SeriesMatchesAgainstMultipleColumnsError") }
+			),
+			s(
+				"fut-series-matches-against-no-column-error",
+				{ t("from utilities.sqlalchemy import SeriesMatchesAgainstNoColumnError") }
+			),
+			s(
+				"fut-sq-lite-does-not-support-sequences-error",
+				{ t("from utilities.sqlalchemy import SQLiteDoesNotSupportSequencesError") }
+			),
+			s("fut-table-already-exists-error", { t("from utilities.sqlalchemy import TableAlreadyExistsError") }),
+			s("fut-tablename-mixin", { t("from utilities.sqlalchemy import TablenameMixin") }),
+			s("fut-tuple-not-a-pair-error", { t("from utilities.sqlalchemy import TupleNotAPairError") }),
+			s(
+				"fut-unequal-boolean-column-create-constraint-error",
+				{ t("from utilities.sqlalchemy import UnequalBooleanColumnCreateConstraintError") }
+			),
+			s(
+				"fut-unequal-boolean-column-name-error",
+				{ t("from utilities.sqlalchemy import UnequalBooleanColumnNameError") }
+			),
+			s("fut-unequal-column-types-error", { t("from utilities.sqlalchemy import UnequalColumnTypesError") }),
+			s(
+				"fut-unequal-date-time-column-timezone-error",
+				{ t("from utilities.sqlalchemy import UnequalDateTimeColumnTimezoneError") }
+			),
+			s(
+				"fut-unequal-enum-column-create-constraint-error",
+				{ t("from utilities.sqlalchemy import UnequalEnumColumnCreateConstraintError") }
+			),
+			s(
+				"fut-unequal-enum-column-inherit-schema-error",
+				{ t("from utilities.sqlalchemy import UnequalEnumColumnInheritSchemaError") }
+			),
+			s(
+				"fut-unequal-enum-column-length-error",
+				{ t("from utilities.sqlalchemy import UnequalEnumColumnLengthError") }
+			),
+			s(
+				"fut-unequal-enum-column-native-enum-error",
+				{ t("from utilities.sqlalchemy import UnequalEnumColumnNativeEnumError") }
+			),
+			s(
+				"fut-unequal-enum-column-types-error",
+				{ t("from utilities.sqlalchemy import UnequalEnumColumnTypesError") }
+			),
+			s(
+				"fut-unequal-float-column-as-decimal-error",
+				{ t("from utilities.sqlalchemy import UnequalFloatColumnAsDecimalError") }
+			),
+			s(
+				"fut-unequal-float-column-decimal-return-scale-error",
+				{ t("from utilities.sqlalchemy import UnequalFloatColumnDecimalReturnScaleError") }
+			),
+			s(
+				"fut-unequal-float-column-precisions-error",
+				{ t("from utilities.sqlalchemy import UnequalFloatColumnPrecisionsError") }
+			),
+			s(
+				"fut-unequal-interval-column-day-precision-error",
+				{ t("from utilities.sqlalchemy import UnequalIntervalColumnDayPrecisionError") }
+			),
+			s(
+				"fut-unequal-interval-column-native-error",
+				{ t("from utilities.sqlalchemy import UnequalIntervalColumnNativeError") }
+			),
+			s(
+				"fut-unequal-interval-column-second-precision-error",
+				{ t("from utilities.sqlalchemy import UnequalIntervalColumnSecondPrecisionError") }
+			),
+			s(
+				"fut-unequal-large-binary-column-length-error",
+				{ t("from utilities.sqlalchemy import UnequalLargeBinaryColumnLengthError") }
+			),
+			s(
+				"fut-unequal-nullable-status-error",
+				{ t("from utilities.sqlalchemy import UnequalNullableStatusError") }
+			),
+			s(
+				"fut-unequal-number-of-columns-error",
+				{ t("from utilities.sqlalchemy import UnequalNumberOfColumnsError") }
+			),
+			s("fut-unequal-numeric-scale-error", { t("from utilities.sqlalchemy import UnequalNumericScaleError") }),
+			s(
+				"fut-unequal-primary-key-status-error",
+				{ t("from utilities.sqlalchemy import UnequalPrimaryKeyStatusError") }
+			),
+			s("fut-unequal-set-of-columns-error", { t("from utilities.sqlalchemy import UnequalSetOfColumnsError") }),
+			s(
+				"fut-unequal-string-collation-error",
+				{ t("from utilities.sqlalchemy import UnequalStringCollationError") }
+			),
+			s("fut-unequal-string-length-error", { t("from utilities.sqlalchemy import UnequalStringLengthError") }),
+			s(
+				"fut-unequal-table-or-column-names-error",
+				{ t("from utilities.sqlalchemy import UnequalTableOrColumnNamesError") }
+			),
+			s(
+				"fut-unequal-table-or-column-snake-case-names-error",
+				{ t("from utilities.sqlalchemy import UnequalTableOrColumnSnakeCaseNamesError") }
+			),
+			s("fut-unequal-uuid-as-uuid-error", { t("from utilities.sqlalchemy import UnequalUUIDAsUUIDError") }),
+			s(
+				"fut-unequal-uuid-native-uuid-error",
+				{ t("from utilities.sqlalchemy import UnequalUUIDNativeUUIDError") }
+			),
+			s("fut-unsupported-dialect-error", { t("from utilities.sqlalchemy import UnsupportedDialectError") }),
+			s("fut-yield-connection", { t("from utilities.sqlalchemy import yield_connection") }),
+
 			-- third party: (dycw-)utilities.tempfile
 			s("fut-gettempdir", { t("from utilities.tempfile import gettempdir") }),
 			s("fut-temp-dir", { t("from utilities.tempfile import TEMP_DIR") }),
