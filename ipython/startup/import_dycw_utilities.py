@@ -223,6 +223,103 @@ with suppress(ModuleNotFoundError):
             set_first_row_as_columns,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
+        from utilities.sqlalchemy.fastparquet import select_to_parquet  # noqa: F401
+    with suppress(ModuleNotFoundError):
+        from utilities.sqlalchemy.pandas import (
+            ColumnToPandasDTypeError,  # noqa: F401
+            NonPositiveStreamError,  # noqa: F401
+            PandasDataFrameYieldsNoRowsError,  # noqa: F401
+            insert_pandas_dataframe,  # noqa: F401
+            select_to_pandas_dataframe,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
+        from utilities.sqlalchemy.polars import (
+            ColumnToPolarsExprError,  # noqa: F401
+            PolarsDataFrameYieldsNoRowsError,  # noqa: F401
+            insert_polars_dataframe,  # noqa: F401
+            select_to_polars_dataframe,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
+        from utilities.sqlalchemy.sqlalchemy import (
+            CHUNK_SIZE_FRAC,  # noqa: F401
+            Dialect,  # noqa: F401
+            EngineError,  # noqa: F401
+            FirstArgumentInvalidError,  # noqa: F401
+            FirstArgumentListItemInvalidError,  # noqa: F401
+            IncorrectNumberOfTablesError,  # noqa: F401
+            InvalidItemError,  # noqa: F401
+            InvalidItemInIterableError,  # noqa: F401
+            NotATableOrAMappedClassError,  # noqa: F401
+            ParseEngineError,  # noqa: F401
+            SecondArgumentNotATableOrMappedClassError,  # noqa: F401
+            SeriesAndTableColumnIncompatibleError,  # noqa: F401
+            SeriesMatchesAgainstMultipleColumnsError,  # noqa: F401
+            SeriesMatchesAgainstNoColumnError,  # noqa: F401
+            TableAlreadyExistsError,  # noqa: F401
+            TablenameMixin,  # noqa: F401
+            TupleNotAPairError,  # noqa: F401
+            UnequalBooleanColumnCreateConstraintError,  # noqa: F401
+            UnequalBooleanColumnNameError,  # noqa: F401
+            UnequalColumnTypesError,  # noqa: F401
+            UnequalDateTimeColumnTimezoneError,  # noqa: F401
+            UnequalEnumColumnCreateConstraintError,  # noqa: F401
+            UnequalEnumColumnInheritSchemaError,  # noqa: F401
+            UnequalEnumColumnLengthError,  # noqa: F401
+            UnequalEnumColumnNativeEnumError,  # noqa: F401
+            UnequalEnumColumnTypesError,  # noqa: F401
+            UnequalFloatColumnAsDecimalError,  # noqa: F401
+            UnequalFloatColumnDecimalReturnScaleError,  # noqa: F401
+            UnequalFloatColumnPrecisionsError,  # noqa: F401
+            UnequalIntervalColumnDayPrecisionError,  # noqa: F401
+            UnequalIntervalColumnNativeError,  # noqa: F401
+            UnequalIntervalColumnSecondPrecisionError,  # noqa: F401
+            UnequalLargeBinaryColumnLengthError,  # noqa: F401
+            UnequalNullableStatusError,  # noqa: F401
+            UnequalNumberOfColumnsError,  # noqa: F401
+            UnequalNumericScaleError,  # noqa: F401
+            UnequalPrimaryKeyStatusError,  # noqa: F401
+            UnequalSetOfColumnsError,  # noqa: F401
+            UnequalStringCollationError,  # noqa: F401
+            UnequalStringLengthError,  # noqa: F401
+            UnequalTableOrColumnNamesError,  # noqa: F401
+            UnequalTableOrColumnSnakeCaseNamesError,  # noqa: F401
+            UnequalUUIDAsUUIDError,  # noqa: F401
+            UnequalUUIDNativeUUIDError,  # noqa: F401
+            UnsupportedDialectError,  # noqa: F401
+            check_dataframe_schema_against_table,  # noqa: F401
+            check_engine,  # noqa: F401
+            check_selectable_for_duplicate_columns,  # noqa: F401
+            check_table_against_reflection,  # noqa: F401
+            check_tables_equal,  # noqa: F401
+            columnwise_max,  # noqa: F401
+            columnwise_min,  # noqa: F401
+            create_engine,  # noqa: F401
+            ensure_engine,  # noqa: F401
+            ensure_tables_created,  # noqa: F401
+            ensure_tables_dropped,  # noqa: F401
+            get_column_names,  # noqa: F401
+            get_columns,  # noqa: F401
+            get_dialect,  # noqa: F401
+            get_table,  # noqa: F401
+            get_table_name,  # noqa: F401
+            insert_items,  # noqa: F401
+            is_mapped_class,  # noqa: F401
+            is_table_or_mapped_class,  # noqa: F401
+            mapped_class_to_dict,  # noqa: F401
+            parse_engine,  # noqa: F401
+            redirect_to_no_such_table_error,  # noqa: F401
+            redirect_to_table_already_exists_error,  # noqa: F401
+            serialize_engine,  # noqa: F401
+            yield_connection,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
+        from utilities.sqlalchemy.timeout_decorator import (
+            NoSuchSequenceError,  # noqa: F401
+            SQLiteDoesNotSupportSequencesError,  # noqa: F401
+            next_from_sequence,  # noqa: F401
+            redirect_to_no_such_sequence_error,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
         from utilities.typed_settings.click import (
             click_field,  # noqa: F401
             click_options,  # noqa: F401
