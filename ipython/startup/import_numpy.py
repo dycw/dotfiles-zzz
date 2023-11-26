@@ -69,7 +69,9 @@ with suppress(ModuleNotFoundError):
         inv,  # noqa: F401
     )
     from numpy.random import (
+        Generator,  # noqa: F401
         RandomState,  # noqa: F401
+        default_rng,  # noqa: F401
     )
     from numpy.typing import (
         NDArray,  # noqa: F401
