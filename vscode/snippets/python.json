@@ -2108,8 +2108,8 @@
     "prefix": "fpa-assert-series-equal",
     "body": ["from pandas.testing import assert_series_equal", "$0"]
   },
-  "fpa-b-day": {
-    "prefix": "fpa-b-day",
+  "fpa-bday": {
+    "prefix": "fpa-bday",
     "body": ["from pandas.tseries.offsets import BDay", "$0"]
   },
   "fpa-bdate-range": {
@@ -2954,9 +2954,9 @@
     "prefix": "fut-writer",
     "body": ["from utilities.atomicwrites import writer", "$0"]
   },
-  "fut-writer-empty-error": {
-    "prefix": "fut-writer-empty-error",
-    "body": ["from utilities.atomicwrites import WriterEmptyError", "$0"]
+  "fut-writer-error": {
+    "prefix": "fut-writer-error",
+    "body": ["from utilities.atomicwrites import WriterError", "$0"]
   },
 
   // third party: (dycw-)utilities.class_name
@@ -2974,15 +2974,23 @@
     "prefix": "fut-encrypt",
     "body": ["from utilities.cryptography import encrypt", "$0"]
   },
-  "fut-fernet-key-missing-error": {
-    "prefix": "fut-fernet-key-missing-error",
-    "body": ["from utilities.cryptography import FernetKeyMissingError", "$0"]
+  "fut-get-fernet": {
+    "prefix": "fut-get-fernet",
+    "body": ["from utilities.cryptography import get_fernet", "$0"]
+  },
+  "fut-get-fernet-error": {
+    "prefix": "fut-get-fernet-error",
+    "body": ["from utilities.cryptography import GetFernetError", "$0"]
   },
 
   // third party: (dycw-)utilities.datetime
   "fut-add-weekdays": {
     "prefix": "fut-add-weekdays",
     "body": ["from utilities.datetime import add_weekdays", "$0"]
+  },
+  "fut-add-weekdays-error": {
+    "prefix": "fut-add-weekdays-error",
+    "body": ["from utilities.datetime import AddWeekdaysError", "$0"]
   },
   "fut-date-to-datetime": {
     "prefix": "fut-date-to-datetime",
@@ -3027,10 +3035,6 @@
   "fut-is-weekday": {
     "prefix": "fut-is-weekday",
     "body": ["from utilities.datetime import is_weekday", "$0"]
-  },
-  "fut-is-weekend-error": {
-    "prefix": "fut-is-weekend-error",
-    "body": ["from utilities.datetime import IsWeekendError", "$0"]
   },
   "fut-local-time-zone-error": {
     "prefix": "fut-local-time-zone-error",
@@ -3142,17 +3146,13 @@
     "prefix": "fut-ensure-enum",
     "body": ["from utilities.enum import ensure_enum", "$0"]
   },
-  "fut-multiple-matching-members-error": {
-    "prefix": "fut-multiple-matching-members-error",
-    "body": ["from utilities.enum import MultipleMatchingMembersError", "$0"]
-  },
-  "fut-no-matching-member-error": {
-    "prefix": "fut-no-matching-member-error",
-    "body": ["from utilities.enum import NoMatchingMemberError", "$0"]
-  },
   "fut-parse-enum": {
     "prefix": "fut-parse-enum",
     "body": ["from utilities.enum import parse_enum", "$0"]
+  },
+  "fut-parse-enum-error": {
+    "prefix": "fut-parse-enum-error",
+    "body": ["from utilities.enum import ParseEnumError", "$0"]
   },
   "fut-str-enum": {
     "prefix": "fut-str-enum",
@@ -3164,13 +3164,13 @@
     "prefix": "fut-directory-exists-error",
     "body": ["from utilities.errors import DirectoryExistsError", "$0"]
   },
-  "fut-no-unique-arg-error": {
-    "prefix": "fut-no-unique-arg-error",
-    "body": ["from utilities.errors import NoUniqueArgError", "$0"]
-  },
   "fut-redirect-error": {
     "prefix": "fut-redirect-error",
     "body": ["from utilities.errors import redirect_error", "$0"]
+  },
+  "fut-redirect-error-error": {
+    "prefix": "fut-redirect-error-error",
+    "body": ["from utilities.errors import RedirectErrorError", "$0"]
   },
   "fut-retry": {
     "prefix": "fut-retry",
@@ -3202,9 +3202,13 @@
     "prefix": "fut-get-repo-root",
     "body": ["from utilities.git import get_repo_root", "$0"]
   },
-  "fut-invalid-repo-error": {
-    "prefix": "fut-invalid-repo-error",
-    "body": ["from utilities.git import InvalidRepoError", "$0"]
+  "fut-get-repo-root-error": {
+    "prefix": "fut-get-repo-root-error",
+    "body": ["from utilities.git import GetRepoRootError", "$0"]
+  },
+  "fut-get-repo-root-or-cwd-sub-path": {
+    "prefix": "fut-get-repo-root-or-cwd-sub-path",
+    "body": ["from utilities.git import get_repo_root_or_cwd_sub_path", "$0"]
   },
 
   // third party: (dycw-)utilities.hashlib
@@ -3213,45 +3217,22 @@
     "body": ["from utilities.hashlib import md5_hash", "$0"]
   },
 
-  // third party: (dycw-)utilities.itertools
-  "fut-always-iterable": {
-    "prefix": "fut-always-iterable",
-    "body": ["from utilities.itertools import always_iterable", "$0"]
-  },
+  // third party: (dycw-)utilities.iterables
   "fut-check-duplicates": {
     "prefix": "fut-check-duplicates",
-    "body": ["from utilities.itertools import check_duplicates", "$0"]
+    "body": ["from utilities.iterables import check_duplicates", "$0"]
   },
-  "fut-chunked": {
-    "prefix": "fut-chunked",
-    "body": ["from utilities.itertools import chunked", "$0"]
+  "fut-check-duplicates-error": {
+    "prefix": "fut-check-duplicates-error",
+    "body": ["from utilities.iterables import CheckDuplicatesError", "$0"]
   },
-  "fut-empty-iterable-error": {
-    "prefix": "fut-empty-iterable-error",
-    "body": ["from utilities.itertools import EmptyIterableError", "$0"]
+  "fut-ensure-hashables": {
+    "prefix": "fut-ensure-hashables",
+    "body": ["from utilities.iterables import ensure_hashables", "$0"]
   },
   "fut-is-iterable-not-str": {
     "prefix": "fut-is-iterable-not-str",
-    "body": ["from utilities.itertools import is_iterable_not_str", "$0"]
-  },
-  "fut-iterable-contains-duplicates-error": {
-    "prefix": "fut-iterable-contains-duplicates-error",
-    "body": [
-      "from utilities.itertools import IterableContainsDuplicatesError",
-      "$0"
-    ]
-  },
-  "fut-multiple-elements-error": {
-    "prefix": "fut-multiple-elements-error",
-    "body": ["from utilities.itertools import MultipleElementsError", "$0"]
-  },
-  "fut-one": {
-    "prefix": "fut-one",
-    "body": ["from utilities.itertools import one", "$0"]
-  },
-  "fut-take": {
-    "prefix": "fut-take",
-    "body": ["from utilities.itertools import take", "$0"]
+    "body": ["from utilities.iterables import is_iterable_not_str", "$0"]
   },
 
   // third party: (dycw-)utilities.json
@@ -3275,13 +3256,47 @@
   },
 
   // third party: (dycw-)utilities.luigi
-  "fut-ambiguous-date-error": {
-    "prefix": "fut-ambiguous-date-error",
-    "body": ["from utilities.luigi import AmbiguousDateError", "$0"]
+  "fut-annotation-and-keywords-to-dict": {
+    "prefix": "fut-annotation-and-keywords-to-dict",
+    "body": [
+      "from utilities.luigi import annotation_and_keywords_to_dict",
+      "$0"
+    ]
   },
-  "fut-ambiguous-datetime-error": {
-    "prefix": "fut-ambiguous-datetime-error",
-    "body": ["from utilities.luigi import AmbiguousDatetimeError", "$0"]
+  "fut-annotation-and-keywords-to-dict-error": {
+    "prefix": "fut-annotation-and-keywords-to-dict-error",
+    "body": [
+      "from utilities.luigi import AnnotationAndKeywordsToDictError",
+      "$0"
+    ]
+  },
+  "fut-annotation-date-to-class": {
+    "prefix": "fut-annotation-date-to-class",
+    "body": ["from utilities.luigi import annotation_date_to_class", "$0"]
+  },
+  "fut-annotation-datetime-to-class": {
+    "prefix": "fut-annotation-datetime-to-class",
+    "body": ["from utilities.luigi import annotation_datetime_to_class", "$0"]
+  },
+  "fut-annotation-iterable-to-class": {
+    "prefix": "fut-annotation-iterable-to-class",
+    "body": ["from utilities.luigi import annotation_iterable_to_class", "$0"]
+  },
+  "fut-annotation-iterable-to-class-error": {
+    "prefix": "fut-annotation-iterable-to-class-error",
+    "body": ["from utilities.luigi import AnnotationIterableToClassError", "$0"]
+  },
+  "fut-annotation-to-class": {
+    "prefix": "fut-annotation-to-class",
+    "body": ["from utilities.luigi import annotation_to_class", "$0"]
+  },
+  "fut-annotation-to-class-error": {
+    "prefix": "fut-annotation-to-class-error",
+    "body": ["from utilities.luigi import AnnotationToClassError", "$0"]
+  },
+  "fut-annotation-union-to-class": {
+    "prefix": "fut-annotation-union-to-class",
+    "body": ["from utilities.luigi import annotation_union_to_class", "$0"]
   },
   "fut-await-task": {
     "prefix": "fut-await-task",
@@ -3339,6 +3354,10 @@
     "prefix": "fut-external-task",
     "body": ["from utilities.luigi import ExternalTask", "$0"]
   },
+  "fut-frozen-set-strs-parameter": {
+    "prefix": "fut-frozen-set-strs-parameter",
+    "body": ["from utilities.luigi import FrozenSetStrsParameter", "$0"]
+  },
   "fut-get-dependencies-downstream": {
     "prefix": "fut-get-dependencies-downstream",
     "body": ["from utilities.luigi import get_dependencies_downstream", "$0"]
@@ -3350,17 +3369,6 @@
   "fut-get-task-classes": {
     "prefix": "fut-get-task-classes",
     "body": ["from utilities.luigi import get_task_classes", "$0"]
-  },
-  "fut-invalid-annotation-and-keywords-error": {
-    "prefix": "fut-invalid-annotation-and-keywords-error",
-    "body": [
-      "from utilities.luigi import InvalidAnnotationAndKeywordsError",
-      "$0"
-    ]
-  },
-  "fut-invalid-annotation-error": {
-    "prefix": "fut-invalid-annotation-error",
-    "body": ["from utilities.luigi import InvalidAnnotationError", "$0"]
   },
   "fut-path-target": {
     "prefix": "fut-path-target",
@@ -3383,18 +3391,164 @@
     "body": ["from utilities.luigi import WeekdayParameter", "$0"]
   },
 
+  // third party: (dycw-)utilities.more_itertools
+  "fut-one": {
+    "prefix": "fut-one",
+    "body": ["from utilities.more_itertools import one", "$0"]
+  },
+  "fut-one-empty-error": {
+    "prefix": "fut-one-empty-error",
+    "body": ["from utilities.more_itertools import OneEmptyError", "$0"]
+  },
+  "fut-one-error": {
+    "prefix": "fut-one-error",
+    "body": ["from utilities.more_itertools import OneError", "$0"]
+  },
+  "fut-one-non-unique-error": {
+    "prefix": "fut-one-non-unique-error",
+    "body": ["from utilities.more_itertools import OneNonUniqueError", "$0"]
+  },
+
   // third party: (dycw-)utilities.os
   "fut-cpu-count": {
     "prefix": "fut-cpu-count",
     "body": ["from utilities.os import CPU_COUNT", "$0"]
   },
+  "fut-get-cpu-count": {
+    "prefix": "fut-get-cpu-count",
+    "body": ["from utilities.os import get_cpu_count", "$0"]
+  },
+  "fut-get-cpu-count-error": {
+    "prefix": "fut-get-cpu-count-error",
+    "body": ["from utilities.os import GetCPUCountError", "$0"]
+  },
   "fut-temp-environ": {
     "prefix": "fut-temp-environ",
     "body": ["from utilities.os import temp_environ", "$0"]
   },
-  "fut-unable-to-determine-cpu-count-error": {
-    "prefix": "fut-unable-to-determine-cpu-count-error",
-    "body": ["from utilities.os import UnableToDetermineCPUCountError", "$0"]
+
+  // third party: (dycw-)utilities.pandas
+  "fut-astype": {
+    "prefix": "fut-astype",
+    "body": ["from utilities.pandas import astype", "$0"]
+  },
+  "fut-boolean": {
+    "prefix": "fut-boolean",
+    "body": ["from utilities.pandas import boolean", "$0"]
+  },
+  "fut-category": {
+    "prefix": "fut-category",
+    "body": ["from utilities.pandas import category", "$0"]
+  },
+  "fut-check-pandas-data-frame-error": {
+    "prefix": "fut-check-pandas-data-frame-error",
+    "body": ["from utilities.pandas import CheckPandasDataFrameError", "$0"]
+  },
+  "fut-check-pandas-data-frame-length-error": {
+    "prefix": "fut-check-pandas-data-frame-length-error",
+    "body": [
+      "from utilities.pandas import CheckPandasDataFrameLengthError",
+      "$0"
+    ]
+  },
+  "fut-check-pandas-dataframe": {
+    "prefix": "fut-check-pandas-dataframe",
+    "body": ["from utilities.pandas import check_pandas_dataframe", "$0"]
+  },
+  "fut-check-pandas-dataframe-length": {
+    "prefix": "fut-check-pandas-dataframe-length",
+    "body": ["from utilities.pandas import check_pandas_dataframe_length", "$0"]
+  },
+  "fut-check-range-index": {
+    "prefix": "fut-check-range-index",
+    "body": ["from utilities.pandas import check_range_index", "$0"]
+  },
+  "fut-check-range-index-error": {
+    "prefix": "fut-check-range-index-error",
+    "body": ["from utilities.pandas import CheckRangeIndexError", "$0"]
+  },
+  "fut-datetime64nshk": {
+    "prefix": "fut-datetime64nshk",
+    "body": ["from utilities.pandas import datetime64nshk", "$0"]
+  },
+  "fut-datetime64nsutc": {
+    "prefix": "fut-datetime64nsutc",
+    "body": ["from utilities.pandas import datetime64nsutc", "$0"]
+  },
+  "fut-empty-pandas-concat-error": {
+    "prefix": "fut-empty-pandas-concat-error",
+    "body": ["from utilities.pandas import EmptyPandasConcatError", "$0"]
+  },
+  "fut-int64": {
+    "prefix": "fut-int64",
+    "body": ["from utilities.pandas import Int64", "$0"]
+  },
+  "fut-redirect-to-empty-pandas-concat-error": {
+    "prefix": "fut-redirect-to-empty-pandas-concat-error",
+    "body": [
+      "from utilities.pandas import redirect_to_empty_pandas_concat_error",
+      "$0"
+    ]
+  },
+  "fut-rename-index": {
+    "prefix": "fut-rename-index",
+    "body": ["from utilities.pandas import rename_index", "$0"]
+  },
+  "fut-series-max": {
+    "prefix": "fut-series-max",
+    "body": ["from utilities.pandas import series_max", "$0"]
+  },
+  "fut-series-min": {
+    "prefix": "fut-series-min",
+    "body": ["from utilities.pandas import series_min", "$0"]
+  },
+  "fut-series-min-max-error": {
+    "prefix": "fut-series-min-max-error",
+    "body": ["from utilities.pandas import SeriesMinMaxError", "$0"]
+  },
+  "fut-series-minmax": {
+    "prefix": "fut-series-minmax",
+    "body": ["from utilities.pandas import series_minmax", "$0"]
+  },
+  "fut-sort-index": {
+    "prefix": "fut-sort-index",
+    "body": ["from utilities.pandas import sort_index", "$0"]
+  },
+  "fut-string": {
+    "prefix": "fut-string",
+    "body": ["from utilities.pandas import string", "$0"]
+  },
+  "fut-timestamp-max-as-date": {
+    "prefix": "fut-timestamp-max-as-date",
+    "body": ["from utilities.pandas import TIMESTAMP_MAX_AS_DATE", "$0"]
+  },
+  "fut-timestamp-max-as-datetime": {
+    "prefix": "fut-timestamp-max-as-datetime",
+    "body": ["from utilities.pandas import TIMESTAMP_MAX_AS_DATETIME", "$0"]
+  },
+  "fut-timestamp-min-as-date": {
+    "prefix": "fut-timestamp-min-as-date",
+    "body": ["from utilities.pandas import TIMESTAMP_MIN_AS_DATE", "$0"]
+  },
+  "fut-timestamp-min-as-datetime": {
+    "prefix": "fut-timestamp-min-as-datetime",
+    "body": ["from utilities.pandas import TIMESTAMP_MIN_AS_DATETIME", "$0"]
+  },
+  "fut-timestamp-to-date": {
+    "prefix": "fut-timestamp-to-date",
+    "body": ["from utilities.pandas import timestamp_to_date", "$0"]
+  },
+  "fut-timestamp-to-date-time-error": {
+    "prefix": "fut-timestamp-to-date-time-error",
+    "body": ["from utilities.pandas import TimestampToDateTimeError", "$0"]
+  },
+  "fut-timestamp-to-datetime": {
+    "prefix": "fut-timestamp-to-datetime",
+    "body": ["from utilities.pandas import timestamp_to_datetime", "$0"]
+  },
+  "fut-to-numpy": {
+    "prefix": "fut-to-numpy",
+    "body": ["from utilities.pandas import to_numpy", "$0"]
   },
 
   // third party: (dycw-)utilities.pathlib
@@ -3426,65 +3580,44 @@
   },
 
   // third party: (dycw-)utilities.polars
-  "fut-check-dataframe": {
-    "prefix": "fut-check-dataframe",
-    "body": ["from utilities.polars import check_dataframe", "$0"]
+  "fut-check-polars-data-frame-error": {
+    "prefix": "fut-check-polars-data-frame-error",
+    "body": ["from utilities.polars import CheckPolarsDataFrameError", "$0"]
   },
-  "fut-data-frame-columns-error": {
-    "prefix": "fut-data-frame-columns-error",
-    "body": ["from utilities.polars import DataFrameColumnsError", "$0"]
+  "fut-check-polars-data-frame-height-error": {
+    "prefix": "fut-check-polars-data-frame-height-error",
+    "body": [
+      "from utilities.polars import CheckPolarsDataFrameHeightError",
+      "$0"
+    ]
   },
-  "fut-data-frame-dtypes-error": {
-    "prefix": "fut-data-frame-dtypes-error",
-    "body": ["from utilities.polars import DataFrameDTypesError", "$0"]
+  "fut-check-polars-dataframe": {
+    "prefix": "fut-check-polars-dataframe",
+    "body": ["from utilities.polars import check_polars_dataframe", "$0"]
   },
-  "fut-data-frame-height-error": {
-    "prefix": "fut-data-frame-height-error",
-    "body": ["from utilities.polars import DataFrameHeightError", "$0"]
-  },
-  "fut-data-frame-max-height-error": {
-    "prefix": "fut-data-frame-max-height-error",
-    "body": ["from utilities.polars import DataFrameMaxHeightError", "$0"]
-  },
-  "fut-data-frame-min-height-error": {
-    "prefix": "fut-data-frame-min-height-error",
-    "body": ["from utilities.polars import DataFrameMinHeightError", "$0"]
-  },
-  "fut-data-frame-schema-error": {
-    "prefix": "fut-data-frame-schema-error",
-    "body": ["from utilities.polars import DataFrameSchemaError", "$0"]
-  },
-  "fut-data-frame-shape-error": {
-    "prefix": "fut-data-frame-shape-error",
-    "body": ["from utilities.polars import DataFrameShapeError", "$0"]
-  },
-  "fut-data-frame-sorted-error": {
-    "prefix": "fut-data-frame-sorted-error",
-    "body": ["from utilities.polars import DataFrameSortedError", "$0"]
-  },
-  "fut-data-frame-unique-error": {
-    "prefix": "fut-data-frame-unique-error",
-    "body": ["from utilities.polars import DataFrameUniqueError", "$0"]
-  },
-  "fut-data-frame-width-error": {
-    "prefix": "fut-data-frame-width-error",
-    "body": ["from utilities.polars import DataFrameWidthError", "$0"]
-  },
-  "fut-empty-data-frame-error": {
-    "prefix": "fut-empty-data-frame-error",
-    "body": ["from utilities.polars import EmptyDataFrameError", "$0"]
+  "fut-check-polars-dataframe-height": {
+    "prefix": "fut-check-polars-dataframe-height",
+    "body": ["from utilities.polars import check_polars_dataframe_height", "$0"]
   },
   "fut-join": {
     "prefix": "fut-join",
     "body": ["from utilities.polars import join", "$0"]
   },
-  "fut-multiple-th-rows-error": {
-    "prefix": "fut-multiple-th-rows-error",
-    "body": ["from utilities.polars import MultipleTHRowsError", "$0"]
-  },
   "fut-set-first-row-as-columns": {
     "prefix": "fut-set-first-row-as-columns",
     "body": ["from utilities.polars import set_first_row_as_columns", "$0"]
+  },
+  "fut-set-first-row-as-columns-error": {
+    "prefix": "fut-set-first-row-as-columns-error",
+    "body": ["from utilities.polars import SetFirstRowAsColumnsError", "$0"]
+  },
+  "fut-table-tag-to-data-frame-error": {
+    "prefix": "fut-table-tag-to-data-frame-error",
+    "body": ["from utilities.polars import TableTagToDataFrameError", "$0"]
+  },
+  "fut-table-tag-to-dataframe": {
+    "prefix": "fut-table-tag-to-dataframe",
+    "body": ["from utilities.polars import table_tag_to_dataframe", "$0"]
   },
   "fut-yield-tables": {
     "prefix": "fut-yield-tables",
@@ -3496,25 +3629,17 @@
     "prefix": "fut-extract-group",
     "body": ["from utilities.re import extract_group", "$0"]
   },
+  "fut-extract-group-error": {
+    "prefix": "fut-extract-group-error",
+    "body": ["from utilities.re import ExtractGroupError", "$0"]
+  },
   "fut-extract-groups": {
     "prefix": "fut-extract-groups",
     "body": ["from utilities.re import extract_groups", "$0"]
   },
-  "fut-multiple-capture-groups-error": {
-    "prefix": "fut-multiple-capture-groups-error",
-    "body": ["from utilities.re import MultipleCaptureGroupsError", "$0"]
-  },
-  "fut-multiple-matches-error": {
-    "prefix": "fut-multiple-matches-error",
-    "body": ["from utilities.re import MultipleMatchesError", "$0"]
-  },
-  "fut-no-capture-groups-error": {
-    "prefix": "fut-no-capture-groups-error",
-    "body": ["from utilities.re import NoCaptureGroupsError", "$0"]
-  },
-  "fut-no-matches-error": {
-    "prefix": "fut-no-matches-error",
-    "body": ["from utilities.re import NoMatchesError", "$0"]
+  "fut-extract-groups-error": {
+    "prefix": "fut-extract-groups-error",
+    "body": ["from utilities.re import ExtractGroupsError", "$0"]
   },
 
   // third party: (dycw-)utilities.sentinel
@@ -3535,6 +3660,10 @@
     "prefix": "fut-check-engine",
     "body": ["from utilities.sqlalchemy import check_engine", "$0"]
   },
+  "fut-check-engine-error": {
+    "prefix": "fut-check-engine-error",
+    "body": ["from utilities.sqlalchemy import CheckEngineError", "$0"]
+  },
   "fut-check-selectable-for-duplicate-columns": {
     "prefix": "fut-check-selectable-for-duplicate-columns",
     "body": [
@@ -3548,22 +3677,6 @@
       "from utilities.sqlalchemy import check_table_against_reflection",
       "$0"
     ]
-  },
-  "fut-check-tables-equal": {
-    "prefix": "fut-check-tables-equal",
-    "body": ["from utilities.sqlalchemy import check_tables_equal", "$0"]
-  },
-  "fut-chunk-size-frac": {
-    "prefix": "fut-chunk-size-frac",
-    "body": ["from utilities.sqlalchemy import CHUNK_SIZE_FRAC", "$0"]
-  },
-  "fut-column-to-pandas-d-type-error": {
-    "prefix": "fut-column-to-pandas-d-type-error",
-    "body": ["from utilities.sqlalchemy import ColumnToPandasDTypeError", "$0"]
-  },
-  "fut-column-to-polars-expr-error": {
-    "prefix": "fut-column-to-polars-expr-error",
-    "body": ["from utilities.sqlalchemy import ColumnToPolarsExprError", "$0"]
   },
   "fut-columnwise-max": {
     "prefix": "fut-columnwise-max",
@@ -3581,10 +3694,6 @@
     "prefix": "fut-dialect",
     "body": ["from utilities.sqlalchemy import Dialect", "$0"]
   },
-  "fut-engine-error": {
-    "prefix": "fut-engine-error",
-    "body": ["from utilities.sqlalchemy import EngineError", "$0"]
-  },
   "fut-ensure-engine": {
     "prefix": "fut-ensure-engine",
     "body": ["from utilities.sqlalchemy import ensure_engine", "$0"]
@@ -3596,17 +3705,6 @@
   "fut-ensure-tables-dropped": {
     "prefix": "fut-ensure-tables-dropped",
     "body": ["from utilities.sqlalchemy import ensure_tables_dropped", "$0"]
-  },
-  "fut-first-argument-invalid-error": {
-    "prefix": "fut-first-argument-invalid-error",
-    "body": ["from utilities.sqlalchemy import FirstArgumentInvalidError", "$0"]
-  },
-  "fut-first-argument-list-item-invalid-error": {
-    "prefix": "fut-first-argument-list-item-invalid-error",
-    "body": [
-      "from utilities.sqlalchemy import FirstArgumentListItemInvalidError",
-      "$0"
-    ]
   },
   "fut-get-column-names": {
     "prefix": "fut-get-column-names",
@@ -3620,43 +3718,54 @@
     "prefix": "fut-get-dialect",
     "body": ["from utilities.sqlalchemy import get_dialect", "$0"]
   },
+  "fut-get-dialect-error": {
+    "prefix": "fut-get-dialect-error",
+    "body": ["from utilities.sqlalchemy import GetDialectError", "$0"]
+  },
   "fut-get-table": {
     "prefix": "fut-get-table",
     "body": ["from utilities.sqlalchemy import get_table", "$0"]
+  },
+  "fut-get-table-error": {
+    "prefix": "fut-get-table-error",
+    "body": ["from utilities.sqlalchemy import GetTableError", "$0"]
   },
   "fut-get-table-name": {
     "prefix": "fut-get-table-name",
     "body": ["from utilities.sqlalchemy import get_table_name", "$0"]
   },
-  "fut-incorrect-number-of-tables-error": {
-    "prefix": "fut-incorrect-number-of-tables-error",
-    "body": [
-      "from utilities.sqlalchemy import IncorrectNumberOfTablesError",
-      "$0"
-    ]
-  },
   "fut-insert-items": {
     "prefix": "fut-insert-items",
     "body": ["from utilities.sqlalchemy import insert_items", "$0"]
+  },
+  "fut-insert-items-chunk-size-frac": {
+    "prefix": "fut-insert-items-chunk-size-frac",
+    "body": [
+      "from utilities.sqlalchemy import INSERT_ITEMS_CHUNK_SIZE_FRAC",
+      "$0"
+    ]
+  },
+  "fut-insert-pandas-data-frame-error": {
+    "prefix": "fut-insert-pandas-data-frame-error",
+    "body": [
+      "from utilities.sqlalchemy import InsertPandasDataFrameError",
+      "$0"
+    ]
   },
   "fut-insert-pandas-dataframe": {
     "prefix": "fut-insert-pandas-dataframe",
     "body": ["from utilities.sqlalchemy import insert_pandas_dataframe", "$0"]
   },
+  "fut-insert-polars-data-frame-error": {
+    "prefix": "fut-insert-polars-data-frame-error",
+    "body": [
+      "from utilities.sqlalchemy import InsertPolarsDataFrameError",
+      "$0"
+    ]
+  },
   "fut-insert-polars-dataframe": {
     "prefix": "fut-insert-polars-dataframe",
     "body": ["from utilities.sqlalchemy import insert_polars_dataframe", "$0"]
-  },
-  "fut-invalid-item-error": {
-    "prefix": "fut-invalid-item-error",
-    "body": ["from utilities.sqlalchemy import InvalidItemError", "$0"]
-  },
-  "fut-invalid-item-in-iterable-error": {
-    "prefix": "fut-invalid-item-in-iterable-error",
-    "body": [
-      "from utilities.sqlalchemy import InvalidItemInIterableError",
-      "$0"
-    ]
   },
   "fut-is-mapped-class": {
     "prefix": "fut-is-mapped-class",
@@ -3674,27 +3783,9 @@
     "prefix": "fut-next-from-sequence",
     "body": ["from utilities.sqlalchemy import next_from_sequence", "$0"]
   },
-  "fut-no-such-sequence-error": {
-    "prefix": "fut-no-such-sequence-error",
-    "body": ["from utilities.sqlalchemy import NoSuchSequenceError", "$0"]
-  },
-  "fut-non-positive-stream-error": {
-    "prefix": "fut-non-positive-stream-error",
-    "body": ["from utilities.sqlalchemy import NonPositiveStreamError", "$0"]
-  },
-  "fut-not-a-table-or-a-mapped-class-error": {
-    "prefix": "fut-not-a-table-or-a-mapped-class-error",
-    "body": [
-      "from utilities.sqlalchemy import NotATableOrAMappedClassError",
-      "$0"
-    ]
-  },
-  "fut-pandas-data-frame-yields-no-rows-error": {
-    "prefix": "fut-pandas-data-frame-yields-no-rows-error",
-    "body": [
-      "from utilities.sqlalchemy import PandasDataFrameYieldsNoRowsError",
-      "$0"
-    ]
+  "fut-next-from-sequence-error": {
+    "prefix": "fut-next-from-sequence-error",
+    "body": ["from utilities.sqlalchemy import NextFromSequenceError", "$0"]
   },
   "fut-parse-engine": {
     "prefix": "fut-parse-engine",
@@ -3704,17 +3795,10 @@
     "prefix": "fut-parse-engine-error",
     "body": ["from utilities.sqlalchemy import ParseEngineError", "$0"]
   },
-  "fut-polars-data-frame-yields-no-rows-error": {
-    "prefix": "fut-polars-data-frame-yields-no-rows-error",
+  "fut-redirect-to-next-from-sequence-error": {
+    "prefix": "fut-redirect-to-next-from-sequence-error",
     "body": [
-      "from utilities.sqlalchemy import PolarsDataFrameYieldsNoRowsError",
-      "$0"
-    ]
-  },
-  "fut-redirect-to-no-such-sequence-error": {
-    "prefix": "fut-redirect-to-no-such-sequence-error",
-    "body": [
-      "from utilities.sqlalchemy import redirect_to_no_such_sequence_error",
+      "from utilities.sqlalchemy import redirect_to_next_from_sequence_error",
       "$0"
     ]
   },
@@ -3729,13 +3813,6 @@
     "prefix": "fut-redirect-to-table-already-exists-error",
     "body": [
       "from utilities.sqlalchemy import redirect_to_table_already_exists_error",
-      "$0"
-    ]
-  },
-  "fut-second-argument-not-a-table-or-mapped-class-error": {
-    "prefix": "fut-second-argument-not-a-table-or-mapped-class-error",
-    "body": [
-      "from utilities.sqlalchemy import SecondArgumentNotATableOrMappedClassError",
       "$0"
     ]
   },
@@ -3761,223 +3838,37 @@
     "prefix": "fut-serialize-engine",
     "body": ["from utilities.sqlalchemy import serialize_engine", "$0"]
   },
-  "fut-series-and-table-column-incompatible-error": {
-    "prefix": "fut-series-and-table-column-incompatible-error",
-    "body": [
-      "from utilities.sqlalchemy import SeriesAndTableColumnIncompatibleError",
-      "$0"
-    ]
+  "fut-stream-data-frames-error": {
+    "prefix": "fut-stream-data-frames-error",
+    "body": ["from utilities.sqlalchemy import StreamDataFramesError", "$0"]
   },
-  "fut-series-matches-against-multiple-columns-error": {
-    "prefix": "fut-series-matches-against-multiple-columns-error",
-    "body": [
-      "from utilities.sqlalchemy import SeriesMatchesAgainstMultipleColumnsError",
-      "$0"
-    ]
-  },
-  "fut-series-matches-against-no-column-error": {
-    "prefix": "fut-series-matches-against-no-column-error",
-    "body": [
-      "from utilities.sqlalchemy import SeriesMatchesAgainstNoColumnError",
-      "$0"
-    ]
-  },
-  "fut-sq-lite-does-not-support-sequences-error": {
-    "prefix": "fut-sq-lite-does-not-support-sequences-error",
-    "body": [
-      "from utilities.sqlalchemy import SQLiteDoesNotSupportSequencesError",
-      "$0"
-    ]
+  "fut-stream-dataframes": {
+    "prefix": "fut-stream-dataframes",
+    "body": ["from utilities.sqlalchemy import stream_dataframes", "$0"]
   },
   "fut-table-already-exists-error": {
     "prefix": "fut-table-already-exists-error",
     "body": ["from utilities.sqlalchemy import TableAlreadyExistsError", "$0"]
   },
+  "fut-table-column-to-d-type-error": {
+    "prefix": "fut-table-column-to-d-type-error",
+    "body": ["from utilities.sqlalchemy import TableColumnToDTypeError", "$0"]
+  },
+  "fut-table-column-to-dtype": {
+    "prefix": "fut-table-column-to-dtype",
+    "body": ["from utilities.sqlalchemy import table_column_to_dtype", "$0"]
+  },
+  "fut-table-column-to-expr": {
+    "prefix": "fut-table-column-to-expr",
+    "body": ["from utilities.sqlalchemy import table_column_to_expr", "$0"]
+  },
+  "fut-table-column-to-expr-error": {
+    "prefix": "fut-table-column-to-expr-error",
+    "body": ["from utilities.sqlalchemy import TableColumnToExprError", "$0"]
+  },
   "fut-tablename-mixin": {
     "prefix": "fut-tablename-mixin",
     "body": ["from utilities.sqlalchemy import TablenameMixin", "$0"]
-  },
-  "fut-tuple-not-a-pair-error": {
-    "prefix": "fut-tuple-not-a-pair-error",
-    "body": ["from utilities.sqlalchemy import TupleNotAPairError", "$0"]
-  },
-  "fut-unequal-boolean-column-create-constraint-error": {
-    "prefix": "fut-unequal-boolean-column-create-constraint-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalBooleanColumnCreateConstraintError",
-      "$0"
-    ]
-  },
-  "fut-unequal-boolean-column-name-error": {
-    "prefix": "fut-unequal-boolean-column-name-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalBooleanColumnNameError",
-      "$0"
-    ]
-  },
-  "fut-unequal-column-types-error": {
-    "prefix": "fut-unequal-column-types-error",
-    "body": ["from utilities.sqlalchemy import UnequalColumnTypesError", "$0"]
-  },
-  "fut-unequal-date-time-column-timezone-error": {
-    "prefix": "fut-unequal-date-time-column-timezone-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalDateTimeColumnTimezoneError",
-      "$0"
-    ]
-  },
-  "fut-unequal-enum-column-create-constraint-error": {
-    "prefix": "fut-unequal-enum-column-create-constraint-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalEnumColumnCreateConstraintError",
-      "$0"
-    ]
-  },
-  "fut-unequal-enum-column-inherit-schema-error": {
-    "prefix": "fut-unequal-enum-column-inherit-schema-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalEnumColumnInheritSchemaError",
-      "$0"
-    ]
-  },
-  "fut-unequal-enum-column-length-error": {
-    "prefix": "fut-unequal-enum-column-length-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalEnumColumnLengthError",
-      "$0"
-    ]
-  },
-  "fut-unequal-enum-column-native-enum-error": {
-    "prefix": "fut-unequal-enum-column-native-enum-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalEnumColumnNativeEnumError",
-      "$0"
-    ]
-  },
-  "fut-unequal-enum-column-types-error": {
-    "prefix": "fut-unequal-enum-column-types-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalEnumColumnTypesError",
-      "$0"
-    ]
-  },
-  "fut-unequal-float-column-as-decimal-error": {
-    "prefix": "fut-unequal-float-column-as-decimal-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalFloatColumnAsDecimalError",
-      "$0"
-    ]
-  },
-  "fut-unequal-float-column-decimal-return-scale-error": {
-    "prefix": "fut-unequal-float-column-decimal-return-scale-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalFloatColumnDecimalReturnScaleError",
-      "$0"
-    ]
-  },
-  "fut-unequal-float-column-precisions-error": {
-    "prefix": "fut-unequal-float-column-precisions-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalFloatColumnPrecisionsError",
-      "$0"
-    ]
-  },
-  "fut-unequal-interval-column-day-precision-error": {
-    "prefix": "fut-unequal-interval-column-day-precision-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalIntervalColumnDayPrecisionError",
-      "$0"
-    ]
-  },
-  "fut-unequal-interval-column-native-error": {
-    "prefix": "fut-unequal-interval-column-native-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalIntervalColumnNativeError",
-      "$0"
-    ]
-  },
-  "fut-unequal-interval-column-second-precision-error": {
-    "prefix": "fut-unequal-interval-column-second-precision-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalIntervalColumnSecondPrecisionError",
-      "$0"
-    ]
-  },
-  "fut-unequal-large-binary-column-length-error": {
-    "prefix": "fut-unequal-large-binary-column-length-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalLargeBinaryColumnLengthError",
-      "$0"
-    ]
-  },
-  "fut-unequal-nullable-status-error": {
-    "prefix": "fut-unequal-nullable-status-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalNullableStatusError",
-      "$0"
-    ]
-  },
-  "fut-unequal-number-of-columns-error": {
-    "prefix": "fut-unequal-number-of-columns-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalNumberOfColumnsError",
-      "$0"
-    ]
-  },
-  "fut-unequal-numeric-scale-error": {
-    "prefix": "fut-unequal-numeric-scale-error",
-    "body": ["from utilities.sqlalchemy import UnequalNumericScaleError", "$0"]
-  },
-  "fut-unequal-primary-key-status-error": {
-    "prefix": "fut-unequal-primary-key-status-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalPrimaryKeyStatusError",
-      "$0"
-    ]
-  },
-  "fut-unequal-set-of-columns-error": {
-    "prefix": "fut-unequal-set-of-columns-error",
-    "body": ["from utilities.sqlalchemy import UnequalSetOfColumnsError", "$0"]
-  },
-  "fut-unequal-string-collation-error": {
-    "prefix": "fut-unequal-string-collation-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalStringCollationError",
-      "$0"
-    ]
-  },
-  "fut-unequal-string-length-error": {
-    "prefix": "fut-unequal-string-length-error",
-    "body": ["from utilities.sqlalchemy import UnequalStringLengthError", "$0"]
-  },
-  "fut-unequal-table-or-column-names-error": {
-    "prefix": "fut-unequal-table-or-column-names-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalTableOrColumnNamesError",
-      "$0"
-    ]
-  },
-  "fut-unequal-table-or-column-snake-case-names-error": {
-    "prefix": "fut-unequal-table-or-column-snake-case-names-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalTableOrColumnSnakeCaseNamesError",
-      "$0"
-    ]
-  },
-  "fut-unequal-uuid-as-uuid-error": {
-    "prefix": "fut-unequal-uuid-as-uuid-error",
-    "body": ["from utilities.sqlalchemy import UnequalUUIDAsUUIDError", "$0"]
-  },
-  "fut-unequal-uuid-native-uuid-error": {
-    "prefix": "fut-unequal-uuid-native-uuid-error",
-    "body": [
-      "from utilities.sqlalchemy import UnequalUUIDNativeUUIDError",
-      "$0"
-    ]
-  },
-  "fut-unsupported-dialect-error": {
-    "prefix": "fut-unsupported-dialect-error",
-    "body": ["from utilities.sqlalchemy import UnsupportedDialectError", "$0"]
   },
   "fut-yield-connection": {
     "prefix": "fut-yield-connection",
@@ -4003,24 +3894,21 @@
     "prefix": "fut-ensure-str",
     "body": ["from utilities.text import ensure_str", "$0"]
   },
-  "fut-not-a-string-error": {
-    "prefix": "fut-not-a-string-error",
-    "body": ["from utilities.text import NotAStringError", "$0"]
+  "fut-ensure-str-error": {
+    "prefix": "fut-ensure-str-error",
+    "body": ["from utilities.text import EnsureStrError", "$0"]
   },
   "fut-snake-case": {
     "prefix": "fut-snake-case",
     "body": ["from utilities.text import snake_case", "$0"]
   },
-  "fut-snake-case-contains-duplicates-error": {
-    "prefix": "fut-snake-case-contains-duplicates-error",
-    "body": [
-      "from utilities.text import SnakeCaseContainsDuplicatesError",
-      "$0"
-    ]
-  },
   "fut-snake-case-mappings": {
     "prefix": "fut-snake-case-mappings",
     "body": ["from utilities.text import snake_case_mappings", "$0"]
+  },
+  "fut-snake-case-mappings-error": {
+    "prefix": "fut-snake-case-mappings-error",
+    "body": ["from utilities.text import SnakeCaseMappingsError", "$0"]
   },
   "fut-strip-and-dedent": {
     "prefix": "fut-strip-and-dedent",
@@ -4031,6 +3919,48 @@
   "fut-timer": {
     "prefix": "fut-timer",
     "body": ["from utilities.timer import Timer", "$0"]
+  },
+
+  // third party: (dycw-)utilities.types
+  "fut-duration": {
+    "prefix": "fut-duration",
+    "body": ["from utilities.types import Duration", "$0"]
+  },
+  "fut-ensure-class": {
+    "prefix": "fut-ensure-class",
+    "body": ["from utilities.types import ensure_class", "$0"]
+  },
+  "fut-ensure-hashable": {
+    "prefix": "fut-ensure-hashable",
+    "body": ["from utilities.types import ensure_hashable", "$0"]
+  },
+  "fut-ensure-hashable-error": {
+    "prefix": "fut-ensure-hashable-error",
+    "body": ["from utilities.types import EnsureHashableError", "$0"]
+  },
+  "fut-is-hashable": {
+    "prefix": "fut-is-hashable",
+    "body": ["from utilities.types import is_hashable", "$0"]
+  },
+  "fut-is-sized-not-str": {
+    "prefix": "fut-is-sized-not-str",
+    "body": ["from utilities.types import is_sized_not_str", "$0"]
+  },
+  "fut-issubclass-except-bool-int": {
+    "prefix": "fut-issubclass-except-bool-int",
+    "body": ["from utilities.types import issubclass_except_bool_int", "$0"]
+  },
+  "fut-iterable-strs": {
+    "prefix": "fut-iterable-strs",
+    "body": ["from utilities.types import IterableStrs", "$0"]
+  },
+  "fut-number": {
+    "prefix": "fut-number",
+    "body": ["from utilities.types import Number", "$0"]
+  },
+  "fut-sequence-strs": {
+    "prefix": "fut-sequence-strs",
+    "body": ["from utilities.types import SequenceStrs", "$0"]
   },
 
   // third party: (dycw-)utilities.typed_settings
@@ -4056,20 +3986,6 @@
   "fut-load-settings": {
     "prefix": "fut-load-settings",
     "body": ["from utilities.typed_settings import load_settings", "$0"]
-  },
-
-  // third party: (dycw-)utilities.typing
-  "fut-iterable-strs": {
-    "prefix": "fut-iterable-strs",
-    "body": ["from utilities.typing import IterableStrs", "$0"]
-  },
-  "fut-number": {
-    "prefix": "fut-number",
-    "body": ["from utilities.typing import Number", "$0"]
-  },
-  "fut-sequence-strs": {
-    "prefix": "fut-sequence-strs",
-    "body": ["from utilities.typing import SequenceStrs", "$0"]
   },
 
   // third party: (dycw-)utilities.zoneinfo
