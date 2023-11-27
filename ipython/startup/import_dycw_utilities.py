@@ -88,6 +88,9 @@ with suppress(ModuleNotFoundError):
         deserialize,  # noqa: F401
         serialize,  # noqa: F401
     )
+    from utilities.jupyter import (
+        show,  # noqa: F401
+    )
     from utilities.logging import (
         LogLevel,  # noqa: F401
         basic_config,  # noqa: F401
@@ -195,13 +198,13 @@ with suppress(ModuleNotFoundError):
             get_task_classes,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
-        from utilities.luigi import (  # sqlalchemy
+        from utilities._luigi.sqlalchemy import (
             DatabaseTarget,  # noqa: F401
             EngineParameter,  # noqa: F401
             TableParameter,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
-        from utilities.luigi import (
+        from utilities._luigi.typed_settings import (
             AnnotationAndKeywordsToDictError,  # noqa: F401
             AnnotationIterableToClassError,  # noqa: F401
             AnnotationToClassError,  # noqa: F401
@@ -256,10 +259,24 @@ with suppress(ModuleNotFoundError):
             set_first_row_as_columns,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
-        from utilities.polars import (  # bs4
+        from utilities._polars.bs4 import (
             TableTagToDataFrameError,  # noqa: F401
             table_tag_to_dataframe,  # noqa: F401
             yield_tables,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
+        from utilities.pytest import (
+            add_pytest_addoption,  # noqa: F401
+            add_pytest_collection_modifyitems,  # noqa: F401
+            add_pytest_configure,  # noqa: F401
+            is_pytest,  # noqa: F401
+            skipif_linux,  # noqa: F401
+            skipif_mac,  # noqa: F401
+            skipif_not_linux,  # noqa: F401
+            skipif_not_mac,  # noqa: F401
+            skipif_not_windows,  # noqa: F401
+            skipif_windows,  # noqa: F401
+            throttle,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
         from utilities.sqlalchemy import (
@@ -297,10 +314,10 @@ with suppress(ModuleNotFoundError):
             yield_connection,  # noqa: F401
         )
 
-    with suppress(ModuleNotFoundError):  # fastparquet
-        from utilities.sqlalchemy import select_to_parquet  # noqa: F401
     with suppress(ModuleNotFoundError):
-        from utilities.sqlalchemy import (  # pandas
+        from utilities._sqlalchemy.fastparquet import select_to_parquet  # noqa: F401
+    with suppress(ModuleNotFoundError):
+        from utilities._sqlalchemy.pandas import (
             InsertPandasDataFrameError,  # noqa: F401
             StreamDataFramesError,  # noqa: F401
             TableColumnToDTypeError,  # noqa: F401
@@ -310,15 +327,15 @@ with suppress(ModuleNotFoundError):
             table_column_to_dtype,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
-        from utilities.sqlalchemy import (  # polars
+        from utilities._sqlalchemy.polars import (
             InsertPolarsDataFrameError,  # noqa: F401
             TableColumnToExprError,  # noqa: F401
             insert_polars_dataframe,  # noqa: F401
             select_to_polars_dataframe,  # noqa: F401
             table_column_to_expr,  # noqa: F401
         )
-    with suppress(ModuleNotFoundError):  # timeout_decorator
-        from utilities.sqlalchemy import (
+    with suppress(ModuleNotFoundError):
+        from utilities._sqlalchemy.timeout_decorator import (
             NextFromSequenceError,  # noqa: F401
             next_from_sequence,  # noqa: F401
             redirect_to_next_from_sequence_error,  # noqa: F401
