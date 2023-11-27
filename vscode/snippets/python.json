@@ -2276,6 +2276,10 @@
     "body": ["from polars import Categorical", "$0"]
   },
   "fpo-col": { "prefix": "fpo-col", "body": ["from polars import col", "$0"] },
+  "fpo-concat": {
+    "prefix": "fpo-concat",
+    "body": ["from polars import concat", "$0"]
+  },
   "fpo-config": {
     "prefix": "fpo-config",
     "body": ["from polars import Config", "$0"]

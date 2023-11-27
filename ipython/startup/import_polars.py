@@ -35,6 +35,7 @@ with suppress(ModuleNotFoundError):
         Unknown,  # noqa: F401
         Utf8,  # noqa: F401
         col,  # noqa: F401
+        concat,  # noqa: F401
         lit,  # noqa: F401
         read_avro,  # noqa: F401
         read_csv,  # noqa: F401
