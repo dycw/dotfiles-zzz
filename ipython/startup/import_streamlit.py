@@ -48,7 +48,6 @@ with suppress(ModuleNotFoundError):
         latex,  # noqa: F401
         line_chart,  # noqa: F401
         link_button,  # noqa: F401
-        map,  # noqa: F401
         markdown,  # noqa: F401
         metric,  # noqa: F401
         number_input,  # noqa: F401

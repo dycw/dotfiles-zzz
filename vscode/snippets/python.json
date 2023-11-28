@@ -2022,6 +2022,10 @@
   },
 
   // third party: numpy
+  "fnu-allclose": {
+    "prefix": "fnu-allclose",
+    "body": ["from numpy import allclose", "$0"]
+  },
   "fnu-arange": {
     "prefix": "fnu-arange",
     "body": ["from numpy import arange", "$0"]

@@ -6,6 +6,7 @@ with suppress(ModuleNotFoundError):
     import numpy  # noqa: F401, ICN001
     import numpy as np  # noqa: F401
     from numpy import (
+        allclose,  # noqa: F401
         arange,  # noqa: F401
         array,  # noqa: F401
         block,  # noqa: F401
