@@ -5,11 +5,11 @@
   },
   "LuaSnip": {
     "branch": "master",
-    "commit": "1def35377854535bb3b0f4cc7a33c083cdb12571"
+    "commit": "f03089854a8e15594a01562fa7192d0009a6fbe7"
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "5bfeb36550018438c2c7ef58f91174f79d99a28a"
+    "commit": "c4f2d408542f07592a34c3a68171d36c612741b9"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -161,7 +161,7 @@
   },
   "nui.nvim": {
     "branch": "main",
-    "commit": "257dccc43b4badc735978f0791d216f7d665b75a"
+    "commit": "1d044afde83e73c56de8e176615a4a6e7c8cf0e3"
   },
   "nvim-cmp": {
     "branch": "main",
@@ -253,7 +253,7 @@
   },
   "telescope.nvim": {
     "branch": "master",
-    "commit": "84c5a71d825b6687a55aed6f41e98b92fd8e5454"
+    "commit": "e90fdba90d29d0284cefa4ef5833ef3e56602057"
   },
   "tidy.nvim": {
     "branch": "main",
