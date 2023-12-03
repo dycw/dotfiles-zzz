@@ -2958,6 +2958,10 @@
   },
 
   // third party: (dycw-)utilities.atomicwrites
+  "fut-directory-exists-error": {
+    "prefix": "fut-directory-exists-error",
+    "body": ["from utilities.atomicwrites import DirectoryExistsError", "$0"]
+  },
   "fut-writer": {
     "prefix": "fut-writer",
     "body": ["from utilities.atomicwrites import writer", "$0"]
@@ -3168,10 +3172,6 @@
   },
 
   // third party: (dycw-)utilities.errors
-  "fut-directory-exists-error": {
-    "prefix": "fut-directory-exists-error",
-    "body": ["from utilities.errors import DirectoryExistsError", "$0"]
-  },
   "fut-redirect-error": {
     "prefix": "fut-redirect-error",
     "body": ["from utilities.errors import redirect_error", "$0"]
@@ -3223,6 +3223,20 @@
   "fut-md5-hash": {
     "prefix": "fut-md5-hash",
     "body": ["from utilities.hashlib import md5_hash", "$0"]
+  },
+
+  // third party: (dycw-)utilities.humps
+  "fut-snake-case": {
+    "prefix": "fut-snake-case",
+    "body": ["from utilities.humps import snake_case", "$0"]
+  },
+  "fut-snake-case-mappings": {
+    "prefix": "fut-snake-case-mappings",
+    "body": ["from utilities.humps import snake_case_mappings", "$0"]
+  },
+  "fut-snake-case-mappings-error": {
+    "prefix": "fut-snake-case-mappings-error",
+    "body": ["from utilities.humps import SnakeCaseMappingsError", "$0"]
   },
 
   // third party: (dycw-)utilities.iterables
@@ -3448,24 +3462,21 @@
     "prefix": "fut-category",
     "body": ["from utilities.pandas import category", "$0"]
   },
+  "fut-check-index": {
+    "prefix": "fut-check-index",
+    "body": ["from utilities.pandas import check_index", "$0"]
+  },
+  "fut-check-index-error": {
+    "prefix": "fut-check-index-error",
+    "body": ["from utilities.pandas import CheckIndexError", "$0"]
+  },
   "fut-check-pandas-data-frame-error": {
     "prefix": "fut-check-pandas-data-frame-error",
     "body": ["from utilities.pandas import CheckPandasDataFrameError", "$0"]
   },
-  "fut-check-pandas-data-frame-length-error": {
-    "prefix": "fut-check-pandas-data-frame-length-error",
-    "body": [
-      "from utilities.pandas import CheckPandasDataFrameLengthError",
-      "$0"
-    ]
-  },
   "fut-check-pandas-dataframe": {
     "prefix": "fut-check-pandas-dataframe",
     "body": ["from utilities.pandas import check_pandas_dataframe", "$0"]
-  },
-  "fut-check-pandas-dataframe-length": {
-    "prefix": "fut-check-pandas-dataframe-length",
-    "body": ["from utilities.pandas import check_pandas_dataframe_length", "$0"]
   },
   "fut-check-range-index": {
     "prefix": "fut-check-range-index",
@@ -3491,12 +3502,9 @@
     "prefix": "fut-int64",
     "body": ["from utilities.pandas import Int64", "$0"]
   },
-  "fut-redirect-to-empty-pandas-concat-error": {
-    "prefix": "fut-redirect-to-empty-pandas-concat-error",
-    "body": [
-      "from utilities.pandas import redirect_to_empty_pandas_concat_error",
-      "$0"
-    ]
+  "fut-redirect-empty-pandas-concat": {
+    "prefix": "fut-redirect-empty-pandas-concat",
+    "body": ["from utilities.pandas import redirect_empty_pandas_concat", "$0"]
   },
   "fut-rename-index": {
     "prefix": "fut-rename-index",
@@ -3657,13 +3665,6 @@
   },
 
   // third party: (dycw-)utilities.sqlalchemy
-  "fut-check-dataframe-schema-against-table": {
-    "prefix": "fut-check-dataframe-schema-against-table",
-    "body": [
-      "from utilities.sqlalchemy import check_dataframe_schema_against_table",
-      "$0"
-    ]
-  },
   "fut-check-engine": {
     "prefix": "fut-check-engine",
     "body": ["from utilities.sqlalchemy import check_engine", "$0"]
@@ -3672,19 +3673,16 @@
     "prefix": "fut-check-engine-error",
     "body": ["from utilities.sqlalchemy import CheckEngineError", "$0"]
   },
-  "fut-check-selectable-for-duplicate-columns": {
-    "prefix": "fut-check-selectable-for-duplicate-columns",
-    "body": [
-      "from utilities.sqlalchemy import check_selectable_for_duplicate_columns",
-      "$0"
-    ]
-  },
   "fut-check-table-against-reflection": {
     "prefix": "fut-check-table-against-reflection",
     "body": [
       "from utilities.sqlalchemy import check_table_against_reflection",
       "$0"
     ]
+  },
+  "fut-chunk-size-frac": {
+    "prefix": "fut-chunk-size-frac",
+    "body": ["from utilities.sqlalchemy import CHUNK_SIZE_FRAC", "$0"]
   },
   "fut-columnwise-max": {
     "prefix": "fut-columnwise-max",
@@ -3714,6 +3712,10 @@
     "prefix": "fut-ensure-tables-dropped",
     "body": ["from utilities.sqlalchemy import ensure_tables_dropped", "$0"]
   },
+  "fut-get-chunk-size": {
+    "prefix": "fut-get-chunk-size",
+    "body": ["from utilities.sqlalchemy import get_chunk_size", "$0"]
+  },
   "fut-get-column-names": {
     "prefix": "fut-get-column-names",
     "body": ["from utilities.sqlalchemy import get_column_names", "$0"]
@@ -3742,38 +3744,17 @@
     "prefix": "fut-get-table-name",
     "body": ["from utilities.sqlalchemy import get_table_name", "$0"]
   },
+  "fut-insert-data-frame-error": {
+    "prefix": "fut-insert-data-frame-error",
+    "body": ["from utilities.sqlalchemy import InsertDataFrameError", "$0"]
+  },
+  "fut-insert-dataframe": {
+    "prefix": "fut-insert-dataframe",
+    "body": ["from utilities.sqlalchemy import insert_dataframe", "$0"]
+  },
   "fut-insert-items": {
     "prefix": "fut-insert-items",
     "body": ["from utilities.sqlalchemy import insert_items", "$0"]
-  },
-  "fut-insert-items-chunk-size-frac": {
-    "prefix": "fut-insert-items-chunk-size-frac",
-    "body": [
-      "from utilities.sqlalchemy import INSERT_ITEMS_CHUNK_SIZE_FRAC",
-      "$0"
-    ]
-  },
-  "fut-insert-pandas-data-frame-error": {
-    "prefix": "fut-insert-pandas-data-frame-error",
-    "body": [
-      "from utilities.sqlalchemy import InsertPandasDataFrameError",
-      "$0"
-    ]
-  },
-  "fut-insert-pandas-dataframe": {
-    "prefix": "fut-insert-pandas-dataframe",
-    "body": ["from utilities.sqlalchemy import insert_pandas_dataframe", "$0"]
-  },
-  "fut-insert-polars-data-frame-error": {
-    "prefix": "fut-insert-polars-data-frame-error",
-    "body": [
-      "from utilities.sqlalchemy import InsertPolarsDataFrameError",
-      "$0"
-    ]
-  },
-  "fut-insert-polars-dataframe": {
-    "prefix": "fut-insert-polars-dataframe",
-    "body": ["from utilities.sqlalchemy import insert_polars_dataframe", "$0"]
   },
   "fut-is-mapped-class": {
     "prefix": "fut-is-mapped-class",
@@ -3803,84 +3784,31 @@
     "prefix": "fut-parse-engine-error",
     "body": ["from utilities.sqlalchemy import ParseEngineError", "$0"]
   },
-  "fut-redirect-to-next-from-sequence-error": {
-    "prefix": "fut-redirect-to-next-from-sequence-error",
+  "fut-redirect-next-from-sequence-error": {
+    "prefix": "fut-redirect-next-from-sequence-error",
     "body": [
-      "from utilities.sqlalchemy import redirect_to_next_from_sequence_error",
+      "from utilities.sqlalchemy import redirect_next_from_sequence_error",
       "$0"
     ]
   },
-  "fut-redirect-to-no-such-table-error": {
-    "prefix": "fut-redirect-to-no-such-table-error",
+  "fut-redirect-table-does-not-exist": {
+    "prefix": "fut-redirect-table-does-not-exist",
     "body": [
-      "from utilities.sqlalchemy import redirect_to_no_such_table_error",
+      "from utilities.sqlalchemy import redirect_table_does_not_exist",
       "$0"
     ]
   },
-  "fut-redirect-to-table-already-exists-error": {
-    "prefix": "fut-redirect-to-table-already-exists-error",
-    "body": [
-      "from utilities.sqlalchemy import redirect_to_table_already_exists_error",
-      "$0"
-    ]
-  },
-  "fut-select-to-pandas-dataframe": {
-    "prefix": "fut-select-to-pandas-dataframe",
-    "body": [
-      "from utilities.sqlalchemy import select_to_pandas_dataframe",
-      "$0"
-    ]
-  },
-  "fut-select-to-parquet": {
-    "prefix": "fut-select-to-parquet",
-    "body": ["from utilities.sqlalchemy import select_to_parquet", "$0"]
-  },
-  "fut-select-to-polars-dataframe": {
-    "prefix": "fut-select-to-polars-dataframe",
-    "body": [
-      "from utilities.sqlalchemy import select_to_polars_dataframe",
-      "$0"
-    ]
+  "fut-select-to-dataframe": {
+    "prefix": "fut-select-to-dataframe",
+    "body": ["from utilities.sqlalchemy import select_to_dataframe", "$0"]
   },
   "fut-serialize-engine": {
     "prefix": "fut-serialize-engine",
     "body": ["from utilities.sqlalchemy import serialize_engine", "$0"]
   },
-  "fut-stream-data-frames-error": {
-    "prefix": "fut-stream-data-frames-error",
-    "body": ["from utilities.sqlalchemy import StreamDataFramesError", "$0"]
-  },
-  "fut-stream-dataframes": {
-    "prefix": "fut-stream-dataframes",
-    "body": ["from utilities.sqlalchemy import stream_dataframes", "$0"]
-  },
-  "fut-table-already-exists-error": {
-    "prefix": "fut-table-already-exists-error",
-    "body": ["from utilities.sqlalchemy import TableAlreadyExistsError", "$0"]
-  },
-  "fut-table-column-to-d-type-error": {
-    "prefix": "fut-table-column-to-d-type-error",
-    "body": ["from utilities.sqlalchemy import TableColumnToDTypeError", "$0"]
-  },
-  "fut-table-column-to-dtype": {
-    "prefix": "fut-table-column-to-dtype",
-    "body": ["from utilities.sqlalchemy import table_column_to_dtype", "$0"]
-  },
-  "fut-table-column-to-expr": {
-    "prefix": "fut-table-column-to-expr",
-    "body": ["from utilities.sqlalchemy import table_column_to_expr", "$0"]
-  },
-  "fut-table-column-to-expr-error": {
-    "prefix": "fut-table-column-to-expr-error",
-    "body": ["from utilities.sqlalchemy import TableColumnToExprError", "$0"]
-  },
   "fut-tablename-mixin": {
     "prefix": "fut-tablename-mixin",
     "body": ["from utilities.sqlalchemy import TablenameMixin", "$0"]
-  },
-  "fut-yield-connection": {
-    "prefix": "fut-yield-connection",
-    "body": ["from utilities.sqlalchemy import yield_connection", "$0"]
   },
 
   // third party: (dycw-)utilities.tempfile
@@ -3905,18 +3833,6 @@
   "fut-ensure-str-error": {
     "prefix": "fut-ensure-str-error",
     "body": ["from utilities.text import EnsureStrError", "$0"]
-  },
-  "fut-snake-case": {
-    "prefix": "fut-snake-case",
-    "body": ["from utilities.text import snake_case", "$0"]
-  },
-  "fut-snake-case-mappings": {
-    "prefix": "fut-snake-case-mappings",
-    "body": ["from utilities.text import snake_case_mappings", "$0"]
-  },
-  "fut-snake-case-mappings-error": {
-    "prefix": "fut-snake-case-mappings-error",
-    "body": ["from utilities.text import SnakeCaseMappingsError", "$0"]
   },
   "fut-strip-and-dedent": {
     "prefix": "fut-strip-and-dedent",
