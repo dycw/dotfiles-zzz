@@ -244,7 +244,6 @@ with suppress(ModuleNotFoundError):
             rename_index,  # noqa: F401
             series_max,  # noqa: F401
             series_min,  # noqa: F401
-            series_minmax,  # noqa: F401
             sort_index,  # noqa: F401
             string,  # noqa: F401
             timestamp_to_date,  # noqa: F401
