@@ -2306,6 +2306,10 @@
     "prefix": "fpo-data-frame",
     "body": ["from polars import DataFrame", "$0"]
   },
+  "fpo-data-type-class": {
+    "prefix": "fpo-data-type-class",
+    "body": ["from polars.datatypes import DataTypeClass", "$0"]
+  },
   "fpo-date": {
     "prefix": "fpo-date",
     "body": ["from polars import Date", "$0"]

@@ -53,6 +53,9 @@ with suppress(ModuleNotFoundError):
         read_parquet,  # noqa: F401
         when,  # noqa: F401
     )
+    from polars.datatypes import (
+        DataTypeClass,  # noqa: F401
+    )
     from polars.testing import (
         assert_frame_equal,  # noqa: F401
         assert_frame_not_equal,  # noqa: F401
