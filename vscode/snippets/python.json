@@ -1266,6 +1266,20 @@
     "body": ["from bidict import bidict", "$0"]
   },
 
+  // third party: bokeh
+  "fbo-datetime-tick-formatter": {
+    "prefix": "fbo-datetime-tick-formatter",
+    "body": ["from bokeh.models import DatetimeTickFormatter", "$0"]
+  },
+  "fbo-hover-tool": {
+    "prefix": "fbo-hover-tool",
+    "body": ["from bokeh.models import HoverTool", "$0"]
+  },
+  "fbo-numeral-tick-formatter": {
+    "prefix": "fbo-numeral-tick-formatter",
+    "body": ["from bokeh.models import NumeralTickFormatter", "$0"]
+  },
+
   // third party: cachetools
   "fca-cache": {
     "prefix": "fca-cache",
@@ -3521,10 +3535,6 @@
   "fut-series-min-max-error": {
     "prefix": "fut-series-min-max-error",
     "body": ["from utilities.pandas import SeriesMinMaxError", "$0"]
-  },
-  "fut-series-minmax": {
-    "prefix": "fut-series-minmax",
-    "body": ["from utilities.pandas import series_minmax", "$0"]
   },
   "fut-sort-index": {
     "prefix": "fut-sort-index",
