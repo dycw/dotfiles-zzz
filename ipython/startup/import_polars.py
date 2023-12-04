@@ -12,6 +12,7 @@ with suppress(ModuleNotFoundError):
         Categorical,  # noqa: F401
         Config,
         DataFrame,  # noqa: F401
+        DataType,  # noqa: F401
         Date,  # noqa: F401
         Datetime,  # noqa: F401
         Decimal,  # noqa: F401
