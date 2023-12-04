@@ -25,6 +25,7 @@ with suppress(ModuleNotFoundError):
         List,  # noqa: F401
         Null,  # noqa: F401
         Object,  # noqa: F401
+        PolarsDataType,  # noqa: F401
         Series,  # noqa: F401
         Struct,  # noqa: F401
         Time,  # noqa: F401
@@ -63,7 +64,6 @@ with suppress(ModuleNotFoundError):
         assert_series_not_equal,  # noqa: F401
     )
     from polars.type_aliases import (
-        PolarsDataType,  # noqa: F401
         SchemaDict,  # noqa: F401
     )
 
