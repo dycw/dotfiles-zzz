@@ -2365,7 +2365,7 @@
   },
   "fpo-polars-data-type": {
     "prefix": "fpo-polars-data-type",
-    "body": ["from polars.type_aliases import PolarsDataType", "$0"]
+    "body": ["from polars import PolarsDataType", "$0"]
   },
   "fpo-read-avro": {
     "prefix": "fpo-read-avro",
