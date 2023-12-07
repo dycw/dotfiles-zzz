@@ -3618,20 +3618,9 @@
     "prefix": "fut-check-polars-data-frame-error",
     "body": ["from utilities.polars import CheckPolarsDataFrameError", "$0"]
   },
-  "fut-check-polars-data-frame-height-error": {
-    "prefix": "fut-check-polars-data-frame-height-error",
-    "body": [
-      "from utilities.polars import CheckPolarsDataFrameHeightError",
-      "$0"
-    ]
-  },
   "fut-check-polars-dataframe": {
     "prefix": "fut-check-polars-dataframe",
     "body": ["from utilities.polars import check_polars_dataframe", "$0"]
-  },
-  "fut-check-polars-dataframe-height": {
-    "prefix": "fut-check-polars-dataframe-height",
-    "body": ["from utilities.polars import check_polars_dataframe_height", "$0"]
   },
   "fut-join": {
     "prefix": "fut-join",
