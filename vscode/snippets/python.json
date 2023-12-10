@@ -3244,6 +3244,10 @@
     "prefix": "fut-get-repo-root-or-cwd-sub-path",
     "body": ["from utilities.git import get_repo_root_or_cwd_sub_path", "$0"]
   },
+  "fut-valid-path-repo": {
+    "prefix": "fut-valid-path-repo",
+    "body": ["from utilities.git import valid_path_repo", "$0"]
+  },
 
   // third party: (dycw-)utilities.hashlib
   "fut-md5-hash": {
@@ -3589,6 +3593,20 @@
   "fut-walk": {
     "prefix": "fut-walk",
     "body": ["from utilities.pathlib import walk", "$0"]
+  },
+
+  // third party: (dycw-)utilities.pathvalidate
+  "fut-valid-path": {
+    "prefix": "fut-valid-path",
+    "body": ["from utilities.pathvalidate import valid_path", "$0"]
+  },
+  "fut-valid-path-cwd": {
+    "prefix": "fut-valid-path-cwd",
+    "body": ["from utilities.pathvalidate import valid_path_cwd", "$0"]
+  },
+  "fut-valid-path-home": {
+    "prefix": "fut-valid-path-home",
+    "body": ["from utilities.pathvalidate import valid_path_home", "$0"]
   },
 
   // third party: (dycw-)utilities.pickle
