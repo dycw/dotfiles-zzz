@@ -3406,18 +3406,6 @@
     "prefix": "fut-frozen-set-strs-parameter",
     "body": ["from utilities.luigi import FrozenSetStrsParameter", "$0"]
   },
-  "fut-get-dependencies-downstream": {
-    "prefix": "fut-get-dependencies-downstream",
-    "body": ["from utilities.luigi import get_dependencies_downstream", "$0"]
-  },
-  "fut-get-dependencies-upstream": {
-    "prefix": "fut-get-dependencies-upstream",
-    "body": ["from utilities.luigi import get_dependencies_upstream", "$0"]
-  },
-  "fut-get-task-classes": {
-    "prefix": "fut-get-task-classes",
-    "body": ["from utilities.luigi import get_task_classes", "$0"]
-  },
   "fut-path-target": {
     "prefix": "fut-path-target",
     "body": ["from utilities.luigi import PathTarget", "$0"]
@@ -3593,10 +3581,6 @@
   "fut-ensure-suffix": {
     "prefix": "fut-ensure-suffix",
     "body": ["from utilities.pathlib import ensure_suffix", "$0"]
-  },
-  "fut-path-like": {
-    "prefix": "fut-path-like",
-    "body": ["from utilities.pathlib import PathLike", "$0"]
   },
   "fut-temp-cwd": {
     "prefix": "fut-temp-cwd",
@@ -3892,6 +3876,10 @@
   "fut-number": {
     "prefix": "fut-number",
     "body": ["from utilities.types import Number", "$0"]
+  },
+  "fut-path-like": {
+    "prefix": "fut-path-like",
+    "body": ["from utilities.types import PathLike", "$0"]
   },
   "fut-sequence-strs": {
     "prefix": "fut-sequence-strs",
