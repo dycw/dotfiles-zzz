@@ -75,6 +75,7 @@ with suppress(ModuleNotFoundError):
         get_repo_name,  # noqa: F401
         get_repo_root,  # noqa: F401
         get_repo_root_or_cwd_sub_path,  # noqa: F401
+        valid_path_repo,  # noqa: F401
     )
     from utilities.hashlib import (
         md5_hash,  # noqa: F401
@@ -117,6 +118,11 @@ with suppress(ModuleNotFoundError):
         ensure_suffix,  # noqa: F401
         temp_cwd,  # noqa: F401
         walk,  # noqa: F401
+    )
+    from utilities.pathvalidate import (
+        valid_path,  # noqa: F401
+        valid_path_cwd,  # noqa: F401
+        valid_path_home,  # noqa: F401
     )
     from utilities.pickle import (
         read_pickle,  # noqa: F401
