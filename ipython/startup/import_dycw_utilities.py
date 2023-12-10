@@ -114,7 +114,6 @@ with suppress(ModuleNotFoundError):
         temp_environ,  # noqa: F401
     )
     from utilities.pathlib import (
-        PathLike,  # noqa: F401
         ensure_suffix,  # noqa: F401
         temp_cwd,  # noqa: F401
         walk,  # noqa: F401
@@ -156,6 +155,7 @@ with suppress(ModuleNotFoundError):
         EnsureHashableError,  # noqa: F401
         IterableStrs,  # noqa: F401
         Number,  # noqa: F401
+        PathLike,  # noqa: F401
         SequenceStrs,  # noqa: F401
         ensure_class,  # noqa: F401
         ensure_hashable,  # noqa: F401
@@ -196,9 +196,6 @@ with suppress(ModuleNotFoundError):
             WeekdayParameter,  # noqa: F401
             build,  # noqa: F401
             clone,  # noqa: F401
-            get_dependencies_downstream,  # noqa: F401
-            get_dependencies_upstream,  # noqa: F401
-            get_task_classes,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
         from utilities._luigi.sqlalchemy import (
