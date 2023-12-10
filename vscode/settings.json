@@ -4,8 +4,8 @@
   // editor
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "editor.cursorSurroundingLines": 10,
   "editor.formatOnPaste": true,
