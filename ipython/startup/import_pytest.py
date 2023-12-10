@@ -5,6 +5,7 @@ from contextlib import suppress
 with suppress(ModuleNotFoundError):
     import pytest  # noqa: F401
     from pytest import (
+        approx,  # noqa: F401
         fixture,  # noqa: F401
         mark,  # noqa: F401
         param,  # noqa: F401
