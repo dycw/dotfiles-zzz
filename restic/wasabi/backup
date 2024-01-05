@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+ENV="$SCRIPT_DIR/.env"
+
+if [ -f "$ENV" ]; then
+	echo "Sourcing $ENV..."
+	source "$ENV"
+	if [ -d "$PATH_DROPBOX" ]; then
+		echo "Backing up $PATH_DROPBOX..."
+		restic backup "$PATH_DROPBOX"
+	else
+		echo "Unable to find $PATH_DROPBOX; exiting..."
+	fi
+else
+	echo "Unable to find $ENV; exiting..."
+fi
