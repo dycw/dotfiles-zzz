@@ -9,7 +9,7 @@
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "fcb1522fefd0f9029b7dc71aa2664d2d0ead0fb3"
+    "commit": "aa03f815694c003892bb80efcf4d7c33aea3e009"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -69,11 +69,11 @@
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "3e6e91b09f0468c32d3b96dcacf4b947f037ce25"
+    "commit": "4aaacbf5e5e2218fd05eb75703fe9e0f85335803"
   },
   "indent-blankline.nvim": {
     "branch": "master",
-    "commit": "3c8a185da4b8ab7aef487219f5e001b11d4b6aaf"
+    "commit": "12e92044d313c54c438bd786d11684c88f6f78cd"
   },
   "iswap.nvim": {
     "branch": "master",
@@ -153,7 +153,7 @@
   },
   "neodev.nvim": {
     "branch": "main",
-    "commit": "34b93b809b781b8a1ad862142e40b11bae1dc0e9"
+    "commit": "dde00106b9094f101980b364fae02fd85d357306"
   },
   "noice.nvim": {
     "branch": "main",
@@ -173,7 +173,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "796394fd19fb878e8dbc4fd1e9c9c186ed07a5f4"
+    "commit": "e47ccfae775f0d572ef0f3a7d245f043b259dafc"
   },
   "nvim-navic": {
     "branch": "master",
@@ -253,7 +253,7 @@
   },
   "telescope.nvim": {
     "branch": "master",
-    "commit": "b3ff5f33201f474d58f5be96244869f189bbc091"
+    "commit": "da8b3d485975a8727bea127518b65c980521ae22"
   },
   "tidy.nvim": {
     "branch": "main",
