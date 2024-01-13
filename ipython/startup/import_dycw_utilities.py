@@ -8,9 +8,6 @@ with suppress(ModuleNotFoundError):
         WriterError,  # noqa: F401
         writer,  # noqa: F401
     )
-    from utilities.class_name import (
-        get_class_name,  # noqa: F401
-    )
     from utilities.datetime import (
         EPOCH_UTC,  # noqa: F401
         NOW_HKG,  # noqa: F401
@@ -138,6 +135,10 @@ with suppress(ModuleNotFoundError):
         Sentinel,  # noqa: F401
         sentinel,  # noqa: F401
     )
+    from utilities.sys import (
+        VERSION_MAJOR_MINOR,  # noqa: F401
+        is_pytest,  # noqa: F401
+    )
     from utilities.tempfile import (
         TEMP_DIR,  # noqa: F401
         TemporaryDirectory,  # noqa: F401
@@ -158,6 +159,7 @@ with suppress(ModuleNotFoundError):
     )
     from utilities.types import (
         Duration,  # noqa: F401
+        EnsureClassError,  # noqa: F401
         EnsureHashableError,  # noqa: F401
         IterableStrs,  # noqa: F401
         Number,  # noqa: F401
@@ -165,6 +167,8 @@ with suppress(ModuleNotFoundError):
         SequenceStrs,  # noqa: F401
         ensure_class,  # noqa: F401
         ensure_hashable,  # noqa: F401
+        get_class,  # noqa: F401
+        get_class_name,  # noqa: F401
         is_hashable,  # noqa: F401
         is_sized_not_str,  # noqa: F401
         issubclass_except_bool_int,  # noqa: F401
@@ -272,7 +276,6 @@ with suppress(ModuleNotFoundError):
             add_pytest_addoption,  # noqa: F401
             add_pytest_collection_modifyitems,  # noqa: F401
             add_pytest_configure,  # noqa: F401
-            is_pytest,  # noqa: F401
             skipif_linux,  # noqa: F401
             skipif_mac,  # noqa: F401
             skipif_not_linux,  # noqa: F401
