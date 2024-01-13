@@ -2997,12 +2997,6 @@
     "body": ["from utilities.atomicwrites import WriterError", "$0"]
   },
 
-  // third party: (dycw-)utilities.class_name
-  "fut-get-class-name": {
-    "prefix": "fut-get-class-name",
-    "body": ["from utilities.class_name import get_class_name", "$0"]
-  },
-
   // third party: (dycw-)utilities.cryptography
   "fut-decrypt": {
     "prefix": "fut-decrypt",
@@ -3677,6 +3671,16 @@
     "body": ["from utilities.sentinel import sentinel", "$0"]
   },
 
+  // third party: (dycw-)utilities.sys
+  "fut-version-major-minor": {
+    "prefix": "fut-version-major-minor",
+    "body": ["from utilities.sys import VERSION_MAJOR_MINOR", "$0"]
+  },
+  "fut-is-pytest": {
+    "prefix": "fut-is-pytest",
+    "body": ["from utilities.sys import is_pytest", "$0"]
+  },
+
   // third party: (dycw-)utilities.sqlalchemy
   "fut-check-engine": {
     "prefix": "fut-check-engine",
@@ -3867,6 +3871,10 @@
     "prefix": "fut-ensure-class",
     "body": ["from utilities.types import ensure_class", "$0"]
   },
+  "fut-ensure-class-error": {
+    "prefix": "fut-ensure-class-error",
+    "body": ["from utilities.types import EnsureClassError", "$0"]
+  },
   "fut-ensure-hashable": {
     "prefix": "fut-ensure-hashable",
     "body": ["from utilities.types import ensure_hashable", "$0"]
@@ -3874,6 +3882,14 @@
   "fut-ensure-hashable-error": {
     "prefix": "fut-ensure-hashable-error",
     "body": ["from utilities.types import EnsureHashableError", "$0"]
+  },
+  "fut-get-class": {
+    "prefix": "fut-get-class",
+    "body": ["from utilities.types import get_class", "$0"]
+  },
+  "fut-get-class-name": {
+    "prefix": "fut-get-class-name",
+    "body": ["from utilities.types import get_class_name", "$0"]
   },
   "fut-is-hashable": {
     "prefix": "fut-is-hashable",
