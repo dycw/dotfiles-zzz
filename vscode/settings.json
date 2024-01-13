@@ -102,7 +102,6 @@
   "[python]": {
     "editor.defaultFormatter": "charliemarsh.ruff"
   },
-  "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticSeverityOverrides": {
