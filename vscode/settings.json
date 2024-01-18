@@ -282,5 +282,6 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "vsicons.dontShowNewVersionMessage": true
 }
