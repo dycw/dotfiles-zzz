@@ -2997,6 +2997,12 @@
     "body": ["from utilities.atomicwrites import WriterError", "$0"]
   },
 
+  // third party: (dycw-)utilities.beartype
+  "fut-beartype-if-dev": {
+    "prefix": "fut-beartype-if-dev",
+    "body": ["from utilities.beartype import beartype_if_dev", "$0"]
+  },
+
   // third party: (dycw-)utilities.cryptography
   "fut-decrypt": {
     "prefix": "fut-decrypt",

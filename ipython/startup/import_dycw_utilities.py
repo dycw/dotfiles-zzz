@@ -8,6 +8,9 @@ with suppress(ModuleNotFoundError):
         WriterError,  # noqa: F401
         writer,  # noqa: F401
     )
+    from utilities.beartype import (
+        beartype_if_dev,  # noqa: F401
+    )
     from utilities.datetime import (
         EPOCH_UTC,  # noqa: F401
         NOW_HKG,  # noqa: F401
