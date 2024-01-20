@@ -876,6 +876,24 @@
     "body": ["from operator import truediv", "$0"]
   },
 
+  // standard library: os
+  "fos-environ": {
+    "prefix": "fos-environ",
+    "body": ["from os import environ", "$0"]
+  },
+  "fos-expanduser": {
+    "prefix": "fos-expanduser",
+    "body": ["from os.path import expanduser", "$0"]
+  },
+  "fos-expandvars": {
+    "prefix": "fos-expandvars",
+    "body": ["from os.path import expandvars", "$0"]
+  },
+  "fos-getenv": {
+    "prefix": "fos-getenv",
+    "body": ["from os import getenv", "$0"]
+  },
+
   // standard library: pathlib
   "fpa-path": {
     "prefix": "fpa-path",
