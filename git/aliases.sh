@@ -12,4 +12,8 @@ if [ -x "$(command -v git)" ]; then
 	done <<EOF
 $_aliases
 EOF
+
+	if [ -x "$(command -v watch)" ]; then
+		alias wgs='watch -d -n 0.1 --color -- git status'
+	fi
 fi
