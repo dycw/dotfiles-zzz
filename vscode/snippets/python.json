@@ -943,9 +943,25 @@
   },
 
   // standard library: re
+  "fre-dotall": {
+    "prefix": "fre-dotall",
+    "body": ["from re import DOTALL", "$0"]
+  },
+  "fre-escape": {
+    "prefix": "fre-escape",
+    "body": ["from re import escape", "$0"]
+  },
   "fre-findall": {
     "prefix": "fre-findall",
     "body": ["from re import findall", "$0"]
+  },
+  "fre-fullmatch": {
+    "prefix": "fre-fullmatch",
+    "body": ["from re import fullmatch", "$0"]
+  },
+  "fre-match": {
+    "prefix": "fre-match",
+    "body": ["from re import match", "$0"]
   },
   "fre-search": {
     "prefix": "fre-search",
