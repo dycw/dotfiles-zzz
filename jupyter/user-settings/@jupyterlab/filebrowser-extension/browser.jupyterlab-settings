@@ -10,7 +10,11 @@
 
     // Show file size column
     // Whether to show the file size column
-    "showFileSizeColumn": true,
+    "showFileSizeColumn": false,
+
+    // Show last modified column
+    // Whether to show the last modified column
+    "showLastModifiedColumn": false,
 
     // When sorting by name, group notebooks before other files
     // Whether to group the notebooks away from files
