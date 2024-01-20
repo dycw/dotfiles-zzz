@@ -839,9 +839,41 @@
   },
 
   // standard library: operator
+  "fop-add": {
+    "prefix": "fop-add",
+    "body": ["from operator import add", "$0"]
+  },
+  "fop-and": {
+    "prefix": "fop-and",
+    "body": ["from operator import and_", "$0"]
+  },
+  "fop-attrgetter": {
+    "prefix": "fop-attrgetter",
+    "body": ["from operator import attrgetter", "$0"]
+  },
   "fop-eq": {
     "prefix": "fop-eq",
     "body": ["from operator import eq", "$0"]
+  },
+  "fop-itemgetter": {
+    "prefix": "fop-itemgetter",
+    "body": ["from operator import itemgetter", "$0"]
+  },
+  "fop-mul": {
+    "prefix": "fop-mul",
+    "body": ["from operator import mul", "$0"]
+  },
+  "fop-op": {
+    "prefix": "fop-op",
+    "body": ["from operator import or_", "$0"]
+  },
+  "fop-sub": {
+    "prefix": "fop-sub",
+    "body": ["from operator import sub", "$0"]
+  },
+  "fop-truediv": {
+    "prefix": "fop-truediv",
+    "body": ["from operator import truediv", "$0"]
   },
 
   // standard library: pathlib
