@@ -1732,6 +1732,12 @@
     "body": ["from fastapi import FastAPI", "$0"]
   },
 
+  // third party: frozendict
+  "ffr-frozendict": {
+    "prefix": "ffr-frozendict",
+    "body": ["from frozendict import frozendict", "$0"]
+  },
+
   // third party: hypothesis
   "fhy-array-dtypes": {
     "prefix": "fhy-array-dtypes",
