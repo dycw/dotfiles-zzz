@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
+# shellcheck source=/dev/null
 
 echo "$(date '+%Y-%m-%d %H:%M:%S'): Running imagemagick/install.sh..."
 
-# shellcheck source=/dev/null
-source "$(git rev-parse --show-toplevel)/brew/install.sh"
-if ! grep -Fxq imagemagick <<<"$(brew list -1)"; then
-	brew install imagemagick
+if ! [ -x "$(command -v convert)" ]; then
+	sudo port install imagemagick +pango
 fi
