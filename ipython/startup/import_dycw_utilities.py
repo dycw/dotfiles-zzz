@@ -59,6 +59,7 @@ with suppress(ModuleNotFoundError):
         parse_enum,  # noqa: F401
     )
     from utilities.errors import (
+        ImpossibleCaseError,  # noqa: F401
         RedirectErrorError,  # noqa: F401
         redirect_error,  # noqa: F401
         retry,  # noqa: F401

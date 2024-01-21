@@ -3270,6 +3270,10 @@
   },
 
   // third party: (dycw-)utilities.errors
+  "fut-impossible-case-error": {
+    "prefix": "fut-impossible-case-error",
+    "body": ["from utilities.errors import ImpossibleCaseError", "$0"]
+  },
   "fut-redirect-error": {
     "prefix": "fut-redirect-error",
     "body": ["from utilities.errors import redirect_error", "$0"]
