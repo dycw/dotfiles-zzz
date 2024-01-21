@@ -289,6 +289,12 @@ with suppress(ModuleNotFoundError):
             throttle,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
+        from utilities.pydantic import (
+            HashableBaseModel,  # noqa: F401
+            load_model,  # noqa: F401
+            save_model,  # noqa: F401
+        )
+    with suppress(ModuleNotFoundError):
         from utilities.sqlalchemy import (
             CHUNK_SIZE_FRAC,  # noqa: F401
             CheckEngineError,  # noqa: F401

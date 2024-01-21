@@ -3729,6 +3729,20 @@
     "body": ["from utilities.polars import yield_tables", "$0"]
   },
 
+  // third party: (dycw-)utilities.pydantic
+  "fut-hashable-base-model": {
+    "prefix": "fut-hashable-base-model",
+    "body": ["from utilities.pydantic import HashableBaseModel", "$0"]
+  },
+  "fut-load-model": {
+    "prefix": "fut-load-model",
+    "body": ["from utilities.pydantic import load_model", "$0"]
+  },
+  "fut-save-model": {
+    "prefix": "fut-save-model",
+    "body": ["from utilities.pydantic import save_model", "$0"]
+  },
+
   // third party: (dycw-)utilities.re
   "fut-extract-group": {
     "prefix": "fut-extract-group",
