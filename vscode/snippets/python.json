@@ -3360,9 +3360,93 @@
     "prefix": "fut-check-duplicates-error",
     "body": ["from utilities.iterables import CheckDuplicatesError", "$0"]
   },
+  "fut-check-iterables-equal": {
+    "prefix": "fut-check-iterables-equal",
+    "body": ["from utilities.iterables import check_iterables_equal", "$0"]
+  },
+  "fut-check-iterables-equal-error": {
+    "prefix": "fut-check-iterables-equal-error",
+    "body": ["from utilities.iterables import CheckIterablesEqualError", "$0"]
+  },
+  "fut-check-lengths-equal": {
+    "prefix": "fut-check-lengths-equal",
+    "body": ["from utilities.iterables import check_lengths_equal", "$0"]
+  },
+  "fut-check-lengths-equal-error": {
+    "prefix": "fut-check-lengths-equal-error",
+    "body": ["from utilities.iterables import CheckLengthsEqualError", "$0"]
+  },
+  "fut-check-mappings-equal": {
+    "prefix": "fut-check-mappings-equal",
+    "body": ["from utilities.iterables import check_mappings_equal", "$0"]
+  },
+  "fut-check-mappings-equal-error": {
+    "prefix": "fut-check-mappings-equal-error",
+    "body": ["from utilities.iterables import CheckMappingsEqualError", "$0"]
+  },
+  "fut-check-sets-equal": {
+    "prefix": "fut-check-sets-equal",
+    "body": ["from utilities.iterables import check_sets_equal", "$0"]
+  },
+  "fut-check-sets-equal-error": {
+    "prefix": "fut-check-sets-equal-error",
+    "body": ["from utilities.iterables import CheckSetsEqualError", "$0"]
+  },
+  "fut-check-sub-mapping-error": {
+    "prefix": "fut-check-sub-mapping-error",
+    "body": ["from utilities.iterables import CheckSubMappingError", "$0"]
+  },
+  "fut-check-sub-set-error": {
+    "prefix": "fut-check-sub-set-error",
+    "body": ["from utilities.iterables import CheckSubSetError", "$0"]
+  },
+  "fut-check-submapping": {
+    "prefix": "fut-check-submapping",
+    "body": ["from utilities.iterables import check_submapping", "$0"]
+  },
+  "fut-check-subset": {
+    "prefix": "fut-check-subset",
+    "body": ["from utilities.iterables import check_subset", "$0"]
+  },
+  "fut-check-super-mapping-error": {
+    "prefix": "fut-check-super-mapping-error",
+    "body": ["from utilities.iterables import CheckSuperMappingError", "$0"]
+  },
+  "fut-check-super-set-error": {
+    "prefix": "fut-check-super-set-error",
+    "body": ["from utilities.iterables import CheckSuperSetError", "$0"]
+  },
+  "fut-check-supermapping": {
+    "prefix": "fut-check-supermapping",
+    "body": ["from utilities.iterables import check_supermapping", "$0"]
+  },
+  "fut-check-superset": {
+    "prefix": "fut-check-superset",
+    "body": ["from utilities.iterables import check_superset", "$0"]
+  },
   "fut-ensure-hashables": {
     "prefix": "fut-ensure-hashables",
     "body": ["from utilities.iterables import ensure_hashables", "$0"]
+  },
+  "fut-ensure-iterable": {
+    "prefix": "fut-ensure-iterable",
+    "body": ["from utilities.iterables import ensure_iterable", "$0"]
+  },
+  "fut-ensure-iterable-error": {
+    "prefix": "fut-ensure-iterable-error",
+    "body": ["from utilities.iterables import EnsureIterableError", "$0"]
+  },
+  "fut-ensure-iterable-not-str": {
+    "prefix": "fut-ensure-iterable-not-str",
+    "body": ["from utilities.iterables import ensure_iterable_not_str", "$0"]
+  },
+  "fut-ensure-iterable-not-str-error": {
+    "prefix": "fut-ensure-iterable-not-str-error",
+    "body": ["from utilities.iterables import EnsureIterableNotStrError", "$0"]
+  },
+  "fut-is-iterable": {
+    "prefix": "fut-is-iterable",
+    "body": ["from utilities.iterables import is_iterable", "$0"]
   },
   "fut-is-iterable-not-str": {
     "prefix": "fut-is-iterable-not-str",
