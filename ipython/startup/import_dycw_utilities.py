@@ -87,10 +87,31 @@ with suppress(ModuleNotFoundError):
         snake_case_mappings,  # noqa: F401
     )
     from utilities.iterables import (
-        CheckDuplicatesError,  # noqa: F401
-        check_duplicates,  # noqa: F401
-        ensure_hashables,  # noqa: F401
-        is_iterable_not_str,  # noqa: F401
+        CheckDuplicatesError,  # noqa: F401  # noqa: F401
+        CheckIterablesEqualError,  # noqa: F401
+        CheckLengthsEqualError,  # noqa: F401
+        CheckMappingsEqualError,  # noqa: F401
+        CheckSetsEqualError,  # noqa: F401
+        CheckSubMappingError,  # noqa: F401
+        CheckSubSetError,  # noqa: F401
+        CheckSuperMappingError,  # noqa: F401
+        CheckSuperSetError,  # noqa: F401
+        EnsureIterableError,  # noqa: F401
+        EnsureIterableNotStrError,  # noqa: F401
+        check_duplicates,  # noqa: F401  # noqa: F401
+        check_iterables_equal,  # noqa: F401
+        check_lengths_equal,  # noqa: F401
+        check_mappings_equal,  # noqa: F401
+        check_sets_equal,  # noqa: F401
+        check_submapping,  # noqa: F401
+        check_subset,  # noqa: F401
+        check_supermapping,  # noqa: F401
+        check_superset,  # noqa: F401
+        ensure_hashables,  # noqa: F401  # noqa: F401
+        ensure_iterable,  # noqa: F401
+        ensure_iterable_not_str,  # noqa: F401
+        is_iterable,  # noqa: F401
+        is_iterable_not_str,  # noqa: F401  # noqa: F401
     )
     from utilities.json import (
         deserialize,  # noqa: F401

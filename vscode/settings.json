@@ -100,7 +100,7 @@
   "prettier.proseWrap": "always",
   // python
   "[python]": {
-    "editor.defaultFormatter": "charliemarsh.ruff"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
@@ -279,9 +279,10 @@
     }
   ],
   "vim.visualstar": true,
+  // VS icons
+  "vsicons.dontShowNewVersionMessage": true,
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "material-icon-theme",
-  "vsicons.dontShowNewVersionMessage": true
+  "workbench.iconTheme": "material-icon-theme"
 }
