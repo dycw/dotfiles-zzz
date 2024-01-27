@@ -1308,6 +1308,12 @@
     "body": ["from typing import Unpack", "$0"]
   },
 
+  // standard library: zoneinfo
+  "fzo-zone-info": {
+    "prefix": "fzo-zone-info",
+    "body": ["from zoneinfo import ZoneInfo", "$0"]
+  },
+
   // third party: atomicwrites
   "fat-atomic-writer": {
     "prefix": "fat-atomic-writer",
