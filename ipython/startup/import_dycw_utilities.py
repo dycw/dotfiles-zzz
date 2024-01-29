@@ -65,7 +65,9 @@ with suppress(ModuleNotFoundError):
         retry,  # noqa: F401
     )
     from utilities.functools import (
+        EmptyReduceError,  # noqa: F401
         partial,  # noqa: F401
+        redirect_empty_reduce,  # noqa: F401
     )
     from utilities.getpass import (
         USER,  # noqa: F401
