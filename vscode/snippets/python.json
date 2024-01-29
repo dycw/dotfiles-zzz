@@ -3300,9 +3300,17 @@
   },
 
   // third party: (dycw-)utilities.functools
+  "fut-empty-reduce-error": {
+    "prefix": "fut-empty-reduce-error",
+    "body": ["from utilities.functools import EmptyReduceError", "$0"]
+  },
   "fut-partial": {
     "prefix": "fut-partial",
     "body": ["from utilities.functools import partial", "$0"]
+  },
+  "fut-redirect-empty-reduce": {
+    "prefix": "fut-redirect-empty-reduce",
+    "body": ["from utilities.functools import redirect_empty_reduce", "$0"]
   },
 
   // third party: (dycw-)utilities.getpass
