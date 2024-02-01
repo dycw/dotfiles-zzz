@@ -17,6 +17,10 @@
     "prefix": "if-name-main",
     "body": ["if __name__ == \"__main__\":", "    main()"]
   },
+  "mark-only": {
+    "prefix": "mark-only",
+    "body": ["@mark.only", "$0"]
+  },
 
   // standard library: abc
   "fab-abc": {
