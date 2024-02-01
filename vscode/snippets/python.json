@@ -3847,6 +3847,51 @@
     "body": ["from utilities.pydantic import save_model", "$0"]
   },
 
+  // third party: (dycw-)utilities.pytest
+  "fut-add-pytest-addoption": {
+    "prefix": "fut-add-pytest-addoption",
+    "body": ["from utilities.pytest import add_pytest_addoption", "$0"]
+  },
+  "fut-add-pytest-collection-modifyitems": {
+    "prefix": "fut-add-pytest-collection-modifyitems",
+    "body": [
+      "from utilities.pytest import add_pytest_collection_modifyitems",
+      "$0"
+    ]
+  },
+  "fut-add-pytest-configure": {
+    "prefix": "fut-add-pytest-configure",
+    "body": ["from utilities.pytest import add_pytest_configure", "$0"]
+  },
+  "fut-skipif-linux": {
+    "prefix": "fut-skipif-linux",
+    "body": ["from utilities.pytest import skipif_linux", "$0"]
+  },
+  "fut-skipif-mac": {
+    "prefix": "fut-skipif-mac",
+    "body": ["from utilities.pytest import skipif_mac", "$0"]
+  },
+  "fut-skipif-not-linux": {
+    "prefix": "fut-skipif-not-linux",
+    "body": ["from utilities.pytest import skipif_not_linux", "$0"]
+  },
+  "fut-skipif-not-mac": {
+    "prefix": "fut-skipif-not-mac",
+    "body": ["from utilities.pytest import skipif_not_mac", "$0"]
+  },
+  "fut-skipif-not-windows": {
+    "prefix": "fut-skipif-not-windows",
+    "body": ["from utilities.pytest import skipif_not_windows", "$0"]
+  },
+  "fut-skipif-windows": {
+    "prefix": "fut-skipif-windows",
+    "body": ["from utilities.pytest import skipif_windows", "$0"]
+  },
+  "fut-throttle": {
+    "prefix": "fut-throttle",
+    "body": ["from utilities.pytest import throttle", "$0"]
+  },
+
   // third party: (dycw-)utilities.re
   "fut-extract-group": {
     "prefix": "fut-extract-group",
