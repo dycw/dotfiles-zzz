@@ -3704,6 +3704,30 @@
     "prefix": "fut-redirect-empty-pandas-concat",
     "body": ["from utilities.pandas import redirect_empty_pandas_concat", "$0"]
   },
+  "fut-reindex-to-set": {
+    "prefix": "fut-reindex-to-set",
+    "body": ["from utilities.pandas import reindex_to_set", "$0"]
+  },
+  "fut-reindex-to-set-error": {
+    "prefix": "fut-reindex-to-set-error",
+    "body": ["from utilities.pandas import ReindexToSetError", "$0"]
+  },
+  "fut-reindex-to-sub-set-error": {
+    "prefix": "fut-reindex-to-sub-set-error",
+    "body": ["from utilities.pandas import ReindexToSubSetError", "$0"]
+  },
+  "fut-reindex-to-subset": {
+    "prefix": "fut-reindex-to-subset",
+    "body": ["from utilities.pandas import reindex_to_subset", "$0"]
+  },
+  "fut-reindex-to-super-set-error": {
+    "prefix": "fut-reindex-to-super-set-error",
+    "body": ["from utilities.pandas import ReindexToSuperSetError", "$0"]
+  },
+  "fut-reindex-to-superset": {
+    "prefix": "fut-reindex-to-superset",
+    "body": ["from utilities.pandas import reindex_to_superset", "$0"]
+  },
   "fut-rename-index": {
     "prefix": "fut-rename-index",
     "body": ["from utilities.pandas import rename_index", "$0"]
@@ -3759,6 +3783,14 @@
   "fut-to-numpy": {
     "prefix": "fut-to-numpy",
     "body": ["from utilities.pandas import to_numpy", "$0"]
+  },
+  "fut-union-indexes": {
+    "prefix": "fut-union-indexes",
+    "body": ["from utilities.pandas import union_indexes", "$0"]
+  },
+  "fut-union-indexes-error": {
+    "prefix": "fut-union-indexes-error",
+    "body": ["from utilities.pandas import UnionIndexesError", "$0"]
   },
 
   // third party: (dycw-)utilities.pathlib
@@ -3845,6 +3877,51 @@
   "fut-save-model": {
     "prefix": "fut-save-model",
     "body": ["from utilities.pydantic import save_model", "$0"]
+  },
+
+  // third party: (dycw-)utilities.pytest
+  "fut-add-pytest-addoption": {
+    "prefix": "fut-add-pytest-addoption",
+    "body": ["from utilities.pytest import add_pytest_addoption", "$0"]
+  },
+  "fut-add-pytest-collection-modifyitems": {
+    "prefix": "fut-add-pytest-collection-modifyitems",
+    "body": [
+      "from utilities.pytest import add_pytest_collection_modifyitems",
+      "$0"
+    ]
+  },
+  "fut-add-pytest-configure": {
+    "prefix": "fut-add-pytest-configure",
+    "body": ["from utilities.pytest import add_pytest_configure", "$0"]
+  },
+  "fut-skipif-linux": {
+    "prefix": "fut-skipif-linux",
+    "body": ["from utilities.pytest import skipif_linux", "$0"]
+  },
+  "fut-skipif-mac": {
+    "prefix": "fut-skipif-mac",
+    "body": ["from utilities.pytest import skipif_mac", "$0"]
+  },
+  "fut-skipif-not-linux": {
+    "prefix": "fut-skipif-not-linux",
+    "body": ["from utilities.pytest import skipif_not_linux", "$0"]
+  },
+  "fut-skipif-not-mac": {
+    "prefix": "fut-skipif-not-mac",
+    "body": ["from utilities.pytest import skipif_not_mac", "$0"]
+  },
+  "fut-skipif-not-windows": {
+    "prefix": "fut-skipif-not-windows",
+    "body": ["from utilities.pytest import skipif_not_windows", "$0"]
+  },
+  "fut-skipif-windows": {
+    "prefix": "fut-skipif-windows",
+    "body": ["from utilities.pytest import skipif_windows", "$0"]
+  },
+  "fut-throttle": {
+    "prefix": "fut-throttle",
+    "body": ["from utilities.pytest import throttle", "$0"]
   },
 
   // third party: (dycw-)utilities.re
