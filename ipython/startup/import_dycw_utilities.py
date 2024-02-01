@@ -264,8 +264,12 @@ with suppress(ModuleNotFoundError):
             CheckRangeIndexError,  # noqa: F401
             EmptyPandasConcatError,  # noqa: F401
             Int64,  # noqa: F401
+            ReindexToSetError,  # noqa: F401
+            ReindexToSubSetError,  # noqa: F401
+            ReindexToSuperSetError,  # noqa: F401
             SeriesMinMaxError,  # noqa: F401
             TimestampToDateTimeError,  # noqa: F401
+            UnionIndexesError,  # noqa: F401
             astype,  # noqa: F401
             boolean,  # noqa: F401
             category,  # noqa: F401
@@ -275,6 +279,9 @@ with suppress(ModuleNotFoundError):
             datetime64nshk,  # noqa: F401
             datetime64nsutc,  # noqa: F401
             redirect_empty_pandas_concat,  # noqa: F401
+            reindex_to_set,  # noqa: F401
+            reindex_to_subset,  # noqa: F401
+            reindex_to_superset,  # noqa: F401
             rename_index,  # noqa: F401
             series_max,  # noqa: F401
             series_min,  # noqa: F401
@@ -283,6 +290,7 @@ with suppress(ModuleNotFoundError):
             timestamp_to_date,  # noqa: F401
             timestamp_to_datetime,  # noqa: F401
             to_numpy,  # noqa: F401
+            union_indexes,  # noqa: F401
         )
     with suppress(ModuleNotFoundError):
         from utilities.polars import (

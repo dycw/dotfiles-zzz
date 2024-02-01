@@ -3704,6 +3704,30 @@
     "prefix": "fut-redirect-empty-pandas-concat",
     "body": ["from utilities.pandas import redirect_empty_pandas_concat", "$0"]
   },
+  "fut-reindex-to-set": {
+    "prefix": "fut-reindex-to-set",
+    "body": ["from utilities.pandas import reindex_to_set", "$0"]
+  },
+  "fut-reindex-to-set-error": {
+    "prefix": "fut-reindex-to-set-error",
+    "body": ["from utilities.pandas import ReindexToSetError", "$0"]
+  },
+  "fut-reindex-to-sub-set-error": {
+    "prefix": "fut-reindex-to-sub-set-error",
+    "body": ["from utilities.pandas import ReindexToSubSetError", "$0"]
+  },
+  "fut-reindex-to-subset": {
+    "prefix": "fut-reindex-to-subset",
+    "body": ["from utilities.pandas import reindex_to_subset", "$0"]
+  },
+  "fut-reindex-to-super-set-error": {
+    "prefix": "fut-reindex-to-super-set-error",
+    "body": ["from utilities.pandas import ReindexToSuperSetError", "$0"]
+  },
+  "fut-reindex-to-superset": {
+    "prefix": "fut-reindex-to-superset",
+    "body": ["from utilities.pandas import reindex_to_superset", "$0"]
+  },
   "fut-rename-index": {
     "prefix": "fut-rename-index",
     "body": ["from utilities.pandas import rename_index", "$0"]
@@ -3759,6 +3783,14 @@
   "fut-to-numpy": {
     "prefix": "fut-to-numpy",
     "body": ["from utilities.pandas import to_numpy", "$0"]
+  },
+  "fut-union-indexes": {
+    "prefix": "fut-union-indexes",
+    "body": ["from utilities.pandas import union_indexes", "$0"]
+  },
+  "fut-union-indexes-error": {
+    "prefix": "fut-union-indexes-error",
+    "body": ["from utilities.pandas import UnionIndexesError", "$0"]
   },
 
   // third party: (dycw-)utilities.pathlib
