@@ -7,12 +7,16 @@ ENV="$SCRIPT_DIR/.env"
 if [ -f "$ENV" ]; then
 	echo "Sourcing $ENV..."
 	source "$ENV"
-	if [ -d "$PATH_DROPBOX" ]; then
-		echo "Backing up $PATH_DROPBOX..."
-		restic backup "$PATH_DROPBOX"
-	else
-		echo "Unable to find $PATH_DROPBOX; exiting..."
-	fi
+
+	declare -a PATHS_TO_BACKUP=("$PATH_DROPBOX" "$HOME/work")
+	for PATH_TO_BACKUP in "${PATHS_TO_BACKUP[@]}"; do
+		if [ -d "$PATH_TO_BACKUP" ]; then
+			echo "Backing up $PATH_TO_BACKUP..."
+			restic backup "$PATH_TO_BACKUP"
+		else
+			echo "Unable to find $PATH_TO_BACKUP; skipping..."
+		fi
+	done
 else
 	echo "Unable to find $ENV; exiting..."
 fi

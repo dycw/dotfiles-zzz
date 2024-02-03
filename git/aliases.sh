@@ -14,6 +14,7 @@ $_aliases
 EOF
 
 	if [ -x "$(command -v watch)" ]; then
+		alias wgd='watch -d -n 0.1 --color -- git diff'
 		alias wgs='watch -d -n 0.1 --color -- git status'
 	fi
 fi
