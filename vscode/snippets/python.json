@@ -4164,6 +4164,30 @@
     "prefix": "fut-ensure-hashable-error",
     "body": ["from utilities.types import EnsureHashableError", "$0"]
   },
+  "fut-ensure-not-none": {
+    "prefix": "fut-ensure-not-none",
+    "body": ["from utilities.types import ensure_not_none", "$0"]
+  },
+  "fut-ensure-not-none-error": {
+    "prefix": "fut-ensure-not-none-error",
+    "body": ["from utilities.types import EnsureNotNoneError", "$0"]
+  },
+  "fut-ensure-sized": {
+    "prefix": "fut-ensure-sized",
+    "body": ["from utilities.types import ensure_sized", "$0"]
+  },
+  "fut-ensure-sized-error": {
+    "prefix": "fut-ensure-sized-error",
+    "body": ["from utilities.types import EnsureSizedError", "$0"]
+  },
+  "fut-ensure-sized-not-str": {
+    "prefix": "fut-ensure-sized-not-str",
+    "body": ["from utilities.types import ensure_sized_not_str", "$0"]
+  },
+  "fut-ensure-sized-not-str-error": {
+    "prefix": "fut-ensure-sized-not-str-error",
+    "body": ["from utilities.types import EnsureSizedNotStrError", "$0"]
+  },
   "fut-get-class": {
     "prefix": "fut-get-class",
     "body": ["from utilities.types import get_class", "$0"]
@@ -4172,9 +4196,17 @@
     "prefix": "fut-get-class-name",
     "body": ["from utilities.types import get_class_name", "$0"]
   },
+  "fut-if-not-none": {
+    "prefix": "fut-if-not-none",
+    "body": ["from utilities.types import if_not_none", "$0"]
+  },
   "fut-is-hashable": {
     "prefix": "fut-is-hashable",
     "body": ["from utilities.types import is_hashable", "$0"]
+  },
+  "fut-is-sized": {
+    "prefix": "fut-is-sized",
+    "body": ["from utilities.types import is_sized", "$0"]
   },
   "fut-is-sized-not-str": {
     "prefix": "fut-is-sized-not-str",

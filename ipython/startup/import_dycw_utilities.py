@@ -188,15 +188,23 @@ with suppress(ModuleNotFoundError):
         Duration,  # noqa: F401
         EnsureClassError,  # noqa: F401
         EnsureHashableError,  # noqa: F401
+        EnsureNotNoneError,  # noqa: F401
+        EnsureSizedError,  # noqa: F401
+        EnsureSizedNotStrError,  # noqa: F401
         IterableStrs,  # noqa: F401
         Number,  # noqa: F401
         PathLike,  # noqa: F401
         SequenceStrs,  # noqa: F401
         ensure_class,  # noqa: F401
         ensure_hashable,  # noqa: F401
-        get_class,  # noqa: F401
+        ensure_not_none,  # noqa: F401
+        ensure_sized,  # noqa: F401
+        ensure_sized_not_str,  # noqa: F401
+        get_class,  # noqa: F401  # noqa: F401
         get_class_name,  # noqa: F401
+        if_not_none,  # noqa: F401
         is_hashable,  # noqa: F401
+        is_sized,  # noqa: F401
         is_sized_not_str,  # noqa: F401
         issubclass_except_bool_int,  # noqa: F401
     )
