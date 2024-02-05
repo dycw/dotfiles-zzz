@@ -22,7 +22,6 @@ with suppress(ImportError):
         global_enum,  # noqa: F401
         member,  # noqa: F401
         nonmember,  # noqa: F401
-        property,  # noqa: F401
         show_flag_values,  # noqa: F401
         verify,  # noqa: F401
     )
