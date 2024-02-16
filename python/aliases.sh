@@ -21,9 +21,6 @@ alias pui='pip uninstall'
 alias pipconf='$EDITOR "${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"'
 alias pypirc='$EDITOR "$HOME/.pypirc"'
 
-# pip-tools
-alias psreq='pip install pip-tools && pip-sync requirements.txt requirements-dev.txt'
-
 # pyproject.toml
 alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 
