@@ -105,7 +105,7 @@
   },
   "mini.ai": {
     "branch": "main",
-    "commit": "858cee0a97726c7941e3b5ef8d0e1cbefe35890a"
+    "commit": "ee9446a17c160aba6a04ff22097389c41872c878"
   },
   "mini.animate": {
     "branch": "main",
@@ -181,7 +181,7 @@
   },
   "nvim-notify": {
     "branch": "master",
-    "commit": "7138c86b28de61b6866c8cae60289136f0d539fa"
+    "commit": "5371f4bfc1f6d3adf4fe9d62cd3a9d44356bfd15"
   },
   "nvim-spectre": {
     "branch": "master",
@@ -193,7 +193,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "47d013d025afc47f2093412f228f89a4cd0fe917"
+    "commit": "17d68ac13c902f55253b7facb47df4c0ae532575"
   },
   "nvim-treesitter-context": {
     "branch": "master",
