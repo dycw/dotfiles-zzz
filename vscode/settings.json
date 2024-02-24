@@ -284,5 +284,6 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.inheritEnv": false
 }

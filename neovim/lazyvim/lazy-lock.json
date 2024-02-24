@@ -9,7 +9,7 @@
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "844081710a935b4bd95bb8a3cf2742ffb9630993"
+    "commit": "12ff3accf50fe1e59b360b2feb0b1be13d14bd3c"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -45,7 +45,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "61cff430c9f15770d0c5e68c1b08067223bd94ab"
+    "commit": "00f50d4bb17b849bac62cb1b75368333c0a80c96"
   },
   "crates.nvim": {
     "branch": "main",
@@ -85,7 +85,7 @@
   },
   "leap.nvim": {
     "branch": "main",
-    "commit": "52f7ce4fcc1764caac77cf4d43c2c4f5fb42d517"
+    "commit": "657752e806916a72b0da4b669506d93c49a0c82b"
   },
   "lualine.nvim": {
     "branch": "master",
@@ -97,7 +97,7 @@
   },
   "mason-lspconfig.nvim": {
     "branch": "main",
-    "commit": "fe4cce44dec93c69be17dad79b21de867dde118a"
+    "commit": "7897c45e8f0f7fefe3b3ee00d8e89dc67a113e25"
   },
   "mason.nvim": {
     "branch": "main",
@@ -153,7 +153,7 @@
   },
   "neodev.nvim": {
     "branch": "main",
-    "commit": "de3685b8c1cd439dd96b7958793f6f381f98652d"
+    "commit": "bbe17de89345ce40725e721d347c596dc4a02b32"
   },
   "noice.nvim": {
     "branch": "main",
@@ -173,7 +173,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "d1bab4cf4b69e49d6058028fd933d8ef5e74e680"
+    "commit": "1699ce10c3aaf861cfa0c1303fcd19d2ed93e7ad"
   },
   "nvim-navic": {
     "branch": "master",
@@ -185,7 +185,7 @@
   },
   "nvim-spectre": {
     "branch": "master",
-    "commit": "6a0785ef64c839d935a2f92e20988e962fb6537e"
+    "commit": "3712ff0cdf4f9f877d9ca708d835a877d9a0abaf"
   },
   "nvim-surround": {
     "branch": "main",
@@ -193,11 +193,11 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "17d68ac13c902f55253b7facb47df4c0ae532575"
+    "commit": "6bd108a6f10aa01b854c3c673b6d9d61662a8c93"
   },
   "nvim-treesitter-context": {
     "branch": "master",
-    "commit": "23b699ac40091d8c729f024b3f1400bc7e26e0c5"
+    "commit": "fbeff2a60d073f73fef23a2c707e4f12c9c53359"
   },
   "nvim-treesitter-textobjects": {
     "branch": "master",
@@ -213,7 +213,7 @@
   },
   "nvim-web-devicons": {
     "branch": "master",
-    "commit": "7f30f2da3c3641841ceb0e2c150281f624445e8f"
+    "commit": "14ac5887110b06b89a96881d534230dac3ed134d"
   },
   "persistence.nvim": {
     "branch": "main",
@@ -237,7 +237,7 @@
   },
   "sqlite.lua": {
     "branch": "master",
-    "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3"
+    "commit": "40701b6151f8883980c1548647116de39b763540"
   },
   "symbols-outline.nvim": {
     "branch": "master",
