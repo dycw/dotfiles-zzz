@@ -3616,6 +3616,10 @@
   },
 
   // third party: (dycw-)utilities.more_itertools
+  "fut-always-iterable": {
+    "prefix": "fut-always-iterable",
+    "body": ["from utilities.more_itertools import always_iterable", "$0"]
+  },
   "fut-one": {
     "prefix": "fut-one",
     "body": ["from utilities.more_itertools import one", "$0"]
@@ -3631,6 +3635,10 @@
   "fut-one-non-unique-error": {
     "prefix": "fut-one-non-unique-error",
     "body": ["from utilities.more_itertools import OneNonUniqueError", "$0"]
+  },
+  "fut-transpose": {
+    "prefix": "fut-transpose",
+    "body": ["from utilities.more_itertools import transpose", "$0"]
   },
 
   // third party: (dycw-)utilities.os
@@ -3700,6 +3708,54 @@
     "prefix": "fut-empty-pandas-concat-error",
     "body": ["from utilities.pandas import EmptyPandasConcatError", "$0"]
   },
+  "fut-index-a": {
+    "prefix": "fut-index-a",
+    "body": ["from utilities.pandas import IndexA", "$0"]
+  },
+  "fut-index-b": {
+    "prefix": "fut-index-b",
+    "body": ["from utilities.pandas import IndexB", "$0"]
+  },
+  "fut-index-bn": {
+    "prefix": "fut-index-bn",
+    "body": ["from utilities.pandas import IndexBn", "$0"]
+  },
+  "fut-index-c": {
+    "prefix": "fut-index-c",
+    "body": ["from utilities.pandas import IndexC", "$0"]
+  },
+  "fut-index-d": {
+    "prefix": "fut-index-d",
+    "body": ["from utilities.pandas import IndexD", "$0"]
+  },
+  "fut-index-dhk": {
+    "prefix": "fut-index-dhk",
+    "body": ["from utilities.pandas import IndexDhk", "$0"]
+  },
+  "fut-index-dutc": {
+    "prefix": "fut-index-dutc",
+    "body": ["from utilities.pandas import IndexDutc", "$0"]
+  },
+  "fut-index-f": {
+    "prefix": "fut-index-f",
+    "body": ["from utilities.pandas import IndexF", "$0"]
+  },
+  "fut-index-i": {
+    "prefix": "fut-index-i",
+    "body": ["from utilities.pandas import IndexI", "$0"]
+  },
+  "fut-index-i64": {
+    "prefix": "fut-index-i64",
+    "body": ["from utilities.pandas import IndexI64", "$0"]
+  },
+  "fut-index-s": {
+    "prefix": "fut-index-s",
+    "body": ["from utilities.pandas import IndexS", "$0"]
+  },
+  "fut-index-st": {
+    "prefix": "fut-index-st",
+    "body": ["from utilities.pandas import IndexSt", "$0"]
+  },
   "fut-int64": {
     "prefix": "fut-int64",
     "body": ["from utilities.pandas import Int64", "$0"]
@@ -3736,6 +3792,46 @@
     "prefix": "fut-rename-index",
     "body": ["from utilities.pandas import rename_index", "$0"]
   },
+  "fut-series-a": {
+    "prefix": "fut-series-a",
+    "body": ["from utilities.pandas import SeriesA", "$0"]
+  },
+  "fut-series-b": {
+    "prefix": "fut-series-b",
+    "body": ["from utilities.pandas import SeriesB", "$0"]
+  },
+  "fut-series-bn": {
+    "prefix": "fut-series-bn",
+    "body": ["from utilities.pandas import SeriesBn", "$0"]
+  },
+  "fut-series-c": {
+    "prefix": "fut-series-c",
+    "body": ["from utilities.pandas import SeriesC", "$0"]
+  },
+  "fut-series-d": {
+    "prefix": "fut-series-d",
+    "body": ["from utilities.pandas import SeriesD", "$0"]
+  },
+  "fut-series-dhk": {
+    "prefix": "fut-series-dhk",
+    "body": ["from utilities.pandas import SeriesDhk", "$0"]
+  },
+  "fut-series-dutc": {
+    "prefix": "fut-series-dutc",
+    "body": ["from utilities.pandas import SeriesDutc", "$0"]
+  },
+  "fut-series-f": {
+    "prefix": "fut-series-f",
+    "body": ["from utilities.pandas import SeriesF", "$0"]
+  },
+  "fut-series-i": {
+    "prefix": "fut-series-i",
+    "body": ["from utilities.pandas import SeriesI", "$0"]
+  },
+  "fut-series-i64": {
+    "prefix": "fut-series-i64",
+    "body": ["from utilities.pandas import SeriesI64", "$0"]
+  },
   "fut-series-max": {
     "prefix": "fut-series-max",
     "body": ["from utilities.pandas import series_max", "$0"]
@@ -3747,6 +3843,14 @@
   "fut-series-min-max-error": {
     "prefix": "fut-series-min-max-error",
     "body": ["from utilities.pandas import SeriesMinMaxError", "$0"]
+  },
+  "fut-series-s": {
+    "prefix": "fut-series-s",
+    "body": ["from utilities.pandas import SeriesS", "$0"]
+  },
+  "fut-series-st": {
+    "prefix": "fut-series-st",
+    "body": ["from utilities.pandas import SeriesSt", "$0"]
   },
   "fut-sort-index": {
     "prefix": "fut-sort-index",
