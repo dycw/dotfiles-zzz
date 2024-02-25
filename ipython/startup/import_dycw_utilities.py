@@ -271,11 +271,35 @@ with suppress(ModuleNotFoundError):
             CheckPandasDataFrameError,  # noqa: F401
             CheckRangeIndexError,  # noqa: F401
             EmptyPandasConcatError,  # noqa: F401
+            IndexA,  # noqa: F401
+            IndexB,  # noqa: F401
+            IndexBn,  # noqa: F401
+            IndexC,  # noqa: F401
+            IndexD,  # noqa: F401
+            IndexDhk,  # noqa: F401
+            IndexDutc,  # noqa: F401
+            IndexF,  # noqa: F401
+            IndexI,  # noqa: F401
+            IndexI64,  # noqa: F401
+            IndexS,  # noqa: F401
+            IndexSt,  # noqa: F401
             Int64,  # noqa: F401
             ReindexToSetError,  # noqa: F401
             ReindexToSubSetError,  # noqa: F401
             ReindexToSuperSetError,  # noqa: F401
+            SeriesA,  # noqa: F401
+            SeriesB,  # noqa: F401
+            SeriesBn,  # noqa: F401
+            SeriesC,  # noqa: F401
+            SeriesD,  # noqa: F401
+            SeriesDhk,  # noqa: F401
+            SeriesDutc,  # noqa: F401
+            SeriesF,  # noqa: F401
+            SeriesI,  # noqa: F401
+            SeriesI64,  # noqa: F401
             SeriesMinMaxError,  # noqa: F401
+            SeriesS,  # noqa: F401
+            SeriesSt,  # noqa: F401
             TimestampToDateTimeError,  # noqa: F401
             UnionIndexesError,  # noqa: F401
             astype,  # noqa: F401
