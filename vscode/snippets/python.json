@@ -3616,6 +3616,10 @@
   },
 
   // third party: (dycw-)utilities.more_itertools
+  "fut-always-iterable": {
+    "prefix": "fut-always-iterable",
+    "body": ["from utilities.more_itertools import always_iterable", "$0"]
+  },
   "fut-one": {
     "prefix": "fut-one",
     "body": ["from utilities.more_itertools import one", "$0"]
@@ -3631,6 +3635,10 @@
   "fut-one-non-unique-error": {
     "prefix": "fut-one-non-unique-error",
     "body": ["from utilities.more_itertools import OneNonUniqueError", "$0"]
+  },
+  "fut-transpose": {
+    "prefix": "fut-transpose",
+    "body": ["from utilities.more_itertools import transpose", "$0"]
   },
 
   // third party: (dycw-)utilities.os
