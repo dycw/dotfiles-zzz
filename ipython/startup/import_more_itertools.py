@@ -136,7 +136,7 @@ with suppress(ModuleNotFoundError):
         sum_of_squares,  # noqa: F401
         tabulate,
         tail,  # noqa: F401
-        take,
+        take,  # noqa: F401
         takewhile_inclusive,  # noqa: F401
         time_limited,  # noqa: F401
         totient,  # noqa: F401
