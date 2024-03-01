@@ -10,7 +10,7 @@ with suppress(ModuleNotFoundError):
         Doc,  # noqa: F401
         LiteralString,  # noqa: F401
         NamedTuple,  # noqa: F401
-        Never,  # noqa: F401  # noqa: F401
+        Never,  # noqa: F401
         NotRequired,  # noqa: F401
         Required,  # noqa: F401
         Self,  # noqa: F401

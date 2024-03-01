@@ -89,7 +89,7 @@ with suppress(ModuleNotFoundError):
         snake_case_mappings,  # noqa: F401
     )
     from utilities.iterables import (
-        CheckDuplicatesError,  # noqa: F401  # noqa: F401
+        CheckDuplicatesError,  # noqa: F401
         CheckIterablesEqualError,  # noqa: F401
         CheckLengthsEqualError,  # noqa: F401
         CheckMappingsEqualError,  # noqa: F401
@@ -100,7 +100,7 @@ with suppress(ModuleNotFoundError):
         CheckSuperSetError,  # noqa: F401
         EnsureIterableError,  # noqa: F401
         EnsureIterableNotStrError,  # noqa: F401
-        check_duplicates,  # noqa: F401  # noqa: F401
+        check_duplicates,  # noqa: F401
         check_iterables_equal,  # noqa: F401
         check_lengths_equal,  # noqa: F401
         check_mappings_equal,  # noqa: F401
@@ -109,11 +109,11 @@ with suppress(ModuleNotFoundError):
         check_subset,  # noqa: F401
         check_supermapping,  # noqa: F401
         check_superset,  # noqa: F401
-        ensure_hashables,  # noqa: F401  # noqa: F401
+        ensure_hashables,  # noqa: F401
         ensure_iterable,  # noqa: F401
         ensure_iterable_not_str,  # noqa: F401
         is_iterable,  # noqa: F401
-        is_iterable_not_str,  # noqa: F401  # noqa: F401
+        is_iterable_not_str,  # noqa: F401
     )
     from utilities.json import (
         deserialize,  # noqa: F401
@@ -130,7 +130,10 @@ with suppress(ModuleNotFoundError):
         OneEmptyError,  # noqa: F401
         OneError,  # noqa: F401
         OneNonUniqueError,  # noqa: F401
+        always_iterable,  # noqa: F401
         one,  # noqa: F401
+        transpose,  # noqa: F401
+        windowed_complete,  # noqa: F401
     )
     from utilities.os import (
         CPU_COUNT,  # noqa: F401
@@ -200,7 +203,7 @@ with suppress(ModuleNotFoundError):
         ensure_not_none,  # noqa: F401
         ensure_sized,  # noqa: F401
         ensure_sized_not_str,  # noqa: F401
-        get_class,  # noqa: F401  # noqa: F401
+        get_class,  # noqa: F401
         get_class_name,  # noqa: F401
         if_not_none,  # noqa: F401
         is_hashable,  # noqa: F401

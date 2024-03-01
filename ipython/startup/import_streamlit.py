@@ -37,7 +37,7 @@ with suppress(ModuleNotFoundError):
         exception,  # noqa: F401
         expander,  # noqa: F401
         file_uploader,  # noqa: F401
-        form,  # noqa: F401  # noqa: F401
+        form,  # noqa: F401
         form_submit_button,  # noqa: F401
         graphviz_chart,  # noqa: F401
         header,  # noqa: F401
