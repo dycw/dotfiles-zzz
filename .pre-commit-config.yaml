@@ -1,13 +1,13 @@
 repos:
   # fixers
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.1.13
+    rev: v0.3.0
     hooks:
       - id: ruff
         args: [--fix]
       - id: ruff-format
   - repo: https://github.com/johnnymorganz/stylua
-    rev: v0.19.1
+    rev: v0.20.0
     hooks:
       - id: stylua-system
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
