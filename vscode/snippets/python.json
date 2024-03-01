@@ -2123,6 +2123,617 @@
     "body": ["from loguru import logger", "$0"]
   },
 
+  // third party: more-itertools
+  "fmo-abort-thread": {
+    "prefix": "fmo-abort-thread",
+    "body": ["from more_itertools import AbortThread", "$0"]
+  },
+  "fmo-adjacent": {
+    "prefix": "fmo-adjacent",
+    "body": ["from more_itertools import adjacent", "$0"]
+  },
+  "fmo-all-equal": {
+    "prefix": "fmo-all-equal",
+    "body": ["from more_itertools import all_equal", "$0"]
+  },
+  "fmo-all-unique": {
+    "prefix": "fmo-all-unique",
+    "body": ["from more_itertools import all_unique", "$0"]
+  },
+  "fmo-always-iterable": {
+    "prefix": "fmo-always-iterable",
+    "body": ["from more_itertools import always_iterable", "$0"]
+  },
+  "fmo-always-reversible": {
+    "prefix": "fmo-always-reversible",
+    "body": ["from more_itertools import always_reversible", "$0"]
+  },
+  "fmo-batched": {
+    "prefix": "fmo-batched",
+    "body": ["from more_itertools import batched", "$0"]
+  },
+  "fmo-before-and-after": {
+    "prefix": "fmo-before-and-after",
+    "body": ["from more_itertools import before_and_after", "$0"]
+  },
+  "fmo-bucket": {
+    "prefix": "fmo-bucket",
+    "body": ["from more_itertools import bucket", "$0"]
+  },
+  "fmo-callback-iter": {
+    "prefix": "fmo-callback-iter",
+    "body": ["from more_itertools import callback_iter", "$0"]
+  },
+  "fmo-chunked": {
+    "prefix": "fmo-chunked",
+    "body": ["from more_itertools import chunked", "$0"]
+  },
+  "fmo-chunked-even": {
+    "prefix": "fmo-chunked-even",
+    "body": ["from more_itertools import chunked_even", "$0"]
+  },
+  "fmo-circular-shifts": {
+    "prefix": "fmo-circular-shifts",
+    "body": ["from more_itertools import circular_shifts", "$0"]
+  },
+  "fmo-classify-unique": {
+    "prefix": "fmo-classify-unique",
+    "body": ["from more_itertools import classify_unique", "$0"]
+  },
+  "fmo-collapse": {
+    "prefix": "fmo-collapse",
+    "body": ["from more_itertools import collapse", "$0"]
+  },
+  "fmo-combination-index": {
+    "prefix": "fmo-combination-index",
+    "body": ["from more_itertools import combination_index", "$0"]
+  },
+  "fmo-combination-with-replacement-index": {
+    "prefix": "fmo-combination-with-replacement-index",
+    "body": [
+      "from more_itertools import combination_with_replacement_index",
+      "$0"
+    ]
+  },
+  "fmo-consecutive-groups": {
+    "prefix": "fmo-consecutive-groups",
+    "body": ["from more_itertools import consecutive_groups", "$0"]
+  },
+  "fmo-constrained-batches": {
+    "prefix": "fmo-constrained-batches",
+    "body": ["from more_itertools import constrained_batches", "$0"]
+  },
+  "fmo-consume": {
+    "prefix": "fmo-consume",
+    "body": ["from more_itertools import consume", "$0"]
+  },
+  "fmo-consumer": {
+    "prefix": "fmo-consumer",
+    "body": ["from more_itertools import consumer", "$0"]
+  },
+  "fmo-convolve": {
+    "prefix": "fmo-convolve",
+    "body": ["from more_itertools import convolve", "$0"]
+  },
+  "fmo-count-cycle": {
+    "prefix": "fmo-count-cycle",
+    "body": ["from more_itertools import count_cycle", "$0"]
+  },
+  "fmo-countable": {
+    "prefix": "fmo-countable",
+    "body": ["from more_itertools import countable", "$0"]
+  },
+  "fmo-difference": {
+    "prefix": "fmo-difference",
+    "body": ["from more_itertools import difference", "$0"]
+  },
+  "fmo-distinct-combinations": {
+    "prefix": "fmo-distinct-combinations",
+    "body": ["from more_itertools import distinct_combinations", "$0"]
+  },
+  "fmo-distinct-permutations": {
+    "prefix": "fmo-distinct-permutations",
+    "body": ["from more_itertools import distinct_permutations", "$0"]
+  },
+  "fmo-distribute": {
+    "prefix": "fmo-distribute",
+    "body": ["from more_itertools import distribute", "$0"]
+  },
+  "fmo-divide": {
+    "prefix": "fmo-divide",
+    "body": ["from more_itertools import divide", "$0"]
+  },
+  "fmo-dotproduct": {
+    "prefix": "fmo-dotproduct",
+    "body": ["from more_itertools import dotproduct", "$0"]
+  },
+  "fmo-duplicates-everseen": {
+    "prefix": "fmo-duplicates-everseen",
+    "body": ["from more_itertools import duplicates_everseen", "$0"]
+  },
+  "fmo-duplicates-justseen": {
+    "prefix": "fmo-duplicates-justseen",
+    "body": ["from more_itertools import duplicates_justseen", "$0"]
+  },
+  "fmo-exactly-n": {
+    "prefix": "fmo-exactly-n",
+    "body": ["from more_itertools import exactly_n", "$0"]
+  },
+  "fmo-factor": {
+    "prefix": "fmo-factor",
+    "body": ["from more_itertools import factor", "$0"]
+  },
+  "fmo-filter-except": {
+    "prefix": "fmo-filter-except",
+    "body": ["from more_itertools import filter_except", "$0"]
+  },
+  "fmo-filter-map": {
+    "prefix": "fmo-filter-map",
+    "body": ["from more_itertools import filter_map", "$0"]
+  },
+  "fmo-first": {
+    "prefix": "fmo-first",
+    "body": ["from more_itertools import first", "$0"]
+  },
+  "fmo-first-true": {
+    "prefix": "fmo-first-true",
+    "body": ["from more_itertools import first_true", "$0"]
+  },
+  "fmo-flatten": {
+    "prefix": "fmo-flatten",
+    "body": ["from more_itertools import flatten", "$0"]
+  },
+  "fmo-gray-product": {
+    "prefix": "fmo-gray-product",
+    "body": ["from more_itertools import gray_product", "$0"]
+  },
+  "fmo-groupby-transform": {
+    "prefix": "fmo-groupby-transform",
+    "body": ["from more_itertools import groupby_transform", "$0"]
+  },
+  "fmo-grouper": {
+    "prefix": "fmo-grouper",
+    "body": ["from more_itertools import grouper", "$0"]
+  },
+  "fmo-ichunked": {
+    "prefix": "fmo-ichunked",
+    "body": ["from more_itertools import ichunked", "$0"]
+  },
+  "fmo-iequals": {
+    "prefix": "fmo-iequals",
+    "body": ["from more_itertools import iequals", "$0"]
+  },
+  "fmo-ilen": {
+    "prefix": "fmo-ilen",
+    "body": ["from more_itertools import ilen", "$0"]
+  },
+  "fmo-interleave": {
+    "prefix": "fmo-interleave",
+    "body": ["from more_itertools import interleave", "$0"]
+  },
+  "fmo-interleave-evenly": {
+    "prefix": "fmo-interleave-evenly",
+    "body": ["from more_itertools import interleave_evenly", "$0"]
+  },
+  "fmo-interleave-longest": {
+    "prefix": "fmo-interleave-longest",
+    "body": ["from more_itertools import interleave_longest", "$0"]
+  },
+  "fmo-intersperse": {
+    "prefix": "fmo-intersperse",
+    "body": ["from more_itertools import intersperse", "$0"]
+  },
+  "fmo-is-sorted": {
+    "prefix": "fmo-is-sorted",
+    "body": ["from more_itertools import is_sorted", "$0"]
+  },
+  "fmo-islice-extended": {
+    "prefix": "fmo-islice-extended",
+    "body": ["from more_itertools import islice_extended", "$0"]
+  },
+  "fmo-iter-except": {
+    "prefix": "fmo-iter-except",
+    "body": ["from more_itertools import iter_except", "$0"]
+  },
+  "fmo-iter-index": {
+    "prefix": "fmo-iter-index",
+    "body": ["from more_itertools import iter_index", "$0"]
+  },
+  "fmo-iter-suppress": {
+    "prefix": "fmo-iter-suppress",
+    "body": ["from more_itertools import iter_suppress", "$0"]
+  },
+  "fmo-iterate": {
+    "prefix": "fmo-iterate",
+    "body": ["from more_itertools import iterate", "$0"]
+  },
+  "fmo-last": {
+    "prefix": "fmo-last",
+    "body": ["from more_itertools import last", "$0"]
+  },
+  "fmo-locate": {
+    "prefix": "fmo-locate",
+    "body": ["from more_itertools import locate", "$0"]
+  },
+  "fmo-longest-common-prefix": {
+    "prefix": "fmo-longest-common-prefix",
+    "body": ["from more_itertools import longest_common_prefix", "$0"]
+  },
+  "fmo-lstrip": {
+    "prefix": "fmo-lstrip",
+    "body": ["from more_itertools import lstrip", "$0"]
+  },
+  "fmo-make-decorator": {
+    "prefix": "fmo-make-decorator",
+    "body": ["from more_itertools import make_decorator", "$0"]
+  },
+  "fmo-map-except": {
+    "prefix": "fmo-map-except",
+    "body": ["from more_itertools import map_except", "$0"]
+  },
+  "fmo-map-if": {
+    "prefix": "fmo-map-if",
+    "body": ["from more_itertools import map_if", "$0"]
+  },
+  "fmo-map-reduce": {
+    "prefix": "fmo-map-reduce",
+    "body": ["from more_itertools import map_reduce", "$0"]
+  },
+  "fmo-mark-ends": {
+    "prefix": "fmo-mark-ends",
+    "body": ["from more_itertools import mark_ends", "$0"]
+  },
+  "fmo-matmul": {
+    "prefix": "fmo-matmul",
+    "body": ["from more_itertools import matmul", "$0"]
+  },
+  "fmo-minmax": {
+    "prefix": "fmo-minmax",
+    "body": ["from more_itertools import minmax", "$0"]
+  },
+  "fmo-ncycles": {
+    "prefix": "fmo-ncycles",
+    "body": ["from more_itertools import ncycles", "$0"]
+  },
+  "fmo-nth": {
+    "prefix": "fmo-nth",
+    "body": ["from more_itertools import nth", "$0"]
+  },
+  "fmo-nth-combination": {
+    "prefix": "fmo-nth-combination",
+    "body": ["from more_itertools import nth_combination", "$0"]
+  },
+  "fmo-nth-combination-with-replacement": {
+    "prefix": "fmo-nth-combination-with-replacement",
+    "body": [
+      "from more_itertools import nth_combination_with_replacement",
+      "$0"
+    ]
+  },
+  "fmo-nth-or-last": {
+    "prefix": "fmo-nth-or-last",
+    "body": ["from more_itertools import nth_or_last", "$0"]
+  },
+  "fmo-nth-permutation": {
+    "prefix": "fmo-nth-permutation",
+    "body": ["from more_itertools import nth_permutation", "$0"]
+  },
+  "fmo-nth-product": {
+    "prefix": "fmo-nth-product",
+    "body": ["from more_itertools import nth_product", "$0"]
+  },
+  "fmo-numeric-range": {
+    "prefix": "fmo-numeric-range",
+    "body": ["from more_itertools import numeric_range", "$0"]
+  },
+  "fmo-one": {
+    "prefix": "fmo-one",
+    "body": ["from more_itertools import one", "$0"]
+  },
+  "fmo-only": {
+    "prefix": "fmo-only",
+    "body": ["from more_itertools import only", "$0"]
+  },
+  "fmo-outer-product": {
+    "prefix": "fmo-outer-product",
+    "body": ["from more_itertools import outer_product", "$0"]
+  },
+  "fmo-pad-none": {
+    "prefix": "fmo-pad-none",
+    "body": ["from more_itertools import pad_none", "$0"]
+  },
+  "fmo-padded": {
+    "prefix": "fmo-padded",
+    "body": ["from more_itertools import padded", "$0"]
+  },
+  "fmo-padnone": {
+    "prefix": "fmo-padnone",
+    "body": ["from more_itertools import padnone", "$0"]
+  },
+  "fmo-pairwise": {
+    "prefix": "fmo-pairwise",
+    "body": ["from more_itertools import pairwise", "$0"]
+  },
+  "fmo-partial-product": {
+    "prefix": "fmo-partial-product",
+    "body": ["from more_itertools import partial_product", "$0"]
+  },
+  "fmo-partition": {
+    "prefix": "fmo-partition",
+    "body": ["from more_itertools import partition", "$0"]
+  },
+  "fmo-partitions": {
+    "prefix": "fmo-partitions",
+    "body": ["from more_itertools import partitions", "$0"]
+  },
+  "fmo-peekable": {
+    "prefix": "fmo-peekable",
+    "body": ["from more_itertools import peekable", "$0"]
+  },
+  "fmo-permutation-index": {
+    "prefix": "fmo-permutation-index",
+    "body": ["from more_itertools import permutation_index", "$0"]
+  },
+  "fmo-polynomial-derivative": {
+    "prefix": "fmo-polynomial-derivative",
+    "body": ["from more_itertools import polynomial_derivative", "$0"]
+  },
+  "fmo-polynomial-eval": {
+    "prefix": "fmo-polynomial-eval",
+    "body": ["from more_itertools import polynomial_eval", "$0"]
+  },
+  "fmo-polynomial-from-roots": {
+    "prefix": "fmo-polynomial-from-roots",
+    "body": ["from more_itertools import polynomial_from_roots", "$0"]
+  },
+  "fmo-powerset": {
+    "prefix": "fmo-powerset",
+    "body": ["from more_itertools import powerset", "$0"]
+  },
+  "fmo-prepend": {
+    "prefix": "fmo-prepend",
+    "body": ["from more_itertools import prepend", "$0"]
+  },
+  "fmo-product-index": {
+    "prefix": "fmo-product-index",
+    "body": ["from more_itertools import product_index", "$0"]
+  },
+  "fmo-quantify": {
+    "prefix": "fmo-quantify",
+    "body": ["from more_itertools import quantify", "$0"]
+  },
+  "fmo-raise-": {
+    "prefix": "fmo-raise-",
+    "body": ["from more_itertools import raise_", "$0"]
+  },
+  "fmo-random-combination": {
+    "prefix": "fmo-random-combination",
+    "body": ["from more_itertools import random_combination", "$0"]
+  },
+  "fmo-random-combination-with-replacement": {
+    "prefix": "fmo-random-combination-with-replacement",
+    "body": [
+      "from more_itertools import random_combination_with_replacement",
+      "$0"
+    ]
+  },
+  "fmo-random-permutation": {
+    "prefix": "fmo-random-permutation",
+    "body": ["from more_itertools import random_permutation", "$0"]
+  },
+  "fmo-random-product": {
+    "prefix": "fmo-random-product",
+    "body": ["from more_itertools import random_product", "$0"]
+  },
+  "fmo-repeat-each": {
+    "prefix": "fmo-repeat-each",
+    "body": ["from more_itertools import repeat_each", "$0"]
+  },
+  "fmo-repeat-last": {
+    "prefix": "fmo-repeat-last",
+    "body": ["from more_itertools import repeat_last", "$0"]
+  },
+  "fmo-repeatfunc": {
+    "prefix": "fmo-repeatfunc",
+    "body": ["from more_itertools import repeatfunc", "$0"]
+  },
+  "fmo-replace": {
+    "prefix": "fmo-replace",
+    "body": ["from more_itertools import replace", "$0"]
+  },
+  "fmo-reshape": {
+    "prefix": "fmo-reshape",
+    "body": ["from more_itertools import reshape", "$0"]
+  },
+  "fmo-rlocate": {
+    "prefix": "fmo-rlocate",
+    "body": ["from more_itertools import rlocate", "$0"]
+  },
+  "fmo-roundrobin": {
+    "prefix": "fmo-roundrobin",
+    "body": ["from more_itertools import roundrobin", "$0"]
+  },
+  "fmo-rstrip": {
+    "prefix": "fmo-rstrip",
+    "body": ["from more_itertools import rstrip", "$0"]
+  },
+  "fmo-run-length": {
+    "prefix": "fmo-run-length",
+    "body": ["from more_itertools import run_length", "$0"]
+  },
+  "fmo-sample": {
+    "prefix": "fmo-sample",
+    "body": ["from more_itertools import sample", "$0"]
+  },
+  "fmo-seekable": {
+    "prefix": "fmo-seekable",
+    "body": ["from more_itertools import seekable", "$0"]
+  },
+  "fmo-sequence-view": {
+    "prefix": "fmo-sequence-view",
+    "body": ["from more_itertools import SequenceView", "$0"]
+  },
+  "fmo-set-partitions": {
+    "prefix": "fmo-set-partitions",
+    "body": ["from more_itertools import set_partitions", "$0"]
+  },
+  "fmo-side-effect": {
+    "prefix": "fmo-side-effect",
+    "body": ["from more_itertools import side_effect", "$0"]
+  },
+  "fmo-sieve": {
+    "prefix": "fmo-sieve",
+    "body": ["from more_itertools import sieve", "$0"]
+  },
+  "fmo-sliced": {
+    "prefix": "fmo-sliced",
+    "body": ["from more_itertools import sliced", "$0"]
+  },
+  "fmo-sliding-window": {
+    "prefix": "fmo-sliding-window",
+    "body": ["from more_itertools import sliding_window", "$0"]
+  },
+  "fmo-sort-together": {
+    "prefix": "fmo-sort-together",
+    "body": ["from more_itertools import sort_together", "$0"]
+  },
+  "fmo-split-after": {
+    "prefix": "fmo-split-after",
+    "body": ["from more_itertools import split_after", "$0"]
+  },
+  "fmo-split-at": {
+    "prefix": "fmo-split-at",
+    "body": ["from more_itertools import split_at", "$0"]
+  },
+  "fmo-split-before": {
+    "prefix": "fmo-split-before",
+    "body": ["from more_itertools import split_before", "$0"]
+  },
+  "fmo-split-into": {
+    "prefix": "fmo-split-into",
+    "body": ["from more_itertools import split_into", "$0"]
+  },
+  "fmo-split-when": {
+    "prefix": "fmo-split-when",
+    "body": ["from more_itertools import split_when", "$0"]
+  },
+  "fmo-spy": {
+    "prefix": "fmo-spy",
+    "body": ["from more_itertools import spy", "$0"]
+  },
+  "fmo-stagger": {
+    "prefix": "fmo-stagger",
+    "body": ["from more_itertools import stagger", "$0"]
+  },
+  "fmo-strictly-n": {
+    "prefix": "fmo-strictly-n",
+    "body": ["from more_itertools import strictly_n", "$0"]
+  },
+  "fmo-strip": {
+    "prefix": "fmo-strip",
+    "body": ["from more_itertools import strip", "$0"]
+  },
+  "fmo-subslices": {
+    "prefix": "fmo-subslices",
+    "body": ["from more_itertools import subslices", "$0"]
+  },
+  "fmo-substrings": {
+    "prefix": "fmo-substrings",
+    "body": ["from more_itertools import substrings", "$0"]
+  },
+  "fmo-substrings-indexes": {
+    "prefix": "fmo-substrings-indexes",
+    "body": ["from more_itertools import substrings_indexes", "$0"]
+  },
+  "fmo-sum-of-squares": {
+    "prefix": "fmo-sum-of-squares",
+    "body": ["from more_itertools import sum_of_squares", "$0"]
+  },
+  "fmo-tabulate": {
+    "prefix": "fmo-tabulate",
+    "body": ["from more_itertools import tabulate", "$0"]
+  },
+  "fmo-tail": {
+    "prefix": "fmo-tail",
+    "body": ["from more_itertools import tail", "$0"]
+  },
+  "fmo-take": {
+    "prefix": "fmo-take",
+    "body": ["from more_itertools import take", "$0"]
+  },
+  "fmo-takewhile-inclusive": {
+    "prefix": "fmo-takewhile-inclusive",
+    "body": ["from more_itertools import takewhile_inclusive", "$0"]
+  },
+  "fmo-time-limited": {
+    "prefix": "fmo-time-limited",
+    "body": ["from more_itertools import time_limited", "$0"]
+  },
+  "fmo-totient": {
+    "prefix": "fmo-totient",
+    "body": ["from more_itertools import totient", "$0"]
+  },
+  "fmo-transpose": {
+    "prefix": "fmo-transpose",
+    "body": ["from more_itertools import transpose", "$0"]
+  },
+  "fmo-triplewise": {
+    "prefix": "fmo-triplewise",
+    "body": ["from more_itertools import triplewise", "$0"]
+  },
+  "fmo-unequal-iterables-error": {
+    "prefix": "fmo-unequal-iterables-error",
+    "body": ["from more_itertools import UnequalIterablesError", "$0"]
+  },
+  "fmo-unique-everseen": {
+    "prefix": "fmo-unique-everseen",
+    "body": ["from more_itertools import unique_everseen", "$0"]
+  },
+  "fmo-unique-in-window": {
+    "prefix": "fmo-unique-in-window",
+    "body": ["from more_itertools import unique_in_window", "$0"]
+  },
+  "fmo-unique-justseen": {
+    "prefix": "fmo-unique-justseen",
+    "body": ["from more_itertools import unique_justseen", "$0"]
+  },
+  "fmo-unique-to-each": {
+    "prefix": "fmo-unique-to-each",
+    "body": ["from more_itertools import unique_to_each", "$0"]
+  },
+  "fmo-unzip": {
+    "prefix": "fmo-unzip",
+    "body": ["from more_itertools import unzip", "$0"]
+  },
+  "fmo-value-chain": {
+    "prefix": "fmo-value-chain",
+    "body": ["from more_itertools import value_chain", "$0"]
+  },
+  "fmo-windowed": {
+    "prefix": "fmo-windowed",
+    "body": ["from more_itertools import windowed", "$0"]
+  },
+  "fmo-windowed-complete": {
+    "prefix": "fmo-windowed-complete",
+    "body": ["from more_itertools import windowed_complete", "$0"]
+  },
+  "fmo-with-iter": {
+    "prefix": "fmo-with-iter",
+    "body": ["from more_itertools import with_iter", "$0"]
+  },
+  "fmo-zip-broadcast": {
+    "prefix": "fmo-zip-broadcast",
+    "body": ["from more_itertools import zip_broadcast", "$0"]
+  },
+  "fmo-zip-equal": {
+    "prefix": "fmo-zip-equal",
+    "body": ["from more_itertools import zip_equal", "$0"]
+  },
+  "fmo-zip-offset": {
+    "prefix": "fmo-zip-offset",
+    "body": ["from more_itertools import zip_offset", "$0"]
+  },
+
   // third party: numpy
   "fnu-allclose": {
     "prefix": "fnu-allclose",
@@ -3639,6 +4250,10 @@
   "fut-transpose": {
     "prefix": "fut-transpose",
     "body": ["from utilities.more_itertools import transpose", "$0"]
+  },
+  "fut-windowed-complete": {
+    "prefix": "fut-windowed-complete",
+    "body": ["from utilities.more_itertools import windowed_complete", "$0"]
   },
 
   // third party: (dycw-)utilities.os
