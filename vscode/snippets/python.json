@@ -4081,6 +4081,30 @@
     "prefix": "fut-is-iterable-not-str",
     "body": ["from utilities.iterables import is_iterable_not_str", "$0"]
   },
+  "fut-one": {
+    "prefix": "fut-one",
+    "body": ["from utilities.iterables import one", "$0"]
+  },
+  "fut-one-empty-error": {
+    "prefix": "fut-one-empty-error",
+    "body": ["from utilities.iterables import OneEmptyError", "$0"]
+  },
+  "fut-one-error": {
+    "prefix": "fut-one-error",
+    "body": ["from utilities.iterables import OneError", "$0"]
+  },
+  "fut-one-non-unique-error": {
+    "prefix": "fut-one-non-unique-error",
+    "body": ["from utilities.iterables import OneNonUniqueError", "$0"]
+  },
+  "fut-take": {
+    "prefix": "fut-take",
+    "body": ["from utilities.iterables import take", "$0"]
+  },
+  "fut-transpose": {
+    "prefix": "fut-transpose",
+    "body": ["from utilities.iterables import transpose", "$0"]
+  },
 
   // third party: (dycw-)utilities.json
   "fut-deserialize": {
@@ -4230,26 +4254,6 @@
   "fut-always-iterable": {
     "prefix": "fut-always-iterable",
     "body": ["from utilities.more_itertools import always_iterable", "$0"]
-  },
-  "fut-one": {
-    "prefix": "fut-one",
-    "body": ["from utilities.more_itertools import one", "$0"]
-  },
-  "fut-one-empty-error": {
-    "prefix": "fut-one-empty-error",
-    "body": ["from utilities.more_itertools import OneEmptyError", "$0"]
-  },
-  "fut-one-error": {
-    "prefix": "fut-one-error",
-    "body": ["from utilities.more_itertools import OneError", "$0"]
-  },
-  "fut-one-non-unique-error": {
-    "prefix": "fut-one-non-unique-error",
-    "body": ["from utilities.more_itertools import OneNonUniqueError", "$0"]
-  },
-  "fut-transpose": {
-    "prefix": "fut-transpose",
-    "body": ["from utilities.more_itertools import transpose", "$0"]
   },
   "fut-windowed-complete": {
     "prefix": "fut-windowed-complete",
@@ -4761,14 +4765,6 @@
     "prefix": "fut-get-table-name",
     "body": ["from utilities.sqlalchemy import get_table_name", "$0"]
   },
-  "fut-insert-data-frame-error": {
-    "prefix": "fut-insert-data-frame-error",
-    "body": ["from utilities.sqlalchemy import InsertDataFrameError", "$0"]
-  },
-  "fut-insert-dataframe": {
-    "prefix": "fut-insert-dataframe",
-    "body": ["from utilities.sqlalchemy import insert_dataframe", "$0"]
-  },
   "fut-insert-items": {
     "prefix": "fut-insert-items",
     "body": ["from utilities.sqlalchemy import insert_items", "$0"]
@@ -4785,14 +4781,6 @@
     "prefix": "fut-mapped-class-to-dict",
     "body": ["from utilities.sqlalchemy import mapped_class_to_dict", "$0"]
   },
-  "fut-next-from-sequence": {
-    "prefix": "fut-next-from-sequence",
-    "body": ["from utilities.sqlalchemy import next_from_sequence", "$0"]
-  },
-  "fut-next-from-sequence-error": {
-    "prefix": "fut-next-from-sequence-error",
-    "body": ["from utilities.sqlalchemy import NextFromSequenceError", "$0"]
-  },
   "fut-parse-engine": {
     "prefix": "fut-parse-engine",
     "body": ["from utilities.sqlalchemy import parse_engine", "$0"]
@@ -4801,23 +4789,12 @@
     "prefix": "fut-parse-engine-error",
     "body": ["from utilities.sqlalchemy import ParseEngineError", "$0"]
   },
-  "fut-redirect-next-from-sequence-error": {
-    "prefix": "fut-redirect-next-from-sequence-error",
-    "body": [
-      "from utilities.sqlalchemy import redirect_next_from_sequence_error",
-      "$0"
-    ]
-  },
   "fut-redirect-table-does-not-exist": {
     "prefix": "fut-redirect-table-does-not-exist",
     "body": [
       "from utilities.sqlalchemy import redirect_table_does_not_exist",
       "$0"
     ]
-  },
-  "fut-select-to-dataframe": {
-    "prefix": "fut-select-to-dataframe",
-    "body": ["from utilities.sqlalchemy import select_to_dataframe", "$0"]
   },
   "fut-serialize-engine": {
     "prefix": "fut-serialize-engine",
