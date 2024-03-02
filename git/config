@@ -267,7 +267,7 @@
   prompt = false
 
 [difftool "nvimdiff"]
-  cmd = lvim -d "$LOCAL" "$REMOTE"
+  cmd = nvim -d "$LOCAL" "$REMOTE"
 
 [fetch]
   prune = true
@@ -300,7 +300,7 @@
   prompt = false
 
 [mergetool "vim_mergetool"]
-  cmd = lvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+  cmd = nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
   trustExitCode = true
 
 [pull]
