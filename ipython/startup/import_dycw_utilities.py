@@ -98,7 +98,6 @@ with suppress(ModuleNotFoundError):
         get_repo_name,  # noqa: F401
         get_repo_root,  # noqa: F401
         get_repo_root_or_cwd_sub_path,  # noqa: F401
-        valid_path_repo,  # noqa: F401
     )
 with suppress(ModuleNotFoundError):
     from utilities.hashlib import (

@@ -3969,10 +3969,6 @@
     "prefix": "fut-get-repo-root-or-cwd-sub-path",
     "body": ["from utilities.git import get_repo_root_or_cwd_sub_path", "$0"]
   },
-  "fut-valid-path-repo": {
-    "prefix": "fut-valid-path-repo",
-    "body": ["from utilities.git import valid_path_repo", "$0"]
-  },
 
   // third party: (dycw-)utilities.hashlib
   "fut-md5-hash": {
