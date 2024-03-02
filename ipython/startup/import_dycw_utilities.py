@@ -13,6 +13,12 @@ with suppress(ModuleNotFoundError):
         beartype_if_dev,  # noqa: F401
     )
 with suppress(ModuleNotFoundError):
+    from utilities.bs4 import (
+        TableTagToDataFrameError,  # noqa: F401
+        table_tag_to_dataframe,  # noqa: F401
+        yield_tables,  # noqa: F401
+    )
+with suppress(ModuleNotFoundError):
     from utilities.cryptography import (
         GetFernetError,  # noqa: F401
         decrypt,  # noqa: F401
@@ -267,13 +273,14 @@ with suppress(ModuleNotFoundError):
 with suppress(ModuleNotFoundError):
     from utilities.polars import (
         CheckPolarsDataFrameError,  # noqa: F401
+        EmptyPolarsConcatError,  # noqa: F401
         SetFirstRowAsColumnsError,  # noqa: F401
-        TableTagToDataFrameError,  # noqa: F401
         check_polars_dataframe,  # noqa: F401
         join,  # noqa: F401
+        nan_sum_agg,  # noqa: F401
+        nan_sum_cols,  # noqa: F401
+        redirect_empty_polars_concat,  # noqa: F401
         set_first_row_as_columns,  # noqa: F401
-        table_tag_to_dataframe,  # noqa: F401
-        yield_tables,  # noqa: F401
     )
 with suppress(ModuleNotFoundError):
     from utilities.pydantic import (
@@ -394,5 +401,3 @@ with suppress(ModuleNotFoundError):
         HONG_KONG,  # noqa: F401
         TOKYO,  # noqa: F401
     )
-
-####

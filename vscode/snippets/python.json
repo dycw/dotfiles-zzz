@@ -3702,6 +3702,20 @@
     "body": ["from utilities.beartype import beartype_if_dev", "$0"]
   },
 
+  // third party: (dycw-)utilities.bs4
+  "fut-table-tag-to-data-frame-error": {
+    "prefix": "fut-table-tag-to-data-frame-error",
+    "body": ["from utilities.bs4 import TableTagToDataFrameError", "$0"]
+  },
+  "fut-table-tag-to-dataframe": {
+    "prefix": "fut-table-tag-to-dataframe",
+    "body": ["from utilities.bs4 import table_tag_to_dataframe", "$0"]
+  },
+  "fut-yield-tables": {
+    "prefix": "fut-yield-tables",
+    "body": ["from utilities.bs4 import yield_tables", "$0"]
+  },
+
   // third party: (dycw-)utilities.cryptography
   "fut-decrypt": {
     "prefix": "fut-decrypt",
@@ -4567,9 +4581,25 @@
     "prefix": "fut-check-polars-dataframe",
     "body": ["from utilities.polars import check_polars_dataframe", "$0"]
   },
+  "fut-empty-polars-concat-error": {
+    "prefix": "fut-empty-polars-concat-error",
+    "body": ["from utilities.polars import EmptyPolarsConcatError", "$0"]
+  },
   "fut-join": {
     "prefix": "fut-join",
     "body": ["from utilities.polars import join", "$0"]
+  },
+  "fut-nan-sum-agg": {
+    "prefix": "fut-nan-sum-agg",
+    "body": ["from utilities.polars import nan_sum_agg", "$0"]
+  },
+  "fut-nan-sum-cols": {
+    "prefix": "fut-nan-sum-cols",
+    "body": ["from utilities.polars import nan_sum_cols", "$0"]
+  },
+  "fut-redirect-empty-polars-concat": {
+    "prefix": "fut-redirect-empty-polars-concat",
+    "body": ["from utilities.polars import redirect_empty_polars_concat", "$0"]
   },
   "fut-set-first-row-as-columns": {
     "prefix": "fut-set-first-row-as-columns",
@@ -4578,18 +4608,6 @@
   "fut-set-first-row-as-columns-error": {
     "prefix": "fut-set-first-row-as-columns-error",
     "body": ["from utilities.polars import SetFirstRowAsColumnsError", "$0"]
-  },
-  "fut-table-tag-to-data-frame-error": {
-    "prefix": "fut-table-tag-to-data-frame-error",
-    "body": ["from utilities.polars import TableTagToDataFrameError", "$0"]
-  },
-  "fut-table-tag-to-dataframe": {
-    "prefix": "fut-table-tag-to-dataframe",
-    "body": ["from utilities.polars import table_tag_to_dataframe", "$0"]
-  },
-  "fut-yield-tables": {
-    "prefix": "fut-yield-tables",
-    "body": ["from utilities.polars import yield_tables", "$0"]
   },
 
   // third party: (dycw-)utilities.pydantic
