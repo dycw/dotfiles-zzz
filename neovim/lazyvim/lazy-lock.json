@@ -161,7 +161,7 @@
   },
   "nui.nvim": {
     "branch": "main",
-    "commit": "c3c7fd618dcb5a89e443a2e1033e7d11fdb0596b"
+    "commit": "b81333d12f824dbed5eb231c8a4409a290fdd848"
   },
   "nvim-cmp": {
     "branch": "main",
@@ -193,7 +193,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "c2a265156d5799adbd9f9e7d5385735fa5d21776"
+    "commit": "a47540fd737eb5c03ee21ee69eb8134ce5568fb6"
   },
   "nvim-treesitter-context": {
     "branch": "master",
@@ -213,7 +213,7 @@
   },
   "nvim-web-devicons": {
     "branch": "master",
-    "commit": "69fb193abc547c77be089c3e392d5fd6fcd3625a"
+    "commit": "4adea17610d140a99c313e3f79a9dc01825d59ae"
   },
   "persistence.nvim": {
     "branch": "main",
