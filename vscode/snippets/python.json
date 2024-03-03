@@ -3779,17 +3779,29 @@
     "prefix": "fut-get-now",
     "body": ["from utilities.datetime import get_now", "$0"]
   },
+  "fut-get-now-hk": {
+    "prefix": "fut-get-now-hk",
+    "body": ["from utilities.datetime import get_now_hk", "$0"]
+  },
+  "fut-get-now-tokyo": {
+    "prefix": "fut-get-now",
+    "body": ["from utilities.datetime import get_now_tokyo", "$0"]
+  },
   "fut-get-today": {
     "prefix": "fut-get-today",
     "body": ["from utilities.datetime import get_today", "$0"]
   },
+  "fut-get-today-hk": {
+    "prefix": "fut-get-today-hk",
+    "body": ["from utilities.datetime import get_today_hk", "$0"]
+  },
+  "fut-get-today-tokyo": {
+    "prefix": "fut-get-today-tokyo",
+    "body": ["from utilities.datetime import get_today_tokyo", "$0"]
+  },
   "fut-is-weekday": {
     "prefix": "fut-is-weekday",
     "body": ["from utilities.datetime import is_weekday", "$0"]
-  },
-  "fut-local-time-zone-error": {
-    "prefix": "fut-local-time-zone-error",
-    "body": ["from utilities.datetime import LocalTimeZoneError", "$0"]
   },
   "fut-local-timezone": {
     "prefix": "fut-local-timezone",
@@ -3799,13 +3811,13 @@
     "prefix": "fut-maybe-sub-pct-y",
     "body": ["from utilities.datetime import maybe_sub_pct_y", "$0"]
   },
-  "fut-now-hkg": {
-    "prefix": "fut-now-hkg",
-    "body": ["from utilities.datetime import NOW_HKG", "$0"]
+  "fut-now-hk": {
+    "prefix": "fut-now-hk",
+    "body": ["from utilities.datetime import NOW_HK", "$0"]
   },
-  "fut-now-tky": {
-    "prefix": "fut-now-tky",
-    "body": ["from utilities.datetime import NOW_TKY", "$0"]
+  "fut-now-tokyo": {
+    "prefix": "fut-now-tokyo",
+    "body": ["from utilities.datetime import NOW_TOKYO", "$0"]
   },
   "fut-now-utc": {
     "prefix": "fut-now-utc",
@@ -3867,13 +3879,13 @@
     "prefix": "fut-serialize-timedelta",
     "body": ["from utilities.datetime import serialize_timedelta", "$0"]
   },
-  "fut-today-hkg": {
-    "prefix": "fut-today-hkg",
-    "body": ["from utilities.datetime import TODAY_HKG", "$0"]
+  "fut-today-hk": {
+    "prefix": "fut-today-hk",
+    "body": ["from utilities.datetime import TODAY_HK", "$0"]
   },
-  "fut-today-tky": {
-    "prefix": "fut-today-tky",
-    "body": ["from utilities.datetime import TODAY_TKY", "$0"]
+  "fut-today-tokyo": {
+    "prefix": "fut-today-tokyo",
+    "body": ["from utilities.datetime import TODAY_TOKYO", "$0"]
   },
   "fut-today-utc": {
     "prefix": "fut-today-utc",
