@@ -28,7 +28,7 @@ with suppress(ModuleNotFoundError):
 with suppress(ModuleNotFoundError):
     from utilities.datetime import (
         EPOCH_UTC,  # noqa: F401
-        NOW_HKG,  # noqa: F401
+        NOW_HK,  # noqa: F401
         NOW_TOKYO,  # noqa: F401
         NOW_UTC,  # noqa: F401
         TODAY_HK,  # noqa: F401
@@ -36,7 +36,6 @@ with suppress(ModuleNotFoundError):
         TODAY_UTC,  # noqa: F401
         UTC,  # noqa: F401
         AddWeekdaysError,  # noqa: F401
-        LocalTimeZoneError,  # noqa: F401
         ParseDateError,  # noqa: F401
         ParseDateTimeError,  # noqa: F401
         ParseTimedeltaError,  # noqa: F401

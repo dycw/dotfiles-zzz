@@ -3803,10 +3803,6 @@
     "prefix": "fut-is-weekday",
     "body": ["from utilities.datetime import is_weekday", "$0"]
   },
-  "fut-local-time-zone-error": {
-    "prefix": "fut-local-time-zone-error",
-    "body": ["from utilities.datetime import LocalTimeZoneError", "$0"]
-  },
   "fut-local-timezone": {
     "prefix": "fut-local-timezone",
     "body": ["from utilities.datetime import local_timezone", "$0"]
