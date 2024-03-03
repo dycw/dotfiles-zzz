@@ -183,11 +183,7 @@
     "--ignore=ANN401", // flake8-annotations, dynamically-typed-expression
     "--ignore=B008", // flake8-bugbear, function-call-argument-default
     "--ignore=COM812", // flake8-commas, trailing-comma-missing
-    "--ignore=PGH003", // pygrep-hooks, blanket-type-ignore
     "--ignore=PLR0913", // refactor, too-many-arguments
-    "--ignore=PT012", // flake8-pytest-style, raises-with-multiple-statements
-    "--ignore=PT013", // flake8-pytest-style, incorrect-pytest-import
-    "--ignore=UP032", // pyupgrade, f-string
     // formatter
     "--ignore=E501", // pycodestyle, line-too-string
     "--ignore=ISC001", // flake8-implicit-str-concat, single-line-implicit-string-concatenation
