@@ -172,6 +172,7 @@
     "--select=SLOT", // flake8-slots
     "--select=T10", // flake8-debugger
     "--select=T20", // flake8-print
+    "--select=TCH", // flake8-type-checking
     "--select=TD", // flake8-todos
     "--select=TID", // flake8-tidy-imports
     "--select=TRY", // tryceratops
@@ -182,7 +183,6 @@
     "--ignore=ANN102", // flake8-annotations, missing-type-cls
     "--ignore=ANN401", // flake8-annotations, dynamically-typed-expression
     "--ignore=B008", // flake8-bugbear, function-call-argument-default
-    "--ignore=COM812", // flake8-commas, trailing-comma-missing
     "--ignore=PLR0913", // refactor, too-many-arguments
     // formatter
     "--ignore=E501", // pycodestyle, line-too-string
