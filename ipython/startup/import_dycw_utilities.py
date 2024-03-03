@@ -29,10 +29,10 @@ with suppress(ModuleNotFoundError):
     from utilities.datetime import (
         EPOCH_UTC,  # noqa: F401
         NOW_HKG,  # noqa: F401
-        NOW_TKY,  # noqa: F401
+        NOW_TOKYO,  # noqa: F401
         NOW_UTC,  # noqa: F401
-        TODAY_HKG,  # noqa: F401
-        TODAY_TKY,  # noqa: F401
+        TODAY_HK,  # noqa: F401
+        TODAY_TOKYO,  # noqa: F401
         TODAY_UTC,  # noqa: F401
         UTC,  # noqa: F401
         AddWeekdaysError,  # noqa: F401
@@ -51,7 +51,11 @@ with suppress(ModuleNotFoundError):
         ensure_time,  # noqa: F401
         ensure_timedelta,  # noqa: F401
         get_now,  # noqa: F401
+        get_now_hk,  # noqa: F401
+        get_now_tokyo,  # noqa: F401
         get_today,  # noqa: F401
+        get_today_hk,  # noqa: F401
+        get_today_tokyo,  # noqa: F401
         is_weekday,  # noqa: F401
         local_timezone,  # noqa: F401
         maybe_sub_pct_y,  # noqa: F401
