@@ -81,7 +81,7 @@ with suppress(ModuleNotFoundError):
     set_option(
         "display.float_format",
         _get_float_formatter(5),
-        "display.min_rows",  # type: ignore
+        "display.min_rows",
         _DEFAULT_MIN_MAX_ROWS,
         "display.max_rows",
         _DEFAULT_MIN_MAX_ROWS,
