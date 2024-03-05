@@ -2841,6 +2841,10 @@
     "prefix": "fpa-concat",
     "body": ["from pandas import concat", "$0"]
   },
+  "fpa-data-frame": {
+    "prefix": "fpa-data-frame",
+    "body": ["from pandas import DataFrame", "$0"]
+  },
   "fpa-date-offset": {
     "prefix": "fpa-date-offset",
     "body": ["from pandas import DateOffset", "$0"]
@@ -2910,6 +2914,18 @@
     "prefix": "fpa-range-index",
     "body": ["from pandas import RangeIndex", "$0"]
   },
+  "fpa-read-csv": {
+    "prefix": "fpa-read-csv",
+    "body": ["from pandas import read_csv", "$0"]
+  },
+  "fpa-read-excel": {
+    "prefix": "fpa-read-excel",
+    "body": ["from pandas import read_excel", "$0"]
+  },
+  "fpa-read-parquet": {
+    "prefix": "fpa-read-parquet",
+    "body": ["from pandas import read_parquet", "$0"]
+  },
   "fpa-read-pickle": {
     "prefix": "fpa-read-pickle",
     "body": ["from pandas import read_pickle", "$0"]
@@ -2925,6 +2941,10 @@
   "fpa-second": {
     "prefix": "fpa-second",
     "body": ["from pandas.tseries.offsets import Second", "$0"]
+  },
+  "fpa-series": {
+    "prefix": "fpa-series",
+    "body": ["from pandas import Series", "$0"]
   },
   "fpa-set-option": {
     "prefix": "fpa-set-option",

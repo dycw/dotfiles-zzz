@@ -21,7 +21,7 @@ with suppress(ModuleNotFoundError):
         TimedeltaIndex,  # noqa: F401
         Timestamp,  # noqa: F401
         bdate_range,  # noqa: F401
-        concat,  # noqa: F401
+        concat,
         date_range,  # noqa: F401
         qcut,  # noqa: F401
         read_sql,  # noqa: F401
@@ -57,6 +57,7 @@ with suppress(ModuleNotFoundError):
         from pandas import (
             DataFrame,  # noqa: F401
             Series,  # noqa: F401
+            concat,  # noqa: F401
             read_csv,  # noqa: F401
             read_excel,  # noqa: F401
             read_parquet,  # noqa: F401
