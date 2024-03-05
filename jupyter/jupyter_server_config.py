@@ -3,7 +3,7 @@ from pathlib import Path
 
 # Configuration file for jupyter-server.
 
-config = get_config()  # type: ignore # noqa:F821
+config = get_config()  # type: ignore[] # noqa:F821
 
 
 # ------------------------------------------------------------------------------

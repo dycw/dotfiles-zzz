@@ -1,4 +1,4 @@
-config = get_config()  # type: ignore # noqa: F821
+config = get_config()  # type: ignore[] # noqa: F821
 
 # ------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration

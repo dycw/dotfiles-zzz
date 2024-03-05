@@ -2,16 +2,14 @@
 
 # ruff
 [tool.ruff]
+target-version = "py310"
+unsafe-fixes = true
+
+[tool.ruff.lint]
 ignore = [
   "ANN101",  # flake8-annotations, missing-type-self
   "ANN102",  # flake8-annotations, missing-type-cls
   "ANN401",  # flake8-annotations, dynamically-typed-expression
-  "B008",  # flake8-bugbear, function-call-argument-default
-  "COM812",  # flake8-commas, trailing-comma-missing
-  "PGH003",  # pygrep-hooks, blanket-type-ignore
-  "PLR0913",  # refactor, too-many-arguments
-  "PT012",  # flake8-pytest-style, raises-with-multiple-statements
-  "PT013",  # flake8-pytest-style, incorrect-pytest-import
   # formatter
   "E501",  # pycodestyle, line-too-long
   "ISC001",  # flake8-implicit-str-concat, single-line-implicit-string-concatenation
@@ -68,7 +66,6 @@ select = [
   "W",  # pycodestyle
   "YTT",  # flake8-2020
 ]
-target-version = "py310"
 
-[tool.ruff.flake8-tidy-imports]
+[tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"

@@ -21,7 +21,7 @@ with suppress(ModuleNotFoundError):
         TimedeltaIndex,  # noqa: F401
         Timestamp,  # noqa: F401
         bdate_range,  # noqa: F401
-        concat,  # noqa: F401
+        concat,
         date_range,  # noqa: F401
         qcut,  # noqa: F401
         read_sql,  # noqa: F401
@@ -57,6 +57,7 @@ with suppress(ModuleNotFoundError):
         from pandas import (
             DataFrame,  # noqa: F401
             Series,  # noqa: F401
+            concat,  # noqa: F401
             read_csv,  # noqa: F401
             read_excel,  # noqa: F401
             read_parquet,  # noqa: F401
@@ -80,7 +81,7 @@ with suppress(ModuleNotFoundError):
     set_option(
         "display.float_format",
         _get_float_formatter(5),
-        "display.min_rows",  # type: ignore
+        "display.min_rows",
         _DEFAULT_MIN_MAX_ROWS,
         "display.max_rows",
         _DEFAULT_MIN_MAX_ROWS,
