@@ -9,3 +9,4 @@ function conda-a() {
 }
 
 alias conda-d='conda deactivate'
+alias conda-e='conda env export > environment-freeze.yml'
