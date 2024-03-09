@@ -102,6 +102,7 @@
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
+  "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticSeverityOverrides": {
@@ -201,6 +202,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "svelte.enable-ts-plugin": true,
+  // terminal
+  "terminal.integrated.inheritEnv": false,
   // typescript
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -280,6 +283,5 @@
   // window
   "window.title": "${rootName}",
   // workbench
-  "workbench.iconTheme": "material-icon-theme",
-  "terminal.integrated.inheritEnv": false
+  "workbench.iconTheme": "material-icon-theme"
 }
