@@ -90,7 +90,6 @@ with suppress(ModuleNotFoundError):
         partial_product,  # noqa: F401
         partition,  # noqa: F401
         partitions,  # noqa: F401
-        peekable,  # noqa: F401
         permutation_index,  # noqa: F401
         polynomial_derivative,  # noqa: F401
         polynomial_eval,  # noqa: F401
@@ -136,7 +135,6 @@ with suppress(ModuleNotFoundError):
         sum_of_squares,  # noqa: F401
         tabulate,
         tail,  # noqa: F401
-        take,  # noqa: F401
         takewhile_inclusive,  # noqa: F401
         time_limited,  # noqa: F401
         totient,  # noqa: F401
@@ -167,6 +165,8 @@ with suppress(ModuleNotFoundError):
         from more_itertools import (
             always_iterable,  # noqa: F401
             one,  # noqa: F401
+            peekable,  # noqa: F401
+            take,  # noqa: F401
             transpose,  # noqa: F401
             windowed_complete,  # noqa: F401
         )
