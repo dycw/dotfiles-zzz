@@ -143,6 +143,7 @@ with suppress(ModuleNotFoundError):
         is_iterable,  # noqa: F401
         is_iterable_not_str,  # noqa: F401
         one,  # noqa: F401
+        take,  # noqa: F401
         transpose,  # noqa: F401
     )
 with suppress(ModuleNotFoundError):
@@ -183,6 +184,7 @@ with suppress(ModuleNotFoundError):
 with suppress(ModuleNotFoundError):
     from utilities.more_itertools import (
         always_iterable,  # noqa: F401
+        peekable,  # noqa: F401
         windowed_complete,  # noqa: F401
     )
 with suppress(ModuleNotFoundError):
@@ -257,7 +259,9 @@ with suppress(ModuleNotFoundError):
     )
 with suppress(ModuleNotFoundError):
     from utilities.pathlib import (
+        ensure_path,  # noqa: F401
         ensure_suffix,  # noqa: F401
+        list_dir,  # noqa: F401
         temp_cwd,  # noqa: F401
         walk,  # noqa: F401
     )

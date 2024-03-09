@@ -1,7 +1,7 @@
 {
   "LazyVim": {
     "branch": "main",
-    "commit": "fe72424e77cb9c953084bbcaaa0eb7fe8056dc70"
+    "commit": "e3bfcb9bf74292dc846f5d1710fbb2e8f36a687a"
   },
   "LuaSnip": {
     "branch": "master",
@@ -9,7 +9,7 @@
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "5d7f8c3e7ae4e3fa5daedb83306406f95257201c"
+    "commit": "b788bde023f9fbc2eb86e89d32c0bf98a60ae406"
   },
   "auto-save.nvim": {
     "branch": "main",
@@ -45,11 +45,11 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "34b81e70da83e26c048290204de44268eb59814e"
+    "commit": "5a15cc46e75cad804fd51ec5af9227aeb1d1bdaa"
   },
   "crates.nvim": {
     "branch": "main",
-    "commit": "ec2b04a380c9f3a8e6ca38c230e4990d71978143"
+    "commit": "535773ed3b321d68ddd6ef8cd5a1e07b345026a6"
   },
   "dial.nvim": {
     "branch": "master",
@@ -81,7 +81,7 @@
   },
   "lazy.nvim": {
     "branch": "main",
-    "commit": "28126922c9b54e35a192ac415788f202c3944c9f"
+    "commit": "83493db50a434a4c5c648faf41e2ead80f96e478"
   },
   "leap.nvim": {
     "branch": "main",
@@ -173,7 +173,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "e172dd599cff2ae5267871b5e33fb42934c4df43"
+    "commit": "94cf4adb81158817520e18d2174963d8e1424df9"
   },
   "nvim-navic": {
     "branch": "master",
@@ -193,7 +193,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "9775d5d7c724f81acdd441e7e9edefc4514e990b"
+    "commit": "7ff51f53b0efb6228df2e8539b51bb2e737b77f3"
   },
   "nvim-treesitter-context": {
     "branch": "master",
@@ -213,7 +213,11 @@
   },
   "nvim-web-devicons": {
     "branch": "master",
-    "commit": "4adea17610d140a99c313e3f79a9dc01825d59ae"
+    "commit": "75df79feb02d5e0ec114e447453775d4d291ea03"
+  },
+  "outline.nvim": {
+    "branch": "main",
+    "commit": "a8d40aecb799196303ff3521c0e31c87bba57198"
   },
   "persistence.nvim": {
     "branch": "main",
@@ -227,9 +231,9 @@
     "branch": "main",
     "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb"
   },
-  "rust-tools.nvim": {
+  "rustaceanvim": {
     "branch": "master",
-    "commit": "676187908a1ce35ffcd727c654ed68d851299d3e"
+    "commit": "19f12173ccb7993f86ea26b0e21bbb883c3b86c7"
   },
   "sort.nvim": {
     "branch": "main",
@@ -238,10 +242,6 @@
   "sqlite.lua": {
     "branch": "master",
     "commit": "40701b6151f8883980c1548647116de39b763540"
-  },
-  "symbols-outline.nvim": {
-    "branch": "master",
-    "commit": "564ee65dfc9024bdde73a6621820866987cbb256"
   },
   "tailwindcss-colorizer-cmp.nvim": {
     "branch": "main",
@@ -253,7 +253,7 @@
   },
   "telescope.nvim": {
     "branch": "master",
-    "commit": "dc1ea28cc2a02cd1cebb9d80e967807d668f78f8"
+    "commit": "7472420f8734c710bd7009081cef9b97f08a3821"
   },
   "tidy.nvim": {
     "branch": "main",

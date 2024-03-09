@@ -4297,6 +4297,10 @@
     "prefix": "fut-always-iterable",
     "body": ["from utilities.more_itertools import always_iterable", "$0"]
   },
+  "fut-peekable": {
+    "prefix": "fut-peekable",
+    "body": ["from utilities.more_itertools import peekable", "$0"]
+  },
   "fut-windowed-complete": {
     "prefix": "fut-windowed-complete",
     "body": ["from utilities.more_itertools import windowed_complete", "$0"]
@@ -4563,9 +4567,17 @@
   },
 
   // third party: (dycw-)utilities.pathlib
+  "fut-ensure-path": {
+    "prefix": "fut-ensure-path",
+    "body": ["from utilities.pathlib import ensure_path", "$0"]
+  },
   "fut-ensure-suffix": {
     "prefix": "fut-ensure-suffix",
     "body": ["from utilities.pathlib import ensure_suffix", "$0"]
+  },
+  "fut-list-dir": {
+    "prefix": "fut-list-dir",
+    "body": ["from utilities.pathlib import list_dir", "$0"]
   },
   "fut-temp-cwd": {
     "prefix": "fut-temp-cwd",
