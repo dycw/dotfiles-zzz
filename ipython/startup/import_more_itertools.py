@@ -106,7 +106,6 @@ with suppress(ModuleNotFoundError):
         repeat_each,  # noqa: F401
         repeat_last,  # noqa: F401
         repeatfunc,  # noqa: F401
-        replace,  # noqa: F401
         reshape,  # noqa: F401
         rlocate,  # noqa: F401
         roundrobin,  # noqa: F401
