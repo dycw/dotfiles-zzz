@@ -30,6 +30,9 @@ class Settings:
         if self.i and self.x:
             msg = "--instafail and -x are mutually exclusive"
             raise ArgumentError(msg)
+        if self.i and self.pdb:
+            msg = "--instafail and --pdb are mutually exclusive"
+            raise ArgumentError(msg)
         if self.n and self.pdb:
             msg = "-n and --pdb are mutually exclusive"
             raise ArgumentError(msg)
