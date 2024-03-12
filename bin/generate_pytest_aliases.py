@@ -16,8 +16,6 @@ basicConfig(format="{message}", style="{", level="INFO", stream=stdout)
 
 @dataclass(frozen=True, kw_only=True)
 class Settings:
-    """A collection of pytest settings."""
-
     f: bool = False
     i: bool = False
     k: bool = False
@@ -28,82 +26,86 @@ class Settings:
     def __post_init__(self) -> None:
         if self.f and self.pdb:
             msg = "-f and --pdb are mutually exclusive"
-            raise MutuallyExclusiveError(msg)
+            raise ArgumentError(msg)
         if self.i and self.x:
             msg = "--instafail and -x are mutually exclusive"
-            raise MutuallyExclusiveError(msg)
+            raise ArgumentError(msg)
         if self.n and self.pdb:
             msg = "-n and --pdb are mutually exclusive"
-            raise MutuallyExclusiveError(msg)
-
-    @property
-    def alias(self) -> Alias:
-        """The alias."""
-        parts: list[Part] = []
-        append = parts.append
-        if self.f:
-            append(Part(key="f", option="-f"))
-        if self.i:
-            append(Part(key="i", option="--instafail"))
-        if self.n:
-            append(Part(key="n", option="-n0"))
-        if self.pdb:
-            append(Part(key="p", option="--pdb"))
-        if self.x:
-            append(Part(key="x", option="-x"))
-        if self.k:  # this must be last
-            append(Part(key="k", option="-k"))
-        return Alias(parts)
+            raise ArgumentError(msg)
 
     def yield_aliases(self) -> Iterator[Alias]:
-        for parts in permutations(self.alias.parts):
-            with suppress(ValueError):
-                yield Alias(list(parts))
+        for parts in permutations(self.yield_parts()):
+            with suppress(ArgumentError):
+                yield Alias(settings=self, parts=list(parts))
+
+    def yield_parts(self) -> Iterator[Part]:
+        if self.f:
+            yield Part(key="f", option="-f")
+        if self.i:
+            yield Part(key="i", option="--instafail")
+        if self.k:
+            yield Part(key="k", option="-k")
+        if self.n:
+            yield Part(key="n", option="-n0")
+        if self.pdb:
+            yield Part(key="p", option="--pdb")
+        if self.x:
+            yield (Part(key="x", option="-x"))
 
 
-class MutuallyExclusiveError(Exception): ...
+class ArgumentError(Exception): ...
 
 
 @dataclass(frozen=True, kw_only=True)
 class Part:
-    """An alias part consisting of a key & option."""
-
     key: str
     option: str
 
 
-@dataclass
+@dataclass(frozen=True, kw_only=True)
 class Alias:
-    """An alias consisting of a list of parts."""
-
+    settings: Settings
     parts: list[Part] = field(default_factory=list)
 
-    def __repr__(self) -> str:
+    def __post_init__(self) -> None:
+        if self.settings.k and self.parts[-1].key != "k":
+            msg = "-k must be the last term"
+            raise ArgumentError(msg)
+
+    def __repr__(self) -> str:  # type: ignore[]
         keys = "".join(p.key for p in self.parts)
         alias = f"pyt{keys}"
         options = " ".join(chain(["--color=yes"], (p.option for p in self.parts)))
         command = f"pytest {options}".strip()
         return f"alias {alias}='{command}'"
 
-    def __str__(self) -> str:
+    def __str__(self) -> str:  # type: ignore[]
         return repr(self)
+
+
+def yield_aliases() -> Iterator[Alias]:
+    for f, i, k, n, pdb, x in product(
+        [True, False],
+        [True, False],
+        [True, False],
+        [True, False],
+        [True, False],
+        [True, False],
+    ):
+        try:
+            settings = Settings(f=f, i=i, k=k, n=n, pdb=pdb, x=x)
+        except ArgumentError:  # noqa: PERF203
+            pass
+        else:
+            yield from settings.yield_aliases()
 
 
 def main() -> None:
     """Echo all the commands, ready for piping to a script."""
     info("#!/usr/bin/env bash")
-    for f, i, k, n, pdb, x in product(
-        [True, False],
-        [True, False],
-        [True, False],
-        [None, 0],
-        [True, False],
-        [True, False],
-    ):
-        with suppress(ValueError):
-            settings = Settings(f=f, i=i, k=k, n=n, pdb=pdb, x=x)
-            for alias in settings.yield_aliases():
-                info(alias)
+    for alias in yield_aliases():
+        info(alias)
 
 
 if __name__ == "__main__":
