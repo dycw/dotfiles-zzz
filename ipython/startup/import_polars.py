@@ -5,67 +5,67 @@ from contextlib import suppress
 with suppress(ModuleNotFoundError):
     import polars  # noqa: F401, ICN001
     import polars as pl  # noqa: F401
-    from polars import (
-        Array,  # noqa: F401
-        Binary,  # noqa: F401
-        Boolean,  # noqa: F401
-        Categorical,  # noqa: F401
+    from polars import (  # noqa: F401
+        Array,
+        Binary,
+        Boolean,
+        Categorical,
         Config,
-        DataFrame,  # noqa: F401
-        DataType,  # noqa: F401
-        Date,  # noqa: F401
-        Datetime,  # noqa: F401
-        Decimal,  # noqa: F401
-        Duration,  # noqa: F401
-        Float32,  # noqa: F401
-        Float64,  # noqa: F401
-        Int8,  # noqa: F401
-        Int16,  # noqa: F401
-        Int32,  # noqa: F401
-        Int64,  # noqa: F401
-        List,  # noqa: F401
-        Null,  # noqa: F401
-        Object,  # noqa: F401
-        PolarsDataType,  # noqa: F401
-        Series,  # noqa: F401
-        Struct,  # noqa: F401
-        Time,  # noqa: F401
-        UInt8,  # noqa: F401
-        UInt16,  # noqa: F401
-        UInt32,  # noqa: F401
-        UInt64,  # noqa: F401
-        Unknown,  # noqa: F401
-        Utf8,  # noqa: F401
-        col,  # noqa: F401
-        concat,  # noqa: F401
-        lit,  # noqa: F401
-        read_avro,  # noqa: F401
-        read_csv,  # noqa: F401
-        read_csv_batched,  # noqa: F401
-        read_database,  # noqa: F401
-        read_database_uri,  # noqa: F401
-        read_delta,  # noqa: F401
-        read_excel,  # noqa: F401
-        read_ipc,  # noqa: F401
-        read_ipc_schema,  # noqa: F401
-        read_ipc_stream,  # noqa: F401
-        read_json,  # noqa: F401
-        read_ndjson,  # noqa: F401
-        read_ods,  # noqa: F401
-        read_parquet,  # noqa: F401
-        when,  # noqa: F401
+        DataFrame,
+        DataType,
+        Date,
+        Datetime,
+        Decimal,
+        Duration,
+        Float32,
+        Float64,
+        Int8,
+        Int16,
+        Int32,
+        Int64,
+        List,
+        Null,
+        Object,
+        PolarsDataType,
+        Series,
+        Struct,
+        Time,
+        UInt8,
+        UInt16,
+        UInt32,
+        UInt64,
+        Unknown,
+        Utf8,
+        col,
+        concat,
+        lit,
+        read_avro,
+        read_csv,
+        read_csv_batched,
+        read_database,
+        read_database_uri,
+        read_delta,
+        read_excel,
+        read_ipc,
+        read_ipc_schema,
+        read_ipc_stream,
+        read_json,
+        read_ndjson,
+        read_ods,
+        read_parquet,
+        when,
     )
-    from polars.datatypes import (
-        DataTypeClass,  # noqa: F401
+    from polars.datatypes import (  # noqa: F401
+        DataTypeClass,
     )
-    from polars.testing import (
-        assert_frame_equal,  # noqa: F401
-        assert_frame_not_equal,  # noqa: F401
-        assert_series_equal,  # noqa: F401
-        assert_series_not_equal,  # noqa: F401
+    from polars.testing import (  # noqa: F401
+        assert_frame_equal,
+        assert_frame_not_equal,
+        assert_series_equal,
+        assert_series_not_equal,
     )
-    from polars.type_aliases import (
-        SchemaDict,  # noqa: F401
+    from polars.type_aliases import (  # noqa: F401
+        SchemaDict,
     )
 
     Config(tbl_rows=7, tbl_cols=100)

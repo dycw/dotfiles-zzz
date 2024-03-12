@@ -4,82 +4,82 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import streamlit as st  # noqa: F401
-    from streamlit import (
-        altair_chart,  # noqa: F401
-        area_chart,  # noqa: F401
-        audio,  # noqa: F401
-        balloons,  # noqa: F401
-        bar_chart,  # noqa: F401
-        bokeh_chart,  # noqa: F401
-        button,  # noqa: F401
-        cache,  # noqa: F401
-        cache_data,  # noqa: F401
-        cache_resource,  # noqa: F401
-        camera_input,  # noqa: F401
-        caption,  # noqa: F401
-        chat_input,  # noqa: F401
-        chat_message,  # noqa: F401
-        checkbox,  # noqa: F401
-        code,  # noqa: F401
-        color_picker,  # noqa: F401
-        column_config,  # noqa: F401
-        columns,  # noqa: F401
-        connection,  # noqa: F401
-        container,  # noqa: F401
-        data_editor,  # noqa: F401
-        dataframe,  # noqa: F401
-        date_input,  # noqa: F401
-        divider,  # noqa: F401
-        download_button,  # noqa: F401
-        echo,  # noqa: F401
-        empty,  # noqa: F401
-        error,  # noqa: F401
-        exception,  # noqa: F401
-        expander,  # noqa: F401
-        file_uploader,  # noqa: F401
-        form,  # noqa: F401
-        form_submit_button,  # noqa: F401
-        graphviz_chart,  # noqa: F401
-        header,  # noqa: F401
-        help,  # noqa: F401
-        image,  # noqa: F401
-        info,  # noqa: F401
-        json,  # noqa: F401
-        latex,  # noqa: F401
-        line_chart,  # noqa: F401
-        link_button,  # noqa: F401
-        markdown,  # noqa: F401
-        metric,  # noqa: F401
-        number_input,  # noqa: F401
-        plotly_chart,  # noqa: F401
-        progress,  # noqa: F401
-        pydeck_chart,  # noqa: F401
-        pyplot,  # noqa: F401
-        radio,  # noqa: F401
-        rerun,  # noqa: F401
-        scatter_chart,  # noqa: F401
-        secrets,  # noqa: F401
-        select_slider,  # noqa: F401
-        selectbox,  # noqa: F401
-        session_state,  # noqa: F401
-        set_page_config,  # noqa: F401
-        sidebar,  # noqa: F401
-        snow,  # noqa: F401
-        spinner,  # noqa: F401
-        status,  # noqa: F401
-        stop,  # noqa: F401
-        subheader,  # noqa: F401
-        success,  # noqa: F401
-        table,  # noqa: F401
-        tabs,  # noqa: F401
-        text,  # noqa: F401
-        text_area,  # noqa: F401
-        text_input,  # noqa: F401
-        time_input,  # noqa: F401
-        title,  # noqa: F401
-        toast,  # noqa: F401
-        toggle,  # noqa: F401
-        vega_lite_chart,  # noqa: F401
-        video,  # noqa: F401
-        write,  # noqa: F401
+    from streamlit import (  # noqa: F401
+        altair_chart,
+        area_chart,
+        audio,
+        balloons,
+        bar_chart,
+        bokeh_chart,
+        button,
+        cache,
+        cache_data,
+        cache_resource,
+        camera_input,
+        caption,
+        chat_input,
+        chat_message,
+        checkbox,
+        code,
+        color_picker,
+        column_config,
+        columns,
+        connection,
+        container,
+        data_editor,
+        dataframe,
+        date_input,
+        divider,
+        download_button,
+        echo,
+        empty,
+        error,
+        exception,
+        expander,
+        file_uploader,
+        form,
+        form_submit_button,
+        graphviz_chart,
+        header,
+        help,
+        image,
+        info,
+        json,
+        latex,
+        line_chart,
+        link_button,
+        markdown,
+        metric,
+        number_input,
+        plotly_chart,
+        progress,
+        pydeck_chart,
+        pyplot,
+        radio,
+        rerun,
+        scatter_chart,
+        secrets,
+        select_slider,
+        selectbox,
+        session_state,
+        set_page_config,
+        sidebar,
+        snow,
+        spinner,
+        status,
+        stop,
+        subheader,
+        success,
+        table,
+        tabs,
+        text,
+        text_area,
+        text_input,
+        time_input,
+        title,
+        toast,
+        toggle,
+        vega_lite_chart,
+        video,
+        write,
     )
