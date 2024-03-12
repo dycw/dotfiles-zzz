@@ -1,38 +1,40 @@
 #!/usr/bin/env python
 from __future__ import annotations
 
-from collections.abc import Iterator
 from contextlib import suppress
 from dataclasses import dataclass, field
 from itertools import chain, permutations, product
 from logging import basicConfig, info
 from sys import stdout
-from typing import Literal
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
 
 basicConfig(format="{message}", style="{", level="INFO", stream=stdout)
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, kw_only=True)
 class Settings:
     """A collection of pytest settings."""
 
     f: bool = False
     i: bool = False
     k: bool = False
-    n: Literal["auto"] | int | None = None
+    n: bool = False
     pdb: bool = False
     x: bool = False
 
     def __post_init__(self) -> None:
         if self.f and self.pdb:
             msg = "-f and --pdb are mutually exclusive"
-            raise ValueError(msg)
+            raise MutuallyExclusiveError(msg)
         if self.i and self.x:
-            msg = "-x and --instafail are mutually exclusive"
-            raise ValueError(msg)
-        if (self.n is not None) and self.pdb:
+            msg = "--instafail and -x are mutually exclusive"
+            raise MutuallyExclusiveError(msg)
+        if self.n and self.pdb:
             msg = "-n and --pdb are mutually exclusive"
-            raise ValueError(msg)
+            raise MutuallyExclusiveError(msg)
 
     @property
     def alias(self) -> Alias:
@@ -40,19 +42,17 @@ class Settings:
         parts: list[Part] = []
         append = parts.append
         if self.f:
-            append(Part("f", "-f"))
+            append(Part(key="f", option="-f"))
         if self.i:
-            append(Part("i", "--instafail"))
-        if self.n == "auto":
-            append(Part("n", "-nauto"))
-        elif isinstance(self.n, int):
-            append(Part(str(self.n), f"-n{self.n}"))
+            append(Part(key="i", option="--instafail"))
+        if self.n:
+            append(Part(key="n", option="-n0"))
         if self.pdb:
-            append(Part("p", "--pdb"))
+            append(Part(key="p", option="--pdb"))
         if self.x:
-            append(Part("x", "-x"))
+            append(Part(key="x", option="-x"))
         if self.k:  # this must be last
-            append(Part("k", "-k"))
+            append(Part(key="k", option="-k"))
         return Alias(parts)
 
     def yield_aliases(self) -> Iterator[Alias]:
@@ -61,7 +61,10 @@ class Settings:
                 yield Alias(list(parts))
 
 
-@dataclass(frozen=True)
+class MutuallyExclusiveError(Exception): ...
+
+
+@dataclass(frozen=True, kw_only=True)
 class Part:
     """An alias part consisting of a key & option."""
 
@@ -93,7 +96,7 @@ def main() -> None:
         [True, False],
         [True, False],
         [True, False],
-        chain(["auto"], [5, 10, 20], [None]),
+        [None, 0],
         [True, False],
         [True, False],
     ):
