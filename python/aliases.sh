@@ -25,7 +25,6 @@ alias pypirc='$EDITOR "$HOME/.pypirc"'
 alias pyprojecttoml='$EDITOR $(git rev-parse --show-toplevel)/pyproject.toml'
 
 # pytest
-alias pyt='pytest'
 alias pytco='pytest --co'
 
 if git rev-parse --show-toplevel >/dev/null 2>&1; then
