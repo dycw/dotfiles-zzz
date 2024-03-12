@@ -1,34 +1,28 @@
 from __future__ import annotations
 
 import contextlib  # noqa: F401
-from collections.abc import Iterator
-from contextlib import (
-    AbstractAsyncContextManager,  # noqa: F401
-    AbstractContextManager,  # noqa: F401
-    AsyncContextDecorator,  # noqa: F401
-    AsyncExitStack,  # noqa: F401
-    ContextDecorator,  # noqa: F401
-    ExitStack,  # noqa: F401
-    aclosing,  # noqa: F401
-    asynccontextmanager,  # noqa: F401
-    closing,  # noqa: F401
+from contextlib import (  # noqa: F401
+    AbstractAsyncContextManager,
+    AbstractContextManager,
+    AsyncContextDecorator,
+    AsyncExitStack,
+    ContextDecorator,
+    ExitStack,
+    aclosing,
+    asynccontextmanager,
+    closing,
     contextmanager,
-    nullcontext,  # noqa: F401
-    redirect_stderr,  # noqa: F401
+    nullcontext,
+    redirect_stderr,
     redirect_stdout,
     suppress,
 )
-from os import devnull
-from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    pass
 
 with suppress(ImportError):  # python 3.11+
-    from contextlib import (
-        chdir,  # noqa: F401
+    from contextlib import (  # noqa: F401
+        chdir,
     )
-
-
-@contextmanager
-def no_stdout() -> Iterator[None]:
-    """Disable stdout."""
-    with Path(devnull).open(mode="w") as null, redirect_stdout(null):
-        yield

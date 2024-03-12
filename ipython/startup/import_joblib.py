@@ -4,8 +4,8 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import joblib  # noqa: F401
-    from joblib import (
-        Memory,  # noqa: F401
-        Parallel,  # noqa: F401
-        delayed,  # noqa: F401
+    from joblib import (  # noqa: F401
+        Memory,
+        Parallel,
+        delayed,
     )
