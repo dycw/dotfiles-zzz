@@ -20,6 +20,8 @@ class Settings:
     i: bool = False
     k: bool = False
     n: bool = False
+    maxfail: bool = False
+    no_cov: bool = False
     pdb: bool = False
     x: bool = False
 
@@ -32,6 +34,12 @@ class Settings:
             raise ArgumentError(msg)
         if self.i and self.pdb:
             msg = "--instafail and --pdb are mutually exclusive"
+            raise ArgumentError(msg)
+        if self.k and self.maxfail:
+            msg = "-k and --maxfail are mutually exclusive"
+            raise ArgumentError(msg)
+        if self.maxfail and self.x:
+            msg = "--maxfail and -x are mutually exclusive"
             raise ArgumentError(msg)
         if self.n and self.pdb:
             msg = "-n and --pdb are mutually exclusive"
@@ -49,12 +57,16 @@ class Settings:
             yield Part(key="i", option="--instafail")
         if self.k:
             yield Part(key="k", option="-k")
+        if self.maxfail:
+            yield Part(key="m", option="--maxfail")
         if self.n:
-            yield Part(key="n", option="-n0")
+            yield Part(key="n", option="-nauto")
+        if self.no_cov:
+            yield Part(key="c", option="--no-cov")
         if self.pdb:
             yield Part(key="p", option="--pdb")
         if self.x:
-            yield (Part(key="x", option="-x"))
+            yield Part(key="x", option="-x")
 
 
 class ArgumentError(Exception): ...
@@ -75,11 +87,19 @@ class Alias:
         if self.settings.k and self.parts[-1].key != "k":
             msg = "-k must be the last term"
             raise ArgumentError(msg)
+        if self.settings.maxfail and self.parts[-1].key != "m":
+            msg = "--maxfail must be the last term"
+            raise ArgumentError(msg)
 
     def __repr__(self) -> str:  # type: ignore[]
         keys = "".join(p.key for p in self.parts)
         alias = f"pyt{keys}"
-        options = " ".join(chain(["--color=yes"], (p.option for p in self.parts)))
+        options = " ".join(
+            chain(
+                ["-ra", "-vv", "--color=yes", "--strict-markers"],
+                (p.option for p in self.parts),
+            )
+        )
         command = f"pytest {options}".strip()
         return f"alias {alias}='{command}'"
 
@@ -88,7 +108,9 @@ class Alias:
 
 
 def yield_aliases() -> Iterator[Alias]:
-    for f, i, k, n, pdb, x in product(
+    for f, i, k, maxfail, n, no_cov, pdb, x in product(
+        [True, False],
+        [True, False],
         [True, False],
         [True, False],
         [True, False],
@@ -97,7 +119,9 @@ def yield_aliases() -> Iterator[Alias]:
         [True, False],
     ):
         try:
-            settings = Settings(f=f, i=i, k=k, n=n, pdb=pdb, x=x)
+            settings = Settings(
+                f=f, i=i, k=k, maxfail=maxfail, n=n, no_cov=no_cov, pdb=pdb, x=x
+            )
         except ArgumentError:  # noqa: PERF203
             pass
         else:
@@ -107,7 +131,7 @@ def yield_aliases() -> Iterator[Alias]:
 def main() -> None:
     """Echo all the commands, ready for piping to a script."""
     info("#!/usr/bin/env bash")
-    for alias in yield_aliases():
+    for alias in sorted(yield_aliases(), key=str):
         info(alias)
 
 
