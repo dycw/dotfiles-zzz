@@ -17,10 +17,6 @@ from contextlib import (  # noqa: F401
     redirect_stdout,
     suppress,
 )
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    pass
 
 with suppress(ImportError):  # python 3.11+
     from contextlib import (  # noqa: F401

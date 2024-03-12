@@ -9,4 +9,7 @@ with suppress(ModuleNotFoundError):
     from matplotlib.pyplot import (  # noqa: F401
         gca,
         gcf,
+        subplot,
+        twinx,
+        twiny,
     )

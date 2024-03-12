@@ -4,28 +4,28 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import cachetools  # noqa: F401
-    from cachetools import (
-        Cache,  # noqa: F401
-        FIFOCache,  # noqa: F401
-        LFUCache,  # noqa: F401
-        LRUCache,  # noqa: F401
-        MRUCache,  # noqa: F401
-        RRCache,  # noqa: F401
-        TLRUCache,  # noqa: F401
-        TTLCache,  # noqa: F401
-        cached,  # noqa: F401
-        cachedmethod,  # noqa: F401
+    from cachetools import (  # noqa: F401
+        Cache,
+        FIFOCache,
+        LFUCache,
+        LRUCache,
+        MRUCache,
+        RRCache,
+        TLRUCache,
+        TTLCache,
+        cached,
+        cachedmethod,
     )
-    from cachetools.func import (
-        fifo_cache,  # noqa: F401
-        lfu_cache,  # noqa: F401
-        lru_cache,  # noqa: F401
-        mru_cache,  # noqa: F401
-        rr_cache,  # noqa: F401
-        ttl_cache,  # noqa: F401
+    from cachetools.func import (  # noqa: F401
+        fifo_cache,
+        lfu_cache,
+        lru_cache,
+        mru_cache,
+        rr_cache,
+        ttl_cache,
     )
-    from cachetools.keys import (
-        hashkey,  # noqa: F401
-        methodkey,  # noqa: F401
-        typedkey,  # noqa: F401
+    from cachetools.keys import (  # noqa: F401
+        hashkey,
+        methodkey,
+        typedkey,
     )

@@ -3,15 +3,15 @@ from __future__ import annotations
 from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
-    from beartype import (
-        beartype,  # noqa: F401
+    from beartype import (  # noqa: F401
+        beartype,
     )
-    from beartype.door import (
-        die_if_unbearable,  # noqa: F401
+    from beartype.door import (  # noqa: F401
+        die_if_unbearable,
     )
-    from beartype.vale import (
-        Is,  # noqa: F401
-        IsAttr,  # noqa: F401
-        IsEqual,  # noqa: F401
-        IsSubclass,  # noqa: F401
+    from beartype.vale import (  # noqa: F401
+        Is,
+        IsAttr,
+        IsEqual,
+        IsSubclass,
     )
