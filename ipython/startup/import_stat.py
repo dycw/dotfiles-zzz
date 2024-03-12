@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 import stat  # noqa: F401
-from stat import (
-    S_IRGRP,  # noqa: F401
-    S_IRUSR,  # noqa: F401
-    S_IWGRP,  # noqa: F401
-    S_IWUSR,  # noqa: F401
-    S_IXGRP,  # noqa: F401
-    S_IXUSR,  # noqa: F401
+from stat import (  # noqa: F401
+    S_IRGRP,
+    S_IRUSR,
+    S_IWGRP,
+    S_IWUSR,
+    S_IXGRP,
+    S_IXUSR,
 )

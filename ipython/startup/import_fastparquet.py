@@ -4,6 +4,6 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     import fastparquet  # noqa: F401
-    from fastparquet import (
-        ParquetFile,  # noqa: F401
+    from fastparquet import (  # noqa: F401
+        ParquetFile,
     )

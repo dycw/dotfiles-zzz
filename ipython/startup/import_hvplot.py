@@ -4,8 +4,8 @@ from contextlib import suppress
 
 with suppress(ModuleNotFoundError):
     with suppress(AttributeError):
-        import hvplot.pandas
+        pass
     with suppress(AttributeError):
-        import hvplot.polars
+        pass
     with suppress(AttributeError):
-        import hvplot.xarray  # noqa: F401
+        pass
